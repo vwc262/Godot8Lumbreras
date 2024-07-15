@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://d2khqjas6owik" path="res://Scenes/Perfil/alcaldias.glb" id="1_3x1im"]
 [ext_resource type="Script" path="res://Scripts/Navigation/Touch.gd" id="2_ui4vn"]
-[ext_resource type="PackedScene" uid="uid://vw46h30r4ia4" path="res://Prefabs/CuboClickeable.tscn" id="3_dfqhc"]
+[ext_resource type="PackedScene" uid="uid://vw46h30r4ia4" path="res://Scenes/Sitios/CuboClickeable.tscn" id="3_dfqhc"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_47xlv"]
 

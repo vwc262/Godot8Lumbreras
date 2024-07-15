@@ -11,18 +11,18 @@ config_version=5
 [application]
 
 config/name="PreubeasCamera3D"
-run/main_scene="res://node_3d.tscn"
+run/main_scene="res://Scenes/Perfil/Main/node_3d.tscn"
 config/features=PackedStringArray("4.2", "Mobile")
 config/icon="res://icon.svg"
 
 [autoload]
 
-ManejadorClicks="*res://Managers/ClickSitio.gd"
+ManejadorClicks="*res://Scripts/Managers/ClickSitio.gd"
 
 [display]
 
-window/size/viewport_width=1080
-window/size/viewport_height=1920
+window/size/viewport_width=1920
+window/size/viewport_height=1080
 window/handheld/orientation=1
 
 [filesystem]

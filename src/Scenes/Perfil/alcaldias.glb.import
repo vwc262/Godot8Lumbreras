@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://d2khqjas6owik"
-path="res://.godot/imported/alcaldias.glb-52d44e3d94354abbe5dbd3c5699964c5.scn"
+path="res://.godot/imported/alcaldias.glb-fa251551651f96e8e76fe91442ea61c9.scn"
 
 [deps]
 
-source_file="res://alcaldias.glb"
-dest_files=["res://.godot/imported/alcaldias.glb-52d44e3d94354abbe5dbd3c5699964c5.scn"]
+source_file="res://Scenes/Perfil/alcaldias.glb"
+dest_files=["res://.godot/imported/alcaldias.glb-fa251551651f96e8e76fe91442ea61c9.scn"]
 
 [params]
 

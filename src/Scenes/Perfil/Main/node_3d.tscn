@@ -1,14 +1,14 @@
 [gd_scene load_steps=5 format=3 uid="uid://cyug4nnq0yh1a"]
 
-[ext_resource type="PackedScene" uid="uid://d2khqjas6owik" path="res://alcaldias.glb" id="1_qmw4m"]
-[ext_resource type="Script" path="res://Touch.gd" id="2_75vr2"]
-[ext_resource type="PackedScene" uid="uid://vw46h30r4ia4" path="res://Prefabs/CuboClickeable.tscn" id="3_myxpd"]
+[ext_resource type="PackedScene" uid="uid://d2khqjas6owik" path="res://Scenes/Perfil/alcaldias.glb" id="1_3x1im"]
+[ext_resource type="Script" path="res://Scripts/Navigation/Touch.gd" id="2_ui4vn"]
+[ext_resource type="PackedScene" uid="uid://vw46h30r4ia4" path="res://Prefabs/CuboClickeable.tscn" id="3_dfqhc"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_47xlv"]
 
 [node name="Node3D" type="Node3D"]
 
-[node name="alcaldias" parent="." instance=ExtResource("1_qmw4m")]
+[node name="alcaldias" parent="." instance=ExtResource("1_3x1im")]
 transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, -0.106616, -4.86622, 0.158054)
 
 [node name="CSGBox3D" type="CSGBox3D" parent="alcaldias"]
@@ -20,7 +20,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 81.7049, 0.420746)
 
 [node name="Node3D" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 30, 0)
-script = ExtResource("2_75vr2")
+script = ExtResource("2_ui4vn")
 can_pan = true
 can_zoom = true
 can_rotate = true
@@ -29,7 +29,7 @@ can_rotate = true
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0)
 fov = 50.0
 
-[node name="CSGBox3D4" parent="." instance=ExtResource("3_myxpd")]
+[node name="CSGBox3D4" parent="." instance=ExtResource("3_dfqhc")]
 transform = Transform3D(1, 0, 0, 0, 0.98435, 0.176226, 0, -0.176226, 0.98435, -0.426116, -2.1302, -0.879766)
 
 [node name="Area3D2" type="Area3D" parent="CSGBox3D4"]
@@ -37,7 +37,7 @@ transform = Transform3D(1, 0, 0, 0, 0.98435, 0.176226, 0, -0.176226, 0.98435, -0
 [node name="CollisionShape3D" type="CollisionShape3D" parent="CSGBox3D4/Area3D2"]
 shape = SubResource("BoxShape3D_47xlv")
 
-[node name="CSGBox3D5" parent="." instance=ExtResource("3_myxpd")]
+[node name="CSGBox3D5" parent="." instance=ExtResource("3_dfqhc")]
 transform = Transform3D(1, 0, 0, 0, 0.98435, 0.176226, 0, -0.176226, 0.98435, 3.39095, -2.1302, -0.879766)
 
 [node name="Area3D2" type="Area3D" parent="CSGBox3D5"]
@@ -45,7 +45,7 @@ transform = Transform3D(1, 0, 0, 0, 0.98435, 0.176226, 0, -0.176226, 0.98435, 3.
 [node name="CollisionShape3D" type="CollisionShape3D" parent="CSGBox3D5/Area3D2"]
 shape = SubResource("BoxShape3D_47xlv")
 
-[node name="CSGBox3D6" parent="." instance=ExtResource("3_myxpd")]
+[node name="CSGBox3D6" parent="." instance=ExtResource("3_dfqhc")]
 transform = Transform3D(1, 0, 0, 0, 0.98435, 0.176226, 0, -0.176226, 0.98435, 3.39095, -2.1302, -8.518)
 
 [node name="Area3D2" type="Area3D" parent="CSGBox3D6"]
@@ -53,7 +53,7 @@ transform = Transform3D(1, 0, 0, 0, 0.98435, 0.176226, 0, -0.176226, 0.98435, 3.
 [node name="CollisionShape3D" type="CollisionShape3D" parent="CSGBox3D6/Area3D2"]
 shape = SubResource("BoxShape3D_47xlv")
 
-[node name="CSGBox3D7" parent="." instance=ExtResource("3_myxpd")]
+[node name="CSGBox3D7" parent="." instance=ExtResource("3_dfqhc")]
 transform = Transform3D(1, 0, 0, 0, 0.98435, 0.176226, 0, -0.176226, 0.98435, 9.15051, -2.1302, -8.518)
 
 [node name="Area3D2" type="Area3D" parent="CSGBox3D7"]

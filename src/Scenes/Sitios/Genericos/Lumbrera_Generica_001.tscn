@@ -1,7 +1,18 @@
-[gd_scene load_steps=2 format=3 uid="uid://c5idxbnu48it6"]
+[gd_scene load_steps=4 format=3 uid="uid://c5idxbnu48it6"]
 
+[ext_resource type="Script" path="res://Scripts/Managers/MinecraftClick.gd" id="1_exmfp"]
 [ext_resource type="PackedScene" uid="uid://cd60eirjhh2i6" path="res://Recursos/Meshes/Sitios/Genericos/Lumbrera_Generica_001/Lumbrera_Generica_001_v001.glb" id="1_siuv7"]
 
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_nupox"]
+
 [node name="LumbreraGenerica001" type="Node3D"]
+script = ExtResource("1_exmfp")
 
 [node name="Lumbrera_Generica_001_v001" parent="." instance=ExtResource("1_siuv7")]
+
+[node name="Area3D" type="Area3D" parent="Lumbrera_Generica_001_v001"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Lumbrera_Generica_001_v001/Area3D"]
+shape = SubResource("CylinderShape3D_nupox")
+
+[connection signal="input_event" from="Lumbrera_Generica_001_v001/Area3D" to="." method="_on_area_3d_input_event"]

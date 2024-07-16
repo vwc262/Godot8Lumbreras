@@ -31,7 +31,7 @@ transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 
 fov = 50.0
 
 [node name="CSGBox3D4" parent="." instance=ExtResource("3_dfqhc")]
-transform = Transform3D(1, 0, 0, 0, 0.98435, 0.176226, 0, -0.176226, 0.98435, -0.426116, -2.1302, -0.879766)
+transform = Transform3D(1, 0, 0, 0, 0.98435, 0.176226, 0, -0.176226, 0.98435, -0.426116, -0.446837, 2.46074)
 
 [node name="Area3D2" type="Area3D" parent="CSGBox3D4"]
 

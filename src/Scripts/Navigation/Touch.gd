@@ -54,7 +54,7 @@ func handle_drag(event: InputEventScreenDrag):
 
 	if touch_points.size() == 1:
 		if can_pan:
-			var pan_vector = (forward + (event.relative.x * right ) + (event.relative.y * forward)) * pan_speed
+			var pan_vector = (forward + (-event.relative.x * right ) + (-event.relative.y * forward)) * pan_speed
 			pan_vector.y = 0
 			global_translate(pan_vector)
 
@@ -80,7 +80,7 @@ func handle_drag(event: InputEventScreenDrag):
 				$Camera3D.rotation_degrees.x = lerp(-90,-20,inclinate_camera())
 			else:
 				$Camera3D.rotation_degrees.x = -90
-				
+
 func rotate_camera(currentangle: float):
 	rotation_degrees.y += -currentangle
 
@@ -88,7 +88,7 @@ func limit_zoom():
 	position.y = clamp(position.y, 5, 45)
 	pass
 
-func inclinate_camera():		
+func inclinate_camera():
 	return remap(position.y, 10, 5, 0, 1)
 
 func crearMiTween(callBack) -> Tween:
@@ -97,10 +97,8 @@ func crearMiTween(callBack) -> Tween:
 	return tween
 	
 func MovimientoRealizado():
-	print('Tween terminado');
-	pass	
+	pass
 
 func MoverCamara(positionToGo):
-	print('quiere ir a ',positionToGo )
 	var tween := crearMiTween(MovimientoRealizado)
 	tween.tween_property(self,"position",positionToGo,1.5)	

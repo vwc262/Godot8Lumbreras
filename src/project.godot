@@ -17,6 +17,7 @@ config/icon="res://icon.svg"
 
 [autoload]
 
+DataStore="*res://Scripts/Managers/Global_DataStore.gd"
 ManejadorClicks="*res://Scripts/Managers/ClickSitio.gd"
 
 [display]

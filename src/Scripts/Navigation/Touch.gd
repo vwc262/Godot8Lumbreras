@@ -16,9 +16,12 @@ var start_angle
 var current_angle
 var anclaDistancia : Vector2
 var angle : float = 0
+var initalCameraPosition : Vector3
 
 func _ready():
 	ManejadorClicks.connect("Go_TO",MoverCamara)
+	ManejadorClicks.connect('ResetCameraPosition',ResetCameraPosition)
+	initalCameraPosition = position
 
 func _input(event):
 	if event is InputEventScreenTouch:
@@ -102,3 +105,9 @@ func MovimientoRealizado():
 func MoverCamara(positionToGo):
 	var tween := crearMiTween(MovimientoRealizado)
 	tween.tween_property(self,"position",positionToGo,1.5)	
+
+func ResetCameraPosition():
+	var tweenRot := crearMiTween(MovimientoRealizado)
+	tweenRot.tween_property(self,"rotation_degrees",Vector3(0,0,0),.5)
+	var tween := crearMiTween(MovimientoRealizado)
+	tween.tween_property(self,"position",initalCameraPosition,1)	

@@ -11,13 +11,14 @@ config_version=5
 [application]
 
 config/name="Godot8Lumbreras"
-run/main_scene="res://Scenes/Perfil/Main/node_3d.tscn"
+run/main_scene="res://Scenes/Perfil/Main/NivelPruebas.tscn"
 config/features=PackedStringArray("4.2", "Mobile")
 config/icon="res://icon.svg"
 
 [autoload]
 
 ManejadorClicks="*res://Scripts/Managers/ClickSitio.gd"
+DataStore="*res://Scripts/Managers/Global_DataStore.gd"
 
 [display]
 

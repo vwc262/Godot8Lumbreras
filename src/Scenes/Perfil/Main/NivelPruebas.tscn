@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://cyug4nnq0yh1a"]
+[gd_scene load_steps=6 format=3 uid="uid://cyug4nnq0yh1a"]
 
-[ext_resource type="PackedScene" uid="uid://d2khqjas6owik" path="res://Recursos/Meshes/Sitios/Lumbrera0/alcaldias.glb" id="1_3x1im"]
+[ext_resource type="PackedScene" uid="uid://d2khqjas6owik" path="res://Scenes/Perfil/alcaldias.glb" id="1_3x1im"]
 [ext_resource type="Script" path="res://Scripts/Navigation/Touch.gd" id="2_ui4vn"]
 [ext_resource type="PackedScene" uid="uid://vw46h30r4ia4" path="res://Scenes/Sitios/CuboClickeable.tscn" id="3_dfqhc"]
+[ext_resource type="PackedScene" uid="uid://c5idxbnu48it6" path="res://Scenes/Sitios/Genericos/Lumbrera_Generica_001.tscn" id="4_4hvr1"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_47xlv"]
 
@@ -19,7 +20,7 @@ size = Vector3(56.4079, 1, 64.7556)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 81.7049, 0.420746)
 
 [node name="Node3D" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 30, 0)
+transform = Transform3D(0.76138, 0, 0.648306, 0, 1, 0, -0.648306, 0, 0.76138, 0, 30, 0)
 script = ExtResource("2_ui4vn")
 can_pan = true
 can_zoom = true
@@ -30,7 +31,7 @@ transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 
 fov = 50.0
 
 [node name="CSGBox3D4" parent="." instance=ExtResource("3_dfqhc")]
-transform = Transform3D(1, 0, 0, 0, 0.98435, 0.176226, 0, -0.176226, 0.98435, -0.426116, -2.1302, -0.879766)
+transform = Transform3D(1, 0, 0, 0, 0.98435, 0.176226, 0, -0.176226, 0.98435, -0.426116, -0.446837, 2.46074)
 
 [node name="Area3D2" type="Area3D" parent="CSGBox3D4"]
 
@@ -60,6 +61,12 @@ transform = Transform3D(1, 0, 0, 0, 0.98435, 0.176226, 0, -0.176226, 0.98435, 9.
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="CSGBox3D7/Area3D2"]
 shape = SubResource("BoxShape3D_47xlv")
+
+[node name="LumbreraGenerica001" parent="." instance=ExtResource("4_4hvr1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.61003)
+
+[node name="LumbreraGenerica002" parent="." instance=ExtResource("4_4hvr1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.44548, 0, 3.8374)
 
 [connection signal="IrA" from="CSGBox3D4" to="Node3D" method="_on_csg_box_3d_4_ir_a"]
 [connection signal="input_event" from="CSGBox3D4/Area3D2" to="CSGBox3D4" method="_on_area_3d_2_input_event"]

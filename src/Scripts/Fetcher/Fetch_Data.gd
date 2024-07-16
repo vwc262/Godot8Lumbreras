@@ -30,7 +30,7 @@ func _solicitud_completada(result, codigo_respuesta, headers, body):
 		# Emitir la señal 'datos_actualizados' con los datos recibidos
 		emit_signal("datos_actualizados", data)
 		# Imprimir los datos recibidos
-		print("Datos recibidos:", data)
+		#print("Datos recibidos:", data)
 		# Guardar los datos en el AutoLoad
 		DataStore.set_data(data)
 	else:

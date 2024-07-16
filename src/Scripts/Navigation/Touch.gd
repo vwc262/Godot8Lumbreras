@@ -109,5 +109,7 @@ func MoverCamara(positionToGo):
 func ResetCameraPosition():
 	var tweenRot := crearMiTween(MovimientoRealizado)
 	tweenRot.tween_property(self,"rotation_degrees",Vector3(0,0,0),.5)
+	var tweenRotCamara := crearMiTween(MovimientoRealizado)
+	tweenRotCamara.tween_property($Camera3D,"rotation_degrees",Vector3(-90,0,0),.5)
 	var tween := crearMiTween(MovimientoRealizado)
 	tween.tween_property(self,"position",initalCameraPosition,1)	

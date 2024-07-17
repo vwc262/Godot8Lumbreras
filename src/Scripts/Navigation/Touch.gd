@@ -32,8 +32,9 @@ var angle : float = 0
 var initalCameraPosition : Vector3
 
 func _ready():
-	ManejadorClicks.connect("Go_TO",MoverCamara)
-	ManejadorClicks.connect('ResetCameraPosition',ResetCameraPosition)
+	$Camera3D.rotation_degrees.x = initialRotationCamera
+	NavigationManager.connect("Go_TO",MoverCamara)
+	NavigationManager.connect('ResetCameraPosition',ResetCameraPosition)
 	initalCameraPosition = position
 
 func _input(event):
@@ -117,9 +118,9 @@ func crearMiTween(callBack) -> Tween:
 func MovimientoRealizado():
 	pass
 
-func MoverCamara(positionToGo):
+func MoverCamara(idEstacion:int):
 	var tween := crearMiTween(MovimientoRealizado)
-	tween.tween_property(self,"position",positionToGo,1.5)
+	tween.tween_property(self,"position",NavigationManager.GetSiteAnchor(idEstacion),1.5)
 
 func ResetCameraPosition():
 	var tweenRot := crearMiTween(MovimientoRealizado)

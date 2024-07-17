@@ -38,6 +38,18 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.560784, 0.670588, 0.972549, 1)
 
+[node name="Label" type="Label" parent="DynamicMargins/VB_MainContainer/header_container"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 60
+text = "Sistema Cutzamala"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="main_container" type="Panel" parent="DynamicMargins/VB_MainContainer"]
 layout_mode = 2
 size_flags_vertical = 3
@@ -108,7 +120,7 @@ grow_vertical = 2
 [node name="BTN_reset_camara" type="Button" parent="DynamicMargins/VB_MainContainer/footer_container/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
-theme_override_font_sizes/font_size = 40
+theme_override_font_sizes/font_size = 30
 text = "Reestablecer 
  Camara
 "
@@ -116,7 +128,7 @@ text = "Reestablecer
 [node name="BTN_mostrar_grafica" type="Button" parent="DynamicMargins/VB_MainContainer/footer_container/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
-theme_override_font_sizes/font_size = 40
+theme_override_font_sizes/font_size = 30
 text = "Graficar"
 
 [connection signal="pressed" from="DynamicMargins/VB_MainContainer/main_container/ListaSitiosContainer/VBoxContainer/BTN_ListaSitios" to="." method="_on_btn_lista_sitios_pressed"]

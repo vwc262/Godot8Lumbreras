@@ -15,7 +15,7 @@ func imprimir_datos_estaciones(estaciones : Array[Estacion]):
 	for estacion in estaciones:							
 		print("")
 		print("********************")
-		print("Estación:")
+		print("Estación:") 
 		print("  ID:", estacion.id_estacion)
 		print("  Nombre:", estacion.nombre)
 		print("  Latitud:", estacion.latitud)

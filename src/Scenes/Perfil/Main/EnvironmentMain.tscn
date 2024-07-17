@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://t3dbkejdc470"]
+
+[sub_resource type="Environment" id="Environment_1jy3w"]
+
+[sub_resource type="CameraAttributesPhysical" id="CameraAttributesPhysical_tmwmd"]
+
+[node name="EnvironmentMain" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_1jy3w")
+camera_attributes = SubResource("CameraAttributesPhysical_tmwmd")

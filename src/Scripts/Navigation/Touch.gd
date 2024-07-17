@@ -1,5 +1,7 @@
 extends Node3D
 
+@export_group('Pan')
+@export var can_pan: bool
 @export var pan_speed = 0.01
 
 @export_group('Rotation')
@@ -8,8 +10,9 @@ extends Node3D
 @export var rotate_treshold = 15
 @export var initialRotationCamera = -75
 @export var LimitRotationCamera = -15
-@export var minRotationY : float = -13 
+@export var minRotationY : float = -13
 @export var maxRotationY : float= 13
+@export var offSetDistanceInclination : float = 5
 
 @export_group('Zoom')
 @export var zoom_speed = 0.01
@@ -17,7 +20,6 @@ extends Node3D
 @export var maxZoom:float
 @export var initialZoom:float
 
-@export var can_pan: bool
 
 var touch_points: Dictionary = {}
 var start_distance
@@ -61,14 +63,15 @@ func handle_touch(event: InputEventScreenTouch):
 		anclaDistancia = Vector2(0,0)
 
 func handle_drag(event: InputEventScreenDrag):
-	touch_points[event.index] = event.position		
+	touch_points[event.index] = event.position
 	var parentTransform = get_global_transform()
 	var forward: Vector3 = parentTransform.basis.z
 	var right: Vector3 = parentTransform.basis.x
 
 	if touch_points.size() == 1:
 		if can_pan:
-			var pan_vector = (forward + (-event.relative.x * right ) + (-event.relative.y * forward)) * pan_speed	
+			var pan_vector = (forward + (-event.relative.x * right ) + (-event.relative.y * forward)) * pan_speed
+			pan_vector /= initialZoom
 			pan_vector.y = 0
 			global_translate(pan_vector)
 
@@ -88,7 +91,7 @@ func handle_drag(event: InputEventScreenDrag):
 		if can_zoom:
 			position.y = start_zoom / zoom_factor
 			limit_zoom()
-			$Camera3D.rotation_degrees.x = lerp(initialRotationCamera,LimitRotationCamera,inclinate_camera())			
+			$Camera3D.rotation_degrees.x = lerp(initialRotationCamera,LimitRotationCamera,inclinate_camera())
 
 
 func rotate_camera(currentangle: float):
@@ -97,10 +100,14 @@ func rotate_camera(currentangle: float):
 
 func limit_zoom():
 	position.y = clamp(position.y, maxZoom,initialZoom )
-	pass
+	
 
-func inclinate_camera():
-	return remap(position.y, initialZoom, maxZoom, 0, 1)
+func inclinate_camera()->float:
+	var val = 0 #Default uno para que mantenga la vista top
+	if position.y < initialZoom - offSetDistanceInclination:
+		val = remap(position.y, initialZoom - offSetDistanceInclination, maxZoom, 0, 1)
+	return val
+	
 
 func crearMiTween(callBack) -> Tween:
 	var tween = create_tween()
@@ -112,7 +119,7 @@ func MovimientoRealizado():
 
 func MoverCamara(positionToGo):
 	var tween := crearMiTween(MovimientoRealizado)
-	tween.tween_property(self,"position",positionToGo,1.5)	
+	tween.tween_property(self,"position",positionToGo,1.5)
 
 func ResetCameraPosition():
 	var tweenRot := crearMiTween(MovimientoRealizado)
@@ -120,4 +127,4 @@ func ResetCameraPosition():
 	var tweenRotCamara := crearMiTween(MovimientoRealizado)
 	tweenRotCamara.tween_property($Camera3D,"rotation_degrees",Vector3(initialRotationCamera,0,0),.5)
 	var tween := crearMiTween(MovimientoRealizado)
-	tween.tween_property(self,"position",initalCameraPosition,1)	
+	tween.tween_property(self,"position",initalCameraPosition,1)

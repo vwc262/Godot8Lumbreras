@@ -5,9 +5,13 @@ extends Node
 
 var is_hidden = false  # Variable para rastrear el estado del contenedor
 
+func _ready():
+	## Conectar la señal de interacción del World
+	NavigationManager.connect("world_interacted", _on_world_interacted)
+	pass
+
 func _on_button_pressed():
 	NavigationManager.emit_signal('ResetCameraPosition')
-	
 
 #region FUNCIONES PARA MOSTRAR U OCULTAR LISTA DE SITIOS
 func _on_btn_lista_sitios_pressed():
@@ -16,6 +20,10 @@ func _on_btn_lista_sitios_pressed():
 		_show_lista_sitios()
 	else:
 		# Esconder el contenedor
+		_hide_lista_sitios()
+
+func _on_world_interacted():
+	if not is_hidden:
 		_hide_lista_sitios()
 
 func _show_lista_sitios():
@@ -37,3 +45,10 @@ func _on_finish_tween():
 	if is_hidden:
 		lista_sitios.visible = false
 #endregion
+
+#region FUNCIONES PARA MOSTRAR LA GRAFICA
+func _on_btn_mostrar_grafica_pressed():
+	pass # Replace with function body.
+
+#endregion
+

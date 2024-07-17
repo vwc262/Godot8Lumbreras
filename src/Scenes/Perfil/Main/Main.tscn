@@ -56,7 +56,9 @@ render_target_update_mode = 4
 [node name="World" parent="VB_MainContainer/main_container/SubViewportContainer/SubViewport" instance=ExtResource("2_2gqy4")]
 
 [node name="ListaSitios" parent="VB_MainContainer/main_container" instance=ExtResource("4_lo6xx")]
+visible = false
 layout_mode = 1
+mouse_filter = 1
 
 [node name="footer_container" type="Panel" parent="VB_MainContainer"]
 custom_minimum_size = Vector2(0, 100)

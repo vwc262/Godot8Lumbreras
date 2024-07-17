@@ -32,6 +32,7 @@ var angle : float = 0
 var initalCameraPosition : Vector3
 
 func _ready():
+	$Camera3D.rotation_degrees.x = initialRotationCamera
 	ManejadorClicks.connect("Go_TO",MoverCamara)
 	ManejadorClicks.connect('ResetCameraPosition',ResetCameraPosition)
 	initalCameraPosition = position

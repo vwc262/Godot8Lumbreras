@@ -1,7 +1,8 @@
 extends Node
 
 @onready var btn_lista_sitios = $DynamicMargins/VB_MainContainer/main_container/ListaSitiosContainer/VBoxContainer/BTN_ListaSitios
-@onready var lista_sitios = $DynamicMargins/VB_MainContainer/main_container/ListaSitiosContainer/VBoxContainer/ListaSitios
+@onready var lista_sitios = $DynamicMargins/VB_MainContainer/main_container/ListaSitiosContainer/VBoxContainer/PanelContainer/ListaSitios
+
 
 var is_hidden = false  # Variable para rastrear el estado del contenedor
 

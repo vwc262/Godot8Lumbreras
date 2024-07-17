@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://vw46h30r4ia4" path="res://Scenes/Sitios/CuboClickeable.tscn" id="3_dfqhc"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_4jwef"]
-size = Vector2(30, 30)
+size = Vector2(300, 300)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_21ngq"]
 albedo_color = Color(1, 0.584314, 1, 1)

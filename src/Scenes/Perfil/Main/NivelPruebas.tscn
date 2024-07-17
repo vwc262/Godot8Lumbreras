@@ -1,75 +1,77 @@
 [gd_scene load_steps=6 format=3 uid="uid://cyug4nnq0yh1a"]
 
-[ext_resource type="PackedScene" uid="uid://d2khqjas6owik" path="res://Scenes/Perfil/alcaldias.glb" id="1_3x1im"]
 [ext_resource type="Script" path="res://Scripts/Navigation/Touch.gd" id="2_ui4vn"]
 [ext_resource type="PackedScene" uid="uid://vw46h30r4ia4" path="res://Scenes/Sitios/CuboClickeable.tscn" id="3_dfqhc"]
-[ext_resource type="PackedScene" uid="uid://c5idxbnu48it6" path="res://Scenes/Sitios/Genericos/Lumbrera_Generica_001.tscn" id="4_4hvr1"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_4jwef"]
+size = Vector2(30, 30)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_21ngq"]
+albedo_color = Color(1, 0.584314, 1, 1)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_47xlv"]
 
 [node name="Node3D" type="Node3D"]
 
-[node name="alcaldias" parent="." instance=ExtResource("1_3x1im")]
-transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, -0.106616, -4.86622, 0.158054)
-
-[node name="CSGBox3D" type="CSGBox3D" parent="alcaldias"]
-transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 34.8617, 13.4655, 70.3632)
-size = Vector3(56.4079, 1, 64.7556)
-
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 81.7049, 0.420746)
 
-[node name="Node3D" type="Node3D" parent="."]
-transform = Transform3D(0.76138, 0, 0.648306, 0, 1, 0, -0.648306, 0, 0.76138, 0, 30, 0)
-script = ExtResource("2_ui4vn")
-can_pan = true
-can_zoom = true
-can_rotate = true
+[node name="CSGBox3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("PlaneMesh_4jwef")
+surface_material_override/0 = SubResource("StandardMaterial3D_21ngq")
 
-[node name="Camera3D" type="Camera3D" parent="Node3D"]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0)
+[node name="CameraParent" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 15, 0)
+script = ExtResource("2_ui4vn")
+can_rotate = true
+rotate_treshold = 8
+minRotationY = -20.0
+maxRotationY = 20.0
+zoom_speed = 0.05
+can_zoom = true
+maxZoom = 2.0
+initialZoom = 15.0
+can_pan = true
+
+[node name="Camera3D" type="Camera3D" parent="CameraParent"]
+transform = Transform3D(1, 0, 0, 0, 0.258819, 0.965926, 0, -0.965926, 0.258819, 0, 0, 0)
 fov = 50.0
 
-[node name="CSGBox3D4" parent="." instance=ExtResource("3_dfqhc")]
-transform = Transform3D(1, 0, 0, 0, 0.98435, 0.176226, 0, -0.176226, 0.98435, -0.426116, -0.446837, 2.46074)
+[node name="Domi" type="Node" parent="."]
 
-[node name="Area3D2" type="Area3D" parent="CSGBox3D4"]
+[node name="CSGBox3D4" parent="Domi" instance=ExtResource("3_dfqhc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.68582, 1.00714, 0)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="CSGBox3D4/Area3D2"]
+[node name="Area3D2" type="Area3D" parent="Domi/CSGBox3D4"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Domi/CSGBox3D4/Area3D2"]
 shape = SubResource("BoxShape3D_47xlv")
 
-[node name="CSGBox3D5" parent="." instance=ExtResource("3_dfqhc")]
-transform = Transform3D(1, 0, 0, 0, 0.98435, 0.176226, 0, -0.176226, 0.98435, 3.39095, -2.1302, -0.879766)
+[node name="CSGBox3D5" parent="Domi" instance=ExtResource("3_dfqhc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.00714, -3.9628)
 
-[node name="Area3D2" type="Area3D" parent="CSGBox3D5"]
+[node name="Area3D2" type="Area3D" parent="Domi/CSGBox3D5"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="CSGBox3D5/Area3D2"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Domi/CSGBox3D5/Area3D2"]
 shape = SubResource("BoxShape3D_47xlv")
 
-[node name="CSGBox3D6" parent="." instance=ExtResource("3_dfqhc")]
-transform = Transform3D(1, 0, 0, 0, 0.98435, 0.176226, 0, -0.176226, 0.98435, 3.39095, -2.1302, -8.518)
+[node name="CSGBox3D6" parent="Domi" instance=ExtResource("3_dfqhc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.00714, 3.07299)
 
-[node name="Area3D2" type="Area3D" parent="CSGBox3D6"]
+[node name="Area3D2" type="Area3D" parent="Domi/CSGBox3D6"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="CSGBox3D6/Area3D2"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Domi/CSGBox3D6/Area3D2"]
 shape = SubResource("BoxShape3D_47xlv")
 
-[node name="CSGBox3D7" parent="." instance=ExtResource("3_dfqhc")]
-transform = Transform3D(1, 0, 0, 0, 0.98435, 0.176226, 0, -0.176226, 0.98435, 9.15051, -2.1302, -8.518)
+[node name="CSGBox3D7" parent="Domi" instance=ExtResource("3_dfqhc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.62288, 1.00714, 0)
 
-[node name="Area3D2" type="Area3D" parent="CSGBox3D7"]
+[node name="Area3D2" type="Area3D" parent="Domi/CSGBox3D7"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="CSGBox3D7/Area3D2"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Domi/CSGBox3D7/Area3D2"]
 shape = SubResource("BoxShape3D_47xlv")
 
-[node name="LumbreraGenerica001" parent="." instance=ExtResource("4_4hvr1")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.61003)
-
-[node name="LumbreraGenerica002" parent="." instance=ExtResource("4_4hvr1")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.44548, 0, 3.8374)
-
-[connection signal="IrA" from="CSGBox3D4" to="Node3D" method="_on_csg_box_3d_4_ir_a"]
-[connection signal="input_event" from="CSGBox3D4/Area3D2" to="CSGBox3D4" method="_on_area_3d_2_input_event"]
-[connection signal="input_event" from="CSGBox3D5/Area3D2" to="CSGBox3D5" method="_on_area_3d_2_input_event"]
-[connection signal="input_event" from="CSGBox3D6/Area3D2" to="CSGBox3D6" method="_on_area_3d_2_input_event"]
-[connection signal="input_event" from="CSGBox3D7/Area3D2" to="CSGBox3D7" method="_on_area_3d_2_input_event"]
+[connection signal="input_event" from="Domi/CSGBox3D4/Area3D2" to="Domi/CSGBox3D4" method="_on_area_3d_2_input_event"]
+[connection signal="input_event" from="Domi/CSGBox3D5/Area3D2" to="Domi/CSGBox3D5" method="_on_area_3d_2_input_event"]
+[connection signal="input_event" from="Domi/CSGBox3D6/Area3D2" to="Domi/CSGBox3D6" method="_on_area_3d_2_input_event"]
+[connection signal="input_event" from="Domi/CSGBox3D7/Area3D2" to="Domi/CSGBox3D7" method="_on_area_3d_2_input_event"]

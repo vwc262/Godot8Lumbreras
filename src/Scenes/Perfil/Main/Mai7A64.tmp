@@ -97,28 +97,17 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.556863, 0.541176, 1, 1)
 
-[node name="HBoxContainer" type="HBoxContainer" parent="DynamicMargins/VB_MainContainer/footer_container"]
+[node name="Button" type="Button" parent="DynamicMargins/VB_MainContainer/footer_container/ColorRect"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-
-[node name="BTN_reset_camara" type="Button" parent="DynamicMargins/VB_MainContainer/footer_container/HBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
 theme_override_font_sizes/font_size = 40
 text = "Reestablecer 
  Camara
 "
 
-[node name="BTN_mostrar_grafica" type="Button" parent="DynamicMargins/VB_MainContainer/footer_container/HBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-theme_override_font_sizes/font_size = 40
-text = "Graficar"
-
 [connection signal="pressed" from="DynamicMargins/VB_MainContainer/main_container/ListaSitiosContainer/VBoxContainer/BTN_ListaSitios" to="." method="_on_btn_lista_sitios_pressed"]
-[connection signal="pressed" from="DynamicMargins/VB_MainContainer/footer_container/HBoxContainer/BTN_reset_camara" to="." method="_on_button_pressed"]
-[connection signal="pressed" from="DynamicMargins/VB_MainContainer/footer_container/HBoxContainer/BTN_mostrar_grafica" to="." method="_on_btn_mostrar_grafica_pressed"]
+[connection signal="pressed" from="DynamicMargins/VB_MainContainer/footer_container/ColorRect/Button" to="." method="_on_button_pressed"]

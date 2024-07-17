@@ -20,7 +20,6 @@ extends Node3D
 @export var maxZoom:float
 @export var initialZoom:float
 
-
 var touch_points: Dictionary = {}
 var start_distance
 var start_zoom
@@ -40,6 +39,7 @@ func _ready():
 func _input(event):
 	if event is InputEventScreenTouch:
 		handle_touch(event)
+		NavigationManager.emit_signal("world_interacted")
 	elif event is InputEventScreenDrag:
 		handle_drag(event)
 

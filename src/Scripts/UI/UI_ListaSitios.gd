@@ -5,14 +5,14 @@ func _ready():
 	GlobalData.connect("datos_actualizados", _on_datos_actualizados)
 	
 	# Obtener las estaciones al iniciar
-	var estaciones = GlobalData.get_data()
+	var estaciones : Array[Estacion] = GlobalData.get_data()
 	imprimir_datos_estaciones(estaciones)
 
-func _on_datos_actualizados(estaciones):
+func _on_datos_actualizados(estaciones : Array[Estacion]):
 	imprimir_datos_estaciones(estaciones)
 
-func imprimir_datos_estaciones(estaciones):
-	for estacion in estaciones:
+func imprimir_datos_estaciones(estaciones : Array[Estacion]):
+	for estacion in estaciones:							
 		print("")
 		print("********************")
 		print("Estación:")
@@ -28,7 +28,7 @@ func imprimir_datos_estaciones(estaciones):
 		print("  Conexiones:", estacion.conexiones)
 		print("  Fallas:", estacion.fallas)
 		print("  Tipo Poleo:", estacion.tipo_poleo)
-		for señal in estacion.signals:
+		for señal in estacion.signals:				
 			print("    Señal:")
 			print("      ID:", señal.id_signal)
 			print("      Nombre:", señal.nombre)

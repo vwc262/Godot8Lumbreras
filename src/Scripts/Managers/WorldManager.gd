@@ -41,7 +41,7 @@ func _hide_lista_sitios():
 
 func _on_finish_tween():
 	# Confirmación de que el tween ha terminado
-	print("Final del tween")
+	# print("Final del tween")
 	if is_hidden:
 		lista_sitios.visible = false
 #endregion

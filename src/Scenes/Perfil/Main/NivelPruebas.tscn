@@ -25,7 +25,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 15, 0)
 script = ExtResource("2_ui4vn")
 can_pan = true
 pan_speed = 0.08
-can_rotate = true
 rotate_treshold = 8
 initialRotationCamera = -90
 minRotationY = -20.0

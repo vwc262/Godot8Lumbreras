@@ -76,7 +76,7 @@ func handle_drag(event: InputEventScreenDrag):
 			pan_vector.y = 0
 			global_translate(pan_vector)
 
-	elif touch_points.size() == 2:
+	elif touch_points.size() == 2:		
 		var touch_point_positions = touch_points.values()
 		var current_dist = touch_point_positions[1].distance_to(touch_point_positions[0])
 		var zoom_factor = current_dist / start_distance
@@ -118,9 +118,9 @@ func crearMiTween(callBack) -> Tween:
 func MovimientoRealizado():
 	pass
 
-func MoverCamara(idEstacion:int):
-	var tween := crearMiTween(MovimientoRealizado)
-	tween.tween_property(self,"position",NavigationManager.GetSiteAnchor(idEstacion),1.5)
+func MoverCamara(idEstacion:int):	
+		var tween := crearMiTween(MovimientoRealizado)
+		tween.tween_property(self,"position",NavigationManager.GetSiteAnchor(idEstacion),1.5)
 
 func ResetCameraPosition():
 	var tweenRot := crearMiTween(MovimientoRealizado)

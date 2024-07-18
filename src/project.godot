@@ -19,6 +19,8 @@ config/icon="res://icon.svg"
 
 NavigationManager="*res://Scripts/Managers/NavigationManager.gd"
 GlobalData="*res://Scripts/Managers/Global_DataStore.gd"
+TweenManager="*res://Scripts/Managers/Global_TweenManager.gd"
+GlobalUtils="*res://Scripts/Managers/Global_Utils.gd"
 
 [display]
 

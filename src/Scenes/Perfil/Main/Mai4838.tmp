@@ -1,11 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://x5m0onfran4m"]
+[gd_scene load_steps=6 format=3 uid="uid://x5m0onfran4m"]
 
 [ext_resource type="Script" path="res://Scripts/Managers/WorldManager.gd" id="1_symg7"]
 [ext_resource type="Script" path="res://Scripts/Fetcher/Fetch_Data.gd" id="1_xo6k0"]
 [ext_resource type="PackedScene" uid="uid://cyug4nnq0yh1a" path="res://Scenes/Perfil/Main/NivelPruebas.tscn" id="2_2gqy4"]
 [ext_resource type="Script" path="res://Scripts/UI/DynamicSafeArea.gd" id="3_mfb8h"]
-[ext_resource type="PackedScene" uid="uid://dbs3c52v8n226" path="res://Scenes/UI/ListaSitios.tscn" id="4_lo6xx"]
-[ext_resource type="PackedScene" uid="uid://bosmqfxs2ibvy" path="res://Scenes/Plotter/ChartControl.tscn" id="6_cdy0v"]
+[ext_resource type="PackedScene" uid="uid://dbs3c52v8n226" path="res://Scenes/Perfil/Main/ListaSitios.tscn" id="4_lo6xx"]
 
 [node name="Main" type="Node"]
 script = ExtResource("1_symg7")
@@ -26,7 +25,7 @@ script = ExtResource("3_mfb8h")
 layout_mode = 2
 
 [node name="header_container" type="Panel" parent="DynamicMargins/VB_MainContainer"]
-custom_minimum_size = Vector2(0, 125)
+custom_minimum_size = Vector2(0, 150)
 layout_mode = 2
 size_flags_vertical = 0
 
@@ -39,38 +38,37 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.560784, 0.670588, 0.972549, 1)
 
-[node name="Label" type="Label" parent="DynamicMargins/VB_MainContainer/header_container"]
+[node name="main_container" type="Panel" parent="DynamicMargins/VB_MainContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="DynamicMargins/VB_MainContainer/main_container"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_font_sizes/font_size = 60
-text = "Sistema Cutzamala"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="main_container" type="VBoxContainer" parent="DynamicMargins/VB_MainContainer"]
-layout_mode = 2
-size_flags_vertical = 3
-
-[node name="SubViewportContainer" type="SubViewportContainer" parent="DynamicMargins/VB_MainContainer/main_container"]
-layout_mode = 2
-size_flags_vertical = 3
 stretch = true
 
 [node name="SubViewport" type="SubViewport" parent="DynamicMargins/VB_MainContainer/main_container/SubViewportContainer"]
 handle_input_locally = false
 physics_object_picking = true
 physics_object_picking_sort = true
-size = Vector2i(1080, 929)
+size = Vector2i(1080, 1562)
 render_target_update_mode = 4
 
 [node name="World" parent="DynamicMargins/VB_MainContainer/main_container/SubViewportContainer/SubViewport" instance=ExtResource("2_2gqy4")]
 
 [node name="ListaSitiosContainer" type="PanelContainer" parent="DynamicMargins/VB_MainContainer/main_container"]
-layout_mode = 2
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -100.0
+grow_horizontal = 2
+grow_vertical = 0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="DynamicMargins/VB_MainContainer/main_container/ListaSitiosContainer"]
 layout_mode = 2
@@ -81,20 +79,12 @@ layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 
-[node name="PanelContainer" type="PanelContainer" parent="DynamicMargins/VB_MainContainer/main_container/ListaSitiosContainer/VBoxContainer"]
-layout_mode = 2
-
-[node name="ListaSitios" parent="DynamicMargins/VB_MainContainer/main_container/ListaSitiosContainer/VBoxContainer/PanelContainer" instance=ExtResource("4_lo6xx")]
-custom_minimum_size = Vector2(0, 650)
-layout_mode = 2
-
-[node name="ChartControl" parent="DynamicMargins/VB_MainContainer/main_container/ListaSitiosContainer/VBoxContainer/PanelContainer" instance=ExtResource("6_cdy0v")]
-visible = false
+[node name="ListaSitios" parent="DynamicMargins/VB_MainContainer/main_container/ListaSitiosContainer/VBoxContainer" instance=ExtResource("4_lo6xx")]
 custom_minimum_size = Vector2(0, 800)
 layout_mode = 2
 
 [node name="footer_container" type="Panel" parent="DynamicMargins/VB_MainContainer"]
-custom_minimum_size = Vector2(0, 100)
+custom_minimum_size = Vector2(0, 200)
 layout_mode = 2
 size_flags_vertical = 8
 
@@ -107,28 +97,17 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.556863, 0.541176, 1, 1)
 
-[node name="HBoxContainer" type="HBoxContainer" parent="DynamicMargins/VB_MainContainer/footer_container"]
+[node name="Button" type="Button" parent="DynamicMargins/VB_MainContainer/footer_container/ColorRect"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-
-[node name="BTN_reset_camara" type="Button" parent="DynamicMargins/VB_MainContainer/footer_container/HBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-theme_override_font_sizes/font_size = 30
+theme_override_font_sizes/font_size = 40
 text = "Reestablecer 
  Camara
 "
 
-[node name="BTN_mostrar_grafica" type="Button" parent="DynamicMargins/VB_MainContainer/footer_container/HBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-theme_override_font_sizes/font_size = 30
-text = "Graficar"
-
 [connection signal="pressed" from="DynamicMargins/VB_MainContainer/main_container/ListaSitiosContainer/VBoxContainer/BTN_ListaSitios" to="." method="_on_btn_lista_sitios_pressed"]
-[connection signal="pressed" from="DynamicMargins/VB_MainContainer/footer_container/HBoxContainer/BTN_reset_camara" to="." method="_on_button_pressed"]
-[connection signal="pressed" from="DynamicMargins/VB_MainContainer/footer_container/HBoxContainer/BTN_mostrar_grafica" to="." method="_on_btn_mostrar_grafica_pressed"]
+[connection signal="pressed" from="DynamicMargins/VB_MainContainer/footer_container/ColorRect/Button" to="." method="_on_button_pressed"]

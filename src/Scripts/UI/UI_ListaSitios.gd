@@ -1,21 +1,29 @@
 extends Node
 
+@export var sitio_scene: PackedScene
+@onready var v_box_container = $ScrollContainer/VBoxContainer
+
+# Lista para almacenar las instancias de los sitios
+var sitio_instancias = []
+
 func _ready():
 	# Conectarse a la señal datos_actualizados de DatosGlobales
 	GlobalData.connect("datos_actualizados", _on_datos_actualizados)
 	
 	# Obtener las estaciones al iniciar
-	var estaciones : Array[Estacion] = GlobalData.get_data()
+	var estaciones: Array[Estacion] = GlobalData.get_data()
 	imprimir_datos_estaciones(estaciones)
+	actualizar_e_instanciar_sitios(estaciones)
 
-func _on_datos_actualizados(estaciones : Array[Estacion]):
+func _on_datos_actualizados(estaciones: Array[Estacion]):
 	imprimir_datos_estaciones(estaciones)
+	actualizar_e_instanciar_sitios(estaciones)
 
-func imprimir_datos_estaciones(estaciones : Array[Estacion]):
-	for estacion in estaciones:							
+func imprimir_datos_estaciones(estaciones: Array[Estacion]):
+	for estacion in estaciones:
 		print("")
 		print("********************")
-		print("Estación:") 
+		print("Estación:")
 		print("  ID:", estacion.id_estacion)
 		print("  Nombre:", estacion.nombre)
 		print("  Latitud:", estacion.latitud)
@@ -28,7 +36,7 @@ func imprimir_datos_estaciones(estaciones : Array[Estacion]):
 		print("  Conexiones:", estacion.conexiones)
 		print("  Fallas:", estacion.fallas)
 		print("  Tipo Poleo:", estacion.tipo_poleo)
-		for señal in estacion.signals:				
+		for señal in estacion.signals:
 			print("    Señal:")
 			print("      ID:", señal.id_signal)
 			print("      Nombre:", señal.nombre)
@@ -45,3 +53,14 @@ func imprimir_datos_estaciones(estaciones : Array[Estacion]):
 			print("      ID:", linea.id_linea)
 			print("      Nombre:", linea.nombre)
 		print("********************")
+
+func actualizar_e_instanciar_sitios(estaciones: Array[Estacion]):
+	# Asegurarse de que hay suficientes instancias
+	while sitio_instancias.size() < estaciones.size():
+		var sitio_instance = sitio_scene.instantiate()
+		v_box_container.add_child(sitio_instance)
+		sitio_instancias.append(sitio_instance)
+
+	# Actualizar las instancias existentes con nuevos datos
+	for i in range(estaciones.size()):
+		sitio_instancias[i].set_datos(estaciones[i])

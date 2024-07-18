@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://vw46h30r4ia4" path="res://Scenes/Sitios/CuboClickeable.tscn" id="3_dfqhc"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_4jwef"]
-size = Vector2(30, 30)
+size = Vector2(300, 300)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_21ngq"]
 albedo_color = Color(1, 0.584314, 1, 1)
@@ -25,7 +25,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 15, 0)
 script = ExtResource("2_ui4vn")
 can_pan = true
 pan_speed = 0.08
-can_rotate = true
 rotate_treshold = 8
 initialRotationCamera = -90
 minRotationY = -20.0
@@ -37,7 +36,7 @@ maxZoom = 2.0
 initialZoom = 15.0
 
 [node name="Camera3D" type="Camera3D" parent="CameraParent"]
-transform = Transform3D(1, 0, 0, 0, 0.258819, 0.965926, 0, -0.965926, 0.258819, 0, 0, 0)
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0)
 fov = 85.0
 
 [node name="Domi" type="Node" parent="."]
@@ -78,7 +77,27 @@ IdEstacion = 4
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Domi/CSGBox3D7/Area3D2"]
 shape = SubResource("BoxShape3D_47xlv")
 
+[node name="CSGBox3D8" parent="Domi" instance=ExtResource("3_dfqhc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.62288, 1.00714, -14.7287)
+IdEstacion = 5
+
+[node name="Area3D2" type="Area3D" parent="Domi/CSGBox3D8"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Domi/CSGBox3D8/Area3D2"]
+shape = SubResource("BoxShape3D_47xlv")
+
+[node name="CSGBox3D9" parent="Domi" instance=ExtResource("3_dfqhc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.62288, 1.00714, 13.9748)
+IdEstacion = 6
+
+[node name="Area3D2" type="Area3D" parent="Domi/CSGBox3D9"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Domi/CSGBox3D9/Area3D2"]
+shape = SubResource("BoxShape3D_47xlv")
+
 [connection signal="input_event" from="Domi/CSGBox3D4/Area3D2" to="Domi/CSGBox3D4" method="_on_area_3d_2_input_event"]
 [connection signal="input_event" from="Domi/CSGBox3D5/Area3D2" to="Domi/CSGBox3D5" method="_on_area_3d_2_input_event"]
 [connection signal="input_event" from="Domi/CSGBox3D6/Area3D2" to="Domi/CSGBox3D6" method="_on_area_3d_2_input_event"]
 [connection signal="input_event" from="Domi/CSGBox3D7/Area3D2" to="Domi/CSGBox3D7" method="_on_area_3d_2_input_event"]
+[connection signal="input_event" from="Domi/CSGBox3D8/Area3D2" to="Domi/CSGBox3D8" method="_on_area_3d_2_input_event"]
+[connection signal="input_event" from="Domi/CSGBox3D9/Area3D2" to="Domi/CSGBox3D9" method="_on_area_3d_2_input_event"]

@@ -1,6 +1,6 @@
 extends Node
 
-
+signal world_interacted
 signal Go_TO
 signal ResetCameraPosition # Para reestablecer la posicion de la camara
 

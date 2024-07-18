@@ -18,12 +18,11 @@ layout_mode = 2
 custom_minimum_size = Vector2(0, 100)
 layout_mode = 2
 
-[node name="ColorRect" type="ColorRect" parent="VBoxContainer/HBoxContainer"]
+[node name="BTN_expandir_sitios" type="Button" parent="VBoxContainer/HBoxContainer"]
 custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
-color = Color(0, 0, 0, 1)
 
-[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer/ColorRect"]
+[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer/BTN_expandir_sitios"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -38,10 +37,12 @@ vertical_alignment = 1
 [node name="estado_enlace" type="ColorRect" parent="VBoxContainer/HBoxContainer"]
 custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
+mouse_filter = 1
 
 [node name="Panel" type="Panel" parent="VBoxContainer/HBoxContainer"]
 custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
+mouse_filter = 1
 
 [node name="numero_id" type="Label" parent="VBoxContainer/HBoxContainer/Panel"]
 layout_mode = 1
@@ -50,6 +51,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 1
 theme_override_font_sizes/font_size = 40
 text = "01
 "
@@ -59,6 +61,7 @@ vertical_alignment = 1
 [node name="nombre_fecha_contaier" type="Panel" parent="VBoxContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
+mouse_filter = 1
 
 [node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/HBoxContainer/nombre_fecha_contaier"]
 layout_mode = 1
@@ -87,11 +90,27 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 1
 
 [node name="PanelContainer" type="PanelContainer" parent="VBoxContainer"]
+custom_minimum_size = Vector2(0, 160)
 layout_mode = 2
+size_flags_vertical = 2
+mouse_filter = 1
 
-[node name="señales_sitios" type="VBoxContainer" parent="VBoxContainer/PanelContainer"]
+[node name="Control" type="Control" parent="VBoxContainer/PanelContainer"]
+clip_contents = true
 layout_mode = 2
+mouse_filter = 1
 
+[node name="señales_sitios" type="VBoxContainer" parent="VBoxContainer/PanelContainer/Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 0
+
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/BTN_expandir_sitios" to="." method="_on_btn_expandir_sitios_pressed"]
 [connection signal="pressed" from="VBoxContainer/HBoxContainer/nombre_fecha_contaier/Button" to="." method="_on_button_pressed"]

@@ -1,5 +1,8 @@
 extends Node
 
+@export var sitio_scene: PackedScene
+@onready var v_box_container = $ScrollContainer/VBoxContainer
+
 func _ready():
 	# Conectarse a la señal datos_actualizados de DatosGlobales
 	GlobalData.connect("datos_actualizados", _on_datos_actualizados)
@@ -10,6 +13,7 @@ func _ready():
 
 func _on_datos_actualizados(estaciones : Array[Estacion]):
 	imprimir_datos_estaciones(estaciones)
+	actualizar_e_instanciar_sitios(estaciones)
 
 func imprimir_datos_estaciones(estaciones : Array[Estacion]):
 	for estacion in estaciones:							
@@ -45,3 +49,12 @@ func imprimir_datos_estaciones(estaciones : Array[Estacion]):
 			print("      ID:", linea.id_linea)
 			print("      Nombre:", linea.nombre)
 		print("********************")
+
+func actualizar_e_instanciar_sitios(estaciones: Array[Estacion]):
+	for estacion in estaciones:
+		var sitio_instance = sitio_scene.instantiate()
+		v_box_container.add_child(sitio_instance)
+		sitio_instance.name = "Sitio"
+		sitio_instance.set_datos(estacion)
+		
+

@@ -33,6 +33,7 @@ var current_angle
 var anclaDistancia : Vector2
 var angle : float = 0
 var initalCameraPosition : Vector3
+var isTween: bool
 
 #endregion
 
@@ -120,21 +121,24 @@ func inclinate_camera()->float:
 		val = remap(position.y, initialZoom - offSetDistanceInclination, maxZoom, 0, 1)
 	return val
 		
-func OnTweenFinished_MovimientoRealizado():	
+func OnTweenFinished_MovimientoRealizado():
 	can_zoom= true
 	can_pan = true
+	isTween = false
 	pass
 
-func MoverCamara(idEstacion:int):	
-	DisableNavigation()	
-	var tween := TweenManager.init_tween(OnTweenFinished_MovimientoRealizado)
-	tween.tween_property(self,"position",NavigationManager.GetSiteAnchor(idEstacion),1.5)
+func MoverCamara(idEstacion:int):
+	DisableNavigation()
+	if !isTween:
+		var tween := TweenManager.init_tween(OnTweenFinished_MovimientoRealizado)
+		isTween = true
+		tween.tween_property(self,"position",NavigationManager.GetSiteAnchor(idEstacion),1.5)
 
 func ResetCameraPosition():
 	DisableNavigation()
 	var tweenRot := TweenManager.init_tween(OnTweenFinished_MovimientoRealizado)
 	tweenRot.set_parallel()
-	tweenRot.tween_property(self,"rotation_degrees",Vector3(0,0,0),.5)	
+	tweenRot.tween_property(self,"rotation_degrees",Vector3(0,0,0),.5)
 	tweenRot.tween_property(self,"position",initalCameraPosition,1)
 	
 	var tweenRotCamara := TweenManager.init_tween(Callable())
@@ -142,7 +146,6 @@ func ResetCameraPosition():
 
 #Deshabilita la navegacion mientras este ocurriendo una animacion
 func DisableNavigation():
-	
 	can_zoom= false
 	can_pan = false
 #endregion

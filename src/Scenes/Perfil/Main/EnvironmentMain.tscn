@@ -1,0 +1,26 @@
+[gd_scene load_steps=6 format=3 uid="uid://t3dbkejdc470"]
+
+[ext_resource type="Texture2D" uid="uid://b00afd4f355h" path="res://Recursos/Textures/89f6b071003e13975a06e34fb3a31ba5.hdr" id="1_wnieh"]
+
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_2a7iv"]
+panorama = ExtResource("1_wnieh")
+
+[sub_resource type="Sky" id="Sky_2giag"]
+sky_material = SubResource("PanoramaSkyMaterial_2a7iv")
+
+[sub_resource type="Environment" id="Environment_1jy3w"]
+background_mode = 2
+background_color = Color(0.612904, 0.740409, 1, 1)
+sky = SubResource("Sky_2giag")
+sky_custom_fov = 80.0
+
+[sub_resource type="CameraAttributesPhysical" id="CameraAttributesPhysical_tmwmd"]
+
+[node name="EnvironmentMain" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_1jy3w")
+camera_attributes = SubResource("CameraAttributesPhysical_tmwmd")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="WorldEnvironment"]
+transform = Transform3D(-0.292651, 0.163603, 0.94212, 0.954394, -0.0108703, 0.298351, 0.0590524, 0.986466, -0.152961, 0, 0, 0)

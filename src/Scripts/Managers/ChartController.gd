@@ -8,23 +8,35 @@ var f2: Function
 var f3: Function
 
 func _ready():
-	var datos_reportes = FileAccess.open("res://Scenes/Plotter/reportes_data.json", FileAccess.READ)
-	var content = datos_reportes.get_as_text()
-
-	var json_data = JSON.parse_string(content)
-	var lst_Reportes: Array[Reportes]
 	
-	for j in json_data:
-		lst_Reportes.append(Reportes.new(j))
+	var id_signals: Array[int] = [116, 117, 134]
+	
+	var datos_reportes_n = FileAccess.open("res://Scenes/Plotter/reportes_data_n.json", FileAccess.READ)
+	var datos_reportes_p = FileAccess.open("res://Scenes/Plotter/reportes_data_p.json", FileAccess.READ)
+	var datos_reportes_g = FileAccess.open("res://Scenes/Plotter/reportes_data_g.json", FileAccess.READ)
+	
+	var content_n = datos_reportes_n.get_as_text()
+	var content_p = datos_reportes_p.get_as_text()
+	var content_g = datos_reportes_g.get_as_text()
 
+	var json_data_n = JSON.parse_string(content_n)
+	var json_data_p = JSON.parse_string(content_p)
+	var json_data_g = JSON.parse_string(content_g)
+	
+	var dic_reportes: Dictionary = {}
+	
+	set_data(dic_reportes, json_data_n)
+	set_data(dic_reportes, json_data_p)
+	set_data(dic_reportes, json_data_g)
+		
 	# Let's create our @x values
-	var x: Array = lst_Reportes.map(func(l: Reportes): return l.tiempo).map(get_minutes_from_date_string)
+	var x: Array = dic_reportes.get(id_signals[0]).map(func(l: Reportes): return l.tiempo).map(get_minutes_from_date_string)
 	
 	# And our y values. It can be an n-size array of arrays.
 	# NOTE: `x.size() == y.size()` or `x.size() == y[n].size()`
-	var y: Array = lst_Reportes.map(func(l: Reportes): return l.valor)
-	var y2: Array = lst_Reportes.map(func(l: Reportes): return l.valor)
-	var y3: Array = lst_Reportes.map(func(l: Reportes): return l.valor)
+	var y: Array = dic_reportes.get(id_signals[0]).map(func(l: Reportes): return l.valor)
+	var y2: Array = dic_reportes.get(id_signals[1]).map(func(l: Reportes): return l.valor)
+	var y3: Array = dic_reportes.get(id_signals[2]).map(func(l: Reportes): return l.valor)
 	
 	# Let's customize the chart properties, which specify how the chart
 	# should look, plus some additional elements like labels, the scale, etc...
@@ -36,10 +48,10 @@ func _ready():
 	cp.colors.text = Color.WHITE_SMOKE
 	cp.draw_bounding_box = false
 	cp.show_legend = true
-	cp.title = "Air Quality Monitoring"
-	cp.x_label = "cambio de cuerpo"
-	cp.y_label = "mames"
-	cp.x_scale = 5
+	cp.title = "VWC Monitoreo del nivel"
+	cp.x_label = "Tiempo"
+	cp.y_label = "Variables"
+	cp.x_scale = 4
 	cp.y_scale = 10
 	cp.interactive = true # false by default, it allows the chart to create a tooltip to show point values
 	# and interecept clicks on the plot
@@ -54,7 +66,7 @@ func _ready():
 		# Let's also provide a dictionary of configuration parameters for this specific function.
 		{ 
 			color = Color("#36a2eb"), 		# The color associated to this function
-			marker = Function.Marker.NONE, 	# The marker that will be displayed for each drawn point (x,y)
+			marker = Function.Marker.CIRCLE, 	# The marker that will be displayed for each drawn point (x,y)
 											# since it is `NONE`, no marker will be shown.
 			type = Function.Type.AREA, 		# This defines what kind of plotting will be used, 
 											# in this case it will be an Area Chart.
@@ -62,8 +74,8 @@ func _ready():
 															# Line Charts and Area Charts.
 		}
 	)
-	f2 = Function.new(x, y2, "Presion", { color = Color("#ff6384"), marker = Function.Marker.CROSS })
-	f3 = Function.new(x, y3, "Gasto", { color = Color.GREEN, type = Function.Type.AREA, marker = Function.Marker.TRIANGLE })
+	f2 = Function.new(x, y2, "Presion", { color = Color("#ff6384"), type = Function.Type.LINE, marker = Function.Marker.CIRCLE })
+	f3 = Function.new(x, y3, "Enlace", { color = Color.GREEN, type = Function.Type.LINE, marker = Function.Marker.CIRCLE })
 	
 	# Now let's plot our data
 	chart.plot([f1, f2, f3], cp)
@@ -98,3 +110,11 @@ func get_minutes_from_date_string(date_time: String):
 	return Time.get_unix_time_from_datetime_string(date_time)
 	#return str(hours * 60 + minutes)
 	#return "%s:%s" % [hours, minutes]
+
+func set_data(dic: Dictionary, data):
+	for d in data:
+		var key: int = int(d["idSignal"])
+		if not dic.has(key):
+			dic[key] = []
+			
+		dic[key].append(Reportes.new(d))

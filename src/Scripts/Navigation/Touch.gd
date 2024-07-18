@@ -1,5 +1,6 @@
 extends Node3D
 
+#region Propiedades de editor
 @export_group('Pan')
 @export var can_pan: bool
 @export var pan_speed = 0.01
@@ -20,6 +21,9 @@ extends Node3D
 @export var maxZoom:float
 @export var initialZoom:float
 
+#endregion
+
+#region Propiedades para logica
 var touch_points: Dictionary = {}
 var start_distance
 var start_zoom
@@ -30,11 +34,14 @@ var anclaDistancia : Vector2
 var angle : float = 0
 var initalCameraPosition : Vector3
 
+#endregion
+
+#region Godot Functions
 func _ready():
-	$Camera3D.rotation_degrees.x = initialRotationCamera
-	NavigationManager.connect("Go_TO",MoverCamara)
-	NavigationManager.connect('ResetCameraPosition',ResetCameraPosition)
-	initalCameraPosition = position
+	$Camera3D.rotation_degrees.x = initialRotationCamera #Se guarda la rotacion inicial en x de la camara
+	NavigationManager.connect("Go_TO",MoverCamara)  #Suscripcion de evento
+	NavigationManager.connect('ResetCameraPosition',ResetCameraPosition) #Suscripcion de evento
+	initalCameraPosition = position # se guarda la posicion inicial de la camara
 
 func _input(event):
 	if event is InputEventScreenTouch:
@@ -42,7 +49,11 @@ func _input(event):
 		NavigationManager.emit_signal("world_interacted")
 	elif event is InputEventScreenDrag:
 		handle_drag(event)
+		
+#endregion		
 
+#region CustomFunctions
+#Se hacen los presets iniciales del touch event
 func handle_touch(event: InputEventScreenTouch):
 	if event.pressed:
 		touch_points[event.index] = event.position
@@ -76,7 +87,7 @@ func handle_drag(event: InputEventScreenDrag):
 			pan_vector.y = 0
 			global_translate(pan_vector)
 
-	elif touch_points.size() == 2:		
+	elif touch_points.size() == 2:
 		var touch_point_positions = touch_points.values()
 		var current_dist = touch_point_positions[1].distance_to(touch_point_positions[0])
 		var zoom_factor = current_dist / start_distance
@@ -108,24 +119,30 @@ func inclinate_camera()->float:
 	if position.y < initialZoom - offSetDistanceInclination:
 		val = remap(position.y, initialZoom - offSetDistanceInclination, maxZoom, 0, 1)
 	return val
-	
-
-func crearMiTween(callBack) -> Tween:
-	var tween = create_tween()
-	tween.connect("finished",callBack)
-	return tween
-	
-func MovimientoRealizado():
+		
+func OnTweenFinished_MovimientoRealizado():	
+	can_zoom= true
+	can_pan = true
 	pass
 
 func MoverCamara(idEstacion:int):	
-		var tween := crearMiTween(MovimientoRealizado)
-		tween.tween_property(self,"position",NavigationManager.GetSiteAnchor(idEstacion),1.5)
+	DisableNavigation()	
+	var tween := TweenManager.init_tween(OnTweenFinished_MovimientoRealizado)
+	tween.tween_property(self,"position",NavigationManager.GetSiteAnchor(idEstacion),1.5)
 
 func ResetCameraPosition():
-	var tweenRot := crearMiTween(MovimientoRealizado)
-	tweenRot.tween_property(self,"rotation_degrees",Vector3(0,0,0),.5)
-	var tweenRotCamara := crearMiTween(MovimientoRealizado)
+	DisableNavigation()
+	var tweenRot := TweenManager.init_tween(OnTweenFinished_MovimientoRealizado)
+	tweenRot.set_parallel()
+	tweenRot.tween_property(self,"rotation_degrees",Vector3(0,0,0),.5)	
+	tweenRot.tween_property(self,"position",initalCameraPosition,1)
+	
+	var tweenRotCamara := TweenManager.init_tween(Callable())
 	tweenRotCamara.tween_property($Camera3D,"rotation_degrees",Vector3(initialRotationCamera,0,0),.5)
-	var tween := crearMiTween(MovimientoRealizado)
-	tween.tween_property(self,"position",initalCameraPosition,1)
+
+#Deshabilita la navegacion mientras este ocurriendo una animacion
+func DisableNavigation():
+	
+	can_zoom= false
+	can_pan = false
+#endregion

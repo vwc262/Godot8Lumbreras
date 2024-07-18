@@ -4,14 +4,27 @@ extends Control
 
 # This Chart will plot 3 different functions
 var f1: Function
+var f2: Function
+var f3: Function
 
 func _ready():
+	var datos_reportes = FileAccess.open("res://Scenes/Plotter/reportes_data.json", FileAccess.READ)
+	var content = datos_reportes.get_as_text()
+
+	var json_data = JSON.parse_string(content)
+	var lst_Reportes: Array[Reportes]
+	
+	for j in json_data:
+		lst_Reportes.append(Reportes.new(j))
+
 	# Let's create our @x values
-	var x: PackedFloat32Array = ArrayOperations.multiply_float(range(-10, 11, 1), 0.5)
+	var x: Array = lst_Reportes.map(func(l: Reportes): return l.tiempo).map(get_minutes_from_date_string)
 	
 	# And our y values. It can be an n-size array of arrays.
 	# NOTE: `x.size() == y.size()` or `x.size() == y[n].size()`
-	var y: Array = ArrayOperations.multiply_int(ArrayOperations.cos(x), 20)
+	var y: Array = lst_Reportes.map(func(l: Reportes): return l.valor)
+	var y2: Array = lst_Reportes.map(func(l: Reportes): return l.valor)
+	var y3: Array = lst_Reportes.map(func(l: Reportes): return l.valor)
 	
 	# Let's customize the chart properties, which specify how the chart
 	# should look, plus some additional elements like labels, the scale, etc...
@@ -22,9 +35,10 @@ func _ready():
 	cp.colors.ticks = Color("#283442")
 	cp.colors.text = Color.WHITE_SMOKE
 	cp.draw_bounding_box = false
+	cp.show_legend = true
 	cp.title = "Air Quality Monitoring"
-	cp.x_label = "Time"
-	cp.y_label = "Sensor values"
+	cp.x_label = "cambio de cuerpo"
+	cp.y_label = "mames"
 	cp.x_scale = 5
 	cp.y_scale = 10
 	cp.interactive = true # false by default, it allows the chart to create a tooltip to show point values
@@ -32,7 +46,7 @@ func _ready():
 	
 	# Let's add values to our functions
 	f1 = Function.new(
-		x, y, "Pressure", # This will create a function with x and y values taken by the Arrays 
+		x, y, "Nivel", # This will create a function with x and y values taken by the Arrays 
 						# we have created previously. This function will also be named "Pressure"
 						# as it contains 'pressure' values.
 						# If set, the name of a function will be used both in the Legend
@@ -40,17 +54,19 @@ func _ready():
 		# Let's also provide a dictionary of configuration parameters for this specific function.
 		{ 
 			color = Color("#36a2eb"), 		# The color associated to this function
-			marker = Function.Marker.CIRCLE, 	# The marker that will be displayed for each drawn point (x,y)
+			marker = Function.Marker.NONE, 	# The marker that will be displayed for each drawn point (x,y)
 											# since it is `NONE`, no marker will be shown.
-			type = Function.Type.LINE, 		# This defines what kind of plotting will be used, 
-											# in this case it will be a Linear Chart.
-			interpolation = Function.Interpolation.STAIR	# Interpolation mode, only used for 
+			type = Function.Type.AREA, 		# This defines what kind of plotting will be used, 
+											# in this case it will be an Area Chart.
+			interpolation = Function.Interpolation.LINEAR	# Interpolation mode, only used for 
 															# Line Charts and Area Charts.
 		}
 	)
+	f2 = Function.new(x, y2, "Presion", { color = Color("#ff6384"), marker = Function.Marker.CROSS })
+	f3 = Function.new(x, y3, "Gasto", { color = Color.GREEN, type = Function.Type.AREA, marker = Function.Marker.TRIANGLE })
 	
 	# Now let's plot our data
-	chart.plot([f1], cp)
+	chart.plot([f1, f2, f3], cp)
 	
 	# Uncommenting this line will show how real time data plotting works
 	set_process(false)
@@ -64,9 +80,21 @@ func _process(delta: float):
 	
 	# we can use the `Function.add_point(x, y)` method to update a function
 	f1.add_point(new_val, cos(new_val) * 20)
-	f1.remove_point(0)
+	f2.add_point(new_val, (sin(new_val) * 20) + 20)
+	f3.add_point(new_val, (cos(new_val) * -5) - 3)
 	chart.queue_redraw() # This will force the Chart to be updated
 
 
 func _on_CheckButton_pressed():
 	set_process(not is_processing())
+
+func get_minutes_from_date_string(date_time: String):
+	
+	#"2024-07-18T06:07:00"
+	var time:String = date_time.split("T")[1]
+	var time_splitted = time.split(":")
+	var hours: int = int(time_splitted[0])
+	var minutes: int = int(time_splitted[1])	
+	return Time.get_unix_time_from_datetime_string(date_time)
+	#return str(hours * 60 + minutes)
+	#return "%s:%s" % [hours, minutes]

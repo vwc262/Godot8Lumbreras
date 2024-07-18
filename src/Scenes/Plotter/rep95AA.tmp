@@ -1,0 +1,437 @@
+[
+	{
+		"idSignal": 117,
+		"valor": 7.14,
+		"tiempo": "2024-07-18T06:02:37"
+	},
+	{
+		"idSignal": 117,
+		"valor": 7.14,
+		"tiempo": "2024-07-18T06:07:47"
+	},
+	{
+		"idSignal": 117,
+		"valor": 7.11,
+		"tiempo": "2024-07-18T06:12:59"
+	},
+	{
+		"idSignal": 117,
+		"valor": 7.12,
+		"tiempo": "2024-07-18T06:18:11"
+	},
+	{
+		"idSignal": 117,
+		"valor": 7.17,
+		"tiempo": "2024-07-18T06:23:17"
+	},
+	{
+		"idSignal": 117,
+		"valor": 7.17,
+		"tiempo": "2024-07-18T06:28:30"
+	},
+	{
+		"idSignal": 117,
+		"valor": 7.09,
+		"tiempo": "2024-07-18T06:33:41"
+	},
+	{
+		"idSignal": 117,
+		"valor": 7.14,
+		"tiempo": "2024-07-18T06:38:50"
+	},
+	{
+		"idSignal": 117,
+		"valor": 7.11,
+		"tiempo": "2024-07-18T06:43:59"
+	},
+	{
+		"idSignal": 117,
+		"valor": 7.15,
+		"tiempo": "2024-07-18T06:49:11"
+	},
+	{
+		"idSignal": 117,
+		"valor": 7.14,
+		"tiempo": "2024-07-18T06:54:21"
+	},
+	{
+		"idSignal": 117,
+		"valor": 7.12,
+		"tiempo": "2024-07-18T06:59:32"
+	},
+	{
+		"idSignal": 117,
+		"valor": 7.12,
+		"tiempo": "2024-07-18T07:04:41"
+	},
+	{
+		"idSignal": 117,
+		"valor": 7.14,
+		"tiempo": "2024-07-18T07:09:53"
+	},
+	{
+		"idSignal": 117,
+		"valor": 7.12,
+		"tiempo": "2024-07-18T07:15:03"
+	},
+	{
+		"idSignal": 117,
+		"valor": 7.14,
+		"tiempo": "2024-07-18T07:20:12"
+	},
+	{
+		"idSignal": 117,
+		"valor": 7.17,
+		"tiempo": "2024-07-18T07:25:23"
+	},
+	{
+		"idSignal": 117,
+		"valor": 7.15,
+		"tiempo": "2024-07-18T07:30:34"
+	},
+	{
+		"idSignal": 117,
+		"valor": 7.17,
+		"tiempo": "2024-07-18T07:35:43"
+	},
+	{
+		"idSignal": 117,
+		"valor": 7.12,
+		"tiempo": "2024-07-18T07:40:54"
+	},
+	{
+		"idSignal": 117,
+		"valor": 7.14,
+		"tiempo": "2024-07-18T07:46:04"
+	},
+	{
+		"idSignal": 117,
+		"valor": 7.14,
+		"tiempo": "2024-07-18T07:51:13"
+	},
+	{
+		"idSignal": 117,
+		"valor": 7.17,
+		"tiempo": "2024-07-18T07:56:26"
+	},
+	{
+		"idSignal": 117,
+		"valor": 7.17,
+		"tiempo": "2024-07-18T08:01:35"
+	},
+	{
+		"idSignal": 117,
+		"valor": 7.12,
+		"tiempo": "2024-07-18T08:06:46"
+	},
+	{
+		"idSignal": 117,
+		"valor": 7.12,
+		"tiempo": "2024-07-18T08:11:54"
+	},
+	{
+		"idSignal": 117,
+		"valor": 7.11,
+		"tiempo": "2024-07-18T08:17:05"
+	},
+	{
+		"idSignal": 117,
+		"valor": 7.12,
+		"tiempo": "2024-07-18T08:22:17"
+	},
+	{
+		"idSignal": 117,
+		"valor": 7.12,
+		"tiempo": "2024-07-18T08:27:27"
+	},
+	{
+		"idSignal": 117,
+		"valor": 7.12,
+		"tiempo": "2024-07-18T08:32:37"
+	},
+	{
+		"idSignal": 117,
+		"valor": 7.11,
+		"tiempo": "2024-07-18T08:37:46"
+	},
+	{
+		"idSignal": 117,
+		"valor": 7.15,
+		"tiempo": "2024-07-18T08:42:58"
+	},
+	{
+		"idSignal": 117,
+		"valor": 7.14,
+		"tiempo": "2024-07-18T08:48:09"
+	},
+	{
+		"idSignal": 117,
+		"valor": 7.15,
+		"tiempo": "2024-07-18T08:53:19"
+	},
+	{
+		"idSignal": 117,
+		"valor": 7.11,
+		"tiempo": "2024-07-18T08:58:28"
+	},
+	{
+		"idSignal": 117,
+		"valor": 7.11,
+		"tiempo": "2024-07-18T09:03:38"
+	},
+	{
+		"idSignal": 117,
+		"valor": 7.11,
+		"tiempo": "2024-07-18T09:08:50"
+	},
+	{
+		"idSignal": 117,
+		"valor": 7.12,
+		"tiempo": "2024-07-18T09:13:59"
+	},
+	{
+		"idSignal": 117,
+		"valor": 7.11,
+		"tiempo": "2024-07-18T09:19:11"
+	},
+	{
+		"idSignal": 117,
+		"valor": 7.19,
+		"tiempo": "2024-07-18T09:24:20"
+	},
+	{
+		"idSignal": 117,
+		"valor": 7.17,
+		"tiempo": "2024-07-18T09:29:29"
+	},
+	{
+		"idSignal": 117,
+		"valor": 7.11,
+		"tiempo": "2024-07-18T09:34:38"
+	},
+	{
+		"idSignal": 117,
+		"valor": 7.11,
+		"tiempo": "2024-07-18T09:39:49"
+	},
+	{
+		"idSignal": 117,
+		"valor": 7.11,
+		"tiempo": "2024-07-18T09:45:01"
+	},
+	{
+		"idSignal": 117,
+		"valor": 7.17,
+		"tiempo": "2024-07-18T09:50:11"
+	},
+	{
+		"idSignal": 117,
+		"valor": 7.15,
+		"tiempo": "2024-07-18T09:55:21"
+	},
+	{
+		"idSignal": 117,
+		"valor": 7.19,
+		"tiempo": "2024-07-18T10:00:33"
+	},
+	{
+		"idSignal": 117,
+		"valor": 7.14,
+		"tiempo": "2024-07-18T10:05:42"
+	},
+	{
+		"idSignal": 117,
+		"valor": 7.12,
+		"tiempo": "2024-07-18T10:10:51"
+	},
+	{
+		"idSignal": 117,
+		"valor": 7.15,
+		"tiempo": "2024-07-18T10:16:04"
+	},
+	{
+		"idSignal": 117,
+		"valor": 7.14,
+		"tiempo": "2024-07-18T10:21:14"
+	},
+	{
+		"idSignal": 117,
+		"valor": 7.12,
+		"tiempo": "2024-07-18T10:26:23"
+	},
+	{
+		"idSignal": 117,
+		"valor": 7.14,
+		"tiempo": "2024-07-18T10:31:23"
+	},
+	{
+		"idSignal": 117,
+		"valor": 7.14,
+		"tiempo": "2024-07-18T10:36:34"
+	},
+	{
+		"idSignal": 117,
+		"valor": 7.17,
+		"tiempo": "2024-07-18T10:41:43"
+	},
+	{
+		"idSignal": 117,
+		"valor": 7.14,
+		"tiempo": "2024-07-18T10:46:53"
+	},
+	{
+		"idSignal": 117,
+		"valor": 7.09,
+		"tiempo": "2024-07-18T10:52:05"
+	},
+	{
+		"idSignal": 117,
+		"valor": 7.11,
+		"tiempo": "2024-07-18T10:57:15"
+	},
+	{
+		"idSignal": 117,
+		"valor": 7.12,
+		"tiempo": "2024-07-18T11:02:24"
+	},
+	{
+		"idSignal": 117,
+		"valor": 7.14,
+		"tiempo": "2024-07-18T11:07:35"
+	},
+	{
+		"idSignal": 117,
+		"valor": 7.17,
+		"tiempo": "2024-07-18T11:12:45"
+	},
+	{
+		"idSignal": 117,
+		"valor": 7.17,
+		"tiempo": "2024-07-18T11:17:56"
+	},
+	{
+		"idSignal": 117,
+		"valor": 7.14,
+		"tiempo": "2024-07-18T11:23:06"
+	},
+	{
+		"idSignal": 117,
+		"valor": 7.12,
+		"tiempo": "2024-07-18T11:28:17"
+	},
+	{
+		"idSignal": 117,
+		"valor": 7.11,
+		"tiempo": "2024-07-18T11:33:13"
+	},
+	{
+		"idSignal": 117,
+		"valor": 7.17,
+		"tiempo": "2024-07-18T11:38:28"
+	},
+	{
+		"idSignal": 117,
+		"valor": 7.14,
+		"tiempo": "2024-07-18T11:43:38"
+	},
+	{
+		"idSignal": 117,
+		"valor": 7.12,
+		"tiempo": "2024-07-18T11:48:49"
+	},
+	{
+		"idSignal": 117,
+		"valor": 7.17,
+		"tiempo": "2024-07-18T11:53:58"
+	},
+	{
+		"idSignal": 117,
+		"valor": 7.14,
+		"tiempo": "2024-07-18T11:59:09"
+	},
+	{
+		"idSignal": 117,
+		"valor": 7.11,
+		"tiempo": "2024-07-18T12:04:20"
+	},
+	{
+		"idSignal": 117,
+		"valor": 7.11,
+		"tiempo": "2024-07-18T12:09:31"
+	},
+	{
+		"idSignal": 117,
+		"valor": 7.09,
+		"tiempo": "2024-07-18T12:14:40"
+	},
+	{
+		"idSignal": 117,
+		"valor": 7.12,
+		"tiempo": "2024-07-18T12:19:49"
+	},
+	{
+		"idSignal": 117,
+		"valor": 7.14,
+		"tiempo": "2024-07-18T12:25:00"
+	},
+	{
+		"idSignal": 117,
+		"valor": 7.19,
+		"tiempo": "2024-07-18T12:30:09"
+	},
+	{
+		"idSignal": 117,
+		"valor": 7.14,
+		"tiempo": "2024-07-18T12:35:19"
+	},
+	{
+		"idSignal": 117,
+		"valor": 7.14,
+		"tiempo": "2024-07-18T12:40:29"
+	},
+	{
+		"idSignal": 117,
+		"valor": 7.12,
+		"tiempo": "2024-07-18T12:45:40"
+	},
+	{
+		"idSignal": 117,
+		"valor": 7.15,
+		"tiempo": "2024-07-18T12:50:52"
+	},
+	{
+		"idSignal": 117,
+		"valor": 7.17,
+		"tiempo": "2024-07-18T12:56:00"
+	},
+	{
+		"idSignal": 117,
+		"valor": 7.12,
+		"tiempo": "2024-07-18T13:01:12"
+	},
+	{
+		"idSignal": 117,
+		"valor": 7.12,
+		"tiempo": "2024-07-18T13:06:24"
+	},
+	{
+		"idSignal": 117,
+		"valor": 7.17,
+		"tiempo": "2024-07-18T13:11:33"
+	},
+	{
+		"idSignal": 117,
+		"valor": 7.15,
+		"tiempo": "2024-07-18T13:16:41"
+	},
+	{
+		"idSignal": 117,
+		"valor": 7.12,
+		"tiempo": "2024-07-18T13:21:54"
+	},
+	{
+		"idSignal": 117,
+		"valor": 7.14,
+		"tiempo": "2024-07-18T13:27:24"
+	}
+]

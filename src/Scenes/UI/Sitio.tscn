@@ -21,6 +21,7 @@ layout_mode = 2
 [node name="ColorRect" type="ColorRect" parent="VBoxContainer/HBoxContainer"]
 custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
+mouse_filter = 1
 color = Color(0, 0, 0, 1)
 
 [node name="Label" type="Label" parent="VBoxContainer/HBoxContainer/ColorRect"]
@@ -30,6 +31,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 1
 theme_override_font_sizes/font_size = 30
 text = "+"
 horizontal_alignment = 1
@@ -38,10 +40,12 @@ vertical_alignment = 1
 [node name="estado_enlace" type="ColorRect" parent="VBoxContainer/HBoxContainer"]
 custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
+mouse_filter = 1
 
 [node name="Panel" type="Panel" parent="VBoxContainer/HBoxContainer"]
 custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
+mouse_filter = 1
 
 [node name="numero_id" type="Label" parent="VBoxContainer/HBoxContainer/Panel"]
 layout_mode = 1
@@ -50,6 +54,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 1
 theme_override_font_sizes/font_size = 40
 text = "01
 "
@@ -59,6 +64,7 @@ vertical_alignment = 1
 [node name="nombre_fecha_contaier" type="Panel" parent="VBoxContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
+mouse_filter = 1
 
 [node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/HBoxContainer/nombre_fecha_contaier"]
 layout_mode = 1
@@ -87,9 +93,11 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 1
 
 [node name="PanelContainer" type="PanelContainer" parent="VBoxContainer"]
 layout_mode = 2
+mouse_filter = 1
 
 [node name="señales_sitios" type="VBoxContainer" parent="VBoxContainer/PanelContainer"]
 layout_mode = 2

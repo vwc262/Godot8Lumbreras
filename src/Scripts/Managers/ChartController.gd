@@ -8,7 +8,7 @@ var f2: Function
 var f3: Function
 
 func _ready():
-	
+	GlobalUtils.ChartControl = self.get_parent()
 	var id_signals: Array[int] = [116, 117, 134]
 	
 	var datos_reportes_n = FileAccess.open("res://Scenes/Plotter/reportes_data_n.json", FileAccess.READ)

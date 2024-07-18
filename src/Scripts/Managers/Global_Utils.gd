@@ -2,6 +2,8 @@
 extends Node
 class_name Utils
 
+var ChartControl: Control
+
 # Función para formatear la fecha
 func formatear_fecha(fecha_string: String) -> String:
 	# Dividir la fecha y hora

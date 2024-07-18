@@ -37,8 +37,8 @@ func _ready():
 	cp.draw_bounding_box = false
 	cp.show_legend = true
 	cp.title = "Air Quality Monitoring"
-	cp.x_label = "Time"
-	cp.y_label = "Sensor values"
+	cp.x_label = "cambio de cuerpo"
+	cp.y_label = "mames"
 	cp.x_scale = 5
 	cp.y_scale = 10
 	cp.interactive = true # false by default, it allows the chart to create a tooltip to show point values
@@ -94,7 +94,7 @@ func get_minutes_from_date_string(date_time: String):
 	var time:String = date_time.split("T")[1]
 	var time_splitted = time.split(":")
 	var hours: int = int(time_splitted[0])
-	var minutes: int = int(time_splitted[1])
-	
-	return hours * 60 + minutes
+	var minutes: int = int(time_splitted[1])	
+	return Time.get_unix_time_from_datetime_string(date_time)
+	#return str(hours * 60 + minutes)
 	#return "%s:%s" % [hours, minutes]

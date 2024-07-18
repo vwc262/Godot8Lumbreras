@@ -102,7 +102,7 @@ func _draw() -> void:
 			
 			for i in x.size():
 				if not is_x_fixed:
-					_x[i] = x[i].slice(max(0, x[i].size() - chart_properties.max_samples), x[i].size())
+					_x[i] = x[i].slice(max(0, x[i].size() - chart_properties.max_samples), x[i].size())					
 				if not is_y_fixed:
 					_y[i] = y[i].slice(max(0, y[i].size() - chart_properties.max_samples), y[i].size())
 			
@@ -133,7 +133,7 @@ func calculate_domain(values: Array) -> Dictionary:
 	for value_array in values:
 		if ECUtilities._contains_string(value_array):
 			return { lb = 0.0, ub = (value_array.size() - 1), has_decimals = false , fixed = false }
-	var min_max: Dictionary = ECUtilities._find_min_max(values)
+	var min_max: Dictionary = ECUtilities._find_min_max(values)	
 	
 	if not chart_properties.smooth_domain:
 		return { lb = min_max.min, ub = min_max.max, has_decimals = ECUtilities._has_decimals(values), fixed = false }

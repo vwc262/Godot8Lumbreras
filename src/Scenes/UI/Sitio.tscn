@@ -101,6 +101,7 @@ mouse_filter = 1
 [node name="Control" type="Control" parent="VBoxContainer/PanelContainer"]
 clip_contents = true
 layout_mode = 2
+mouse_filter = 1
 
 [node name="señales_sitios" type="VBoxContainer" parent="VBoxContainer/PanelContainer/Control"]
 layout_mode = 1

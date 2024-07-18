@@ -46,4 +46,3 @@ func padLeft(number: int):
 	if number < 10:
 		s = "0" + s
 	return s
-	pass

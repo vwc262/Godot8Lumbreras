@@ -176,8 +176,8 @@ func _get_tick_label(line_index: int, line_value: float, axis_has_decimals: bool
 	else:			     				
 		var datetime_dict_from_system = Time.get_datetime_dict_from_unix_time(line_value)
 		if datetime_dict_from_system.year > 2020:
-			return ""
-		return GlobalUtils.GetDateTimeFormatFromTicks(datetime_dict_from_system)
+			return GlobalUtils.GetDateTimeFormatFromTicks(datetime_dict_from_system)
+		return ""
 	
 	#IMPORTANTE FORMA PARTE DE LA LIBRERIA NO BORRAR	
 	#print(fecha)

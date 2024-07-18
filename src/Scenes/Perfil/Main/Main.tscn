@@ -26,7 +26,7 @@ script = ExtResource("3_mfb8h")
 layout_mode = 2
 
 [node name="header_container" type="Panel" parent="DynamicMargins/VB_MainContainer"]
-custom_minimum_size = Vector2(0, 150)
+custom_minimum_size = Vector2(0, 125)
 layout_mode = 2
 size_flags_vertical = 0
 
@@ -64,7 +64,7 @@ stretch = true
 handle_input_locally = false
 physics_object_picking = true
 physics_object_picking_sort = true
-size = Vector2i(1080, 654)
+size = Vector2i(1080, 929)
 render_target_update_mode = 4
 
 [node name="World" parent="DynamicMargins/VB_MainContainer/main_container/SubViewportContainer/SubViewport" instance=ExtResource("2_2gqy4")]
@@ -85,7 +85,7 @@ size_flags_vertical = 4
 layout_mode = 2
 
 [node name="ListaSitios" parent="DynamicMargins/VB_MainContainer/main_container/ListaSitiosContainer/VBoxContainer/PanelContainer" instance=ExtResource("4_lo6xx")]
-custom_minimum_size = Vector2(0, 800)
+custom_minimum_size = Vector2(0, 650)
 layout_mode = 2
 
 [node name="ChartControl" parent="DynamicMargins/VB_MainContainer/main_container/ListaSitiosContainer/VBoxContainer/PanelContainer" instance=ExtResource("6_cdy0v")]
@@ -94,7 +94,7 @@ custom_minimum_size = Vector2(0, 800)
 layout_mode = 2
 
 [node name="footer_container" type="Panel" parent="DynamicMargins/VB_MainContainer"]
-custom_minimum_size = Vector2(0, 200)
+custom_minimum_size = Vector2(0, 100)
 layout_mode = 2
 size_flags_vertical = 8
 

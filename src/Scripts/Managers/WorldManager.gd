@@ -30,7 +30,7 @@ func _on_world_interacted():
 func _show_lista_sitios():
 	# Inicializar el Tween y configurar la animación para mostrar
 	var tween = TweenManager.init_tween(_on_finish_tween)
-	TweenManager.tween_animacion(tween, lista_sitios, "custom_minimum_size:y", 800, 0.5)  # 800 tamaño original
+	TweenManager.tween_animacion(tween, lista_sitios, "custom_minimum_size:y", 650, 0.5)  # 800 tamaño original
 	lista_sitios.visible = true
 	is_hidden = false
 

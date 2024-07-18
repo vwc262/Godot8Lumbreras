@@ -1,0 +1,56 @@
+[gd_scene load_steps=3 format=3 uid="uid://boyo78e7myi2o"]
+
+[ext_resource type="Script" path="res://Scripts/UI/SignalSitio.gd" id="1_85657"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4g1ub"]
+
+[node name="Señal" type="PanelContainer"]
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 53.0
+grow_horizontal = 2
+size_flags_horizontal = 3
+mouse_filter = 1
+script = ExtResource("1_85657")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+
+[node name="nombre_señal" type="Label" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "Nombre Señal"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(600, 0)
+layout_mode = 2
+size_flags_horizontal = 10
+
+[node name="valor_señal" type="Label" parent="VBoxContainer/HBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "00m"
+horizontal_alignment = 1
+
+[node name="progressbar_container" type="VBoxContainer" parent="VBoxContainer/HBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="semaforo_valor" type="Label" parent="VBoxContainer/HBoxContainer/HBoxContainer/progressbar_container"]
+custom_minimum_size = Vector2(250, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 15
+text = "00 de 00"
+horizontal_alignment = 3
+vertical_alignment = 1
+
+[node name="ProgressBar" type="ProgressBar" parent="VBoxContainer/HBoxContainer/HBoxContainer/progressbar_container"]
+layout_mode = 2
+theme_override_styles/background = SubResource("StyleBoxEmpty_4g1ub")
+value = 10.0

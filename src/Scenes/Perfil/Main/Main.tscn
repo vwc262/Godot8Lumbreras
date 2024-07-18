@@ -4,7 +4,7 @@
 [ext_resource type="Script" path="res://Scripts/Fetcher/Fetch_Data.gd" id="1_xo6k0"]
 [ext_resource type="PackedScene" uid="uid://cyug4nnq0yh1a" path="res://Scenes/Perfil/Main/NivelPruebas.tscn" id="2_2gqy4"]
 [ext_resource type="Script" path="res://Scripts/UI/DynamicSafeArea.gd" id="3_mfb8h"]
-[ext_resource type="PackedScene" uid="uid://dbs3c52v8n226" path="res://Scenes/Perfil/Main/ListaSitios.tscn" id="4_lo6xx"]
+[ext_resource type="PackedScene" uid="uid://dbs3c52v8n226" path="res://Scenes/UI/ListaSitios.tscn" id="4_lo6xx"]
 [ext_resource type="PackedScene" uid="uid://bosmqfxs2ibvy" path="res://Scenes/Plotter/ChartControl.tscn" id="6_cdy0v"]
 
 [node name="Main" type="Node"]

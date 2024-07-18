@@ -39,9 +39,9 @@ func LoadJsonFile(filePath:String):
 		var dataFile = FileAccess.open(filePath,FileAccess.READ)
 		var parsedResult =JSON.parse_string(dataFile.get_as_text())
 		setDataToGlobal(parsedResult)
+		iniciar_fetch_api()
 	
 		
 func setDataToGlobal(jsonData):
 		GlobalData.set_data(jsonData)
-		emit_signal("datos_actualizados", jsonData)
-		iniciar_fetch_api()
+		emit_signal("datos_actualizados", jsonData)		

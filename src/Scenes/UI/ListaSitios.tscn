@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://dbs3c52v8n226"]
 
 [ext_resource type="Script" path="res://Scripts/UI/UI_ListaSitios.gd" id="1_pok42"]
-[ext_resource type="PackedScene" uid="uid://douaugikqj4k4" path="res://Scenes/Perfil/Main/Sitio.tscn" id="2_yb5qh"]
+[ext_resource type="PackedScene" uid="uid://douaugikqj4k4" path="res://Scenes/UI/Sitio.tscn" id="2_yb5qh"]
 
 [node name="ListaSitios" type="Control"]
 layout_mode = 3

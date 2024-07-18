@@ -1,9 +1,9 @@
 [gd_scene load_steps=6 format=3 uid="uid://t3dbkejdc470"]
 
-[ext_resource type="Texture2D" uid="uid://vk0dcwuoypb0" path="res://Recursos/Textures/89f6b071003e13975a06e34fb3a31ba5.jpg" id="1_n4sx8"]
+[ext_resource type="Texture2D" uid="uid://b00afd4f355h" path="res://Recursos/Textures/89f6b071003e13975a06e34fb3a31ba5.hdr" id="1_wnieh"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_2a7iv"]
-panorama = ExtResource("1_n4sx8")
+panorama = ExtResource("1_wnieh")
 
 [sub_resource type="Sky" id="Sky_2giag"]
 sky_material = SubResource("PanoramaSkyMaterial_2a7iv")
@@ -12,7 +12,7 @@ sky_material = SubResource("PanoramaSkyMaterial_2a7iv")
 background_mode = 2
 background_color = Color(0.612904, 0.740409, 1, 1)
 sky = SubResource("Sky_2giag")
-sky_custom_fov = 61.0
+sky_custom_fov = 80.0
 
 [sub_resource type="CameraAttributesPhysical" id="CameraAttributesPhysical_tmwmd"]
 

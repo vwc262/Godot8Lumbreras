@@ -32,3 +32,18 @@ func formatear_fecha(fecha_string: String) -> String:
 	# Construir la fecha formateada
 	var fecha_formateada = horas + ":" + minutos + "hrs, " + dia + "/" + mes + "/" + año
 	return fecha_formateada
+
+
+func GetDateTimeFormatFromTicks(datetime_dict_from_system)->String:
+	var date_format_string = "%d-%s-%s"
+	var format_string = "%s %s:%s"
+	var date_base = date_format_string % [datetime_dict_from_system.year, padLeft(datetime_dict_from_system.month), padLeft(datetime_dict_from_system.day)]
+	var datetime_string_formatted: String = format_string % [date_base,padLeft(datetime_dict_from_system.hour),padLeft(datetime_dict_from_system.minute)] 	
+	return datetime_string_formatted
+	
+func padLeft(number: int):
+	var s: String = str(number)
+	if number < 10:
+		s = "0" + s
+	return s
+	pass

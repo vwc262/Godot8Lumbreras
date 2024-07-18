@@ -77,7 +77,27 @@ IdEstacion = 4
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Domi/CSGBox3D7/Area3D2"]
 shape = SubResource("BoxShape3D_47xlv")
 
+[node name="CSGBox3D8" parent="Domi" instance=ExtResource("3_dfqhc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.62288, 1.00714, -14.7287)
+IdEstacion = 5
+
+[node name="Area3D2" type="Area3D" parent="Domi/CSGBox3D8"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Domi/CSGBox3D8/Area3D2"]
+shape = SubResource("BoxShape3D_47xlv")
+
+[node name="CSGBox3D9" parent="Domi" instance=ExtResource("3_dfqhc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.62288, 1.00714, 13.9748)
+IdEstacion = 6
+
+[node name="Area3D2" type="Area3D" parent="Domi/CSGBox3D9"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Domi/CSGBox3D9/Area3D2"]
+shape = SubResource("BoxShape3D_47xlv")
+
 [connection signal="input_event" from="Domi/CSGBox3D4/Area3D2" to="Domi/CSGBox3D4" method="_on_area_3d_2_input_event"]
 [connection signal="input_event" from="Domi/CSGBox3D5/Area3D2" to="Domi/CSGBox3D5" method="_on_area_3d_2_input_event"]
 [connection signal="input_event" from="Domi/CSGBox3D6/Area3D2" to="Domi/CSGBox3D6" method="_on_area_3d_2_input_event"]
 [connection signal="input_event" from="Domi/CSGBox3D7/Area3D2" to="Domi/CSGBox3D7" method="_on_area_3d_2_input_event"]
+[connection signal="input_event" from="Domi/CSGBox3D8/Area3D2" to="Domi/CSGBox3D8" method="_on_area_3d_2_input_event"]
+[connection signal="input_event" from="Domi/CSGBox3D9/Area3D2" to="Domi/CSGBox3D9" method="_on_area_3d_2_input_event"]

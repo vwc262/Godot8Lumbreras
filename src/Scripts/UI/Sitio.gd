@@ -30,3 +30,5 @@ func set_enlace():
 	else:
 		texture_estado_enlace.modulate = Color(1, 0, 0)
 
+func _on_button_pressed():
+	NavigationManager.emit_signal("Go_TO",estacion_ref.id_estacion)

@@ -42,5 +42,5 @@ func _handle_screen_resize():
 			var margin = 0
 			add_theme_constant_override("margin_top", safe_area_top + margin)
 			add_theme_constant_override("margin_right", margin / 2)
-			add_theme_constant_override("margin_bottom", safe_area_bottom + margin)
+			#add_theme_constant_override("margin_bottom", safe_area_bottom + margin)
 			add_theme_constant_override("margin_left", margin)

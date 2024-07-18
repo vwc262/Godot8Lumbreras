@@ -94,7 +94,4 @@ layout_mode = 2
 [node name="señales_sitios" type="VBoxContainer" parent="VBoxContainer/PanelContainer"]
 layout_mode = 2
 
-[node name="Señal" parent="VBoxContainer/PanelContainer/señales_sitios" instance=ExtResource("2_ggcly")]
-layout_mode = 2
-
 [connection signal="pressed" from="VBoxContainer/HBoxContainer/nombre_fecha_contaier/Button" to="." method="_on_button_pressed"]

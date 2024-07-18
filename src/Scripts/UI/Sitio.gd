@@ -9,8 +9,9 @@ extends Node
 @onready var lbl_fecha_sitio = $VBoxContainer/HBoxContainer/nombre_fecha_contaier/VBoxContainer/fecha_sitio
 @onready var se_ales_sitios = $VBoxContainer/PanelContainer/señales_sitios
 
-var estacion_ref: Estacion 
+var estacion_ref: Estacion
 var signal_ref: Array[Señal]
+var signal_instances: Array = []
 
 # Función para recibir y establecer los datos de la estación
 func set_datos(estacion: Estacion):
@@ -36,15 +37,25 @@ func set_enlace():
 
 # Función para instanciar y actualizar señales
 func instanciar_señales():
-	# Limpiar señales anteriores
-	for child in se_ales_sitios.get_children():
-		child.queue_free()
-	
-	# Instanciar nuevas señales
-	for signal_sitio in signal_ref:
+	# Filtrar las señales que sean tipoSignal 1, 2 y 3
+	var filtered_signals = signal_ref.filter(func(_signal):
+		return _signal.tipo_signal in [1, 2, 3]
+	)
+
+	# Asegurarse de que hay suficientes instancias de señales
+	while signal_instances.size() < filtered_signals.size():
 		var signal_instance = signal_scene.instantiate()
 		se_ales_sitios.add_child(signal_instance)
-		signal_instance.set_datos(signal_sitio)
+		signal_instances.append(signal_instance)
 
+	# Actualizar las instancias existentes con los nuevos datos
+	for i in range(filtered_signals.size()):
+		signal_instances[i].set_datos(filtered_signals[i])
+
+	# Ocultar instancias sobrantes si las hay
+	for i in range(filtered_signals.size(), signal_instances.size()):
+		signal_instances[i].hide()
+
+# Función que maneja la señal del botón presionado
 func _on_button_pressed():
 	NavigationManager.emit_signal("Go_TO", estacion_ref.id_estacion)

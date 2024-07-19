@@ -1,11 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://douaugikqj4k4"]
+[gd_scene load_steps=5 format=3 uid="uid://douaugikqj4k4"]
 
 [ext_resource type="Script" path="res://Scripts/UI/Sitio.gd" id="1_065dv"]
 [ext_resource type="PackedScene" uid="uid://boyo78e7myi2o" path="res://Scenes/UI/Signal_sitio.tscn" id="2_ggcly"]
-[ext_resource type="Texture2D" uid="uid://d31g8mcyrmffg" path="res://Recursos/UI/img/Coneccion_b.png" id="3_4mmme"]
-[ext_resource type="Texture2D" uid="uid://bex5neamaqjhu" path="res://Recursos/UI/img/Lista_boton_b.png" id="3_nhueb"]
-[ext_resource type="Texture2D" uid="uid://bkkogul3p8aqk" path="res://Recursos/UI/img/Lista_boton_a.png" id="4_uugpe"]
-[ext_resource type="Texture2D" uid="uid://dc56lt77qi0x6" path="res://Recursos/UI/img/Lista_01.jpg" id="5_rfr6w"]
+[ext_resource type="Texture2D" uid="uid://dg51ts7gakl5w" path="res://Recursos/UI/img/Lista_01_b.jpg" id="3_2dp6n"]
+[ext_resource type="Texture2D" uid="uid://d0spfjwj24crw" path="res://Recursos/UI/img/Coneccion_b.png" id="3_4mmme"]
 
 [node name="Sitio" type="PanelContainer"]
 self_modulate = Color(1, 1, 1, 0)
@@ -15,39 +13,28 @@ grow_horizontal = 2
 mouse_filter = 1
 script = ExtResource("1_065dv")
 signal_scene = ExtResource("2_ggcly")
-texture_visible = ExtResource("3_nhueb")
-texture_hidden = ExtResource("4_uugpe")
+texture_visible = ExtResource("3_2dp6n")
+texture_hidden = ExtResource("3_2dp6n")
 
 [node name="sitio_fondo" type="TextureRect" parent="."]
 custom_minimum_size = Vector2(0, 80)
 layout_mode = 2
 size_flags_vertical = 0
-texture = ExtResource("5_rfr6w")
+texture = ExtResource("3_2dp6n")
 expand_mode = 1
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 2
-theme_override_constants/separation = 0
 
 [node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
 custom_minimum_size = Vector2(0, 80)
 layout_mode = 2
 size_flags_vertical = 2
-theme_override_constants/separation = 0
 
 [node name="BTN_expandir_sitios" type="Button" parent="VBoxContainer/HBoxContainer"]
-custom_minimum_size = Vector2(90, 0)
+modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(120, 0)
 layout_mode = 2
-
-[node name="BTN_expandir_fondo" type="TextureRect" parent="VBoxContainer/HBoxContainer/BTN_expandir_sitios"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("3_nhueb")
-expand_mode = 1
 
 [node name="Panel" type="Panel" parent="VBoxContainer/HBoxContainer"]
 self_modulate = Color(1, 1, 1, 0)

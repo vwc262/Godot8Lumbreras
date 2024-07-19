@@ -13,6 +13,7 @@ extends Node
 @onready var panel_container = $VBoxContainer/PanelContainer
 @onready var btn_expandir_sitios = $VBoxContainer/HBoxContainer/BTN_expandir_sitios
 @onready var btn_expandir_fondo = $VBoxContainer/HBoxContainer/BTN_expandir_sitios/BTN_expandir_fondo
+@onready var sitio_fondo = $sitio_fondo
 
 
 var estacion_ref: Estacion
@@ -101,3 +102,7 @@ func _on_finish_tween():
 	# Confirmación de que el tween ha terminado
 	if is_hidden:
 		panel_container.visible = false
+
+func set_fondo(texture: Texture):
+	# Actualizar la textura del fondo
+	sitio_fondo.texture = texture

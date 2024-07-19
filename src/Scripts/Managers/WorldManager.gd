@@ -48,8 +48,6 @@ func _on_finish_tween():
 ##endregion
 
 #region FUNCIONES PARA MOSTRAR LA GRAFICA
-func _on_btn_mostrar_grafica_pressed():
-	pass # Replace with function body.
-
+func _on_btn_graficar_button_down():
+	GlobalUtils.ChartControl.visible = !GlobalUtils.ChartControl.visible
 #endregion
-

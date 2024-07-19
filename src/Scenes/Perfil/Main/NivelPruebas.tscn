@@ -1,6 +1,5 @@
-[gd_scene load_steps=5 format=3 uid="uid://cyug4nnq0yh1a"]
+[gd_scene load_steps=4 format=3 uid="uid://cyug4nnq0yh1a"]
 
-[ext_resource type="PackedScene" uid="uid://b3cmgplpkkfqr" path="res://Recursos/Meshes/Mapa_3D/Mapa_3D_2.glb" id="1_toske"]
 [ext_resource type="Script" path="res://Scripts/Navigation/Touch.gd" id="2_ui4vn"]
 [ext_resource type="PackedScene" uid="uid://vw46h30r4ia4" path="res://Scenes/Sitios/CuboClickeable.tscn" id="3_dfqhc"]
 
@@ -12,9 +11,6 @@
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 81.7049, 0.420746)
 light_color = Color(1, 0.953851, 0.94155, 1)
 light_energy = 0.491
-
-[node name="Mapa_3D_2" parent="." instance=ExtResource("1_toske")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
 
 [node name="CameraParent" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 15, 0)

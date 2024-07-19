@@ -4,13 +4,13 @@
 [ext_resource type="Script" path="res://Scripts/Fetcher/Fetch_Data.gd" id="1_xo6k0"]
 [ext_resource type="PackedScene" uid="uid://cyug4nnq0yh1a" path="res://Scenes/Perfil/Main/NivelPruebas.tscn" id="2_2gqy4"]
 [ext_resource type="Script" path="res://Scripts/UI/DynamicSafeArea.gd" id="3_mfb8h"]
-[ext_resource type="Texture2D" uid="uid://bn75owwrywuip" path="res://Recursos/UI/img/Encabezado.jpg" id="4_35rtk"]
+[ext_resource type="Texture2D" uid="uid://jqtmqvktw1n1" path="res://Recursos/UI/img/Encabezado.jpg" id="4_35rtk"]
 [ext_resource type="PackedScene" uid="uid://dbs3c52v8n226" path="res://Scenes/UI/ListaSitios.tscn" id="4_lo6xx"]
 [ext_resource type="PackedScene" uid="uid://bosmqfxs2ibvy" path="res://Scenes/Plotter/ChartControl.tscn" id="6_cdy0v"]
-[ext_resource type="Texture2D" uid="uid://bhag5ipxhgd5x" path="res://Recursos/UI/img/Barra_Botones.jpg" id="6_lf17x"]
-[ext_resource type="Texture2D" uid="uid://v1wjc0vgrr17" path="res://Recursos/UI/img/Boton_graph_a.png" id="7_4h7f5"]
-[ext_resource type="Texture2D" uid="uid://bki8e5fivmip4" path="res://Recursos/UI/img/Boton_mapa_a.png" id="8_uoq1g"]
-[ext_resource type="Texture2D" uid="uid://b7ceeqldnutf2" path="res://Recursos/UI/img/Boton_particular_a.png" id="9_37xqg"]
+[ext_resource type="Texture2D" uid="uid://dys5a624cdod5" path="res://Recursos/UI/img/Barra_Botones.jpg" id="6_lf17x"]
+[ext_resource type="Texture2D" uid="uid://degfph8k07k86" path="res://Recursos/UI/img/Boton_graph_a.png" id="7_4h7f5"]
+[ext_resource type="Texture2D" uid="uid://dfnk6s1tbfkab" path="res://Recursos/UI/img/Boton_mapa_a.png" id="8_uoq1g"]
+[ext_resource type="Texture2D" uid="uid://ddag2tm6hjq7w" path="res://Recursos/UI/img/Boton_particular_a.png" id="9_37xqg"]
 
 [sub_resource type="Theme" id="Theme_0o38m"]
 
@@ -75,7 +75,7 @@ stretch = true
 handle_input_locally = false
 physics_object_picking = true
 physics_object_picking_sort = true
-size = Vector2i(1080, 945)
+size = Vector2i(2, 2)
 render_target_update_mode = 4
 
 [node name="World" parent="DynamicMargins/VB_MainContainer/main_container/SubViewportContainer/SubViewport" instance=ExtResource("2_2gqy4")]

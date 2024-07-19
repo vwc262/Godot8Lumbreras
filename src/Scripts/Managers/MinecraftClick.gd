@@ -6,7 +6,7 @@ signal IrA
 @onready var modelo = $Purif_Generica_001_v001
 
 func _ready():
-	var node = modelo.get_node("Socket_camara")
+	var node = modelo.get_node("Socket_Camara")
 	NavigationManager.AddSiteAnchor(IdEstacion,node.global_position, node.rotation * 180/PI)
 
 func _on_area_3d_input_event(camera, event, position, normal, shape_idx):

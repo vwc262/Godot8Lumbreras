@@ -106,8 +106,7 @@ func handle_drag(event: InputEventScreenDrag):
 		if can_zoom:
 			position.y = start_zoom / zoom_factor
 			limit_zoom()
-			$Camera3D.rotation_degrees.x = lerp(initialRotationCamera,LimitRotationCamera,inclinate_camera())
-
+			$Camera3D.rotation_degrees.x = lerp(initialRotationCamera, LimitRotationCamera, inclinate_camera())
 
 func rotate_camera(currentangle: float):
 	rotation_degrees.y += -currentangle
@@ -115,19 +114,21 @@ func rotate_camera(currentangle: float):
 
 func limit_zoom():
 	position.y = clamp(position.y, maxZoom,initialZoom )
-	
 
 func inclinate_camera()->float:
 	var val = 0 #Default uno para que mantenga la vista top
 	if position.y < initialZoom - offSetDistanceInclination:
+		pan_speed = 0.1
 		val = remap(position.y, initialZoom - offSetDistanceInclination, maxZoom, 0, 1)
+	else:
+		pan_speed = 0.3
 	return val
-		
+
 func OnTweenFinished_MovimientoRealizado():
 	can_zoom= true
 	can_pan = true
 	isTween = false
-	pass
+	print($Camera3D.rotation_degrees.x)
 
 func MoverCamara(idEstacion:int):
 	DisableNavigation()
@@ -139,9 +140,10 @@ func MoverCamara(idEstacion:int):
 			isTween = true
 			transform = NavigationManager.GetSiteAnchor(idEstacion)
 			var new_vec3 = Vector3(rotation.x, transform[1].y, rotation.z)
-			tween.set_parallel()			
+			tween.set_parallel()
 			tween.tween_property(self,"position", transform[0],1.5)
-			tween.tween_property($Camera3D,"rotation", new_vec3,1.5)
+			var val = remap(transform[0].y, initialZoom - offSetDistanceInclination, maxZoom, 0, 1)
+			tween.tween_property($Camera3D, "rotation_degrees", Vector3(lerp(initialRotationCamera, LimitRotationCamera, val),0,0), 1.5)
 	else:
 		if !isTween:
 			ID_Select = 0

@@ -1,17 +1,21 @@
-[gd_scene load_steps=3 format=3 uid="uid://vw46h30r4ia4"]
+[gd_scene load_steps=4 format=3 uid="uid://vw46h30r4ia4"]
 
 [ext_resource type="Script" path="res://Scripts/Managers/MinecraftClick.gd" id="1_r8t3f"]
 [ext_resource type="PackedScene" uid="uid://b0v2xuu0rqmbs" path="res://Recursos/Meshes/Sitios/Genericos/Purif_Generica_001/Purif_Generica_001_v001.glb" id="2_wuued"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_kktc2"]
+size = Vector3(1.52014, 1.01721, 1.50272)
 
 [node name="Node3D" type="Node3D"]
 script = ExtResource("1_r8t3f")
 
 [node name="Purif_Generica_001_v001" parent="." instance=ExtResource("2_wuued")]
-transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0, 0)
+transform = Transform3D(-0.2, 0, -1.74846e-08, 0, 0.2, 0, 1.74846e-08, 0, -0.2, 0, 0, 0)
 
 [node name="Area3D" type="Area3D" parent="Purif_Generica_001_v001"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Purif_Generica_001_v001/Area3D"]
-transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 0, 0)
+transform = Transform3D(10, 0, 1.7053e-13, 0, 10, 0, -1.7053e-13, 0, 10, -0.0653076, 4.29016, 0.261078)
+shape = SubResource("BoxShape3D_kktc2")
 
 [connection signal="input_event" from="Purif_Generica_001_v001/Area3D" to="." method="_on_area_3d_input_event"]

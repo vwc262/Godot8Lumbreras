@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://cyug4nnq0yh1a"]
 
-[ext_resource type="PackedScene" uid="uid://do4phmqywa33m" path="res://Recursos/Meshes/Mapa_3D/Mapa_3D.glb" id="1_d3okp"]
+[ext_resource type="PackedScene" uid="uid://b3cmgplpkkfqr" path="res://Recursos/Meshes/Mapa_3D/Mapa_3D_2.glb" id="1_toske"]
 [ext_resource type="Script" path="res://Scripts/Navigation/Touch.gd" id="2_ui4vn"]
 [ext_resource type="PackedScene" uid="uid://vw46h30r4ia4" path="res://Scenes/Sitios/CuboClickeable.tscn" id="3_dfqhc"]
 
@@ -10,16 +10,17 @@
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 81.7049, 0.420746)
-light_energy = 0.2
+light_color = Color(1, 0.953851, 0.94155, 1)
+light_energy = 0.491
 
-[node name="Mapa_3D" parent="." instance=ExtResource("1_d3okp")]
-transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 24, 0)
+[node name="Mapa_3D_2" parent="." instance=ExtResource("1_toske")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
 
 [node name="CameraParent" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 15, 0)
 script = ExtResource("2_ui4vn")
 can_pan = true
-pan_speed = 0.08
+pan_speed = 0.3
 rotate_treshold = 8
 initialRotationCamera = -90
 minRotationY = -20.0

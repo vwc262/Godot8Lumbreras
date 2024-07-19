@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://dbs3c52v8n226"]
+[gd_scene load_steps=6 format=3 uid="uid://dbs3c52v8n226"]
 
 [ext_resource type="Script" path="res://Scripts/UI/UI_ListaSitios.gd" id="1_pok42"]
 [ext_resource type="PackedScene" uid="uid://douaugikqj4k4" path="res://Scenes/UI/Sitio.tscn" id="2_yb5qh"]
 [ext_resource type="Texture2D" uid="uid://dc56lt77qi0x6" path="res://Recursos/UI/img/Lista_01.jpg" id="3_7p1aw"]
 [ext_resource type="Texture2D" uid="uid://bsw3aw33xfx31" path="res://Recursos/UI/img/Lista_02.jpg" id="4_kp1cf"]
+[ext_resource type="Texture2D" uid="uid://b4rbxu42i1sxa" path="res://Recursos/UI/img/Lista_fondo01.jpg" id="5_xmv5h"]
 
 [node name="ListaSitios" type="Control"]
 self_modulate = Color(1, 1, 1, 0)
@@ -17,6 +18,15 @@ script = ExtResource("1_pok42")
 sitio_scene = ExtResource("2_yb5qh")
 textura1 = ExtResource("3_7p1aw")
 textura2 = ExtResource("4_kp1cf")
+
+[node name="fondo" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("5_xmv5h")
 
 [node name="ScrollContainer" type="ScrollContainer" parent="."]
 custom_minimum_size = Vector2(0, 650)

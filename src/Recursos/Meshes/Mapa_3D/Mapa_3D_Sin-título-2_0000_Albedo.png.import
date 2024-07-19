@@ -3,8 +3,8 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://c45ygefelwf6c"
-path.s3tc="res://.godot/imported/Mapa_3D_Sin-título-2_0000_Albedo.png-ecb653710f3ef489fe91b84dd8bc8605.s3tc.ctex"
-path.etc2="res://.godot/imported/Mapa_3D_Sin-título-2_0000_Albedo.png-ecb653710f3ef489fe91b84dd8bc8605.etc2.ctex"
+path.s3tc="res://.godot/imported/Mapa_3D_Sin-título-2_0000_Albedo.png-277b433d12066961acf7aee020981fe5.s3tc.ctex"
+path.etc2="res://.godot/imported/Mapa_3D_Sin-título-2_0000_Albedo.png-277b433d12066961acf7aee020981fe5.etc2.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
@@ -15,8 +15,8 @@ generator_parameters={
 
 [deps]
 
-source_file="res://Recursos/Textures/Mapa_3D/Mapa_3D_Sin-título-2_0000_Albedo.png"
-dest_files=["res://.godot/imported/Mapa_3D_Sin-título-2_0000_Albedo.png-ecb653710f3ef489fe91b84dd8bc8605.s3tc.ctex", "res://.godot/imported/Mapa_3D_Sin-título-2_0000_Albedo.png-ecb653710f3ef489fe91b84dd8bc8605.etc2.ctex"]
+source_file="res://Recursos/Meshes/Mapa_3D/Mapa_3D_Sin-título-2_0000_Albedo.png"
+dest_files=["res://.godot/imported/Mapa_3D_Sin-título-2_0000_Albedo.png-277b433d12066961acf7aee020981fe5.s3tc.ctex", "res://.godot/imported/Mapa_3D_Sin-título-2_0000_Albedo.png-277b433d12066961acf7aee020981fe5.etc2.ctex"]
 
 [params]
 

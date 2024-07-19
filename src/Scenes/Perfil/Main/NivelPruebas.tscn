@@ -1,13 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://cyug4nnq0yh1a"]
+[gd_scene load_steps=5 format=3 uid="uid://cyug4nnq0yh1a"]
 
+[ext_resource type="PackedScene" uid="uid://do4phmqywa33m" path="res://Recursos/Meshes/Mapa_3D/Mapa_3D.glb" id="1_d3okp"]
 [ext_resource type="Script" path="res://Scripts/Navigation/Touch.gd" id="2_ui4vn"]
 [ext_resource type="PackedScene" uid="uid://vw46h30r4ia4" path="res://Scenes/Sitios/CuboClickeable.tscn" id="3_dfqhc"]
-
-[sub_resource type="PlaneMesh" id="PlaneMesh_4jwef"]
-size = Vector2(300, 300)
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_21ngq"]
-albedo_color = Color(1, 0.584314, 1, 1)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_47xlv"]
 
@@ -15,10 +10,10 @@ albedo_color = Color(1, 0.584314, 1, 1)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 81.7049, 0.420746)
+light_energy = 0.2
 
-[node name="CSGBox3D" type="MeshInstance3D" parent="."]
-mesh = SubResource("PlaneMesh_4jwef")
-surface_material_override/0 = SubResource("StandardMaterial3D_21ngq")
+[node name="Mapa_3D" parent="." instance=ExtResource("1_d3okp")]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 24, 0)
 
 [node name="CameraParent" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 15, 0)
@@ -42,7 +37,7 @@ fov = 85.0
 [node name="Domi" type="Node" parent="."]
 
 [node name="CSGBox3D4" parent="Domi" instance=ExtResource("3_dfqhc")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.68582, 1.00714, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.6663, -0.99286, 36.0102)
 IdEstacion = 1
 
 [node name="Area3D2" type="Area3D" parent="Domi/CSGBox3D4"]
@@ -51,7 +46,7 @@ IdEstacion = 1
 shape = SubResource("BoxShape3D_47xlv")
 
 [node name="CSGBox3D5" parent="Domi" instance=ExtResource("3_dfqhc")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.00714, -3.9628)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.69775, -0.99286, 27.7377)
 IdEstacion = 2
 
 [node name="Area3D2" type="Area3D" parent="Domi/CSGBox3D5"]
@@ -60,7 +55,7 @@ IdEstacion = 2
 shape = SubResource("BoxShape3D_47xlv")
 
 [node name="CSGBox3D6" parent="Domi" instance=ExtResource("3_dfqhc")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.00714, 3.07299)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.64021, 0.00714004, 21.6848)
 IdEstacion = 3
 
 [node name="Area3D2" type="Area3D" parent="Domi/CSGBox3D6"]
@@ -69,7 +64,7 @@ IdEstacion = 3
 shape = SubResource("BoxShape3D_47xlv")
 
 [node name="CSGBox3D7" parent="Domi" instance=ExtResource("3_dfqhc")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.62288, 1.00714, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.80943, 1.00714, 17.2841)
 IdEstacion = 4
 
 [node name="Area3D2" type="Area3D" parent="Domi/CSGBox3D7"]
@@ -78,7 +73,7 @@ IdEstacion = 4
 shape = SubResource("BoxShape3D_47xlv")
 
 [node name="CSGBox3D8" parent="Domi" instance=ExtResource("3_dfqhc")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.62288, 1.00714, -14.7287)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.8526, 2.00714, -11.6266)
 IdEstacion = 5
 
 [node name="Area3D2" type="Area3D" parent="Domi/CSGBox3D8"]
@@ -87,7 +82,7 @@ IdEstacion = 5
 shape = SubResource("BoxShape3D_47xlv")
 
 [node name="CSGBox3D9" parent="Domi" instance=ExtResource("3_dfqhc")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.62288, 1.00714, 13.9748)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.06959, 1.00714, -6.04913)
 IdEstacion = 6
 
 [node name="Area3D2" type="Area3D" parent="Domi/CSGBox3D9"]

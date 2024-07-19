@@ -21,7 +21,7 @@ extends Node3D
 @export var maxZoom:float
 @export var initialZoom:float
 
-var ID_Select = 0
+
 #endregion
 
 #region Propiedades para logica
@@ -36,6 +36,7 @@ var angle : float = 0
 var initalCameraPosition : Vector3
 var isTween: bool
 
+var ID_Select = 0
 #endregion
 
 #region Godot Functions
@@ -134,13 +135,11 @@ func MoverCamara(idEstacion:int):
 	if ID_Select != idEstacion:
 		ID_Select = idEstacion
 		if !isTween:
-			print("Hola")
 			var tween := TweenManager.init_tween(OnTweenFinished_MovimientoRealizado)
 			isTween = true
 			transform = NavigationManager.GetSiteAnchor(idEstacion)
 			var new_vec3 = Vector3(rotation.x, transform[1].y, rotation.z)
-			
-			tween.set_parallel()
+			tween.set_parallel()			
 			tween.tween_property(self,"position", transform[0],1.5)
 			tween.tween_property($Camera3D,"rotation", new_vec3,1.5)
 	else:

@@ -36,9 +36,9 @@ func actualizar_datos():
 # Función para actualizar el estado del enlace
 func set_enlace():
 	if estacion_ref.enlace in [1, 2, 3]:
-		texture_estado_enlace.modulate = Color(0, 1, 0)
+		texture_estado_enlace.texture = preload("res://Recursos/UI/img/Coneccion_a.png")
 	else:
-		texture_estado_enlace.modulate = Color(1, 0, 0)
+		texture_estado_enlace.texture = preload("res://Recursos/UI/img/Coneccion_b.png")
 
 # Función para instanciar y actualizar señales
 func instanciar_señales():

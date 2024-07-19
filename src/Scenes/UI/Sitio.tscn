@@ -1,9 +1,12 @@
-[gd_scene load_steps=3 format=3 uid="uid://douaugikqj4k4"]
+[gd_scene load_steps=5 format=3 uid="uid://douaugikqj4k4"]
 
 [ext_resource type="Script" path="res://Scripts/UI/Sitio.gd" id="1_065dv"]
 [ext_resource type="PackedScene" uid="uid://boyo78e7myi2o" path="res://Scenes/UI/Signal_sitio.tscn" id="2_ggcly"]
+[ext_resource type="Texture2D" uid="uid://dg51ts7gakl5w" path="res://Recursos/UI/img/Lista_01_b.jpg" id="3_2dp6n"]
+[ext_resource type="Texture2D" uid="uid://d0spfjwj24crw" path="res://Recursos/UI/img/Coneccion_b.png" id="3_4mmme"]
 
 [node name="Sitio" type="PanelContainer"]
+self_modulate = Color(1, 1, 1, 0)
 anchors_preset = 10
 anchor_right = 1.0
 grow_horizontal = 2
@@ -11,35 +14,28 @@ mouse_filter = 1
 script = ExtResource("1_065dv")
 signal_scene = ExtResource("2_ggcly")
 
+[node name="sitio_fondo" type="TextureRect" parent="."]
+custom_minimum_size = Vector2(0, 80)
+layout_mode = 2
+size_flags_vertical = 0
+texture = ExtResource("3_2dp6n")
+expand_mode = 1
+
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 2
 
 [node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
-custom_minimum_size = Vector2(0, 100)
+custom_minimum_size = Vector2(0, 80)
 layout_mode = 2
+size_flags_vertical = 2
 
 [node name="BTN_expandir_sitios" type="Button" parent="VBoxContainer/HBoxContainer"]
-custom_minimum_size = Vector2(100, 0)
+modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(120, 0)
 layout_mode = 2
-
-[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer/BTN_expandir_sitios"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_font_sizes/font_size = 30
-text = "+"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="estado_enlace" type="ColorRect" parent="VBoxContainer/HBoxContainer"]
-custom_minimum_size = Vector2(100, 0)
-layout_mode = 2
-mouse_filter = 1
 
 [node name="Panel" type="Panel" parent="VBoxContainer/HBoxContainer"]
+self_modulate = Color(1, 1, 1, 0)
 custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
 mouse_filter = 1
@@ -59,6 +55,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="nombre_fecha_contaier" type="Panel" parent="VBoxContainer/HBoxContainer"]
+self_modulate = Color(1, 1, 1, 0)
 layout_mode = 2
 size_flags_horizontal = 3
 mouse_filter = 1
@@ -73,13 +70,15 @@ grow_vertical = 2
 
 [node name="nombre_sitio" type="Label" parent="VBoxContainer/HBoxContainer/nombre_fecha_contaier/VBoxContainer"]
 layout_mode = 2
-size_flags_vertical = 3
-theme_override_font_sizes/font_size = 40
+size_flags_vertical = 0
+theme_override_font_sizes/font_size = 37
 text = "Nombre Sitio"
 
 [node name="fecha_sitio" type="Label" parent="VBoxContainer/HBoxContainer/nombre_fecha_contaier/VBoxContainer"]
 layout_mode = 2
-size_flags_vertical = 3
+size_flags_vertical = 0
+theme_override_colors/font_color = Color(0.672064, 0.672064, 0.672064, 1)
+theme_override_font_sizes/font_size = 20
 text = "00:00hrs, 00/00/0000"
 
 [node name="Button" type="Button" parent="VBoxContainer/HBoxContainer/nombre_fecha_contaier"]
@@ -92,7 +91,14 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 1
 
+[node name="estado_enlace" type="TextureRect" parent="VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+texture = ExtResource("3_4mmme")
+expand_mode = 1
+
 [node name="PanelContainer" type="PanelContainer" parent="VBoxContainer"]
+self_modulate = Color(1, 1, 1, 0)
 custom_minimum_size = Vector2(0, 160)
 layout_mode = 2
 size_flags_vertical = 2

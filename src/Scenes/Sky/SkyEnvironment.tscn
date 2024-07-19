@@ -1,25 +1,29 @@
 [gd_scene load_steps=6 format=3 uid="uid://bhakmsdspl7on"]
 
 [ext_resource type="Shader" path="res://Recursos/Materiales/SkyEnvironment.gdshader" id="1_cq31k"]
-[ext_resource type="Texture2D" uid="uid://cisonwfnqvano" path="res://Recursos/Textures/Sky/quarry_04_puresky_1k.hdr" id="2_n2x71"]
+[ext_resource type="Texture2D" uid="uid://dv57ren0y22ga" path="res://Recursos/Textures/kloofendal_43d_clear_puresky_2k.hdr" id="2_fbdqk"]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_ja4bd"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_6gdov"]
 shader = ExtResource("1_cq31k")
-shader_parameter/skyColor = Color(0.372969, 0.701471, 0.934851, 1)
-shader_parameter/horizonColor = Color(0.648717, 0.771958, 0.980077, 1)
-shader_parameter/skyTexture = ExtResource("2_n2x71")
+shader_parameter/skyColor = Color(0.0352691, 0.429778, 0.631864, 1)
+shader_parameter/horizonColor = Color(0.737378, 0.97996, 0.960871, 1)
+shader_parameter/skyTexture = ExtResource("2_fbdqk")
 
 [sub_resource type="Sky" id="Sky_uofcj"]
-sky_material = SubResource("ShaderMaterial_ja4bd")
+sky_material = SubResource("ShaderMaterial_6gdov")
+radiance_size = 0
 
 [sub_resource type="Environment" id="Environment_bac8e"]
 background_mode = 2
-background_energy_multiplier = 0.45
+background_color = Color(0.130569, 0.472729, 0.718176, 1)
+background_energy_multiplier = 0.41
 sky = SubResource("Sky_uofcj")
 ambient_light_source = 3
-ambient_light_color = Color(0.150492, 0.511184, 0.844097, 1)
-ambient_light_energy = 0.8
+ambient_light_color = Color(0.228731, 0.508967, 0.815608, 1)
 reflected_light_source = 2
+tonemap_mode = 1
+volumetric_fog_density = 0.0212
+volumetric_fog_albedo = Color(0.964541, 0.867787, 0.879027, 1)
 
 [node name="SkyEnvironment" type="Node3D"]
 
@@ -28,3 +32,4 @@ environment = SubResource("Environment_bac8e")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="WorldEnvironment"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.28646, 0)
+light_energy = 1.005

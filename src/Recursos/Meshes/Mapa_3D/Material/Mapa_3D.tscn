@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://sj3f3qs1t5cy"]
+
+[ext_resource type="PackedScene" uid="uid://ctxuvxw4p365d" path="res://Recursos/Meshes/Mapa_3D/Mapa_3D_3.gltf" id="1_3khti"]
+[ext_resource type="Material" uid="uid://cwfwepmhogw31" path="res://Recursos/Meshes/Mapa_3D/Material/Mapa_3D.tres" id="2_7r78v"]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="Mapa_3D_3" parent="." instance=ExtResource("1_3khti")]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0)
+
+[node name="Mapa_3D" parent="Mapa_3D_3" index="0"]
+material_override = ExtResource("2_7r78v")
+
+[editable path="Mapa_3D_3"]

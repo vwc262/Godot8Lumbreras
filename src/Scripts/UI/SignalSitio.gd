@@ -11,6 +11,13 @@ extends Control
 # Referencia a la señal que se va a mostrar
 var signal_ref: Señal
 
+# Diccionario para las unidades de tipo de señal
+var unidades = {
+	1: "m",
+	2: "kg/cm²",
+	3: "l/s"
+}
+
 # Función para recibir y establecer los datos de la señal
 func set_datos(signal_sitio: Señal):
 	signal_ref = signal_sitio
@@ -18,14 +25,17 @@ func set_datos(signal_sitio: Señal):
 
 # Función para actualizar los datos mostrados
 func actualizar_datos():
+	# Obtener la unidad correspondiente al tipo de señal
+	var unidad = unidades.get(signal_ref.tipo_signal, "")
+	
 	# Actualizar el nombre y el valor de la señal
 	nombre_se_al.text = signal_ref.nombre
-	valor_se_al.text = str(signal_ref.valor)
+	valor_se_al.text = str(signal_ref.valor) + " " + unidad
 	
 	# Verificar si el semáforo está presente
 	if signal_ref.semaforo != null:
 		# Actualizar el texto y la visibilidad del contenedor de la barra de progreso
-		semaforo_valor.text = str(signal_ref.valor) + " de " + str(signal_ref.semaforo.critico)
+		semaforo_valor.text = str(signal_ref.valor) + " de " + str(signal_ref.semaforo.critico) + " " + unidad
 		progressbar_container.visible = true
 		
 		# Establecer los valores mínimo y máximo de la barra de progreso

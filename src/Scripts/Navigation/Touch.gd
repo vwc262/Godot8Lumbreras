@@ -134,6 +134,7 @@ func MoverCamara(idEstacion:int):
 	if ID_Select != idEstacion:
 		ID_Select = idEstacion
 		if !isTween:
+			print("Hola")
 			var tween := TweenManager.init_tween(OnTweenFinished_MovimientoRealizado)
 			isTween = true
 			transform = NavigationManager.GetSiteAnchor(idEstacion)
@@ -143,8 +144,9 @@ func MoverCamara(idEstacion:int):
 			tween.tween_property(self,"position", transform[0],1.5)
 			tween.tween_property($Camera3D,"rotation", new_vec3,1.5)
 	else:
-		ID_Select = 0
-		ResetCameraPosition()
+		if !isTween:
+			ID_Select = 0
+			ResetCameraPosition()
 
 func ResetCameraPosition():
 	DisableNavigation()

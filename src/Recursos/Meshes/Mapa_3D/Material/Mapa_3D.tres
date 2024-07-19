@@ -7,11 +7,14 @@
 
 [resource]
 albedo_texture = ExtResource("1_vxc1l")
+metallic = 0.5
+metallic_specular = 0.8
+roughness = 0.65
 normal_enabled = true
-normal_scale = -2.61
+normal_scale = -1.3
 normal_texture = ExtResource("4_gd3lo")
 ao_enabled = true
-ao_light_affect = 0.57
+ao_light_affect = 0.97
 ao_texture = ExtResource("2_1qics")
 heightmap_enabled = true
 heightmap_scale = 1.0

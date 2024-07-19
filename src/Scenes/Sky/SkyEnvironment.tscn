@@ -1,0 +1,30 @@
+[gd_scene load_steps=6 format=3 uid="uid://bhakmsdspl7on"]
+
+[ext_resource type="Shader" path="res://Recursos/Materiales/SkyEnvironment.gdshader" id="1_cq31k"]
+[ext_resource type="Texture2D" uid="uid://cisonwfnqvano" path="res://Recursos/Textures/Sky/quarry_04_puresky_1k.hdr" id="2_n2x71"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ja4bd"]
+shader = ExtResource("1_cq31k")
+shader_parameter/skyColor = Color(0.372969, 0.701471, 0.934851, 1)
+shader_parameter/horizonColor = Color(0.648717, 0.771958, 0.980077, 1)
+shader_parameter/skyTexture = ExtResource("2_n2x71")
+
+[sub_resource type="Sky" id="Sky_uofcj"]
+sky_material = SubResource("ShaderMaterial_ja4bd")
+
+[sub_resource type="Environment" id="Environment_bac8e"]
+background_mode = 2
+background_energy_multiplier = 0.45
+sky = SubResource("Sky_uofcj")
+ambient_light_source = 3
+ambient_light_color = Color(0.150492, 0.511184, 0.844097, 1)
+ambient_light_energy = 0.8
+reflected_light_source = 2
+
+[node name="SkyEnvironment" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_bac8e")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="WorldEnvironment"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.28646, 0)

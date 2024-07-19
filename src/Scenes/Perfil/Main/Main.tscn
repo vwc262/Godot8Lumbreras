@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://x5m0onfran4m"]
+[gd_scene load_steps=14 format=3 uid="uid://x5m0onfran4m"]
 
 [ext_resource type="Script" path="res://Scripts/Managers/WorldManager.gd" id="1_symg7"]
 [ext_resource type="Script" path="res://Scripts/Fetcher/Fetch_Data.gd" id="1_xo6k0"]
@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://degfph8k07k86" path="res://Recursos/UI/img/Boton_graph_a.png" id="7_4h7f5"]
 [ext_resource type="Texture2D" uid="uid://dfnk6s1tbfkab" path="res://Recursos/UI/img/Boton_mapa_a.png" id="8_uoq1g"]
 [ext_resource type="Texture2D" uid="uid://ddag2tm6hjq7w" path="res://Recursos/UI/img/Boton_particular_a.png" id="9_37xqg"]
+[ext_resource type="PackedScene" uid="uid://bhakmsdspl7on" path="res://Scenes/Sky/SkyEnvironment.tscn" id="12_xh560"]
 
 [sub_resource type="Theme" id="Theme_0o38m"]
 
@@ -75,7 +76,7 @@ stretch = true
 handle_input_locally = false
 physics_object_picking = true
 physics_object_picking_sort = true
-size = Vector2i(2, 2)
+size = Vector2i(1080, 945)
 render_target_update_mode = 4
 
 [node name="World" parent="DynamicMargins/VB_MainContainer/main_container/SubViewportContainer/SubViewport" instance=ExtResource("2_2gqy4")]
@@ -241,6 +242,8 @@ layout_mode = 2
 size_flags_horizontal = 3
 theme_override_font_sizes/font_size = 30
 text = "Graficar"
+
+[node name="SkyEnvironment" parent="." instance=ExtResource("12_xh560")]
 
 [connection signal="pressed" from="DynamicMargins/VB_MainContainer/main_container/ListaSitiosContainer/VBoxContainer/botones_container/HBoxContainer/BTN_ListaSitios" to="." method="_on_btn_lista_sitios_pressed"]
 [connection signal="pressed" from="DynamicMargins/VB_MainContainer/footer_container/HBoxContainer/BTN_reset_camara" to="." method="_on_button_pressed"]

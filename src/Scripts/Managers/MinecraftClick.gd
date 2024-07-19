@@ -10,5 +10,5 @@ func _ready():
 	NavigationManager.AddSiteAnchor(IdEstacion,node.global_position, node.rotation)
 
 func _on_area_3d_input_event(camera, event, position, normal, shape_idx):
-	if event is InputEventMouseButton and event.double_click:					
+	if event is InputEventMouseButton and event.double_click:
 		NavigationManager.emit_signal("Go_TO",IdEstacion)

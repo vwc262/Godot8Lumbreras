@@ -13,7 +13,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 81.7049, 0.420746)
 light_energy = 0.2
 
 [node name="Mapa_3D" parent="." instance=ExtResource("1_d3okp")]
-transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 0, 0)
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 24, 0)
 
 [node name="CameraParent" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 15, 0)
@@ -37,7 +37,7 @@ fov = 85.0
 [node name="Domi" type="Node" parent="."]
 
 [node name="CSGBox3D4" parent="Domi" instance=ExtResource("3_dfqhc")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.6663, 1.00714, 36.0102)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.6663, -0.99286, 36.0102)
 IdEstacion = 1
 
 [node name="Area3D2" type="Area3D" parent="Domi/CSGBox3D4"]
@@ -46,7 +46,7 @@ IdEstacion = 1
 shape = SubResource("BoxShape3D_47xlv")
 
 [node name="CSGBox3D5" parent="Domi" instance=ExtResource("3_dfqhc")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.69775, 1.00714, 27.7377)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.69775, -0.99286, 27.7377)
 IdEstacion = 2
 
 [node name="Area3D2" type="Area3D" parent="Domi/CSGBox3D5"]
@@ -55,7 +55,7 @@ IdEstacion = 2
 shape = SubResource("BoxShape3D_47xlv")
 
 [node name="CSGBox3D6" parent="Domi" instance=ExtResource("3_dfqhc")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.64021, 1.00714, 21.6848)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.64021, 0.00714004, 21.6848)
 IdEstacion = 3
 
 [node name="Area3D2" type="Area3D" parent="Domi/CSGBox3D6"]
@@ -73,7 +73,7 @@ IdEstacion = 4
 shape = SubResource("BoxShape3D_47xlv")
 
 [node name="CSGBox3D8" parent="Domi" instance=ExtResource("3_dfqhc")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.8526, 1.00714, -11.6266)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.8526, 2.00714, -11.6266)
 IdEstacion = 5
 
 [node name="Area3D2" type="Area3D" parent="Domi/CSGBox3D8"]

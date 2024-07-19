@@ -3,8 +3,8 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://nth8n2xgqcx4"
-path.s3tc="res://.godot/imported/Mapa_3D_Sin-título-2_0004_Normal.png-b26aa18a3b3ed48469240ceaf84e9a08.s3tc.ctex"
-path.etc2="res://.godot/imported/Mapa_3D_Sin-título-2_0004_Normal.png-b26aa18a3b3ed48469240ceaf84e9a08.etc2.ctex"
+path.s3tc="res://.godot/imported/Mapa_3D_Sin-título-2_0004_Normal.png-22189e754731c4b245c6a1fd926ab527.s3tc.ctex"
+path.etc2="res://.godot/imported/Mapa_3D_Sin-título-2_0004_Normal.png-22189e754731c4b245c6a1fd926ab527.etc2.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
@@ -15,8 +15,8 @@ generator_parameters={
 
 [deps]
 
-source_file="res://Recursos/Textures/Mapa_3D/Mapa_3D_Sin-título-2_0004_Normal.png"
-dest_files=["res://.godot/imported/Mapa_3D_Sin-título-2_0004_Normal.png-b26aa18a3b3ed48469240ceaf84e9a08.s3tc.ctex", "res://.godot/imported/Mapa_3D_Sin-título-2_0004_Normal.png-b26aa18a3b3ed48469240ceaf84e9a08.etc2.ctex"]
+source_file="res://Recursos/Meshes/Mapa_3D/Mapa_3D_Sin-título-2_0004_Normal.png"
+dest_files=["res://.godot/imported/Mapa_3D_Sin-título-2_0004_Normal.png-22189e754731c4b245c6a1fd926ab527.s3tc.ctex", "res://.godot/imported/Mapa_3D_Sin-título-2_0004_Normal.png-22189e754731c4b245c6a1fd926ab527.etc2.ctex"]
 
 [params]
 

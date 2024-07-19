@@ -21,6 +21,7 @@ extends Node3D
 @export var maxZoom:float
 @export var initialZoom:float
 
+var ID_Select = 0
 #endregion
 
 #region Propiedades para logica
@@ -129,14 +130,23 @@ func OnTweenFinished_MovimientoRealizado():
 
 func MoverCamara(idEstacion:int):
 	DisableNavigation()
-	if !isTween:
-		var tween := TweenManager.init_tween(OnTweenFinished_MovimientoRealizado)
-		isTween = true
-		var transform: Array = NavigationManager.GetSiteAnchor(idEstacion)
-		
-		tween.set_parallel()
-		tween.tween_property(self,"position", transform[0],1.5)
-		tween.tween_property(self,"rotation", transform[1],1.5)
+	var transform: Array
+	if ID_Select != idEstacion:
+		ID_Select = idEstacion
+		if !isTween:
+			print("Hola")
+			var tween := TweenManager.init_tween(OnTweenFinished_MovimientoRealizado)
+			isTween = true
+			transform = NavigationManager.GetSiteAnchor(idEstacion)
+			var new_vec3 = Vector3(rotation.x, transform[1].y, rotation.z)
+			
+			tween.set_parallel()
+			tween.tween_property(self,"position", transform[0],1.5)
+			tween.tween_property($Camera3D,"rotation", new_vec3,1.5)
+	else:
+		if !isTween:
+			ID_Select = 0
+			ResetCameraPosition()
 
 func ResetCameraPosition():
 	DisableNavigation()

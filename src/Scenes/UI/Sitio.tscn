@@ -85,15 +85,15 @@ grow_vertical = 2
 
 [node name="nombre_sitio" type="Label" parent="VBoxContainer/HBoxContainer/nombre_fecha_contaier/VBoxContainer"]
 layout_mode = 2
-size_flags_vertical = 2
-theme_override_font_sizes/font_size = 37
+size_flags_vertical = 0
+theme_override_font_sizes/font_size = 34
 text = "Nombre Sitio"
 
 [node name="fecha_sitio" type="Label" parent="VBoxContainer/HBoxContainer/nombre_fecha_contaier/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 0
 theme_override_colors/font_color = Color(0.672064, 0.672064, 0.672064, 1)
-theme_override_font_sizes/font_size = 20
+theme_override_font_sizes/font_size = 18
 text = "00:00hrs, 00/00/0000"
 
 [node name="Button" type="Button" parent="VBoxContainer/HBoxContainer/nombre_fecha_contaier"]

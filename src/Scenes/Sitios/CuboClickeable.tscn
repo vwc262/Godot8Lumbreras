@@ -1,18 +1,19 @@
-[gd_scene load_steps=3 format=3 uid="uid://vw46h30r4ia4"]
+[gd_scene load_steps=4 format=3 uid="uid://vw46h30r4ia4"]
 
 [ext_resource type="Script" path="res://Scripts/Managers/MinecraftClick.gd" id="1_r8t3f"]
+[ext_resource type="PackedScene" uid="uid://kim2v1w72bx0" path="res://Recursos/Meshes/Sitios/Genericos/prueba/modelo_prueba.glb" id="2_moj8n"]
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_vt218"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_v3q2l"]
 
-[node name="CSGBox3D4" type="CSGBox3D"]
-use_collision = true
+[node name="Node3D" type="Node3D"]
 script = ExtResource("1_r8t3f")
 
-[node name="Area3D" type="Area3D" parent="."]
-transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0, 0)
+[node name="modelo_prueba" parent="." instance=ExtResource("2_moj8n")]
 
-[node name="ff" type="CollisionShape3D" parent="Area3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 2.0448e-08, 0, -2.0448e-08, 1, 0, 0, 0)
-shape = SubResource("BoxShape3D_vt218")
+[node name="Area3D" type="Area3D" parent="modelo_prueba"]
 
-[connection signal="input_event" from="Area3D" to="." method="_on_area_3d_input_event"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="modelo_prueba/Area3D"]
+transform = Transform3D(1.7, 0, 0, 0, 1.7, 0, 0, 0, 1.7, 0, 0, 0)
+shape = SubResource("BoxShape3D_v3q2l")
+
+[connection signal="input_event" from="modelo_prueba/Area3D" to="." method="_on_area_3d_input_event"]

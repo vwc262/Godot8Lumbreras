@@ -132,7 +132,11 @@ func MoverCamara(idEstacion:int):
 	if !isTween:
 		var tween := TweenManager.init_tween(OnTweenFinished_MovimientoRealizado)
 		isTween = true
-		tween.tween_property(self,"position",NavigationManager.GetSiteAnchor(idEstacion),1.5)
+		var transform: Array = NavigationManager.GetSiteAnchor(idEstacion)
+		
+		tween.set_parallel()
+		tween.tween_property(self,"position", transform[0],1.5)
+		tween.tween_property(self,"rotation", transform[1],1.5)
 
 func ResetCameraPosition():
 	DisableNavigation()

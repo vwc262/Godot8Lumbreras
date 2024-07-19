@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://40yxy48fqaax"
-path="res://.godot/imported/Lista_02_a.jpg-aac05fe58c73c875abe973bd4aa0084d.ctex"
+uid="uid://bsw3aw33xfx31"
+path="res://.godot/imported/Lista_02.jpg-ad6f1b089ef332abafb0da0934b1e0ff.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Recursos/UI/img/Lista_02_a.jpg"
-dest_files=["res://.godot/imported/Lista_02_a.jpg-aac05fe58c73c875abe973bd4aa0084d.ctex"]
+source_file="res://Recursos/UI/img/Lista_02.jpg"
+dest_files=["res://.godot/imported/Lista_02.jpg-ad6f1b089ef332abafb0da0934b1e0ff.ctex"]
 
 [params]
 

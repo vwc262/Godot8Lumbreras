@@ -59,6 +59,12 @@ horizontal_alignment = 1
 vertical_alignment = 1
 uppercase = true
 
+[node name="BTN_datos_random" type="Button" parent="DynamicMargins/VB_MainContainer/header_container"]
+layout_mode = 0
+offset_right = 8.0
+offset_bottom = 8.0
+text = "DATOS RANDOM"
+
 [node name="main_container" type="VBoxContainer" parent="DynamicMargins/VB_MainContainer"]
 layout_mode = 2
 size_flags_vertical = 3
@@ -73,7 +79,7 @@ stretch = true
 handle_input_locally = false
 physics_object_picking = true
 physics_object_picking_sort = true
-size = Vector2i(2, 2)
+size = Vector2i(1080, 1045)
 render_target_update_mode = 4
 
 [node name="World" parent="DynamicMargins/VB_MainContainer/main_container/SubViewportContainer/SubViewport" instance=ExtResource("2_2gqy4")]
@@ -203,5 +209,6 @@ visible = false
 custom_minimum_size = Vector2(0, 650)
 layout_mode = 2
 
+[connection signal="pressed" from="DynamicMargins/VB_MainContainer/header_container/BTN_datos_random" to="Endpoint" method="_on_btn_datos_random_pressed"]
 [connection signal="button_down" from="DynamicMargins/VB_MainContainer/main_container/ListaSitiosContainer/VBoxContainer/botones_container/HBoxContainer/BTN_graficar" to="." method="_on_btn_graficar_button_down"]
 [connection signal="pressed" from="DynamicMargins/VB_MainContainer/main_container/ListaSitiosContainer/VBoxContainer/botones_container/HBoxContainer/BTN_ListaSitios" to="." method="_on_btn_lista_sitios_pressed"]

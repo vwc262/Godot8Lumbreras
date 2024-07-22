@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://kmjgjtilh7ar"]
+
+[ext_resource type="Script" path="res://Recursos/UI/SpriteText3D.gd" id="1_b7125"]
+
+[node name="Sprite3D" type="Sprite3D"]
+script = ExtResource("1_b7125")
+offsetLocation = null
+
+[node name="Label3D" type="Label3D" parent="."]
+billboard = 1
+text = "Texto Default"

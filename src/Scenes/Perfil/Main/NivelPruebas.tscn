@@ -30,7 +30,6 @@ light_indirect_energy = 0.025
 light_volumetric_fog_energy = 0.0
 
 [node name="Mapa_3D_3" parent="." instance=ExtResource("3_s46sv")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.94954, 6.18662)
 
 [node name="Mapa_3D" parent="Mapa_3D_3" index="0"]
 transform = Transform3D(1, 0, 0, 0, 0.5, 0, 0, 0, 1, 0, 0, 0)
@@ -58,7 +57,7 @@ fov = 85.0
 [node name="Sitios" type="Node" parent="."]
 
 [node name="CSGBox3D4" parent="Sitios" instance=ExtResource("3_dfqhc")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.6663, -0.99286, 36.0102)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.5195, -1.17848, 20.8916)
 IdEstacion = 1
 
 [node name="Area3D2" type="Area3D" parent="Sitios/CSGBox3D4"]
@@ -67,7 +66,7 @@ IdEstacion = 1
 shape = SubResource("BoxShape3D_47xlv")
 
 [node name="CSGBox3D5" parent="Sitios" instance=ExtResource("3_dfqhc")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.69775, -0.99286, 27.7377)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.7986, -0.927088, 16.5088)
 IdEstacion = 2
 
 [node name="Area3D2" type="Area3D" parent="Sitios/CSGBox3D5"]
@@ -76,7 +75,7 @@ IdEstacion = 2
 shape = SubResource("BoxShape3D_47xlv")
 
 [node name="CSGBox3D6" parent="Sitios" instance=ExtResource("3_dfqhc")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.64021, 0.00714004, 21.6848)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.49344, -0.769724, 11.1164)
 IdEstacion = 3
 
 [node name="Area3D2" type="Area3D" parent="Sitios/CSGBox3D6"]
@@ -85,7 +84,7 @@ IdEstacion = 3
 shape = SubResource("BoxShape3D_47xlv")
 
 [node name="CSGBox3D7" parent="Sitios" instance=ExtResource("3_dfqhc")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.80943, 1.00714, 17.2841)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.80943, -0.194734, 6.64233)
 IdEstacion = 4
 
 [node name="Area3D2" type="Area3D" parent="Sitios/CSGBox3D7"]
@@ -94,7 +93,7 @@ IdEstacion = 4
 shape = SubResource("BoxShape3D_47xlv")
 
 [node name="CSGBox3D8" parent="Sitios" instance=ExtResource("3_dfqhc")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.8526, 2.00714, -11.6266)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.52251, 0.0285335, -9.13129)
 IdEstacion = 5
 
 [node name="Area3D2" type="Area3D" parent="Sitios/CSGBox3D8"]
@@ -103,7 +102,7 @@ IdEstacion = 5
 shape = SubResource("BoxShape3D_47xlv")
 
 [node name="CSGBox3D9" parent="Sitios" instance=ExtResource("3_dfqhc")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.06959, 1.00714, -6.04913)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.21637, -0.156033, -5.90235)
 IdEstacion = 6
 
 [node name="Area3D2" type="Area3D" parent="Sitios/CSGBox3D9"]

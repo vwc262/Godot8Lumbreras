@@ -1,6 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://t3dbkejdc470"]
+[gd_scene load_steps=7 format=3 uid="uid://t3dbkejdc470"]
 
 [ext_resource type="Texture2D" uid="uid://b00afd4f355h" path="res://Recursos/Textures/89f6b071003e13975a06e34fb3a31ba5.hdr" id="1_wnieh"]
+[ext_resource type="PackedScene" uid="uid://kmjgjtilh7ar" path="res://Recursos/UI/sprite_Text_3d_asset.tscn" id="2_c8cfl"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_2a7iv"]
 panorama = ExtResource("1_wnieh")
@@ -24,3 +25,7 @@ camera_attributes = SubResource("CameraAttributesPhysical_tmwmd")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="WorldEnvironment"]
 transform = Transform3D(-0.292651, 0.163603, 0.94212, 0.954394, -0.0108703, 0.298351, 0.0590524, 0.986466, -0.152961, 0, 0, 0)
+
+[node name="Sprite3D" parent="." instance=ExtResource("2_c8cfl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.663657, 0, 0)
+textoBlock = "Prueba"

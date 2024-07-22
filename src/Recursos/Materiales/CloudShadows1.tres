@@ -3,7 +3,7 @@
 [ext_resource type="Shader" path="res://Recursos/Materiales/CloudShadows.gdshader" id="1_4w7yi"]
 [ext_resource type="Texture2D" uid="uid://cco1x8tqdrg1t" path="res://Recursos/Meshes/Mapa_3D/Texturas/Albedo.jpg" id="2_5buss"]
 [ext_resource type="Texture2D" uid="uid://b231uuk0f7xhh" path="res://Recursos/Meshes/Mapa_3D/Texturas/AO.bmp" id="3_6rj6n"]
-[ext_resource type="Texture2D" uid="uid://bfqhi3aoyrj4o" path="res://Recursos/Meshes/Sitios/Lumbrera0/Texturas/clouds.png" id="4_2c8m0"]
+[ext_resource type="Texture2D" uid="uid://bfqhi3aoyrj4o" path="res://Recursos/Meshes/Mapa_Pruebas/Sitios/Lumbrera0/Texturas/clouds.png" id="4_2c8m0"]
 [ext_resource type="Texture2D" uid="uid://cct4tia8bklji" path="res://Recursos/Meshes/Mapa_3D/Texturas/Height.jpg" id="5_u1s64"]
 [ext_resource type="Texture2D" uid="uid://bfnrit5ao3hb3" path="res://Recursos/Meshes/Mapa_3D/Texturas/Normal.bmp" id="6_nhjlk"]
 

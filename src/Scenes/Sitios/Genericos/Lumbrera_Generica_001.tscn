@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://c5idxbnu48it6"]
 
 [ext_resource type="Script" path="res://Scripts/Managers/MinecraftClick.gd" id="1_exmfp"]
-[ext_resource type="PackedScene" uid="uid://cd60eirjhh2i6" path="res://Recursos/Meshes/Sitios/Genericos/Lumbrera_Generica_001/Lumbrera_Generica_001_v001.glb" id="1_siuv7"]
+[ext_resource type="PackedScene" uid="uid://cd60eirjhh2i6" path="res://Recursos/Meshes/Mapa_Pruebas/Sitios/Genericos/Lumbrera_Generica_001/Lumbrera_Generica_001_v001.glb" id="1_siuv7"]
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_nupox"]
 

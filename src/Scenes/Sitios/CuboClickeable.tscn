@@ -10,7 +10,7 @@ size = Vector3(1.52014, 1.01721, 1.50272)
 script = ExtResource("1_r8t3f")
 
 [node name="Purif_Generica_001_v001" parent="." instance=ExtResource("2_wuued")]
-transform = Transform3D(-0.2, 0, -1.74846e-08, 0, 0.2, 0, 1.74846e-08, 0, -0.2, 0, 0, 0)
+transform = Transform3D(-8.74228e-09, 0, -0.2, 0, 0.2, 0, 0.2, 0, -8.74228e-09, 0, 0, 0)
 
 [node name="Area3D" type="Area3D" parent="Purif_Generica_001_v001"]
 

@@ -28,89 +28,96 @@ light_energy = 1.5
 light_indirect_energy = 0.025
 light_volumetric_fog_energy = 0.0
 
-[node name="Terreno_Prueba_032" parent="." instance=ExtResource("1_e3nc3")]
-transform = Transform3D(-6.55671e-07, 0, 15, 0, 15, 0, -15, 0, -6.55671e-07, 0, 0, 0)
-
 [node name="CameraParent" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 15, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 35, 0)
 script = ExtResource("2_ui4vn")
 can_pan = true
-pan_speed = 0.3
+pan_speed = 0.6
+minX = -30
+maxX = 30
+minZ = -4
+maxZ = 23
 rotate_treshold = 8
 initialRotationCamera = -90
 minRotationY = -20.0
 maxRotationY = 20.0
-offSetDistanceInclination = 5.5
+offSetDistanceInclination = 20.0
 zoom_speed = 0.05
 can_zoom = true
 maxZoom = 2.0
-initialZoom = 15.0
+initialZoom = 35.0
 
 [node name="Camera3D" type="Camera3D" parent="CameraParent"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0)
 fov = 85.0
 
-[node name="Sitios" type="Node" parent="."]
-
-[node name="CSGBox3D4" parent="Sitios" instance=ExtResource("3_dfqhc")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35.9335, -0.819509, 65.0593)
-IdEstacion = 1
-
-[node name="Area3D2" type="Area3D" parent="Sitios/CSGBox3D4"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Sitios/CSGBox3D4/Area3D2"]
-shape = SubResource("BoxShape3D_47xlv")
-
-[node name="CSGBox3D5" parent="Sitios" instance=ExtResource("3_dfqhc")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28.5097, -2.3612, 61.2248)
-IdEstacion = 2
-
-[node name="Area3D2" type="Area3D" parent="Sitios/CSGBox3D5"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Sitios/CSGBox3D5/Area3D2"]
-shape = SubResource("BoxShape3D_47xlv")
-
-[node name="CSGBox3D6" parent="Sitios" instance=ExtResource("3_dfqhc")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.6047, -2.49816, 58.0058)
-IdEstacion = 3
-
-[node name="Area3D2" type="Area3D" parent="Sitios/CSGBox3D6"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Sitios/CSGBox3D6/Area3D2"]
-shape = SubResource("BoxShape3D_47xlv")
-
-[node name="CSGBox3D7" parent="Sitios" instance=ExtResource("3_dfqhc")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.2906, -1.00262, 52.4404)
-IdEstacion = 4
-
-[node name="Area3D2" type="Area3D" parent="Sitios/CSGBox3D7"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Sitios/CSGBox3D7/Area3D2"]
-shape = SubResource("BoxShape3D_47xlv")
-
-[node name="CSGBox3D8" parent="Sitios" instance=ExtResource("3_dfqhc")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.84364, -0.66105, 43.4313)
-IdEstacion = 5
-
-[node name="Area3D2" type="Area3D" parent="Sitios/CSGBox3D8"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Sitios/CSGBox3D8/Area3D2"]
-shape = SubResource("BoxShape3D_47xlv")
-
-[node name="CSGBox3D9" parent="Sitios" instance=ExtResource("3_dfqhc")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.30044, -0.398411, 55.9015)
-IdEstacion = 6
-
-[node name="Area3D2" type="Area3D" parent="Sitios/CSGBox3D9"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Sitios/CSGBox3D9/Area3D2"]
-shape = SubResource("BoxShape3D_47xlv")
-
 [node name="SkyEnvironment" parent="." instance=ExtResource("5_a3vqv")]
 
-[connection signal="input_event" from="Sitios/CSGBox3D4/Area3D2" to="Sitios/CSGBox3D4" method="_on_area_3d_2_input_event"]
-[connection signal="input_event" from="Sitios/CSGBox3D5/Area3D2" to="Sitios/CSGBox3D5" method="_on_area_3d_2_input_event"]
-[connection signal="input_event" from="Sitios/CSGBox3D6/Area3D2" to="Sitios/CSGBox3D6" method="_on_area_3d_2_input_event"]
-[connection signal="input_event" from="Sitios/CSGBox3D7/Area3D2" to="Sitios/CSGBox3D7" method="_on_area_3d_2_input_event"]
-[connection signal="input_event" from="Sitios/CSGBox3D8/Area3D2" to="Sitios/CSGBox3D8" method="_on_area_3d_2_input_event"]
-[connection signal="input_event" from="Sitios/CSGBox3D9/Area3D2" to="Sitios/CSGBox3D9" method="_on_area_3d_2_input_event"]
+[node name="Terrain" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.2555, 0, -45.856)
+
+[node name="Sitios" type="Node3D" parent="Terrain"]
+
+[node name="CSGBox3D4" parent="Terrain/Sitios" instance=ExtResource("3_dfqhc")]
+transform = Transform3D(-1, 0, -1.50996e-07, 0, 1, 0, 1.50996e-07, 0, -1, 35.9335, -0.819509, 65.0593)
+IdEstacion = 1
+
+[node name="Area3D2" type="Area3D" parent="Terrain/Sitios/CSGBox3D4"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Terrain/Sitios/CSGBox3D4/Area3D2"]
+shape = SubResource("BoxShape3D_47xlv")
+
+[node name="CSGBox3D5" parent="Terrain/Sitios" instance=ExtResource("3_dfqhc")]
+transform = Transform3D(-1, 0, -1.50996e-07, 0, 1, 0, 1.50996e-07, 0, -1, 28.5097, -2.3612, 61.2248)
+IdEstacion = 2
+
+[node name="Area3D2" type="Area3D" parent="Terrain/Sitios/CSGBox3D5"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Terrain/Sitios/CSGBox3D5/Area3D2"]
+shape = SubResource("BoxShape3D_47xlv")
+
+[node name="CSGBox3D6" parent="Terrain/Sitios" instance=ExtResource("3_dfqhc")]
+transform = Transform3D(-1, 0, -1.50996e-07, 0, 1, 0, 1.50996e-07, 0, -1, 22.6047, -2.49816, 58.0058)
+IdEstacion = 3
+
+[node name="Area3D2" type="Area3D" parent="Terrain/Sitios/CSGBox3D6"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Terrain/Sitios/CSGBox3D6/Area3D2"]
+shape = SubResource("BoxShape3D_47xlv")
+
+[node name="CSGBox3D7" parent="Terrain/Sitios" instance=ExtResource("3_dfqhc")]
+transform = Transform3D(-1, 0, -1.50996e-07, 0, 1, 0, 1.50996e-07, 0, -1, 12.2906, -1.00262, 52.4404)
+IdEstacion = 4
+
+[node name="Area3D2" type="Area3D" parent="Terrain/Sitios/CSGBox3D7"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Terrain/Sitios/CSGBox3D7/Area3D2"]
+shape = SubResource("BoxShape3D_47xlv")
+
+[node name="CSGBox3D8" parent="Terrain/Sitios" instance=ExtResource("3_dfqhc")]
+transform = Transform3D(-1, 0, -1.50996e-07, 0, 1, 0, 1.50996e-07, 0, -1, -3.84364, -0.66105, 43.4313)
+IdEstacion = 5
+
+[node name="Area3D2" type="Area3D" parent="Terrain/Sitios/CSGBox3D8"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Terrain/Sitios/CSGBox3D8/Area3D2"]
+shape = SubResource("BoxShape3D_47xlv")
+
+[node name="CSGBox3D9" parent="Terrain/Sitios" instance=ExtResource("3_dfqhc")]
+transform = Transform3D(-1, 0, -1.50996e-07, 0, 1, 0, 1.50996e-07, 0, -1, -1.30044, -0.398411, 55.9015)
+IdEstacion = 6
+
+[node name="Area3D2" type="Area3D" parent="Terrain/Sitios/CSGBox3D9"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Terrain/Sitios/CSGBox3D9/Area3D2"]
+shape = SubResource("BoxShape3D_47xlv")
+
+[node name="Terreno_Prueba_032" parent="Terrain" instance=ExtResource("1_e3nc3")]
+transform = Transform3D(-6.55671e-07, 0, 15, 0, 15, 0, -15, 0, -6.55671e-07, 0, 0, 0)
+
+[connection signal="input_event" from="Terrain/Sitios/CSGBox3D4/Area3D2" to="Terrain/Sitios/CSGBox3D4" method="_on_area_3d_2_input_event"]
+[connection signal="input_event" from="Terrain/Sitios/CSGBox3D5/Area3D2" to="Terrain/Sitios/CSGBox3D5" method="_on_area_3d_2_input_event"]
+[connection signal="input_event" from="Terrain/Sitios/CSGBox3D6/Area3D2" to="Terrain/Sitios/CSGBox3D6" method="_on_area_3d_2_input_event"]
+[connection signal="input_event" from="Terrain/Sitios/CSGBox3D7/Area3D2" to="Terrain/Sitios/CSGBox3D7" method="_on_area_3d_2_input_event"]
+[connection signal="input_event" from="Terrain/Sitios/CSGBox3D8/Area3D2" to="Terrain/Sitios/CSGBox3D8" method="_on_area_3d_2_input_event"]
+[connection signal="input_event" from="Terrain/Sitios/CSGBox3D9/Area3D2" to="Terrain/Sitios/CSGBox3D9" method="_on_area_3d_2_input_event"]

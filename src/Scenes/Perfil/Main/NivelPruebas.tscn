@@ -1,9 +1,12 @@
-[gd_scene load_steps=8 format=3 uid="uid://cyug4nnq0yh1a"]
+[gd_scene load_steps=11 format=3 uid="uid://cyug4nnq0yh1a"]
 
 [ext_resource type="PackedScene" uid="uid://cw30vvtmxm8hg" path="res://Recursos/Meshes/Mapa_Pruebas/Prueba_03/Terreno_Prueba_03.glb" id="1_e3nc3"]
 [ext_resource type="Script" path="res://Scripts/Navigation/Touch.gd" id="2_ui4vn"]
 [ext_resource type="PackedScene" uid="uid://vw46h30r4ia4" path="res://Scenes/Sitios/CuboClickeable.tscn" id="3_dfqhc"]
 [ext_resource type="PackedScene" uid="uid://bhakmsdspl7on" path="res://Scenes/Sky/SkyEnvironment.tscn" id="5_a3vqv"]
+[ext_resource type="Material" uid="uid://cogvlnnly8grq" path="res://Recursos/Materiales/CloudShadows1.tres" id="5_wrlws"]
+[ext_resource type="Material" uid="uid://b0gkm23d6a2ch" path="res://Recursos/Materiales/CloudMeshesTransparency.tres" id="6_8puvl"]
+[ext_resource type="Texture2D" uid="uid://cw4pt0rum7ikr" path="res://Recursos/Textures/Sky/nube_02.png" id="7_5pikp"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hh5is"]
 albedo_color = Color(0.529412, 0.807843, 0.921569, 1)
@@ -115,9 +118,54 @@ shape = SubResource("BoxShape3D_47xlv")
 [node name="Terreno_Prueba_032" parent="Terrain" instance=ExtResource("1_e3nc3")]
 transform = Transform3D(-6.55671e-07, 0, 15, 0, 15, 0, -15, 0, -6.55671e-07, 0, 0, 0)
 
+[node name="Terreno_Prueba_03" parent="Terrain/Terreno_Prueba_032" index="0"]
+surface_material_override/0 = ExtResource("5_wrlws")
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(0.801081, 0, 0, 0, 0.801081, 0, 0, 0, 0.801081, 11.348, 15.7726, 1.12967)
+material_override = ExtResource("6_8puvl")
+visibility_range_begin_margin = 20.0
+visibility_range_end = 40.0
+visibility_range_end_margin = 80.0
+visibility_range_fade_mode = 1
+billboard = 1
+texture = ExtResource("7_5pikp")
+
+[node name="Sprite3D2" type="Sprite3D" parent="."]
+transform = Transform3D(0.801081, 0, 0, 0, 0.801081, 0, 0, 0, 0.801081, -13.5046, 15.7726, -9.86769)
+material_override = ExtResource("6_8puvl")
+visibility_range_begin_margin = 20.0
+visibility_range_end = 40.0
+visibility_range_end_margin = 80.0
+visibility_range_fade_mode = 1
+billboard = 1
+texture = ExtResource("7_5pikp")
+
+[node name="Sprite3D3" type="Sprite3D" parent="."]
+transform = Transform3D(0.801081, 0, 0, 0, 0.801081, 0, 0, 0, 0.801081, 34.8013, 12.7564, -9.00636)
+material_override = ExtResource("6_8puvl")
+visibility_range_begin_margin = 20.0
+visibility_range_end = 40.0
+visibility_range_end_margin = 80.0
+visibility_range_fade_mode = 1
+billboard = 1
+texture = ExtResource("7_5pikp")
+
+[node name="Sprite3D4" type="Sprite3D" parent="."]
+transform = Transform3D(0.801081, 0, 0, 0, 0.801081, 0, 0, 0, 0.801081, -30.2209, 12.7564, -9.00636)
+material_override = ExtResource("6_8puvl")
+visibility_range_begin_margin = 20.0
+visibility_range_end = 40.0
+visibility_range_end_margin = 80.0
+visibility_range_fade_mode = 1
+billboard = 1
+texture = ExtResource("7_5pikp")
+
 [connection signal="input_event" from="Terrain/Sitios/CSGBox3D4/Area3D2" to="Terrain/Sitios/CSGBox3D4" method="_on_area_3d_2_input_event"]
 [connection signal="input_event" from="Terrain/Sitios/CSGBox3D5/Area3D2" to="Terrain/Sitios/CSGBox3D5" method="_on_area_3d_2_input_event"]
 [connection signal="input_event" from="Terrain/Sitios/CSGBox3D6/Area3D2" to="Terrain/Sitios/CSGBox3D6" method="_on_area_3d_2_input_event"]
 [connection signal="input_event" from="Terrain/Sitios/CSGBox3D7/Area3D2" to="Terrain/Sitios/CSGBox3D7" method="_on_area_3d_2_input_event"]
 [connection signal="input_event" from="Terrain/Sitios/CSGBox3D8/Area3D2" to="Terrain/Sitios/CSGBox3D8" method="_on_area_3d_2_input_event"]
 [connection signal="input_event" from="Terrain/Sitios/CSGBox3D9/Area3D2" to="Terrain/Sitios/CSGBox3D9" method="_on_area_3d_2_input_event"]
+
+[editable path="Terrain/Terreno_Prueba_032"]

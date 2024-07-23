@@ -1,12 +1,16 @@
-[gd_scene load_steps=11 format=3 uid="uid://cyug4nnq0yh1a"]
+[gd_scene load_steps=15 format=3 uid="uid://cyug4nnq0yh1a"]
 
 [ext_resource type="PackedScene" uid="uid://cw30vvtmxm8hg" path="res://Recursos/Meshes/Mapa_Pruebas/Prueba_03/Terreno_Prueba_03.glb" id="1_e3nc3"]
 [ext_resource type="Script" path="res://Scripts/Navigation/Touch.gd" id="2_ui4vn"]
 [ext_resource type="PackedScene" uid="uid://vw46h30r4ia4" path="res://Scenes/Sitios/CuboClickeable.tscn" id="3_dfqhc"]
 [ext_resource type="PackedScene" uid="uid://bhakmsdspl7on" path="res://Scenes/Sky/SkyEnvironment.tscn" id="5_a3vqv"]
 [ext_resource type="Material" uid="uid://cogvlnnly8grq" path="res://Recursos/Materiales/CloudShadows1.tres" id="5_wrlws"]
-[ext_resource type="Material" uid="uid://b0gkm23d6a2ch" path="res://Recursos/Materiales/CloudMeshesTransparency.tres" id="6_8puvl"]
+[ext_resource type="Material" path="res://Recursos/Materiales/CloudMeshesTransparency.tres" id="6_8puvl"]
 [ext_resource type="Texture2D" uid="uid://cw4pt0rum7ikr" path="res://Recursos/Textures/Sky/nube_02.png" id="7_5pikp"]
+[ext_resource type="PackedScene" uid="uid://dufq2s41jpm5w" path="res://Recursos/Meshes/Nombres_del_mundo/CDMX.glb" id="8_gp1mx"]
+[ext_resource type="PackedScene" uid="uid://dqpprs1nvrwex" path="res://Recursos/Meshes/Nombres_del_mundo/EDOMEX.glb" id="9_m0n8c"]
+[ext_resource type="PackedScene" uid="uid://bq24d2bn7jcx7" path="res://Recursos/Meshes/Nombres_del_mundo/Toluca.glb" id="10_ygdvq"]
+[ext_resource type="PackedScene" uid="uid://crj1oyj2j0paa" path="res://Recursos/Meshes/Nombres_del_mundo/Valle_Bravo.glb" id="11_q61tt"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hh5is"]
 albedo_color = Color(0.529412, 0.807843, 0.921569, 1)
@@ -160,6 +164,18 @@ visibility_range_end_margin = 80.0
 visibility_range_fade_mode = 1
 billboard = 1
 texture = ExtResource("7_5pikp")
+
+[node name="CDMX" parent="." instance=ExtResource("8_gp1mx")]
+transform = Transform3D(0.990693, 0.000804678, 0.10978, 0, 0.00806537, -0.591183, -0.136113, 0.00585681, 0.799031, -17.3798, -0.438004, -119.032)
+
+[node name="EDOMEX" parent="." instance=ExtResource("9_m0n8c")]
+transform = Transform3D(0.976605, 0.000718109, 0.202698, 1.11759e-08, 0.00942595, -0.333939, -0.215042, 0.00326126, 0.920542, -22.6402, 0, -47.1394)
+
+[node name="Toluca" parent="." instance=ExtResource("10_ygdvq")]
+transform = Transform3D(0.999309, -0.00037167, -9.31323e-10, 0.034734, 0.00933895, -0.355857, 0.0132261, 0.00355611, 0.93454, 4.93982, 0.0605862, -58.0793)
+
+[node name="Valle_Bravo" parent="." instance=ExtResource("11_q61tt")]
+transform = Transform3D(0.930673, -0.00140507, -0.337795, -1.38681e-08, 0.00923311, -0.384054, 0.365852, 0.00357428, 0.8593, 16.9635, -1.2075, 3.89035)
 
 [connection signal="input_event" from="Terrain/Sitios/CSGBox3D4/Area3D2" to="Terrain/Sitios/CSGBox3D4" method="_on_area_3d_2_input_event"]
 [connection signal="input_event" from="Terrain/Sitios/CSGBox3D5/Area3D2" to="Terrain/Sitios/CSGBox3D5" method="_on_area_3d_2_input_event"]

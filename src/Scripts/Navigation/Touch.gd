@@ -156,11 +156,11 @@ func ResetCameraPosition():
 	DisableNavigation()
 	var tweenRot := TweenManager.init_tween(OnTweenFinished_MovimientoRealizado)
 	tweenRot.set_parallel()
-	tweenRot.tween_property(self,"rotation_degrees",Vector3(0,0,0),.5)
 	tweenRot.tween_property(self,"position",initalCameraPosition,1)
+	#tweenRot.tween_property(self,"rotation_degrees",Vector3(0,0,0),1.5)
 	
 	var tweenRotCamara := TweenManager.init_tween(func(): return)
-	tweenRotCamara.tween_property($Camera3D,"rotation_degrees",Vector3(initialRotationCamera,0,0),.5)
+	tweenRotCamara.tween_property($Camera3D,"rotation_degrees",Vector3(initialRotationCamera,0,0),1.0)
 
 #Deshabilita la navegacion mientras este ocurriendo una animacion
 func DisableNavigation():

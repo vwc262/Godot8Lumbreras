@@ -4,6 +4,10 @@ extends Node3D
 @export_group('Pan')
 @export var can_pan: bool
 @export var pan_speed = 0.01
+@export var minX = -13 # -13 , 20
+@export var maxX = 20 # -13 , 20
+@export var minZ = -10
+@export var maxZ = 10
 
 @export_group('Rotation')
 @export var can_rotate: bool
@@ -82,15 +86,16 @@ func handle_drag(event: InputEventScreenDrag):
 	var parentTransform = get_global_transform()
 	var forward: Vector3 = parentTransform.basis.z
 	var right: Vector3 = parentTransform.basis.x
+	var factorZoom = remap(position.y,35,2,0,1) + 1
 
 	if touch_points.size() == 1:
 		if can_pan:
 			var pan_vector = (forward + (-event.relative.x * right ) + (-event.relative.y * forward)) * pan_speed
-			pan_vector /= initialZoom
+			pan_vector /= initialZoom *.5
 			pan_vector.y = 0
-			global_translate(pan_vector)
+			global_translate(pan_vector)						
 
-	elif touch_points.size() == 2:
+	elif touch_points.size() == 2:			
 		var touch_point_positions = touch_points.values()
 		var current_dist = touch_point_positions[1].distance_to(touch_point_positions[0])
 		var zoom_factor = current_dist / start_distance
@@ -107,6 +112,8 @@ func handle_drag(event: InputEventScreenDrag):
 			position.y = start_zoom / zoom_factor
 			limit_zoom()
 			$Camera3D.rotation_degrees.x = lerp(initialRotationCamera, LimitRotationCamera, inclinate_camera())
+	position.x = clamp(position.x,minX * factorZoom ,maxX * factorZoom )
+	position.z = clamp(position.z,minZ * factorZoom,maxZ * factorZoom)
 
 func rotate_camera(currentangle: float):
 	rotation_degrees.y += -currentangle
@@ -117,18 +124,14 @@ func limit_zoom():
 
 func inclinate_camera()->float:
 	var val = 0 #Default uno para que mantenga la vista top
-	if position.y < initialZoom - offSetDistanceInclination:
-		pan_speed = 0.1
-		val = remap(position.y, initialZoom - offSetDistanceInclination, maxZoom, 0, 1)
-	else:
-		pan_speed = 0.3
+	if position.y < initialZoom - offSetDistanceInclination:		
+		val = remap(position.y, initialZoom - offSetDistanceInclination, maxZoom, 0, 1)			
 	return val
 
 func OnTweenFinished_MovimientoRealizado():
 	can_zoom= true
 	can_pan = true
-	isTween = false
-	print($Camera3D.rotation_degrees.x)
+	isTween = false	
 
 func MoverCamara(idEstacion:int):
 	DisableNavigation()

@@ -5,28 +5,23 @@ class_name DatosGlobales
 signal datos_actualizados
 
 # Variable para almacenar los datos estructurados
-var estaciones : Array[Estacion] = []
+var estacionesDict = {}
 
 # Función para actualizar los datos
-func set_data(new_data):
-	estaciones.clear()
+func set_data(new_data):	
 	for data in new_data:
-		var estacion = parse_station_data(data)
-		estaciones.append(estacion)
-	emit_signal("datos_actualizados", estaciones)
+		var estacion = parse_station_data(data)		
+		estacionesDict[estacion.id_estacion] = estacion
+	emit_signal("datos_actualizados", get_data())
 
 # Función para obtener los datos
 func get_data() -> Array[Estacion]:
-	return estaciones
+	var estaciones :Array[Estacion] 
+	estaciones.assign(estacionesDict.values())
+	return estaciones	
 
 func get_estacion(idEstacion: int) -> Estacion:
-	var estacionesFiltter: Array[Estacion] = estaciones.filter(func(e: Estacion): 
-		return e.id_estacion == idEstacion)
-	var _estacion: Estacion
-	var estacionesCount = estacionesFiltter.size()
-	if estacionesCount >= 1:
-		_estacion = estacionesFiltter[0]
-	return _estacion
+	return estacionesDict[idEstacion]	
 
 func parse_station_data(data) -> Estacion:
 	var estacion = Estacion.new(data) #Se genera en el constructor

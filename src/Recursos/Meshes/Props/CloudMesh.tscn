@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://bo5cpfkqisqfb"]
+
+[ext_resource type="Material" uid="uid://b0gkm23d6a2ch" path="res://Recursos/Materiales/CloudMeshesTransparency.tres" id="1_fy27y"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_freoe"]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(11.4088, 0, 0, 0, -2.55683e-07, -5.84935, 0, 5.84935, -2.55683e-07, 0, 0, 0)
+material_override = ExtResource("1_fy27y")
+mesh = SubResource("PlaneMesh_freoe")

@@ -43,7 +43,7 @@ void fragment() {
 	}
 	vec4 albedo_tex = texture(texture_albedo,base_uv);
 	vec4 clouds_fx = texture(texture_clouds,base_uv +(Direction * TIME * Speed));
-	ALBEDO = (albedo.rgb * albedo_tex.rgb) * clouds_fx.rgb;
+	ALBEDO = (albedo.rgb * albedo_tex.rgb) * clouds_fx.rgb*vec3(10,10,10);
 	float metallic_tex = dot(texture(texture_metallic,base_uv),metallic_texture_channel);
 	METALLIC = metallic_tex * metallic;
 	vec4 roughness_texture_channel = vec4(1.0,0.0,0.0,0.0);

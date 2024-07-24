@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://cyug4nnq0yh1a"]
+[gd_scene load_steps=16 format=3 uid="uid://cyug4nnq0yh1a"]
 
 [ext_resource type="PackedScene" uid="uid://cw30vvtmxm8hg" path="res://Recursos/Meshes/Mapa_Pruebas/Prueba_03/Terreno_Prueba_03.glb" id="1_e3nc3"]
 [ext_resource type="Script" path="res://Scripts/Navigation/Touch.gd" id="2_ui4vn"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://dufq2s41jpm5w" path="res://Recursos/Meshes/Nombres_del_mundo/CDMX.glb" id="8_gp1mx"]
 [ext_resource type="PackedScene" uid="uid://dqpprs1nvrwex" path="res://Recursos/Meshes/Nombres_del_mundo/EDOMEX.glb" id="9_m0n8c"]
 [ext_resource type="PackedScene" uid="uid://bq24d2bn7jcx7" path="res://Recursos/Meshes/Nombres_del_mundo/Toluca.glb" id="10_ygdvq"]
+[ext_resource type="Material" uid="uid://b0gkm23d6a2ch" path="res://Recursos/Materiales/CloudMeshesTransparency.tres" id="11_415cd"]
 [ext_resource type="PackedScene" uid="uid://crj1oyj2j0paa" path="res://Recursos/Meshes/Nombres_del_mundo/Valle_Bravo.glb" id="11_q61tt"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hh5is"]
@@ -165,6 +166,7 @@ material_override = ExtResource("8_cd5e5")
 
 [node name="Sprite3D" type="Sprite3D" parent="Props/Nubes"]
 transform = Transform3D(0.801081, 0, 0, 0, 0.801081, 0, 0, 0, 0.801081, 11.348, 15.7726, 1.12967)
+material_override = ExtResource("11_415cd")
 visibility_range_begin_margin = 20.0
 visibility_range_end = 40.0
 visibility_range_end_margin = 80.0
@@ -174,6 +176,7 @@ texture = ExtResource("7_5pikp")
 
 [node name="Sprite3D2" type="Sprite3D" parent="Props/Nubes"]
 transform = Transform3D(0.801081, 0, 0, 0, 0.801081, 0, 0, 0, 0.801081, -13.5046, 15.7726, -9.86769)
+material_override = ExtResource("11_415cd")
 visibility_range_begin_margin = 20.0
 visibility_range_end = 40.0
 visibility_range_end_margin = 80.0
@@ -183,6 +186,7 @@ texture = ExtResource("7_5pikp")
 
 [node name="Sprite3D3" type="Sprite3D" parent="Props/Nubes"]
 transform = Transform3D(0.801081, 0, 0, 0, 0.801081, 0, 0, 0, 0.801081, 34.8013, 12.7564, -9.00636)
+material_override = ExtResource("11_415cd")
 visibility_range_begin_margin = 20.0
 visibility_range_end = 40.0
 visibility_range_end_margin = 80.0
@@ -192,6 +196,7 @@ texture = ExtResource("7_5pikp")
 
 [node name="Sprite3D4" type="Sprite3D" parent="Props/Nubes"]
 transform = Transform3D(0.801081, 0, 0, 0, 0.801081, 0, 0, 0, 0.801081, -43.0285, 12.7564, -20.1236)
+material_override = ExtResource("11_415cd")
 visibility_range_begin_margin = 20.0
 visibility_range_end = 40.0
 visibility_range_end_margin = 80.0
@@ -201,6 +206,7 @@ texture = ExtResource("7_5pikp")
 
 [node name="Sprite3D5" type="Sprite3D" parent="Props/Nubes"]
 transform = Transform3D(0.801081, 0, 0, 0, 0.801081, 0, 0, 0, 0.801081, -18.3263, 12.7564, -67.6823)
+material_override = ExtResource("11_415cd")
 visibility_range_begin_margin = 20.0
 visibility_range_end = 40.0
 visibility_range_end_margin = 80.0
@@ -210,6 +216,7 @@ texture = ExtResource("7_5pikp")
 
 [node name="Sprite3D6" type="Sprite3D" parent="Props/Nubes"]
 transform = Transform3D(0.801081, 0, 0, 0, 0.801081, 0, 0, 0, 0.801081, 20.8604, 12.7564, -86.9372)
+material_override = ExtResource("11_415cd")
 visibility_range_begin_margin = 20.0
 visibility_range_end = 40.0
 visibility_range_end_margin = 80.0
@@ -219,6 +226,7 @@ texture = ExtResource("7_5pikp")
 
 [node name="Sprite3D7" type="Sprite3D" parent="Props/Nubes"]
 transform = Transform3D(0.801081, 0, 0, 0, 0.801081, 0, 0, 0, 0.801081, -58.5, 12.7564, -93.3682)
+material_override = ExtResource("11_415cd")
 visibility_range_begin_margin = 20.0
 visibility_range_end = 40.0
 visibility_range_end_margin = 80.0
@@ -228,6 +236,7 @@ texture = ExtResource("7_5pikp")
 
 [node name="Sprite3D8" type="Sprite3D" parent="Props/Nubes"]
 transform = Transform3D(0.801081, 0, 0, 0, 0.801081, 0, 0, 0, 0.801081, 24.5257, 12.7564, -47.967)
+material_override = ExtResource("11_415cd")
 visibility_range_begin_margin = 20.0
 visibility_range_end = 40.0
 visibility_range_end_margin = 80.0

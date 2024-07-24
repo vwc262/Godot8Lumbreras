@@ -22,9 +22,9 @@ extends Node3D
 @export_group('Zoom')
 @export var zoom_speed = 0.01
 @export var can_zoom: bool
-@export var maxZoom:float
-@export var initialZoom:float
-
+@export var maxZoom: float
+@export var initialZoom: float
+@export var speedAnimation: float
 
 #endregion
 
@@ -124,8 +124,8 @@ func limit_zoom():
 
 func inclinate_camera()->float:
 	var val = 0 #Default uno para que mantenga la vista top
-	if position.y < initialZoom - offSetDistanceInclination:		
-		val = remap(position.y, initialZoom - offSetDistanceInclination, maxZoom, 0, 1)			
+	if position.y < initialZoom - offSetDistanceInclination:
+		val = remap(position.y, initialZoom - offSetDistanceInclination, maxZoom, 0, 1)
 	return val
 
 func OnTweenFinished_MovimientoRealizado():
@@ -144,9 +144,9 @@ func MoverCamara(idEstacion:int):
 			transform = NavigationManager.GetSiteAnchor(idEstacion)
 			var new_vec3 = Vector3(rotation.x, transform[1].y, rotation.z)
 			tween.set_parallel()
-			tween.tween_property(self,"position", transform[0],1.5)
+			tween.tween_property(self,"position", transform[0], speedAnimation)
 			var val = remap(transform[0].y, initialZoom - offSetDistanceInclination, maxZoom, 0, 1)
-			tween.tween_property($Camera3D, "rotation_degrees", Vector3(lerp(initialRotationCamera, LimitRotationCamera, val),0,0), 1.5)
+			tween.tween_property($Camera3D, "rotation_degrees", Vector3(lerp(initialRotationCamera, LimitRotationCamera, val),0,0), speedAnimation)
 	else:
 		if !isTween:
 			ID_Select = 0
@@ -156,11 +156,11 @@ func ResetCameraPosition():
 	DisableNavigation()
 	var tweenRot := TweenManager.init_tween(OnTweenFinished_MovimientoRealizado)
 	tweenRot.set_parallel()
-	tweenRot.tween_property(self,"position",initalCameraPosition,1)
+	tweenRot.tween_property(self,"position",initalCameraPosition,speedAnimation)
 	#tweenRot.tween_property(self,"rotation_degrees",Vector3(0,0,0),1.5)
 	
 	var tweenRotCamara := TweenManager.init_tween(func(): return)
-	tweenRotCamara.tween_property($Camera3D,"rotation_degrees",Vector3(initialRotationCamera,0,0),1.0)
+	tweenRotCamara.tween_property($Camera3D,"rotation_degrees",Vector3(initialRotationCamera,0,0),speedAnimation)
 
 #Deshabilita la navegacion mientras este ocurriendo una animacion
 func DisableNavigation():

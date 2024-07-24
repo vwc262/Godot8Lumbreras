@@ -5,8 +5,8 @@
 [ext_resource type="PackedScene" uid="uid://vw46h30r4ia4" path="res://Scenes/Sitios/CuboClickeable.tscn" id="3_dfqhc"]
 [ext_resource type="PackedScene" uid="uid://bhakmsdspl7on" path="res://Scenes/Sky/SkyEnvironment.tscn" id="5_a3vqv"]
 [ext_resource type="Material" uid="uid://cogvlnnly8grq" path="res://Recursos/Materiales/CloudShadows1.tres" id="5_wrlws"]
-[ext_resource type="Material" path="res://Recursos/Materiales/CloudMeshesTransparency.tres" id="6_8puvl"]
 [ext_resource type="Texture2D" uid="uid://cw4pt0rum7ikr" path="res://Recursos/Textures/Sky/nube_02.png" id="7_5pikp"]
+[ext_resource type="Material" uid="uid://e5ua1e3xje35" path="res://Recursos/Materiales/Material_Letras.tres" id="8_cd5e5"]
 [ext_resource type="PackedScene" uid="uid://dufq2s41jpm5w" path="res://Recursos/Meshes/Nombres_del_mundo/CDMX.glb" id="8_gp1mx"]
 [ext_resource type="PackedScene" uid="uid://dqpprs1nvrwex" path="res://Recursos/Meshes/Nombres_del_mundo/EDOMEX.glb" id="9_m0n8c"]
 [ext_resource type="PackedScene" uid="uid://bq24d2bn7jcx7" path="res://Recursos/Meshes/Nombres_del_mundo/Toluca.glb" id="10_ygdvq"]
@@ -29,11 +29,18 @@ visible = false
 mesh = SubResource("SphereMesh_dsd57")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(-0.470591, -0.878461, -0.0827606, -0.688105, 0.306662, 0.657624, -0.552318, 0.36642, -0.748786, 0, 28.3902, 0)
+transform = Transform3D(-0.205861, -0.846639, 0.490737, -0.859718, 0.396016, 0.322577, -0.467446, -0.35549, -0.809396, 0, 32.3712, 0)
 light_color = Color(0.89, 0.82058, 0.7743, 1)
-light_energy = 1.5
+light_energy = 4.0
 light_indirect_energy = 0.025
 light_volumetric_fog_energy = 0.0
+shadow_enabled = true
+shadow_bias = 2.221
+shadow_normal_bias = 0.0
+shadow_reverse_cull_face = true
+shadow_transmittance_bias = -0.9
+shadow_opacity = 0.49
+shadow_blur = 0.646
 
 [node name="CameraParent" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 35, 0)
@@ -42,7 +49,7 @@ can_pan = true
 pan_speed = 0.6
 minX = -30
 maxX = 30
-minZ = -4
+minZ = -50
 maxZ = 23
 rotate_treshold = 8
 initialRotationCamera = -90
@@ -53,6 +60,7 @@ zoom_speed = 0.05
 can_zoom = true
 maxZoom = 2.0
 initialZoom = 35.0
+speedAnimation = 0.6
 
 [node name="Camera3D" type="Camera3D" parent="CameraParent"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0)
@@ -125,57 +133,107 @@ transform = Transform3D(-6.55671e-07, 0, 15, 0, 15, 0, -15, 0, -6.55671e-07, 0, 
 [node name="Terreno_Prueba_03" parent="Terrain/Terreno_Prueba_032" index="0"]
 surface_material_override/0 = ExtResource("5_wrlws")
 
-[node name="Sprite3D" type="Sprite3D" parent="."]
-transform = Transform3D(0.801081, 0, 0, 0, 0.801081, 0, 0, 0, 0.801081, 11.348, 15.7726, 1.12967)
-material_override = ExtResource("6_8puvl")
-visibility_range_begin_margin = 20.0
-visibility_range_end = 40.0
-visibility_range_end_margin = 80.0
-visibility_range_fade_mode = 1
-billboard = 1
-texture = ExtResource("7_5pikp")
+[node name="Props" type="Node" parent="."]
 
-[node name="Sprite3D2" type="Sprite3D" parent="."]
-transform = Transform3D(0.801081, 0, 0, 0, 0.801081, 0, 0, 0, 0.801081, -13.5046, 15.7726, -9.86769)
-material_override = ExtResource("6_8puvl")
-visibility_range_begin_margin = 20.0
-visibility_range_end = 40.0
-visibility_range_end_margin = 80.0
-visibility_range_fade_mode = 1
-billboard = 1
-texture = ExtResource("7_5pikp")
+[node name="Letreros" type="Node" parent="Props"]
 
-[node name="Sprite3D3" type="Sprite3D" parent="."]
-transform = Transform3D(0.801081, 0, 0, 0, 0.801081, 0, 0, 0, 0.801081, 34.8013, 12.7564, -9.00636)
-material_override = ExtResource("6_8puvl")
-visibility_range_begin_margin = 20.0
-visibility_range_end = 40.0
-visibility_range_end_margin = 80.0
-visibility_range_fade_mode = 1
-billboard = 1
-texture = ExtResource("7_5pikp")
-
-[node name="Sprite3D4" type="Sprite3D" parent="."]
-transform = Transform3D(0.801081, 0, 0, 0, 0.801081, 0, 0, 0, 0.801081, -30.2209, 12.7564, -9.00636)
-material_override = ExtResource("6_8puvl")
-visibility_range_begin_margin = 20.0
-visibility_range_end = 40.0
-visibility_range_end_margin = 80.0
-visibility_range_fade_mode = 1
-billboard = 1
-texture = ExtResource("7_5pikp")
-
-[node name="CDMX" parent="." instance=ExtResource("8_gp1mx")]
+[node name="CDMX" parent="Props/Letreros" instance=ExtResource("8_gp1mx")]
 transform = Transform3D(0.990693, 0.000804678, 0.10978, 0, 0.00806537, -0.591183, -0.136113, 0.00585681, 0.799031, -17.3798, -0.438004, -119.032)
 
-[node name="EDOMEX" parent="." instance=ExtResource("9_m0n8c")]
+[node name="Text_010" parent="Props/Letreros/CDMX" index="0"]
+material_override = ExtResource("8_cd5e5")
+
+[node name="EDOMEX" parent="Props/Letreros" instance=ExtResource("9_m0n8c")]
 transform = Transform3D(0.976605, 0.000718109, 0.202698, 1.11759e-08, 0.00942595, -0.333939, -0.215042, 0.00326126, 0.920542, -22.6402, 0, -47.1394)
 
-[node name="Toluca" parent="." instance=ExtResource("10_ygdvq")]
+[node name="Text_009" parent="Props/Letreros/EDOMEX" index="0"]
+surface_material_override/0 = ExtResource("8_cd5e5")
+
+[node name="Toluca" parent="Props/Letreros" instance=ExtResource("10_ygdvq")]
 transform = Transform3D(0.999309, -0.00037167, -9.31323e-10, 0.034734, 0.00933895, -0.355857, 0.0132261, 0.00355611, 0.93454, 4.93982, 0.0605862, -58.0793)
 
-[node name="Valle_Bravo" parent="." instance=ExtResource("11_q61tt")]
+[node name="Text_013" parent="Props/Letreros/Toluca" index="0"]
+material_override = ExtResource("8_cd5e5")
+
+[node name="Valle_Bravo" parent="Props/Letreros" instance=ExtResource("11_q61tt")]
 transform = Transform3D(0.930673, -0.00140507, -0.337795, -1.38681e-08, 0.00923311, -0.384054, 0.365852, 0.00357428, 0.8593, 16.9635, -1.2075, 3.89035)
+
+[node name="Text_012" parent="Props/Letreros/Valle_Bravo" index="0"]
+material_override = ExtResource("8_cd5e5")
+
+[node name="Nubes" type="Node" parent="Props"]
+
+[node name="Sprite3D" type="Sprite3D" parent="Props/Nubes"]
+transform = Transform3D(0.801081, 0, 0, 0, 0.801081, 0, 0, 0, 0.801081, 11.348, 15.7726, 1.12967)
+visibility_range_begin_margin = 20.0
+visibility_range_end = 40.0
+visibility_range_end_margin = 80.0
+visibility_range_fade_mode = 1
+billboard = 1
+texture = ExtResource("7_5pikp")
+
+[node name="Sprite3D2" type="Sprite3D" parent="Props/Nubes"]
+transform = Transform3D(0.801081, 0, 0, 0, 0.801081, 0, 0, 0, 0.801081, -13.5046, 15.7726, -9.86769)
+visibility_range_begin_margin = 20.0
+visibility_range_end = 40.0
+visibility_range_end_margin = 80.0
+visibility_range_fade_mode = 1
+billboard = 1
+texture = ExtResource("7_5pikp")
+
+[node name="Sprite3D3" type="Sprite3D" parent="Props/Nubes"]
+transform = Transform3D(0.801081, 0, 0, 0, 0.801081, 0, 0, 0, 0.801081, 34.8013, 12.7564, -9.00636)
+visibility_range_begin_margin = 20.0
+visibility_range_end = 40.0
+visibility_range_end_margin = 80.0
+visibility_range_fade_mode = 1
+billboard = 1
+texture = ExtResource("7_5pikp")
+
+[node name="Sprite3D4" type="Sprite3D" parent="Props/Nubes"]
+transform = Transform3D(0.801081, 0, 0, 0, 0.801081, 0, 0, 0, 0.801081, -43.0285, 12.7564, -20.1236)
+visibility_range_begin_margin = 20.0
+visibility_range_end = 40.0
+visibility_range_end_margin = 80.0
+visibility_range_fade_mode = 1
+billboard = 1
+texture = ExtResource("7_5pikp")
+
+[node name="Sprite3D5" type="Sprite3D" parent="Props/Nubes"]
+transform = Transform3D(0.801081, 0, 0, 0, 0.801081, 0, 0, 0, 0.801081, -18.3263, 12.7564, -67.6823)
+visibility_range_begin_margin = 20.0
+visibility_range_end = 40.0
+visibility_range_end_margin = 80.0
+visibility_range_fade_mode = 1
+billboard = 1
+texture = ExtResource("7_5pikp")
+
+[node name="Sprite3D6" type="Sprite3D" parent="Props/Nubes"]
+transform = Transform3D(0.801081, 0, 0, 0, 0.801081, 0, 0, 0, 0.801081, 20.8604, 12.7564, -86.9372)
+visibility_range_begin_margin = 20.0
+visibility_range_end = 40.0
+visibility_range_end_margin = 80.0
+visibility_range_fade_mode = 1
+billboard = 1
+texture = ExtResource("7_5pikp")
+
+[node name="Sprite3D7" type="Sprite3D" parent="Props/Nubes"]
+transform = Transform3D(0.801081, 0, 0, 0, 0.801081, 0, 0, 0, 0.801081, -58.5, 12.7564, -93.3682)
+visibility_range_begin_margin = 20.0
+visibility_range_end = 40.0
+visibility_range_end_margin = 80.0
+visibility_range_fade_mode = 1
+billboard = 1
+texture = ExtResource("7_5pikp")
+
+[node name="Sprite3D8" type="Sprite3D" parent="Props/Nubes"]
+transform = Transform3D(0.801081, 0, 0, 0, 0.801081, 0, 0, 0, 0.801081, 24.5257, 12.7564, -47.967)
+visibility_range_begin_margin = 20.0
+visibility_range_end = 40.0
+visibility_range_end_margin = 80.0
+visibility_range_fade_mode = 1
+billboard = 1
+texture = ExtResource("7_5pikp")
 
 [connection signal="input_event" from="Terrain/Sitios/CSGBox3D4/Area3D2" to="Terrain/Sitios/CSGBox3D4" method="_on_area_3d_2_input_event"]
 [connection signal="input_event" from="Terrain/Sitios/CSGBox3D5/Area3D2" to="Terrain/Sitios/CSGBox3D5" method="_on_area_3d_2_input_event"]
@@ -185,3 +243,7 @@ transform = Transform3D(0.930673, -0.00140507, -0.337795, -1.38681e-08, 0.009233
 [connection signal="input_event" from="Terrain/Sitios/CSGBox3D9/Area3D2" to="Terrain/Sitios/CSGBox3D9" method="_on_area_3d_2_input_event"]
 
 [editable path="Terrain/Terreno_Prueba_032"]
+[editable path="Props/Letreros/CDMX"]
+[editable path="Props/Letreros/EDOMEX"]
+[editable path="Props/Letreros/Toluca"]
+[editable path="Props/Letreros/Valle_Bravo"]

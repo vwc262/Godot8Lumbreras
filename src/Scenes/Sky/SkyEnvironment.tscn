@@ -13,7 +13,7 @@ sky_material = SubResource("ShaderMaterial_1lx84")
 [sub_resource type="Environment" id="Environment_bac8e"]
 background_mode = 2
 background_color = Color(0.130569, 0.472729, 0.718176, 1)
-background_energy_multiplier = 0.41
+background_energy_multiplier = 0.61
 sky = SubResource("Sky_f7hr0")
 ambient_light_color = Color(0.0313726, 0.67451, 0.733333, 1)
 reflected_light_source = 2

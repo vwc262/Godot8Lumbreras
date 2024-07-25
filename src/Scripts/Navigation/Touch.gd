@@ -96,6 +96,7 @@ func handle_drag(event: InputEventScreenDrag):
 	var right: Vector3 = parentTransform.basis.x
 
 	SetBlurMaterial()
+	AdjustPanSpeedByZoom()
 	
 	if touch_points.size() == 1:
 		if can_pan:
@@ -119,7 +120,7 @@ func handle_drag(event: InputEventScreenDrag):
 
 		if can_zoom:
 			position.y = start_zoom / zoom_factor
-			limit_zoom()
+			limit_zoom()			
 			$Camera3D.rotation_degrees.x = lerp(initialRotationCamera, LimitRotationCamera, inclinate_camera())
 	position.x = clamp(position.x,minX * factorZoom ,maxX * factorZoom )
 	position.z = clamp(position.z,minZ * factorZoom,maxZ * factorZoom)
@@ -180,14 +181,24 @@ func ResetCameraPosition():
 	var tweenRotCamara := TweenManager.init_tween(func(): return)
 	tweenRotCamara.tween_property($Camera3D,"rotation_degrees",Vector3(initialRotationCamera,0,0),speedAnimation)
 
-func SetBlurMaterial():
-	factorZoom = remap(position.y,35,2,0,1) + 1
-	var blurAmount = lerp(0.0, maxBlurIntensity, remap(factorZoom, 1.0, 2.0, 0, 1))
+func SetBlurMaterial():	
+	var blurAmount = lerp(0.0, maxBlurIntensity, remap(GetZoomFactor(), 1.0, 2.0, 0, 1))
 	blurMaterial.set_shader_parameter("blur_amount", blurAmount)
 
 #Deshabilita la navegacion mientras este ocurriendo una animacion
 func DisableNavigation():
 	can_zoom= false
 	can_pan = false
+
+func GetZoomFactor():
+	factorZoom = remap(position.y,35,2,0,1) + 1
+	return factorZoom
+
+func AdjustPanSpeedByZoom():	
+	pan_speed = lerp(0.6,0.18,remap(GetZoomFactor(), 1.0, 2.0, 0, 1))
+	# normal .6
+	#at max zoom 0.18
+	
+
 #endregion
 

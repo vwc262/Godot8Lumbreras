@@ -1,6 +1,7 @@
-[gd_scene load_steps=16 format=3 uid="uid://cyug4nnq0yh1a"]
+[gd_scene load_steps=17 format=3 uid="uid://cyug4nnq0yh1a"]
 
 [ext_resource type="PackedScene" uid="uid://cw30vvtmxm8hg" path="res://Recursos/Meshes/Mapa_Pruebas/Prueba_03/Terreno_Prueba_03.glb" id="1_e3nc3"]
+[ext_resource type="Material" uid="uid://beqh7jr7h3tmm" path="res://Recursos/Materiales/BlurVignette.tres" id="2_0rlw3"]
 [ext_resource type="Script" path="res://Scripts/Navigation/Touch.gd" id="2_ui4vn"]
 [ext_resource type="PackedScene" uid="uid://vw46h30r4ia4" path="res://Scenes/Sitios/CuboClickeable.tscn" id="3_dfqhc"]
 [ext_resource type="PackedScene" uid="uid://bhakmsdspl7on" path="res://Scenes/Sky/SkyEnvironment.tscn" id="5_a3vqv"]
@@ -66,6 +67,15 @@ speedAnimation = 0.6
 [node name="Camera3D" type="Camera3D" parent="CameraParent"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0)
 fov = 85.0
+
+[node name="ColorRect" type="ColorRect" parent="CameraParent/Camera3D"]
+process_mode = 3
+material = ExtResource("2_0rlw3")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="SkyEnvironment" parent="." instance=ExtResource("5_a3vqv")]
 

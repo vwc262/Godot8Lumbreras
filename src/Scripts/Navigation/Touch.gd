@@ -26,6 +26,9 @@ extends Node3D
 @export var initialZoom: float
 @export var speedAnimation: float
 
+@export_group('Material')
+@export var maxBlurIntensity: float = 3.0
+
 #endregion
 
 #region Propiedades para logica
@@ -41,7 +44,10 @@ var initalCameraPosition : Vector3
 var isTween: bool
 
 var ID_Select = 0
+var factorZoom: float;
 #endregion
+
+@onready var blurMaterial:Material = $Camera3D/ColorRect.material
 
 #region Godot Functions
 func _ready():
@@ -49,6 +55,7 @@ func _ready():
 	NavigationManager.connect("Go_TO",MoverCamara)  #Suscripcion de evento
 	NavigationManager.connect('ResetCameraPosition',ResetCameraPosition) #Suscripcion de evento
 	initalCameraPosition = position # se guarda la posicion inicial de la camara
+	
 
 func _input(event):
 	if event is InputEventScreenTouch:
@@ -82,12 +89,14 @@ func handle_touch(event: InputEventScreenTouch):
 		anclaDistancia = Vector2(0,0)
 
 func handle_drag(event: InputEventScreenDrag):
+	ID_Select = 0
 	touch_points[event.index] = event.position
 	var parentTransform = get_global_transform()
 	var forward: Vector3 = parentTransform.basis.z
 	var right: Vector3 = parentTransform.basis.x
-	var factorZoom = remap(position.y,35,2,0,1) + 1
 
+	SetBlurMaterial()
+	
 	if touch_points.size() == 1:
 		if can_pan:
 			var pan_vector = (forward + (-event.relative.x * right ) + (-event.relative.y * forward)) * pan_speed
@@ -132,10 +141,16 @@ func OnTweenFinished_MovimientoRealizado():
 	can_zoom= true
 	can_pan = true
 	isTween = false	
+	
+func OnTweenFinished_Blur():
+	pass
 
 func MoverCamara(idEstacion:int):
 	DisableNavigation()
+	
 	var transform: Array
+	var tweenBlur := TweenManager.init_tween(OnTweenFinished_Blur)
+	
 	if ID_Select != idEstacion:
 		ID_Select = idEstacion
 		if !isTween:
@@ -147,10 +162,13 @@ func MoverCamara(idEstacion:int):
 			tween.tween_property(self,"position", transform[0], speedAnimation)
 			var val = remap(transform[0].y, initialZoom - offSetDistanceInclination, maxZoom, 0, 1)
 			tween.tween_property($Camera3D, "rotation_degrees", Vector3(lerp(initialRotationCamera, LimitRotationCamera, val),0,0), speedAnimation)
+			tweenBlur.tween_property(blurMaterial, "shader_parameter/blur_amount", maxBlurIntensity, speedAnimation)
 	else:
 		if !isTween:
 			ID_Select = 0
 			ResetCameraPosition()
+			tweenBlur.tween_property(blurMaterial, "shader_parameter/blur_amount", 0, speedAnimation)
+			
 
 func ResetCameraPosition():
 	DisableNavigation()
@@ -162,8 +180,14 @@ func ResetCameraPosition():
 	var tweenRotCamara := TweenManager.init_tween(func(): return)
 	tweenRotCamara.tween_property($Camera3D,"rotation_degrees",Vector3(initialRotationCamera,0,0),speedAnimation)
 
+func SetBlurMaterial():
+	factorZoom = remap(position.y,35,2,0,1) + 1
+	var blurAmount = lerp(0.0, maxBlurIntensity, remap(factorZoom, 1.0, 2.0, 0, 1))
+	blurMaterial.set_shader_parameter("blur_amount", blurAmount)
+
 #Deshabilita la navegacion mientras este ocurriendo una animacion
 func DisableNavigation():
 	can_zoom= false
 	can_pan = false
 #endregion
+

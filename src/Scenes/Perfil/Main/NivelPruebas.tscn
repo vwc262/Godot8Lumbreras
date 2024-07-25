@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://bhakmsdspl7on" path="res://Scenes/Sky/SkyEnvironment.tscn" id="5_a3vqv"]
 [ext_resource type="Material" uid="uid://cogvlnnly8grq" path="res://Recursos/Materiales/CloudShadows1.tres" id="5_wrlws"]
 [ext_resource type="Texture2D" uid="uid://cw4pt0rum7ikr" path="res://Recursos/Textures/Sky/nube_02.png" id="7_5pikp"]
-[ext_resource type="Material" path="res://Recursos/Materiales/Material_Letras.tres" id="8_cd5e5"]
+[ext_resource type="Material" uid="uid://e5ua1e3xje35" path="res://Recursos/Materiales/Material_Letras.tres" id="8_cd5e5"]
 [ext_resource type="PackedScene" uid="uid://dufq2s41jpm5w" path="res://Recursos/Meshes/Nombres_del_mundo/CDMX.glb" id="8_gp1mx"]
 [ext_resource type="PackedScene" uid="uid://dqpprs1nvrwex" path="res://Recursos/Meshes/Nombres_del_mundo/EDOMEX.glb" id="9_m0n8c"]
 [ext_resource type="PackedScene" uid="uid://bq24d2bn7jcx7" path="res://Recursos/Meshes/Nombres_del_mundo/Toluca.glb" id="10_ygdvq"]

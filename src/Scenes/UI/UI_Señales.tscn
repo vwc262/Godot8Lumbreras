@@ -1,0 +1,320 @@
+[gd_scene load_steps=6 format=3 uid="uid://hro847n58cow"]
+
+[ext_resource type="Texture2D" uid="uid://b085nmkssb1j7" path="res://Recursos/UI/img/señales/Lista_detalles_Nivel.jpg" id="1_1hrsm"]
+[ext_resource type="Script" path="res://Scripts/UI/UI_Signals.gd" id="1_bisnc"]
+[ext_resource type="Texture2D" uid="uid://dfv7fthqp0uuf" path="res://Recursos/UI/img/señales/Lista_detalles_margen.jpg" id="1_tledo"]
+[ext_resource type="Texture2D" uid="uid://bo7rxrei3drkk" path="res://Recursos/UI/img/señales/Lista_detalles_Gasto_Presion.jpg" id="2_p3fp5"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_equ42"]
+
+[node name="UiSeñales" type="Control"]
+custom_minimum_size = Vector2(0, 160)
+layout_mode = 3
+anchors_preset = 10
+anchor_right = 1.0
+grow_horizontal = 2
+size_flags_horizontal = 3
+size_flags_vertical = 2
+mouse_filter = 1
+script = ExtResource("1_bisnc")
+
+[node name="Panel" type="Panel" parent="."]
+self_modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(0, 80)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 160.0
+grow_horizontal = 2
+theme_override_constants/separation = 0
+
+[node name="texture_separador" type="TextureRect" parent="Panel/HBoxContainer"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+texture = ExtResource("1_tledo")
+expand_mode = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 0
+
+[node name="nivel_container" type="Panel" parent="Panel/HBoxContainer/VBoxContainer"]
+self_modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(0, 80)
+layout_mode = 2
+size_flags_vertical = 0
+mouse_filter = 1
+
+[node name="nive_fondo" type="TextureRect" parent="Panel/HBoxContainer/VBoxContainer/nivel_container"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_1hrsm")
+expand_mode = 1
+
+[node name="nivel_container" type="HBoxContainer" parent="Panel/HBoxContainer/VBoxContainer/nivel_container"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 3
+
+[node name="icono_container" type="Panel" parent="Panel/HBoxContainer/VBoxContainer/nivel_container/nivel_container"]
+self_modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+size_flags_horizontal = 0
+mouse_filter = 1
+
+[node name="nombre_container" type="Panel" parent="Panel/HBoxContainer/VBoxContainer/nivel_container/nivel_container"]
+self_modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(210, 0)
+layout_mode = 2
+size_flags_horizontal = 0
+mouse_filter = 1
+
+[node name="lbl_nombre_signal" type="Label" parent="Panel/HBoxContainer/VBoxContainer/nivel_container/nivel_container/nombre_container"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+theme_override_font_sizes/font_size = 30
+vertical_alignment = 1
+
+[node name="progressbar_container" type="Panel" parent="Panel/HBoxContainer/VBoxContainer/nivel_container/nivel_container"]
+self_modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(455, 75)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 8
+mouse_filter = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel/HBoxContainer/VBoxContainer/nivel_container/nivel_container/progressbar_container"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ProgressBar" type="ProgressBar" parent="Panel/HBoxContainer/VBoxContainer/nivel_container/nivel_container/progressbar_container/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 6
+mouse_filter = 1
+theme_override_styles/background = SubResource("StyleBoxEmpty_equ42")
+value = 50.0
+
+[node name="valores_progress" type="Panel" parent="Panel/HBoxContainer/VBoxContainer/nivel_container/nivel_container/progressbar_container/VBoxContainer"]
+self_modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+size_flags_vertical = 10
+mouse_filter = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel/HBoxContainer/VBoxContainer/nivel_container/nivel_container/progressbar_container/VBoxContainer/valores_progress"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="lbl_valor_min" type="Label" parent="Panel/HBoxContainer/VBoxContainer/nivel_container/nivel_container/progressbar_container/VBoxContainer/valores_progress/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+mouse_filter = 1
+text = "Min: 2m
+"
+vertical_alignment = 1
+
+[node name="lbl_valor_max" type="Label" parent="Panel/HBoxContainer/VBoxContainer/nivel_container/nivel_container/progressbar_container/VBoxContainer/valores_progress/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+mouse_filter = 1
+text = "Max:2m
+"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="valor_container" type="Panel" parent="Panel/HBoxContainer/VBoxContainer/nivel_container/nivel_container"]
+self_modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(165, 55)
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 0
+mouse_filter = 1
+
+[node name="lbl_valor" type="Label" parent="Panel/HBoxContainer/VBoxContainer/nivel_container/nivel_container/valor_container"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+theme_override_font_sizes/font_size = 30
+text = "0m"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="señales_container" type="Panel" parent="Panel/HBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 80)
+layout_mode = 2
+mouse_filter = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel/HBoxContainer/VBoxContainer/señales_container"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 0
+
+[node name="presion_container" type="Panel" parent="Panel/HBoxContainer/VBoxContainer/señales_container/HBoxContainer"]
+custom_minimum_size = Vector2(450, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 1
+
+[node name="fondo1" type="TextureRect" parent="Panel/HBoxContainer/VBoxContainer/señales_container/HBoxContainer/presion_container"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_p3fp5")
+expand_mode = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel/HBoxContainer/VBoxContainer/señales_container/HBoxContainer/presion_container"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 101.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="Panel/HBoxContainer/VBoxContainer/señales_container/HBoxContainer/presion_container/HBoxContainer"]
+self_modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(225, 0)
+layout_mode = 2
+size_flags_horizontal = 2
+mouse_filter = 1
+
+[node name="lbl_nombre_signal_presion" type="Label" parent="Panel/HBoxContainer/VBoxContainer/señales_container/HBoxContainer/presion_container/HBoxContainer/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 2
+mouse_filter = 1
+theme_override_font_sizes/font_size = 30
+vertical_alignment = 1
+
+[node name="Panel2" type="Panel" parent="Panel/HBoxContainer/VBoxContainer/señales_container/HBoxContainer/presion_container/HBoxContainer"]
+self_modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+size_flags_horizontal = 2
+mouse_filter = 1
+
+[node name="lbl_presion_valor" type="Label" parent="Panel/HBoxContainer/VBoxContainer/señales_container/HBoxContainer/presion_container/HBoxContainer/Panel2"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 8
+mouse_filter = 1
+theme_override_font_sizes/font_size = 25
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="gasto_container" type="Panel" parent="Panel/HBoxContainer/VBoxContainer/señales_container/HBoxContainer"]
+custom_minimum_size = Vector2(450, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 1
+
+[node name="fondo1" type="TextureRect" parent="Panel/HBoxContainer/VBoxContainer/señales_container/HBoxContainer/gasto_container"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_p3fp5")
+expand_mode = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel/HBoxContainer/VBoxContainer/señales_container/HBoxContainer/gasto_container"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 101.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="Panel/HBoxContainer/VBoxContainer/señales_container/HBoxContainer/gasto_container/HBoxContainer"]
+self_modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(225, 0)
+layout_mode = 2
+size_flags_horizontal = 2
+mouse_filter = 1
+
+[node name="lbl_nombre_signal_gasto" type="Label" parent="Panel/HBoxContainer/VBoxContainer/señales_container/HBoxContainer/gasto_container/HBoxContainer/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 2
+mouse_filter = 1
+theme_override_font_sizes/font_size = 30
+vertical_alignment = 1
+
+[node name="Panel2" type="Panel" parent="Panel/HBoxContainer/VBoxContainer/señales_container/HBoxContainer/gasto_container/HBoxContainer"]
+self_modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+size_flags_horizontal = 2
+mouse_filter = 1
+
+[node name="lbl_gasto_valor" type="Label" parent="Panel/HBoxContainer/VBoxContainer/señales_container/HBoxContainer/gasto_container/HBoxContainer/Panel2"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 8
+mouse_filter = 1
+theme_override_font_sizes/font_size = 25
+horizontal_alignment = 1
+vertical_alignment = 1

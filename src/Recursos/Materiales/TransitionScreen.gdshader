@@ -4,10 +4,12 @@ shader_type canvas_item;
 #define iTime TIME
 
 
-uniform float strength = 1.0;
-uniform float speed = 1.0;
+uniform float strength: hint_range(0.0, 5.0, 0.1) = 1.0;
+uniform float speed: hint_range(0.0, 10.0, 0.1) = 1.0;
 uniform vec2 disp = vec2(1.0, 1.0);
 uniform sampler2D screen_texture: hint_screen_texture, repeat_disable, filter_linear_mipmap;
+uniform float noiseWeight: hint_range(0.0, 0.2, 0.001) = 0.05;
+uniform float color_power_normalized: hint_range(0.0, 1.0, 0.1) = 0.0;
 
 vec2 GetGradient(vec2 intPos, float t) {
     
@@ -43,14 +45,15 @@ float Pseudo3dNoise(vec3 pos) {
 
 void fragment() { 
 	float ratio = SCREEN_PIXEL_SIZE.x / SCREEN_PIXEL_SIZE.y;
-	vec2 noise_uv = UV / vec2(ratio, 1.0);
-    float noiseVal = 0.5 + 0.5 * Pseudo3dNoise(vec3(noise_uv * 10.0 * strength, iTime * speed));
+	//vec2 noise_uv = UV / vec2(ratio, 1.0);
+	vec2 noise_uv = SCREEN_UV / vec2(ratio, 1.0);
+    float noiseVal = 1.0 * Pseudo3dNoise(vec3(noise_uv * 2.0 * strength, iTime * speed));
     
-    vec2 uv = UV;
-    float noiseWeight = 0.05;
+    //vec2 uv = UV;
+    vec2 uv = SCREEN_UV;
     uv.x += noiseVal * noiseWeight * disp.x;
     uv.y += noiseVal * noiseWeight * disp.y;
     vec3 col = texture(screen_texture,uv).rgb;
     
-    COLOR.rgb = vec3(col);
+    COLOR.rgb = vec3(col) * vec3(1.0-color_power_normalized);
 }

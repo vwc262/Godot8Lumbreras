@@ -63,6 +63,7 @@ can_zoom = true
 maxZoom = 2.0
 initialZoom = 35.0
 speedAnimation = 0.6
+maxBlurIntensity = 0.008
 
 [node name="Camera3D" type="Camera3D" parent="CameraParent"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0)

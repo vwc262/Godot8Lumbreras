@@ -2,32 +2,60 @@ shader_type canvas_item;
 
 uniform sampler2D screen_texture: hint_screen_texture, repeat_disable, filter_linear_mipmap;
 uniform float blur_radius : hint_range(0, 1) = 0.2; // Radius of the blur effect
-uniform float blur_amount : hint_range(0, 5) = 1.0; // Strength of the blur effect
+uniform float blur_amount : hint_range(0, 0.008) = 0; // Strength of the blur effect
 uniform float blur_inner : hint_range(0, 1) = 0.6; // Inner edge of the blur effect
 uniform float blur_outer : hint_range(0, 1) = 0.66; // Outer edge of the blur effect
 
+// 発射中央部
+uniform vec2 blur_center = vec2( 0.5, 0.5 );
+// ブラー強度
+uniform float blur_power : hint_range( 0, 5 ) ;
+// サンプリング回数
+uniform int sampling_count : hint_range( 1, 64 ) = 6;
+
+
 void fragment() {
-    // Original color of the pixel from the screen
-    vec4 pixelColor = texture(screen_texture, UV);
-    
-    // Color with blur effect from the screen
-    vec4 blurColor = textureLod(screen_texture, SCREEN_UV, blur_amount);
-
-    // Calculate distance from the center of the screen
-    float distance = length(UV - vec2(0.5, 0.5));
-
-    // Apply smoothstep function to control transition between areas
-    float blur = smoothstep(blur_inner - blur_radius, blur_outer, distance);
-
-    // Mix colors of the blur effect and the original color based on the smoothstep value
-    pixelColor.rgb = mix(blurColor.rgb, COLOR.rgb, -blur);
-
-    // Set the alpha component of the blur effect to the smoothstep value
-    blurColor.a = blur;
-
-    // Mix colors of the blur effect with white for an additional effect
-    blurColor.rgb = mix(blurColor.rgb, vec3(1.0), 0.1);
-
-    // Set the final color to the modified color of the blur effect
-    COLOR = blurColor;
+    vec2 direction = SCREEN_UV - blur_center;
+	vec3 c = vec3( 0.0, 0.0, 0.0 );
+	float f = 1.0 / float( sampling_count );
+	for( int i=0; i < sampling_count; i++ ) {
+		c += texture( screen_texture, SCREEN_UV - blur_amount * direction * float(i) ).rgb * f;
+	}
+	COLOR.rgb = c;
 }
+
+
+
+//shader_type canvas_item;
+//
+//uniform sampler2D screen_texture: hint_screen_texture, repeat_disable, filter_linear_mipmap;
+//uniform float blur_radius : hint_range(0, 1) = 0.2;
+//uniform float blur_amount : hint_range(0, 5) = 1.0;
+//uniform float blur_inner : hint_range(0, 1) = 0.6;
+//uniform float blur_outer : hint_range(0, 1) = 0.66;
+//
+//void fragment() {
+    //vec4 pixelColor = texture(screen_texture, UV);
+//
+    //vec4 blurColor = vec4(0.0);
+    //float totalWeight = 0.0;
+//
+    //// Simple blur by averaging nearby pixels
+    //for (int x = -1; x <= 1; x++) {
+        //for (int y = -1; y <= 1; y++) {
+            //vec2 offset = vec2(x, y) * blur_radius * blur_amount;
+            //vec4 sampleColor = texture(screen_texture, UV + offset);
+            //float weight = 1.0 - length(offset);
+            //blurColor += sampleColor * weight;
+            //totalWeight += weight;
+        //}
+    //}
+    //blurColor /= totalWeight;
+//
+    //float distance = length(UV - vec2(0.5, 0.5));
+    //float blur = smoothstep(blur_inner - blur_radius, blur_outer, distance);
+//
+    //pixelColor.rgb = mix(blurColor.rgb, pixelColor.rgb, blur);
+//
+    //COLOR = pixelColor;
+//}

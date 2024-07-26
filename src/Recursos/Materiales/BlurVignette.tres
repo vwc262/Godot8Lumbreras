@@ -1,13 +1,24 @@
 [gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://beqh7jr7h3tmm"]
 
-[ext_resource type="Shader" path="res://Recursos/Materiales/BlurVignette.gdshader" id="1_8ibgi"]
+[ext_resource type="Shader" path="res://Recursos/Materiales/BlurSampling.gdshader" id="1_3cik8"]
 
 [resource]
-shader = ExtResource("1_8ibgi")
-shader_parameter/blur_radius = 0.215
-shader_parameter/blur_amount = 0.006
-shader_parameter/blur_inner = 0.633
-shader_parameter/blur_outer = 0.534
-shader_parameter/blur_center = Vector2(0.6, 0.6)
-shader_parameter/blur_power = 0.01
-shader_parameter/sampling_count = 3
+shader = ExtResource("1_3cik8")
+shader_parameter/blur_amount = 0.007
+shader_parameter/blur_center = Vector2(0.5, 0.5)
+shader_parameter/blur_power = 0.0
+shader_parameter/sampling_count = 5
+shader_parameter/color1 = Color(0.996078, 0.972549, 0.976471, 0)
+shader_parameter/color2 = Color(0, 0, 0, 0)
+shader_parameter/color3 = Color(0, 0, 0, 1)
+shader_parameter/color4 = Color(0, 0, 0, 1)
+shader_parameter/color5 = Color(0, 0, 0, 1)
+shader_parameter/color6 = Color(0, 0, 0, 1)
+shader_parameter/squishness = Vector2(2, 2)
+shader_parameter/step1 = 0.179
+shader_parameter/step2 = 0.218
+shader_parameter/step3 = 0.238
+shader_parameter/step4 = 0.264
+shader_parameter/step5 = 0.265
+shader_parameter/step6 = 0.266
+shader_parameter/size = 1.97

@@ -18,8 +18,22 @@ void fragment() {
     vec2 direction = SCREEN_UV - blur_center;
 	vec3 c = vec3( 0.0, 0.0, 0.0 );
 	float f = 1.0 / float( sampling_count );
-	for( int i=0; i < sampling_count; i++ ) {
+	bool is_inside_excluded_area = 
+		SCREEN_UV.x > blur_center.x - blur_center.x / 2.0 &&
+        SCREEN_UV.x < blur_center.x + blur_center.x / 2.0 &&
+        SCREEN_UV.y > blur_center.y - blur_center.y / 2.0 &&
+        SCREEN_UV.y < blur_center.y + blur_center.y / 2.0;
+	
+	for( int i=0; i < sampling_count; i++ ) {		
+		if(is_inside_excluded_area){
+			COLOR.a = 0.0;
+			//COLOR = vec4(0.0,0.0,0.0,1.0);
+		}
+		else{
 		c += texture( screen_texture, SCREEN_UV - blur_amount * direction * float(i) ).rgb * f;
+			
+		}
+	
 	}
 	COLOR.rgb = c;
 }

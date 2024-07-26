@@ -36,9 +36,7 @@ func actualizar_datos():
 		
 		# Obtener la unidad correspondiente al tipo de señal
 		var unidad = unidades.get(_signal.tipo_signal, "")
-		
-		print(_signal.nombre)
-		
+				
 		if _signal.tipo_signal == 1:
 			lbl_nombre_signal.text = _signal.nombre
 			lbl_valor.text = str(_signal.valor) + " " + unidad

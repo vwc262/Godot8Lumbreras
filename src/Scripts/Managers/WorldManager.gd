@@ -1,3 +1,4 @@
+
 extends Node
 
 @onready var btn_lista_sitios = $DynamicMargins/VB_MainContainer/main_container/ListaSitiosContainer/VBoxContainer/botones_container/HBoxContainer/BTN_ListaSitios
@@ -6,10 +7,6 @@ extends Node
 
 var is_hidden = false  # Variable para rastrear el estado del contenedor
 
-func _ready():
-	## Conectar la señal de interacción del World
-	#NavigationManager.connect("world_interacted", _on_world_interacted)
-	pass
 
 func _on_button_pressed():
 	NavigationManager.emit_signal('ResetCameraPosition')
@@ -18,9 +15,11 @@ func _on_button_pressed():
 func _on_btn_lista_sitios_pressed():
 	if is_hidden:
 		# Mostrar el contenedor
+		btn_lista_sitios.icon = preload("res://Recursos/UI/img/Menu_pie/MenuPie_Expandir_B.png")
 		_show_lista_sitios()
 	else:
 		# Esconder el contenedor
+		btn_lista_sitios.icon = preload("res://Recursos/UI/img/Menu_pie/MenuPie_Expandir_A.png")
 		_hide_lista_sitios()
 
 func _on_world_interacted():

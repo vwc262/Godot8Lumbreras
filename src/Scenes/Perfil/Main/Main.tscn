@@ -3,13 +3,13 @@
 [ext_resource type="Script" path="res://Scripts/Managers/WorldManager.gd" id="1_symg7"]
 [ext_resource type="Script" path="res://Scripts/Fetcher/Fetch_Data.gd" id="1_xo6k0"]
 [ext_resource type="PackedScene" uid="uid://cyug4nnq0yh1a" path="res://Scenes/Perfil/Main/NivelPruebas.tscn" id="2_2gqy4"]
-[ext_resource type="Texture2D" uid="uid://jqtmqvktw1n1" path="res://Recursos/UI/img/Encabezado.jpg" id="4_35rtk"]
+[ext_resource type="Texture2D" uid="uid://b25e6xefek6ri" path="res://Recursos/UI/img/Encabezado_A_submenu/EncabezadoA_base.png" id="3_ohb0y"]
 [ext_resource type="PackedScene" uid="uid://dbs3c52v8n226" path="res://Scenes/UI/ListaSitios.tscn" id="4_lo6xx"]
+[ext_resource type="Texture2D" uid="uid://bfvfnf81ifgnp" path="res://Recursos/UI/img/Menu_pie/MenuPie_graficador_a.png" id="5_fp8g2"]
 [ext_resource type="PackedScene" uid="uid://bosmqfxs2ibvy" path="res://Scenes/Plotter/ChartControl.tscn" id="6_cdy0v"]
-[ext_resource type="Texture2D" uid="uid://dys5a624cdod5" path="res://Recursos/UI/img/Barra_Botones.jpg" id="6_lf17x"]
-[ext_resource type="Texture2D" uid="uid://degfph8k07k86" path="res://Recursos/UI/img/Boton_graph_a.png" id="7_4h7f5"]
-[ext_resource type="Texture2D" uid="uid://dfnk6s1tbfkab" path="res://Recursos/UI/img/Boton_mapa_a.png" id="8_uoq1g"]
-[ext_resource type="Texture2D" uid="uid://ddag2tm6hjq7w" path="res://Recursos/UI/img/Boton_particular_a.png" id="9_37xqg"]
+[ext_resource type="Texture2D" uid="uid://dd2gg2xxdrbc3" path="res://Recursos/UI/img/Menu_pie/MenuPie_Expandir_B.png" id="7_7pp3i"]
+[ext_resource type="Texture2D" uid="uid://7w5d3xvjrr5c" path="res://Recursos/UI/img/Menu_pie/MenuPie_Particular_a.png" id="8_3542x"]
+[ext_resource type="Texture2D" uid="uid://dtpwo2c05m1h4" path="res://Recursos/UI/img/Menu_pie/MenuPie_Base.png" id="9_m03wm"]
 
 [sub_resource type="Theme" id="Theme_0o38m"]
 
@@ -43,7 +43,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("4_35rtk")
+texture = ExtResource("3_ohb0y")
 expand_mode = 1
 
 [node name="Label" type="Label" parent="DynamicMargins/VB_MainContainer/header_container"]
@@ -53,10 +53,9 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_font_sizes/font_size = 60
+theme_override_font_sizes/font_size = 55
 text = "Sistema Cutzamala"
 horizontal_alignment = 1
-vertical_alignment = 1
 uppercase = true
 
 [node name="BTN_datos_random" type="Button" parent="DynamicMargins/VB_MainContainer/header_container"]
@@ -79,7 +78,7 @@ stretch = true
 handle_input_locally = false
 physics_object_picking = true
 physics_object_picking_sort = true
-size = Vector2i(1080, 1045)
+size = Vector2i(1080, 1103)
 render_target_update_mode = 4
 
 [node name="World" parent="DynamicMargins/VB_MainContainer/main_container/SubViewportContainer/SubViewport" instance=ExtResource("2_2gqy4")]
@@ -95,18 +94,9 @@ theme_override_constants/separation = 0
 
 [node name="botones_container" type="Panel" parent="DynamicMargins/VB_MainContainer/main_container/ListaSitiosContainer/VBoxContainer"]
 self_modulate = Color(1, 1, 1, 0)
-custom_minimum_size = Vector2(0, 100)
 layout_mode = 2
-
-[node name="TextureRect" type="TextureRect" parent="DynamicMargins/VB_MainContainer/main_container/ListaSitiosContainer/VBoxContainer/botones_container"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("6_lf17x")
-expand_mode = 1
+size_flags_horizontal = 4
+size_flags_vertical = 4
 
 [node name="HBoxContainer" type="HBoxContainer" parent="DynamicMargins/VB_MainContainer/main_container/ListaSitiosContainer/VBoxContainer/botones_container"]
 layout_mode = 1
@@ -115,10 +105,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -100.0
-offset_top = -50.0
-offset_right = 100.0
-offset_bottom = 50.0
+offset_left = -312.0
+offset_top = -135.0
+offset_right = 312.0
+offset_bottom = 2.0
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -126,76 +116,36 @@ grow_vertical = 2
 custom_minimum_size = Vector2(200, 100)
 layout_mode = 2
 theme = SubResource("Theme_0o38m")
-
-[node name="btn_graficar_fondo" type="TextureRect" parent="DynamicMargins/VB_MainContainer/main_container/ListaSitiosContainer/VBoxContainer/botones_container/HBoxContainer/BTN_graficar"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -83.5
-offset_top = -58.0
-offset_right = 83.5
-offset_bottom = 58.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("7_4h7f5")
+icon = ExtResource("5_fp8g2")
+flat = true
 
 [node name="BTN_ListaSitios" type="Button" parent="DynamicMargins/VB_MainContainer/main_container/ListaSitiosContainer/VBoxContainer/botones_container/HBoxContainer"]
 custom_minimum_size = Vector2(200, 100)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-
-[node name="btn_listaSitios_fondo" type="TextureRect" parent="DynamicMargins/VB_MainContainer/main_container/ListaSitiosContainer/VBoxContainer/botones_container/HBoxContainer/BTN_ListaSitios"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -83.5
-offset_top = -58.0
-offset_right = 83.5
-offset_bottom = 58.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("8_uoq1g")
-
-[node name="btn_listaSitios_fondo2" type="TextureRect" parent="DynamicMargins/VB_MainContainer/main_container/ListaSitiosContainer/VBoxContainer/botones_container/HBoxContainer/BTN_ListaSitios"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -83.5
-offset_top = -58.0
-offset_right = 83.5
-offset_bottom = 58.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("8_uoq1g")
+icon = ExtResource("7_7pp3i")
+flat = true
 
 [node name="BTN_particular" type="Button" parent="DynamicMargins/VB_MainContainer/main_container/ListaSitiosContainer/VBoxContainer/botones_container/HBoxContainer"]
-custom_minimum_size = Vector2(200, 100)
+layout_mode = 2
+icon = ExtResource("8_3542x")
+flat = true
+
+[node name="barra_separador" type="Panel" parent="DynamicMargins/VB_MainContainer/main_container/ListaSitiosContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 42)
 layout_mode = 2
 
-[node name="btn_particular_fondo" type="TextureRect" parent="DynamicMargins/VB_MainContainer/main_container/ListaSitiosContainer/VBoxContainer/botones_container/HBoxContainer/BTN_particular"]
+[node name="TextureRect" type="TextureRect" parent="DynamicMargins/VB_MainContainer/main_container/ListaSitiosContainer/VBoxContainer/barra_separador"]
+custom_minimum_size = Vector2(0, 42)
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -83.5
-offset_top = -58.0
-offset_right = 83.5
-offset_bottom = 58.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("9_37xqg")
+texture = ExtResource("9_m03wm")
+expand_mode = 1
 
 [node name="PanelContainer" type="PanelContainer" parent="DynamicMargins/VB_MainContainer/main_container/ListaSitiosContainer/VBoxContainer"]
 layout_mode = 2

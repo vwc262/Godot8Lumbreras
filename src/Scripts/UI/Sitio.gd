@@ -13,13 +13,16 @@ extends Node
 @onready var btn_expandir_sitios = $VBoxContainer/HBoxContainer/BTN_expandir_sitios
 @onready var btn_expandir_fondo = $VBoxContainer/HBoxContainer/BTN_expandir_sitios/BTN_expandir_fondo
 @onready var sitio_fondo = $sitio_fondo
+@onready var sitio_fondo_seleccionado = $sitio_fondo_seleccionado
 
 
 var estacion_ref: Estacion
 var signal_ref: Array[Señal]
 var signal_instances: Array = []
+var id_estacion: int
 
 var is_hidden = false
+
 
 # Función para recibir y establecer los datos de la estación
 func set_datos(estacion: Estacion):
@@ -61,6 +64,8 @@ func instanciar_señales():
 # Función que maneja la señal del botón presionado
 func _on_button_pressed():
 	NavigationManager.emit_signal("Go_TO", estacion_ref.id_estacion)
+	print(NavigationManager.last_selected)
+	
 
 # Función que maneja el botón de expandir/esconder
 func _on_btn_expandir_sitios_pressed():

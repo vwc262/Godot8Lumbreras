@@ -90,6 +90,7 @@ func handle_touch(event: InputEventScreenTouch):
 
 func handle_drag(event: InputEventScreenDrag):
 	ID_Select = 0
+	NavigationManager.set_lastid_selected(ID_Select)
 	touch_points[event.index] = event.position
 	var parentTransform = get_global_transform()
 	var forward: Vector3 = parentTransform.basis.z
@@ -155,6 +156,7 @@ func MoverCamara(idEstacion:int):
 	if ID_Select != idEstacion:
 		ID_Select = idEstacion
 		if !isTween:
+			NavigationManager.set_lastid_selected(ID_Select)
 			var tween := TweenManager.init_tween(OnTweenFinished_MovimientoRealizado)
 			isTween = true
 			transform = NavigationManager.GetSiteAnchor(idEstacion)
@@ -169,6 +171,7 @@ func MoverCamara(idEstacion:int):
 			ID_Select = 0
 			ResetCameraPosition()
 			tweenBlur.tween_property(blurMaterial, "shader_parameter/blur_amount", 0, speedAnimation)
+			NavigationManager.set_lastid_selected(ID_Select)
 			
 
 func ResetCameraPosition():

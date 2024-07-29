@@ -2,14 +2,13 @@ extends Node
 
 @onready var btn_lista_sitios = $DynamicMargins/VB_MainContainer/main_container/ListaSitiosContainer/VBoxContainer/botones_container/HBoxContainer/BTN_ListaSitios
 @onready var lista_sitios = $DynamicMargins/VB_MainContainer/main_container/ListaSitiosContainer/VBoxContainer/PanelContainer/ListaSitios
+@onready var header_fondo = $DynamicMargins/VB_MainContainer/header_container/header_fondo
+@onready var ui_particular = $UiParticular
+@onready var dynamic_margins = $DynamicMargins
 
 
 var is_hidden = false  # Variable para rastrear el estado del contenedor
 
-func _ready():
-	## Conectar la señal de interacción del World
-	#NavigationManager.connect("world_interacted", _on_world_interacted)
-	pass
 
 func _on_button_pressed():
 	NavigationManager.emit_signal('ResetCameraPosition')
@@ -18,9 +17,11 @@ func _on_button_pressed():
 func _on_btn_lista_sitios_pressed():
 	if is_hidden:
 		# Mostrar el contenedor
+		btn_lista_sitios.icon = preload("res://Recursos/UI/img/Menu_pie/MenuPie_Expandir_B.png")
 		_show_lista_sitios()
 	else:
 		# Esconder el contenedor
+		btn_lista_sitios.icon = preload("res://Recursos/UI/img/Menu_pie/MenuPie_Expandir_A.png")
 		_hide_lista_sitios()
 
 func _on_world_interacted():
@@ -51,3 +52,8 @@ func _on_finish_tween():
 func _on_btn_graficar_button_down():
 	GlobalUtils.ChartControl.visible = !GlobalUtils.ChartControl.visible
 #endregion
+
+
+func _on_btn_particular_pressed():
+	ui_particular.visible = true
+	dynamic_margins.visible = false

@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" path="res://Scripts/UI/UI_ListaSitios.gd" id="1_pok42"]
 [ext_resource type="PackedScene" uid="uid://douaugikqj4k4" path="res://Scenes/UI/Sitio.tscn" id="2_yb5qh"]
-[ext_resource type="Texture2D" uid="uid://dc56lt77qi0x6" path="res://Recursos/UI/img/Lista_01.jpg" id="3_7p1aw"]
-[ext_resource type="Texture2D" uid="uid://bsw3aw33xfx31" path="res://Recursos/UI/img/Lista_02.jpg" id="4_kp1cf"]
+[ext_resource type="Texture2D" uid="uid://xbom65vpgnhv" path="res://Recursos/UI/img/Encabezado_A_submenu/Lista_Detalles_b.png" id="3_h0mlf"]
+[ext_resource type="Texture2D" uid="uid://bhb5ae1key6sf" path="res://Recursos/UI/img/Encabezado_A_submenu/Lista_Detalles_a.png" id="4_gckll"]
 [ext_resource type="Texture2D" uid="uid://b4rbxu42i1sxa" path="res://Recursos/UI/img/Lista_fondo01.jpg" id="5_xmv5h"]
 
 [node name="ListaSitios" type="Control"]
@@ -16,8 +16,8 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_pok42")
 sitio_scene = ExtResource("2_yb5qh")
-textura1 = ExtResource("3_7p1aw")
-textura2 = ExtResource("4_kp1cf")
+textura1 = ExtResource("3_h0mlf")
+textura2 = ExtResource("4_gckll")
 
 [node name="fondo" type="TextureRect" parent="."]
 layout_mode = 1

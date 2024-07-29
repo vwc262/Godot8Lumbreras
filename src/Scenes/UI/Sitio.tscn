@@ -20,7 +20,7 @@ texture_visible = ExtResource("3_nhueb")
 texture_hidden = ExtResource("4_uugpe")
 
 [node name="sitio_fondo" type="TextureRect" parent="."]
-custom_minimum_size = Vector2(0, 80)
+custom_minimum_size = Vector2(0, 110)
 layout_mode = 2
 size_flags_vertical = 0
 texture = ExtResource("5_7vcwa")
@@ -39,7 +39,7 @@ layout_mode = 2
 theme_override_constants/separation = 0
 
 [node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
-custom_minimum_size = Vector2(0, 80)
+custom_minimum_size = Vector2(0, 110)
 layout_mode = 2
 size_flags_vertical = 2
 theme_override_constants/separation = 0
@@ -98,7 +98,7 @@ grow_vertical = 2
 mouse_filter = 1
 
 [node name="estado_enlace" type="TextureRect" parent="VBoxContainer/HBoxContainer"]
-custom_minimum_size = Vector2(80, 0)
+custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
 texture = ExtResource("3_4mmme")
 expand_mode = 1

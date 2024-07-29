@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://chv516s82kilu"
-path="res://.godot/imported/MenuPie_Home_a.png-5d540bf1163d1ee8e6ba3ffdd246871e.ctex"
+uid="uid://c8weq17h0aukx"
+path="res://.godot/imported/MenuPie_ParticulardDER_b.png-31fa7ad45adabf387ee95c6d54b18d3e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Recursos/UI/img/Menu_pie/MenuPie_Home_a.png"
-dest_files=["res://.godot/imported/MenuPie_Home_a.png-5d540bf1163d1ee8e6ba3ffdd246871e.ctex"]
+source_file="res://Recursos/UI/img/Menu_pie/MenuPie_ParticulardDER_b.png"
+dest_files=["res://.godot/imported/MenuPie_ParticulardDER_b.png-31fa7ad45adabf387ee95c6d54b18d3e.ctex"]
 
 [params]
 

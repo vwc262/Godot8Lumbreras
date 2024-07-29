@@ -1,15 +1,16 @@
-[gd_scene load_steps=12 format=3 uid="uid://x5m0onfran4m"]
+[gd_scene load_steps=13 format=3 uid="uid://x5m0onfran4m"]
 
 [ext_resource type="Script" path="res://Scripts/Managers/WorldManager.gd" id="1_symg7"]
 [ext_resource type="Script" path="res://Scripts/Fetcher/Fetch_Data.gd" id="1_xo6k0"]
 [ext_resource type="PackedScene" uid="uid://cyug4nnq0yh1a" path="res://Scenes/Perfil/Main/NivelPruebas.tscn" id="2_2gqy4"]
 [ext_resource type="Texture2D" uid="uid://b25e6xefek6ri" path="res://Recursos/UI/img/Encabezado_A_submenu/EncabezadoA_base.png" id="3_ohb0y"]
 [ext_resource type="PackedScene" uid="uid://dbs3c52v8n226" path="res://Scenes/UI/ListaSitios.tscn" id="4_lo6xx"]
-[ext_resource type="Texture2D" uid="uid://bfvfnf81ifgnp" path="res://Recursos/UI/img/Menu_pie/MenuPie_graficador_a.png" id="5_fp8g2"]
+[ext_resource type="Texture2D" uid="uid://dqublubqykr46" path="res://Recursos/UI/img/Menu_pie/MenuPie_graficador_a.png" id="5_fp8g2"]
 [ext_resource type="PackedScene" uid="uid://bosmqfxs2ibvy" path="res://Scenes/Plotter/ChartControl.tscn" id="6_cdy0v"]
-[ext_resource type="Texture2D" uid="uid://dd2gg2xxdrbc3" path="res://Recursos/UI/img/Menu_pie/MenuPie_Expandir_B.png" id="7_7pp3i"]
-[ext_resource type="Texture2D" uid="uid://7w5d3xvjrr5c" path="res://Recursos/UI/img/Menu_pie/MenuPie_Particular_a.png" id="8_3542x"]
-[ext_resource type="Texture2D" uid="uid://dtpwo2c05m1h4" path="res://Recursos/UI/img/Menu_pie/MenuPie_Base.png" id="9_m03wm"]
+[ext_resource type="Texture2D" uid="uid://00dq1mhpefe2" path="res://Recursos/UI/img/Menu_pie/MenuPie_Expandir_B.png" id="7_7pp3i"]
+[ext_resource type="Texture2D" uid="uid://boao48pgk4br" path="res://Recursos/UI/img/Menu_pie/MenuPie_ParticularDER_a.png" id="7_r2qur"]
+[ext_resource type="Texture2D" uid="uid://bo4b76cn6y4rf" path="res://Recursos/UI/img/Menu_pie/MenuPie_Base.png" id="9_m03wm"]
+[ext_resource type="PackedScene" uid="uid://mr5ipvv85b1" path="res://Scenes/UI/UI_Particular.tscn" id="11_e8765"]
 
 [sub_resource type="Theme" id="Theme_0o38m"]
 
@@ -98,38 +99,49 @@ layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 
-[node name="HBoxContainer" type="HBoxContainer" parent="DynamicMargins/VB_MainContainer/main_container/ListaSitiosContainer/VBoxContainer/botones_container"]
+[node name="HBoxContainer" type="Panel" parent="DynamicMargins/VB_MainContainer/main_container/ListaSitiosContainer/VBoxContainer/botones_container"]
+self_modulate = Color(1, 1, 1, 0)
 layout_mode = 1
-anchors_preset = 8
+anchors_preset = 7
 anchor_left = 0.5
-anchor_top = 0.5
+anchor_top = 1.0
 anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -312.0
-offset_top = -135.0
-offset_right = 312.0
-offset_bottom = 2.0
+anchor_bottom = 1.0
+offset_left = -300.0
+offset_top = -137.0
+offset_right = 324.0
 grow_horizontal = 2
-grow_vertical = 2
+grow_vertical = 0
 
 [node name="BTN_graficar" type="Button" parent="DynamicMargins/VB_MainContainer/main_container/ListaSitiosContainer/VBoxContainer/botones_container/HBoxContainer"]
 custom_minimum_size = Vector2(200, 100)
 layout_mode = 2
+offset_left = 39.0
+offset_top = 16.0
+offset_right = 247.0
+offset_bottom = 153.0
 theme = SubResource("Theme_0o38m")
 icon = ExtResource("5_fp8g2")
+flat = true
+
+[node name="BTN_particular" type="Button" parent="DynamicMargins/VB_MainContainer/main_container/ListaSitiosContainer/VBoxContainer/botones_container/HBoxContainer"]
+layout_mode = 2
+offset_left = 333.0
+offset_top = 16.0
+offset_right = 541.0
+offset_bottom = 153.0
+icon = ExtResource("7_r2qur")
 flat = true
 
 [node name="BTN_ListaSitios" type="Button" parent="DynamicMargins/VB_MainContainer/main_container/ListaSitiosContainer/VBoxContainer/botones_container/HBoxContainer"]
 custom_minimum_size = Vector2(200, 100)
 layout_mode = 2
+offset_left = 212.0
+offset_right = 412.0
+offset_bottom = 137.0
 size_flags_horizontal = 4
 size_flags_vertical = 4
 icon = ExtResource("7_7pp3i")
-flat = true
-
-[node name="BTN_particular" type="Button" parent="DynamicMargins/VB_MainContainer/main_container/ListaSitiosContainer/VBoxContainer/botones_container/HBoxContainer"]
-layout_mode = 2
-icon = ExtResource("8_3542x")
 flat = true
 
 [node name="barra_separador" type="Panel" parent="DynamicMargins/VB_MainContainer/main_container/ListaSitiosContainer/VBoxContainer"]
@@ -159,6 +171,10 @@ visible = false
 custom_minimum_size = Vector2(0, 650)
 layout_mode = 2
 
+[node name="UiParticular" parent="." instance=ExtResource("11_e8765")]
+visible = false
+
 [connection signal="pressed" from="DynamicMargins/VB_MainContainer/header_container/BTN_datos_random" to="Endpoint" method="_on_btn_datos_random_pressed"]
 [connection signal="button_down" from="DynamicMargins/VB_MainContainer/main_container/ListaSitiosContainer/VBoxContainer/botones_container/HBoxContainer/BTN_graficar" to="." method="_on_btn_graficar_button_down"]
+[connection signal="pressed" from="DynamicMargins/VB_MainContainer/main_container/ListaSitiosContainer/VBoxContainer/botones_container/HBoxContainer/BTN_particular" to="." method="_on_btn_particular_pressed"]
 [connection signal="pressed" from="DynamicMargins/VB_MainContainer/main_container/ListaSitiosContainer/VBoxContainer/botones_container/HBoxContainer/BTN_ListaSitios" to="." method="_on_btn_lista_sitios_pressed"]

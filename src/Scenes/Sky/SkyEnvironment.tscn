@@ -4,8 +4,8 @@
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_1lx84"]
 shader = ExtResource("1_cq31k")
-shader_parameter/skyColor = Color(0, 0.603922, 1, 1)
-shader_parameter/horizonColor = Color(0.658824, 0.8, 1, 1)
+shader_parameter/skyColor = Color(0.382914, 0.677268, 0.74171, 1)
+shader_parameter/horizonColor = Color(0.94902, 0.258824, 0, 1)
 
 [sub_resource type="Sky" id="Sky_f7hr0"]
 sky_material = SubResource("ShaderMaterial_1lx84")
@@ -15,7 +15,7 @@ background_mode = 2
 background_color = Color(0.130569, 0.472729, 0.718176, 1)
 background_energy_multiplier = 0.61
 sky = SubResource("Sky_f7hr0")
-ambient_light_color = Color(0.0313726, 0.67451, 0.733333, 1)
+ambient_light_color = Color(0.813996, 0.514504, 0.313466, 1)
 reflected_light_source = 2
 tonemap_mode = 1
 volumetric_fog_density = 0.0212

@@ -7,5 +7,6 @@ transparency = 1
 shading_mode = 0
 albedo_texture = ExtResource("1_7hsa0")
 billboard_mode = 1
+billboard_keep_scale = true
 distance_fade_mode = 1
 distance_fade_max_distance = 35.0

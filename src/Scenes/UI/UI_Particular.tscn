@@ -1,12 +1,13 @@
-[gd_scene load_steps=11 format=3 uid="uid://mr5ipvv85b1"]
+[gd_scene load_steps=12 format=3 uid="uid://mr5ipvv85b1"]
 
 [ext_resource type="Texture2D" uid="uid://c1ich45dgonk4" path="res://Recursos/UI/img/Encabezado_B_Submenu/EncabezadoB_base.png" id="1_gat4c"]
 [ext_resource type="Script" path="res://Scenes/UI/UI_Particular.gd" id="1_wmuh6"]
+[ext_resource type="Texture2D" uid="uid://43pnnftf4bmk" path="res://Recursos/UI/img/Menu_pie/MenuPie_Expandir_A.png" id="2_dbndn"]
 [ext_resource type="Texture2D" uid="uid://d3vnt3taxqfqo" path="res://Recursos/UI/img/Encabezado_B_Submenu/EncabezadoB_base_Expandir_a.png" id="2_kablv"]
 [ext_resource type="Texture2D" uid="uid://deuo8sj6d1ywc" path="res://Recursos/UI/img/Encabezado_B_Submenu/EncabezadoB_base_Conexion_a.png" id="2_yb3v2"]
-[ext_resource type="Texture2D" uid="uid://dfv7fthqp0uuf" path="res://Recursos/UI/img/señales/Lista_detalles_margen.jpg" id="4_kl876"]
 [ext_resource type="Texture2D" uid="uid://00dq1mhpefe2" path="res://Recursos/UI/img/Menu_pie/MenuPie_Expandir_B.png" id="5_2w2c4"]
 [ext_resource type="Texture2D" uid="uid://b0b5yo4v2g036" path="res://Recursos/UI/img/Menu_pie/dfewfwe.png" id="5_brfia"]
+[ext_resource type="Texture2D" uid="uid://d24wscwvbwf74" path="res://Recursos/UI/img/PB_5_4k.jpg" id="6_08mgp"]
 [ext_resource type="Texture2D" uid="uid://chv516s82kilu" path="res://Recursos/UI/img/Menu_pie/MenuPie_Home_a.png" id="6_n2qx8"]
 [ext_resource type="Texture2D" uid="uid://bdck1ukjrrdlu" path="res://Recursos/UI/img/Encabezado_B_Submenu/EncabezadoB_Detalles.png" id="7_hw4ok"]
 [ext_resource type="Texture2D" uid="uid://bdcbk7ue5pog6" path="res://Recursos/UI/img/Encabezado_A_submenu/Lista_detalles_Submenu_Vineta.png" id="9_evgt1"]
@@ -19,6 +20,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_wmuh6")
+new_icon = ExtResource("2_dbndn")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
@@ -125,7 +127,8 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("4_kl876")
+texture = ExtResource("6_08mgp")
+expand_mode = 1
 
 [node name="detalles_container" type="PanelContainer" parent="VBoxContainer/main_container"]
 layout_mode = 1
@@ -182,6 +185,7 @@ flat = true
 
 [node name="sitio_detalles" type="Panel" parent="VBoxContainer/main_container/detalles_container/VBoxContainer"]
 self_modulate = Color(1, 1, 1, 0)
+clip_contents = true
 custom_minimum_size = Vector2(0, 200)
 layout_mode = 2
 
@@ -314,3 +318,5 @@ theme_override_font_sizes/font_size = 30
 text = "00:00 hrs, 00/00/0000"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[connection signal="pressed" from="VBoxContainer/main_container/detalles_container/VBoxContainer/botones_container/HBoxContainer/btn_home" to="." method="_on_btn_home_pressed"]

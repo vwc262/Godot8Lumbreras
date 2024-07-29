@@ -1,14 +1,14 @@
 [gd_scene load_steps=23 format=3 uid="uid://cyug4nnq0yh1a"]
 
-[ext_resource type="PackedScene" uid="uid://cw30vvtmxm8hg" path="res://Recursos/Meshes/Mapa_Pruebas/Prueba_03/Terreno_Prueba_03.glb" id="1_e3nc3"]
 [ext_resource type="Material" uid="uid://beqh7jr7h3tmm" path="res://Recursos/Materiales/BlurVignette.tres" id="2_0rlw3"]
 [ext_resource type="Script" path="res://Scripts/Navigation/Touch.gd" id="2_ui4vn"]
 [ext_resource type="PackedScene" uid="uid://vw46h30r4ia4" path="res://Scenes/Sitios/CuboClickeable.tscn" id="3_dfqhc"]
 [ext_resource type="PackedScene" uid="uid://bhakmsdspl7on" path="res://Scenes/Sky/SkyEnvironment.tscn" id="5_a3vqv"]
-[ext_resource type="Material" uid="uid://cogvlnnly8grq" path="res://Recursos/Materiales/CloudShadows1.tres" id="5_wrlws"]
 [ext_resource type="Texture2D" uid="uid://cw4pt0rum7ikr" path="res://Recursos/Textures/Sky/nube_02.png" id="7_5pikp"]
+[ext_resource type="PackedScene" uid="uid://csynjsw5s5gds" path="res://Recursos/Meshes/Mapa_Pruebas/Prueba_06/Mapa_3D_06.gltf" id="7_b0555"]
 [ext_resource type="Material" uid="uid://e5ua1e3xje35" path="res://Recursos/Materiales/Material_Letras.tres" id="8_cd5e5"]
 [ext_resource type="PackedScene" uid="uid://dufq2s41jpm5w" path="res://Recursos/Meshes/Nombres_del_mundo/CDMX.glb" id="8_gp1mx"]
+[ext_resource type="Material" uid="uid://b34rsa0vdy1l3" path="res://Recursos/Materiales/CloudShadows_unlit.tres" id="8_jqdfi"]
 [ext_resource type="PackedScene" uid="uid://dqpprs1nvrwex" path="res://Recursos/Meshes/Nombres_del_mundo/EDOMEX.glb" id="9_m0n8c"]
 [ext_resource type="PackedScene" uid="uid://bq24d2bn7jcx7" path="res://Recursos/Meshes/Nombres_del_mundo/Toluca.glb" id="10_ygdvq"]
 [ext_resource type="Material" uid="uid://b0gkm23d6a2ch" path="res://Recursos/Materiales/CloudMeshesTransparency.tres" id="11_415cd"]
@@ -170,11 +170,11 @@ IdEstacion = 6
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Terrain/Sitios/CSGBox3D9/Area3D2"]
 shape = SubResource("BoxShape3D_47xlv")
 
-[node name="Terreno_Prueba_032" parent="Terrain" instance=ExtResource("1_e3nc3")]
-transform = Transform3D(-6.55671e-07, 0, 15, 0, 15, 0, -15, 0, -6.55671e-07, 0, 0, 0)
+[node name="Mapa_3D_06" parent="Terrain" instance=ExtResource("7_b0555")]
+transform = Transform3D(-3.93403e-07, 0, 9, 0, 9, 0, -9, 0, -3.93403e-07, 0, 0, 0)
 
-[node name="Terreno_Prueba_03" parent="Terrain/Terreno_Prueba_032" index="0"]
-surface_material_override/0 = ExtResource("5_wrlws")
+[node name="Mapa_hight_001" parent="Terrain/Mapa_3D_06" index="0"]
+material_override = ExtResource("8_jqdfi")
 
 [node name="Props" type="Node" parent="."]
 
@@ -527,7 +527,7 @@ texture = ExtResource("7_5pikp")
 [connection signal="input_event" from="Terrain/Sitios/CSGBox3D8/Area3D2" to="Terrain/Sitios/CSGBox3D8" method="_on_area_3d_2_input_event"]
 [connection signal="input_event" from="Terrain/Sitios/CSGBox3D9/Area3D2" to="Terrain/Sitios/CSGBox3D9" method="_on_area_3d_2_input_event"]
 
-[editable path="Terrain/Terreno_Prueba_032"]
+[editable path="Terrain/Mapa_3D_06"]
 [editable path="Props/Letreros/CDMX"]
 [editable path="Props/Letreros/EDOMEX"]
 [editable path="Props/Letreros/Toluca"]

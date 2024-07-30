@@ -124,12 +124,15 @@ func set_datos_particular(sitio: Estacion):
 	lbl_fecha.text = GlobalUtils.formatear_fecha(sitio.tiempo)
 	
 func set_progress_bar(_signal: Señal, unidad):
-	progress_bar.min_value = _signal.semaforo["normal"]
+	progress_bar.min_value = 0.1
 	progress_bar.max_value = _signal.semaforo["critico"]
 	lbl_valor.text = str(_signal.valor) + " " + unidad
+
+	print ("***************************",_signal.valor)
 	
 	# Asegurarse de que el valor mínimo visible siempre esté presente
-	var display_value = max(_signal.valor, _signal.semaforo["normal"] + 0.3)
+	var display_value = max(_signal.valor, _signal.semaforo["normal"])
+	display_value = remap(_signal.valor,  0,  _signal.semaforo["critico"], progress_bar.min_value, progress_bar.max_value )
 
 	progress_bar.value = display_value
 	lbl_progress_bar_valor_min.text = str(_signal.semaforo["normal"])
@@ -143,3 +146,8 @@ func set_progress_bar(_signal: Señal, unidad):
 		progress_bar.modulate = Color(1, 0, 0) # Rojo
 	else:
 		progress_bar.modulate = Color(0, 1, 0) # Verde
+	
+	# Usar Tween para animar la barra de progreso
+	var tween = create_tween()
+	tween.tween_property(progress_bar, "value", _signal.valor, 2).set_trans(Tween.TRANS_LINEAR)
+

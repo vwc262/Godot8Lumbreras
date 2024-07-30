@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://mr5ipvv85b1"]
+[gd_scene load_steps=19 format=3 uid="uid://mr5ipvv85b1"]
 
 [ext_resource type="Texture2D" uid="uid://c1ich45dgonk4" path="res://Recursos/UI/img/Encabezado_B_Submenu/EncabezadoB_base.png" id="1_gat4c"]
 [ext_resource type="Script" path="res://Scenes/UI/UI_Particular.gd" id="1_wmuh6"]
@@ -11,8 +11,13 @@
 [ext_resource type="Texture2D" uid="uid://chv516s82kilu" path="res://Recursos/UI/img/Menu_pie/MenuPie_Home_a.png" id="6_n2qx8"]
 [ext_resource type="Texture2D" uid="uid://bdck1ukjrrdlu" path="res://Recursos/UI/img/Encabezado_B_Submenu/EncabezadoB_Detalles.png" id="7_hw4ok"]
 [ext_resource type="Texture2D" uid="uid://camxcq3klk8j1" path="res://Recursos/UI/img/Menu_pie/MenuPie_graficador_a.png" id="7_tams7"]
+[ext_resource type="Texture2D" uid="uid://cvg4awppr0ceb" path="res://Recursos/UI/img/Barra_Nivel/Barra_Nivel_base.png" id="8_kv5h6"]
+[ext_resource type="Texture2D" uid="uid://jfppoptcm53t" path="res://Recursos/UI/img/Barra_Nivel/Barra_Nivel_Cubierta_Barra.png" id="9_d0do7"]
 [ext_resource type="Texture2D" uid="uid://bdcbk7ue5pog6" path="res://Recursos/UI/img/Encabezado_A_submenu/Lista_detalles_Submenu_Vineta.png" id="9_evgt1"]
+[ext_resource type="Texture2D" uid="uid://beromshj68slv" path="res://Recursos/UI/img/Barra_Nivel/Barra_Nivel_base_marcadores.png" id="10_5sxwf"]
 [ext_resource type="Texture2D" uid="uid://dtv5crqml3qee" path="res://Recursos/UI/img/Encabezado_A_submenu/Lista_detalles_Submenu_Contenedor.png" id="12_64k7e"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_wi8d2"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_76qfk"]
 texture = ExtResource("12_64k7e")
@@ -138,6 +143,137 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("6_08mgp")
 expand_mode = 1
+
+[node name="progress_bar_container" type="Panel" parent="VBoxContainer/main_container"]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = 15.0
+offset_bottom = 115.0
+grow_horizontal = 2
+
+[node name="progress_bar_fondo" type="TextureRect" parent="VBoxContainer/main_container/progress_bar_container"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("8_kv5h6")
+
+[node name="ProgressBar" type="ProgressBar" parent="VBoxContainer/main_container/progress_bar_container"]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 56.0
+offset_top = -32.0
+offset_right = -161.0
+offset_bottom = -7.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/background = SubResource("StyleBoxEmpty_wi8d2")
+value = 100.0
+show_percentage = false
+
+[node name="lbl_valor" type="Label" parent="VBoxContainer/main_container/progress_bar_container/ProgressBar"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "0 m"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="progress_bar_cubierta_inicio" type="TextureRect" parent="VBoxContainer/main_container/progress_bar_container"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("9_d0do7")
+
+[node name="progress_bar_marcadores_container" type="Panel" parent="VBoxContainer/main_container/progress_bar_container"]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="progress_bar_marcadores" type="TextureRect" parent="VBoxContainer/main_container/progress_bar_container/progress_bar_marcadores_container"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("10_5sxwf")
+
+[node name="min_container" type="HBoxContainer" parent="VBoxContainer/main_container/progress_bar_container/progress_bar_marcadores_container"]
+layout_mode = 0
+offset_left = 133.0
+offset_top = 54.0
+offset_right = 274.0
+offset_bottom = 91.0
+
+[node name="lbl_progress_bar_min" type="Label" parent="VBoxContainer/main_container/progress_bar_container/progress_bar_marcadores_container/min_container"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Min. "
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="lbl_progress_bar_valor_min" type="Label" parent="VBoxContainer/main_container/progress_bar_container/progress_bar_marcadores_container/min_container"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "2cm"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="max_container" type="HBoxContainer" parent="VBoxContainer/main_container/progress_bar_container/progress_bar_marcadores_container"]
+layout_mode = 0
+offset_left = 673.0
+offset_top = 54.0
+offset_right = 817.0
+offset_bottom = 90.0
+
+[node name="lbl_progress_bar_max" type="Label" parent="VBoxContainer/main_container/progress_bar_container/progress_bar_marcadores_container/max_container"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Max. "
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="lbl_progress_bar_valor_max" type="Label" parent="VBoxContainer/main_container/progress_bar_container/progress_bar_marcadores_container/max_container"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "2cm"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="lbl_nivel_nombre" type="Label" parent="VBoxContainer/main_container/progress_bar_container"]
+layout_mode = 0
+offset_left = 941.0
+offset_top = 6.0
+offset_right = 1072.0
+offset_bottom = 50.0
+theme_override_font_sizes/font_size = 30
+text = "N1"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="detalles_container" type="PanelContainer" parent="VBoxContainer/main_container"]
 layout_mode = 1
@@ -331,7 +467,7 @@ expand_mode = 1
 
 [node name="Panel2" type="Panel" parent="VBoxContainer/main_container/detalles_container/VBoxContainer/sitio_detalles/VBoxContainer/HBoxContainer/Panel/HBoxContainer/Gasto_container/HBoxContainer"]
 self_modulate = Color(1, 1, 1, 0)
-custom_minimum_size = Vector2(250, 0)
+custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
 
 [node name="lbl_gasto" type="Label" parent="VBoxContainer/main_container/detalles_container/VBoxContainer/sitio_detalles/VBoxContainer/HBoxContainer/Panel/HBoxContainer/Gasto_container/HBoxContainer/Panel2"]
@@ -348,7 +484,7 @@ text = "Gasto"
 vertical_alignment = 1
 
 [node name="Panel" type="Panel" parent="VBoxContainer/main_container/detalles_container/VBoxContainer/sitio_detalles/VBoxContainer/HBoxContainer/Panel/HBoxContainer/Gasto_container/HBoxContainer"]
-custom_minimum_size = Vector2(100, 0)
+custom_minimum_size = Vector2(150, 0)
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_76qfk")
 

@@ -7,6 +7,8 @@ extends Control
 @onready var datos_sitios: Array[Estacion] = GlobalData.get_data()
 
 @onready var lbl_header_nombre = $VBoxContainer/header_container/HBoxContainer/header_nombre_container/lbl_header_nombre
+@onready var fondo_render_material : Material = $VBoxContainer/main_container/fondo_render.material
+
 @onready var texture_enlace = $VBoxContainer/header_container/HBoxContainer/header_icono_container/texture_enlace
 @onready var lbl_presion = $VBoxContainer/main_container/detalles_container/VBoxContainer/sitio_detalles/VBoxContainer/HBoxContainer/Panel/HBoxContainer/Presion_container/HBoxContainer/Panel2/lbl_presion
 @onready var lbl_presion_valor = $VBoxContainer/main_container/detalles_container/VBoxContainer/sitio_detalles/VBoxContainer/HBoxContainer/Panel/HBoxContainer/Presion_container/HBoxContainer/Panel/lbl_presion_valor
@@ -20,12 +22,12 @@ extends Control
 @onready var lbl_nivel_nombre = $VBoxContainer/main_container/progress_bar_container/lbl_nivel_nombre
 @onready var lbl_valor = $VBoxContainer/main_container/progress_bar_container/ProgressBar/lbl_valor
 
-@onready var animation_player = $AnimationPlayer
 
 
 @export var new_icon: Texture2D
 @export var texture_online: Texture2D
 @export var texture_offline: Texture2D
+
 
 var original_icon: Texture2D
 var is_new_icon_active: bool = false
@@ -44,8 +46,6 @@ func _ready():
 	NavigationManager.connect("Go_TO", _compare_and_print_selected_site)
 	GlobalData.connect("datos_actualizados", _on_datos_actualizados)
 	
-	if ui_particular.visible == true:
-		animation_player.play("anim_zoom_particular")
 
 func _on_datos_actualizados(estaciones: Array[Estacion]):
 	_compare_and_print_selected_site(estaciones)
@@ -158,4 +158,11 @@ func set_progress_bar(_signal: Señal, unidad):
 
 func init_particular(is_particular):
 	if is_particular == true:
-		animation_player.play("anim_zoom_particular")
+		fondo_render_material.set("shader_parameter/progress",0)
+		var tweenFlipbook = TweenManager.init_tween(On_FlipbookAnimationEnded)
+		tweenFlipbook.tween_property( fondo_render_material,"shader_parameter/progress",29,.85)
+		#animation_player.play("anim_zoom_particular")
+	pass
+	
+func On_FlipbookAnimationEnded():
+	pass		

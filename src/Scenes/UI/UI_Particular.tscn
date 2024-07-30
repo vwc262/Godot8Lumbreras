@@ -1,16 +1,21 @@
-[gd_scene load_steps=12 format=3 uid="uid://mr5ipvv85b1"]
+[gd_scene load_steps=15 format=3 uid="uid://mr5ipvv85b1"]
 
 [ext_resource type="Texture2D" uid="uid://c1ich45dgonk4" path="res://Recursos/UI/img/Encabezado_B_Submenu/EncabezadoB_base.png" id="1_gat4c"]
 [ext_resource type="Script" path="res://Scenes/UI/UI_Particular.gd" id="1_wmuh6"]
 [ext_resource type="Texture2D" uid="uid://43pnnftf4bmk" path="res://Recursos/UI/img/Menu_pie/MenuPie_Expandir_A.png" id="2_dbndn"]
 [ext_resource type="Texture2D" uid="uid://d3vnt3taxqfqo" path="res://Recursos/UI/img/Encabezado_B_Submenu/EncabezadoB_base_Expandir_a.png" id="2_kablv"]
-[ext_resource type="Texture2D" uid="uid://deuo8sj6d1ywc" path="res://Recursos/UI/img/Encabezado_B_Submenu/EncabezadoB_base_Conexion_a.png" id="2_yb3v2"]
+[ext_resource type="Texture2D" uid="uid://crjctqusud75g" path="res://Recursos/UI/img/Encabezado_B_Submenu/EncabezadoB_Submenu_conexion_b.png" id="4_f77s0"]
 [ext_resource type="Texture2D" uid="uid://00dq1mhpefe2" path="res://Recursos/UI/img/Menu_pie/MenuPie_Expandir_B.png" id="5_2w2c4"]
-[ext_resource type="Texture2D" uid="uid://b0b5yo4v2g036" path="res://Recursos/UI/img/Menu_pie/dfewfwe.png" id="5_brfia"]
+[ext_resource type="Texture2D" uid="uid://j5m7bmtmnoqq" path="res://Recursos/UI/img/Encabezado_B_Submenu/EncabezadoB_Submenu_conexion_a.png" id="5_tjj0m"]
 [ext_resource type="Texture2D" uid="uid://d24wscwvbwf74" path="res://Recursos/UI/img/PB_5_4k.jpg" id="6_08mgp"]
 [ext_resource type="Texture2D" uid="uid://chv516s82kilu" path="res://Recursos/UI/img/Menu_pie/MenuPie_Home_a.png" id="6_n2qx8"]
 [ext_resource type="Texture2D" uid="uid://bdck1ukjrrdlu" path="res://Recursos/UI/img/Encabezado_B_Submenu/EncabezadoB_Detalles.png" id="7_hw4ok"]
+[ext_resource type="Texture2D" uid="uid://camxcq3klk8j1" path="res://Recursos/UI/img/Menu_pie/MenuPie_graficador_a.png" id="7_tams7"]
 [ext_resource type="Texture2D" uid="uid://bdcbk7ue5pog6" path="res://Recursos/UI/img/Encabezado_A_submenu/Lista_detalles_Submenu_Vineta.png" id="9_evgt1"]
+[ext_resource type="Texture2D" uid="uid://dtv5crqml3qee" path="res://Recursos/UI/img/Encabezado_A_submenu/Lista_detalles_Submenu_Contenedor.png" id="12_64k7e"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_76qfk"]
+texture = ExtResource("12_64k7e")
 
 [node name="UiParticular" type="Control"]
 layout_mode = 3
@@ -21,6 +26,8 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_wmuh6")
 new_icon = ExtResource("2_dbndn")
+texture_online = ExtResource("5_tjj0m")
+texture_offline = ExtResource("4_f77s0")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
@@ -29,6 +36,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_constants/separation = 0
 
 [node name="header_container" type="Panel" parent="VBoxContainer"]
 self_modulate = Color(1, 1, 1, 0)
@@ -52,6 +60,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_constants/separation = 0
 
 [node name="header_btn_container" type="Panel" parent="VBoxContainer/header_container/HBoxContainer"]
 self_modulate = Color(1, 1, 1, 0)
@@ -77,7 +86,7 @@ flat = true
 
 [node name="header_nombre_container" type="Panel" parent="VBoxContainer/header_container/HBoxContainer"]
 self_modulate = Color(1, 1, 1, 0)
-custom_minimum_size = Vector2(650, 0)
+custom_minimum_size = Vector2(800, 0)
 layout_mode = 2
 size_flags_horizontal = 2
 
@@ -94,11 +103,11 @@ vertical_alignment = 1
 
 [node name="header_icono_container" type="Panel" parent="VBoxContainer/header_container/HBoxContainer"]
 self_modulate = Color(1, 1, 1, 0)
-custom_minimum_size = Vector2(200, 0)
+custom_minimum_size = Vector2(130, 0)
 layout_mode = 2
-size_flags_horizontal = 8
+size_flags_horizontal = 2
 
-[node name="TextureRect" type="TextureRect" parent="VBoxContainer/header_container/HBoxContainer/header_icono_container"]
+[node name="texture_enlace" type="TextureRect" parent="VBoxContainer/header_container/HBoxContainer/header_icono_container"]
 custom_minimum_size = Vector2(100, 100)
 layout_mode = 1
 anchors_preset = 8
@@ -106,13 +115,13 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -64.0
+offset_left = -45.0
 offset_top = -49.5
-offset_right = 36.0
+offset_right = 55.0
 offset_bottom = 50.5
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("2_yb3v2")
+texture = ExtResource("5_tjj0m")
 expand_mode = 1
 
 [node name="main_container" type="Panel" parent="VBoxContainer"]
@@ -166,7 +175,7 @@ custom_minimum_size = Vector2(150, 100)
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 8
-icon = ExtResource("5_brfia")
+icon = ExtResource("7_tams7")
 flat = true
 
 [node name="btn_lista" type="Button" parent="VBoxContainer/main_container/detalles_container/VBoxContainer/botones_container/HBoxContainer"]
@@ -212,14 +221,17 @@ offset_right = 534.0
 offset_bottom = 96.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_constants/separation = 0
 
 [node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/main_container/detalles_container/VBoxContainer/sitio_detalles/VBoxContainer"]
 custom_minimum_size = Vector2(0, 85)
 layout_mode = 2
 size_flags_vertical = 0
+theme_override_constants/separation = 0
 
 [node name="Panel" type="Panel" parent="VBoxContainer/main_container/detalles_container/VBoxContainer/sitio_detalles/VBoxContainer/HBoxContainer"]
 self_modulate = Color(1, 1, 1, 0)
+clip_contents = true
 layout_mode = 2
 size_flags_horizontal = 3
 
@@ -230,6 +242,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_constants/separation = 0
 
 [node name="Presion_container" type="Panel" parent="VBoxContainer/main_container/detalles_container/VBoxContainer/sitio_detalles/VBoxContainer/HBoxContainer/Panel/HBoxContainer"]
 self_modulate = Color(1, 1, 1, 0)
@@ -244,6 +257,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_constants/separation = 0
 
 [node name="TextureRect" type="TextureRect" parent="VBoxContainer/main_container/detalles_container/VBoxContainer/sitio_detalles/VBoxContainer/HBoxContainer/Panel/HBoxContainer/Presion_container/HBoxContainer"]
 custom_minimum_size = Vector2(90, 0)
@@ -251,20 +265,47 @@ layout_mode = 2
 texture = ExtResource("9_evgt1")
 expand_mode = 1
 
-[node name="lbl_presion" type="Label" parent="VBoxContainer/main_container/detalles_container/VBoxContainer/sitio_detalles/VBoxContainer/HBoxContainer/Panel/HBoxContainer/Presion_container/HBoxContainer"]
+[node name="Panel2" type="Panel" parent="VBoxContainer/main_container/detalles_container/VBoxContainer/sitio_detalles/VBoxContainer/HBoxContainer/Panel/HBoxContainer/Presion_container/HBoxContainer"]
+self_modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
+
+[node name="lbl_presion" type="Label" parent="VBoxContainer/main_container/detalles_container/VBoxContainer/sitio_detalles/VBoxContainer/HBoxContainer/Panel/HBoxContainer/Presion_container/HBoxContainer/Panel2"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_vertical = 1
 theme_override_font_sizes/font_size = 40
 text = "Presion"
 vertical_alignment = 1
 
-[node name="lbl_presion_valor" type="Label" parent="VBoxContainer/main_container/detalles_container/VBoxContainer/sitio_detalles/VBoxContainer/HBoxContainer/Panel/HBoxContainer/Presion_container/HBoxContainer"]
+[node name="Panel" type="Panel" parent="VBoxContainer/main_container/detalles_container/VBoxContainer/sitio_detalles/VBoxContainer/HBoxContainer/Panel/HBoxContainer/Presion_container/HBoxContainer"]
+custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_76qfk")
+
+[node name="lbl_presion_valor" type="Label" parent="VBoxContainer/main_container/detalles_container/VBoxContainer/sitio_detalles/VBoxContainer/HBoxContainer/Panel/HBoxContainer/Presion_container/HBoxContainer/Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -72.5
+offset_top = -24.5
+offset_right = 72.5
+offset_bottom = 24.5
+grow_horizontal = 2
+grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_vertical = 1
 theme_override_font_sizes/font_size = 35
-text = "0m."
+text = "0 kg/cm²"
+horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Gasto_container" type="Panel" parent="VBoxContainer/main_container/detalles_container/VBoxContainer/sitio_detalles/VBoxContainer/HBoxContainer/Panel/HBoxContainer"]
@@ -280,34 +321,58 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_constants/separation = 0
 
 [node name="TextureRect" type="TextureRect" parent="VBoxContainer/main_container/detalles_container/VBoxContainer/sitio_detalles/VBoxContainer/HBoxContainer/Panel/HBoxContainer/Gasto_container/HBoxContainer"]
 custom_minimum_size = Vector2(90, 0)
 layout_mode = 2
 texture = ExtResource("9_evgt1")
+expand_mode = 1
 
-[node name="lbl_gasto" type="Label" parent="VBoxContainer/main_container/detalles_container/VBoxContainer/sitio_detalles/VBoxContainer/HBoxContainer/Panel/HBoxContainer/Gasto_container/HBoxContainer"]
+[node name="Panel2" type="Panel" parent="VBoxContainer/main_container/detalles_container/VBoxContainer/sitio_detalles/VBoxContainer/HBoxContainer/Panel/HBoxContainer/Gasto_container/HBoxContainer"]
+self_modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(250, 0)
 layout_mode = 2
+
+[node name="lbl_gasto" type="Label" parent="VBoxContainer/main_container/detalles_container/VBoxContainer/sitio_detalles/VBoxContainer/HBoxContainer/Panel/HBoxContainer/Gasto_container/HBoxContainer/Panel2"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_vertical = 1
 theme_override_font_sizes/font_size = 40
 text = "Gasto"
 vertical_alignment = 1
 
-[node name="lbl_gasto_valor" type="Label" parent="VBoxContainer/main_container/detalles_container/VBoxContainer/sitio_detalles/VBoxContainer/HBoxContainer/Panel/HBoxContainer/Gasto_container/HBoxContainer"]
+[node name="Panel" type="Panel" parent="VBoxContainer/main_container/detalles_container/VBoxContainer/sitio_detalles/VBoxContainer/HBoxContainer/Panel/HBoxContainer/Gasto_container/HBoxContainer"]
+custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_76qfk")
+
+[node name="lbl_gasto_valor" type="Label" parent="VBoxContainer/main_container/detalles_container/VBoxContainer/sitio_detalles/VBoxContainer/HBoxContainer/Panel/HBoxContainer/Gasto_container/HBoxContainer/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_vertical = 1
 theme_override_font_sizes/font_size = 35
 text = "0m."
+horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="fecha_container" type="Panel" parent="VBoxContainer/main_container/detalles_container/VBoxContainer/sitio_detalles/VBoxContainer"]
 self_modulate = Color(1, 1, 1, 0)
+clip_contents = true
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="Label" type="Label" parent="VBoxContainer/main_container/detalles_container/VBoxContainer/sitio_detalles/VBoxContainer/fecha_container"]
+[node name="lbl_fecha" type="Label" parent="VBoxContainer/main_container/detalles_container/VBoxContainer/sitio_detalles/VBoxContainer/fecha_container"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0

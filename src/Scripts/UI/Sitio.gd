@@ -63,9 +63,7 @@ func instanciar_señales():
 
 # Función que maneja la señal del botón presionado
 func _on_button_pressed():
-	NavigationManager.emit_signal("Go_TO", estacion_ref.id_estacion)
-	print(NavigationManager.last_selected)
-	
+	NavigationManager.emit_signal("Go_TO", estacion_ref.id_estacion)	
 
 # Función que maneja el botón de expandir/esconder
 func _on_btn_expandir_sitios_pressed():

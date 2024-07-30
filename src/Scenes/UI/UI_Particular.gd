@@ -33,8 +33,12 @@ var unidades = {
 func _ready():
 	original_icon = btn_lista.icon  # Guarda el ícono original
 	btn_lista.connect("pressed", _on_btn_lista_pressed)
-	#print("NavigationManager.last_selected: ", NavigationManager.last_selected)  # Mensaje de depuración
 	NavigationManager.connect("Go_TO", _compare_and_print_selected_site)
+	GlobalData.connect("datos_actualizados", _on_datos_actualizados)
+
+func _on_datos_actualizados(estaciones: Array[Estacion]):
+	_compare_and_print_selected_site(estaciones)
+
 
 func _on_btn_lista_pressed():
 	if is_new_icon_active:
@@ -97,7 +101,7 @@ func set_datos_particular(sitio: Estacion):
 		texture_enlace.texture = texture_offline
 
 	# Asignar el nombre de la señal a lbl_presion si tipo_signal es 2,3
-	for _signal in sitio.signals:
+	for _signal in sitio.signals.values():
 		# Obtener la unidad correspondiente al tipo de señal
 		var unidad = unidades.get(_signal.tipo_signal, "")
 		

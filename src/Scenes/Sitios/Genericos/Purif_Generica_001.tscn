@@ -1,7 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://gd4vjbsc0wch"]
-
-[ext_resource type="PackedScene" uid="uid://b0v2xuu0rqmbs" path="res://Recursos/Meshes/Mapa_Pruebas/Sitios/Genericos/Purif_Generica_001/Purif_Generica_001_v001.glb" id="1_4er4v"]
-
-[node name="PurifMini3dGenerica001" type="Node3D"]
-
-[node name="Purif_Generica_001_v001" parent="." instance=ExtResource("1_4er4v")]

@@ -6,6 +6,8 @@ extends Node
 @onready var ui_particular = $UiParticular
 @onready var dynamic_margins = $DynamicMargins
 
+signal in_particular
+
 
 var is_hidden = false  # Variable para rastrear el estado del contenedor
 
@@ -56,4 +58,5 @@ func _on_btn_graficar_button_down():
 
 func _on_btn_particular_pressed():
 	ui_particular.visible = true
+	ui_particular.init_particular(true)
 

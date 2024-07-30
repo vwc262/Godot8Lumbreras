@@ -3,6 +3,8 @@ extends HTTPRequest
 
 signal datos_actualizados
 
+signal OnVersionChanged
+
 @export var url_api: String
 @export var url_api_update : String
 
@@ -10,13 +12,18 @@ signal datos_actualizados
 @onready var btn_datos_random = $"../DynamicMargins/VB_MainContainer/header_container/BTN_datos_random"
 
 var offLineDataPath = "res://Scripts/OffLineaData/OffLineData.json"
+var App_Version_File = "res://Scripts/OffLineaData/AppVersion.json"
 var usando_datos_reales = true # Variable para controlar el toggle
+var currentAppVersion = 0.0
 
 
 func _ready():
+	#Se carga la informacion de la estructura independientemente de que haya conexion a internet o no
+	#Desventaja por ahora es que si llega a cambiar la estructura hay que actualizar el archivo
 	LoadJsonFile(offLineDataPath)
+	LoadAppVersionFile(App_Version_File)
 	#Se configura el timer para que cada determinado tiempo haga la peticion
-	connect("request_completed", _solicitud_completada)
+	connect("request_completed", _solicitud_completada)		
 	timer.wait_time = 10.0
 	timer.one_shot = false
 	timer.connect("timeout", _on_timer_timeout)
@@ -34,8 +41,9 @@ func _solicitud_completada(result, codigo_respuesta, headers, body):
 		return
 		
 	if result == RESULT_SUCCESS:
-		var data = JSON.parse_string(body.get_string_from_utf8())		
-		updateGLobalData(data)	
+		var data = JSON.parse_string(body.get_string_from_utf8())				
+		updateGLobalData(data)
+		Handle_Version_Change(data["V"])
 
 	else:
 		print("Error en la solicitud HTTP, Código de respuesta:", codigo_respuesta)
@@ -49,6 +57,16 @@ func LoadJsonFile(filePath:String):
 		var parsedResult =JSON.parse_string(dataFile.get_as_text())
 		setDataToGlobal(parsedResult)
 		iniciar_fetch_api()
+
+func LoadAppVersionFile(AppVersionFile :String):
+	if FileAccess.file_exists(AppVersionFile):
+		var dataFile = FileAccess.open(AppVersionFile,FileAccess.READ)
+		var parsedResult =JSON.parse_string(dataFile.get_as_text())
+		dataFile.close()
+		currentAppVersion = parsedResult["V"]
+		print("Current version -> " , currentAppVersion)
+		
+			
 	
 		
 func setDataToGlobal(jsonData):
@@ -97,3 +115,10 @@ func actualizar_texto_boton():
 
 func _update_data_global(estaciones: Array[Estacion]):
 	GlobalData.emit_signal("datos_actualizados", estaciones)
+
+func Handle_Version_Change(versionAPI:float):
+	if(versionAPI != currentAppVersion):		
+		#Probablemente no se acttualice si llega a haber un fallo en la red
+		currentAppVersion = versionAPI 
+		emit_signal("OnVersionChanged",versionAPI)
+	pass

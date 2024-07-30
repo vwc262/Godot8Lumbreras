@@ -17,7 +17,7 @@ extends Node
 
 
 var estacion_ref: Estacion
-var signal_ref: Array[Señal]
+var signal_ref = {}
 var signal_instances: Array = []
 var id_estacion: int
 
@@ -54,8 +54,8 @@ func instanciar_señales():
 
 	# Instanciar y agregar una sola señal
 	var signal_instance = signal_scene.instantiate()
-	se_ales_sitios.add_child(signal_instance)
-	signal_instance.set_datos(signal_ref)  # Pasar la referencia de todas las señales
+	se_ales_sitios.add_child(signal_instance)	
+	signal_instance.set_datos(estacion_ref)  # Pasar la referencia de todas las señales
 	signal_instances.append(signal_instance)
 
 	# Ocultar el panel de señales si no hay señales

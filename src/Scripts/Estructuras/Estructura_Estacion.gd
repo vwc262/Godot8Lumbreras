@@ -11,7 +11,7 @@ class_name Estacion
 @export var falla_energia: int
 @export var abreviacion: String
 @export var tipo_estacion: int
-@export var signals: Array[Señal] = []
+@export var signals = {}
 @export var lineas: Array[Linea] = []
 @export var conexiones: int
 @export var fallas: int
@@ -31,4 +31,5 @@ func _init(jsonData):
 	self.conexiones = jsonData["conexiones"]
 	self.fallas = jsonData["fallas"]
 	self.tipo_poleo = jsonData["tipoPoleo"]
+	
 	

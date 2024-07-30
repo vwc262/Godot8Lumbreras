@@ -38,8 +38,7 @@ func actualizar_datos():
 		var unidad = unidades.get(_signal.tipo_signal, "")
 				
 		if _signal.tipo_signal == 1:
-			lbl_nombre_signal.text = _signal.nombre
-			print(_signal.valor)
+			lbl_nombre_signal.text = _signal.nombre			
 			lbl_valor.text = str(_signal.valor) + " " + unidad
 			
 		elif _signal.tipo_signal == 2: 

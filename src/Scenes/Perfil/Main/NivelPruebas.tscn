@@ -1,14 +1,13 @@
-[gd_scene load_steps=23 format=3 uid="uid://cyug4nnq0yh1a"]
+[gd_scene load_steps=22 format=3 uid="uid://cyug4nnq0yh1a"]
 
 [ext_resource type="Material" uid="uid://beqh7jr7h3tmm" path="res://Recursos/Materiales/BlurVignette.tres" id="2_0rlw3"]
 [ext_resource type="Script" path="res://Scripts/Navigation/Touch.gd" id="2_ui4vn"]
 [ext_resource type="PackedScene" uid="uid://vw46h30r4ia4" path="res://Scenes/Sitios/CuboClickeable.tscn" id="3_dfqhc"]
 [ext_resource type="PackedScene" uid="uid://bhakmsdspl7on" path="res://Scenes/Sky/SkyEnvironment.tscn" id="5_a3vqv"]
+[ext_resource type="PackedScene" uid="uid://vxu3fnea8kdx" path="res://Recursos/Meshes/Mapa_Pruebas/Prueba_07/Mapa_Unlit.tscn" id="5_tlknr"]
 [ext_resource type="Texture2D" uid="uid://cw4pt0rum7ikr" path="res://Recursos/Textures/Sky/nube_02.png" id="7_5pikp"]
-[ext_resource type="PackedScene" uid="uid://csynjsw5s5gds" path="res://Recursos/Meshes/Mapa_Pruebas/Prueba_06/Mapa_3D_06.gltf" id="7_b0555"]
 [ext_resource type="Material" uid="uid://e5ua1e3xje35" path="res://Recursos/Materiales/Material_Letras.tres" id="8_cd5e5"]
 [ext_resource type="PackedScene" uid="uid://dufq2s41jpm5w" path="res://Recursos/Meshes/Nombres_del_mundo/CDMX.glb" id="8_gp1mx"]
-[ext_resource type="Material" uid="uid://b34rsa0vdy1l3" path="res://Recursos/Materiales/CloudShadows_unlit.tres" id="8_jqdfi"]
 [ext_resource type="PackedScene" uid="uid://dqpprs1nvrwex" path="res://Recursos/Meshes/Nombres_del_mundo/EDOMEX.glb" id="9_m0n8c"]
 [ext_resource type="PackedScene" uid="uid://bq24d2bn7jcx7" path="res://Recursos/Meshes/Nombres_del_mundo/Toluca.glb" id="10_ygdvq"]
 [ext_resource type="Material" uid="uid://b0gkm23d6a2ch" path="res://Recursos/Materiales/CloudMeshesTransparency.tres" id="11_415cd"]
@@ -117,7 +116,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.2555, 0, -45.856)
 [node name="Sitios" type="Node3D" parent="Terrain"]
 
 [node name="CSGBox3D4" parent="Terrain/Sitios" instance=ExtResource("3_dfqhc")]
-transform = Transform3D(-1, 0, -1.50996e-07, 0, 1, 0, 1.50996e-07, 0, -1, 35.9335, -0.819509, 65.0593)
+transform = Transform3D(0.0281137, 0, -0.999605, 0, 1, 0, 0.999605, 0, 0.0281137, 34.4429, -4.28535, 72.8526)
 IdEstacion = 1
 
 [node name="Area3D2" type="Area3D" parent="Terrain/Sitios/CSGBox3D4"]
@@ -126,7 +125,7 @@ IdEstacion = 1
 shape = SubResource("BoxShape3D_47xlv")
 
 [node name="CSGBox3D5" parent="Terrain/Sitios" instance=ExtResource("3_dfqhc")]
-transform = Transform3D(-1, 0, -1.50996e-07, 0, 1, 0, 1.50996e-07, 0, -1, 28.5097, -2.3612, 61.2248)
+transform = Transform3D(0.0564664, 0, -0.998405, 0, 1, 0, 0.998405, 0, 0.0564664, 28.1029, -4.14825, 65.5896)
 IdEstacion = 2
 
 [node name="Area3D2" type="Area3D" parent="Terrain/Sitios/CSGBox3D5"]
@@ -135,7 +134,7 @@ IdEstacion = 2
 shape = SubResource("BoxShape3D_47xlv")
 
 [node name="CSGBox3D6" parent="Terrain/Sitios" instance=ExtResource("3_dfqhc")]
-transform = Transform3D(-1, 0, -1.50996e-07, 0, 1, 0, 1.50996e-07, 0, -1, 22.6047, -2.49816, 58.0058)
+transform = Transform3D(-0.974492, 0, -0.224424, 0, 1, 0, 0.224424, 0, -0.974492, 21.5497, -3.71833, 60.5345)
 IdEstacion = 3
 
 [node name="Area3D2" type="Area3D" parent="Terrain/Sitios/CSGBox3D6"]
@@ -144,7 +143,7 @@ IdEstacion = 3
 shape = SubResource("BoxShape3D_47xlv")
 
 [node name="CSGBox3D7" parent="Terrain/Sitios" instance=ExtResource("3_dfqhc")]
-transform = Transform3D(-1, 0, -1.50996e-07, 0, 1, 0, 1.50996e-07, 0, -1, 12.2906, -1.00262, 52.4404)
+transform = Transform3D(-0.938282, 0, -0.345872, 0, 1, 0, 0.345872, 0, -0.938282, 16.6077, -2.68437, 53.0207)
 IdEstacion = 4
 
 [node name="Area3D2" type="Area3D" parent="Terrain/Sitios/CSGBox3D7"]
@@ -153,7 +152,7 @@ IdEstacion = 4
 shape = SubResource("BoxShape3D_47xlv")
 
 [node name="CSGBox3D8" parent="Terrain/Sitios" instance=ExtResource("3_dfqhc")]
-transform = Transform3D(-1, 0, -1.50996e-07, 0, 1, 0, 1.50996e-07, 0, -1, -3.84364, -0.66105, 43.4313)
+transform = Transform3D(-0.00637061, 0, 0.99998, 0, 1, 0, -0.99998, 0, -0.00637061, -0.738949, -1.16118, 44.0146)
 IdEstacion = 5
 
 [node name="Area3D2" type="Area3D" parent="Terrain/Sitios/CSGBox3D8"]
@@ -162,7 +161,7 @@ IdEstacion = 5
 shape = SubResource("BoxShape3D_47xlv")
 
 [node name="CSGBox3D9" parent="Terrain/Sitios" instance=ExtResource("3_dfqhc")]
-transform = Transform3D(-1, 0, -1.50996e-07, 0, 1, 0, 1.50996e-07, 0, -1, -1.30044, -0.398411, 55.9015)
+transform = Transform3D(0.0178711, 0, 0.99984, 0, 1, 0, -0.99984, 0, 0.0178711, 6.55286, -1.4562, 53.4307)
 IdEstacion = 6
 
 [node name="Area3D2" type="Area3D" parent="Terrain/Sitios/CSGBox3D9"]
@@ -170,11 +169,8 @@ IdEstacion = 6
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Terrain/Sitios/CSGBox3D9/Area3D2"]
 shape = SubResource("BoxShape3D_47xlv")
 
-[node name="Mapa_3D_06" parent="Terrain" instance=ExtResource("7_b0555")]
-transform = Transform3D(-3.93403e-07, 0, 9, 0, 9, 0, -9, 0, -3.93403e-07, 0, 0, 0)
-
-[node name="Mapa_hight_001" parent="Terrain/Mapa_3D_06" index="0"]
-material_override = ExtResource("8_jqdfi")
+[node name="Node3D" parent="Terrain" instance=ExtResource("5_tlknr")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0)
 
 [node name="Props" type="Node" parent="."]
 
@@ -202,6 +198,7 @@ material_override = ExtResource("8_cd5e5")
 transform = Transform3D(0.930673, -0.00140507, -0.337795, -1.38681e-08, 0.00923311, -0.384054, 0.365852, 0.00357428, 0.8593, 16.9635, -1.2075, 3.89035)
 
 [node name="Text_012" parent="Props/Letreros/Valle_Bravo" index="0"]
+transform = Transform3D(4.39018, -4.65661e-10, 0, 0, 4.39018, 1.52588e-05, -1.19209e-07, -9.31323e-10, 4.39018, 0, 108.395, -0.450873)
 material_override = ExtResource("8_cd5e5")
 
 [node name="NubesRoot" type="Node3D" parent="Props"]
@@ -527,7 +524,6 @@ texture = ExtResource("7_5pikp")
 [connection signal="input_event" from="Terrain/Sitios/CSGBox3D8/Area3D2" to="Terrain/Sitios/CSGBox3D8" method="_on_area_3d_2_input_event"]
 [connection signal="input_event" from="Terrain/Sitios/CSGBox3D9/Area3D2" to="Terrain/Sitios/CSGBox3D9" method="_on_area_3d_2_input_event"]
 
-[editable path="Terrain/Mapa_3D_06"]
 [editable path="Props/Letreros/CDMX"]
 [editable path="Props/Letreros/EDOMEX"]
 [editable path="Props/Letreros/Toluca"]

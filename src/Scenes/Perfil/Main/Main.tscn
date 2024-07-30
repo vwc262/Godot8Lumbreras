@@ -20,6 +20,7 @@ script = ExtResource("1_symg7")
 [node name="Endpoint" type="HTTPRequest" parent="."]
 script = ExtResource("1_xo6k0")
 url_api = "https://www.virtualwavecontrol.com.mx/Core24/crud/ReadSignalsEstacion?idProyecto=7"
+url_api_update = "https://virtualwavecontrol.com.mx/api24/VWC/Unreal/PlantasPotabilizadoras2024/GetUpdateLite"
 
 [node name="DynamicMargins" type="MarginContainer" parent="."]
 anchors_preset = 15

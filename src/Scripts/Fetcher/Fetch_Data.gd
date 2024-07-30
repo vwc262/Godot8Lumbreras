@@ -4,6 +4,7 @@ extends HTTPRequest
 signal datos_actualizados
 
 @export var url_api: String
+@export var url_api_update : String
 
 @onready var timer = Timer.new()
 @onready var btn_datos_random = $"../DynamicMargins/VB_MainContainer/header_container/BTN_datos_random"
@@ -24,16 +25,17 @@ func _ready():
 	
 
 func iniciar_fetch_api():
-	request(url_api)
+	request(url_api_update)
+	pass
 
-func _solicitud_completada(result, codigo_respuesta, headers, body):
+func _solicitud_completada(result, codigo_respuesta, headers, body):	
 	if not usando_datos_reales:
-		_update_data_global(generar_datos_aleatorios(GlobalData.get_data()))
+		#_update_data_global(generar_datos_aleatorios(GlobalData.get_data()))
 		return
 		
 	if result == RESULT_SUCCESS:
 		var data = JSON.parse_string(body.get_string_from_utf8())		
-		setDataToGlobal(data)	
+		updateGLobalData(data)	
 
 	else:
 		print("Error en la solicitud HTTP, Código de respuesta:", codigo_respuesta)
@@ -51,7 +53,10 @@ func LoadJsonFile(filePath:String):
 		
 func setDataToGlobal(jsonData):
 		GlobalData.set_data(jsonData)
-		emit_signal("datos_actualizados", jsonData)		
+		#emit_signal("datos_actualizados", jsonData)	
+		
+func updateGLobalData(jsonData):
+	GlobalData.set_Updated_Data(jsonData)
 		
 func _on_btn_datos_random_pressed():
 	usando_datos_reales = not usando_datos_reales

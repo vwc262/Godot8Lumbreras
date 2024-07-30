@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://baxat7w38cs1y"
-path="res://.godot/imported/Lista_detalles_Submenu.png-7d6a2a592f3bc2f9e304426ba7be49ba.ctex"
+uid="uid://dwcwsu6jv3s04"
+path="res://.godot/imported/Lista_Detalles_BotonFlecha_b.png-46184244ba5dbd511639f35156ddf2e4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Recursos/UI/img/Encabezado_A_submenu/Lista_detalles_Submenu.png"
-dest_files=["res://.godot/imported/Lista_detalles_Submenu.png-7d6a2a592f3bc2f9e304426ba7be49ba.ctex"]
+source_file="res://Recursos/UI/img/Encabezado_A_submenu/Lista_Detalles_BotonFlecha_b.png"
+dest_files=["res://.godot/imported/Lista_Detalles_BotonFlecha_b.png-46184244ba5dbd511639f35156ddf2e4.ctex"]
 
 [params]
 

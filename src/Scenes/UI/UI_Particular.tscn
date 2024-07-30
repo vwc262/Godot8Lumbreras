@@ -95,6 +95,7 @@ offset_right = 30.0
 offset_bottom = 30.5
 grow_horizontal = 2
 grow_vertical = 2
+focus_mode = 0
 icon = ExtResource("2_kablv")
 flat = true
 
@@ -329,6 +330,7 @@ flat = true
 custom_minimum_size = Vector2(150, 100)
 layout_mode = 2
 size_flags_vertical = 8
+focus_mode = 0
 icon = ExtResource("5_2w2c4")
 flat = true
 
@@ -336,6 +338,7 @@ flat = true
 custom_minimum_size = Vector2(150, 100)
 layout_mode = 2
 size_flags_vertical = 8
+focus_mode = 0
 icon = ExtResource("6_n2qx8")
 flat = true
 

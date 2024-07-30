@@ -1,4 +1,3 @@
-# Sitio.gd
 extends Node
 
 @export var signal_scene: PackedScene
@@ -11,10 +10,9 @@ extends Node
 @onready var se_ales_sitios = $"VBoxContainer/PanelContainer/Control/señales_sitios"
 @onready var panel_container = $VBoxContainer/PanelContainer
 @onready var btn_expandir_sitios = $VBoxContainer/HBoxContainer/BTN_expandir_sitios
-@onready var btn_expandir_fondo = $VBoxContainer/HBoxContainer/BTN_expandir_sitios/BTN_expandir_fondo
+@onready var btn_expandir_fondo = $VBoxContainer/HBoxContainer/BTN_expandir_sitios/btn_expandir_fondo
 @onready var sitio_fondo = $sitio_fondo
-@onready var sitio_fondo_seleccionado = $sitio_fondo_seleccionado
-
+@onready var sitio_fondo_seleccionado = $VBoxContainer/HBoxContainer/nombre_fecha_contaier/sitio_fondo_seleccionado
 
 var estacion_ref: Estacion
 var signal_ref = {}
@@ -23,6 +21,10 @@ var id_estacion: int
 
 var is_hidden = false
 
+signal deselect
+
+func _ready():
+	NavigationManager.connect("Deselect", deseleccionar_sitio)
 
 # Función para recibir y establecer los datos de la estación
 func set_datos(estacion: Estacion):
@@ -54,7 +56,7 @@ func instanciar_señales():
 
 	# Instanciar y agregar una sola señal
 	var signal_instance = signal_scene.instantiate()
-	se_ales_sitios.add_child(signal_instance)	
+	se_ales_sitios.add_child(signal_instance)    
 	signal_instance.set_datos(estacion_ref)  # Pasar la referencia de todas las señales
 	signal_instances.append(signal_instance)
 
@@ -63,7 +65,20 @@ func instanciar_señales():
 
 # Función que maneja la señal del botón presionado
 func _on_button_pressed():
-	NavigationManager.emit_signal("Go_TO", estacion_ref.id_estacion)	
+	NavigationManager.emit_signal("Go_TO", estacion_ref.id_estacion)
+	NavigationManager.emit_signal("Deselect")
+	
+	# Seleccionar el sitio actual
+	if NavigationManager.last_selected == estacion_ref.id_estacion:
+		sitio_fondo_seleccionado.visible = true
+	else:
+		sitio_fondo_seleccionado.visible = false
+		
+	NavigationManager.set_lastid_selected(estacion_ref.id_estacion)
+
+# Función para deseleccionar el sitio
+func deseleccionar_sitio():
+	sitio_fondo_seleccionado.visible = false
 
 # Función que maneja el botón de expandir/esconder
 func _on_btn_expandir_sitios_pressed():

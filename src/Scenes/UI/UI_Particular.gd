@@ -20,6 +20,7 @@ extends Control
 @onready var lbl_nivel_nombre = $VBoxContainer/main_container/progress_bar_container/lbl_nivel_nombre
 @onready var lbl_valor = $VBoxContainer/main_container/progress_bar_container/ProgressBar/lbl_valor
 
+@onready var animation_player = $AnimationPlayer
 
 
 @export var new_icon: Texture2D
@@ -42,6 +43,9 @@ func _ready():
 	btn_lista.connect("pressed", _on_btn_lista_pressed)
 	NavigationManager.connect("Go_TO", _compare_and_print_selected_site)
 	GlobalData.connect("datos_actualizados", _on_datos_actualizados)
+	
+	if ui_particular.visible == true:
+		animation_player.play("anim_zoom_particular")
 
 func _on_datos_actualizados(estaciones: Array[Estacion]):
 	_compare_and_print_selected_site(estaciones)
@@ -127,8 +131,6 @@ func set_progress_bar(_signal: Señal, unidad):
 	progress_bar.min_value = 0.5
 	progress_bar.max_value = _signal.semaforo["critico"]
 	lbl_valor.text = str(_signal.valor) + " " + unidad
-
-	print ("***************************",_signal.valor)
 	
 	# Asegurarse de que el valor mínimo visible siempre esté presente
 	var display_value = max(_signal.valor, _signal.semaforo["normal"])
@@ -154,3 +156,6 @@ func set_progress_bar(_signal: Señal, unidad):
 	var tween = create_tween()
 	tween.tween_property(progress_bar, "value", display_value, 1)
 
+func init_particular(is_particular):
+	if is_particular == true:
+		animation_player.play("anim_zoom_particular")

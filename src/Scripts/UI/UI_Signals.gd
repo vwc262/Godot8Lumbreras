@@ -17,7 +17,7 @@ extends Control
 #endregion
 
 # Referencia a la señal que se va a mostrar
-var signal_ref: Array[Señal]
+var signal_ref : Array[Señal] = []
 
 # Diccionario para las unidades de tipo de señal
 var unidades = {
@@ -27,11 +27,11 @@ var unidades = {
 }
 
 # Función para recibir y establecer los datos de la señal
-func set_datos(signal_sitio: Array[Señal]):
-	signal_ref = signal_sitio
+func set_datos(estacion:Estacion):
+	signal_ref.assign(estacion.signals.values())  
 	call_deferred("actualizar_datos")
 
-func actualizar_datos():
+func actualizar_datos():	
 	for _signal in signal_ref:
 		
 		# Obtener la unidad correspondiente al tipo de señal
@@ -39,6 +39,7 @@ func actualizar_datos():
 				
 		if _signal.tipo_signal == 1:
 			lbl_nombre_signal.text = _signal.nombre
+			print(_signal.valor)
 			lbl_valor.text = str(_signal.valor) + " " + unidad
 			
 		elif _signal.tipo_signal == 2: 

@@ -5,6 +5,7 @@ extends Node
 @onready var header_fondo = $DynamicMargins/VB_MainContainer/header_container/header_fondo
 @onready var ui_particular = $UiParticular
 @onready var dynamic_margins = $DynamicMargins
+@onready var world = $DynamicMargins/VB_MainContainer/main_container/SubViewportContainer/SubViewport/World
 
 signal in_particular
 
@@ -13,6 +14,7 @@ var is_hidden = false  # Variable para rastrear el estado del contenedor
 func _ready():
 	# Conectar señales a las funciones correspondientes
 	UIManager.set_ui_particular(ui_particular)  # Establecer la referencia a ui_particular
+	UIManager.connect("mostrar_world", _mostrar_world)  # Conectar la señal mostrar_world
 
 func _on_button_pressed():
 	NavigationManager.emit_signal('ResetCameraPosition')
@@ -48,11 +50,15 @@ func _on_finish_tween():
 		lista_sitios.visible = false
 ##endregion
 
-#region FUNCIONES PARA MOSTRAR LA GRAFICA
+##region FUNCIONES PARA MOSTRAR LA GRAFICA
 func _on_btn_graficar_button_down():
 	GlobalUtils.ChartControl.visible = not GlobalUtils.ChartControl.visible
-#endregion
+##endregion
 
 # Actualiza esta función para usar UIManager
 func _on_btn_particular_pressed():
+	world.visible = false
 	UIManager.mostrar_particular()
+
+func _mostrar_world():
+	world.visible = true

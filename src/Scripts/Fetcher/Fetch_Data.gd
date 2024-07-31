@@ -9,7 +9,6 @@ signal OnVersionChanged
 @export var url_api_update : String
 
 @onready var timer = Timer.new()
-@onready var btn_datos_random = $"../DynamicMargins/VB_MainContainer/header_container/BTN_datos_random"
 
 var offLineDataPath = "res://Scripts/OffLineaData/OffLineData.json"
 var App_Version_File = "res://Scripts/OffLineaData/AppVersion.json"
@@ -78,7 +77,6 @@ func updateGLobalData(jsonData):
 		
 func _on_btn_datos_random_pressed():
 	usando_datos_reales = not usando_datos_reales
-	actualizar_texto_boton()
 	if usando_datos_reales:
 		iniciar_fetch_api()  # Volver a obtener los datos reales
 	else:
@@ -106,12 +104,6 @@ func generar_fecha_aleatoria(rng):
 	var minute = rng.randi_range(0, 59)
 	var second = rng.randi_range(0, 59)
 	return "%d-%02d-%02dT%02d:%02d:%02d" % [year, month, day, hour, minute, second]
-
-func actualizar_texto_boton():
-	if usando_datos_reales:
-		btn_datos_random.text = "Usar Datos Aleatorios"
-	else:
-		btn_datos_random.text = "Usar Datos Reales"
 
 func _update_data_global(estaciones: Array[Estacion]):
 	GlobalData.emit_signal("datos_actualizados", estaciones)

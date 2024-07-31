@@ -1,14 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://vxu3fnea8kdx"]
+[gd_scene load_steps=2 format=3 uid="uid://vxu3fnea8kdx"]
 
-[ext_resource type="PackedScene" uid="uid://clw57nyffyquu" path="res://Recursos/Meshes/Mapa_Pruebas/Prueba_07/Mapa_3D_07.glb" id="1_y8gk4"]
-[ext_resource type="Material" uid="uid://b34rsa0vdy1l3" path="res://Recursos/Materiales/CloudShadows_unlit.tres" id="2_srmw2"]
+[ext_resource type="PackedScene" uid="uid://cvidg0qtj6nqn" path="res://Recursos/Meshes/Mapa_Pruebas/Prueba_08/Terreno_Prueba_08.glb" id="1_1cncs"]
 
 [node name="Node3D" type="Node3D"]
 
-[node name="Mapa_3D_07" parent="." instance=ExtResource("1_y8gk4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.72, 0, 0)
-
-[node name="Mapa_hight_001" parent="Mapa_3D_07" index="0"]
-material_override = ExtResource("2_srmw2")
-
-[editable path="Mapa_3D_07"]
+[node name="Terreno_Prueba_08" parent="." instance=ExtResource("1_1cncs")]

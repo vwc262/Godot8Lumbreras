@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://mr5ipvv85b1"]
+[gd_scene load_steps=23 format=3 uid="uid://mr5ipvv85b1"]
 
 [ext_resource type="Texture2D" uid="uid://c1ich45dgonk4" path="res://Recursos/UI/img/Encabezado_B_Submenu/EncabezadoB_base.png" id="1_gat4c"]
 [ext_resource type="Script" path="res://Scenes/UI/UI_Particular.gd" id="1_wmuh6"]
@@ -17,6 +17,7 @@
 [ext_resource type="Texture2D" uid="uid://jfppoptcm53t" path="res://Recursos/UI/img/Barra_Nivel/Barra_Nivel_Cubierta_Barra.png" id="9_d0do7"]
 [ext_resource type="Texture2D" uid="uid://ccdb74j068s41" path="res://Recursos/UI/img/Encabezado_A_submenu/Lista_detalles_Submenu_Vineta.png" id="9_evgt1"]
 [ext_resource type="Texture2D" uid="uid://beromshj68slv" path="res://Recursos/UI/img/Barra_Nivel/Barra_Nivel_base_marcadores.png" id="10_5sxwf"]
+[ext_resource type="PackedScene" uid="uid://qofjfvol201e" path="res://Scenes/Sitios/Genericos/pb5.tscn" id="10_l4wa0"]
 [ext_resource type="Texture2D" uid="uid://c554rmtw6fjo5" path="res://Recursos/UI/img/Encabezado_A_submenu/Lista_detalles_Submenu_Contenedor.png" id="12_64k7e"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_hi4es"]
@@ -186,7 +187,11 @@ grow_vertical = 2
 stretch = true
 
 [node name="SubViewport" type="SubViewport" parent="VBoxContainer/main_container/modelo_3d_container/SubViewportContainer"]
+handle_input_locally = false
 size = Vector2i(1080, 1795)
+render_target_update_mode = 4
+
+[node name="Pb5" parent="VBoxContainer/main_container/modelo_3d_container/SubViewportContainer/SubViewport" instance=ExtResource("10_l4wa0")]
 
 [node name="progress_bar_container" type="Panel" parent="VBoxContainer/main_container"]
 self_modulate = Color(1, 1, 1, 0)

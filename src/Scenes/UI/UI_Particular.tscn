@@ -23,7 +23,7 @@
 shader = ExtResource("7_r4ck1")
 shader_parameter/sizeX = 6.0
 shader_parameter/sizeY = 5.0
-shader_parameter/velocidad = 25.0
+shader_parameter/velocidad = 5.0
 shader_parameter/framex = 0.0
 shader_parameter/progress = 29.0
 
@@ -335,6 +335,7 @@ custom_minimum_size = Vector2(150, 100)
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 8
+focus_mode = 0
 icon = ExtResource("7_tams7")
 flat = true
 

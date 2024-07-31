@@ -156,9 +156,8 @@ func init_particular(is_particular):
 		fondo_render.visible = true
 		fondo_render_material.set("shader_parameter/progress", 0)
 		var tweenFlipbook = TweenManager.init_tween(On_FlipbookAnimationEnded)
-		tweenFlipbook.tween_property(fondo_render_material, "shader_parameter/progress", 29, .85)
+		tweenFlipbook.tween_property(fondo_render_material, "shader_parameter/progress", 29, 1.6)
 
 func On_FlipbookAnimationEnded():
-	if fondo_render_material.get("shader_parameter/progress") >= 29:
-		fondo_render_final.visible = true
-		fondo_render.visible = false
+	fondo_render_final.visible = true
+	fondo_render.visible = false

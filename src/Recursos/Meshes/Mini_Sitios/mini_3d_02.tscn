@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://buka8iprgcaro"]
+
+[ext_resource type="PackedScene" uid="uid://dr412eg2iusiu" path="res://Recursos/Meshes/Mini_Sitios/Mini_3D_02.glb" id="1_kgx71"]
+
+[node name="Mini_3D_02" instance=ExtResource("1_kgx71")]
+transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, 0, 0, 0)
+
+[node name="Socket_Camara" parent="Mini" index="0"]
+transform = Transform3D(2.56712, 0, 0, 0, 2.56712, 0, 0, 0, 2.56712, 0, 0.87, 2.326)

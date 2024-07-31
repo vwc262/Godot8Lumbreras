@@ -75,7 +75,7 @@ func _on_finish_tween():
 		sitio_detalles.visible = false
 
 func _on_btn_home_pressed():
-	ui_particular.visible = false
+	UIManager.ocultar_particular()
 
 func _compare_and_print_selected_site(parametro):
 	var last_selected_id = NavigationManager.last_selected

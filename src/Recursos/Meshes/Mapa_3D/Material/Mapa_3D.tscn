@@ -1,14 +1,14 @@
 [gd_scene load_steps=3 format=3 uid="uid://sj3f3qs1t5cy"]
 
-[ext_resource type="PackedScene" uid="uid://ctxuvxw4p365d" path="res://Recursos/Meshes/Mapa_3D/Mapa_3D_3.gltf" id="1_3khti"]
-[ext_resource type="Material" uid="uid://cwfwepmhogw31" path="res://Recursos/Meshes/Mapa_3D/Material/Mapa_3D.tres" id="2_7r78v"]
+[ext_resource type="PackedScene" uid="uid://cvidg0qtj6nqn" path="res://Recursos/Meshes/Mapa_Pruebas/Prueba_08/Terreno_Prueba_08.glb" id="1_87q63"]
+[ext_resource type="Material" uid="uid://b34rsa0vdy1l3" path="res://Recursos/Materiales/CloudShadows_unlit.tres" id="2_3kw4u"]
 
 [node name="Node3D" type="Node3D"]
 
-[node name="Mapa_3D_3" parent="." instance=ExtResource("1_3khti")]
-transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0)
+[node name="Terreno_Prueba_08" parent="." instance=ExtResource("1_87q63")]
 
-[node name="Mapa_3D" parent="Mapa_3D_3" index="0"]
-material_override = ExtResource("2_7r78v")
+[node name="Mapa_v2_001" parent="Terreno_Prueba_08" index="0"]
+transform = Transform3D(9, 0, 0, 0, 9, 0, 0, 0, 9, 0, -5.82929, 0)
+material_override = ExtResource("2_3kw4u")
 
-[editable path="Mapa_3D_3"]
+[editable path="Terreno_Prueba_08"]

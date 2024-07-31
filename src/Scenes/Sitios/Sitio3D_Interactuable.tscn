@@ -1,7 +1,10 @@
-[gd_scene load_steps=3 format=3 uid="uid://vw46h30r4ia4"]
+[gd_scene load_steps=4 format=3 uid="uid://vw46h30r4ia4"]
 
 [ext_resource type="Script" path="res://Scripts/Managers/Sitio3D_Manager.gd" id="1_1pcy1"]
 [ext_resource type="PackedScene" uid="uid://cbnb2ak6i8lmq" path="res://Recursos/Meshes/Mini_Sitios/Mini_B5.glb" id="2_gddew"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_kb87j"]
+size = Vector3(6.38647, 1.97504, 6.45386)
 
 [node name="Node3D" type="Node3D"]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)
@@ -9,8 +12,16 @@ script = ExtResource("1_1pcy1")
 
 [node name="Mini_B5" parent="." instance=ExtResource("2_gddew")]
 
+[node name="Area3D" type="Area3D" parent="Mini_B5"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Mini_B5/Area3D"]
+transform = Transform3D(0.855401, 0, 0.517967, 0, 1, 0, -0.517967, 0, 0.855401, -0.20468, 0.242828, -0.268214)
+shape = SubResource("BoxShape3D_kb87j")
+
 [node name="LabelNameSitio" type="Label3D" parent="."]
 transform = Transform3D(1.34988, 0, 0, 0, 1.34988, 0, 0, 0, 1.34988, 0, 2.13472, 0)
 pixel_size = 0.009
 billboard = 1
 text = "Nombre del sitio"
+
+[connection signal="input_event" from="Mini_B5/Area3D" to="." method="_on_area_3d_input_event"]

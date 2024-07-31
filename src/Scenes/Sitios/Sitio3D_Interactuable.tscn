@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://vw46h30r4ia4"]
 
 [ext_resource type="Script" path="res://Scripts/Managers/Sitio3D_Manager.gd" id="1_1pcy1"]
-[ext_resource type="PackedScene" uid="uid://dr412eg2iusiu" path="res://Recursos/Meshes/Mini_Sitios/Mini_3D_02.glb" id="2_3btrd"]
+[ext_resource type="PackedScene" uid="uid://buka8iprgcaro" path="res://Recursos/Meshes/Mini_Sitios/mini_3d_02.tscn" id="2_2otp5"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_kb87j"]
 size = Vector3(5.05991, 1.30783, 4.78101)
@@ -16,12 +16,12 @@ pixel_size = 0.009
 billboard = 1
 text = "Nombre del sitio"
 
-[node name="Mini_3D_02" parent="." instance=ExtResource("2_3btrd")]
+[node name="Mini_3D_03" parent="." instance=ExtResource("2_2otp5")]
 
-[node name="Area3D" type="Area3D" parent="Mini_3D_02"]
+[node name="Area3D" type="Area3D" parent="Mini_3D_03"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Mini_3D_02/Area3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Mini_3D_03/Area3D"]
 transform = Transform3D(0.911152, 0, 0.412071, 0, 1, 0, -0.412071, 0, 0.911152, 0.201274, 0.576432, -0.00806397)
 shape = SubResource("BoxShape3D_kb87j")
 
-[connection signal="input_event" from="Mini_3D_02/Area3D" to="." method="_on_area_3d_input_event"]
+[connection signal="input_event" from="Mini_3D_03/Area3D" to="." method="_on_area_3d_input_event"]

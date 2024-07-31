@@ -89,7 +89,7 @@ maxRotationY = 20.0
 offSetDistanceInclination = 20.0
 zoom_speed = 0.05
 can_zoom = true
-maxZoom = 2.0
+maxZoom = 0.87
 initialZoom = 35.0
 speedAnimation = 0.6
 maxBlurIntensity = 0.005
@@ -109,6 +109,7 @@ grow_vertical = 2
 mouse_filter = 1
 
 [node name="SkyEnvironment" parent="." instance=ExtResource("5_a3vqv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0634727, 0)
 
 [node name="Terrain" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.2555, 0, -45.856)
@@ -116,7 +117,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.2555, 0, -45.856)
 [node name="Sitios" type="Node3D" parent="Terrain"]
 
 [node name="CSGBox3D4" parent="Terrain/Sitios" instance=ExtResource("3_dfqhc")]
-transform = Transform3D(0.0281137, 0, -0.999605, 0, 1, 0, 0.999605, 0, 0.0281137, 34.4429, -4.28535, 72.8526)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30.5412, -3.54248, 69.2573)
 IdEstacion = 1
 
 [node name="Area3D2" type="Area3D" parent="Terrain/Sitios/CSGBox3D4"]
@@ -125,7 +126,7 @@ IdEstacion = 1
 shape = SubResource("BoxShape3D_47xlv")
 
 [node name="CSGBox3D5" parent="Terrain/Sitios" instance=ExtResource("3_dfqhc")]
-transform = Transform3D(0.0564664, 0, -0.998405, 0, 1, 0, 0.998405, 0, 0.0564664, 28.1029, -4.14825, 65.5896)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24.2828, -3.46505, 65.0066)
 IdEstacion = 2
 
 [node name="Area3D2" type="Area3D" parent="Terrain/Sitios/CSGBox3D5"]
@@ -134,7 +135,7 @@ IdEstacion = 2
 shape = SubResource("BoxShape3D_47xlv")
 
 [node name="CSGBox3D6" parent="Terrain/Sitios" instance=ExtResource("3_dfqhc")]
-transform = Transform3D(-0.974492, 0, -0.224424, 0, 1, 0, 0.224424, 0, -0.974492, 21.5497, -3.71833, 60.5345)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.0492, -3.71833, 60.872)
 IdEstacion = 3
 
 [node name="Area3D2" type="Area3D" parent="Terrain/Sitios/CSGBox3D6"]
@@ -143,7 +144,7 @@ IdEstacion = 3
 shape = SubResource("BoxShape3D_47xlv")
 
 [node name="CSGBox3D7" parent="Terrain/Sitios" instance=ExtResource("3_dfqhc")]
-transform = Transform3D(-0.938282, 0, -0.345872, 0, 1, 0, 0.345872, 0, -0.938282, 16.6077, -2.68437, 53.0207)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.3854, -3.58706, 55.2828)
 IdEstacion = 4
 
 [node name="Area3D2" type="Area3D" parent="Terrain/Sitios/CSGBox3D7"]
@@ -152,7 +153,7 @@ IdEstacion = 4
 shape = SubResource("BoxShape3D_47xlv")
 
 [node name="CSGBox3D8" parent="Terrain/Sitios" instance=ExtResource("3_dfqhc")]
-transform = Transform3D(-0.00637061, 0, 0.99998, 0, 1, 0, -0.99998, 0, -0.00637061, -0.738949, -1.16118, 44.0146)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.356526, -3.44562, 46.8827)
 IdEstacion = 5
 
 [node name="Area3D2" type="Area3D" parent="Terrain/Sitios/CSGBox3D8"]
@@ -161,7 +162,7 @@ IdEstacion = 5
 shape = SubResource("BoxShape3D_47xlv")
 
 [node name="CSGBox3D9" parent="Terrain/Sitios" instance=ExtResource("3_dfqhc")]
-transform = Transform3D(0.0178711, 0, 0.99984, 0, 1, 0, -0.99984, 0, 0.0178711, 6.55286, -1.4562, 53.4307)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.68945, -3.44362, 58.6995)
 IdEstacion = 6
 
 [node name="Area3D2" type="Area3D" parent="Terrain/Sitios/CSGBox3D9"]

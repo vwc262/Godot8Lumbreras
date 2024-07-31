@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://ctdsbb2mn1jdb"
-path="res://.godot/imported/Terreno_Prueba_08.glb-8461f0d7b963d2181f371788ae3515ac.scn"
+uid="uid://cvidg0qtj6nqn"
+path="res://.godot/imported/Terreno_Prueba_08.glb-66e515760fa3d31882b99e50bf0cc75e.scn"
 
 [deps]
 
-source_file="res://Recursos/Meshes/Mapa_Pruebas/pRUEBA_08/Terreno_Prueba_08.glb"
-dest_files=["res://.godot/imported/Terreno_Prueba_08.glb-8461f0d7b963d2181f371788ae3515ac.scn"]
+source_file="res://Recursos/Meshes/Mapa_Pruebas/Prueba_08/Terreno_Prueba_08.glb"
+dest_files=["res://.godot/imported/Terreno_Prueba_08.glb-66e515760fa3d31882b99e50bf0cc75e.scn"]
 
 [params]
 

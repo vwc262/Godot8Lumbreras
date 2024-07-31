@@ -21,10 +21,9 @@ var id_estacion: int
 
 var is_hidden = false
 
-signal deselect
-
 func _ready():
-	NavigationManager.connect("Deselect", deseleccionar_sitio)
+	UIManager.add_sitio(self)
+	btn_expandir_sitios.connect("pressed", _on_button_pressed)
 
 # Función para recibir y establecer los datos de la estación
 func set_datos(estacion: Estacion):
@@ -56,7 +55,7 @@ func instanciar_señales():
 
 	# Instanciar y agregar una sola señal
 	var signal_instance = signal_scene.instantiate()
-	se_ales_sitios.add_child(signal_instance)    
+	se_ales_sitios.add_child(signal_instance)
 	signal_instance.set_datos(estacion_ref)  # Pasar la referencia de todas las señales
 	signal_instances.append(signal_instance)
 
@@ -66,18 +65,16 @@ func instanciar_señales():
 # Función que maneja la señal del botón presionado
 func _on_button_pressed():
 	NavigationManager.emit_signal("Go_TO", estacion_ref.id_estacion)
-	NavigationManager.emit_signal("Deselect")
 	
-	# Seleccionar el sitio actual
-	if NavigationManager.last_selected == estacion_ref.id_estacion:
-		sitio_fondo_seleccionado.visible = true
-	else:
-		sitio_fondo_seleccionado.visible = false
-		
-	NavigationManager.set_lastid_selected(estacion_ref.id_estacion)
+	# Usar UIManager para manejar la selección del sitio
+	UIManager.seleccionar_sitio(self)
+
+# Función para seleccionar el sitio
+func seleccionar():
+	sitio_fondo_seleccionado.visible = true
 
 # Función para deseleccionar el sitio
-func deseleccionar_sitio():
+func deseleccionar():
 	sitio_fondo_seleccionado.visible = false
 
 # Función que maneja el botón de expandir/esconder

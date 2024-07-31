@@ -103,7 +103,6 @@ func print_site_details(sitio: Estacion):
 	
 func set_datos_particular(sitio: Estacion):
 	lbl_header_nombre.text = sitio.nombre
-
 	# Cambiar textura según el valor de sitio.enlace
 	if sitio.enlace in [1, 2, 3]:
 		texture_enlace.texture = texture_online
@@ -161,8 +160,7 @@ func init_particular(is_particular):
 		fondo_render_material.set("shader_parameter/progress",0)
 		var tweenFlipbook = TweenManager.init_tween(On_FlipbookAnimationEnded)
 		tweenFlipbook.tween_property( fondo_render_material,"shader_parameter/progress",29,.85)
-		#animation_player.play("anim_zoom_particular")
-	pass
-	
+
 func On_FlipbookAnimationEnded():
 	pass		
+

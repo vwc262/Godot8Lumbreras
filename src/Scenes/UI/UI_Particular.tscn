@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://mr5ipvv85b1"]
+[gd_scene load_steps=22 format=3 uid="uid://mr5ipvv85b1"]
 
 [ext_resource type="Texture2D" uid="uid://c1ich45dgonk4" path="res://Recursos/UI/img/Encabezado_B_Submenu/EncabezadoB_base.png" id="1_gat4c"]
 [ext_resource type="Script" path="res://Scenes/UI/UI_Particular.gd" id="1_wmuh6"]
@@ -13,6 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://camxcq3klk8j1" path="res://Recursos/UI/img/Menu_pie/MenuPie_graficador_a.png" id="7_tams7"]
 [ext_resource type="Texture2D" uid="uid://f8i6lnl8p4em" path="res://Recursos/UI/img/Encabezado_B_Submenu/fb_tex.jpg" id="8_b2nqr"]
 [ext_resource type="Texture2D" uid="uid://cvg4awppr0ceb" path="res://Recursos/UI/img/Barra_Nivel/Barra_Nivel_base.png" id="8_kv5h6"]
+[ext_resource type="Texture2D" uid="uid://c5vgnfo4yp3vg" path="res://Recursos/UI/img/Encabezado_B_Submenu/0030.png" id="9_cuo7b"]
 [ext_resource type="Texture2D" uid="uid://jfppoptcm53t" path="res://Recursos/UI/img/Barra_Nivel/Barra_Nivel_Cubierta_Barra.png" id="9_d0do7"]
 [ext_resource type="Texture2D" uid="uid://ccdb74j068s41" path="res://Recursos/UI/img/Encabezado_A_submenu/Lista_detalles_Submenu_Vineta.png" id="9_evgt1"]
 [ext_resource type="Texture2D" uid="uid://beromshj68slv" path="res://Recursos/UI/img/Barra_Nivel/Barra_Nivel_base_marcadores.png" id="10_5sxwf"]
@@ -24,7 +25,7 @@ shader_parameter/sizeX = 6.0
 shader_parameter/sizeY = 5.0
 shader_parameter/velocidad = 25.0
 shader_parameter/framex = 0.0
-shader_parameter/progress = 0.0
+shader_parameter/progress = 29.0
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_wi8d2"]
 
@@ -153,6 +154,17 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("8_b2nqr")
+expand_mode = 1
+
+[node name="fondo_render_final" type="TextureRect" parent="VBoxContainer/main_container"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("9_cuo7b")
 expand_mode = 1
 
 [node name="progress_bar_container" type="Panel" parent="VBoxContainer/main_container"]

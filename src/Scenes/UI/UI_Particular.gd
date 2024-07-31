@@ -8,6 +8,8 @@ extends Control
 
 @onready var lbl_header_nombre = $VBoxContainer/header_container/HBoxContainer/header_nombre_container/lbl_header_nombre
 @onready var fondo_render_material : Material = $VBoxContainer/main_container/fondo_render.material
+@onready var fondo_render_final = $VBoxContainer/main_container/fondo_render_final
+@onready var fondo_render = $VBoxContainer/main_container/fondo_render
 
 @onready var texture_enlace = $VBoxContainer/header_container/HBoxContainer/header_icono_container/texture_enlace
 @onready var lbl_presion = $VBoxContainer/main_container/detalles_container/VBoxContainer/sitio_detalles/VBoxContainer/HBoxContainer/Panel/HBoxContainer/Presion_container/HBoxContainer/Panel2/lbl_presion
@@ -22,12 +24,9 @@ extends Control
 @onready var lbl_nivel_nombre = $VBoxContainer/main_container/progress_bar_container/lbl_nivel_nombre
 @onready var lbl_valor = $VBoxContainer/main_container/progress_bar_container/ProgressBar/lbl_valor
 
-
-
 @export var new_icon: Texture2D
 @export var texture_online: Texture2D
 @export var texture_offline: Texture2D
-
 
 var original_icon: Texture2D
 var is_new_icon_active: bool = false
@@ -39,17 +38,15 @@ var unidades = {
 	2: "kg/cm²",
 	3: "l/s"
 }
+
 func _ready():
-	
 	original_icon = btn_lista.icon  # Guarda el ícono original
 	btn_lista.connect("pressed", _on_btn_lista_pressed)
 	NavigationManager.connect("Go_TO", _compare_and_print_selected_site)
 	GlobalData.connect("datos_actualizados", _on_datos_actualizados)
-	
 
 func _on_datos_actualizados(estaciones: Array[Estacion]):
 	_compare_and_print_selected_site(estaciones)
-
 
 func _on_btn_lista_pressed():
 	if is_new_icon_active:
@@ -58,7 +55,6 @@ func _on_btn_lista_pressed():
 	else:
 		btn_lista.icon = new_icon
 		_hide_lista_sitios()
-	
 	is_new_icon_active = not is_new_icon_active  # Alterna el estado
 
 func _show_lista_sitios():
@@ -100,7 +96,6 @@ func print_site_details(sitio: Estacion):
 			print("\tSeñal: ", _signal.nombre)
 			print("\tValor: ", _signal.valor)
 
-	
 func set_datos_particular(sitio: Estacion):
 	lbl_header_nombre.text = sitio.nombre
 	# Cambiar textura según el valor de sitio.enlace
@@ -125,7 +120,7 @@ func set_datos_particular(sitio: Estacion):
 			break
 			
 	lbl_fecha.text = GlobalUtils.formatear_fecha(sitio.tiempo)
-	
+
 func set_progress_bar(_signal: Señal, unidad):
 	progress_bar.min_value = 0.5
 	progress_bar.max_value = _signal.semaforo["critico"]
@@ -133,10 +128,10 @@ func set_progress_bar(_signal: Señal, unidad):
 	
 	# Asegurarse de que el valor mínimo visible siempre esté presente
 	var display_value = max(_signal.valor, _signal.semaforo["normal"])
-	if _signal.valor < 1.0 :
-		display_value = remap(_signal.valor,  0.0,  _signal.semaforo["normal"], 0.67, 1.15)
-	else :
-		display_value = remap(_signal.valor,  _signal.semaforo["normal"],  _signal.semaforo["critico"], 1.15, 2.7 )	
+	if _signal.valor < 1.0:
+		display_value = remap(_signal.valor, 0.0, _signal.semaforo["normal"], 0.67, 1.15)
+	else:
+		display_value = remap(_signal.valor, _signal.semaforo["normal"], _signal.semaforo["critico"], 1.15, 2.7)
 
 	#progress_bar.value = display_value
 	lbl_progress_bar_valor_min.text = str(_signal.semaforo["normal"]) + " " + unidad
@@ -151,16 +146,19 @@ func set_progress_bar(_signal: Señal, unidad):
 	else:
 		progress_bar.modulate = Color(0, 1, 0) # Verde
 	
-	# Usar Tween para animar la barra de progreso	
+	# Usar Tween para animar la barra de progreso    
 	var tween = create_tween()
 	tween.tween_property(progress_bar, "value", display_value, 1)
 
 func init_particular(is_particular):
 	if is_particular == true:
-		fondo_render_material.set("shader_parameter/progress",0)
+		fondo_render_final.visible = false
+		fondo_render.visible = true
+		fondo_render_material.set("shader_parameter/progress", 0)
 		var tweenFlipbook = TweenManager.init_tween(On_FlipbookAnimationEnded)
-		tweenFlipbook.tween_property( fondo_render_material,"shader_parameter/progress",29,.85)
+		tweenFlipbook.tween_property(fondo_render_material, "shader_parameter/progress", 29, .85)
 
 func On_FlipbookAnimationEnded():
-	pass		
-
+	if fondo_render_material.get("shader_parameter/progress") >= 29:
+		fondo_render_final.visible = true
+		fondo_render.visible = false

@@ -8,9 +8,11 @@ extends Node
 
 signal in_particular
 
-
 var is_hidden = false  # Variable para rastrear el estado del contenedor
 
+func _ready():
+	# Conectar señales a las funciones correspondientes
+	UIManager.set_ui_particular(ui_particular)  # Establecer la referencia a ui_particular
 
 func _on_button_pressed():
 	NavigationManager.emit_signal('ResetCameraPosition')
@@ -31,32 +33,26 @@ func _on_world_interacted():
 		_hide_lista_sitios()
 
 func _show_lista_sitios():
-	# Inicializar el Tween y configurar la animación para mostrar
 	var tween = TweenManager.init_tween(_on_finish_tween)
-	TweenManager.tween_animacion(tween, lista_sitios, "custom_minimum_size:y", 650, 0.5)  # 800 tamaño original
+	TweenManager.tween_animacion(tween, lista_sitios, "custom_minimum_size:y", 650, 0.5)
 	lista_sitios.visible = true
 	is_hidden = false
 
 func _hide_lista_sitios():
-	# Inicializar el Tween y configurar la animación para esconder
 	var tween = TweenManager.init_tween(_on_finish_tween)
 	TweenManager.tween_animacion(tween, lista_sitios, "custom_minimum_size:y", 0, 0.5)
 	is_hidden = true
 
 func _on_finish_tween():
-	# Confirmación de que el tween ha terminado
-	# print("Final del tween")
 	if is_hidden:
 		lista_sitios.visible = false
 ##endregion
 
 #region FUNCIONES PARA MOSTRAR LA GRAFICA
 func _on_btn_graficar_button_down():
-	GlobalUtils.ChartControl.visible = !GlobalUtils.ChartControl.visible
+	GlobalUtils.ChartControl.visible = not GlobalUtils.ChartControl.visible
 #endregion
 
-
+# Actualiza esta función para usar UIManager
 func _on_btn_particular_pressed():
-	ui_particular.visible = true
-	ui_particular.init_particular(true)
-
+	UIManager.mostrar_particular()

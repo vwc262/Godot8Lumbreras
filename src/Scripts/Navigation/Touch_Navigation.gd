@@ -90,6 +90,7 @@ func handle_touch(event: InputEventScreenTouch):
 
 func handle_drag(event: InputEventScreenDrag):
 	ID_Select = 0
+	UIManager.deselect_all_sitios()
 	NavigationManager.set_lastid_selected(ID_Select)
 	touch_points[event.index] = event.position
 	var parentTransform = get_global_transform()

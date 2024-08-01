@@ -10,22 +10,27 @@ particular_scene = ExtResource("2_iva22")
 idEstacion = 1
 
 [node name="camera_parent" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 300, 100)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 75, 100)
 script = ExtResource("3_4c1jt")
 can_pan = true
-pan_speed = 1.0
-minX = -75
-maxX = 100
+pan_speed = 0.5
+minX = -50
+maxX = 75
 minZ = 0
-maxZ = 150
+maxZ = 75
 can_rotate = true
-initialRotationCamera = -90
-LimitRotationCamera = -45
+rotate_speed = 0.01
+initialRotationCamera = -45
+LimitRotationCamera = 0
+minRotationY = -15.0
+maxRotationY = 15.0
+offSetDistanceInclination = 10.0
+zoom_speed = 0.005
 can_zoom = true
-maxZoom = 50.0
-initialZoom = 300.0
+maxZoom = 30.0
+initialZoom = 100.0
 
 [node name="Camera3Dp" type="Camera3D" parent="camera_parent"]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 1, 3)
+transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 0, 1, 3)
 
 [node name="Container" type="Node3D" parent="."]

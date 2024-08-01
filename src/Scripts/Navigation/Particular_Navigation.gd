@@ -138,7 +138,8 @@ func handle_drag(event: InputEventScreenDrag):
 
 		if can_zoom:
 			position.y = start_zoom / zoom_factor
-			limit_zoom()									
+			limit_zoom()				
+			print(inclinate_camera())					
 			camera_3_dp.rotation_degrees.x =  lerpf(initialRotationCamera,LimitRotationCamera,inclinate_camera())			
 	
 	position.x = clamp(position.x,minX * factorZoom ,maxX * factorZoom )
@@ -154,8 +155,6 @@ func rotate_camera(currentangle: float):
 func limit_zoom():
 	position.y = clamp(position.y, maxZoom,initialZoom )
 	
-
-
 func inclinate_camera()->float:
 	var current = 0 #Default uno para que mantenga la vista top		
 	if position.y < initialZoom - offSetDistanceInclination:

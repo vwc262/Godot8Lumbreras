@@ -9,6 +9,7 @@ var current_selected_site = null
 var current_lista_site = null  # Nuevo: sitio seleccionado en la lista
 
 var ui_particular: Node = null
+var popUpWindow : Node = null
 
 
 func seleccionar_sitio(sitio):		
@@ -62,3 +63,7 @@ func is_sitio_selected(sitio) -> bool:
 	
 func reprint_ui_particular():
 	ui_particular.reprint()	
+	
+func set_popUp_window(popUpRef):
+	popUpWindow	= popUpRef
+		

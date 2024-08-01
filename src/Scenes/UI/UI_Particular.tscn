@@ -211,7 +211,7 @@ stretch = true
 
 [node name="SubViewport" type="SubViewport" parent="VBoxContainer/main_container/modelo_3d_container/SubViewportContainer"]
 handle_input_locally = false
-size = Vector2i(1080, 1795)
+size = Vector2i(2, 2)
 render_target_update_mode = 4
 
 [node name="Template_Particular" parent="VBoxContainer/main_container/modelo_3d_container/SubViewportContainer/SubViewport" instance=ExtResource("10_l4wa0")]

@@ -9,6 +9,7 @@ extends Node3D
 func _ready():
 	SceneManager.add_scene(idEstacion,self)
 	container.add_child( particular_scene.instantiate()	)
+	self.visible = false
 	pass # Replace with function body.
 
 

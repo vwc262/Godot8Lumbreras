@@ -9,6 +9,7 @@ var current_selected_site = null
 var current_lista_site = null  # Nuevo: sitio seleccionado en la lista
 
 var ui_particular: Node = null
+var pb_5: Node3D = null
 
 
 func seleccionar_sitio(sitio):
@@ -50,11 +51,13 @@ func set_ui_particular(particular_node: Node):
 func mostrar_particular():
 	if ui_particular != null:
 		ui_particular.visible = true
+		pb_5.visible = true
 		ui_particular.init_particular(true)
 
 func ocultar_particular():
 	if ui_particular != null:
 		ui_particular.visible = false
+		pb_5.visible = false
 		emit_signal("mostrar_world")  # Emitir la señal para mostrar el world
 
 # Método para verificar si un sitio está seleccionado

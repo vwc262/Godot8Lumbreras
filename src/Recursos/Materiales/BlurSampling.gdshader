@@ -44,7 +44,7 @@ void fragment() {
 		c += texture( screen_texture, SCREEN_UV - blur_amount * direction * float(i) ).rgba * f;
 	    colorGradiente = get_gradiente(SCREEN_UV).rgba;			
 		c.a *= colorGradiente.a;							
-	
+	    //c = colorGradiente;
 	}
 	COLOR.rgba = c;
 }

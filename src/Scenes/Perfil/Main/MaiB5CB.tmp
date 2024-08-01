@@ -169,23 +169,21 @@ layout_mode = 2
 visible = false
 
 [node name="popup_container" type="Panel" parent="."]
-visible = false
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-mouse_filter = 1
 
 [node name="Popup" type="Popup" parent="popup_container"]
 transparent_bg = true
 mode = 3
 initial_position = 2
 size = Vector2i(500, 700)
+visible = true
 script = ExtResource("13_4y2mv")
 
 [node name="Panel" type="Panel" parent="popup_container/Popup"]
-modulate = Color(1, 1, 1, 0)
 self_modulate = Color(1, 1, 1, 0)
 anchors_preset = 15
 anchor_right = 1.0

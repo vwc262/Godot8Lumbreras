@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://mr5ipvv85b1"]
+[gd_scene load_steps=28 format=3 uid="uid://mr5ipvv85b1"]
 
 [ext_resource type="Texture2D" uid="uid://c1ich45dgonk4" path="res://Recursos/UI/img/Encabezado_B_Submenu/EncabezadoB_base.png" id="1_gat4c"]
 [ext_resource type="Script" path="res://Scenes/UI/UI_Particular.gd" id="1_wmuh6"]
@@ -22,6 +22,7 @@
 [ext_resource type="Texture2D" uid="uid://beromshj68slv" path="res://Recursos/UI/img/Barra_Nivel/Barra_Nivel_base_marcadores.png" id="10_5sxwf"]
 [ext_resource type="PackedScene" uid="uid://qofjfvol201e" path="res://Scenes/Sitios/Genericos/template_particular.tscn" id="10_l4wa0"]
 [ext_resource type="Texture2D" uid="uid://c554rmtw6fjo5" path="res://Recursos/UI/img/Encabezado_A_submenu/Lista_detalles_Submenu_Contenedor.png" id="12_64k7e"]
+[ext_resource type="PackedScene" uid="uid://bosmqfxs2ibvy" path="res://Scenes/Plotter/ChartControl.tscn" id="14_5bas4"]
 [ext_resource type="PackedScene" uid="uid://cgcyx32icu15x" path="res://Scenes/UI/UI_Particular_Sitio_lista.tscn" id="20_stxyf"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_hi4es"]
@@ -176,6 +177,19 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("9_cuo7b")
 expand_mode = 1
+
+[node name="graficador_container" type="Panel" parent="VBoxContainer/main_container"]
+visible = false
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ChartControl" parent="VBoxContainer/main_container/graficador_container" instance=ExtResource("14_5bas4")]
+layout_mode = 1
 
 [node name="modelo_3d_container" type="Panel" parent="VBoxContainer/main_container"]
 self_modulate = Color(1, 1, 1, 0)
@@ -600,4 +614,5 @@ self_modulate = Color(1, 1, 1, 0)
 layout_mode = 2
 
 [connection signal="pressed" from="VBoxContainer/header_container/HBoxContainer/header_btn_container/header_btn_lista_sitios" to="." method="_on_header_btn_lista_sitios_pressed"]
+[connection signal="pressed" from="VBoxContainer/main_container/detalles_container/VBoxContainer/botones_container/HBoxContainer/btn_graficador" to="." method="_on_btn_graficador_pressed"]
 [connection signal="pressed" from="VBoxContainer/main_container/detalles_container/VBoxContainer/botones_container/HBoxContainer/btn_home" to="." method="_on_btn_home_pressed"]

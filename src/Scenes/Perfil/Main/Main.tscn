@@ -9,7 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://camxcq3klk8j1" path="res://Recursos/UI/img/Menu_pie/MenuPie_graficador_a.png" id="5_fp8g2"]
 [ext_resource type="PackedScene" uid="uid://bosmqfxs2ibvy" path="res://Scenes/Plotter/ChartControl.tscn" id="6_cdy0v"]
 [ext_resource type="Texture2D" uid="uid://00dq1mhpefe2" path="res://Recursos/UI/img/Menu_pie/MenuPie_Expandir_B.png" id="7_7pp3i"]
-[ext_resource type="Texture2D" uid="uid://boao48pgk4br" path="res://Recursos/UI/img/Menu_pie/MenuPie_ParticularDER_a.png" id="7_r2qur"]
+[ext_resource type="Texture2D" uid="uid://pxyl1xaglt1a" path="res://Recursos/UI/img/Menu_pie/MenuPie_ParticularDER_a.png" id="7_r2qur"]
 [ext_resource type="Texture2D" uid="uid://bo4b76cn6y4rf" path="res://Recursos/UI/img/Menu_pie/MenuPie_Base.png" id="9_m03wm"]
 [ext_resource type="PackedScene" uid="uid://mr5ipvv85b1" path="res://Scenes/UI/UI_Particular.tscn" id="11_e8765"]
 [ext_resource type="Script" path="res://Scripts/UI/PopUp/PopupWindow.gd" id="13_4y2mv"]
@@ -79,7 +79,7 @@ stretch = true
 handle_input_locally = false
 physics_object_picking = true
 physics_object_picking_sort = true
-size = Vector2i(2, 2)
+size = Vector2i(1080, 1130)
 render_target_update_mode = 4
 
 [node name="Perfil" parent="DynamicMargins/VB_MainContainer/main_container/SubViewportContainer/SubViewport" instance=ExtResource("2_2gqy4")]
@@ -102,20 +102,19 @@ size_flags_vertical = 4
 [node name="HBoxContainer" type="HBoxContainer" parent="DynamicMargins/VB_MainContainer/main_container/ListaSitiosContainer/VBoxContainer/botones_container"]
 self_modulate = Color(1, 1, 1, 0)
 layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
+anchors_preset = 15
+anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -300.0
-offset_top = -137.0
-offset_right = 324.0
+offset_left = -268.0
+offset_top = -128.5
+offset_right = 268.0
+offset_bottom = 8.5
 grow_horizontal = 2
-grow_vertical = 0
+grow_vertical = 2
 
 [node name="BTN_graficar" type="Button" parent="DynamicMargins/VB_MainContainer/main_container/ListaSitiosContainer/VBoxContainer/botones_container/HBoxContainer"]
 layout_mode = 2
-size_flags_horizontal = 0
+size_flags_horizontal = 4
 size_flags_vertical = 8
 focus_mode = 0
 theme = SubResource("Theme_0o38m")
@@ -132,18 +131,18 @@ flat = true
 
 [node name="BTN_particular" type="Button" parent="DynamicMargins/VB_MainContainer/main_container/ListaSitiosContainer/VBoxContainer/botones_container/HBoxContainer"]
 layout_mode = 2
-size_flags_horizontal = 8
+size_flags_horizontal = 4
 size_flags_vertical = 8
 focus_mode = 0
 icon = ExtResource("7_r2qur")
 flat = true
 
 [node name="barra_separador" type="Panel" parent="DynamicMargins/VB_MainContainer/main_container/ListaSitiosContainer/VBoxContainer"]
-custom_minimum_size = Vector2(0, 42)
+custom_minimum_size = Vector2(0, 15)
 layout_mode = 2
 
 [node name="TextureRect" type="TextureRect" parent="DynamicMargins/VB_MainContainer/main_container/ListaSitiosContainer/VBoxContainer/barra_separador"]
-custom_minimum_size = Vector2(0, 42)
+custom_minimum_size = Vector2(0, 15)
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0

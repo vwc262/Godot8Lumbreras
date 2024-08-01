@@ -9,10 +9,9 @@ var current_selected_site = null
 var current_lista_site = null  # Nuevo: sitio seleccionado en la lista
 
 var ui_particular: Node = null
-var pb_5: Node3D = null
 
 
-func seleccionar_sitio(sitio):
+func seleccionar_sitio(sitio):		
 	if current_selected_site == sitio:
 		sitio.deseleccionar()
 		current_selected_site = null
@@ -24,7 +23,7 @@ func seleccionar_sitio(sitio):
 		emit_signal("sitio_seleccionado", sitio)
 
 # Método para seleccionar un sitio de lista
-func seleccionar_lista_sitio(sitio):
+func seleccionar_lista_sitio(sitio):	
 	if current_selected_site == sitio:
 		sitio.deseleccionar()
 		current_selected_site = null
@@ -60,3 +59,6 @@ func ocultar_particular():
 # Método para verificar si un sitio está seleccionado
 func is_sitio_selected(sitio) -> bool:
 	return current_selected_site == sitio
+	
+func reprint_ui_particular():
+	ui_particular.reprint()	

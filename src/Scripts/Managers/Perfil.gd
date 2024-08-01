@@ -64,7 +64,7 @@ func _on_btn_graficar_button_down():
 # Actualiza esta función para usar UIManager
 func _on_btn_particular_pressed():
 	UIManager.mostrar_particular()	
-	SceneManager.load_scene(1)
+	SceneManager.load_scene(UIManager.current_selected_site.id_estacion)
 
 func _mostrar_world():
 	SceneManager.load_scene(SceneManager.idScenePerfil)

@@ -20,7 +20,8 @@ func unload_scenes():
 
 func load_scene(idSceneKey:int):
 	unload_scenes()
-	scenes[idSceneKey].visible = true	
+	if scenes.has(idSceneKey):
+		scenes[idSceneKey].visible = true	
 		
 	
 #endregion

@@ -1,20 +1,26 @@
 extends Node
-
+#region Editor variables
 @onready var btn_lista_sitios = $DynamicMargins/VB_MainContainer/main_container/ListaSitiosContainer/VBoxContainer/botones_container/HBoxContainer/BTN_ListaSitios
 @onready var lista_sitios = $DynamicMargins/VB_MainContainer/main_container/ListaSitiosContainer/VBoxContainer/PanelContainer/ListaSitios
 @onready var header_fondo = $DynamicMargins/VB_MainContainer/header_container/header_fondo
 @onready var ui_particular = $UiParticular
 @onready var dynamic_margins = $DynamicMargins
-@onready var world = $DynamicMargins/VB_MainContainer/main_container/SubViewportContainer/SubViewport/World
+@onready var perfil = $DynamicMargins/VB_MainContainer/main_container/SubViewportContainer/SubViewport/Perfil
+#endregion
+
+#region script variables
+
+#endregion
 
 signal in_particular
 
 var is_hidden = false  # Variable para rastrear el estado del contenedor
 
 func _ready():
+	SceneManager.add_scene(SceneManager.idScenePerfil,perfil)
 	# Conectar señales a las funciones correspondientes
 	UIManager.set_ui_particular(ui_particular)  # Establecer la referencia a ui_particular
-	UIManager.connect("mostrar_world", _mostrar_world)  # Conectar la señal mostrar_world
+	#UIManager.connect("mostrar_world", _mostrar_world)  # Conectar la señal mostrar_world
 
 func _on_button_pressed():
 	NavigationManager.emit_signal('ResetCameraPosition')
@@ -57,8 +63,9 @@ func _on_btn_graficar_button_down():
 
 # Actualiza esta función para usar UIManager
 func _on_btn_particular_pressed():
-	world.visible = false
 	UIManager.mostrar_particular()
+	SceneManager.unload_scenes()
+	SceneManager.load_scene(1)
 
 func _mostrar_world():
-	world.visible = true
+	SceneManager.load_scene(SceneManager.idScenePerfil)

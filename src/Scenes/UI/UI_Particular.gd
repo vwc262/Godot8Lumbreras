@@ -98,6 +98,9 @@ func _on_finish_tween():
 # Función que maneja el botón de inicio
 func _on_btn_home_pressed():
 	UIManager.ocultar_particular()
+	SceneManager.unload_scenes()
+	SceneManager.load_scene(SceneManager.idScenePerfil)
+	
 
 # Función que compara y actualiza el sitio seleccionado
 func _compare_and_print_selected_site(parametro):

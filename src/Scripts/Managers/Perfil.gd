@@ -9,7 +9,7 @@ extends Node
 #endregion
 
 #region script variables
-
+@onready var popup = $Popup
 #endregion
 
 signal in_particular
@@ -63,8 +63,12 @@ func _on_btn_graficar_button_down():
 
 # Actualiza esta función para usar UIManager
 func _on_btn_particular_pressed():
-	UIManager.mostrar_particular()	
-	SceneManager.load_scene(UIManager.current_selected_site.id_estacion)
+	if(UIManager.current_selected_site):
+		UIManager.mostrar_particular()	
+		SceneManager.load_scene(UIManager.current_selected_site.id_estacion)
+	else:			
+		UIManager.popUpWindow.showPopUp("Primero debe seleccionar un sitio");
+	
 
 func _mostrar_world():
 	SceneManager.load_scene(SceneManager.idScenePerfil)

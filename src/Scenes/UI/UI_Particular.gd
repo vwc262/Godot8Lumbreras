@@ -28,6 +28,9 @@ extends Control
 @onready var lista_sitios_container = $VBoxContainer/main_container/lista_sitios_container
 @onready var header_btn_lista_sitios = $VBoxContainer/header_container/HBoxContainer/header_btn_container/header_btn_lista_sitios
 
+@onready var graficador_container = $VBoxContainer/main_container/graficador_container
+@onready var modelo_3d_container = $VBoxContainer/main_container/modelo_3d_container
+
 @export var new_icon: Texture2D
 @export var texture_online: Texture2D
 @export var texture_offline: Texture2D
@@ -97,7 +100,7 @@ func _on_finish_tween():
 
 # Función que maneja el botón de inicio
 func _on_btn_home_pressed():
-	UIManager.ocultar_particular()	
+	UIManager.ocultar_particular()
 	SceneManager.load_scene(SceneManager.idScenePerfil)
 	
 func reprint():
@@ -226,3 +229,12 @@ func _hide_lista():
 func _on_finish_tween_sitios():
 	if is_list_hidden:
 		lista_sitios_container.visible = false
+
+# Funcion para mostrar/ocultar el graficador
+func _on_btn_graficador_pressed():
+	if graficador_container.visible:
+		graficador_container.visible = false
+		modelo_3d_container.visible = true
+	else:
+		graficador_container.visible = true
+		modelo_3d_container.visible = false

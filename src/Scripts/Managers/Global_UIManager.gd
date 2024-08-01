@@ -67,3 +67,9 @@ func reprint_ui_particular():
 func set_popUp_window(popUpRef):
 	popUpWindow	= popUpRef
 		
+func seleccionar_sitio_id(id_estacion):
+	for sitio in lista_sitios:
+		if sitio.id_estacion == id_estacion:
+			seleccionar_sitio(sitio)
+			
+	

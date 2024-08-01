@@ -21,9 +21,9 @@ var id_estacion: int
 
 var is_hidden = false
 
-func _ready():	
-	btn_expandir_sitios.connect("pressed", _on_button_pressed)
-
+func _ready():
+	pass
+	
 # Función para recibir y establecer los datos de la estación
 func set_datos(estacion: Estacion):
 	estacion_ref = estacion
@@ -65,7 +65,7 @@ func instanciar_señales():
 
 # Función que maneja la señal del botón presionado
 func _on_button_pressed():
-	NavigationManager.emit_signal("Go_TO", estacion_ref.id_estacion)	
+	NavigationManager.emit_signal("Go_TO", estacion_ref.id_estacion)
 	# Usar UIManager para manejar la selección del sitio
 	UIManager.seleccionar_sitio(self)
 

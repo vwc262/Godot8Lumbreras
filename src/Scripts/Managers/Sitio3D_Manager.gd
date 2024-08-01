@@ -3,7 +3,7 @@ extends Node3D
 signal IrA				
 
 @export var IdEstacion : int = 0
-@onready var modelo = $Mini_3D_04
+@onready var modelo = $Mini_3D_05
 
 @onready var labelSitio = $LabelNameSitio
 var estacion: Estacion

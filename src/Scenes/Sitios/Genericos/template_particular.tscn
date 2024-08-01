@@ -1,17 +1,17 @@
 [gd_scene load_steps=4 format=3 uid="uid://qofjfvol201e"]
 
-[ext_resource type="Script" path="res://Scripts/Environment/Particular.gd" id="1_ird31"]
-[ext_resource type="Script" path="res://Scripts/Navigation/Particular_Navigation.gd" id="1_nw6f7"]
-[ext_resource type="PackedScene" uid="uid://cdtw8r0rrxe85" path="res://Scenes/Sitios/Genericos/generico.tscn" id="2_xbxh3"]
+[ext_resource type="Script" path="res://Scripts/Environment/Particular.gd" id="1_de1ni"]
+[ext_resource type="PackedScene" uid="uid://cdtw8r0rrxe85" path="res://Scenes/Sitios/Genericos/generico.tscn" id="2_iva22"]
+[ext_resource type="Script" path="res://Scripts/Navigation/Particular_Navigation.gd" id="3_4c1jt"]
 
 [node name="Particular" type="Node3D"]
-script = ExtResource("1_ird31")
-particular_scene = ExtResource("2_xbxh3")
+script = ExtResource("1_de1ni")
+particular_scene = ExtResource("2_iva22")
 idEstacion = 1
 
 [node name="camera_parent" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 300, 100)
-script = ExtResource("1_nw6f7")
+script = ExtResource("3_4c1jt")
 can_pan = true
 pan_speed = 1.0
 minX = -75

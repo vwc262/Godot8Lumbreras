@@ -63,8 +63,7 @@ func _on_btn_graficar_button_down():
 
 # Actualiza esta función para usar UIManager
 func _on_btn_particular_pressed():
-	UIManager.mostrar_particular()
-	SceneManager.unload_scenes()
+	UIManager.mostrar_particular()	
 	SceneManager.load_scene(1)
 
 func _mostrar_world():

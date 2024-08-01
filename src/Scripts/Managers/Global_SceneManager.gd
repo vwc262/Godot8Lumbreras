@@ -8,7 +8,6 @@ var idScenePerfil = 100
 
 
 #region Funciones
-#Almacena la referencia del perfil
 #Almacena las referencias de los particulares
 func add_scene(idSceneKey:int,scene:Node3D):
 	scenes[idSceneKey] = scene
@@ -20,6 +19,7 @@ func unload_scenes():
 	pass
 
 func load_scene(idSceneKey:int):
+	unload_scenes()
 	scenes[idSceneKey].visible = true	
 		
 	

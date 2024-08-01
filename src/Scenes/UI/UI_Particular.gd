@@ -43,6 +43,8 @@ var is_lista_icon_active: bool = true
 var is_hidden: bool = false
 var is_list_hidden: bool = true
 var site_instances = {}  # Diccionario para mantener instancias de las estaciones
+var use_fondo_1 = true  # Variable para alternar entre los fondos
+
 
 # Diccionario para las unidades de tipo de señal
 var unidades = {
@@ -193,7 +195,16 @@ func instanciar_lista_sitios():
 			var lista_sitio_instance = lista_sitio_scene.instantiate()
 			v_box_container.add_child(lista_sitio_instance)
 			lista_sitio_instance.set_datos(sitio)
+			
+			# Alternar entre los fondos
+			if use_fondo_1:
+				lista_sitio_instance.set_fondo(lista_sitio_fondo_1)
+			else:
+				lista_sitio_instance.set_fondo(lista_sitio_fondo_2)
+			use_fondo_1 = not use_fondo_1  # Alternar el valor
+			
 			site_instances[sitio.id_estacion] = lista_sitio_instance  # Guardar la instancia en el diccionario
+
 
 # Función que maneja el botón de la lista de sitios en el encabezado
 func _on_header_btn_lista_sitios_pressed():
@@ -208,7 +219,7 @@ func _on_header_btn_lista_sitios_pressed():
 # Función para mostrar la lista de sitios
 func _show_lista():
 	var tween = TweenManager.init_tween(_on_finish_tween_sitios)
-	TweenManager.tween_animacion(tween, lista_sitios_container, "custom_minimum_size:y", 600, 0.3)
+	TweenManager.tween_animacion(tween, lista_sitios_container, "custom_minimum_size:y", 650, 0.3)
 	lista_sitios_container.visible = true
 	is_list_hidden = false
 

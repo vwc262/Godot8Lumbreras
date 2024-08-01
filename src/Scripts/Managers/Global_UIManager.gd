@@ -1,49 +1,65 @@
 # UIManager.gd
 extends Node
 
-signal sitio_seleccionado  # Señal emitida cuando se selecciona un sitio
-signal mostrar_world  # Señal emitida para mostrar el world
+signal sitio_seleccionado
+signal mostrar_world  # Señal para mostrar el world
 
-var lista_sitios: Array[Control] = []  # Lista de sitios (Controles) en la UI
-var current_selected_site = null  # Sitio actualmente seleccionado
+var lista_sitios: Array[Control] = []
+var current_selected_site = null
+var current_lista_site = null  # Nuevo: sitio seleccionado en la lista
 
-var ui_particular: Node = null  # Referencia al nodo UI particular
+var ui_particular: Node = null
+var pb_5: Node3D = null
 
-# Función para seleccionar un sitio
+
 func seleccionar_sitio(sitio):
 	if current_selected_site == sitio:
-		sitio.deseleccionar()  # Deseleccionar si el sitio ya está seleccionado
+		sitio.deseleccionar()
 		current_selected_site = null
 	else:
 		if current_selected_site != null:
-			current_selected_site.deseleccionar()  # Deseleccionar el sitio anterior
+			current_selected_site.deseleccionar()
 		current_selected_site = sitio
-		sitio.seleccionar()  # Seleccionar el nuevo sitio
-		emit_signal("sitio_seleccionado", sitio)  # Emitir señal de sitio seleccionado
+		sitio.seleccionar()
+		emit_signal("sitio_seleccionado", sitio)
 
-# Función para deseleccionar todos los sitios
+# Método para seleccionar un sitio de lista
+func seleccionar_lista_sitio(sitio):
+	if current_selected_site == sitio:
+		sitio.deseleccionar()
+		current_selected_site = null
+	else:
+		if current_selected_site != null:
+			current_selected_site.deseleccionar()
+		current_selected_site = sitio
+		sitio.seleccionar()
+		emit_signal("sitio_seleccionado", sitio)
+
 func deselect_all_sitios():
 	current_selected_site = null
 	for sitio in lista_sitios:
-		sitio.deseleccionar()  # Deseleccionar cada sitio en la lista
+		sitio.deseleccionar()
 
-# Función para agregar un sitio a la lista de sitios
 func add_sitio(sitio):
 	if sitio not in lista_sitios:
-		lista_sitios.append(sitio)  # Agregar sitio a la lista si no está ya en ella
+		lista_sitios.append(sitio)
 
-# Función para establecer la referencia al nodo UI particular
+
 func set_ui_particular(particular_node: Node):
 	ui_particular = particular_node
-
-# Función para mostrar el UI particular
+	
 func mostrar_particular():
 	if ui_particular != null:
-		ui_particular.visible = true  # Hacer visible el UI particular
-		ui_particular.init_particular(true)  # Inicializar el UI particular
+		ui_particular.visible = true
+		pb_5.visible = true
+		ui_particular.init_particular(true)
 
-# Función para ocultar el UI particular
 func ocultar_particular():
 	if ui_particular != null:
-		ui_particular.visible = false  # Hacer invisible el UI particular
-		emit_signal("mostrar_world")  # Emitir señal para mostrar el world
+		ui_particular.visible = false
+		pb_5.visible = false
+		emit_signal("mostrar_world")  # Emitir la señal para mostrar el world
+
+# Método para verificar si un sitio está seleccionado
+func is_sitio_selected(sitio) -> bool:
+	return current_selected_site == sitio

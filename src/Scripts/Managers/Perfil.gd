@@ -6,12 +6,14 @@ extends Node
 @onready var ui_particular = $UiParticular
 @onready var dynamic_margins = $DynamicMargins
 @onready var world = $DynamicMargins/VB_MainContainer/main_container/SubViewportContainer/SubViewport/World
+@onready var perfil = $DynamicMargins/VB_MainContainer/main_container/SubViewportContainer/SubViewport/Perfil
 
 signal in_particular
 
 var is_hidden = false  # Variable para rastrear el estado del contenedor
 
 func _ready():
+	SceneManager.set_perfil_scene(perfil)
 	# Conectar señales a las funciones correspondientes
 	UIManager.set_ui_particular(ui_particular)  # Establecer la referencia a ui_particular
 	UIManager.connect("mostrar_world", _mostrar_world)  # Conectar la señal mostrar_world

@@ -22,6 +22,7 @@ GlobalData="*res://Scripts/Managers/Global_DataStore.gd"
 TweenManager="*res://Scripts/Managers/Global_TweenManager.gd"
 GlobalUtils="*res://Scripts/Managers/Global_Utils.gd"
 UIManager="*res://Scripts/Managers/Global_UIManager.gd"
+SceneManager="*res://Scripts/Managers/Global_SceneManager.gd"
 
 [display]
 

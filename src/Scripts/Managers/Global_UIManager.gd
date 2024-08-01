@@ -50,15 +50,12 @@ func set_ui_particular(particular_node: Node):
 	
 func mostrar_particular():
 	if ui_particular != null:
-		ui_particular.visible = true
-		pb_5.visible = true
+		ui_particular.visible = true		
 		ui_particular.init_particular(true)
 
 func ocultar_particular():
 	if ui_particular != null:
-		ui_particular.visible = false
-		pb_5.visible = false
-		emit_signal("mostrar_world")  # Emitir la señal para mostrar el world
+		ui_particular.visible = false				
 
 # Método para verificar si un sitio está seleccionado
 func is_sitio_selected(sitio) -> bool:

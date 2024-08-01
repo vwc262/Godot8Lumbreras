@@ -2,21 +2,26 @@ extends Node
 
 
 #region Variables
-var particular_scenes = {}
-var perfil_scene : Node3D = null
+var scenes = {}
+var idScenePerfil = 100
 #endregion
 
 
 #region Funciones
 #Almacena la referencia del perfil
-func set_perfil_scene(perfilScene:Node3D):
-	perfil_scene = perfilScene
+#Almacena las referencias de los particulares
+func add_scene(idSceneKey:int,scene:Node3D):
+	scenes[idSceneKey] = scene
+	pass
+	
+func unload_scenes():
+	for scene in scenes.values():
+		scene.visible = false
 	pass
 
-#Almacena las referencias de los particulares
-func add_particular_scene(idEstacionKey:int,particularScene:Node3D):
-	particular_scenes[idEstacionKey] = particularScene
-	pass
+func load_scene(idSceneKey:int):
+	scenes[idSceneKey].visible = true	
+		
 	
 #endregion
 

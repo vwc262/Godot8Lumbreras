@@ -78,7 +78,7 @@ stretch = true
 handle_input_locally = false
 physics_object_picking = true
 physics_object_picking_sort = true
-size = Vector2i(1080, 1103)
+size = Vector2i(2, 2)
 render_target_update_mode = 4
 
 [node name="Perfil" parent="DynamicMargins/VB_MainContainer/main_container/SubViewportContainer/SubViewport" instance=ExtResource("2_2gqy4")]

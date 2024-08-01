@@ -164,6 +164,7 @@ func MoverCamara(idEstacion:int):
 			var new_vec3 = Vector3(rotation.x, transform[1].y, rotation.z)
 			tween.set_parallel()
 			tween.tween_property(self,"position", transform[0], speedAnimation)
+			print('topeSitio: ' , transform[0].y, ' , maxZoom :',maxZoom)
 			var val = remap(transform[0].y, initialZoom - offSetDistanceInclination, maxZoom, 0, 1)
 			tween.tween_property($Camera3D, "rotation_degrees", Vector3(lerp(initialRotationCamera, LimitRotationCamera, val),0,0), speedAnimation)
 			tweenBlur.tween_property(blurMaterial, "shader_parameter/blur_amount", maxBlurIntensity, speedAnimation)

@@ -4,17 +4,17 @@
 
 [resource]
 shader = ExtResource("1_3cik8")
-shader_parameter/blur_amount = 0.007
+shader_parameter/blur_amount = 0.0
 shader_parameter/blur_center = Vector2(0.5, 0.5)
 shader_parameter/blur_power = 0.0
-shader_parameter/sampling_count = 5
-shader_parameter/color1 = Color(0.996078, 0.972549, 0.976471, 0)
-shader_parameter/color2 = Color(0, 0, 0, 0)
+shader_parameter/sampling_count = 6
+shader_parameter/color1 = Color(0.152941, 0.152941, 0.152941, 0.741176)
+shader_parameter/color2 = Color(0.254902, 0.254902, 0.254902, 1)
 shader_parameter/color3 = Color(0, 0, 0, 1)
 shader_parameter/color4 = Color(0, 0, 0, 1)
 shader_parameter/color5 = Color(0, 0, 0, 1)
 shader_parameter/color6 = Color(0, 0, 0, 1)
-shader_parameter/squishness = Vector2(2, 2)
+shader_parameter/squishness = Vector2(0.385, 0.475)
 shader_parameter/step1 = 0.179
 shader_parameter/step2 = 0.218
 shader_parameter/step3 = 0.238

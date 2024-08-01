@@ -14,7 +14,7 @@ void fragment() {
     vec4 blurColor = textureLod(screen_texture, SCREEN_UV, blur_amount);
 
     // Calculate distance from the center of the screen
-    float distance = length(UV - vec2(0.5, 0.5));
+    float distance = length(UV);
 
     // Apply smoothstep function to control transition between areas
     float blur = smoothstep(blur_inner - blur_radius, blur_outer, distance);
@@ -23,11 +23,12 @@ void fragment() {
     pixelColor.rgb = mix(blurColor.rgb, COLOR.rgb, -blur);
 
     // Set the alpha component of the blur effect to the smoothstep value
-    blurColor.a = blur;
+    //blurColor.a = blur;
 
     // Mix colors of the blur effect with white for an additional effect
-    blurColor.rgb = mix(blurColor.rgb, vec3(1.0), 0.1);
+    //blurColor.rgb = mix(blurColor.rgb, vec3(1.0), 0.1);
 
     // Set the final color to the modified color of the blur effect
     COLOR = blurColor;
+	//COLOR = vec3(blur);
 }

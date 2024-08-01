@@ -100,7 +100,10 @@ func _on_btn_home_pressed():
 	UIManager.ocultar_particular()	
 	SceneManager.load_scene(SceneManager.idScenePerfil)
 	
-
+func reprint():
+	_compare_and_print_selected_site(0)
+	_on_header_btn_lista_sitios_pressed()
+	
 # Función que compara y actualiza el sitio seleccionado
 func _compare_and_print_selected_site(parametro):
 	var last_selected_id = NavigationManager.last_selected
@@ -108,18 +111,6 @@ func _compare_and_print_selected_site(parametro):
 		if sitio.id_estacion == last_selected_id:
 			set_datos_particular(sitio)
 			return  # Sale de la función una vez encontrado el sitio
-
-# Función que imprime los detalles del sitio
-func print_site_details(sitio: Estacion):
-	print("ID Estación: ", sitio.id_estacion)
-	print("Nombre: ", sitio.nombre)
-	print("Enlace: ", sitio.enlace)
-	print("Fecha: ", sitio.tiempo)
-	print("Señales: ")
-	for _signal in sitio.signals:
-		if _signal is Señal:
-			print("\tSeñal: ", _signal.nombre)
-			print("\tValor: ", _signal.valor)
 
 # Función para establecer los datos del sitio seleccionado
 func set_datos_particular(sitio: Estacion):

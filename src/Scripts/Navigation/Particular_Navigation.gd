@@ -27,7 +27,7 @@ extends Node3D
 @export var speedAnimation: float
 #endregion
 
-@onready var camera_3_dp = %Camera3Dp
+@onready var camera_3_dp = $Camera3Dp
 
 #region Propiedades para logica
 var touch_points: Dictionary = {}
@@ -47,7 +47,7 @@ var factorZoom: float;
 
 # Called when the node enters the scene tree for the first time.
 func _ready():	
-	initialRotationCamera = $Camera3Dp.rotation_degrees.x
+	initialRotationCamera = camera_3_dp.rotation_degrees.x
 	#camera_3_dp.rotation_degrees.x = initialRotationCamera #Se guarda la rotacion inicial en x de la camara
 	NavigationManager.connect('ResetCameraPosition',ResetCameraPosition) #Suscripcion de evento
 	initalCameraPosition = position # se guarda la posicion inicial de la camara
@@ -73,15 +73,14 @@ func DisableNavigation():
 func OnTweenFinished_MovimientoRealizado():
 	can_zoom= true
 	can_pan = true
-	isTween = false	
-
+	isTween = false
 
 func _input(event):
 	if event is InputEventScreenTouch:
 		handle_touch(event)
 	elif event is InputEventScreenDrag:
 		handle_drag(event)
-#endregion		
+#endregion
 
 #region CustomFunctions
 #Se hacen los presets iniciales del touch event
@@ -121,13 +120,12 @@ func handle_drag(event: InputEventScreenDrag):
 			var pan_vector = (forward + (-event.relative.x * right ) + (-event.relative.y * forward)) * pan_speed
 			#pan_vector /= GetZoomFactor()
 			pan_vector.y = 0
-			global_translate(pan_vector)					
+			global_translate(pan_vector)
 
-	elif touch_points.size() == 2:			
+	elif touch_points.size() == 2:
 		var touch_point_positions = touch_points.values()
 		var current_dist = touch_point_positions[1].distance_to(touch_point_positions[0])
 		var zoom_factor = current_dist / start_distance
-
 
 		if can_rotate:
 			var touch = touch_points.values()
@@ -138,14 +136,12 @@ func handle_drag(event: InputEventScreenDrag):
 
 		if can_zoom:
 			position.y = start_zoom / zoom_factor
-			limit_zoom()				
-			print(inclinate_camera())					
-			camera_3_dp.rotation_degrees.x =  lerpf(initialRotationCamera,LimitRotationCamera,inclinate_camera())			
-	
+			limit_zoom()
+			print(inclinate_camera())
+			camera_3_dp.rotation_degrees.x =  lerpf(initialRotationCamera,LimitRotationCamera,inclinate_camera())
+
 	position.x = clamp(position.x,minX * factorZoom ,maxX * factorZoom )
 	position.z = clamp(position.z,minZ * factorZoom,maxZ * factorZoom)
-	
-	
 
 func rotate_camera(currentangle: float):
 	#print(currentangle)
@@ -156,9 +152,9 @@ func limit_zoom():
 	position.y = clamp(position.y, maxZoom,initialZoom )
 	
 func inclinate_camera()->float:
-	var current = 0 #Default uno para que mantenga la vista top		
+	var current = 0 #Default uno para que mantenga la vista top
 	if position.y < initialZoom - offSetDistanceInclination:
-		current = remap(position.y, initialZoom - offSetDistanceInclination, maxZoom, 0, 1)				
+		current = remap(position.y, initialZoom - offSetDistanceInclination, maxZoom, 0, 1)
 	return current
 	
 func GetZoomFactor():
@@ -166,5 +162,5 @@ func GetZoomFactor():
 	#print(factorZoom)
 	return factorZoom
 
-func AdjustPanSpeedByZoom():		
+func AdjustPanSpeedByZoom():
 	pan_speed = remap(GetZoomFactor(), 1.0, 2.0, .1, 0.05)

@@ -9,7 +9,7 @@ extends Node
 #endregion
 
 #region script variables
-@onready var popup = $Popup
+@onready var popup = $popup_container/Popup
 #endregion
 
 signal in_particular

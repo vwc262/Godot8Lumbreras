@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://cbnb2ak6i8lmq"
-path="res://.godot/imported/Mini_B5.glb-8c3172d4a8af114fe51eb3bbf64b7b10.scn"
+uid="uid://bmmdgtnsjudjj"
+path="res://.godot/imported/Mini_3D_04.glb-de7c6e3047bed1661ba27911aaf60e0a.scn"
 
 [deps]
 
-source_file="res://Recursos/Meshes/Mini_Sitios/Mini_B5.glb"
-dest_files=["res://.godot/imported/Mini_B5.glb-8c3172d4a8af114fe51eb3bbf64b7b10.scn"]
+source_file="res://Recursos/Meshes/Mini_Sitios/Mini_3D_04.glb"
+dest_files=["res://.godot/imported/Mini_3D_04.glb-de7c6e3047bed1661ba27911aaf60e0a.scn"]
 
 [params]
 

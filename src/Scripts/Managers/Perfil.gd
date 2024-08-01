@@ -67,8 +67,12 @@ func _on_btn_particular_pressed():
 		UIManager.mostrar_particular()	
 		SceneManager.load_scene(UIManager.current_selected_site.id_estacion)
 	else:			
-		UIManager.popUpWindow.showPopUp("Primero debe seleccionar un sitio");
+		UIManager.popUpWindow.showPopUp("Necesita seleccionar \n un particular antes \n de proceder.");
 	
 
 func _mostrar_world():
 	SceneManager.load_scene(SceneManager.idScenePerfil)
+
+
+func _on_btn_close_popup_pressed():
+	UIManager.popUpWindow.hide_popup()

@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://x5m0onfran4m"]
+[gd_scene load_steps=16 format=3 uid="uid://x5m0onfran4m"]
 
 [ext_resource type="Script" path="res://Scripts/Managers/Perfil.gd" id="1_symg7"]
 [ext_resource type="Script" path="res://Scripts/Fetcher/Fetch_Data.gd" id="1_xo6k0"]
@@ -13,6 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://bo4b76cn6y4rf" path="res://Recursos/UI/img/Menu_pie/MenuPie_Base.png" id="9_m03wm"]
 [ext_resource type="PackedScene" uid="uid://mr5ipvv85b1" path="res://Scenes/UI/UI_Particular.tscn" id="11_e8765"]
 [ext_resource type="Script" path="res://Scripts/UI/PopUp/PopupWindow.gd" id="13_4y2mv"]
+[ext_resource type="Texture2D" uid="uid://wtgya2x77u2y" path="res://Recursos/UI/img/PopUp_Dialogo_base.png" id="14_0v8gh"]
 
 [sub_resource type="Theme" id="Theme_0o38m"]
 
@@ -168,19 +169,76 @@ layout_mode = 2
 visible = false
 
 [node name="Popup" type="Popup" parent="."]
+transparent_bg = true
 mode = 3
 initial_position = 2
-size = Vector2i(194, 120)
+size = Vector2i(500, 700)
 script = ExtResource("13_4y2mv")
 
-[node name="Label" type="Label" parent="Popup"]
-offset_right = 40.0
-offset_bottom = 23.0
-text = "Debe Seleccionar un sitio
-"
+[node name="Panel" type="Panel" parent="Popup"]
+modulate = Color(1, 1, 1, 0)
+self_modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(500, 700)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="Popup/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("14_0v8gh")
+expand_mode = 1
+
+[node name="Label" type="Label" parent="Popup/Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -112.0
+offset_top = -111.5
+offset_right = 112.0
+offset_bottom = -88.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 30
+text = "Necesita seleccionar 
+un particular antes 
+de proceder."
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+
+[node name="btn_close_popup" type="Button" parent="Popup/Panel"]
+custom_minimum_size = Vector2(200, 65)
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -100.0
+offset_top = -245.0
+offset_right = 100.0
+offset_bottom = -180.0
+grow_horizontal = 2
+grow_vertical = 0
+focus_mode = 0
+theme_override_font_sizes/font_size = 30
+text = "OK"
+flat = true
 
 [connection signal="request_completed" from="VersionUpdater" to="VersionUpdater" method="_on_request_completed"]
 [connection signal="OnVersionChanged" from="Endpoint" to="VersionUpdater" method="On_Update_Version"]
 [connection signal="button_down" from="DynamicMargins/VB_MainContainer/main_container/ListaSitiosContainer/VBoxContainer/botones_container/HBoxContainer/BTN_graficar" to="." method="_on_btn_graficar_button_down"]
 [connection signal="pressed" from="DynamicMargins/VB_MainContainer/main_container/ListaSitiosContainer/VBoxContainer/botones_container/HBoxContainer/BTN_ListaSitios" to="." method="_on_btn_lista_sitios_pressed"]
 [connection signal="pressed" from="DynamicMargins/VB_MainContainer/main_container/ListaSitiosContainer/VBoxContainer/botones_container/HBoxContainer/BTN_particular" to="." method="_on_btn_particular_pressed"]
+[connection signal="visibility_changed" from="Popup" to="Popup" method="_on_visibility_changed"]
+[connection signal="pressed" from="Popup/Panel/btn_close_popup" to="." method="_on_btn_close_popup_pressed"]

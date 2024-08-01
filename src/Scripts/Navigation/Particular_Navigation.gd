@@ -46,9 +46,7 @@ var factorZoom: float;
 #endregion
 
 # Called when the node enters the scene tree for the first time.
-func _ready():
-	UIManager.pb_5 = $".."
-	UIManager.pb_5.visible = false
+func _ready():	
 	initialRotationCamera = $Camera3Dp.rotation_degrees.x
 	#camera_3_dp.rotation_degrees.x = initialRotationCamera #Se guarda la rotacion inicial en x de la camara
 	NavigationManager.connect('ResetCameraPosition',ResetCameraPosition) #Suscripcion de evento

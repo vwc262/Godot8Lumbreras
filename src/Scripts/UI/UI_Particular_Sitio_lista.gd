@@ -10,11 +10,14 @@ extends Control
 @export var texture_online: Texture2D
 @export var texture_offline: Texture2D
 
+var id_Estacion : int = 0
+
 func _ready():
 	btn_lista_sitio.connect("pressed", _on_btn_lista_sitio_pressed)
 
 # Función para establecer los datos del sitio
 func set_datos(sitio: Estacion):
+	id_Estacion = sitio.id_estacion
 	# Actualiza el nombre del sitio
 	lbl_nombre_sitio.text = sitio.nombre
 	
@@ -31,7 +34,10 @@ func _on_btn_lista_sitio_pressed():
 	if UIManager.is_sitio_selected(self):
 		print("sitio seleccionado")
 	else:
+		SceneManager.load_scene(id_Estacion)
 		UIManager.seleccionar_lista_sitio(self)
+		NavigationManager.set_lastid_selected(id_Estacion)
+		UIManager.reprint_ui_particular()
 
 func seleccionar():
 	sitio_fondo_seleccionado.visible = true

@@ -7,7 +7,6 @@ resource_name = "Vertex"
 cull_mode = 2
 vertex_color_use_as_albedo = true
 albedo_texture = ExtResource("1_y51yy")
-metallic_specular = 0.8
 roughness = 0.7
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_8ep13"]

@@ -4,9 +4,10 @@
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_1lx84"]
 shader = ExtResource("1_cq31k")
-shader_parameter/skyColor = Color(0.0588235, 0.278431, 0.666667, 1)
-shader_parameter/horizonColor = Color(0.8, 0.160784, 0.0823529, 1)
-shader_parameter/offsetHorizontalColor = 0.3
+shader_parameter/skyColor = Color(8.66354e-06, 0.672741, 0.844546, 1)
+shader_parameter/horizonColor1 = Color(0.213259, 0.172867, 0.118883, 1)
+shader_parameter/horizonColor2 = Color(1, 0.707555, 0.608554, 1)
+shader_parameter/offsetHorizontalColor = 0.02
 
 [sub_resource type="Sky" id="Sky_f7hr0"]
 sky_material = SubResource("ShaderMaterial_1lx84")
@@ -16,10 +17,21 @@ background_mode = 2
 background_color = Color(0.130569, 0.472729, 0.718176, 1)
 background_energy_multiplier = 0.61
 sky = SubResource("Sky_f7hr0")
+sky_rotation = Vector3(0.0698132, 0, 0)
+ambient_light_energy = 0.0
 reflected_light_source = 2
-tonemap_mode = 1
-volumetric_fog_density = 0.0212
-volumetric_fog_albedo = Color(0.964541, 0.867787, 0.879027, 1)
+tonemap_exposure = 1.01
+tonemap_white = 2.09
+ssr_fade_in = 1.63925
+ssr_fade_out = 0.420448
+ssr_depth_tolerance = 39.71
+glow_intensity = 3.78
+glow_strength = 0.0
+glow_hdr_threshold = 0.6
+glow_hdr_scale = 2.1
+glow_hdr_luminance_cap = 12.2
+volumetric_fog_density = 0.3132
+volumetric_fog_albedo = Color(0.740995, 0.389801, 0.453136, 1)
 
 [node name="SkyEnvironment" type="Node3D"]
 
@@ -27,6 +39,16 @@ volumetric_fog_albedo = Color(0.964541, 0.867787, 0.879027, 1)
 environment = SubResource("Environment_bac8e")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="WorldEnvironment"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.28646, 0)
-visible = false
-light_energy = 1.005
+transform = Transform3D(0.650774, -0.274571, 0.707887, 0, 0.932324, 0.361625, -0.759271, -0.235336, 0.606732, 0, 1.28646, 0)
+light_color = Color(0.955734, 0.832482, 0.76637, 1)
+light_energy = 3.5
+light_indirect_energy = 2.259
+light_volumetric_fog_energy = 1.25
+light_bake_mode = 1
+shadow_enabled = true
+shadow_bias = 0.0
+shadow_normal_bias = 3.0
+shadow_blur = 0.0
+directional_shadow_split_1 = 0.039
+directional_shadow_max_distance = 33.5
+directional_shadow_pancake_size = 12.6

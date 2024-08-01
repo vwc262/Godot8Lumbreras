@@ -60,7 +60,7 @@ visible = false
 mesh = SubResource("SphereMesh_dsd57")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(-0.205861, -0.846639, 0.490737, -0.859718, 0.396016, 0.322577, -0.467446, -0.35549, -0.809396, 0, 32.3712, 0)
+transform = Transform3D(0.0882372, -0.129919, 0.987591, -0.895821, 0.423188, 0.135709, -0.435567, -0.896679, -0.0790431, 0.595018, 12.0503, 10.8077)
 light_color = Color(0.89, 0.82058, 0.7743, 1)
 light_energy = 4.0
 light_indirect_energy = 0.025

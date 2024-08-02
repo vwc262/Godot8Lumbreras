@@ -4,7 +4,7 @@
 [ext_resource type="Script" path="res://Scripts/Navigation/Touch_Navigation.gd" id="2_ui4vn"]
 [ext_resource type="PackedScene" uid="uid://vw46h30r4ia4" path="res://Scenes/Sitios/Sitio3D_Interactuable.tscn" id="3_dfqhc"]
 [ext_resource type="PackedScene" uid="uid://bhakmsdspl7on" path="res://Scenes/Sky/SkyEnvironment.tscn" id="5_a3vqv"]
-[ext_resource type="PackedScene" uid="uid://vxu3fnea8kdx" path="res://Recursos/Meshes/Mapa_Pruebas/Prueba_07/Mapa_Unlit.tscn" id="5_tlknr"]
+[ext_resource type="PackedScene" uid="uid://vxu3fnea8kdx" path="res://Scenes/Perfil/Terreno/Scena_Mapa_Unlit.tscn" id="5_tlknr"]
 [ext_resource type="Texture2D" uid="uid://cw4pt0rum7ikr" path="res://Recursos/Textures/Sky/nube_02.png" id="7_5pikp"]
 [ext_resource type="Material" uid="uid://e5ua1e3xje35" path="res://Recursos/Materiales/Material_Letras.tres" id="8_cd5e5"]
 [ext_resource type="PackedScene" uid="uid://dufq2s41jpm5w" path="res://Recursos/Meshes/Nombres_del_mundo/CDMX.glb" id="8_gp1mx"]

@@ -1,19 +1,25 @@
-[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://43ccdqs142xj"]
+[gd_resource type="ShaderMaterial" load_steps=5 format=3 uid="uid://43ccdqs142xj"]
 
 [ext_resource type="Shader" path="res://Recursos/Materiales/Lake_Material_shader.gdshader" id="1_wvl8w"]
+[ext_resource type="Texture2D" uid="uid://duy8u3nkcxqb0" path="res://Recursos/Textures/Mapa_3D/lagos.jpg" id="2_vssbb"]
+[ext_resource type="Texture2D" uid="uid://bfqhi3aoyrj4o" path="res://Recursos/Meshes/Mapa_Pruebas/Sitios/Lumbrera0/Texturas/clouds.png" id="3_h52af"]
+[ext_resource type="Texture2D" uid="uid://cj75cg5mk4vxm" path="res://Recursos/Textures/Mapa_3D/AO_Noise.bmp" id="4_5n7bj"]
 
 [resource]
 render_priority = 0
 shader = ExtResource("1_wvl8w")
-shader_parameter/albedo = null
+shader_parameter/albedo = Color(1, 1, 1, 1)
 shader_parameter/heightmap_scale = null
 shader_parameter/tile_size = 1.0
 shader_parameter/heightmap_min_layers = null
 shader_parameter/heightmap_max_layers = null
 shader_parameter/heightmap_flip = null
-shader_parameter/uv1_scale = null
+shader_parameter/uv1_scale = Vector3(1, 1, 1)
 shader_parameter/uv1_offset = null
-shader_parameter/uv2_scale = null
+shader_parameter/uv2_scale = Vector3(1, 1, 1)
 shader_parameter/uv2_offset = null
-shader_parameter/Direction = Vector2(1, 0)
-shader_parameter/Speed = 0.02
+shader_parameter/Direction = Vector2(0, 1)
+shader_parameter/Speed = 0.01
+shader_parameter/texture_albedo = ExtResource("2_vssbb")
+shader_parameter/texture_waves = ExtResource("4_5n7bj")
+shader_parameter/texture_clouds = ExtResource("3_h52af")

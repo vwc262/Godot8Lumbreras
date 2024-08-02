@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://vw46h30r4ia4"]
 
 [ext_resource type="Script" path="res://Scripts/Managers/Sitio3D_Manager.gd" id="1_1pcy1"]
-[ext_resource type="PackedScene" uid="uid://bttiuetvrbwn0" path="res://Recursos/Meshes/Mini_Sitios/Mini_3D_05.tscn" id="2_injop"]
+[ext_resource type="PackedScene" uid="uid://bttiuetvrbwn0" path="res://Recursos/Meshes/Mapa/Sitios/Scena_Mini_3D_04.tscn" id="2_injop"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_kb87j"]
 size = Vector3(3.92489, 1.2335, 4.05673)

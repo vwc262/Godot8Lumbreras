@@ -1,8 +1,8 @@
 [gd_resource type="ShaderMaterial" load_steps=5 format=3 uid="uid://b34rsa0vdy1l3"]
 
 [ext_resource type="Shader" path="res://Recursos/Materiales/CloudShadows_Unlit.gdshader" id="1_7nowk"]
-[ext_resource type="Texture2D" uid="uid://dyirce2y65af0" path="res://Recursos/Meshes/Mapa_Pruebas/Prueba_08/Terreno_Prueba_08_Albedo_atardecer_camino.png" id="2_lcrge"]
-[ext_resource type="Texture2D" uid="uid://bfqhi3aoyrj4o" path="res://Recursos/Meshes/Mapa_Pruebas/Sitios/Lumbrera0/Texturas/clouds.png" id="3_7c57w"]
+[ext_resource type="Texture2D" uid="uid://dyirce2y65af0" path="res://Recursos/Meshes/Mapa/Mapa 3D/Terreno_Prueba_08_Albedo_atardecer_camino.png" id="2_lcrge"]
+[ext_resource type="Texture2D" path="res://Recursos/Meshes/Mapa_Pruebas/Sitios/Lumbrera0/Texturas/clouds.png" id="3_7c57w"]
 [ext_resource type="Texture2D" uid="uid://cj75cg5mk4vxm" path="res://Recursos/Textures/Mapa_3D/AO_Noise.bmp" id="4_072lk"]
 
 [resource]

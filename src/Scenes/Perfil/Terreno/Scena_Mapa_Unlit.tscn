@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://vxu3fnea8kdx"]
 
-[ext_resource type="PackedScene" uid="uid://cvidg0qtj6nqn" path="res://Recursos/Meshes/Mapa_Pruebas/Prueba_08/Terreno_Prueba_08.glb" id="1_1cncs"]
+[ext_resource type="PackedScene" uid="uid://cvidg0qtj6nqn" path="res://Recursos/Meshes/Mapa/Mapa 3D/Terreno_Prueba_08.glb" id="1_1cncs"]
 [ext_resource type="Material" uid="uid://b34rsa0vdy1l3" path="res://Recursos/Materiales/CloudShadows_unlit.tres" id="2_5m1vx"]
 [ext_resource type="PackedScene" uid="uid://cdr36ar50771r" path="res://Recursos/Meshes/Lagos/Lagos_01.glb" id="3_l5fc4"]
 [ext_resource type="Material" uid="uid://43ccdqs142xj" path="res://Recursos/Materiales/Lake_Material.tres" id="4_ghufo"]

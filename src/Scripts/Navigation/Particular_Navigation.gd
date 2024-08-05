@@ -3,7 +3,7 @@ extends Node3D
 #region Propiedades de editor
 @export_group('Pan')
 @export var can_pan: bool
-@export var pan_speed = 0.01
+@export var pan_speed = 0
 @export var minX = -13 # -13 , 20
 @export var maxX = 20 # -13 , 20
 @export var minZ = -10
@@ -46,7 +46,7 @@ var factorZoom: float;
 #endregion
 
 # Called when the node enters the scene tree for the first time.
-func _ready():	
+func _ready():
 	initialRotationCamera = camera_3_dp.rotation_degrees.x
 	#camera_3_dp.rotation_degrees.x = initialRotationCamera #Se guarda la rotacion inicial en x de la camara
 	NavigationManager.connect('ResetCameraPosition',ResetCameraPosition) #Suscripcion de evento
@@ -118,7 +118,6 @@ func handle_drag(event: InputEventScreenDrag):
 	if touch_points.size() == 1:
 		if can_pan:
 			var pan_vector = (forward + (-event.relative.x * right ) + (-event.relative.y * forward)) * pan_speed
-			#pan_vector /= GetZoomFactor()
 			pan_vector.y = 0
 			global_translate(pan_vector)
 
@@ -137,14 +136,12 @@ func handle_drag(event: InputEventScreenDrag):
 		if can_zoom:
 			position.y = start_zoom / zoom_factor
 			limit_zoom()
-			print(inclinate_camera())
 			camera_3_dp.rotation_degrees.x =  lerpf(initialRotationCamera,LimitRotationCamera,inclinate_camera())
 
-	position.x = clamp(position.x,minX * factorZoom ,maxX * factorZoom )
-	position.z = clamp(position.z,minZ * factorZoom,maxZ * factorZoom)
+	position.x = clamp(position.x, minX * factorZoom, maxX * factorZoom )
+	position.z = clamp(position.z, minZ * factorZoom, maxZ * factorZoom)
 
 func rotate_camera(currentangle: float):
-	#print(currentangle)
 	rotation_degrees.y += -currentangle
 	rotation_degrees.y = clamp(rotation_degrees.y,minRotationY,maxRotationY)
 
@@ -163,4 +160,5 @@ func GetZoomFactor():
 	return factorZoom
 
 func AdjustPanSpeedByZoom():
-	pan_speed = remap(GetZoomFactor(), 1.0, 2.0, .1, 0.05)
+	pan_speed = remap(GetZoomFactor(), 1.0, 2.0, .05, 0.02)
+	print(pan_speed)

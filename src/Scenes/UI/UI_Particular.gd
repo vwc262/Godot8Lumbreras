@@ -100,13 +100,13 @@ func _on_finish_tween():
 
 # Función que maneja el botón de inicio
 func _on_btn_home_pressed():
-	UIManager.ocultar_particular()
+	UIManager.ocultar_particular() 
 	SceneManager.load_scene(SceneManager.idScenePerfil)
 	
 func reprint():
 	_compare_and_print_selected_site(0)
 	_on_header_btn_lista_sitios_pressed()
-	
+
 # Función que compara y actualiza el sitio seleccionado
 func _compare_and_print_selected_site(parametro):
 	var last_selected_id = NavigationManager.last_selected

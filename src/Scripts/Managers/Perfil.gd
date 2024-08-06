@@ -6,6 +6,7 @@ extends Node
 @onready var ui_particular = $UiParticular
 @onready var dynamic_margins = $DynamicMargins
 @onready var perfil = $DynamicMargins/VB_MainContainer/main_container/SubViewportContainer/SubViewport/Perfil
+@onready var chart_control = $DynamicMargins/VB_MainContainer/main_container/ListaSitiosContainer/VBoxContainer/PanelContainer/ChartControl
 #endregion
 
 #region script variables
@@ -58,7 +59,12 @@ func _on_finish_tween():
 
 ##region FUNCIONES PARA MOSTRAR LA GRAFICA
 func _on_btn_graficar_button_down():
-	GlobalUtils.ChartControl.visible = not GlobalUtils.ChartControl.visible
+	if chart_control.visible:
+		chart_control.visible = false
+		lista_sitios.visible = true
+	else:
+		chart_control.visible = true
+		lista_sitios.visible = false
 ##endregion
 
 # Actualiza esta función para usar UIManager

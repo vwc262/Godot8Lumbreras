@@ -15,12 +15,13 @@ uniform bool use_texture = false;
 
 uniform sampler2D texture_color : source_color;
 
+
 void fragment() {	
 	float dissolve_noise = texture(noise_texture,UV).r;
 	float border_mask = 0.0;
 	if(dissolve_amount > 0.0){
 		float border_size = dissolve_amount + glow_border_width;
-		border_mask = 1.0 - smoothstep(border_size - glow_border_smoothness,border_size + glow_border_smoothness,dissolve_noise);
+		border_mask = 1.0 -  smoothstep(border_size - glow_border_smoothness,border_size + glow_border_smoothness,dissolve_noise);
 	}		
 	vec3 surface_color = mix( use_texture ? texture(texture_color,UV).rgb : base_color,vec3(0.0),border_mask); 
 	if(!FRONT_FACING){

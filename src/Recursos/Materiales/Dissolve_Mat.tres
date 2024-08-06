@@ -1,0 +1,21 @@
+[gd_resource type="ShaderMaterial" load_steps=4 format=3 uid="uid://cvf8nd65jcev1"]
+
+[ext_resource type="Shader" path="res://Recursos/Shaders/Dissolve.gdshader" id="1_wdeqa"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_t5dfj"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_k81dy"]
+noise = SubResource("FastNoiseLite_t5dfj")
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_wdeqa")
+shader_parameter/base_color = Color(0.490196, 0.517647, 0.505882, 1)
+shader_parameter/inside_color = Color(0.219501, 0.219501, 0.219501, 1)
+shader_parameter/dissolve_amount = 0.0
+shader_parameter/glow_color = Color(1.20327e-07, 0.647261, 0.189369, 1)
+shader_parameter/glow_intensity = 5.0
+shader_parameter/glow_border_width = 0.041
+shader_parameter/glow_border_smoothness = 0.211
+shader_parameter/use_texture = false
+shader_parameter/noise_texture = SubResource("NoiseTexture2D_k81dy")

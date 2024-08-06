@@ -1,6 +1,8 @@
-[gd_scene load_steps=2 format=3 uid="uid://cdtw8r0rrxe85"]
+[gd_scene load_steps=4 format=3 uid="uid://cdtw8r0rrxe85"]
 
 [ext_resource type="PackedScene" uid="uid://cee4bu1xjnrjv" path="res://Recursos/Meshes/Particular_Cutzamala_PBR5/Cutzamala_PBR5_Berros_RecursosMaster.blend" id="1_pynes"]
+[ext_resource type="Script" path="res://Scripts/CutzamalaDissolve.gd" id="2_wou4d"]
+[ext_resource type="Material" uid="uid://cvf8nd65jcev1" path="res://Recursos/Materiales/Dissolve_Mat.tres" id="2_wydlx"]
 
 [node name="Generico" type="Node3D"]
 
@@ -16,3 +18,34 @@ light_volumetric_fog_energy = 1.25
 
 [node name="Cutzamala_PBR5_Berros_RecursosMaster" parent="." instance=ExtResource("1_pynes")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, 0)
+script = ExtResource("2_wou4d")
+
+[node name="Edificio_485" parent="Cutzamala_PBR5_Berros_RecursosMaster" index="2"]
+material_override = ExtResource("2_wydlx")
+
+[node name="Edificio_014" parent="Cutzamala_PBR5_Berros_RecursosMaster" index="3"]
+material_override = ExtResource("2_wydlx")
+
+[node name="Edificio_004" parent="Cutzamala_PBR5_Berros_RecursosMaster" index="4"]
+material_override = ExtResource("2_wydlx")
+
+[node name="Edificio_001" parent="Cutzamala_PBR5_Berros_RecursosMaster" index="5"]
+material_override = ExtResource("2_wydlx")
+
+[node name="Edificio_561" parent="Cutzamala_PBR5_Berros_RecursosMaster" index="6"]
+material_override = ExtResource("2_wydlx")
+
+[node name="Edificio_009" parent="Cutzamala_PBR5_Berros_RecursosMaster" index="7"]
+material_override = ExtResource("2_wydlx")
+
+[node name="Edificio_560" parent="Cutzamala_PBR5_Berros_RecursosMaster" index="8"]
+material_override = ExtResource("2_wydlx")
+
+[node name="Edificio_003" parent="Cutzamala_PBR5_Berros_RecursosMaster" index="9"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.03088, -33.5609, 10.1404, -13.1794)
+material_override = ExtResource("2_wydlx")
+
+[node name="Edificio_002" parent="Cutzamala_PBR5_Berros_RecursosMaster" index="10"]
+material_override = ExtResource("2_wydlx")
+
+[editable path="Cutzamala_PBR5_Berros_RecursosMaster"]

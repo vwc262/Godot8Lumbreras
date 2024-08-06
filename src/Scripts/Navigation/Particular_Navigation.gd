@@ -29,6 +29,10 @@ extends Node3D
 
 @onready var camera_3_dp = $Camera3Dp
 
+#region Signals
+signal on_position_changed
+#endregion
+
 #region Propiedades para logica
 var touch_points: Dictionary = {}
 var start_distance
@@ -105,6 +109,7 @@ func handle_touch(event: InputEventScreenTouch):
 		anclaDistancia = Vector2(0,0)
 
 func handle_drag(event: InputEventScreenDrag):
+	emit_signal("on_position_changed",position)
 	ID_Select = 0
 	UIManager.deselect_all_sitios()
 	NavigationManager.set_lastid_selected(ID_Select)

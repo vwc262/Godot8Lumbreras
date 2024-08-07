@@ -29,6 +29,7 @@ extends Node3D
 @export var speedAnimation: float
 @export var zoom_treshold : float = 5
 @export var pan_dist := 200
+@export var max_pan_speed : float = 0.05
 #endregion
 
 @onready var camera_3_dp : Node3D = $Camera3Dp
@@ -155,11 +156,11 @@ func handle_drag(event: InputEventScreenDrag):
 
 		if can_zoom:
 			# prioridad al zoom mediante una tolerancia
-			if abs(get_delta_distance(current_dist)) > zoom_treshold:
+			if abs(get_delta_distance(current_dist)) > zoom_treshold:#zoom
 				var direction = -1 if current_dist > last_distance else 1 
-				position += cameraForward.normalized() * direction
+				position += cameraForward * direction
 				last_distance = current_dist
-			elif previous_y_diff != 0:
+			elif previous_y_diff != 0: #tilt
 				if abs(current_finger_positions.y - previous_y_diff) > tilt_threshold:
 					var direction : float = sign(event.relative.y)
 					camera_3_dp.rotation_degrees.x += direction * tilt_speed
@@ -175,10 +176,12 @@ func handle_drag(event: InputEventScreenDrag):
 
 func rotate_camera(currentangle: float):
 	rotation_degrees.y += -currentangle
-	rotation_degrees.y = clamp(rotation_degrees.y, minRotationY, maxRotationY)
+	#rotation_degrees.y = clamp(rotation_degrees.y, minRotationY, maxRotationY)
 
 func limit_zoom():
-	position.y +=  clamp(position.y, maxZoom, initialZoom )
+	#position.y +=  clamp(position.y, maxZoom, initialZoom )
+	print("Current position: " ,position)
+	pass
 
 func inclinate_camera(current_dist)->float:
 	var current = 0 #Default uno para que mantenga la vista top
@@ -190,16 +193,8 @@ func GetZoomFactor():
 	return factorZoom
 
 func AdjustPanSpeedByZoom():
-	pan_speed = remap(GetZoomFactor(), 1.0, 2.0, .05, 0.02)
+	pan_speed = remap(GetZoomFactor(), 1.0, 2.0, .05, max_pan_speed)
 
 func get_delta_distance(currentDistance:float):
 	return currentDistance - last_distance 
 
-func set_position_fingers(touch_pos_1:Vector2,touch_pos_2:Vector2):
-	var up: Vector2 = Vector2(0,1)
-	var current_finger_positions: Vector2 = touch_pos_2 - touch_pos_1
-	var grados_vertical : float = abs(up.angle_to(current_finger_positions)/PI * 180)
-	if grados_vertical <= 90 + 10 and grados_vertical >= 90 - 10:
-		return touch_pos_2 - touch_pos_1
-	else:
-		return null

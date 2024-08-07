@@ -1,0 +1,13 @@
+[gd_resource type="ShaderMaterial" load_steps=3 format=3 uid="uid://cvpy0hx25tn6o"]
+
+[ext_resource type="Shader" path="res://Recursos/Materiales/WaterFlow_Unlit.gdshader" id="1_xhr10"]
+[ext_resource type="Texture2D" uid="uid://xici68e82c16" path="res://Recursos/Textures/Mapa_3D/Tuberia/Agua_Tubo_Cutzamala_v1.png" id="2_xjrtm"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_xhr10")
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/Direction = Vector2(-1, 0)
+shader_parameter/Speed = 0.08
+shader_parameter/tile_size = 0.2
+shader_parameter/texture_albedo = ExtResource("2_xjrtm")

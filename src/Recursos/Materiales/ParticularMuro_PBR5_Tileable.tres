@@ -1,0 +1,24 @@
+[gd_resource type="ShaderMaterial" load_steps=4 format=3 uid="uid://bc661come1l76"]
+
+[ext_resource type="Shader" path="res://Recursos/Materiales/TilableMaterial_Unlit.gdshader" id="1_8gxbe"]
+[ext_resource type="Texture2D" uid="uid://buhv8ojjobvi4" path="res://Recursos/Meshes/Particular_Cutzamala_PBR5/Texturas_B5_Particular/xevkfgos_1K_Diffuse.jpg" id="2_lqnna"]
+[ext_resource type="Texture2D" uid="uid://ddf1m2v3yjx6x" path="res://Recursos/Meshes/Particular_Cutzamala_PBR5/Texturas_B5_Particular/Shadows_particular_B5.jpg" id="3_pxy4r"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_8gxbe")
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/point_size = null
+shader_parameter/tile_size = -6.0
+shader_parameter/ao_texture_channel = null
+shader_parameter/ao_light_affect = null
+shader_parameter/heightmap_scale = null
+shader_parameter/heightmap_min_layers = null
+shader_parameter/heightmap_max_layers = null
+shader_parameter/heightmap_flip = null
+shader_parameter/uv1_scale = Vector3(1, 1, 1)
+shader_parameter/uv1_offset = null
+shader_parameter/uv2_scale = Vector3(1, 1, 1)
+shader_parameter/uv2_offset = null
+shader_parameter/texture_albedo = ExtResource("2_lqnna")
+shader_parameter/texture_detail_ao = ExtResource("3_pxy4r")

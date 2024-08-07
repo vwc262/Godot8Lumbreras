@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://cyug4nnq0yh1a"]
+[gd_scene load_steps=24 format=3 uid="uid://cyug4nnq0yh1a"]
 
 [ext_resource type="Material" uid="uid://beqh7jr7h3tmm" path="res://Recursos/Materiales/BlurVignette.tres" id="2_0rlw3"]
 [ext_resource type="Script" path="res://Scripts/Navigation/Touch_Navigation.gd" id="2_ui4vn"]
@@ -15,6 +15,8 @@
 [ext_resource type="Script" path="res://Scripts/Environment/Nubes3D_movement.gd" id="12_q18al"]
 [ext_resource type="Texture2D" uid="uid://c8eleo6k7pb4g" path="res://Recursos/Textures/Sky/nube_04_x05.png" id="14_eum0l"]
 [ext_resource type="Texture2D" uid="uid://cifknfeeyawbh" path="res://Recursos/Textures/Sky/nube_03_x05.png" id="15_b33lp"]
+[ext_resource type="PackedScene" uid="uid://32y17hj3xyaq" path="res://Scenes/Props/Tree_003.tscn" id="16_5pawl"]
+[ext_resource type="PackedScene" uid="uid://c30c6gif2rk2t" path="res://Scenes/Props/pine_001.tscn" id="17_pk0vi"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hh5is"]
 albedo_color = Color(0.529412, 0.807843, 0.921569, 1)
@@ -115,6 +117,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0634727, 0)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.2555, 0, -45.856)
 
 [node name="Sitios" type="Node3D" parent="Terrain"]
+visible = false
 
 [node name="CSGBox3D4" parent="Terrain/Sitios" instance=ExtResource("3_dfqhc")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30.5412, -3.54248, 69.2573)
@@ -171,7 +174,7 @@ IdEstacion = 6
 shape = SubResource("BoxShape3D_47xlv")
 
 [node name="Node3D" parent="Terrain" instance=ExtResource("5_tlknr")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0)
+transform = Transform3D(0.000916012, -0.000426761, 0.999999, -0.00179431, 0.999998, 0.000428404, -0.999998, -0.00179471, 0.000915245, 0, 0, 0)
 
 [node name="Props" type="Node3D" parent="."]
 
@@ -517,6 +520,1857 @@ visibility_range_end_margin = 100.0
 visibility_range_fade_mode = 1
 billboard = 1
 texture = ExtResource("7_5pikp")
+
+[node name="Arboles" type="Node3D" parent="Props"]
+
+[node name="Tree_003" type="Node3D" parent="Props/Arboles"]
+
+[node name="Tree_003_001" parent="Props/Arboles/Tree_003" instance=ExtResource("16_5pawl")]
+transform = Transform3D(1.03743, 0, 0.540698, 0, 1.16988, 0, -0.540698, 0, 1.03743, -10.627, -3.45455, 8.98738)
+
+[node name="Tree_003_030" parent="Props/Arboles/Tree_003" instance=ExtResource("16_5pawl")]
+transform = Transform3D(1.03743, 0, 0.540698, 0, 1.16988, 0, -0.540698, 0, 1.03743, -8.18938, -3.43853, 9.30073)
+
+[node name="Tree_003_023" parent="Props/Arboles/Tree_003" instance=ExtResource("16_5pawl")]
+transform = Transform3D(1.03743, 0, 0.540698, 0, 1.16988, 0, -0.540698, 0, 1.03743, -15.0595, -2.11943, 12.4293)
+
+[node name="Tree_003_024" parent="Props/Arboles/Tree_003" instance=ExtResource("16_5pawl")]
+transform = Transform3D(1.03743, 0, 0.540698, 0, 1.16988, 0, -0.540698, 0, 1.03743, -12.8791, -2.95522, 10.7645)
+
+[node name="Tree_003_165" parent="Props/Arboles/Tree_003" instance=ExtResource("16_5pawl")]
+transform = Transform3D(1.03743, 0, 0.540698, 0, 1.16988, 0, -0.540698, 0, 1.03743, -12.7353, -3.0853, 8.93769)
+
+[node name="Tree_003_166" parent="Props/Arboles/Tree_003" instance=ExtResource("16_5pawl")]
+transform = Transform3D(1.03743, 0, 0.540698, 0, 1.16988, 0, -0.540698, 0, 1.03743, -13.3464, -3.25627, 6.50471)
+
+[node name="Tree_003_167" parent="Props/Arboles/Tree_003" instance=ExtResource("16_5pawl")]
+transform = Transform3D(1.03743, 0, 0.540698, 0, 1.16988, 0, -0.540698, 0, 1.03743, -11.2743, -3.3223, 7.93868)
+
+[node name="Tree_003_219" parent="Props/Arboles/Tree_003" instance=ExtResource("16_5pawl")]
+transform = Transform3D(1.03743, 0, 0.540698, 0, 1.16988, 0, -0.540698, 0, 1.03743, -13.6578, -2.87271, 8.63254)
+
+[node name="Tree_003_220" parent="Props/Arboles/Tree_003" instance=ExtResource("16_5pawl")]
+transform = Transform3D(1.03743, 0, 0.540698, 0, 1.16988, 0, -0.540698, 0, 1.03743, -13.9239, -3.03647, 7.23211)
+
+[node name="Tree_003_221" parent="Props/Arboles/Tree_003" instance=ExtResource("16_5pawl")]
+transform = Transform3D(1.03743, 0, 0.540698, 0, 1.16988, 0, -0.540698, 0, 1.03743, -11.5323, -3.22984, 10.0039)
+
+[node name="Tree_003_168" parent="Props/Arboles/Tree_003" instance=ExtResource("16_5pawl")]
+transform = Transform3D(1.03743, 0, 0.540698, 0, 1.16988, 0, -0.540698, 0, 1.03743, -11.815, -3.32116, 6.90125)
+
+[node name="Tree_003_025" parent="Props/Arboles/Tree_003" instance=ExtResource("16_5pawl")]
+transform = Transform3D(1.03743, 0, 0.540698, 0, 1.16988, 0, -0.540698, 0, 1.03743, -12.0972, -2.58652, 12.7281)
+
+[node name="Tree_003_026" parent="Props/Arboles/Tree_003" instance=ExtResource("16_5pawl")]
+transform = Transform3D(1.03743, 0, 0.540698, 0, 1.16988, 0, -0.540698, 0, 1.03743, -5.61341, -3.0999, 16.904)
+
+[node name="Tree_003_029" parent="Props/Arboles/Tree_003" instance=ExtResource("16_5pawl")]
+transform = Transform3D(1.03714, 0.00074666, 0.541271, -0.000280467, 1.16988, -0.00107641, -0.541271, 0.00082451, 1.03713, -6.77306, -3.2945, 15.1695)
+
+[node name="Tree_003_067" parent="Props/Arboles/Tree_003" instance=ExtResource("16_5pawl")]
+transform = Transform3D(1.03714, 0.00074666, 0.541271, -0.000280467, 1.16988, -0.00107641, -0.541271, 0.00082451, 1.03713, -8.48418, -2.47259, 17.2179)
+
+[node name="Tree_003_027" parent="Props/Arboles/Tree_003" instance=ExtResource("16_5pawl")]
+transform = Transform3D(0.727849, 0, 0.379346, 0, 0.820772, 0, -0.379346, 0, 0.727849, -3.44747, -3.28551, 15.0496)
+
+[node name="Tree_003_045" parent="Props/Arboles/Tree_003" instance=ExtResource("16_5pawl")]
+transform = Transform3D(1.03743, 0, 0.540698, 0, 1.16988, 0, -0.540698, 0, 1.03743, 0.84796, -3.28551, 15.908)
+
+[node name="Tree_003_046" parent="Props/Arboles/Tree_003" instance=ExtResource("16_5pawl")]
+transform = Transform3D(1.03743, 0, 0.540698, 0, 1.16988, 0, -0.540698, 0, 1.03743, -0.769172, -3.28551, 17.7776)
+
+[node name="Tree_003_047" parent="Props/Arboles/Tree_003" instance=ExtResource("16_5pawl")]
+transform = Transform3D(1.03792, -0.000499259, 0.539747, -0.000525792, 1.16988, 0.00209309, -0.539747, -0.00209958, 1.03792, 5.88729, -3.18475, 11.5978)
+
+[node name="Tree_003_051" parent="Props/Arboles/Tree_003" instance=ExtResource("16_5pawl")]
+transform = Transform3D(1.03792, -0.000499259, 0.539747, -0.000525792, 1.16988, 0.00209309, -0.539747, -0.00209958, 1.03792, 15.2053, -3.5461, 5.22434)
+
+[node name="Tree_003_117" parent="Props/Arboles/Tree_003" instance=ExtResource("16_5pawl")]
+transform = Transform3D(1.03792, -0.000499259, 0.539747, -0.000525792, 1.16988, 0.00209309, -0.539747, -0.00209958, 1.03792, 13.8874, -3.54455, 6.40135)
+
+[node name="Tree_003_118" parent="Props/Arboles/Tree_003" instance=ExtResource("16_5pawl")]
+transform = Transform3D(1.03792, -0.000499259, 0.539747, -0.000525792, 1.16988, 0.00209309, -0.539747, -0.00209958, 1.03792, 16.431, -3.5475, 4.15042)
+
+[node name="Tree_003_119" parent="Props/Arboles/Tree_003" instance=ExtResource("16_5pawl")]
+transform = Transform3D(1.03792, -0.000499259, 0.539747, -0.000525792, 1.16988, 0.00209309, -0.539747, -0.00209958, 1.03792, 13.8154, -3.54855, 4.19199)
+
+[node name="Tree_003_120" parent="Props/Arboles/Tree_003" instance=ExtResource("16_5pawl")]
+transform = Transform3D(1.03792, -0.000499259, 0.539747, -0.000525792, 1.16988, 0.00209309, -0.539747, -0.00209958, 1.03792, 12.4451, -3.54774, 4.96735)
+
+[node name="Tree_003_121" parent="Props/Arboles/Tree_003" instance=ExtResource("16_5pawl")]
+transform = Transform3D(1.03792, -0.000499259, 0.539747, -0.000525792, 1.16988, 0.00209309, -0.539747, -0.00209958, 1.03792, 3.5185, -2.7767, 3.01482)
+
+[node name="Tree_003_129" parent="Props/Arboles/Tree_003" instance=ExtResource("16_5pawl")]
+transform = Transform3D(1.03792, -0.000499259, 0.539747, -0.000525792, 1.16988, 0.00209309, -0.539747, -0.00209958, 1.03792, 6.63456, -2.77279, 4.45517)
+
+[node name="Tree_003_130" parent="Props/Arboles/Tree_003" instance=ExtResource("16_5pawl")]
+transform = Transform3D(1.03792, -0.000499259, 0.539747, -0.000525792, 1.16988, 0.00209309, -0.539747, -0.00209958, 1.03792, 7.63091, -2.77802, 1.29983)
+
+[node name="Tree_003_127" parent="Props/Arboles/Tree_003" instance=ExtResource("16_5pawl")]
+transform = Transform3D(1.03792, -0.000499259, 0.539747, -0.000525792, 1.16988, 0.00209309, -0.539747, -0.00209958, 1.03792, 1.69812, -2.53113, 2.33121)
+
+[node name="Tree_003_206" parent="Props/Arboles/Tree_003" instance=ExtResource("16_5pawl")]
+transform = Transform3D(1.03792, -0.000499259, 0.539747, -0.000525792, 1.16988, 0.00209309, -0.539747, -0.00209958, 1.03792, -3.10429, -3.3706, 8.12409)
+
+[node name="Tree_003_128" parent="Props/Arboles/Tree_003" instance=ExtResource("16_5pawl")]
+transform = Transform3D(1.03792, -0.000499259, 0.539747, -0.000525792, 1.16988, 0.00209309, -0.539747, -0.00209958, 1.03792, 2.19628, -2.50439, 0.753489)
+
+[node name="Tree_003_048" parent="Props/Arboles/Tree_003" instance=ExtResource("16_5pawl")]
+transform = Transform3D(1.03743, 0, 0.540698, 0, 1.16988, 0, -0.540698, 0, 1.03743, 2.6517, -3.28551, 19.0312)
+
+[node name="Tree_003_191" parent="Props/Arboles/Tree_003" instance=ExtResource("16_5pawl")]
+transform = Transform3D(1.03743, 0, 0.540698, 0, 1.16988, 0, -0.540698, 0, 1.03743, 4.15799, -3.28551, 20.9089)
+
+[node name="Tree_003_192" parent="Props/Arboles/Tree_003" instance=ExtResource("16_5pawl")]
+transform = Transform3D(1.03743, 0, 0.540698, 0, 1.16988, 0, -0.540698, 0, 1.03743, 3.61869, -3.28551, 22.1286)
+
+[node name="Tree_003_193" parent="Props/Arboles/Tree_003" instance=ExtResource("16_5pawl")]
+transform = Transform3D(1.03743, 0, 0.540698, 0, 1.16988, 0, -0.540698, 0, 1.03743, 3.31859, -3.28551, 21.0821)
+
+[node name="Tree_003_194" parent="Props/Arboles/Tree_003" instance=ExtResource("16_5pawl")]
+transform = Transform3D(1.03743, 0, 0.540698, 0, 1.16988, 0, -0.540698, 0, 1.03743, 4.67812, -3.28551, 21.0541)
+
+[node name="Tree_003_068" parent="Props/Arboles/Tree_003" instance=ExtResource("16_5pawl")]
+transform = Transform3D(1.03743, 0, 0.540698, 0, 1.16988, 0, -0.540698, 0, 1.03743, 16.8174, -3.51097, 27.7514)
+
+[node name="Tree_003_069" parent="Props/Arboles/Tree_003" instance=ExtResource("16_5pawl")]
+transform = Transform3D(1.03743, 0, 0.540698, 0, 1.16988, 0, -0.540698, 0, 1.03743, 17.9266, -3.76703, 27.9662)
+
+[node name="Tree_003_070" parent="Props/Arboles/Tree_003" instance=ExtResource("16_5pawl")]
+transform = Transform3D(1.03743, 0, 0.540698, 0, 1.16988, 0, -0.540698, 0, 1.03743, 16.646, -3.75174, 28.7361)
+
+[node name="Tree_003_078" parent="Props/Arboles/Tree_003" instance=ExtResource("16_5pawl")]
+transform = Transform3D(1.03743, 0, 0.540698, 0, 1.16988, 0, -0.540698, 0, 1.03743, 14.803, -3.38853, 25.5464)
+
+[node name="Tree_003_079" parent="Props/Arboles/Tree_003" instance=ExtResource("16_5pawl")]
+transform = Transform3D(1.03743, 0, 0.540698, 0, 1.16988, 0, -0.540698, 0, 1.03743, 14.429, -3.38853, 26.8109)
+
+[node name="Tree_003_080" parent="Props/Arboles/Tree_003" instance=ExtResource("16_5pawl")]
+transform = Transform3D(1.03743, 0, 0.540698, 0, 1.16988, 0, -0.540698, 0, 1.03743, 13.7834, -3.23544, 23.7972)
+
+[node name="Tree_003_083" parent="Props/Arboles/Tree_003" instance=ExtResource("16_5pawl")]
+transform = Transform3D(1.03743, 0, 0.540698, 0, 1.16988, 0, -0.540698, 0, 1.03743, 12.2236, -3.48584, 26.2634)
+
+[node name="Tree_003_084" parent="Props/Arboles/Tree_003" instance=ExtResource("16_5pawl")]
+transform = Transform3D(1.03743, 0, 0.540698, 0, 1.16988, 0, -0.540698, 0, 1.03743, 13.4615, -3.55119, 27.9409)
+
+[node name="Tree_003_085" parent="Props/Arboles/Tree_003" instance=ExtResource("16_5pawl")]
+transform = Transform3D(1.03743, 0, 0.540698, 0, 1.16988, 0, -0.540698, 0, 1.03743, 12.9984, -3.23545, 25.373)
+
+[node name="Tree_003_086" parent="Props/Arboles/Tree_003" instance=ExtResource("16_5pawl")]
+transform = Transform3D(1.03743, 0, 0.540698, 0, 1.16988, 0, -0.540698, 0, 1.03743, 10.6129, -3.23545, 26.9831)
+
+[node name="Tree_003_169" parent="Props/Arboles/Tree_003" instance=ExtResource("16_5pawl")]
+transform = Transform3D(1.03743, 0, 0.540698, 0, 1.16988, 0, -0.540698, 0, 1.03743, 11.3664, -3.23545, 26.8446)
+
+[node name="Tree_003_170" parent="Props/Arboles/Tree_003" instance=ExtResource("16_5pawl")]
+transform = Transform3D(1.03743, 0, 0.540698, 0, 1.16988, 0, -0.540698, 0, 1.03743, 11.393, -3.23545, 26.0525)
+
+[node name="Tree_003_171" parent="Props/Arboles/Tree_003" instance=ExtResource("16_5pawl")]
+transform = Transform3D(1.03743, 0, 0.540698, 0, 1.16988, 0, -0.540698, 0, 1.03743, 10.8402, -3.23545, 24.9459)
+
+[node name="Tree_003_172" parent="Props/Arboles/Tree_003" instance=ExtResource("16_5pawl")]
+transform = Transform3D(1.03743, 0, 0.540698, 0, 1.16988, 0, -0.540698, 0, 1.03743, 10.8592, -3.23545, 23.5395)
+
+[node name="Tree_003_187" parent="Props/Arboles/Tree_003" instance=ExtResource("16_5pawl")]
+transform = Transform3D(1.03743, 0, 0.540698, 0, 1.16988, 0, -0.540698, 0, 1.03743, 11.0141, -3.23545, 22.2962)
+
+[node name="Tree_003_188" parent="Props/Arboles/Tree_003" instance=ExtResource("16_5pawl")]
+transform = Transform3D(1.03743, 0, 0.540698, 0, 1.16988, 0, -0.540698, 0, 1.03743, 9.70563, -3.23545, 22.0514)
+
+[node name="Tree_003_189" parent="Props/Arboles/Tree_003" instance=ExtResource("16_5pawl")]
+transform = Transform3D(1.03743, 0, 0.540698, 0, 1.16988, 0, -0.540698, 0, 1.03743, 8.62424, -3.23545, 19.9766)
+
+[node name="Tree_003_190" parent="Props/Arboles/Tree_003" instance=ExtResource("16_5pawl")]
+transform = Transform3D(1.03743, 0, 0.540698, 0, 1.16988, 0, -0.540698, 0, 1.03743, 6.36744, -3.23545, 19.3948)
+
+[node name="Tree_003_173" parent="Props/Arboles/Tree_003" instance=ExtResource("16_5pawl")]
+transform = Transform3D(1.03743, 0, 0.540698, 0, 1.16988, 0, -0.540698, 0, 1.03743, 9.74265, -3.23545, 24.3997)
+
+[node name="Tree_003_174" parent="Props/Arboles/Tree_003" instance=ExtResource("16_5pawl")]
+transform = Transform3D(1.03743, 0, 0.540698, 0, 1.16988, 0, -0.540698, 0, 1.03743, 10.2578, -3.23545, 26.2647)
+
+[node name="Tree_003_175" parent="Props/Arboles/Tree_003" instance=ExtResource("16_5pawl")]
+transform = Transform3D(1.03743, 0, 0.540698, 0, 1.16988, 0, -0.540698, 0, 1.03743, 9.01155, -3.23545, 25.9142)
+
+[node name="Tree_003_176" parent="Props/Arboles/Tree_003" instance=ExtResource("16_5pawl")]
+transform = Transform3D(1.03743, 0, 0.540698, 0, 1.16988, 0, -0.540698, 0, 1.03743, 8.28669, -3.23545, 24.5844)
+
+[node name="Tree_003_177" parent="Props/Arboles/Tree_003" instance=ExtResource("16_5pawl")]
+transform = Transform3D(1.03743, 0, 0.540698, 0, 1.16988, 0, -0.540698, 0, 1.03743, 8.36071, -3.23545, 23.5361)
+
+[node name="Tree_003_178" parent="Props/Arboles/Tree_003" instance=ExtResource("16_5pawl")]
+transform = Transform3D(1.03743, 0, 0.540698, 0, 1.16988, 0, -0.540698, 0, 1.03743, 6.70083, -3.23545, 24.6455)
+
+[node name="Tree_003_179" parent="Props/Arboles/Tree_003" instance=ExtResource("16_5pawl")]
+transform = Transform3D(1.03743, 0, 0.540698, 0, 1.16988, 0, -0.540698, 0, 1.03743, 6.71327, -3.23545, 26.1548)
+
+[node name="Tree_003_180" parent="Props/Arboles/Tree_003" instance=ExtResource("16_5pawl")]
+transform = Transform3D(1.03743, 0, 0.540698, 0, 1.16988, 0, -0.540698, 0, 1.03743, 8.76795, -3.23545, 26.6917)
+
+[node name="Tree_003_181" parent="Props/Arboles/Tree_003" instance=ExtResource("16_5pawl")]
+transform = Transform3D(1.03743, 0, 0.540698, 0, 1.16988, 0, -0.540698, 0, 1.03743, 8.18329, -3.23545, 23.0387)
+
+[node name="Tree_003_182" parent="Props/Arboles/Tree_003" instance=ExtResource("16_5pawl")]
+transform = Transform3D(1.03743, 0, 0.540698, 0, 1.16988, 0, -0.540698, 0, 1.03743, 8.77521, -3.23545, 22.0234)
+
+[node name="Tree_003_183" parent="Props/Arboles/Tree_003" instance=ExtResource("16_5pawl")]
+transform = Transform3D(1.03743, 0, 0.540698, 0, 1.16988, 0, -0.540698, 0, 1.03743, 6.70035, -3.23545, 23.1048)
+
+[node name="Tree_003_184" parent="Props/Arboles/Tree_003" instance=ExtResource("16_5pawl")]
+transform = Transform3D(1.03743, 0, 0.540698, 0, 1.16988, 0, -0.540698, 0, 1.03743, 7.1808, -3.23545, 21.1089)
+
+[node name="Tree_003_185" parent="Props/Arboles/Tree_003" instance=ExtResource("16_5pawl")]
+transform = Transform3D(1.03743, 0, 0.540698, 0, 1.16988, 0, -0.540698, 0, 1.03743, 4.60921, -3.23545, 23.7684)
+
+[node name="Tree_003_186" parent="Props/Arboles/Tree_003" instance=ExtResource("16_5pawl")]
+transform = Transform3D(1.03743, 0, 0.540698, 0, 1.16988, 0, -0.540698, 0, 1.03743, 4.02571, -3.23545, 24.9491)
+
+[node name="Tree_003_087" parent="Props/Arboles/Tree_003" instance=ExtResource("16_5pawl")]
+transform = Transform3D(1.03743, 0, 0.540698, 0, 1.16988, 0, -0.540698, 0, 1.03743, 11.6979, -3.69776, 29.5998)
+
+[node name="Tree_003_088" parent="Props/Arboles/Tree_003" instance=ExtResource("16_5pawl")]
+transform = Transform3D(1.03743, 0, 0.540698, 0, 1.16988, 0, -0.540698, 0, 1.03743, 15.2184, -3.72213, 28.9669)
+
+[node name="Tree_003_244" parent="Props/Arboles/Tree_003" instance=ExtResource("16_5pawl")]
+transform = Transform3D(1.03743, 0, 0.540698, 0, 1.16988, 0, -0.540698, 0, 1.03743, 20.9176, -4.31668, 31.0765)
+
+[node name="Tree_003_245" parent="Props/Arboles/Tree_003" instance=ExtResource("16_5pawl")]
+transform = Transform3D(1.03743, 0, 0.540698, 0, 1.16988, 0, -0.540698, 0, 1.03743, 21.9915, -4.17247, 29.5918)
+
+[node name="Tree_003_089" parent="Props/Arboles/Tree_003" instance=ExtResource("16_5pawl")]
+transform = Transform3D(1.03743, 0, 0.540698, 0, 1.16988, 0, -0.540698, 0, 1.03743, 14.3825, -3.77824, 30.2948)
+
+[node name="Tree_003_241" parent="Props/Arboles/Tree_003" instance=ExtResource("16_5pawl")]
+transform = Transform3D(1.03743, 0, 0.540698, 0, 1.16988, 0, -0.540698, 0, 1.03743, 20.623, -3.77824, 29.6265)
+
+[node name="Tree_003_242" parent="Props/Arboles/Tree_003" instance=ExtResource("16_5pawl")]
+transform = Transform3D(1.03743, 0, 0.540698, 0, 1.16988, 0, -0.540698, 0, 1.03743, 21.8002, -3.77824, 27.043)
+
+[node name="Tree_003_243" parent="Props/Arboles/Tree_003" instance=ExtResource("16_5pawl")]
+transform = Transform3D(1.03743, 0, 0.540698, 0, 1.16988, 0, -0.540698, 0, 1.03743, 22.3848, -4.39569, 30.696)
+
+[node name="Tree_003_090" parent="Props/Arboles/Tree_003" instance=ExtResource("16_5pawl")]
+transform = Transform3D(1.03743, 0, 0.540698, 0, 1.16988, 0, -0.540698, 0, 1.03743, 10.5556, -3.23545, 28.3757)
+
+[node name="Tree_003_091" parent="Props/Arboles/Tree_003" instance=ExtResource("16_5pawl")]
+transform = Transform3D(1.03743, 0, 0.540698, 0, 1.16988, 0, -0.540698, 0, 1.03743, 10.5996, -3.75838, 30.9912)
+
+[node name="Tree_003_092" parent="Props/Arboles/Tree_003" instance=ExtResource("16_5pawl")]
+transform = Transform3D(1.03743, 0, 0.540698, 0, 1.16988, 0, -0.540698, 0, 1.03743, 9.61622, -3.23545, 25.3263)
+
+[node name="Tree_003_081" parent="Props/Arboles/Tree_003" instance=ExtResource("16_5pawl")]
+transform = Transform3D(1.03743, 0, 0.540698, 0, 1.16988, 0, -0.540698, 0, 1.03743, 15.2603, -3.23084, 21.1285)
+
+[node name="Tree_003_082" parent="Props/Arboles/Tree_003" instance=ExtResource("16_5pawl")]
+transform = Transform3D(1.03743, 0, 0.540698, 0, 1.16988, 0, -0.540698, 0, 1.03743, 17.0388, -3.38853, 20.5509)
+
+[node name="Tree_003_122" parent="Props/Arboles/Tree_003" instance=ExtResource("16_5pawl")]
+transform = Transform3D(1.03743, 0, 0.540698, 0, 1.16988, 0, -0.540698, 0, 1.03743, 28.1531, -4.08792, 21.4057)
+
+[node name="Tree_003_123" parent="Props/Arboles/Tree_003" instance=ExtResource("16_5pawl")]
+transform = Transform3D(1.03743, 0, 0.540698, 0, 1.16988, 0, -0.540698, 0, 1.03743, 28.3739, -3.85891, 18.7924)
+
+[node name="Tree_003_124" parent="Props/Arboles/Tree_003" instance=ExtResource("16_5pawl")]
+transform = Transform3D(1.03743, 0, 0.540698, 0, 1.16988, 0, -0.540698, 0, 1.03743, 26.2046, -3.69437, 20.0533)
+
+[node name="Tree_003_125" parent="Props/Arboles/Tree_003" instance=ExtResource("16_5pawl")]
+transform = Transform3D(1.03743, 0, 0.540698, 0, 1.16988, 0, -0.540698, 0, 1.03743, 26.1084, -3.28186, 17.033)
+
+[node name="Tree_003_126" parent="Props/Arboles/Tree_003" instance=ExtResource("16_5pawl")]
+transform = Transform3D(1.03743, 0, 0.540698, 0, 1.16988, 0, -0.540698, 0, 1.03743, 27.1018, -2.38657, 13.8767)
+
+[node name="Tree_003_103" parent="Props/Arboles/Tree_003" instance=ExtResource("16_5pawl")]
+transform = Transform3D(1.03743, 0, 0.540698, 0, 1.16988, 0, -0.540698, 0, 1.03743, 17.4305, -3.38853, 16.3996)
+
+[node name="Tree_003_104" parent="Props/Arboles/Tree_003" instance=ExtResource("16_5pawl")]
+transform = Transform3D(1.03743, 0, 0.540698, 0, 1.16988, 0, -0.540698, 0, 1.03743, 16.7964, -3.38853, 14.6242)
+
+[node name="Tree_003_105" parent="Props/Arboles/Tree_003" instance=ExtResource("16_5pawl")]
+transform = Transform3D(1.03743, 0, 0.540698, 0, 1.16988, 0, -0.540698, 0, 1.03743, 18.2489, -3.38853, 15.1891)
+
+[node name="Tree_003_106" parent="Props/Arboles/Tree_003" instance=ExtResource("16_5pawl")]
+transform = Transform3D(1.03743, 0, 0.540698, 0, 1.16988, 0, -0.540698, 0, 1.03743, 18.8778, -3.38853, 17.0521)
+
+[node name="Tree_003_107" parent="Props/Arboles/Tree_003" instance=ExtResource("16_5pawl")]
+transform = Transform3D(1.03743, 0, 0.540698, 0, 1.16988, 0, -0.540698, 0, 1.03743, 19.0307, -3.38853, 14.1226)
+
+[node name="Tree_003_108" parent="Props/Arboles/Tree_003" instance=ExtResource("16_5pawl")]
+transform = Transform3D(1.03743, 0, 0.540698, 0, 1.16988, 0, -0.540698, 0, 1.03743, 16.0279, -3.38853, 15.0916)
+
+[node name="Tree_003_116" parent="Props/Arboles/Tree_003" instance=ExtResource("16_5pawl")]
+transform = Transform3D(1.03743, 0, 0.540698, 0, 1.16988, 0, -0.540698, 0, 1.03743, 15.9741, -3.38853, 14.3162)
+
+[node name="Tree_003_109" parent="Props/Arboles/Tree_003" instance=ExtResource("16_5pawl")]
+transform = Transform3D(1.03743, 0, 0.540698, 0, 1.16988, 0, -0.540698, 0, 1.03743, 15.2559, -3.38853, 15.7367)
+
+[node name="Tree_003_110" parent="Props/Arboles/Tree_003" instance=ExtResource("16_5pawl")]
+transform = Transform3D(1.03743, 0, 0.540698, 0, 1.16988, 0, -0.540698, 0, 1.03743, 16.1134, -3.38853, 16.4215)
+
+[node name="Tree_003_111" parent="Props/Arboles/Tree_003" instance=ExtResource("16_5pawl")]
+transform = Transform3D(1.03743, 0, 0.540698, 0, 1.16988, 0, -0.540698, 0, 1.03743, 17.0959, -3.38853, 17.0357)
+
+[node name="Tree_003_112" parent="Props/Arboles/Tree_003" instance=ExtResource("16_5pawl")]
+transform = Transform3D(1.03743, 0, 0.540698, 0, 1.16988, 0, -0.540698, 0, 1.03743, 17.4555, -3.38853, 15.5254)
+
+[node name="Tree_003_113" parent="Props/Arboles/Tree_003" instance=ExtResource("16_5pawl")]
+transform = Transform3D(1.03743, 0, 0.540698, 0, 1.16988, 0, -0.540698, 0, 1.03743, 12.4971, -3.2568, 13.133)
+
+[node name="Tree_003_114" parent="Props/Arboles/Tree_003" instance=ExtResource("16_5pawl")]
+transform = Transform3D(1.03743, 0, 0.540698, 0, 1.16988, 0, -0.540698, 0, 1.03743, 15.8818, -3.38853, 12.1647)
+
+[node name="Tree_003_115" parent="Props/Arboles/Tree_003" instance=ExtResource("16_5pawl")]
+transform = Transform3D(1.03743, 0, 0.540698, 0, 1.16988, 0, -0.540698, 0, 1.03743, 18.1464, -3.38853, 13.4744)
+
+[node name="Tree_003_071" parent="Props/Arboles/Tree_003" instance=ExtResource("16_5pawl")]
+transform = Transform3D(1.03743, 0, 0.540698, 0, 1.16988, 0, -0.540698, 0, 1.03743, 16.0645, -3.49727, 27.6237)
+
+[node name="Tree_003_072" parent="Props/Arboles/Tree_003" instance=ExtResource("16_5pawl")]
+transform = Transform3D(1.03743, 0, 0.540698, 0, 1.16988, 0, -0.540698, 0, 1.03743, 17.0906, -3.51142, 26.9961)
+
+[node name="Tree_003_073" parent="Props/Arboles/Tree_003" instance=ExtResource("16_5pawl")]
+transform = Transform3D(1.03741, 0.000160853, 0.540731, -0.000345826, 1.16988, 0.00031548, -0.540731, -0.000439602, 1.03741, 19.0659, -3.55789, 26.4979)
+
+[node name="Tree_003_074" parent="Props/Arboles/Tree_003" instance=ExtResource("16_5pawl")]
+transform = Transform3D(1.03741, 0.000160853, 0.540731, -0.000345826, 1.16988, 0.00031548, -0.540731, -0.000439602, 1.03741, 20.1751, -3.65127, 26.7127)
+
+[node name="Tree_003_236" parent="Props/Arboles/Tree_003" instance=ExtResource("16_5pawl")]
+transform = Transform3D(1.03741, 0.000160853, 0.540731, -0.000345826, 1.16988, 0.00031548, -0.540731, -0.000439602, 1.03741, 19.9547, -4.11184, 30.3983)
+
+[node name="Tree_003_237" parent="Props/Arboles/Tree_003" instance=ExtResource("16_5pawl")]
+transform = Transform3D(1.03741, 0.000160853, 0.540731, -0.000345826, 1.16988, 0.00031548, -0.540731, -0.000439602, 1.03741, 20.4401, -4.11248, 28.8732)
+
+[node name="Tree_003_238" parent="Props/Arboles/Tree_003" instance=ExtResource("16_5pawl")]
+transform = Transform3D(1.03741, 0.000160853, 0.540731, -0.000345826, 1.16988, 0.00031548, -0.540731, -0.000439602, 1.03741, 18.2335, -3.94935, 29.4682)
+
+[node name="Tree_003_240" parent="Props/Arboles/Tree_003" instance=ExtResource("16_5pawl")]
+transform = Transform3D(1.03741, 0.000160853, 0.540731, -0.000345826, 1.16988, 0.00031548, -0.540731, -0.000439602, 1.03741, 19.0451, -4.01926, 31.5459)
+
+[node name="Tree_003_239" parent="Props/Arboles/Tree_003" instance=ExtResource("16_5pawl")]
+transform = Transform3D(1.03741, 0.000160853, 0.540731, -0.000345826, 1.16988, 0.00031548, -0.540731, -0.000439602, 1.03741, 17.1126, -4.11124, 30.9598)
+
+[node name="Tree_003_075" parent="Props/Arboles/Tree_003" instance=ExtResource("16_5pawl")]
+transform = Transform3D(1.03741, 0.000160853, 0.540731, -0.000345826, 1.16988, 0.00031548, -0.540731, -0.000439602, 1.03741, 18.8946, -3.73269, 27.4827)
+
+[node name="Tree_003_076" parent="Props/Arboles/Tree_003" instance=ExtResource("16_5pawl")]
+transform = Transform3D(1.03741, 0.000160853, 0.540731, -0.000345826, 1.16988, 0.00031548, -0.540731, -0.000439602, 1.03741, 18.313, -3.44555, 26.3702)
+
+[node name="Tree_003_077" parent="Props/Arboles/Tree_003" instance=ExtResource("16_5pawl")]
+transform = Transform3D(1.03741, 0.000160853, 0.540731, -0.000345826, 1.16988, 0.00031548, -0.540731, -0.000439602, 1.03741, 19.3392, -3.40231, 25.7426)
+
+[node name="Tree_003_049" parent="Props/Arboles/Tree_003" instance=ExtResource("16_5pawl")]
+transform = Transform3D(1.03743, 0, 0.540698, 0, 1.16988, 0, -0.540698, 0, 1.03743, 3.03474, -3.28551, 16.3644)
+
+[node name="Tree_003_050" parent="Props/Arboles/Tree_003" instance=ExtResource("16_5pawl")]
+transform = Transform3D(1.03743, 0, 0.540698, 0, 1.16988, 0, -0.540698, 0, 1.03743, -0.153305, -3.28551, 14.8134)
+
+[node name="Tree_003_052" parent="Props/Arboles/Tree_003" instance=ExtResource("16_5pawl")]
+transform = Transform3D(1.03743, 0, 0.540698, 0, 1.16988, 0, -0.540698, 0, 1.03743, -1.99389, -3.28551, 16.2861)
+
+[node name="Tree_003_053" parent="Props/Arboles/Tree_003" instance=ExtResource("16_5pawl")]
+transform = Transform3D(1.03743, 0, 0.540698, 0, 1.16988, 0, -0.540698, 0, 1.03743, -4.16301, -2.99408, 18.1775)
+
+[node name="Tree_003_055" parent="Props/Arboles/Tree_003" instance=ExtResource("16_5pawl")]
+transform = Transform3D(1.24029, 0, 0.646424, 0, 1.39864, 0, -0.646424, 0, 1.24029, -2.83601, -3.28551, 18.5907)
+
+[node name="Tree_003_056" parent="Props/Arboles/Tree_003" instance=ExtResource("16_5pawl")]
+transform = Transform3D(1.03743, 0, 0.540698, 0, 1.16988, 0, -0.540698, 0, 1.03743, -2.16326, -3.28551, 20.0522)
+
+[node name="Tree_003_057" parent="Props/Arboles/Tree_003" instance=ExtResource("16_5pawl")]
+transform = Transform3D(1.03792, -0.000499259, 0.539747, -0.000525792, 1.16988, 0.00209309, -0.539747, -0.00209958, 1.03792, 0.738481, -3.1665, 6.98169)
+
+[node name="Tree_003_058" parent="Props/Arboles/Tree_003" instance=ExtResource("16_5pawl")]
+transform = Transform3D(0.846239, 0, 0.44105, 0, 0.954277, 0, -0.44105, 0, 0.846239, 2.76455, -3.20113, 18.0201)
+
+[node name="Tree_003_059" parent="Props/Arboles/Tree_003" instance=ExtResource("16_5pawl")]
+transform = Transform3D(1.18343, 0, 0.616789, 0, 1.33452, 0, -0.616789, 0, 1.18343, 1.81013, -3.28551, 17.0524)
+
+[node name="Tree_003_060" parent="Props/Arboles/Tree_003" instance=ExtResource("16_5pawl")]
+transform = Transform3D(0.914408, 0, 0.476579, 0, 1.03115, 0, -0.476579, 0, 0.914408, -0.210836, -3.28551, 16.6745)
+
+[node name="Tree_003_061" parent="Props/Arboles/Tree_003" instance=ExtResource("16_5pawl")]
+transform = Transform3D(1.03743, 0, 0.540698, 0, 1.16988, 0, -0.540698, 0, 1.03743, 1.53059, -3.28551, 14.7262)
+
+[node name="Tree_003_062" parent="Props/Arboles/Tree_003" instance=ExtResource("16_5pawl")]
+transform = Transform3D(1.03743, 0, 0.540698, 0, 1.16988, 0, -0.540698, 0, 1.03743, 3.22826, -3.28551, 17.2988)
+
+[node name="Tree_003_063" parent="Props/Arboles/Tree_003" instance=ExtResource("16_5pawl")]
+transform = Transform3D(1.03743, 0, 0.540698, 0, 1.16988, 0, -0.540698, 0, 1.03743, -3.581, -3.28551, 16.89)
+
+[node name="Tree_003_064" parent="Props/Arboles/Tree_003" instance=ExtResource("16_5pawl")]
+transform = Transform3D(1.26104, 0, 0.65724, 0, 1.42204, 0, -0.65724, 0, 1.26104, -1.05502, -3.28551, 15.5815)
+
+[node name="Tree_003_065" parent="Props/Arboles/Tree_003" instance=ExtResource("16_5pawl")]
+transform = Transform3D(1.03743, 0, 0.540698, 0, 1.16988, 0, -0.540698, 0, 1.03743, -2.81423, -3.28551, 13.423)
+
+[node name="Tree_003_066" parent="Props/Arboles/Tree_003" instance=ExtResource("16_5pawl")]
+transform = Transform3D(1.03743, 0, 0.540698, 0, 1.16988, 0, -0.540698, 0, 1.03743, -2.96978, -2.4056, 1.49541)
+
+[node name="Tree_003_044" parent="Props/Arboles/Tree_003" instance=ExtResource("16_5pawl")]
+transform = Transform3D(1.03743, 0, 0.540698, 0, 1.16988, 0, -0.540698, 0, 1.03743, 1.09425, -3.28551, 18.0068)
+
+[node name="Tree_003_054" parent="Props/Arboles/Tree_003" instance=ExtResource("16_5pawl")]
+transform = Transform3D(1.03743, 0, 0.540698, 0, 1.16988, 0, -0.540698, 0, 1.03743, -0.380959, -3.28551, 19.2057)
+
+[node name="Tree_003_093" parent="Props/Arboles/Tree_003" instance=ExtResource("16_5pawl")]
+transform = Transform3D(1.03743, 0, 0.540698, 0, 1.16988, 0, -0.540698, 0, 1.03743, -0.73486, -3.28551, 20.2889)
+
+[node name="Tree_003_094" parent="Props/Arboles/Tree_003" instance=ExtResource("16_5pawl")]
+transform = Transform3D(1.03743, 0, 0.540698, 0, 1.16988, 0, -0.540698, 0, 1.03743, 1.48437, -3.19893, 20.5175)
+
+[node name="Tree_003_095" parent="Props/Arboles/Tree_003" instance=ExtResource("16_5pawl")]
+transform = Transform3D(1.03743, 0, 0.540698, 0, 1.16988, 0, -0.540698, 0, 1.03743, 1.44813, -3.19893, 18.8353)
+
+[node name="Tree_003_096" parent="Props/Arboles/Tree_003" instance=ExtResource("16_5pawl")]
+transform = Transform3D(1.03743, 0, 0.540698, 0, 1.16988, 0, -0.540698, 0, 1.03743, -2.61525, -3.19893, 21.7083)
+
+[node name="Tree_003_097" parent="Props/Arboles/Tree_003" instance=ExtResource("16_5pawl")]
+transform = Transform3D(1.03743, 0, 0.540698, 0, 1.16988, 0, -0.540698, 0, 1.03743, -1.23812, -3.19893, 22.2283)
+
+[node name="Tree_003_131" parent="Props/Arboles/Tree_003" instance=ExtResource("16_5pawl")]
+transform = Transform3D(1.03743, 0, 0.540698, 0, 1.16988, 0, -0.540698, 0, 1.03743, -6.28428, -3.5224, 28.4039)
+
+[node name="Tree_003_132" parent="Props/Arboles/Tree_003" instance=ExtResource("16_5pawl")]
+transform = Transform3D(1.03743, 0, 0.540698, 0, 1.16988, 0, -0.540698, 0, 1.03743, -2.92333, -3.60958, 29.6077)
+
+[node name="Tree_003_133" parent="Props/Arboles/Tree_003" instance=ExtResource("16_5pawl")]
+transform = Transform3D(1.03743, 0, 0.540698, 0, 1.16988, 0, -0.540698, 0, 1.03743, -9.12268, -3.19893, 26.9572)
+
+[node name="Tree_003_098" parent="Props/Arboles/Tree_003" instance=ExtResource("16_5pawl")]
+transform = Transform3D(1.03743, 0, 0.540698, 0, 1.16988, 0, -0.540698, 0, 1.03743, 1.00576, -3.19893, 21.6218)
+
+[node name="Tree_003_099" parent="Props/Arboles/Tree_003" instance=ExtResource("16_5pawl")]
+transform = Transform3D(1.03743, 0, 0.540698, 0, 1.16988, 0, -0.540698, 0, 1.03743, 2.28651, -3.19893, 19.8465)
+
+[node name="Tree_003_100" parent="Props/Arboles/Tree_003" instance=ExtResource("16_5pawl")]
+transform = Transform3D(1.03743, 0, 0.540698, 0, 1.16988, 0, -0.540698, 0, 1.03743, 2.08101, -3.19893, 16.1348)
+
+[node name="Tree_003_101" parent="Props/Arboles/Tree_003" instance=ExtResource("16_5pawl")]
+transform = Transform3D(1.03743, 0, 0.540698, 0, 1.16988, 0, -0.540698, 0, 1.03743, 0.0628943, -3.19893, 13.9054)
+
+[node name="Tree_003_102" parent="Props/Arboles/Tree_003" instance=ExtResource("16_5pawl")]
+transform = Transform3D(1.03743, 0, 0.540698, 0, 1.16988, 0, -0.540698, 0, 1.03743, -1.33204, -3.19893, 14.2889)
+
+[node name="Tree_003_028" parent="Props/Arboles/Tree_003" instance=ExtResource("16_5pawl")]
+transform = Transform3D(1.03743, 0, 0.540698, 0, 1.16988, 0, -0.540698, 0, 1.03743, -3.13619, -3.38051, 11.8134)
+
+[node name="Tree_003_016" parent="Props/Arboles/Tree_003" instance=ExtResource("16_5pawl")]
+transform = Transform3D(0.886785, 0, 0.462182, 0, 1, 0, -0.462182, 0, 0.886785, -17.3142, -3.47284, -4.24563)
+
+[node name="Tree_003_042" parent="Props/Arboles/Tree_003" instance=ExtResource("16_5pawl")]
+transform = Transform3D(0.886785, 0, 0.462182, 0, 1, 0, -0.462182, 0, 0.886785, -16.6148, -3.47284, -3.09863)
+
+[node name="Tree_003_043" parent="Props/Arboles/Tree_003" instance=ExtResource("16_5pawl")]
+transform = Transform3D(0.886785, 0, 0.462182, 0, 1, 0, -0.462182, 0, 0.886785, -13.5968, -3.65538, -4.67161)
+
+[node name="Tree_003_017" parent="Props/Arboles/Tree_003" instance=ExtResource("16_5pawl")]
+transform = Transform3D(0.886785, 0, 0.462182, 0, 1, 0, -0.462182, 0, 0.886785, -15.8657, -3.05762, 4.72247)
+
+[node name="Tree_003_217" parent="Props/Arboles/Tree_003" instance=ExtResource("16_5pawl")]
+transform = Transform3D(0.886785, 0, 0.462182, 0, 1, 0, -0.462182, 0, 0.886785, -15.5283, -2.77896, 6.26446)
+
+[node name="Tree_003_222" parent="Props/Arboles/Tree_003" instance=ExtResource("16_5pawl")]
+transform = Transform3D(0.886785, 0, 0.462182, 0, 1, 0, -0.462182, 0, 0.886785, -16.5153, -2.59018, 8.02753)
+
+[node name="Tree_003_223" parent="Props/Arboles/Tree_003" instance=ExtResource("16_5pawl")]
+transform = Transform3D(0.886785, 0, 0.462182, 0, 1, 0, -0.462182, 0, 0.886785, -17.2679, -2.33239, 9.06324)
+
+[node name="Tree_003_224" parent="Props/Arboles/Tree_003" instance=ExtResource("16_5pawl")]
+transform = Transform3D(0.886785, 0, 0.462182, 0, 1, 0, -0.462182, 0, 0.886785, -14.5401, -2.7707, 8.29384)
+
+[node name="Tree_003_225" parent="Props/Arboles/Tree_003" instance=ExtResource("16_5pawl")]
+transform = Transform3D(0.886785, 0, 0.462182, 0, 1, 0, -0.462182, 0, 0.886785, -16.2431, -2.63389, 7.08081)
+
+[node name="Tree_003_226" parent="Props/Arboles/Tree_003" instance=ExtResource("16_5pawl")]
+transform = Transform3D(0.886785, 0, 0.462182, 0, 1, 0, -0.462182, 0, 0.886785, -17.835, -2.63389, 6.42588)
+
+[node name="Tree_003_227" parent="Props/Arboles/Tree_003" instance=ExtResource("16_5pawl")]
+transform = Transform3D(0.886785, 0, 0.462182, 0, 1, 0, -0.462182, 0, 0.886785, -18.3149, -2.26738, 8.86128)
+
+[node name="Tree_003_228" parent="Props/Arboles/Tree_003" instance=ExtResource("16_5pawl")]
+transform = Transform3D(0.886785, 0, 0.462182, 0, 1, 0, -0.462182, 0, 0.886785, -17.8527, -2.04345, 9.74807)
+
+[node name="Tree_003_229" parent="Props/Arboles/Tree_003" instance=ExtResource("16_5pawl")]
+transform = Transform3D(0.886785, 0, 0.462182, 0, 1, 0, -0.462182, 0, 0.886785, -18.2788, -2.04345, 6.81698)
+
+[node name="Tree_003_230" parent="Props/Arboles/Tree_003" instance=ExtResource("16_5pawl")]
+transform = Transform3D(0.886785, 0, 0.462182, 0, 1, 0, -0.462182, 0, 0.886785, -19.7245, -2.04345, 7.63289)
+
+[node name="Tree_003_231" parent="Props/Arboles/Tree_003" instance=ExtResource("16_5pawl")]
+transform = Transform3D(0.886785, 0, 0.462182, 0, 1, 0, -0.462182, 0, 0.886785, -18.2805, -2.5966, 5.56872)
+
+[node name="Tree_003_232" parent="Props/Arboles/Tree_003" instance=ExtResource("16_5pawl")]
+transform = Transform3D(0.886785, 0, 0.462182, 0, 1, 0, -0.462182, 0, 0.886785, -15.6531, -2.86524, 5.66184)
+
+[node name="Tree_003_218" parent="Props/Arboles/Tree_003" instance=ExtResource("16_5pawl")]
+transform = Transform3D(0.886785, 0, 0.462182, 0, 1, 0, -0.462182, 0, 0.886785, -17.3019, -2.59881, 7.18883)
+
+[node name="Tree_003_018" parent="Props/Arboles/Tree_003" instance=ExtResource("16_5pawl")]
+transform = Transform3D(0.886785, 0, 0.462182, 0, 1, 0, -0.462182, 0, 0.886785, -19.8733, -2.6537, 3.66492)
+
+[node name="Tree_003_019" parent="Props/Arboles/Tree_003" instance=ExtResource("16_5pawl")]
+transform = Transform3D(0.886785, 0, 0.462182, 0, 1, 0, -0.462182, 0, 0.886785, -16.4503, -3.07789, 3.70924)
+
+[node name="Tree_003_020" parent="Props/Arboles/Tree_003" instance=ExtResource("16_5pawl")]
+transform = Transform3D(0.886785, 0, 0.462182, 0, 1, 0, -0.462182, 0, 0.886785, -18.2221, -2.81303, 4.40335)
+
+[node name="Tree_003_031" parent="Props/Arboles/Tree_003" instance=ExtResource("16_5pawl")]
+transform = Transform3D(0.886785, 0, 0.462182, 0, 1, 0, -0.462182, 0, 0.886785, -17.7894, -3.03454, 2.8708)
+
+[node name="Tree_003_021" parent="Props/Arboles/Tree_003" instance=ExtResource("16_5pawl")]
+transform = Transform3D(0.886785, 0, 0.462182, 0, 1, 0, -0.462182, 0, 0.886785, -19.5524, -2.71745, 3.34244)
+
+[node name="Tree_003_207" parent="Props/Arboles/Tree_003" instance=ExtResource("16_5pawl")]
+transform = Transform3D(0.886785, 0, 0.462182, 0, 1, 0, -0.462182, 0, 0.886785, -25.8079, -2.71745, 9.26072)
+
+[node name="Tree_003_208" parent="Props/Arboles/Tree_003" instance=ExtResource("16_5pawl")]
+transform = Transform3D(0.886785, 0, 0.462182, 0, 1, 0, -0.462182, 0, 0.886785, -25.8079, -1.88044, 9.26072)
+
+[node name="Tree_003_209" parent="Props/Arboles/Tree_003" instance=ExtResource("16_5pawl")]
+transform = Transform3D(0.886785, 0, 0.462182, 0, 1, 0, -0.462182, 0, 0.886785, -29.5189, -1.88044, 8.32472)
+
+[node name="Tree_003_210" parent="Props/Arboles/Tree_003" instance=ExtResource("16_5pawl")]
+transform = Transform3D(0.886785, 0, 0.462182, 0, 1, 0, -0.462182, 0, 0.886785, -22.9439, -2.32457, 4.60397)
+
+[node name="Tree_003_211" parent="Props/Arboles/Tree_003" instance=ExtResource("16_5pawl")]
+transform = Transform3D(0.886785, 0, 0.462182, 0, 1, 0, -0.462182, 0, 0.886785, -35.1404, -3.34663, -6.0731)
+
+[node name="Tree_003_007" parent="Props/Arboles/Tree_003" instance=ExtResource("16_5pawl")]
+transform = Transform3D(1.00435, 0, 0.523455, 0, 1.13257, 0, -0.523455, 0, 1.00435, -16.9309, -3.22455, 1.81622)
+
+[node name="Tree_003_033" parent="Props/Arboles/Tree_003" instance=ExtResource("16_5pawl")]
+transform = Transform3D(1.00435, 0, 0.523455, 0, 1.13257, 0, -0.523455, 0, 1.00435, -16.9565, -2.96337, 4.37401)
+
+[node name="Tree_003_008" parent="Props/Arboles/Tree_003" instance=ExtResource("16_5pawl")]
+transform = Transform3D(0.903933, 0, 0.471119, 0, 1.01934, 0, -0.471119, 0, 0.903933, -17.4778, -3.38844, -2.35291)
+
+[node name="Tree_003_036" parent="Props/Arboles/Tree_003" instance=ExtResource("16_5pawl")]
+transform = Transform3D(0.903933, 0, 0.471119, 0, 1.01934, 0, -0.471119, 0, 0.903933, -16.6253, -3.38844, -0.884761)
+
+[node name="Tree_003_037" parent="Props/Arboles/Tree_003" instance=ExtResource("16_5pawl")]
+transform = Transform3D(1.09437, -0.000724982, 0.571772, 0.00136015, 1.23474, -0.00103768, -0.571771, 0.00154958, 1.09437, -18.0339, -3.38844, -3.74675)
+
+[node name="Tree_003_009" parent="Props/Arboles/Tree_003" instance=ExtResource("16_5pawl")]
+transform = Transform3D(1.12017, 0, 0.583821, 0, 1.26318, 0, -0.583821, 0, 1.12017, -19.583, -3.15286, -0.793084)
+
+[node name="Tree_003_012" parent="Props/Arboles/Tree_003" instance=ExtResource("16_5pawl")]
+transform = Transform3D(1.12017, 0, 0.583821, 0, 1.26318, 0, -0.583821, 0, 1.12017, -18.1293, -3.18648, 0.599919)
+
+[node name="Tree_003_035" parent="Props/Arboles/Tree_003" instance=ExtResource("16_5pawl")]
+transform = Transform3D(1.12017, 0, 0.583821, 0, 1.26318, 0, -0.583821, 0, 1.12017, -17.071, -3.18648, 2.56825)
+
+[node name="Tree_003_163" parent="Props/Arboles/Tree_003" instance=ExtResource("16_5pawl")]
+transform = Transform3D(1.12017, 0, 0.583821, 0, 1.26318, 0, -0.583821, 0, 1.12017, -17.9267, -2.83225, 3.63549)
+
+[node name="Tree_003_164" parent="Props/Arboles/Tree_003" instance=ExtResource("16_5pawl")]
+transform = Transform3D(1.12017, 0, 0.583821, 0, 1.26318, 0, -0.583821, 0, 1.12017, -16.8579, -3.3647, 1.08814)
+
+[node name="Tree_003_022" parent="Props/Arboles/Tree_003" instance=ExtResource("16_5pawl")]
+transform = Transform3D(1.12017, 0, 0.583821, 0, 1.26318, 0, -0.583821, 0, 1.12017, -20.9392, -2.86227, 0.870907)
+
+[node name="Tree_003_038" parent="Props/Arboles/Tree_003" instance=ExtResource("16_5pawl")]
+transform = Transform3D(1.12017, 0, 0.583821, 0, 1.26318, 0, -0.583821, 0, 1.12017, -27.9284, -2.85981, 2.08399)
+
+[node name="Tree_003_039" parent="Props/Arboles/Tree_003" instance=ExtResource("16_5pawl")]
+transform = Transform3D(1.12017, 0, 0.583821, 0, 1.26318, 0, -0.583821, 0, 1.12017, -31.9899, -2.85981, 2.60917)
+
+[node name="Tree_003_040" parent="Props/Arboles/Tree_003" instance=ExtResource("16_5pawl")]
+transform = Transform3D(1.12017, 0, 0.583821, 0, 1.26318, 0, -0.583821, 0, 1.12017, -30.0805, -2.36493, 4.90165)
+
+[node name="Tree_003_233" parent="Props/Arboles/Tree_003" instance=ExtResource("16_5pawl")]
+transform = Transform3D(1.12017, 0, 0.583821, 0, 1.26318, 0, -0.583821, 0, 1.12017, -34.7624, -1.90535, 8.41539)
+
+[node name="Tree_003_234" parent="Props/Arboles/Tree_003" instance=ExtResource("16_5pawl")]
+transform = Transform3D(1.12017, 0, 0.583821, 0, 1.26318, 0, -0.583821, 0, 1.12017, -35.2554, -2.42589, 6.3184)
+
+[node name="Tree_003_235" parent="Props/Arboles/Tree_003" instance=ExtResource("16_5pawl")]
+transform = Transform3D(1.12017, 0, 0.583821, 0, 1.26318, 0, -0.583821, 0, 1.12017, -41.7114, -2.42589, -10.5631)
+
+[node name="Tree_003_041" parent="Props/Arboles/Tree_003" instance=ExtResource("16_5pawl")]
+transform = Transform3D(1.12017, 0, 0.583821, 0, 1.26318, 0, -0.583821, 0, 1.12017, -30.0785, -3.10242, 0.896239)
+
+[node name="Tree_003_013" parent="Props/Arboles/Tree_003" instance=ExtResource("16_5pawl")]
+transform = Transform3D(0.879734, 0, 0.458507, 0, 0.992049, 0, -0.458507, 0, 0.879734, -18.799, -3.34424, -2.38407)
+
+[node name="Tree_003_014" parent="Props/Arboles/Tree_003" instance=ExtResource("16_5pawl")]
+transform = Transform3D(0.879734, 0, 0.458507, 0, 0.992049, 0, -0.458507, 0, 0.879734, -15.2037, -3.56426, -4.88886)
+
+[node name="Tree_003_015" parent="Props/Arboles/Tree_003" instance=ExtResource("16_5pawl")]
+transform = Transform3D(1.14593, 0, 0.597246, 0, 1.29223, 0, -0.597246, 0, 1.14593, -15.1991, -3.57182, -1.9285)
+
+[node name="Tree_003_212" parent="Props/Arboles/Tree_003" instance=ExtResource("16_5pawl")]
+transform = Transform3D(1.14593, 0, 0.597246, 0, 1.29223, 0, -0.597246, 0, 1.14593, -12.9234, -3.57182, -7.81014)
+
+[node name="Tree_003_213" parent="Props/Arboles/Tree_003" instance=ExtResource("16_5pawl")]
+transform = Transform3D(1.14593, 0, 0.597246, 0, 1.29223, 0, -0.597246, 0, 1.14593, -12.141, -3.57182, -13.9988)
+
+[node name="Tree_003_214" parent="Props/Arboles/Tree_003" instance=ExtResource("16_5pawl")]
+transform = Transform3D(1.14593, 0, 0.597246, 0, 1.29223, 0, -0.597246, 0, 1.14593, -9.98974, -3.57182, -9.45104)
+
+[node name="Tree_003_215" parent="Props/Arboles/Tree_003" instance=ExtResource("16_5pawl")]
+transform = Transform3D(1.14593, 0, 0.597246, 0, 1.29223, 0, -0.597246, 0, 1.14593, -22.9461, -3.57182, -9.46666)
+
+[node name="Tree_003_216" parent="Props/Arboles/Tree_003" instance=ExtResource("16_5pawl")]
+transform = Transform3D(1.14593, 0, 0.597246, 0, 1.29223, 0, -0.597246, 0, 1.14593, -31.4382, -1.80283, -21.7271)
+
+[node name="Tree_003_010" parent="Props/Arboles/Tree_003" instance=ExtResource("16_5pawl")]
+transform = Transform3D(1.12017, 0, 0.583821, 0, 1.26318, 0, -0.583821, 0, 1.12017, -19.1144, -2.93953, 2.18283)
+
+[node name="Tree_003_011" parent="Props/Arboles/Tree_003" instance=ExtResource("16_5pawl")]
+transform = Transform3D(1.12017, 0, 0.583821, 0, 1.26318, 0, -0.583821, 0, 1.12017, -15.9399, -3.55946, -3.97868)
+
+[node name="Tree_003_003" parent="Props/Arboles/Tree_003" instance=ExtResource("16_5pawl")]
+transform = Transform3D(0.886785, 0, 0.462182, 0, 1, 0, -0.462182, 0, 0.886785, -17.6087, -3.28395, -0.363938)
+
+[node name="Tree_003_004" parent="Props/Arboles/Tree_003" instance=ExtResource("16_5pawl")]
+transform = Transform3D(0.886785, 0, 0.462182, 0, 1, 0, -0.462182, 0, 0.886785, -18.5638, -3.11715, 1.3571)
+
+[node name="Tree_003_032" parent="Props/Arboles/Tree_003" instance=ExtResource("16_5pawl")]
+transform = Transform3D(0.886785, 0, 0.462182, 0, 1, 0, -0.462182, 0, 0.886785, -19.0257, -2.78164, 3.31588)
+
+[node name="Tree_003_005" parent="Props/Arboles/Tree_003" instance=ExtResource("16_5pawl")]
+transform = Transform3D(0.886785, 0, 0.462182, 0, 1, 0, -0.462182, 0, 0.886785, -10.1554, -3.58001, -1.21121)
+
+[node name="Tree_003_006" parent="Props/Arboles/Tree_003" instance=ExtResource("16_5pawl")]
+transform = Transform3D(1.03543, 0, 0.539653, 0, 1.16762, 0, -0.539653, 0, 1.03543, -14.1202, -3.55382, -3.61781)
+
+[node name="Tree_003_034" parent="Props/Arboles/Tree_003" instance=ExtResource("16_5pawl")]
+transform = Transform3D(1.03543, 0, 0.539653, 0, 1.16762, 0, -0.539653, 0, 1.03543, -12.1405, -3.58806, -4.19343)
+
+[node name="Tree_003_134" parent="Props/Arboles/Tree_003" instance=ExtResource("16_5pawl")]
+transform = Transform3D(1.16762, 0, 0, 0, 1.16762, 0, 0, 0, 1.16762, -22.3208, -3.58806, -21.9529)
+
+[node name="Tree_003_136" parent="Props/Arboles/Tree_003" instance=ExtResource("16_5pawl")]
+transform = Transform3D(1.16762, 0, 0, 0, 1.16762, 0, 0, 0, 1.16762, -21.5125, -3.58806, -19.3377)
+
+[node name="Tree_003_137" parent="Props/Arboles/Tree_003" instance=ExtResource("16_5pawl")]
+transform = Transform3D(1.16762, 0, 0, 0, 1.16762, 0, 0, 0, 1.16762, -20.3449, -3.58806, -20.5054)
+
+[node name="Tree_003_142" parent="Props/Arboles/Tree_003" instance=ExtResource("16_5pawl")]
+transform = Transform3D(1.16762, 0, 0, 0, 1.16762, 0, 0, 0, 1.16762, -18.5964, -3.58806, -18.2881)
+
+[node name="Tree_003_143" parent="Props/Arboles/Tree_003" instance=ExtResource("16_5pawl")]
+transform = Transform3D(1.16762, 0, 0, 0, 1.16762, 0, 0, 0, 1.16762, -20.5517, -3.58806, -17.5243)
+
+[node name="Tree_003_144" parent="Props/Arboles/Tree_003" instance=ExtResource("16_5pawl")]
+transform = Transform3D(1.16762, 0, 0, 0, 1.16762, 0, 0, 0, 1.16762, -17.1913, -3.58806, -18.8257)
+
+[node name="Tree_003_145" parent="Props/Arboles/Tree_003" instance=ExtResource("16_5pawl")]
+transform = Transform3D(1.16762, 0, 0, 0, 1.16762, 0, 0, 0, 1.16762, -17.4621, -3.58806, -20.6812)
+
+[node name="Tree_003_195" parent="Props/Arboles/Tree_003" instance=ExtResource("16_5pawl")]
+transform = Transform3D(1.16762, 0, 0, 0, 1.16762, 0, 0, 0, 1.16762, -10.4491, -3.58806, -27.7226)
+
+[node name="Tree_003_196" parent="Props/Arboles/Tree_003" instance=ExtResource("16_5pawl")]
+transform = Transform3D(1.16762, 0, 0, 0, 1.16762, 0, 0, 0, 1.16762, -12.7844, -3.58806, -27.7226)
+
+[node name="Tree_003_197" parent="Props/Arboles/Tree_003" instance=ExtResource("16_5pawl")]
+transform = Transform3D(1.16762, 0, 0, 0, 1.16762, 0, 0, 0, 1.16762, -11.6815, -3.58806, -23.6599)
+
+[node name="Tree_003_198" parent="Props/Arboles/Tree_003" instance=ExtResource("16_5pawl")]
+transform = Transform3D(1.16762, 0, 0, 0, 1.16762, 0, 0, 0, 1.16762, -10.9253, -3.58806, -24.0657)
+
+[node name="Tree_003_199" parent="Props/Arboles/Tree_003" instance=ExtResource("16_5pawl")]
+transform = Transform3D(1.16762, 0, 0, 0, 1.16762, 0, 0, 0, 1.16762, -11.8432, -3.58806, -21.2837)
+
+[node name="Tree_003_200" parent="Props/Arboles/Tree_003" instance=ExtResource("16_5pawl")]
+transform = Transform3D(1.16762, 0, 0, 0, 1.16762, 0, 0, 0, 1.16762, -7.57675, -3.58806, -32.8716)
+
+[node name="Tree_003_201" parent="Props/Arboles/Tree_003" instance=ExtResource("16_5pawl")]
+transform = Transform3D(1.16762, 0, 0, 0, 1.16762, 0, 0, 0, 1.16762, -11.1478, -3.58806, -33.6799)
+
+[node name="Tree_003_202" parent="Props/Arboles/Tree_003" instance=ExtResource("16_5pawl")]
+transform = Transform3D(1.16762, 0, 0, 0, 1.16762, 0, 0, 0, 1.16762, -11.9499, -3.58806, -29.1472)
+
+[node name="Tree_003_203" parent="Props/Arboles/Tree_003" instance=ExtResource("16_5pawl")]
+transform = Transform3D(1.16762, 0, 0, 0, 1.16762, 0, 0, 0, 1.16762, -26.8881, -3.58806, -33.4032)
+
+[node name="Tree_003_204" parent="Props/Arboles/Tree_003" instance=ExtResource("16_5pawl")]
+transform = Transform3D(1.16762, 0, 0, 0, 1.16762, 0, 0, 0, 1.16762, -27.2821, -3.58806, -39.3336)
+
+[node name="Tree_003_205" parent="Props/Arboles/Tree_003" instance=ExtResource("16_5pawl")]
+transform = Transform3D(1.16762, 0, 0, 0, 1.16762, 0, 0, 0, 1.16762, -23.7793, -3.58806, -27.6574)
+
+[node name="Tree_003_146" parent="Props/Arboles/Tree_003" instance=ExtResource("16_5pawl")]
+transform = Transform3D(1.16762, 0, 0, 0, 1.16762, 0, 0, 0, 1.16762, -19.3887, -3.58806, -22.9506)
+
+[node name="Tree_003_147" parent="Props/Arboles/Tree_003" instance=ExtResource("16_5pawl")]
+transform = Transform3D(1.16762, 0, 0, 0, 1.16762, 0, 0, 0, 1.16762, -16.8968, -3.58806, -21.823)
+
+[node name="Tree_003_148" parent="Props/Arboles/Tree_003" instance=ExtResource("16_5pawl")]
+transform = Transform3D(1.16762, 0, 0, 0, 1.16762, 0, 0, 0, 1.16762, -18.2745, -3.58806, -22.4282)
+
+[node name="Tree_003_138" parent="Props/Arboles/Tree_003" instance=ExtResource("16_5pawl")]
+transform = Transform3D(1.16762, 0, 0, 0, 1.16762, 0, 0, 0, 1.16762, -19.6221, -3.58806, -21.3917)
+
+[node name="Tree_003_139" parent="Props/Arboles/Tree_003" instance=ExtResource("16_5pawl")]
+transform = Transform3D(1.16762, 0, 0, 0, 1.16762, 0, 0, 0, 1.16762, -21.3903, -3.58806, -20.0059)
+
+[node name="Tree_003_140" parent="Props/Arboles/Tree_003" instance=ExtResource("16_5pawl")]
+transform = Transform3D(1.16762, 0, 0, 0, 1.16762, 0, 0, 0, 1.16762, -21.6168, -3.58806, -21.0004)
+
+[node name="Tree_003_141" parent="Props/Arboles/Tree_003" instance=ExtResource("16_5pawl")]
+transform = Transform3D(1.16762, 0, 0, 0, 1.16762, 0, 0, 0, 1.16762, -20.9627, -3.58806, -22.4864)
+
+[node name="Tree_003_135" parent="Props/Arboles/Tree_003" instance=ExtResource("16_5pawl")]
+transform = Transform3D(1.16762, 0, 0, 0, 1.16762, 0, 0, 0, 1.16762, -20.1956, -3.58806, -24.1157)
+
+[node name="Tree_003_002" parent="Props/Arboles/Tree_003" instance=ExtResource("16_5pawl")]
+transform = Transform3D(0.886785, 0, 0.462182, 0, 1, 0, -0.462182, 0, 0.886785, -25.464, -3.50081, -4.60622)
+
+[node name="Tree_003_149" parent="Props/Arboles/Tree_003" instance=ExtResource("16_5pawl")]
+transform = Transform3D(0.886785, 0, 0.462182, 0, 1, 0, -0.462182, 0, 0.886785, -26.5107, -3.50081, -4.86085)
+
+[node name="Tree_003_150" parent="Props/Arboles/Tree_003" instance=ExtResource("16_5pawl")]
+transform = Transform3D(0.886785, 0, 0.462182, 0, 1, 0, -0.462182, 0, 0.886785, -26.2829, -3.50081, -6.07622)
+
+[node name="Tree_003_151" parent="Props/Arboles/Tree_003" instance=ExtResource("16_5pawl")]
+transform = Transform3D(0.886785, 0, 0.462182, 0, 1, 0, -0.462182, 0, 0.886785, -27.8728, -3.50081, -5.92797)
+
+[node name="Tree_003_152" parent="Props/Arboles/Tree_003" instance=ExtResource("16_5pawl")]
+transform = Transform3D(0.886785, 0, 0.462182, 0, 1, 0, -0.462182, 0, 0.886785, -28.0331, -3.50081, -7.34368)
+
+[node name="Tree_003_153" parent="Props/Arboles/Tree_003" instance=ExtResource("16_5pawl")]
+transform = Transform3D(0.886785, 0, 0.462182, 0, 1, 0, -0.462182, 0, 0.886785, -28.9199, -3.45007, -6.8815)
+
+[node name="Tree_003_157" parent="Props/Arboles/Tree_003" instance=ExtResource("16_5pawl")]
+transform = Transform3D(0.886785, 0, 0.462182, 0, 1, 0, -0.462182, 0, 0.886785, -28.6099, -3.45007, -4.70348)
+
+[node name="Tree_003_158" parent="Props/Arboles/Tree_003" instance=ExtResource("16_5pawl")]
+transform = Transform3D(0.886785, 0, 0.462182, 0, 1, 0, -0.462182, 0, 0.886785, -28.6911, -3.45007, -5.17761)
+
+[node name="Tree_003_159" parent="Props/Arboles/Tree_003" instance=ExtResource("16_5pawl")]
+transform = Transform3D(0.886785, 0, 0.462182, 0, 1, 0, -0.462182, 0, 0.886785, -29.1533, -3.45007, -6.0644)
+
+[node name="Tree_003_160" parent="Props/Arboles/Tree_003" instance=ExtResource("16_5pawl")]
+transform = Transform3D(0.886785, 0, 0.462182, 0, 1, 0, -0.462182, 0, 0.886785, -28.3811, -3.45007, -5.43186)
+
+[node name="Tree_003_161" parent="Props/Arboles/Tree_003" instance=ExtResource("16_5pawl")]
+transform = Transform3D(0.886785, 0, 0.462182, 0, 1, 0, -0.462182, 0, 0.886785, -29.73, -3.45007, -5.85647)
+
+[node name="Tree_003_162" parent="Props/Arboles/Tree_003" instance=ExtResource("16_5pawl")]
+transform = Transform3D(0.886785, 0, 0.462182, 0, 1, 0, -0.462182, 0, 0.886785, -29.7768, -3.45007, -6.72391)
+
+[node name="Tree_003_154" parent="Props/Arboles/Tree_003" instance=ExtResource("16_5pawl")]
+transform = Transform3D(0.886785, 0, 0.462182, 0, 1, 0, -0.462182, 0, 0.886785, -28.4953, -3.50081, -8.23046)
+
+[node name="Tree_003_155" parent="Props/Arboles/Tree_003" instance=ExtResource("16_5pawl")]
+transform = Transform3D(0.886785, 0, 0.462182, 0, 1, 0, -0.462182, 0, 0.886785, -28.2321, -3.50081, -8.98235)
+
+[node name="Tree_003_156" parent="Props/Arboles/Tree_003" instance=ExtResource("16_5pawl")]
+transform = Transform3D(0.886785, 0, 0.462182, 0, 1, 0, -0.462182, 0, 0.886785, -30.738, -3.50081, -10.7486)
+
+[node name="Pine_001" type="Node3D" parent="Props/Arboles"]
+
+[node name="Pine_001_001" parent="Props/Arboles/Pine_001" instance=ExtResource("17_pk0vi")]
+transform = Transform3D(0.274494, 0, 0, 0, 0.274494, 0, 0, 0, 0.274494, -16.9332, -3.0569, 3.29279)
+
+[node name="Pine_001_238" parent="Props/Arboles/Pine_001" instance=ExtResource("17_pk0vi")]
+transform = Transform3D(0.274494, 0, 0, 0, 0.274494, 0, 0, 0, 0.274494, -17.1712, -3.0569, 3.63254)
+
+[node name="Pine_001_019" parent="Props/Arboles/Pine_001" instance=ExtResource("17_pk0vi")]
+transform = Transform3D(0.274494, 0, 0, 0, 0.274494, 0, 0, 0, 0.274494, -18.4464, -2.8029, 3.60945)
+
+[node name="Pine_001_020" parent="Props/Arboles/Pine_001" instance=ExtResource("17_pk0vi")]
+transform = Transform3D(0.274494, 0, 0, 0, 0.274494, 0, 0, 0, 0.274494, -20.3093, -2.53815, 4.27781)
+
+[node name="Pine_001_023" parent="Props/Arboles/Pine_001" instance=ExtResource("17_pk0vi")]
+transform = Transform3D(0.274494, 0, 0, 0, 0.274494, 0, 0, 0, 0.274494, -28.9673, -2.66305, 2.9006)
+
+[node name="Pine_001_024" parent="Props/Arboles/Pine_001" instance=ExtResource("17_pk0vi")]
+transform = Transform3D(0.274494, 0, 0, 0, 0.274494, 0, 0, 0, 0.274494, -29.3347, -2.96253, 1.10527)
+
+[node name="Pine_001_025" parent="Props/Arboles/Pine_001" instance=ExtResource("17_pk0vi")]
+transform = Transform3D(0.274494, 0, 0, 0, 0.274494, 0, 0, 0, 0.274494, -27.94, -2.66302, 2.542)
+
+[node name="Pine_001_026" parent="Props/Arboles/Pine_001" instance=ExtResource("17_pk0vi")]
+transform = Transform3D(0.274494, 0, 0, 0, 0.274494, 0, 0, 0, 0.274494, -28.0522, -2.93834, 0.723819)
+
+[node name="Pine_001_027" parent="Props/Arboles/Pine_001" instance=ExtResource("17_pk0vi")]
+transform = Transform3D(0.274494, 0, 0, 0, 0.274494, 0, 0, 0, 0.274494, -28.123, -2.83335, 1.47175)
+
+[node name="Pine_001_028" parent="Props/Arboles/Pine_001" instance=ExtResource("17_pk0vi")]
+transform = Transform3D(0.274494, 0, 0, 0, 0.274494, 0, 0, 0, 0.274494, -30.3628, -2.94843, 1.75491)
+
+[node name="Pine_001_036" parent="Props/Arboles/Pine_001" instance=ExtResource("17_pk0vi")]
+transform = Transform3D(0.274494, 0, 0, 0, 0.274494, 0, 0, 0, 0.274494, -29.3861, -2.76663, 2.351)
+
+[node name="Pine_001_029" parent="Props/Arboles/Pine_001" instance=ExtResource("17_pk0vi")]
+transform = Transform3D(0.274494, 0, 0, 0, 0.274494, 0, 0, 0, 0.274494, -27.899, -2.42454, 3.69147)
+
+[node name="Pine_001_034" parent="Props/Arboles/Pine_001" instance=ExtResource("17_pk0vi")]
+transform = Transform3D(0.274494, 0, 0, 0, 0.274494, 0, 0, 0, 0.274494, -28.5472, -2.28786, 4.79781)
+
+[node name="Pine_001_035" parent="Props/Arboles/Pine_001" instance=ExtResource("17_pk0vi")]
+transform = Transform3D(0.274494, 0, 0, 0, 0.274494, 0, 0, 0, 0.274494, -30.9517, -2.55123, 4.22265)
+
+[node name="Pine_001_353" parent="Props/Arboles/Pine_001" instance=ExtResource("17_pk0vi")]
+transform = Transform3D(0.274494, 0, 0, 0, 0.274494, 0, 0, 0, 0.274494, -39.8335, -2.55123, 4.50382)
+
+[node name="Pine_001_354" parent="Props/Arboles/Pine_001" instance=ExtResource("17_pk0vi")]
+transform = Transform3D(0.274494, 0, 0, 0, 0.274494, 0, 0, 0, 0.274494, -40.2529, -3.24338, -3.81346)
+
+[node name="Pine_001_030" parent="Props/Arboles/Pine_001" instance=ExtResource("17_pk0vi")]
+transform = Transform3D(0.274494, 0, 0, 0, 0.274494, 0, 0, 0, 0.274494, -31.1966, -2.74797, 3.26245)
+
+[node name="Pine_001_031" parent="Props/Arboles/Pine_001" instance=ExtResource("17_pk0vi")]
+transform = Transform3D(0.274494, 0, 0, 0, 0.274494, 0, 0, 0, 0.274494, -32.2332, -3.10395, 1.61386)
+
+[node name="Pine_001_032" parent="Props/Arboles/Pine_001" instance=ExtResource("17_pk0vi")]
+transform = Transform3D(0.274494, 0, 0, 0, 0.274494, 0, 0, 0, 0.274494, -29.4074, -2.55649, 3.71371)
+
+[node name="Pine_001_021" parent="Props/Arboles/Pine_001" instance=ExtResource("17_pk0vi")]
+transform = Transform3D(0.274494, 0, 0, 0, 0.274494, 0, 0, 0, 0.274494, -20.206, -2.7574, 2.44734)
+
+[node name="Pine_001_006" parent="Props/Arboles/Pine_001" instance=ExtResource("17_pk0vi")]
+transform = Transform3D(0.274494, 0, 0, 0, 0.274494, 0, 0, 0, 0.274494, -19.8862, -2.95488, 0.163153)
+
+[node name="Pine_001_022" parent="Props/Arboles/Pine_001" instance=ExtResource("17_pk0vi")]
+transform = Transform3D(0.274494, 0, 0, 0, 0.274494, 0, 0, 0, 0.274494, -14.7388, -3.49754, -2.34368)
+
+[node name="Pine_001_007" parent="Props/Arboles/Pine_001" instance=ExtResource("17_pk0vi")]
+transform = Transform3D(0.274494, 0, 0, 0, 0.274494, 0, 0, 0, 0.274494, -16.2763, -3.45056, -2.02)
+
+[node name="Pine_001_008" parent="Props/Arboles/Pine_001" instance=ExtResource("17_pk0vi")]
+transform = Transform3D(0.274494, 0, 0, 0, 0.274494, 0, 0, 0, 0.274494, -18.3851, -3.0569, -1.06734)
+
+[node name="Pine_001_033" parent="Props/Arboles/Pine_001" instance=ExtResource("17_pk0vi")]
+transform = Transform3D(0.274494, 0, 0, 0, 0.274494, 0, 0, 0, 0.274494, -17.7719, -3.0569, 1.42275)
+
+[node name="Pine_001_239" parent="Props/Arboles/Pine_001" instance=ExtResource("17_pk0vi")]
+transform = Transform3D(0.274494, 0, 0, 0, 0.274494, 0, 0, 0, 0.274494, -17.9387, -3.0569, 2.23163)
+
+[node name="Pine_001_240" parent="Props/Arboles/Pine_001" instance=ExtResource("17_pk0vi")]
+transform = Transform3D(0.274494, 0, 0, 0, 0.274494, 0, 0, 0, 0.274494, -18.6421, -3.0569, 2.85235)
+
+[node name="Pine_001_241" parent="Props/Arboles/Pine_001" instance=ExtResource("17_pk0vi")]
+transform = Transform3D(0.274494, 0, 0, 0, 0.274494, 0, 0, 0, 0.274494, -19.4656, -2.66548, 3.95033)
+
+[node name="Pine_001_242" parent="Props/Arboles/Pine_001" instance=ExtResource("17_pk0vi")]
+transform = Transform3D(0.274494, 0, 0, 0, 0.274494, 0, 0, 0, 0.274494, -16.4706, -3.35129, 0.627851)
+
+[node name="Pine_001_243" parent="Props/Arboles/Pine_001" instance=ExtResource("17_pk0vi")]
+transform = Transform3D(0.274494, 0, 0, 0, 0.274494, 0, 0, 0, 0.274494, -16.356, -3.04426, 2.86128)
+
+[node name="Pine_001_244" parent="Props/Arboles/Pine_001" instance=ExtResource("17_pk0vi")]
+transform = Transform3D(0.274494, 0, 0, 0, 0.274494, 0, 0, 0, 0.274494, -16.3612, -3.24319, 1.92892)
+
+[node name="Pine_001_245" parent="Props/Arboles/Pine_001" instance=ExtResource("17_pk0vi")]
+transform = Transform3D(0.274494, 0, 0, 0, 0.274494, 0, 0, 0, 0.274494, -15.7871, -3.24319, -0.722044)
+
+[node name="Pine_001_246" parent="Props/Arboles/Pine_001" instance=ExtResource("17_pk0vi")]
+transform = Transform3D(0.274494, 0, 0, 0, 0.274494, 0, 0, 0, 0.274494, -17.434, -3.24319, -1.27103)
+
+[node name="Pine_001_247" parent="Props/Arboles/Pine_001" instance=ExtResource("17_pk0vi")]
+transform = Transform3D(0.274494, 0, 0, 0, 0.274494, 0, 0, 0, 0.274494, -18.532, -3.24319, -0.722044)
+
+[node name="Pine_001_248" parent="Props/Arboles/Pine_001" instance=ExtResource("17_pk0vi")]
+transform = Transform3D(0.274494, 0, 0, 0, 0.274494, 0, 0, 0, 0.274494, -20.179, -2.93291, 0.650426)
+
+[node name="Pine_001_249" parent="Props/Arboles/Pine_001" instance=ExtResource("17_pk0vi")]
+transform = Transform3D(0.274494, 0, 0, 0, 0.274494, 0, 0, 0, 0.274494, -19.2085, -2.93291, 1.44723)
+
+[node name="Pine_001_250" parent="Props/Arboles/Pine_001" instance=ExtResource("17_pk0vi")]
+transform = Transform3D(0.274494, 0, 0, 0, 0.274494, 0, 0, 0, 0.274494, -21.1929, -2.83585, 1.43487)
+
+[node name="Pine_001_251" parent="Props/Arboles/Pine_001" instance=ExtResource("17_pk0vi")]
+transform = Transform3D(0.274494, 0, 0, 0, 0.274494, 0, 0, 0, 0.274494, -21.4674, -2.66422, 2.80734)
+
+[node name="Pine_001_252" parent="Props/Arboles/Pine_001" instance=ExtResource("17_pk0vi")]
+transform = Transform3D(0.274494, 0, 0, 0, 0.274494, 0, 0, 0, 0.274494, -19.3964, -2.66422, 4.50762)
+
+[node name="Pine_001_009" parent="Props/Arboles/Pine_001" instance=ExtResource("17_pk0vi")]
+transform = Transform3D(0.274494, 0, 0, 0, 0.274494, 0, 0, 0, 0.274494, -11.3033, -3.48764, -3.83533)
+
+[node name="Pine_001_003" parent="Props/Arboles/Pine_001" instance=ExtResource("17_pk0vi")]
+transform = Transform3D(0.274494, 0, 0, 0, 0.274494, 0, 0, 0, 0.274494, -13.7787, -3.35553, 4.57247)
+
+[node name="Pine_001_319" parent="Props/Arboles/Pine_001" instance=ExtResource("17_pk0vi")]
+transform = Transform3D(0.274494, 0, 0, 0, 0.274494, 0, 0, 0, 0.274494, -18.572, -2.47329, 6.21843)
+
+[node name="Pine_001_320" parent="Props/Arboles/Pine_001" instance=ExtResource("17_pk0vi")]
+transform = Transform3D(0.274494, 0, 0, 0, 0.274494, 0, 0, 0, 0.274494, -18.0012, -2.32263, 8.2856)
+
+[node name="Pine_001_321" parent="Props/Arboles/Pine_001" instance=ExtResource("17_pk0vi")]
+transform = Transform3D(0.274494, 0, 0, 0, 0.274494, 0, 0, 0, 0.274494, -15.4294, -2.6588, 8.85398)
+
+[node name="Pine_001_322" parent="Props/Arboles/Pine_001" instance=ExtResource("17_pk0vi")]
+transform = Transform3D(0.274494, 0, 0, 0, 0.274494, 0, 0, 0, 0.274494, -17.1543, -2.6588, 5.81263)
+
+[node name="Pine_001_323" parent="Props/Arboles/Pine_001" instance=ExtResource("17_pk0vi")]
+transform = Transform3D(0.274494, 0, 0, 0, 0.274494, 0, 0, 0, 0.274494, -19.1221, -2.06428, 10.4202)
+
+[node name="Pine_001_324" parent="Props/Arboles/Pine_001" instance=ExtResource("17_pk0vi")]
+transform = Transform3D(0.274494, 0, 0, 0, 0.274494, 0, 0, 0, 0.274494, -16.5888, -2.20531, 9.9675)
+
+[node name="Pine_001_325" parent="Props/Arboles/Pine_001" instance=ExtResource("17_pk0vi")]
+transform = Transform3D(0.274494, 0, 0, 0, 0.274494, 0, 0, 0, 0.274494, -20.1312, -2.20531, 6.80728)
+
+[node name="Pine_001_326" parent="Props/Arboles/Pine_001" instance=ExtResource("17_pk0vi")]
+transform = Transform3D(0.274494, 0, 0, 0, 0.274494, 0, 0, 0, 0.274494, -18.8306, -2.20531, 9.309)
+
+[node name="Pine_001_327" parent="Props/Arboles/Pine_001" instance=ExtResource("17_pk0vi")]
+transform = Transform3D(0.274494, 0, 0, 0, 0.274494, 0, 0, 0, 0.274494, -20.874, -2.00454, 10.3698)
+
+[node name="Pine_001_328" parent="Props/Arboles/Pine_001" instance=ExtResource("17_pk0vi")]
+transform = Transform3D(0.274494, 0, 0, 0, 0.274494, 0, 0, 0, 0.274494, -21.4963, -2.00454, 8.20784)
+
+[node name="Pine_001_329" parent="Props/Arboles/Pine_001" instance=ExtResource("17_pk0vi")]
+transform = Transform3D(0.274494, 0, 0, 0, 0.274494, 0, 0, 0, 0.274494, -19.182, -2.24734, 8.04845)
+
+[node name="Pine_001_330" parent="Props/Arboles/Pine_001" instance=ExtResource("17_pk0vi")]
+transform = Transform3D(0.274494, 0, 0, 0, 0.274494, 0, 0, 0, 0.274494, -20.5545, -2.40606, 5.30351)
+
+[node name="Pine_001_331" parent="Props/Arboles/Pine_001" instance=ExtResource("17_pk0vi")]
+transform = Transform3D(0.274494, 0, 0, 0, 0.274494, 0, 0, 0, 0.274494, -18.3215, -2.4031, 7.32086)
+
+[node name="Pine_001_332" parent="Props/Arboles/Pine_001" instance=ExtResource("17_pk0vi")]
+transform = Transform3D(0.274494, 0, 0, 0, 0.274494, 0, 0, 0, 0.274494, -18.6541, -2.26633, 8.60235)
+
+[node name="Pine_001_333" parent="Props/Arboles/Pine_001" instance=ExtResource("17_pk0vi")]
+transform = Transform3D(0.274494, 0, 0, 0, 0.274494, 0, 0, 0, 0.274494, -20.418, -2.00454, 9.74161)
+
+[node name="Pine_001_334" parent="Props/Arboles/Pine_001" instance=ExtResource("17_pk0vi")]
+transform = Transform3D(0.274494, 0, 0, 0, 0.274494, 0, 0, 0, 0.274494, -20.418, -2.14392, 8.36914)
+
+[node name="Pine_001_335" parent="Props/Arboles/Pine_001" instance=ExtResource("17_pk0vi")]
+transform = Transform3D(0.274494, 0, 0, 0, 0.274494, 0, 0, 0, 0.274494, -21.7905, -2.00454, 6.72218)
+
+[node name="Pine_001_336" parent="Props/Arboles/Pine_001" instance=ExtResource("17_pk0vi")]
+transform = Transform3D(0.274494, 0, 0, 0, 0.274494, 0, 0, 0, 0.274494, -21.5323, -2.20616, 5.69843)
+
+[node name="Pine_001_337" parent="Props/Arboles/Pine_001" instance=ExtResource("17_pk0vi")]
+transform = Transform3D(0.274494, 0, 0, 0, 0.274494, 0, 0, 0, 0.274494, -19.5403, -2.29174, 6.14321)
+
+[node name="Pine_001_338" parent="Props/Arboles/Pine_001" instance=ExtResource("17_pk0vi")]
+transform = Transform3D(0.274494, 0, 0, 0, 0.274494, 0, 0, 0, 0.274494, -17.5861, -2.44008, 7.77549)
+
+[node name="Pine_001_310" parent="Props/Arboles/Pine_001" instance=ExtResource("17_pk0vi")]
+transform = Transform3D(0.274494, 0, 0, 0, 0.274494, 0, 0, 0, 0.274494, -20.7525, -3.35553, 9.06001)
+
+[node name="Pine_001_311" parent="Props/Arboles/Pine_001" instance=ExtResource("17_pk0vi")]
+transform = Transform3D(0.274494, 0, 0, 0, 0.274494, 0, 0, 0, 0.274494, -20.7525, -2.13779, 9.06001)
+
+[node name="Pine_001_312" parent="Props/Arboles/Pine_001" instance=ExtResource("17_pk0vi")]
+transform = Transform3D(0.274494, 0, 0, 0, 0.274494, 0, 0, 0, 0.274494, -21.9731, -2.13779, 7.26506)
+
+[node name="Pine_001_313" parent="Props/Arboles/Pine_001" instance=ExtResource("17_pk0vi")]
+transform = Transform3D(0.274494, 0, 0, 0, 0.274494, 0, 0, 0, 0.274494, -15.0171, -2.88904, 7.4448)
+
+[node name="Pine_001_314" parent="Props/Arboles/Pine_001" instance=ExtResource("17_pk0vi")]
+transform = Transform3D(0.274494, 0, 0, 0, 0.274494, 0, 0, 0, 0.274494, -19.6989, -1.89823, 11.527)
+
+[node name="Pine_001_315" parent="Props/Arboles/Pine_001" instance=ExtResource("17_pk0vi")]
+transform = Transform3D(0.274494, 0, 0, 0, 0.274494, 0, 0, 0, 0.274494, -24.931, -1.89823, 12.2967)
+
+[node name="Pine_001_010" parent="Props/Arboles/Pine_001" instance=ExtResource("17_pk0vi")]
+transform = Transform3D(0.274494, 0, 0, 0, 0.274494, 0, 0, 0, 0.274494, -7.08785, -3.4102, 9.14513)
+
+[node name="Pine_001_016" parent="Props/Arboles/Pine_001" instance=ExtResource("17_pk0vi")]
+transform = Transform3D(0.274494, 0, 0, 0, 0.274494, 0, 0, 0, 0.274494, -9.13425, -3.4102, 8.21823)
+
+[node name="Pine_001_017" parent="Props/Arboles/Pine_001" instance=ExtResource("17_pk0vi")]
+transform = Transform3D(0.207418, 0, 0, 0, 0.207418, 0, 0, 0, 0.207418, -14.029, -2.76135, 9.91736)
+
+[node name="Pine_001_018" parent="Props/Arboles/Pine_001" instance=ExtResource("17_pk0vi")]
+transform = Transform3D(0.207418, 0, 0, 0, 0.207418, 0, 0, 0, 0.207418, -10.536, -3.4102, 10.0572)
+
+[node name="Pine_001_011" parent="Props/Arboles/Pine_001" instance=ExtResource("17_pk0vi")]
+transform = Transform3D(0.354559, 0, 0, 0, 0.354559, 0, 0, 0, 0.354559, -12.056, -2.99981, 11.2012)
+
+[node name="Pine_001_339" parent="Props/Arboles/Pine_001" instance=ExtResource("17_pk0vi")]
+transform = Transform3D(0.354559, 0, 0, 0, 0.354559, 0, 0, 0, 0.354559, -12.156, -3.28456, 9.19232)
+
+[node name="Pine_001_340" parent="Props/Arboles/Pine_001" instance=ExtResource("17_pk0vi")]
+transform = Transform3D(0.354559, 0, 0, 0, 0.354559, 0, 0, 0, 0.354559, -13.0958, -3.28456, 7.96165)
+
+[node name="Pine_001_341" parent="Props/Arboles/Pine_001" instance=ExtResource("17_pk0vi")]
+transform = Transform3D(0.354559, 0, 0, 0, 0.354559, 0, 0, 0, 0.354559, -14.4313, -2.74143, 9.19567)
+
+[node name="Pine_001_012" parent="Props/Arboles/Pine_001" instance=ExtResource("17_pk0vi")]
+transform = Transform3D(0.25058, 0, 0, 0, 0.25058, 0, 0, 0, 0.25058, -9.60325, -2.45559, 16.4557)
+
+[node name="Pine_001_013" parent="Props/Arboles/Pine_001" instance=ExtResource("17_pk0vi")]
+transform = Transform3D(0.262016, 0, 0, 0, 0.262016, 0, 0, 0, 0.262016, -7.83754, -3.16285, 15.6474)
+
+[node name="Pine_001_070" parent="Props/Arboles/Pine_001" instance=ExtResource("17_pk0vi")]
+transform = Transform3D(0.324873, 0, 0, 0, 0.324873, 0, 0, 0, 0.324873, -5.79564, -3.16285, 16.1102)
+
+[node name="Pine_001_071" parent="Props/Arboles/Pine_001" instance=ExtResource("17_pk0vi")]
+transform = Transform3D(0.324873, 0, 0, 0, 0.324873, 0, 0, 0, 0.324873, -5.10606, -3.16285, 14.7548)
+
+[node name="Pine_001_072" parent="Props/Arboles/Pine_001" instance=ExtResource("17_pk0vi")]
+transform = Transform3D(0.324873, 0, 0, 0, 0.324873, 0, 0, 0, 0.324873, -2.32518, -3.16285, 15.3037)
+
+[node name="Pine_001_073" parent="Props/Arboles/Pine_001" instance=ExtResource("17_pk0vi")]
+transform = Transform3D(0.324873, 0, 0, 0, 0.324873, 0, 0, 0, 0.324873, -3.9732, -3.16285, 15.8037)
+
+[node name="Pine_001_074" parent="Props/Arboles/Pine_001" instance=ExtResource("17_pk0vi")]
+transform = Transform3D(0.324873, 0, 0, 0, 0.324873, 0, 0, 0, 0.324873, -2.71155, -3.16285, 17.4148)
+
+[node name="Pine_001_075" parent="Props/Arboles/Pine_001" instance=ExtResource("17_pk0vi")]
+transform = Transform3D(0.393441, 0, 0, 0, 0.393441, 0, 0, 0, 0.393441, -1.05562, -3.16284, 18.4562)
+
+[node name="Pine_001_077" parent="Props/Arboles/Pine_001" instance=ExtResource("17_pk0vi")]
+transform = Transform3D(0.324873, 0, 0, 0, 0.324873, 0, 0, 0, 0.324873, 0.642972, -3.16284, 20.8359)
+
+[node name="Pine_001_114" parent="Props/Arboles/Pine_001" instance=ExtResource("17_pk0vi")]
+transform = Transform3D(0.324873, 0, 0, 0, 0.324873, 0, 0, 0, 0.324873, -3.71265, -3.16284, 22.8362)
+
+[node name="Pine_001_198" parent="Props/Arboles/Pine_001" instance=ExtResource("17_pk0vi")]
+transform = Transform3D(0.324873, 0, 0, 0, 0.324873, 0, 0, 0, 0.324873, -6.66439, -3.33234, 26.8051)
+
+[node name="Pine_001_199" parent="Props/Arboles/Pine_001" instance=ExtResource("17_pk0vi")]
+transform = Transform3D(0.324873, 0, 0, 0, 0.324873, 0, 0, 0, 0.324873, -6.58935, -3.2764, 24.9344)
+
+[node name="Pine_001_088" parent="Props/Arboles/Pine_001" instance=ExtResource("17_pk0vi")]
+transform = Transform3D(0.26163, 0, 0, 0, 0.26163, 0, 0, 0, 0.26163, 11.9973, -3.16284, 24.9927)
+
+[node name="Pine_001_089" parent="Props/Arboles/Pine_001" instance=ExtResource("17_pk0vi")]
+transform = Transform3D(0.324873, 0, 0, 0, 0.324873, 0, 0, 0, 0.324873, 11.2081, -3.52055, 27.6635)
+
+[node name="Pine_001_090" parent="Props/Arboles/Pine_001" instance=ExtResource("17_pk0vi")]
+transform = Transform3D(0.324873, 0, 0, 0, 0.324873, 0, 0, 0, 0.324873, 13.5498, -3.43248, 26.3988)
+
+[node name="Pine_001_091" parent="Props/Arboles/Pine_001" instance=ExtResource("17_pk0vi")]
+transform = Transform3D(0.324873, 0, 0, 0, 0.324873, 0, 0, 0, 0.324873, 12.3846, -3.56002, 27.8739)
+
+[node name="Pine_001_092" parent="Props/Arboles/Pine_001" instance=ExtResource("17_pk0vi")]
+transform = Transform3D(0.249485, 0, 0, 0, 0.249485, 0, 0, 0, 0.249485, 12.0491, -3.52222, 27.175)
+
+[node name="Pine_001_093" parent="Props/Arboles/Pine_001" instance=ExtResource("17_pk0vi")]
+transform = Transform3D(0.324873, 0, 0, 0, 0.324873, 0, 0, 0, 0.324873, 10.9228, -3.27972, 25.8293)
+
+[node name="Pine_001_115" parent="Props/Arboles/Pine_001" instance=ExtResource("17_pk0vi")]
+transform = Transform3D(0.324873, 0, 0, 0, 0.324873, 0, 0, 0, 0.324873, 8.92068, -3.16284, 22.6102)
+
+[node name="Pine_001_116" parent="Props/Arboles/Pine_001" instance=ExtResource("17_pk0vi")]
+transform = Transform3D(0.324873, 0, 0, 0, 0.324873, 0, 0, 0, 0.324873, 8.2481, -3.16284, 19.481)
+
+[node name="Pine_001_117" parent="Props/Arboles/Pine_001" instance=ExtResource("17_pk0vi")]
+transform = Transform3D(0.324873, 0, 0, 0, 0.324873, 0, 0, 0, 0.324873, 6.44224, -3.16284, 20.2777)
+
+[node name="Pine_001_118" parent="Props/Arboles/Pine_001" instance=ExtResource("17_pk0vi")]
+transform = Transform3D(0.324873, 0, 0, 0, 0.324873, 0, 0, 0, 0.324873, 3.6926, -3.16284, 21.3643)
+
+[node name="Pine_001_119" parent="Props/Arboles/Pine_001" instance=ExtResource("17_pk0vi")]
+transform = Transform3D(0.324873, 0, 0, 0, 0.324873, 0, 0, 0, 0.324873, 4.00017, -3.16284, 23.462)
+
+[node name="Pine_001_120" parent="Props/Arboles/Pine_001" instance=ExtResource("17_pk0vi")]
+transform = Transform3D(0.324873, 0, 0, 0, 0.324873, 0, 0, 0, 0.324873, 6.22941, -3.16284, 25.0228)
+
+[node name="Pine_001_121" parent="Props/Arboles/Pine_001" instance=ExtResource("17_pk0vi")]
+transform = Transform3D(0.324873, 0, 0, 0, 0.324873, 0, 0, 0, 0.324873, 7.13595, -3.16284, 23.8497)
+
+[node name="Pine_001_122" parent="Props/Arboles/Pine_001" instance=ExtResource("17_pk0vi")]
+transform = Transform3D(0.324873, 0, 0, 0, 0.324873, 0, 0, 0, 0.324873, 6.31941, -3.16284, 22.2411)
+
+[node name="Pine_001_257" parent="Props/Arboles/Pine_001" instance=ExtResource("17_pk0vi")]
+transform = Transform3D(0.324873, 0, 0, 0, 0.324873, 0, 0, 0, 0.324873, 5.14172, -3.16284, 22.6012)
+
+[node name="Pine_001_258" parent="Props/Arboles/Pine_001" instance=ExtResource("17_pk0vi")]
+transform = Transform3D(0.324873, 0, 0, 0, 0.324873, 0, 0, 0, 0.324873, 5.14172, -3.16284, 21.9515)
+
+[node name="Pine_001_259" parent="Props/Arboles/Pine_001" instance=ExtResource("17_pk0vi")]
+transform = Transform3D(0.324873, 0, 0, 0, 0.324873, 0, 0, 0, 0.324873, 4.81685, -3.16284, 23.9007)
+
+[node name="Pine_001_260" parent="Props/Arboles/Pine_001" instance=ExtResource("17_pk0vi")]
+transform = Transform3D(0.324873, 0, 0, 0, 0.324873, 0, 0, 0, 0.324873, 6.15951, -3.16284, 23.9145)
+
+[node name="Pine_001_261" parent="Props/Arboles/Pine_001" instance=ExtResource("17_pk0vi")]
+transform = Transform3D(0.324873, 0, 0, 0, 0.324873, 0, 0, 0, 0.324873, 7.13413, -3.16284, 22.9399)
+
+[node name="Pine_001_123" parent="Props/Arboles/Pine_001" instance=ExtResource("17_pk0vi")]
+transform = Transform3D(0.324873, 0, 0, 0, 0.324873, 0, 0, 0, 0.324873, 11.7936, -3.16284, 22.822)
+
+[node name="Pine_001_124" parent="Props/Arboles/Pine_001" instance=ExtResource("17_pk0vi")]
+transform = Transform3D(0.324873, 0, 0, 0, 0.324873, 0, 0, 0, 0.324873, 7.7947, -3.38821, 25.7199)
+
+[node name="Pine_001_125" parent="Props/Arboles/Pine_001" instance=ExtResource("17_pk0vi")]
+transform = Transform3D(0.324873, 0, 0, 0, 0.324873, 0, 0, 0, 0.324873, 3.19585, -3.16284, 24.9458)
+
+[node name="Pine_001_126" parent="Props/Arboles/Pine_001" instance=ExtResource("17_pk0vi")]
+transform = Transform3D(0.324873, 0, 0, 0, 0.324873, 0, 0, 0, 0.324873, 8.19875, -3.16284, 21.0758)
+
+[node name="Pine_001_253" parent="Props/Arboles/Pine_001" instance=ExtResource("17_pk0vi")]
+transform = Transform3D(0.324873, 0, 0, 0, 0.324873, 0, 0, 0, 0.324873, 7.47136, -3.16284, 21.9406)
+
+[node name="Pine_001_254" parent="Props/Arboles/Pine_001" instance=ExtResource("17_pk0vi")]
+transform = Transform3D(0.324873, 0, 0, 0, 0.324873, 0, 0, 0, 0.324873, 6.82162, -3.16284, 21.2908)
+
+[node name="Pine_001_255" parent="Props/Arboles/Pine_001" instance=ExtResource("17_pk0vi")]
+transform = Transform3D(0.324873, 0, 0, 0, 0.324873, 0, 0, 0, 0.324873, 4.54751, -3.16284, 21.2908)
+
+[node name="Pine_001_256" parent="Props/Arboles/Pine_001" instance=ExtResource("17_pk0vi")]
+transform = Transform3D(0.324873, 0, 0, 0, 0.324873, 0, 0, 0, 0.324873, 3.89776, -3.16284, 19.3416)
+
+[node name="Pine_001_127" parent="Props/Arboles/Pine_001" instance=ExtResource("17_pk0vi")]
+transform = Transform3D(0.324873, 0, 0, 0, 0.324873, 0, 0, 0, 0.324873, 10.1174, -3.16284, 16.7031)
+
+[node name="Pine_001_128" parent="Props/Arboles/Pine_001" instance=ExtResource("17_pk0vi")]
+transform = Transform3D(0.324873, 0, 0, 0, 0.324873, 0, 0, 0, 0.324873, 5.60833, -3.16284, 20.9299)
+
+[node name="Pine_001_129" parent="Props/Arboles/Pine_001" instance=ExtResource("17_pk0vi")]
+transform = Transform3D(0.324873, 0, 0, 0, 0.324873, 0, 0, 0, 0.324873, 6.05563, -3.16284, 22.9649)
+
+[node name="Pine_001_130" parent="Props/Arboles/Pine_001" instance=ExtResource("17_pk0vi")]
+transform = Transform3D(0.324873, 0, 0, 0, 0.324873, 0, 0, 0, 0.324873, 9.59614, -3.16284, 23.1963)
+
+[node name="Pine_001_262" parent="Props/Arboles/Pine_001" instance=ExtResource("17_pk0vi")]
+transform = Transform3D(0.324873, 0, 0, 0, 0.324873, 0, 0, 0, 0.324873, 10.3007, -3.16284, 22.6489)
+
+[node name="Pine_001_263" parent="Props/Arboles/Pine_001" instance=ExtResource("17_pk0vi")]
+transform = Transform3D(0.324873, 0, 0, 0, 0.324873, 0, 0, 0, 0.324873, 11.3732, -3.16284, 22.7519)
+
+[node name="Pine_001_264" parent="Props/Arboles/Pine_001" instance=ExtResource("17_pk0vi")]
+transform = Transform3D(0.324873, 0, 0, 0, 0.324873, 0, 0, 0, 0.324873, 11.3207, -3.16284, 23.7768)
+
+[node name="Pine_001_265" parent="Props/Arboles/Pine_001" instance=ExtResource("17_pk0vi")]
+transform = Transform3D(0.324873, 0, 0, 0, 0.324873, 0, 0, 0, 0.324873, 10.6191, -3.16284, 24.3253)
+
+[node name="Pine_001_266" parent="Props/Arboles/Pine_001" instance=ExtResource("17_pk0vi")]
+transform = Transform3D(0.324873, 0, 0, 0, 0.324873, 0, 0, 0, 0.324873, 9.02007, -3.16284, 24.7544)
+
+[node name="Pine_001_267" parent="Props/Arboles/Pine_001" instance=ExtResource("17_pk0vi")]
+transform = Transform3D(0.324873, 0, 0, 0, 0.324873, 0, 0, 0, 0.324873, 7.72057, -3.16284, 25.0793)
+
+[node name="Pine_001_268" parent="Props/Arboles/Pine_001" instance=ExtResource("17_pk0vi")]
+transform = Transform3D(0.324873, 0, 0, 0, 0.324873, 0, 0, 0, 0.324873, 8.73769, -3.16284, 24.133)
+
+[node name="Pine_001_131" parent="Props/Arboles/Pine_001" instance=ExtResource("17_pk0vi")]
+transform = Transform3D(0.324873, 0, 0, 0, 0.324873, 0, 0, 0, 0.324873, 9.26896, -3.16284, 21.7337)
+
+[node name="Pine_001_132" parent="Props/Arboles/Pine_001" instance=ExtResource("17_pk0vi")]
+transform = Transform3D(0.324873, 0, 0, 0, 0.324873, 0, 0, 0, 0.324873, 7.6368, -3.39797, 26.6772)
+
+[node name="Pine_001_133" parent="Props/Arboles/Pine_001" instance=ExtResource("17_pk0vi")]
+transform = Transform3D(0.324873, 0, 0, 0, 0.324873, 0, 0, 0, 0.324873, 5.21139, -3.16284, 24.3627)
+
+[node name="Pine_001_134" parent="Props/Arboles/Pine_001" instance=ExtResource("17_pk0vi")]
+transform = Transform3D(0.324873, 0, 0, 0, 0.324873, 0, 0, 0, 0.324873, 5.03917, -3.36244, 26.1705)
+
+[node name="Pine_001_135" parent="Props/Arboles/Pine_001" instance=ExtResource("17_pk0vi")]
+transform = Transform3D(0.324873, 0, 0, 0, 0.324873, 0, 0, 0, 0.324873, 3.60507, -3.16284, 22.4781)
+
+[node name="Pine_001_136" parent="Props/Arboles/Pine_001" instance=ExtResource("17_pk0vi")]
+transform = Transform3D(0.324873, 0, 0, 0, 0.324873, 0, 0, 0, 0.324873, 0.848132, -3.16284, 23.4615)
+
+[node name="Pine_001_094" parent="Props/Arboles/Pine_001" instance=ExtResource("17_pk0vi")]
+transform = Transform3D(0.324873, 0, 0, 0, 0.324873, 0, 0, 0, 0.324873, 9.05892, -3.52469, 27.2969)
+
+[node name="Pine_001_095" parent="Props/Arboles/Pine_001" instance=ExtResource("17_pk0vi")]
+transform = Transform3D(0.266531, 0, 0, 0, 0.266531, 0, 0, 0, 0.266531, 9.70866, -3.16284, 26.3223)
+
+[node name="Pine_001_096" parent="Props/Arboles/Pine_001" instance=ExtResource("17_pk0vi")]
+transform = Transform3D(0.324873, 0, 0, 0, 0.324873, 0, 0, 0, 0.324873, 13.9046, -3.32233, 24.7151)
+
+[node name="Pine_001_097" parent="Props/Arboles/Pine_001" instance=ExtResource("17_pk0vi")]
+transform = Transform3D(0.289092, 0, 0, 0, 0.289092, 0, 0, 0, 0.289092, 12.5639, -3.16284, 23.9098)
+
+[node name="Pine_001_098" parent="Props/Arboles/Pine_001" instance=ExtResource("17_pk0vi")]
+transform = Transform3D(0.324873, 0, 0, 0, 0.324873, 0, 0, 0, 0.324873, 14.7822, -3.47964, 27.8627)
+
+[node name="Pine_001_099" parent="Props/Arboles/Pine_001" instance=ExtResource("17_pk0vi")]
+transform = Transform3D(0.324873, 0, 0, 0, 0.324873, 0, 0, 0, 0.324873, 15.442, -3.44618, 27.3002)
+
+[node name="Pine_001_100" parent="Props/Arboles/Pine_001" instance=ExtResource("17_pk0vi")]
+transform = Transform3D(0.29013, 0, 0, 0, 0.29013, 0, 0, 0, 0.29013, 15.8225, -3.37029, 26.4265)
+
+[node name="Pine_001_101" parent="Props/Arboles/Pine_001" instance=ExtResource("17_pk0vi")]
+transform = Transform3D(0.324873, 0, 0, 0, 0.324873, 0, 0, 0, 0.324873, 13.6742, -3.51064, 27.1612)
+
+[node name="Pine_001_102" parent="Props/Arboles/Pine_001" instance=ExtResource("17_pk0vi")]
+transform = Transform3D(0.324873, 0, 0, 0, 0.324873, 0, 0, 0, 0.324873, 13.5214, -3.62405, 28.956)
+
+[node name="Pine_001_103" parent="Props/Arboles/Pine_001" instance=ExtResource("17_pk0vi")]
+transform = Transform3D(0.324873, 0, 0, 0, 0.324873, 0, 0, 0, 0.324873, 14.019, -3.70659, 29.5838)
+
+[node name="Pine_001_104" parent="Props/Arboles/Pine_001" instance=ExtResource("17_pk0vi")]
+transform = Transform3D(0.260436, 0, 0, 0, 0.260436, 0, 0, 0, 0.260436, 16.1637, -3.68674, 28.3845)
+
+[node name="Pine_001_105" parent="Props/Arboles/Pine_001" instance=ExtResource("17_pk0vi")]
+transform = Transform3D(0.270291, 0, 0, 0, 0.270291, 0, 0, 0, 0.270291, 16.4519, -3.40853, 26.8057)
+
+[node name="Pine_001_106" parent="Props/Arboles/Pine_001" instance=ExtResource("17_pk0vi")]
+transform = Transform3D(0.324873, 0, 0, 0, 0.324873, 0, 0, 0, 0.324873, 16.2146, -3.81169, 29.2029)
+
+[node name="Pine_001_107" parent="Props/Arboles/Pine_001" instance=ExtResource("17_pk0vi")]
+transform = Transform3D(0.324873, 0, 0, 0, 0.324873, 0, 0, 0, 0.324873, 14.7509, -3.16284, 24.1612)
+
+[node name="Pine_001_108" parent="Props/Arboles/Pine_001" instance=ExtResource("17_pk0vi")]
+transform = Transform3D(0.324873, 0, 0, 0, 0.324873, 0, 0, 0, 0.324873, 15.999, -3.16284, 20.9368)
+
+[node name="Pine_001_162" parent="Props/Arboles/Pine_001" instance=ExtResource("17_pk0vi")]
+transform = Transform3D(0.324873, 0, 0, 0, 0.324873, 0, 0, 0, 0.324873, 28.2465, -3.95647, 20.0689)
+
+[node name="Pine_001_181" parent="Props/Arboles/Pine_001" instance=ExtResource("17_pk0vi")]
+transform = Transform3D(0.324873, 0, 0, 0, 0.324873, 0, 0, 0, 0.324873, 27.0635, -3.9856, 20.4416)
+
+[node name="Pine_001_182" parent="Props/Arboles/Pine_001" instance=ExtResource("17_pk0vi")]
+transform = Transform3D(0.324873, 0, 0, 0, 0.324873, 0, 0, 0, 0.324873, 26.9425, -3.71001, 19.2404)
+
+[node name="Pine_001_183" parent="Props/Arboles/Pine_001" instance=ExtResource("17_pk0vi")]
+transform = Transform3D(0.324873, 0, 0, 0, 0.324873, 0, 0, 0, 0.324873, 27.612, -4.16893, 22.4488)
+
+[node name="Pine_001_163" parent="Props/Arboles/Pine_001" instance=ExtResource("17_pk0vi")]
+transform = Transform3D(0.324873, 0, 0, 0, 0.324873, 0, 0, 0, 0.324873, 26.026, -3.94377, 21.0067)
+
+[node name="Pine_001_164" parent="Props/Arboles/Pine_001" instance=ExtResource("17_pk0vi")]
+transform = Transform3D(0.324873, 0, 0, 0, 0.324873, 0, 0, 0, 0.324873, 27.3797, -4.26869, 22.9354)
+
+[node name="Pine_001_165" parent="Props/Arboles/Pine_001" instance=ExtResource("17_pk0vi")]
+transform = Transform3D(0.324873, 0, 0, 0, 0.324873, 0, 0, 0, 0.324873, 29.0932, -4.38811, 22.2765)
+
+[node name="Pine_001_166" parent="Props/Arboles/Pine_001" instance=ExtResource("17_pk0vi")]
+transform = Transform3D(0.324873, 0, 0, 0, 0.324873, 0, 0, 0, 0.324873, 26.3536, -3.74173, 18.7025)
+
+[node name="Pine_001_167" parent="Props/Arboles/Pine_001" instance=ExtResource("17_pk0vi")]
+transform = Transform3D(0.324873, 0, 0, 0, 0.324873, 0, 0, 0, 0.324873, 25.5306, -2.37741, 12.1563)
+
+[node name="Pine_001_168" parent="Props/Arboles/Pine_001" instance=ExtResource("17_pk0vi")]
+transform = Transform3D(0.324873, 0, 0, 0, 0.324873, 0, 0, 0, 0.324873, 29.1737, -3.62367, 16.4167)
+
+[node name="Pine_001_169" parent="Props/Arboles/Pine_001" instance=ExtResource("17_pk0vi")]
+transform = Transform3D(0.324873, 0, 0, 0, 0.324873, 0, 0, 0, 0.324873, 29.9415, -4.29925, 20.2365)
+
+[node name="Pine_001_170" parent="Props/Arboles/Pine_001" instance=ExtResource("17_pk0vi")]
+transform = Transform3D(0.324873, 0, 0, 0, 0.324873, 0, 0, 0, 0.324873, 31.0453, -4.01284, 16.6682)
+
+[node name="Pine_001_171" parent="Props/Arboles/Pine_001" instance=ExtResource("17_pk0vi")]
+transform = Transform3D(0.324873, 0, 0, 0, 0.324873, 0, 0, 0, 0.324873, 31.166, -3.16284, 12.709)
+
+[node name="Pine_001_172" parent="Props/Arboles/Pine_001" instance=ExtResource("17_pk0vi")]
+transform = Transform3D(0.324873, 0, 0, 0, 0.324873, 0, 0, 0, 0.324873, 26.0538, -3.16284, 15.8467)
+
+[node name="Pine_001_173" parent="Props/Arboles/Pine_001" instance=ExtResource("17_pk0vi")]
+transform = Transform3D(0.324873, 0, 0, 0, 0.324873, 0, 0, 0, 0.324873, 29.6673, -3.94521, 18.2874)
+
+[node name="Pine_001_174" parent="Props/Arboles/Pine_001" instance=ExtResource("17_pk0vi")]
+transform = Transform3D(0.324873, 0, 0, 0, 0.324873, 0, 0, 0, 0.324873, 28.9097, -3.16284, 14.5832)
+
+[node name="Pine_001_175" parent="Props/Arboles/Pine_001" instance=ExtResource("17_pk0vi")]
+transform = Transform3D(0.324873, 0, 0, 0, 0.324873, 0, 0, 0, 0.324873, 31.5126, -4.1946, 18.432)
+
+[node name="Pine_001_176" parent="Props/Arboles/Pine_001" instance=ExtResource("17_pk0vi")]
+transform = Transform3D(0.324873, 0, 0, 0, 0.324873, 0, 0, 0, 0.324873, 27.6141, -3.73676, 18.432)
+
+[node name="Pine_001_177" parent="Props/Arboles/Pine_001" instance=ExtResource("17_pk0vi")]
+transform = Transform3D(0.324873, 0, 0, 0, 0.324873, 0, 0, 0, 0.324873, 29.6227, -4.0343, 19.1448)
+
+[node name="Pine_001_178" parent="Props/Arboles/Pine_001" instance=ExtResource("17_pk0vi")]
+transform = Transform3D(0.324873, 0, 0, 0, 0.324873, 0, 0, 0, 0.324873, 27.5714, -3.59155, 17.2418)
+
+[node name="Pine_001_179" parent="Props/Arboles/Pine_001" instance=ExtResource("17_pk0vi")]
+transform = Transform3D(0.324873, 0, 0, 0, 0.324873, 0, 0, 0, 0.324873, 26.153, -2.22433, 13.9403)
+
+[node name="Pine_001_180" parent="Props/Arboles/Pine_001" instance=ExtResource("17_pk0vi")]
+transform = Transform3D(0.324873, 0, 0, 0, 0.324873, 0, 0, 0, 0.324873, 30.7839, -4.13839, 19.1271)
+
+[node name="Pine_001_137" parent="Props/Arboles/Pine_001" instance=ExtResource("17_pk0vi")]
+transform = Transform3D(0.324873, 0, 0, 0, 0.324873, 0, 0, 0, 0.324873, 18.4046, -3.45121, 17.4772)
+
+[node name="Pine_001_138" parent="Props/Arboles/Pine_001" instance=ExtResource("17_pk0vi")]
+transform = Transform3D(0.324873, 0, 0, 0, 0.324873, 0, 0, 0, 0.324873, 18.4076, -3.45121, 16.3886)
+
+[node name="Pine_001_139" parent="Props/Arboles/Pine_001" instance=ExtResource("17_pk0vi")]
+transform = Transform3D(0.324873, 0, 0, 0, 0.324873, 0, 0, 0, 0.324873, 16.6401, -3.45121, 15.9222)
+
+[node name="Pine_001_140" parent="Props/Arboles/Pine_001" instance=ExtResource("17_pk0vi")]
+transform = Transform3D(0.324873, 0, 0, 0, 0.324873, 0, 0, 0, 0.324873, 17.6015, -3.45121, 14.0365)
+
+[node name="Pine_001_141" parent="Props/Arboles/Pine_001" instance=ExtResource("17_pk0vi")]
+transform = Transform3D(0.324873, 0, 0, 0, 0.324873, 0, 0, 0, 0.324873, 19.0083, -3.41645, 15.0328)
+
+[node name="Pine_001_142" parent="Props/Arboles/Pine_001" instance=ExtResource("17_pk0vi")]
+transform = Transform3D(0.324873, 0, 0, 0, 0.324873, 0, 0, 0, 0.324873, 16.5079, -3.45121, 13.6083)
+
+[node name="Pine_001_145" parent="Props/Arboles/Pine_001" instance=ExtResource("17_pk0vi")]
+transform = Transform3D(0.324873, 0, 0, 0, 0.324873, 0, 0, 0, 0.324873, 15.0483, -3.28484, 14.8964)
+
+[node name="Pine_001_146" parent="Props/Arboles/Pine_001" instance=ExtResource("17_pk0vi")]
+transform = Transform3D(0.324873, 0, 0, 0, 0.324873, 0, 0, 0, 0.324873, 14.9886, -3.11418, 13.8524)
+
+[node name="Pine_001_147" parent="Props/Arboles/Pine_001" instance=ExtResource("17_pk0vi")]
+transform = Transform3D(0.324873, 0, 0, 0, 0.324873, 0, 0, 0, 0.324873, 15.7346, -2.86749, 13.5317)
+
+[node name="Pine_001_148" parent="Props/Arboles/Pine_001" instance=ExtResource("17_pk0vi")]
+transform = Transform3D(0.324873, 0, 0, 0, 0.324873, 0, 0, 0, 0.324873, 18.0364, -2.86749, 15.9308)
+
+[node name="Pine_001_149" parent="Props/Arboles/Pine_001" instance=ExtResource("17_pk0vi")]
+transform = Transform3D(0.324873, 0, 0, 0, 0.324873, 0, 0, 0, 0.324873, 18.5206, -2.86749, 14.4535)
+
+[node name="Pine_001_150" parent="Props/Arboles/Pine_001" instance=ExtResource("17_pk0vi")]
+transform = Transform3D(0.324873, 0, 0, 0, 0.324873, 0, 0, 0, 0.324873, 17.0757, -2.86749, 11.7263)
+
+[node name="Pine_001_151" parent="Props/Arboles/Pine_001" instance=ExtResource("17_pk0vi")]
+transform = Transform3D(0.324873, 0, 0, 0, 0.324873, 0, 0, 0, 0.324873, 17.9786, -2.86749, 10.1638)
+
+[node name="Pine_001_152" parent="Props/Arboles/Pine_001" instance=ExtResource("17_pk0vi")]
+transform = Transform3D(0.324873, 0, 0, 0, 0.324873, 0, 0, 0, 0.324873, 17.8569, -2.86749, 12.0371)
+
+[node name="Pine_001_153" parent="Props/Arboles/Pine_001" instance=ExtResource("17_pk0vi")]
+transform = Transform3D(0.324873, 0, 0, 0, 0.324873, 0, 0, 0, 0.324873, 18.1818, -2.86749, 12.6868)
+
+[node name="Pine_001_143" parent="Props/Arboles/Pine_001" instance=ExtResource("17_pk0vi")]
+transform = Transform3D(0.324873, 0, 0, 0, 0.324873, 0, 0, 0, 0.324873, 17.3499, -3.45121, 12.7665)
+
+[node name="Pine_001_144" parent="Props/Arboles/Pine_001" instance=ExtResource("17_pk0vi")]
+transform = Transform3D(0.324873, 0, 0, 0, 0.324873, 0, 0, 0, 0.324873, 19.0642, -3.45121, 15.9937)
+
+[node name="Pine_001_109" parent="Props/Arboles/Pine_001" instance=ExtResource("17_pk0vi")]
+transform = Transform3D(0.287918, 0, 0, 0, 0.287918, 0, 0, 0, 0.287918, 13.3271, -3.16284, 23.0016)
+
+[node name="Pine_001_110" parent="Props/Arboles/Pine_001" instance=ExtResource("17_pk0vi")]
+transform = Transform3D(0.324873, 0, 0, 0, 0.324873, 0, 0, 0, 0.324873, 12.6774, -3.55222, 30.4736)
+
+[node name="Pine_001_111" parent="Props/Arboles/Pine_001" instance=ExtResource("17_pk0vi")]
+transform = Transform3D(0.324873, 0, 0, 0, 0.324873, 0, 0, 0, 0.324873, 15.403, -3.93435, 30.291)
+
+[node name="Pine_001_355" parent="Props/Arboles/Pine_001" instance=ExtResource("17_pk0vi")]
+transform = Transform3D(0.324873, 0, 0, 0, 0.324873, 0, 0, 0, 0.324873, 17.5309, -3.93435, 30.0222)
+
+[node name="Pine_001_356" parent="Props/Arboles/Pine_001" instance=ExtResource("17_pk0vi")]
+transform = Transform3D(0.324873, 0, 0, 0, 0.324873, 0, 0, 0, 0.324873, 20.674, -4.39763, 31.8366)
+
+[node name="Pine_001_359" parent="Props/Arboles/Pine_001" instance=ExtResource("17_pk0vi")]
+transform = Transform3D(0.324873, 0, 0, 0, 0.324873, 0, 0, 0, 0.324873, 17.0066, -4.33346, 32.657)
+
+[node name="Pine_001_360" parent="Props/Arboles/Pine_001" instance=ExtResource("17_pk0vi")]
+transform = Transform3D(0.324873, 0, 0, 0, 0.324873, 0, 0, 0, 0.324873, 13.4329, -4.39763, 31.0326)
+
+[node name="Pine_001_361" parent="Props/Arboles/Pine_001" instance=ExtResource("17_pk0vi")]
+transform = Transform3D(0.324873, 0, 0, 0, 0.324873, 0, 0, 0, 0.324873, 19.6055, -4.39763, 32.657)
+
+[node name="Pine_001_362" parent="Props/Arboles/Pine_001" instance=ExtResource("17_pk0vi")]
+transform = Transform3D(0.324873, 0, 0, 0, 0.324873, 0, 0, 0, 0.324873, 13.3107, -3.98005, 31.9973)
+
+[node name="Pine_001_363" parent="Props/Arboles/Pine_001" instance=ExtResource("17_pk0vi")]
+transform = Transform3D(0.324873, 0, 0, 0, 0.324873, 0, 0, 0, 0.324873, 22.5369, -3.83753, 27.2529)
+
+[node name="Pine_001_366" parent="Props/Arboles/Pine_001" instance=ExtResource("17_pk0vi")]
+transform = Transform3D(0.324873, 0, 0, 0, 0.324873, 0, 0, 0, 0.324873, 20.9905, -4.13649, 30.3241)
+
+[node name="Pine_001_367" parent="Props/Arboles/Pine_001" instance=ExtResource("17_pk0vi")]
+transform = Transform3D(0.324873, 0, 0, 0, 0.324873, 0, 0, 0, 0.324873, 22.6648, -4.4413, 31.3954)
+
+[node name="Pine_001_368" parent="Props/Arboles/Pine_001" instance=ExtResource("17_pk0vi")]
+transform = Transform3D(0.324873, 0, 0, 0, 0.324873, 0, 0, 0, 0.324873, 22.6656, -4.33916, 29.9704)
+
+[node name="Pine_001_369" parent="Props/Arboles/Pine_001" instance=ExtResource("17_pk0vi")]
+transform = Transform3D(0.324873, 0, 0, 0, 0.324873, 0, 0, 0, 0.324873, 18.7782, -4.33916, 32.2247)
+
+[node name="Pine_001_370" parent="Props/Arboles/Pine_001" instance=ExtResource("17_pk0vi")]
+transform = Transform3D(0.324873, 0, 0, 0, 0.324873, 0, 0, 0, 0.324873, 21.0686, -4.58424, 32.519)
+
+[node name="Pine_001_364" parent="Props/Arboles/Pine_001" instance=ExtResource("17_pk0vi")]
+transform = Transform3D(0.324873, 0, 0, 0, 0.324873, 0, 0, 0, 0.324873, 20.4512, -3.59891, 27.8016)
+
+[node name="Pine_001_365" parent="Props/Arboles/Pine_001" instance=ExtResource("17_pk0vi")]
+transform = Transform3D(0.324873, 0, 0, 0, 0.324873, 0, 0, 0, 0.324873, 21.3534, -3.87137, 27.8286)
+
+[node name="Pine_001_357" parent="Props/Arboles/Pine_001" instance=ExtResource("17_pk0vi")]
+transform = Transform3D(0.324873, 0, 0, 0, 0.324873, 0, 0, 0, 0.324873, 19.0496, -3.93435, 28.9128)
+
+[node name="Pine_001_358" parent="Props/Arboles/Pine_001" instance=ExtResource("17_pk0vi")]
+transform = Transform3D(0.324873, 0, 0, 0, 0.324873, 0, 0, 0, 0.324873, 21.4438, -4.31896, 31.5439)
+
+[node name="Pine_001_112" parent="Props/Arboles/Pine_001" instance=ExtResource("17_pk0vi")]
+transform = Transform3D(0.267304, 0, 0, 0, 0.267304, 0, 0, 0, 0.267304, 10.0139, -3.63305, 29.2781)
+
+[node name="Pine_001_113" parent="Props/Arboles/Pine_001" instance=ExtResource("17_pk0vi")]
+transform = Transform3D(0.324873, 0, 0, 0, 0.324873, 0, 0, 0, 0.324873, 10.2318, -3.16284, 23.9408)
+
+[node name="Pine_001_078" parent="Props/Arboles/Pine_001" instance=ExtResource("17_pk0vi")]
+transform = Transform3D(0.266722, 0, 0, 0, 0.266722, 0, 0, 0, 0.266722, -0.72544, -3.16284, 20.9697)
+
+[node name="Pine_001_079" parent="Props/Arboles/Pine_001" instance=ExtResource("17_pk0vi")]
+transform = Transform3D(0.298077, 0, 0, 0, 0.298077, 0, 0, 0, 0.298077, 1.36381, -3.16284, 19.66)
+
+[node name="Pine_001_269" parent="Props/Arboles/Pine_001" instance=ExtResource("17_pk0vi")]
+transform = Transform3D(0.298077, 0, 0, 0, 0.298077, 0, 0, 0, 0.298077, 1.76973, -3.16284, 17.8106)
+
+[node name="Pine_001_270" parent="Props/Arboles/Pine_001" instance=ExtResource("17_pk0vi")]
+transform = Transform3D(0.298077, 0, 0, 0, 0.298077, 0, 0, 0, 0.298077, 3.09043, -3.16284, 18.5511)
+
+[node name="Pine_001_271" parent="Props/Arboles/Pine_001" instance=ExtResource("17_pk0vi")]
+transform = Transform3D(0.298077, 0, 0, 0, 0.298077, 0, 0, 0, 0.298077, 2.44074, -3.16284, 17.389)
+
+[node name="Pine_001_272" parent="Props/Arboles/Pine_001" instance=ExtResource("17_pk0vi")]
+transform = Transform3D(0.298077, 0, 0, 0, 0.298077, 0, 0, 0, 0.298077, 0.456298, -3.16284, 17.4614)
+
+[node name="Pine_001_273" parent="Props/Arboles/Pine_001" instance=ExtResource("17_pk0vi")]
+transform = Transform3D(0.298077, 0, 0, 0, 0.298077, 0, 0, 0, 0.298077, 0.158221, -3.16284, 18.3556)
+
+[node name="Pine_001_274" parent="Props/Arboles/Pine_001" instance=ExtResource("17_pk0vi")]
+transform = Transform3D(0.298077, 0, 0, 0, 0.298077, 0, 0, 0, 0.298077, 0.159964, -3.16284, 19.8117)
+
+[node name="Pine_001_275" parent="Props/Arboles/Pine_001" instance=ExtResource("17_pk0vi")]
+transform = Transform3D(0.298077, 0, 0, 0, 0.298077, 0, 0, 0, 0.298077, 0.256463, -3.16284, 20.3222)
+
+[node name="Pine_001_276" parent="Props/Arboles/Pine_001" instance=ExtResource("17_pk0vi")]
+transform = Transform3D(0.298077, 0, 0, 0, 0.298077, 0, 0, 0, 0.298077, -0.480992, -3.16284, 21.6357)
+
+[node name="Pine_001_277" parent="Props/Arboles/Pine_001" instance=ExtResource("17_pk0vi")]
+transform = Transform3D(0.298077, 0, 0, 0, 0.298077, 0, 0, 0, 0.298077, -1.37522, -3.16284, 19.8472)
+
+[node name="Pine_001_278" parent="Props/Arboles/Pine_001" instance=ExtResource("17_pk0vi")]
+transform = Transform3D(0.298077, 0, 0, 0, 0.298077, 0, 0, 0, 0.298077, -1.24623, -3.16284, 17.1639)
+
+[node name="Pine_001_080" parent="Props/Arboles/Pine_001" instance=ExtResource("17_pk0vi")]
+transform = Transform3D(0.324873, 0, 0, 0, 0.324873, 0, 0, 0, 0.324873, 0.599495, -3.16284, 16.7666)
+
+[node name="Pine_001_081" parent="Props/Arboles/Pine_001" instance=ExtResource("17_pk0vi")]
+transform = Transform3D(0.324873, 0, 0, 0, 0.324873, 0, 0, 0, 0.324873, -6.64576, -3.16284, 18.3646)
+
+[node name="Pine_001_082" parent="Props/Arboles/Pine_001" instance=ExtResource("17_pk0vi")]
+transform = Transform3D(0.324873, 0, 0, 0, 0.324873, 0, 0, 0, 0.324873, -5.92449, -3.16284, 21.52)
+
+[node name="Pine_001_083" parent="Props/Arboles/Pine_001" instance=ExtResource("17_pk0vi")]
+transform = Transform3D(0.324873, 0, 0, 0, 0.324873, 0, 0, 0, 0.324873, -5.02441, -3.16284, 19.9949)
+
+[node name="Pine_001_084" parent="Props/Arboles/Pine_001" instance=ExtResource("17_pk0vi")]
+transform = Transform3D(0.324873, 0, 0, 0, 0.324873, 0, 0, 0, 0.324873, -4.89068, -3.16284, 18.9877)
+
+[node name="Pine_001_085" parent="Props/Arboles/Pine_001" instance=ExtResource("17_pk0vi")]
+transform = Transform3D(0.324873, 0, 0, 0, 0.324873, 0, 0, 0, 0.324873, -3.96156, -3.16284, 20.8935)
+
+[node name="Pine_001_086" parent="Props/Arboles/Pine_001" instance=ExtResource("17_pk0vi")]
+transform = Transform3D(0.324873, 0, 0, 0, 0.324873, 0, 0, 0, 0.324873, -3.21382, -3.16284, 19.5654)
+
+[node name="Pine_001_087" parent="Props/Arboles/Pine_001" instance=ExtResource("17_pk0vi")]
+transform = Transform3D(0.324873, 0, 0, 0, 0.324873, 0, 0, 0, 0.324873, -6.31834, -3.16284, 19.7691)
+
+[node name="Pine_001_014" parent="Props/Arboles/Pine_001" instance=ExtResource("17_pk0vi")]
+transform = Transform3D(0.262016, 0, 0, 0, 0.262016, 0, 0, 0, 0.262016, -12.3384, -2.03454, 13.5579)
+
+[node name="Pine_001_015" parent="Props/Arboles/Pine_001" instance=ExtResource("17_pk0vi")]
+transform = Transform3D(0.262016, 0, 0, 0, 0.262016, 0, 0, 0, 0.262016, -13.3499, -2.30223, 13.115)
+
+[node name="Pine_001_004" parent="Props/Arboles/Pine_001" instance=ExtResource("17_pk0vi")]
+transform = Transform3D(0.274494, 0, 0, 0, 0.274494, 0, 0, 0, 0.274494, -9.69672, -3.4896, -1.12896)
+
+[node name="Pine_001_005" parent="Props/Arboles/Pine_001" instance=ExtResource("17_pk0vi")]
+transform = Transform3D(0.274494, 0, 0, 0, 0.274494, 0, 0, 0, 0.274494, -9.57463, -3.46728, -2.4181)
+
+[node name="Pine_001_047" parent="Props/Arboles/Pine_001" instance=ExtResource("17_pk0vi")]
+transform = Transform3D(0.274494, 0, 0, 0, 0.274494, 0, 0, 0, 0.274494, -11.8593, -3.58299, -2.26536)
+
+[node name="Pine_001_048" parent="Props/Arboles/Pine_001" instance=ExtResource("17_pk0vi")]
+transform = Transform3D(0.274494, 0, 0, 0, 0.274494, 0, 0, 0, 0.274494, -12.3559, -3.46728, -3.24696)
+
+[node name="Pine_001_049" parent="Props/Arboles/Pine_001" instance=ExtResource("17_pk0vi")]
+transform = Transform3D(0.274494, 0, 0, 0, 0.274494, 0, 0, 0, 0.274494, -14.6025, -3.46728, -3.19818)
+
+[node name="Pine_001_050" parent="Props/Arboles/Pine_001" instance=ExtResource("17_pk0vi")]
+transform = Transform3D(0.274487, 0.00151964, -0.00121827, -0.00151315, 0.274486, 0.00146264, 0.00122633, -0.0014559, 0.274487, -14.6742, -3.54096, -5.89469)
+
+[node name="Pine_001_316" parent="Props/Arboles/Pine_001" instance=ExtResource("17_pk0vi")]
+transform = Transform3D(0.274487, 0.00151964, -0.00121827, -0.00151315, 0.274486, 0.00146264, 0.00122633, -0.0014559, 0.274487, -17.7899, -3.54922, -10.7034)
+
+[node name="Pine_001_317" parent="Props/Arboles/Pine_001" instance=ExtResource("17_pk0vi")]
+transform = Transform3D(0.274487, 0.00151964, -0.00121827, -0.00151315, 0.274486, 0.00146264, 0.00122633, -0.0014559, 0.274487, -29.862, -1.49581, -25.2358)
+
+[node name="Pine_001_318" parent="Props/Arboles/Pine_001" instance=ExtResource("17_pk0vi")]
+transform = Transform3D(0.274487, 0.00151964, -0.00121827, -0.00151315, 0.274486, 0.00146264, 0.00122633, -0.0014559, 0.274487, -30.8349, -3.12991, -12.8328)
+
+[node name="Pine_001_051" parent="Props/Arboles/Pine_001" instance=ExtResource("17_pk0vi")]
+transform = Transform3D(0.274487, 0.00151964, -0.00121827, -0.00151315, 0.274486, 0.00146264, 0.00122633, -0.0014559, 0.274487, 13.0297, -3.4196, 6.72564)
+
+[node name="Pine_001_052" parent="Props/Arboles/Pine_001" instance=ExtResource("17_pk0vi")]
+transform = Transform3D(0.274487, 0.00151964, -0.00121827, -0.00151315, 0.274486, 0.00146264, 0.00122633, -0.0014559, 0.274487, 13.0401, -3.41458, 7.68322)
+
+[node name="Pine_001_184" parent="Props/Arboles/Pine_001" instance=ExtResource("17_pk0vi")]
+transform = Transform3D(0.274487, 0.00151964, -0.00121827, -0.00151315, 0.274486, 0.00146264, 0.00122633, -0.0014559, 0.274487, 10.7638, -3.39239, 9.49173)
+
+[node name="Pine_001_185" parent="Props/Arboles/Pine_001" instance=ExtResource("17_pk0vi")]
+transform = Transform3D(0.274487, 0.00151964, -0.00121827, -0.00151315, 0.274486, 0.00146264, 0.00122633, -0.0014559, 0.274487, 11.3152, -3.39834, 8.94521)
+
+[node name="Pine_001_186" parent="Props/Arboles/Pine_001" instance=ExtResource("17_pk0vi")]
+transform = Transform3D(0.274487, 0.00151964, -0.00121827, -0.00151315, 0.274486, 0.00146264, 0.00122633, -0.0014559, 0.274487, 11.314, -3.39688, 9.21969)
+
+[node name="Pine_001_187" parent="Props/Arboles/Pine_001" instance=ExtResource("17_pk0vi")]
+transform = Transform3D(0.274487, 0.00151964, -0.00121827, -0.00151315, 0.274486, 0.00146264, 0.00122633, -0.0014559, 0.274487, 11.2338, -3.39394, 9.69009)
+
+[node name="Pine_001_188" parent="Props/Arboles/Pine_001" instance=ExtResource("17_pk0vi")]
+transform = Transform3D(0.274487, 0.00151964, -0.00121827, -0.00151315, 0.274486, 0.00146264, 0.00122633, -0.0014559, 0.274487, 11.5071, -3.39399, 9.96581)
+
+[node name="Pine_001_189" parent="Props/Arboles/Pine_001" instance=ExtResource("17_pk0vi")]
+transform = Transform3D(0.274487, 0.00151964, -0.00121827, -0.00151315, 0.274486, 0.00146264, 0.00122633, -0.0014559, 0.274487, 11.763, -3.39797, 9.48132)
+
+[node name="Pine_001_053" parent="Props/Arboles/Pine_001" instance=ExtResource("17_pk0vi")]
+transform = Transform3D(0.274487, 0.00151964, -0.00121827, -0.00151315, 0.274486, 0.00146264, 0.00122633, -0.0014559, 0.274487, 14.3559, -3.43222, 5.73078)
+
+[node name="Pine_001_068" parent="Props/Arboles/Pine_001" instance=ExtResource("17_pk0vi")]
+transform = Transform3D(0.274487, 0.00151964, -0.00121827, -0.00151315, 0.274486, 0.00146264, 0.00122633, -0.0014559, 0.274487, 16.8731, -3.42737, 9.2717)
+
+[node name="Pine_001_069" parent="Props/Arboles/Pine_001" instance=ExtResource("17_pk0vi")]
+transform = Transform3D(0.274487, 0.00151964, -0.00121827, -0.00151315, 0.274486, 0.00146264, 0.00122633, -0.0014559, 0.274487, 18.0815, -3.44357, 7.47922)
+
+[node name="Pine_001_054" parent="Props/Arboles/Pine_001" instance=ExtResource("17_pk0vi")]
+transform = Transform3D(0.274487, 0.00151964, -0.00121827, -0.00151315, 0.274486, 0.00146264, 0.00122633, -0.0014559, 0.274487, 10.9487, -3.41873, 4.71753)
+
+[node name="Pine_001_055" parent="Props/Arboles/Pine_001" instance=ExtResource("17_pk0vi")]
+transform = Transform3D(0.274487, 0.00151964, -0.00121827, -0.00151315, 0.274486, 0.00146264, 0.00122633, -0.0014559, 0.274487, 12.7278, -3.43615, 3.29063)
+
+[node name="Pine_001_056" parent="Props/Arboles/Pine_001" instance=ExtResource("17_pk0vi")]
+transform = Transform3D(0.274487, 0.00151964, -0.00121827, -0.00151315, 0.274486, 0.00146264, 0.00122633, -0.0014559, 0.274487, 11.7596, -3.41971, 5.37829)
+
+[node name="Pine_001_057" parent="Props/Arboles/Pine_001" instance=ExtResource("17_pk0vi")]
+transform = Transform3D(0.274487, 0.00151964, -0.00121827, -0.00151315, 0.274486, 0.00146264, 0.00122633, -0.0014559, 0.274487, 14.4853, -3.44385, 3.67313)
+
+[node name="Pine_001_058" parent="Props/Arboles/Pine_001" instance=ExtResource("17_pk0vi")]
+transform = Transform3D(0.274487, 0.00151964, -0.00121827, -0.00151315, 0.274486, 0.00146264, 0.00122633, -0.0014559, 0.274487, 13.0688, -3.43013, 4.77991)
+
+[node name="Pine_001_059" parent="Props/Arboles/Pine_001" instance=ExtResource("17_pk0vi")]
+transform = Transform3D(0.274487, 0.00151964, -0.00121827, -0.00151315, 0.274486, 0.00146264, 0.00122633, -0.0014559, 0.274487, 11.8503, -3.42724, 4.05478)
+
+[node name="Pine_001_060" parent="Props/Arboles/Pine_001" instance=ExtResource("17_pk0vi")]
+transform = Transform3D(0.274487, 0.00151964, -0.00121827, -0.00151315, 0.274486, 0.00146264, 0.00122633, -0.0014559, 0.274487, 13.5126, -3.44274, 2.86584)
+
+[node name="Pine_001_061" parent="Props/Arboles/Pine_001" instance=ExtResource("17_pk0vi")]
+transform = Transform3D(0.274487, 0.00151964, -0.00121827, -0.00151315, 0.274486, 0.00146264, 0.00122633, -0.0014559, 0.274487, 13.6107, -3.42553, 6.21317)
+
+[node name="Pine_001_062" parent="Props/Arboles/Pine_001" instance=ExtResource("17_pk0vi")]
+transform = Transform3D(0.274487, 0.00151964, -0.00121827, -0.00151315, 0.274486, 0.00146264, 0.00122633, -0.0014559, 0.274487, 15.834, -3.44763, 4.36805)
+
+[node name="Pine_001_063" parent="Props/Arboles/Pine_001" instance=ExtResource("17_pk0vi")]
+transform = Transform3D(0.274487, 0.00151964, -0.00121827, -0.00151315, 0.274486, 0.00146264, 0.00122633, -0.0014559, 0.274487, 17.6783, -3.45713, 4.50221)
+
+[node name="Pine_001_064" parent="Props/Arboles/Pine_001" instance=ExtResource("17_pk0vi")]
+transform = Transform3D(0.274487, 0.00151964, -0.00121827, -0.00151315, 0.274486, 0.00146264, 0.00122633, -0.0014559, 0.274487, 15.2095, -3.45132, 3.01984)
+
+[node name="Pine_001_065" parent="Props/Arboles/Pine_001" instance=ExtResource("17_pk0vi")]
+transform = Transform3D(0.274487, 0.00151964, -0.00121827, -0.00151315, 0.274486, 0.00146264, 0.00122633, -0.0014559, 0.274487, 10.4594, -3.41336, 5.21817)
+
+[node name="Pine_001_066" parent="Props/Arboles/Pine_001" instance=ExtResource("17_pk0vi")]
+transform = Transform3D(0.274487, 0.00151964, -0.00121827, -0.00151315, 0.274486, 0.00146264, 0.00122633, -0.0014559, 0.274487, 9.23651, -3.14602, 2.36271)
+
+[node name="Pine_001_342" parent="Props/Arboles/Pine_001" instance=ExtResource("17_pk0vi")]
+transform = Transform3D(0.340314, 0.00188408, -0.00151043, -0.00187603, 0.340312, 0.00181341, 0.00152042, -0.00180505, 0.340314, 5.54527, -3.01602, -8.83042)
+
+[node name="Pine_001_343" parent="Props/Arboles/Pine_001" instance=ExtResource("17_pk0vi")]
+transform = Transform3D(0.340314, 0.00188408, -0.00151043, -0.00187603, 0.340312, 0.00181341, 0.00152042, -0.00180505, 0.340314, 5.37152, -2.99667, -5.36331)
+
+[node name="Pine_001_344" parent="Props/Arboles/Pine_001" instance=ExtResource("17_pk0vi")]
+transform = Transform3D(0.340314, 0.00188408, -0.00151043, -0.00187603, 0.340312, 0.00181341, 0.00152042, -0.00180505, 0.340314, 2.13356, -2.57303, -11.0709)
+
+[node name="Pine_001_345" parent="Props/Arboles/Pine_001" instance=ExtResource("17_pk0vi")]
+transform = Transform3D(0.340314, 0.00188408, -0.00151043, -0.00187603, 0.340312, 0.00181341, 0.00152042, -0.00180505, 0.340314, 6.27251, -2.6628, -11.7316)
+
+[node name="Pine_001_346" parent="Props/Arboles/Pine_001" instance=ExtResource("17_pk0vi")]
+transform = Transform3D(0.340314, 0.00188408, -0.00151043, -0.00187603, 0.340312, 0.00181341, 0.00152042, -0.00180505, 0.340314, 7.82798, -3.01396, -6.5111)
+
+[node name="Pine_001_347" parent="Props/Arboles/Pine_001" instance=ExtResource("17_pk0vi")]
+transform = Transform3D(0.340314, 0.00188408, -0.00151043, -0.00187603, 0.340312, 0.00181341, 0.00152042, -0.00180505, 0.340314, 5.63573, -3.04225, -4.0894)
+
+[node name="Pine_001_348" parent="Props/Arboles/Pine_001" instance=ExtResource("17_pk0vi")]
+transform = Transform3D(0.340314, 0.00188408, -0.00151043, -0.00187603, 0.340312, 0.00181341, 0.00152042, -0.00180505, 0.340314, 4.86501, -3.01062, -7.18191)
+
+[node name="Pine_001_349" parent="Props/Arboles/Pine_001" instance=ExtResource("17_pk0vi")]
+transform = Transform3D(0.340314, 0.00188408, -0.00151043, -0.00187603, 0.340312, 0.00181341, 0.00152042, -0.00180505, 0.340314, 8.09084, -3.01328, -4.31788)
+
+[node name="Pine_001_350" parent="Props/Arboles/Pine_001" instance=ExtResource("17_pk0vi")]
+transform = Transform3D(0.340314, 0.00188408, -0.00151043, -0.00187603, 0.340312, 0.00181341, 0.00152042, -0.00180505, 0.340314, 0.957036, -2.62081, -6.94949)
+
+[node name="Pine_001_351" parent="Props/Arboles/Pine_001" instance=ExtResource("17_pk0vi")]
+transform = Transform3D(0.340314, 0.00188408, -0.00151043, -0.00187603, 0.340312, 0.00181341, 0.00152042, -0.00180505, 0.340314, 6.06797, -2.62179, -1.80068)
+
+[node name="Pine_001_352" parent="Props/Arboles/Pine_001" instance=ExtResource("17_pk0vi")]
+transform = Transform3D(0.340314, 0.00188408, -0.00151043, -0.00187603, 0.340312, 0.00181341, 0.00152042, -0.00180505, 0.340314, 3.58154, -2.65067, -9.84046)
+
+[node name="Pine_001_076" parent="Props/Arboles/Pine_001" instance=ExtResource("17_pk0vi")]
+transform = Transform3D(0.274487, 0.00151964, -0.00121827, -0.00151315, 0.274486, 0.00146264, 0.00122633, -0.0014559, 0.274487, 3.90678, -2.54234, 1.55421)
+
+[node name="Pine_001_154" parent="Props/Arboles/Pine_001" instance=ExtResource("17_pk0vi")]
+transform = Transform3D(0.274487, 0.00151964, -0.00121827, -0.00151315, 0.274486, 0.00146264, 0.00122633, -0.0014559, 0.274487, 5.00494, -2.85735, 3.56373)
+
+[node name="Pine_001_155" parent="Props/Arboles/Pine_001" instance=ExtResource("17_pk0vi")]
+transform = Transform3D(0.274487, 0.00151964, -0.00121827, -0.00151315, 0.274486, 0.00146264, 0.00122633, -0.0014559, 0.274487, 5.56212, -2.70713, 1.9184)
+
+[node name="Pine_001_156" parent="Props/Arboles/Pine_001" instance=ExtResource("17_pk0vi")]
+transform = Transform3D(0.274487, 0.00151964, -0.00121827, -0.00151315, 0.274486, 0.00146264, 0.00122633, -0.0014559, 0.274487, 3.63751, -2.39564, -0.74502)
+
+[node name="Pine_001_157" parent="Props/Arboles/Pine_001" instance=ExtResource("17_pk0vi")]
+transform = Transform3D(0.274487, 0.00151964, -0.00121827, -0.00151315, 0.274486, 0.00146264, 0.00122633, -0.0014559, 0.274487, 0.982077, -2.10456, -1.45799)
+
+[node name="Pine_001_158" parent="Props/Arboles/Pine_001" instance=ExtResource("17_pk0vi")]
+transform = Transform3D(0.274487, 0.00151964, -0.00121827, -0.00151315, 0.274486, 0.00146264, 0.00122633, -0.0014559, 0.274487, 1.96269, -2.54955, 1.95267)
+
+[node name="Pine_001_159" parent="Props/Arboles/Pine_001" instance=ExtResource("17_pk0vi")]
+transform = Transform3D(0.274487, 0.00151964, -0.00121827, -0.00151315, 0.274486, 0.00146264, 0.00122633, -0.0014559, 0.274487, 2.55583, -2.56832, 1.00772)
+
+[node name="Pine_001_190" parent="Props/Arboles/Pine_001" instance=ExtResource("17_pk0vi")]
+transform = Transform3D(0.274487, 0.00151964, -0.00121827, -0.00151315, 0.274486, 0.00146264, 0.00122633, -0.0014559, 0.274487, 2.66537, -2.5727, 0.296695)
+
+[node name="Pine_001_191" parent="Props/Arboles/Pine_001" instance=ExtResource("17_pk0vi")]
+transform = Transform3D(0.274487, 0.00151964, -0.00121827, -0.00151315, 0.274486, 0.00146264, 0.00122633, -0.0014559, 0.274487, 3.49198, -2.45092, -0.249286)
+
+[node name="Pine_001_192" parent="Props/Arboles/Pine_001" instance=ExtResource("17_pk0vi")]
+transform = Transform3D(0.274487, 0.00151964, -0.00121827, -0.00151315, 0.274486, 0.00146264, 0.00122633, -0.0014559, 0.274487, 3.76349, -2.54828, 0.301438)
+
+[node name="Pine_001_193" parent="Props/Arboles/Pine_001" instance=ExtResource("17_pk0vi")]
+transform = Transform3D(0.274487, 0.00151964, -0.00121827, -0.00151315, 0.274486, 0.00146264, 0.00122633, -0.0014559, 0.274487, 2.99748, -2.56897, 1.34675)
+
+[node name="Pine_001_307" parent="Props/Arboles/Pine_001" instance=ExtResource("17_pk0vi")]
+transform = Transform3D(0.274487, 0.00151964, -0.00121827, -0.00151315, 0.274486, 0.00146264, 0.00122633, -0.0014559, 0.274487, -1.43455, -3.33103, 10.2402)
+
+[node name="Pine_001_308" parent="Props/Arboles/Pine_001" instance=ExtResource("17_pk0vi")]
+transform = Transform3D(0.274487, 0.00151964, -0.00121827, -0.00151315, 0.274486, 0.00146264, 0.00122633, -0.0014559, 0.274487, -7.18826, -3.35, -4.39349)
+
+[node name="Pine_001_309" parent="Props/Arboles/Pine_001" instance=ExtResource("17_pk0vi")]
+transform = Transform3D(0.274487, 0.00151964, -0.00121827, -0.00151315, 0.274486, 0.00146264, 0.00122633, -0.0014559, 0.274487, -7.68861, -3.44341, -9.84647)
+
+[node name="Pine_001_194" parent="Props/Arboles/Pine_001" instance=ExtResource("17_pk0vi")]
+transform = Transform3D(0.274487, 0.00151964, -0.00121827, -0.00151315, 0.274486, 0.00146264, 0.00122633, -0.0014559, 0.274487, 3.87411, -2.57608, 0.921864)
+
+[node name="Pine_001_195" parent="Props/Arboles/Pine_001" instance=ExtResource("17_pk0vi")]
+transform = Transform3D(0.274487, 0.00151964, -0.00121827, -0.00151315, 0.274486, 0.00146264, 0.00122633, -0.0014559, 0.274487, 4.11759, -2.49049, 0.147599)
+
+[node name="Pine_001_197" parent="Props/Arboles/Pine_001" instance=ExtResource("17_pk0vi")]
+transform = Transform3D(0.274487, 0.00151964, -0.00121827, -0.00151315, 0.274486, 0.00146264, 0.00122633, -0.0014559, 0.274487, 5.35095, -2.80097, 3.10904)
+
+[node name="Pine_001_196" parent="Props/Arboles/Pine_001" instance=ExtResource("17_pk0vi")]
+transform = Transform3D(0.274487, 0.00151964, -0.00121827, -0.00151315, 0.274486, 0.00146264, 0.00122633, -0.0014559, 0.274487, 3.02043, -2.564, -0.131379)
+
+[node name="Pine_001_160" parent="Props/Arboles/Pine_001" instance=ExtResource("17_pk0vi")]
+transform = Transform3D(0.274487, 0.00151964, -0.00121827, -0.00151315, 0.274486, 0.00146264, 0.00122633, -0.0014559, 0.274487, 0.207032, -2.16529, -0.456276)
+
+[node name="Pine_001_161" parent="Props/Arboles/Pine_001" instance=ExtResource("17_pk0vi")]
+transform = Transform3D(0.274487, 0.00151964, -0.00121827, -0.00151315, 0.274486, 0.00146264, 0.00122633, -0.0014559, 0.274487, 5.13054, -2.56358, 0.499265)
+
+[node name="Pine_001_067" parent="Props/Arboles/Pine_001" instance=ExtResource("17_pk0vi")]
+transform = Transform3D(0.274487, 0.00151964, -0.00121827, -0.00151315, 0.274486, 0.00146264, 0.00122633, -0.0014559, 0.274487, 11.4075, -3.4409, 1.01677)
+
+[node name="Pine_001_002" parent="Props/Arboles/Pine_001" instance=ExtResource("17_pk0vi")]
+transform = Transform3D(0.274494, 0, 0, 0, 0.274494, 0, 0, 0, 0.274494, -26.5644, -3.42309, -11.7131)
+
+[node name="Pine_001_037" parent="Props/Arboles/Pine_001" instance=ExtResource("17_pk0vi")]
+transform = Transform3D(0.274494, 0, 0, 0, 0.274494, 0, 0, 0, 0.274494, -26.3517, -3.42309, -13.4039)
+
+[node name="Pine_001_200" parent="Props/Arboles/Pine_001" instance=ExtResource("17_pk0vi")]
+transform = Transform3D(0.274494, 0, 0, 0, 0.274494, 0, 0, 0, 0.274494, -20.2981, -3.42309, -18.9143)
+
+[node name="Pine_001_201" parent="Props/Arboles/Pine_001" instance=ExtResource("17_pk0vi")]
+transform = Transform3D(0.274494, 0, 0, 0, 0.274494, 0, 0, 0, 0.274494, -19.4695, -3.42309, -20.0122)
+
+[node name="Pine_001_214" parent="Props/Arboles/Pine_001" instance=ExtResource("17_pk0vi")]
+transform = Transform3D(0.274494, 0, 0, 0, 0.274494, 0, 0, 0, 0.274494, -18.6678, -3.42309, -18.8035)
+
+[node name="Pine_001_202" parent="Props/Arboles/Pine_001" instance=ExtResource("17_pk0vi")]
+transform = Transform3D(0.274494, 0, 0, 0, 0.274494, 0, 0, 0, 0.274494, -19.4695, -3.42309, -18.9142)
+
+[node name="Pine_001_208" parent="Props/Arboles/Pine_001" instance=ExtResource("17_pk0vi")]
+transform = Transform3D(0.274494, 0, 0, 0, 0.274494, 0, 0, 0, 0.274494, -19.0776, -3.42309, -16.8561)
+
+[node name="Pine_001_209" parent="Props/Arboles/Pine_001" instance=ExtResource("17_pk0vi")]
+transform = Transform3D(0.274494, 0, 0, 0, 0.274494, 0, 0, 0, 0.274494, -17.9656, -3.42309, -17.7365)
+
+[node name="Pine_001_210" parent="Props/Arboles/Pine_001" instance=ExtResource("17_pk0vi")]
+transform = Transform3D(0.274494, 0, 0, 0, 0.274494, 0, 0, 0, 0.274494, -16.8239, -3.42309, -19.7711)
+
+[node name="Pine_001_279" parent="Props/Arboles/Pine_001" instance=ExtResource("17_pk0vi")]
+transform = Transform3D(0.274494, 0, 0, 0, 0.274494, 0, 0, 0, 0.274494, -12.8671, -3.42309, -21.1741)
+
+[node name="Pine_001_280" parent="Props/Arboles/Pine_001" instance=ExtResource("17_pk0vi")]
+transform = Transform3D(0.274494, 0, 0, 0, 0.274494, 0, 0, 0, 0.274494, -12.5926, -3.42309, -20.6251)
+
+[node name="Pine_001_281" parent="Props/Arboles/Pine_001" instance=ExtResource("17_pk0vi")]
+transform = Transform3D(0.274494, 0, 0, 0, 0.274494, 0, 0, 0, 0.274494, -11.8554, -3.42309, -20.5763)
+
+[node name="Pine_001_282" parent="Props/Arboles/Pine_001" instance=ExtResource("17_pk0vi")]
+transform = Transform3D(0.274494, 0, 0, 0, 0.274494, 0, 0, 0, 0.274494, -12.3564, -3.42309, -23.2523)
+
+[node name="Pine_001_283" parent="Props/Arboles/Pine_001" instance=ExtResource("17_pk0vi")]
+transform = Transform3D(0.274494, 0, 0, 0, 0.274494, 0, 0, 0, 0.274494, -11.1996, -3.42309, -24.7215)
+
+[node name="Pine_001_284" parent="Props/Arboles/Pine_001" instance=ExtResource("17_pk0vi")]
+transform = Transform3D(0.274494, 0, 0, 0, 0.274494, 0, 0, 0, 0.274494, -10.1554, -3.42309, -24.9291)
+
+[node name="Pine_001_285" parent="Props/Arboles/Pine_001" instance=ExtResource("17_pk0vi")]
+transform = Transform3D(0.274494, 0, 0, 0, 0.274494, 0, 0, 0, 0.274494, -10.5079, -3.42309, -23.5794)
+
+[node name="Pine_001_301" parent="Props/Arboles/Pine_001" instance=ExtResource("17_pk0vi")]
+transform = Transform3D(0.274494, 0, 0, 0, 0.274494, 0, 0, 0, 0.274494, -12.8862, -3.42309, -25.8019)
+
+[node name="Pine_001_302" parent="Props/Arboles/Pine_001" instance=ExtResource("17_pk0vi")]
+transform = Transform3D(0.274494, 0, 0, 0, 0.274494, 0, 0, 0, 0.274494, -13.6162, -3.42309, -25.2355)
+
+[node name="Pine_001_303" parent="Props/Arboles/Pine_001" instance=ExtResource("17_pk0vi")]
+transform = Transform3D(0.274494, 0, 0, 0, 0.274494, 0, 0, 0, 0.274494, -14.7141, -3.42309, -28.5294)
+
+[node name="Pine_001_304" parent="Props/Arboles/Pine_001" instance=ExtResource("17_pk0vi")]
+transform = Transform3D(0.274494, 0, 0, 0, 0.274494, 0, 0, 0, 0.274494, -13.5057, -3.42309, -31.3516)
+
+[node name="Pine_001_305" parent="Props/Arboles/Pine_001" instance=ExtResource("17_pk0vi")]
+transform = Transform3D(0.274494, 0, 0, 0, 0.274494, 0, 0, 0, 0.274494, -10.7607, -3.42309, -30.2537)
+
+[node name="Pine_001_306" parent="Props/Arboles/Pine_001" instance=ExtResource("17_pk0vi")]
+transform = Transform3D(0.274494, 0, 0, 0, 0.274494, 0, 0, 0, 0.274494, -9.50817, -3.42309, -31.1096)
+
+[node name="Pine_001_286" parent="Props/Arboles/Pine_001" instance=ExtResource("17_pk0vi")]
+transform = Transform3D(0.274494, 0, 0, 0, 0.274494, 0, 0, 0, 0.274494, -10.9485, -3.42309, -22.5753)
+
+[node name="Pine_001_287" parent="Props/Arboles/Pine_001" instance=ExtResource("17_pk0vi")]
+transform = Transform3D(0.274494, 0, 0, 0, 0.274494, 0, 0, 0, 0.274494, -13.4629, -3.42309, -26.1949)
+
+[node name="Pine_001_288" parent="Props/Arboles/Pine_001" instance=ExtResource("17_pk0vi")]
+transform = Transform3D(0.274494, 0, 0, 0, 0.274494, 0, 0, 0, 0.274494, -12.4648, -3.42309, -26.1626)
+
+[node name="Pine_001_289" parent="Props/Arboles/Pine_001" instance=ExtResource("17_pk0vi")]
+transform = Transform3D(0.274494, 0, 0, 0, 0.274494, 0, 0, 0, 0.274494, -13.1084, -3.42309, -28.4343)
+
+[node name="Pine_001_290" parent="Props/Arboles/Pine_001" instance=ExtResource("17_pk0vi")]
+transform = Transform3D(0.274494, 0, 0, 0, 0.274494, 0, 0, 0, 0.274494, -11.6754, -3.42309, -27.6614)
+
+[node name="Pine_001_291" parent="Props/Arboles/Pine_001" instance=ExtResource("17_pk0vi")]
+transform = Transform3D(0.274494, 0, 0, 0, 0.274494, 0, 0, 0, 0.274494, -11.6754, -3.42309, -25.7947)
+
+[node name="Pine_001_292" parent="Props/Arboles/Pine_001" instance=ExtResource("17_pk0vi")]
+transform = Transform3D(0.274494, 0, 0, 0, 0.274494, 0, 0, 0, 0.274494, -12.5728, -3.42309, -24.4041)
+
+[node name="Pine_001_293" parent="Props/Arboles/Pine_001" instance=ExtResource("17_pk0vi")]
+transform = Transform3D(0.274494, 0, 0, 0, 0.274494, 0, 0, 0, 0.274494, -10.7764, -3.42309, -25.634)
+
+[node name="Pine_001_294" parent="Props/Arboles/Pine_001" instance=ExtResource("17_pk0vi")]
+transform = Transform3D(0.274494, 0, 0, 0, 0.274494, 0, 0, 0, 0.274494, -11.9734, -3.42309, -25.0676)
+
+[node name="Pine_001_295" parent="Props/Arboles/Pine_001" instance=ExtResource("17_pk0vi")]
+transform = Transform3D(0.274494, 0, 0, 0, 0.274494, 0, 0, 0, 0.274494, -13.3458, -3.42309, -27.2636)
+
+[node name="Pine_001_296" parent="Props/Arboles/Pine_001" instance=ExtResource("17_pk0vi")]
+transform = Transform3D(0.274494, 0, 0, 0, 0.274494, 0, 0, 0, 0.274494, -12.3961, -3.42309, -28.3123)
+
+[node name="Pine_001_297" parent="Props/Arboles/Pine_001" instance=ExtResource("17_pk0vi")]
+transform = Transform3D(0.274494, 0, 0, 0, 0.274494, 0, 0, 0, 0.274494, -11.1731, -3.42309, -28.278)
+
+[node name="Pine_001_298" parent="Props/Arboles/Pine_001" instance=ExtResource("17_pk0vi")]
+transform = Transform3D(0.274494, 0, 0, 0, 0.274494, 0, 0, 0, 0.274494, -11.4308, -3.42309, -26.8094)
+
+[node name="Pine_001_299" parent="Props/Arboles/Pine_001" instance=ExtResource("17_pk0vi")]
+transform = Transform3D(0.274494, 0, 0, 0, 0.274494, 0, 0, 0, 0.274494, -10.0739, -3.42309, -26.3788)
+
+[node name="Pine_001_300" parent="Props/Arboles/Pine_001" instance=ExtResource("17_pk0vi")]
+transform = Transform3D(0.274494, 0, 0, 0, 0.274494, 0, 0, 0, 0.274494, -9.79943, -3.42309, -28.8492)
+
+[node name="Pine_001_211" parent="Props/Arboles/Pine_001" instance=ExtResource("17_pk0vi")]
+transform = Transform3D(0.274494, 0, 0, 0, 0.274494, 0, 0, 0, 0.274494, -18.3631, -3.42309, -20.5019)
+
+[node name="Pine_001_212" parent="Props/Arboles/Pine_001" instance=ExtResource("17_pk0vi")]
+transform = Transform3D(0.274494, 0, 0, 0, 0.274494, 0, 0, 0, 0.274494, -18.9317, -3.42309, -17.8324)
+
+[node name="Pine_001_213" parent="Props/Arboles/Pine_001" instance=ExtResource("17_pk0vi")]
+transform = Transform3D(0.274494, 0, 0, 0, 0.274494, 0, 0, 0, 0.274494, -18.0243, -3.42309, -19.0426)
+
+[node name="Pine_001_203" parent="Props/Arboles/Pine_001" instance=ExtResource("17_pk0vi")]
+transform = Transform3D(0.274494, 0, 0, 0, 0.274494, 0, 0, 0, 0.274494, -20.419, -3.42309, -18.0286)
+
+[node name="Pine_001_204" parent="Props/Arboles/Pine_001" instance=ExtResource("17_pk0vi")]
+transform = Transform3D(0.274494, 0, 0, 0, 0.274494, 0, 0, 0, 0.274494, -22.5768, -3.42309, -18.9521)
+
+[node name="Pine_001_205" parent="Props/Arboles/Pine_001" instance=ExtResource("17_pk0vi")]
+transform = Transform3D(0.274494, 0, 0, 0, 0.274494, 0, 0, 0, 0.274494, -21.2562, -3.42309, -21.9016)
+
+[node name="Pine_001_206" parent="Props/Arboles/Pine_001" instance=ExtResource("17_pk0vi")]
+transform = Transform3D(0.274494, 0, 0, 0, 0.274494, 0, 0, 0, 0.274494, -22.5508, -3.42309, -20.6352)
+
+[node name="Pine_001_207" parent="Props/Arboles/Pine_001" instance=ExtResource("17_pk0vi")]
+transform = Transform3D(0.274494, 0, 0, 0, 0.274494, 0, 0, 0, 0.274494, -20.3548, -3.42309, -22.8312)
+
+[node name="Pine_001_038" parent="Props/Arboles/Pine_001" instance=ExtResource("17_pk0vi")]
+transform = Transform3D(0.274494, 0, 0, 0, 0.274494, 0, 0, 0, 0.274494, -29.2545, -3.42309, -11.8309)
+
+[node name="Pine_001_039" parent="Props/Arboles/Pine_001" instance=ExtResource("17_pk0vi")]
+transform = Transform3D(0.274494, 0, 0, 0, 0.274494, 0, 0, 0, 0.274494, -28.086, -3.42309, -13.1152)
+
+[node name="Pine_001_040" parent="Props/Arboles/Pine_001" instance=ExtResource("17_pk0vi")]
+transform = Transform3D(0.274494, 0, 0, 0, 0.274494, 0, 0, 0, 0.274494, -28.5418, -3.42309, -10.9825)
+
+[node name="Pine_001_215" parent="Props/Arboles/Pine_001" instance=ExtResource("17_pk0vi")]
+transform = Transform3D(0.274494, 0, 0, 0, 0.274494, 0, 0, 0, 0.274494, -27.6884, -3.42309, -9.34256)
+
+[node name="Pine_001_216" parent="Props/Arboles/Pine_001" instance=ExtResource("17_pk0vi")]
+transform = Transform3D(0.274494, 0, 0, 0, 0.274494, 0, 0, 0, 0.274494, -27.9537, -3.42309, -8.19596)
+
+[node name="Pine_001_217" parent="Props/Arboles/Pine_001" instance=ExtResource("17_pk0vi")]
+transform = Transform3D(0.274494, 0, 0, 0, 0.274494, 0, 0, 0, 0.274494, -29.3493, -3.42309, -9.57915)
+
+[node name="Pine_001_218" parent="Props/Arboles/Pine_001" instance=ExtResource("17_pk0vi")]
+transform = Transform3D(0.274494, 0, 0, 0, 0.274494, 0, 0, 0, 0.274494, -29.6321, -3.42309, -9.06692)
+
+[node name="Pine_001_219" parent="Props/Arboles/Pine_001" instance=ExtResource("17_pk0vi")]
+transform = Transform3D(0.274494, 0, 0, 0, 0.274494, 0, 0, 0, 0.274494, -28.8716, -3.42309, -7.95221)
+
+[node name="Pine_001_220" parent="Props/Arboles/Pine_001" instance=ExtResource("17_pk0vi")]
+transform = Transform3D(0.274494, 0, 0, 0, 0.274494, 0, 0, 0, 0.274494, -28.7607, -3.42309, -7.37754)
+
+[node name="Pine_001_221" parent="Props/Arboles/Pine_001" instance=ExtResource("17_pk0vi")]
+transform = Transform3D(0.274494, 0, 0, 0, 0.274494, 0, 0, 0, 0.274494, -29.5283, -3.42309, -7.60052)
+
+[node name="Pine_001_222" parent="Props/Arboles/Pine_001" instance=ExtResource("17_pk0vi")]
+transform = Transform3D(0.274494, 0, 0, 0, 0.274494, 0, 0, 0, 0.274494, -28.0743, -3.42309, -6.67133)
+
+[node name="Pine_001_223" parent="Props/Arboles/Pine_001" instance=ExtResource("17_pk0vi")]
+transform = Transform3D(0.274494, 0, 0, 0, 0.274494, 0, 0, 0, 0.274494, -27.4858, -3.42309, -6.71466)
+
+[node name="Pine_001_224" parent="Props/Arboles/Pine_001" instance=ExtResource("17_pk0vi")]
+transform = Transform3D(0.274494, 0, 0, 0, 0.274494, 0, 0, 0, 0.274494, -27.3251, -3.42309, -6.09681)
+
+[node name="Pine_001_225" parent="Props/Arboles/Pine_001" instance=ExtResource("17_pk0vi")]
+transform = Transform3D(0.274494, 0, 0, 0, 0.274494, 0, 0, 0, 0.274494, -25.9526, -3.48978, -6.6458)
+
+[node name="Pine_001_226" parent="Props/Arboles/Pine_001" instance=ExtResource("17_pk0vi")]
+transform = Transform3D(0.274494, 0, 0, 0, 0.274494, 0, 0, 0, 0.274494, -26.2135, -3.48978, -5.39196)
+
+[node name="Pine_001_227" parent="Props/Arboles/Pine_001" instance=ExtResource("17_pk0vi")]
+transform = Transform3D(0.274494, 0, 0, 0, 0.274494, 0, 0, 0, 0.274494, -25.9903, -3.48978, -4.31254)
+
+[node name="Pine_001_228" parent="Props/Arboles/Pine_001" instance=ExtResource("17_pk0vi")]
+transform = Transform3D(0.274494, 0, 0, 0, 0.274494, 0, 0, 0, 0.274494, -26.8138, -3.48978, -4.31254)
+
+[node name="Pine_001_229" parent="Props/Arboles/Pine_001" instance=ExtResource("17_pk0vi")]
+transform = Transform3D(0.274494, 0, 0, 0, 0.274494, 0, 0, 0, 0.274494, -26.9236, -3.48978, -5.28307)
+
+[node name="Pine_001_233" parent="Props/Arboles/Pine_001" instance=ExtResource("17_pk0vi")]
+transform = Transform3D(0.274494, 0, 0, 0, 0.274494, 0, 0, 0, 0.274494, -29.3007, -3.48978, -5.80033)
+
+[node name="Pine_001_234" parent="Props/Arboles/Pine_001" instance=ExtResource("17_pk0vi")]
+transform = Transform3D(0.274494, 0, 0, 0, 0.274494, 0, 0, 0, 0.274494, -29.1747, -3.48978, -6.49077)
+
+[node name="Pine_001_235" parent="Props/Arboles/Pine_001" instance=ExtResource("17_pk0vi")]
+transform = Transform3D(0.274494, 0, 0, 0, 0.274494, 0, 0, 0, 0.274494, -30.6913, -3.48978, -7.04846)
+
+[node name="Pine_001_236" parent="Props/Arboles/Pine_001" instance=ExtResource("17_pk0vi")]
+transform = Transform3D(0.274494, 0, 0, 0, 0.274494, 0, 0, 0, 0.274494, -28.6507, -3.48978, -10.0956)
+
+[node name="Pine_001_237" parent="Props/Arboles/Pine_001" instance=ExtResource("17_pk0vi")]
+transform = Transform3D(0.274494, 0, 0, 0, 0.274494, 0, 0, 0, 0.274494, -27.3874, -3.48978, -11.8289)
+
+[node name="Pine_001_230" parent="Props/Arboles/Pine_001" instance=ExtResource("17_pk0vi")]
+transform = Transform3D(0.274494, 0, 0, 0, 0.274494, 0, 0, 0, 0.274494, -27.4283, -3.48978, -4.65721)
+
+[node name="Pine_001_231" parent="Props/Arboles/Pine_001" instance=ExtResource("17_pk0vi")]
+transform = Transform3D(0.274494, 0, 0, 0, 0.274494, 0, 0, 0, 0.274494, -27.7027, -3.48978, -5.2062)
+
+[node name="Pine_001_232" parent="Props/Arboles/Pine_001" instance=ExtResource("17_pk0vi")]
+transform = Transform3D(0.274494, 0, 0, 0, 0.274494, 0, 0, 0, 0.274494, -27.3682, -3.48461, -4.12776)
+
+[node name="Pine_001_041" parent="Props/Arboles/Pine_001" instance=ExtResource("17_pk0vi")]
+transform = Transform3D(0.274494, 0, 0, 0, 0.274494, 0, 0, 0, 0.274494, -28.0346, -3.42309, -11.9189)
+
+[node name="Pine_001_045" parent="Props/Arboles/Pine_001" instance=ExtResource("17_pk0vi")]
+transform = Transform3D(0.274494, 0, 0, 0, 0.274494, 0, 0, 0, 0.274494, -28.6661, -3.42309, -12.7335)
+
+[node name="Pine_001_046" parent="Props/Arboles/Pine_001" instance=ExtResource("17_pk0vi")]
+transform = Transform3D(0.274494, 0, 0, 0, 0.274494, 0, 0, 0, 0.274494, -27.2039, -3.42309, -14.1044)
+
+[node name="Pine_001_042" parent="Props/Arboles/Pine_001" instance=ExtResource("17_pk0vi")]
+transform = Transform3D(0.274494, 0, 0, 0, 0.274494, 0, 0, 0, 0.274494, -26.9806, -3.42309, -12.9718)
+
+[node name="Pine_001_043" parent="Props/Arboles/Pine_001" instance=ExtResource("17_pk0vi")]
+transform = Transform3D(0.274494, 0, 0, 0, 0.274494, 0, 0, 0, 0.274494, -28.3649, -3.25537, -14.647)
+
+[node name="Pine_001_044" parent="Props/Arboles/Pine_001" instance=ExtResource("17_pk0vi")]
+transform = Transform3D(0.274494, 0, 0, 0, 0.274494, 0, 0, 0, 0.274494, -30.0081, -3.03575, -13.5472)
 
 [connection signal="input_event" from="Terrain/Sitios/CSGBox3D4/Area3D2" to="Terrain/Sitios/CSGBox3D4" method="_on_area_3d_2_input_event"]
 [connection signal="input_event" from="Terrain/Sitios/CSGBox3D5/Area3D2" to="Terrain/Sitios/CSGBox3D5" method="_on_area_3d_2_input_event"]

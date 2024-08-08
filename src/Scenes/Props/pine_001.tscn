@@ -1,16 +1,25 @@
-[gd_scene load_steps=2 format=3 uid="uid://c30c6gif2rk2t"]
+[gd_scene load_steps=3 format=3 uid="uid://c30c6gif2rk2t"]
 
 [ext_resource type="Texture2D" uid="uid://byb17ru6d5g0e" path="res://Recursos/Textures/Props/Pine_001.png" id="1_dl71v"]
+[ext_resource type="Texture2D" uid="uid://cnreaea36nkby" path="res://Recursos/Textures/Props/Pine_001_Top.png" id="2_kaup5"]
 
 [node name="Pine_001" type="Node3D"]
 transform = Transform3D(0.274494, 0, 0, 0, 0.274494, 0, 0, 0, 0.274494, 0, 0, 0)
 
-[node name="Sprite3D" type="Sprite3D" parent="."]
+[node name="Sprite_Front" type="Sprite3D" parent="."]
 transform = Transform3D(1.50871, 0, 0, 0, 1.50871, 0, 0, 0, 1.50871, 0, 1.94185, 0)
 billboard = 2
 texture = ExtResource("1_dl71v")
 
-[node name="Sprite3D2" type="Sprite3D" parent="."]
+[node name="Sprite_Top" type="Sprite3D" parent="."]
+transform = Transform3D(0.680342, 0, 0, 0, -2.97387e-08, 0.680342, 0, -0.680342, -2.97387e-08, -0.0970554, 1.94573, -0.0465517)
+visibility_range_begin = 8.0
+visibility_range_begin_margin = 4.0
+visibility_range_fade_mode = 1
+billboard = 1
+texture = ExtResource("2_kaup5")
+
+[node name="Sprite_Shadow" type="Sprite3D" parent="."]
 transform = Transform3D(-0.691829, -1.34074, -5.86055e-08, 0, -6.59478e-08, 1.50871, -1.34074, 0.691829, 3.02408e-08, -1.84501, 0.184602, 0.604314)
 modulate = Color(0.239216, 0.239216, 0.239216, 0.572549)
 texture = ExtResource("1_dl71v")

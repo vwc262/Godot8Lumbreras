@@ -29,7 +29,7 @@ zoom_speed = 0.5
 can_zoom = true
 maxZoom = 5.0
 initialZoom = 30.0
-zoom_treshold = 10.0
+zoom_treshold = 45.0
 max_pan_speed = 0.01
 
 [node name="Camera3Dp" type="Camera3D" parent="camera_parent"]

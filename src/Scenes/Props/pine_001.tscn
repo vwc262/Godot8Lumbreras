@@ -1,0 +1,16 @@
+[gd_scene load_steps=2 format=3 uid="uid://c30c6gif2rk2t"]
+
+[ext_resource type="Texture2D" uid="uid://byb17ru6d5g0e" path="res://Recursos/Textures/Props/Pine_001.png" id="1_dl71v"]
+
+[node name="Pine_001" type="Node3D"]
+transform = Transform3D(0.274494, 0, 0, 0, 0.274494, 0, 0, 0, 0.274494, 0, 0, 0)
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(1.50871, 0, 0, 0, 1.50871, 0, 0, 0, 1.50871, 0, 1.94185, 0)
+billboard = 2
+texture = ExtResource("1_dl71v")
+
+[node name="Sprite3D2" type="Sprite3D" parent="."]
+transform = Transform3D(-0.691829, -1.34074, -5.86055e-08, 0, -6.59478e-08, 1.50871, -1.34074, 0.691829, 3.02408e-08, -1.84501, 0.184602, 0.604314)
+modulate = Color(0.239216, 0.239216, 0.239216, 0.572549)
+texture = ExtResource("1_dl71v")

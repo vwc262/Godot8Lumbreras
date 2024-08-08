@@ -97,6 +97,8 @@ func _input(event):
 #endregion
 
 #region CustomFunctions
+
+
 #Se hacen los presets iniciales del touch event
 func handle_touch(event: InputEventScreenTouch):
 	if event.pressed:

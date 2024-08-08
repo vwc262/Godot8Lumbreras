@@ -144,7 +144,7 @@ func inclinate_camera()->float:
 func OnTweenFinished_MovimientoRealizado():
 	can_zoom= true
 	can_pan = true
-	isTween = false	
+	isTween = false
 	NavigationManager.emit_signal("CameraZoom", position.y, initialZoom, maxZoom)
 	
 func OnTweenFinished_Blur():
@@ -171,14 +171,13 @@ func MoverCamara(idEstacion:int):
 			var val = remap(positionToGo.y, initialZoom - offSetDistanceInclination, maxZoom, 0, 1)
 			tween.tween_property($Camera3D, "rotation_degrees", Vector3(lerp(initialRotationCamera, LimitRotationCamera, val),0,0), speedAnimation)
 			tweenBlur.tween_property(blurMaterial, "shader_parameter/blur_amount", maxBlurIntensity, speedAnimation)
-			
+
 	else:
 		if !isTween:
 			ID_Select = 0
 			ResetCameraPosition()
 			tweenBlur.tween_property(blurMaterial, "shader_parameter/blur_amount", 0, speedAnimation)
 			NavigationManager.set_lastid_selected(ID_Select)
-			
 
 func ResetCameraPosition():
 	DisableNavigation()
@@ -186,7 +185,7 @@ func ResetCameraPosition():
 	tweenRot.set_parallel()
 	tweenRot.tween_property(self,"position",initalCameraPosition,speedAnimation)
 	#tweenRot.tween_property(self,"rotation_degrees",Vector3(0,0,0),1.5)
-	
+
 	var tweenRotCamara := TweenManager.init_tween(func(): return)
 	tweenRotCamara.tween_property($Camera3D,"rotation_degrees",Vector3(initialRotationCamera,0,0),speedAnimation)
 
@@ -203,7 +202,7 @@ func GetZoomFactor():
 	factorZoom = remap(position.y,35,2,0,1) + 1
 	return factorZoom
 
-func AdjustPanSpeedByZoom():	
+func AdjustPanSpeedByZoom():
 	pan_speed = lerp(0.6,0.18,remap(GetZoomFactor(), 1.0, 2.0, 0, 1))
 	# normal .6
 	#at max zoom 0.18

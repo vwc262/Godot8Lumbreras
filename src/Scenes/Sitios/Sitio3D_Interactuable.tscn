@@ -28,6 +28,7 @@ transform = Transform3D(0.01, 0, 0, 0, 0.01, 0, 0, 0, 0.01, 0, 2.94545, 0)
 transform = Transform3D(1.34988, 0, 0, 0, 1.34988, 0, 0, 0, 1.34988, 0, 4.56973, 0)
 pixel_size = 0.009
 billboard = 1
+alpha_cut = 1
 text = "Nombre del sitio"
 font = ExtResource("3_stj8j")
 font_size = 173

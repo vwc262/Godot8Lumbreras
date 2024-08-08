@@ -1,13 +1,16 @@
 [gd_scene load_steps=3 format=3 uid="uid://c30c6gif2rk2t"]
 
+[ext_resource type="Script" path="res://Scripts/Environment/TreeVisibility.gd" id="1_1ngwm"]
 [ext_resource type="Texture2D" uid="uid://byb17ru6d5g0e" path="res://Recursos/Textures/Props/Pine_001.png" id="1_dl71v"]
 [ext_resource type="Texture2D" uid="uid://cnreaea36nkby" path="res://Recursos/Textures/Props/Pine_001_Top.png" id="2_kaup5"]
 
 [node name="Pine_001" type="Node3D"]
 transform = Transform3D(0.274494, 0, 0, 0, 0.274494, 0, 0, 0, 0.274494, 0, 0, 0)
+script = ExtResource("1_1ngwm")
 
 [node name="Sprite_Front" type="Sprite3D" parent="."]
 transform = Transform3D(1.50871, 0, 0, 0, 1.50871, 0, 0, 0, 1.50871, 0, 1.94185, 0)
+modulate = Color(1, 1, 1, 0)
 billboard = 2
 texture = ExtResource("1_dl71v")
 

@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://bhakmsdspl7on" path="res://Scenes/Sky/SkyEnvironment.tscn" id="5_a3vqv"]
 [ext_resource type="PackedScene" uid="uid://vxu3fnea8kdx" path="res://Scenes/Perfil/Terreno/Scena_Mapa_Unlit.tscn" id="5_tlknr"]
 [ext_resource type="Texture2D" uid="uid://cw4pt0rum7ikr" path="res://Recursos/Textures/Sky/nube_02.png" id="7_5pikp"]
-[ext_resource type="Material" uid="uid://e5ua1e3xje35" path="res://Recursos/Materiales/Material_Letras.tres" id="8_cd5e5"]
+[ext_resource type="Material" path="res://Recursos/Materiales/Material_Letras.tres" id="8_cd5e5"]
 [ext_resource type="PackedScene" uid="uid://dufq2s41jpm5w" path="res://Recursos/Meshes/Nombres_del_mundo/CDMX.glb" id="8_gp1mx"]
 [ext_resource type="PackedScene" uid="uid://dqpprs1nvrwex" path="res://Recursos/Meshes/Nombres_del_mundo/EDOMEX.glb" id="9_m0n8c"]
 [ext_resource type="PackedScene" uid="uid://bq24d2bn7jcx7" path="res://Recursos/Meshes/Nombres_del_mundo/Toluca.glb" id="10_ygdvq"]
@@ -122,6 +122,8 @@ visible = false
 [node name="CSGBox3D4" parent="Terrain/Sitios" instance=ExtResource("3_dfqhc")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30.5412, -3.54248, 69.2573)
 IdEstacion = 1
+minEtiquetaScale = 0.75
+maxEtiquetaScale = 0.01
 
 [node name="Area3D2" type="Area3D" parent="Terrain/Sitios/CSGBox3D4"]
 
@@ -131,6 +133,8 @@ shape = SubResource("BoxShape3D_47xlv")
 [node name="CSGBox3D5" parent="Terrain/Sitios" instance=ExtResource("3_dfqhc")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24.2828, -3.46505, 65.0066)
 IdEstacion = 2
+minEtiquetaScale = 0.75
+maxEtiquetaScale = 0.01
 
 [node name="Area3D2" type="Area3D" parent="Terrain/Sitios/CSGBox3D5"]
 
@@ -140,6 +144,8 @@ shape = SubResource("BoxShape3D_47xlv")
 [node name="CSGBox3D6" parent="Terrain/Sitios" instance=ExtResource("3_dfqhc")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.0492, -3.71833, 60.872)
 IdEstacion = 3
+minEtiquetaScale = 0.75
+maxEtiquetaScale = 0.01
 
 [node name="Area3D2" type="Area3D" parent="Terrain/Sitios/CSGBox3D6"]
 
@@ -149,6 +155,8 @@ shape = SubResource("BoxShape3D_47xlv")
 [node name="CSGBox3D7" parent="Terrain/Sitios" instance=ExtResource("3_dfqhc")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.3854, -3.58706, 55.2828)
 IdEstacion = 4
+minEtiquetaScale = 0.75
+maxEtiquetaScale = 0.01
 
 [node name="Area3D2" type="Area3D" parent="Terrain/Sitios/CSGBox3D7"]
 
@@ -158,6 +166,8 @@ shape = SubResource("BoxShape3D_47xlv")
 [node name="CSGBox3D8" parent="Terrain/Sitios" instance=ExtResource("3_dfqhc")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.356526, -3.44562, 46.8827)
 IdEstacion = 5
+minEtiquetaScale = 0.75
+maxEtiquetaScale = 0.01
 
 [node name="Area3D2" type="Area3D" parent="Terrain/Sitios/CSGBox3D8"]
 
@@ -167,6 +177,8 @@ shape = SubResource("BoxShape3D_47xlv")
 [node name="CSGBox3D9" parent="Terrain/Sitios" instance=ExtResource("3_dfqhc")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.68945, -3.44362, 58.6995)
 IdEstacion = 6
+minEtiquetaScale = 0.75
+maxEtiquetaScale = 0.01
 
 [node name="Area3D2" type="Area3D" parent="Terrain/Sitios/CSGBox3D9"]
 

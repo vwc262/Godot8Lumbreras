@@ -120,7 +120,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0634727, 0)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.2555, 0, -45.856)
 
 [node name="Sitios" type="Node3D" parent="Terrain"]
-visible = false
 
 [node name="CSGBox3D4" parent="Terrain/Sitios" instance=ExtResource("3_dfqhc")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30.5412, -3.54248, 69.2573)
@@ -194,7 +193,6 @@ transform = Transform3D(0.000916012, -0.000426761, 0.999999, -0.00179431, 0.9999
 [node name="Props" type="Node3D" parent="."]
 
 [node name="Letreros" type="Node3D" parent="Props"]
-visible = false
 
 [node name="EDOMEX" parent="Props/Letreros" instance=ExtResource("9_m0n8c")]
 transform = Transform3D(0.976605, 0.000718109, 0.202698, 1.11759e-08, 0.00942595, -0.333939, -0.215042, 0.00326126, 0.920542, -22.6402, 0, -47.1394)

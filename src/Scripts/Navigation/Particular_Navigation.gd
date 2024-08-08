@@ -69,7 +69,7 @@ func ResetCameraPosition():
 	
 	var tweenRotCamara := TweenManager.init_tween(func(): return)
 	tweenRotCamara.tween_property(camera_3_dp,"rotation_degrees",Vector3(initialRotationCamera,0,0),speedAnimation)
-	
+
 func DisableNavigation():
 	can_zoom= false
 	can_pan = false
@@ -152,18 +152,16 @@ func rotate_camera(currentangle: float):
 
 func limit_zoom():
 	position.y = clamp(position.y, maxZoom,initialZoom )
-	
+
 func inclinate_camera()->float:
 	var current = 0 #Default uno para que mantenga la vista top
 	if position.y < initialZoom - offSetDistanceInclination:
 		current = remap(position.y, initialZoom - offSetDistanceInclination, maxZoom, 0, 1)
 	return current
-	
+
 func GetZoomFactor():
 	factorZoom = remap(position.y,initialZoom,maxZoom,0,1) + 1
-	#print(factorZoom)
 	return factorZoom
 
 func AdjustPanSpeedByZoom():
 	pan_speed = remap(GetZoomFactor(), 1.0, 2.0, .05, 0.02)
-	print(pan_speed)

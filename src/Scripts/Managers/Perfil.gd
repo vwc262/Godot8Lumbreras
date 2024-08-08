@@ -7,6 +7,8 @@ extends Node
 @onready var dynamic_margins = $DynamicMargins
 @onready var perfil = $DynamicMargins/VB_MainContainer/main_container/SubViewportContainer/SubViewport/Perfil
 @onready var chart_control = $DynamicMargins/VB_MainContainer/main_container/ListaSitiosContainer/VBoxContainer/PanelContainer/ChartControl
+@export var perfil_world_environment : Environment
+@export var particular_world_environment : Environment
 #endregion
 
 #region script variables
@@ -19,6 +21,7 @@ var is_hidden = false  # Variable para rastrear el estado del contenedor
 
 func _ready():
 	SceneManager.add_scene(SceneManager.idScenePerfil,perfil)
+	SceneManager.load_environments(perfil_world_environment,particular_world_environment)
 	# Conectar señales a las funciones correspondientes
 	UIManager.set_ui_particular(ui_particular)  # Establecer la referencia a ui_particular
 	#UIManager.connect("mostrar_world", _mostrar_world)  # Conectar la señal mostrar_world
@@ -72,12 +75,14 @@ func _on_btn_particular_pressed():
 	if(UIManager.current_selected_site):
 		UIManager.mostrar_particular()	
 		SceneManager.load_scene(UIManager.current_selected_site.id_estacion)
+		SceneManager.set_world_environment(SceneManager.TIPO_NIVEL.PARTICULAR)
 	else:			
 		UIManager.popUpWindow.showPopUp("Necesita seleccionar \n un particular antes \n de proceder.");
 	
 
 func _mostrar_world():
 	SceneManager.load_scene(SceneManager.idScenePerfil)
+	SceneManager.set_world_environment(SceneManager.TIPO_NIVEL.PERFIL)
 
 
 func _on_btn_close_popup_pressed():

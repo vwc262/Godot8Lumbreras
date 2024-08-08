@@ -146,6 +146,7 @@ func OnTweenFinished_MovimientoRealizado():
 	can_pan = true
 	isTween = false
 	NavigationManager.emit_signal("CameraZoom", position.y, initialZoom, maxZoom)
+	NavigationManager.emit_signal("OnTweenFinished_MovimientoRealizado")
 	
 func OnTweenFinished_Blur():
 	pass

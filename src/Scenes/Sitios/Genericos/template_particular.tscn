@@ -18,17 +18,18 @@ minZ = -40
 maxZ = -20
 can_rotate = true
 rotate_speed = 1.0
+rotate_treshold = 8
 initialRotationCamera = -45
 LimitRotationCamera = 0
 minRotationY = -30.0
 maxRotationY = 30.0
 offSetDistanceInclination = 10.0
 tilt_speed = 0.35
-zoom_speed = 1.5
+zoom_speed = 0.5
 can_zoom = true
 maxZoom = 5.0
 initialZoom = 30.0
-zoom_treshold = 150.0
+zoom_treshold = 10.0
 max_pan_speed = 0.01
 
 [node name="Camera3Dp" type="Camera3D" parent="camera_parent"]

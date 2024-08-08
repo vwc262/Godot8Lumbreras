@@ -151,10 +151,12 @@ func handle_drag(event: InputEventScreenDrag):
 		if can_rotate:
 			var touch = touch_points.values()
 			var delta : Vector2 = touch[1] - touch[0]
-			if(abs(delta.angle_to(anclaDistancia) * 1000) > rotate_treshold):
+			if(abs(delta.angle_to(anclaDistancia) * 1000) > rotate_treshold):				
 				rotate_camera(rotate_speed * sign(delta.angle_to(anclaDistancia)))
-			anclaDistancia = delta;
-
+			
+			anclaDistancia = delta; 
+			
+						
 		if can_zoom:
 			# prioridad al zoom mediante una tolerancia
 			if abs(get_delta_distance(current_dist)) > zoom_treshold:#zoom

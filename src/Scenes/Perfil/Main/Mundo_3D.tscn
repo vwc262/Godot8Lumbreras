@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://cyug4nnq0yh1a"]
+[gd_scene load_steps=27 format=3 uid="uid://cyug4nnq0yh1a"]
 
 [ext_resource type="Material" uid="uid://beqh7jr7h3tmm" path="res://Recursos/Materiales/BlurVignette.tres" id="2_0rlw3"]
 [ext_resource type="Script" path="res://Scripts/Navigation/Touch_Navigation.gd" id="2_ui4vn"]
@@ -6,13 +6,16 @@
 [ext_resource type="PackedScene" uid="uid://bhakmsdspl7on" path="res://Scenes/Sky/SkyEnvironment.tscn" id="5_a3vqv"]
 [ext_resource type="PackedScene" uid="uid://vxu3fnea8kdx" path="res://Scenes/Perfil/Terreno/Scena_Mapa_Unlit.tscn" id="5_tlknr"]
 [ext_resource type="Texture2D" uid="uid://cw4pt0rum7ikr" path="res://Recursos/Textures/Sky/nube_02.png" id="7_5pikp"]
-[ext_resource type="Material" path="res://Recursos/Materiales/Material_Letras.tres" id="8_cd5e5"]
-[ext_resource type="PackedScene" uid="uid://dufq2s41jpm5w" path="res://Recursos/Meshes/Nombres_del_mundo/CDMX.glb" id="8_gp1mx"]
+[ext_resource type="Material" uid="uid://e5ua1e3xje35" path="res://Recursos/Materiales/Material_Letras.tres" id="8_cd5e5"]
+[ext_resource type="Texture2D" uid="uid://rosh0u58hug5" path="res://Recursos/Textures/Textos/Titulo_edomex.png" id="8_ouivu"]
 [ext_resource type="PackedScene" uid="uid://dqpprs1nvrwex" path="res://Recursos/Meshes/Nombres_del_mundo/EDOMEX.glb" id="9_m0n8c"]
+[ext_resource type="Texture2D" uid="uid://u3euwvxs8hy5" path="res://Recursos/Textures/Textos/Titulo_CDMX.png" id="10_rqqqs"]
+[ext_resource type="Texture2D" uid="uid://ccsgwtp3jbbh8" path="res://Recursos/Textures/Textos/Titulo_Toluca.png" id="10_tcwys"]
 [ext_resource type="PackedScene" uid="uid://bq24d2bn7jcx7" path="res://Recursos/Meshes/Nombres_del_mundo/Toluca.glb" id="10_ygdvq"]
 [ext_resource type="Material" uid="uid://b0gkm23d6a2ch" path="res://Recursos/Materiales/CloudMeshesTransparency.tres" id="11_415cd"]
 [ext_resource type="PackedScene" uid="uid://crj1oyj2j0paa" path="res://Recursos/Meshes/Nombres_del_mundo/Valle_Bravo.glb" id="11_q61tt"]
 [ext_resource type="Script" path="res://Scripts/Environment/Nubes3D_movement.gd" id="12_q18al"]
+[ext_resource type="Texture2D" uid="uid://cks3u2ng1me0e" path="res://Recursos/Textures/Textos/Titulo_ValleBravo.png" id="12_ryaj8"]
 [ext_resource type="Texture2D" uid="uid://c8eleo6k7pb4g" path="res://Recursos/Textures/Sky/nube_04_x05.png" id="14_eum0l"]
 [ext_resource type="Texture2D" uid="uid://cifknfeeyawbh" path="res://Recursos/Textures/Sky/nube_03_x05.png" id="15_b33lp"]
 [ext_resource type="PackedScene" uid="uid://32y17hj3xyaq" path="res://Scenes/Props/Tree_003.tscn" id="16_5pawl"]
@@ -191,30 +194,47 @@ transform = Transform3D(0.000916012, -0.000426761, 0.999999, -0.00179431, 0.9999
 
 [node name="Letreros" type="Node3D" parent="Props"]
 
-[node name="CDMX" parent="Props/Letreros" instance=ExtResource("8_gp1mx")]
-transform = Transform3D(0.990693, 0.000804678, 0.10978, 0, 0.00806537, -0.591183, -0.136113, 0.00585681, 0.799031, -17.3798, -0.438004, -119.032)
-
-[node name="Text_010" parent="Props/Letreros/CDMX" index="0"]
-material_override = ExtResource("8_cd5e5")
-
 [node name="EDOMEX" parent="Props/Letreros" instance=ExtResource("9_m0n8c")]
 transform = Transform3D(0.976605, 0.000718109, 0.202698, 1.11759e-08, 0.00942595, -0.333939, -0.215042, 0.00326126, 0.920542, -22.6402, 0, -47.1394)
 
 [node name="Text_009" parent="Props/Letreros/EDOMEX" index="0"]
+visible = false
 surface_material_override/0 = ExtResource("8_cd5e5")
+
+[node name="Sprite3D" type="Sprite3D" parent="Props/Letreros/EDOMEX"]
+transform = Transform3D(5, 5.96046e-08, 0, 0, 0, -5, 5.96046e-08, 5, -2.18861e-07, 0, 0, 0)
+billboard = 1
+texture = ExtResource("8_ouivu")
 
 [node name="Toluca" parent="Props/Letreros" instance=ExtResource("10_ygdvq")]
 transform = Transform3D(0.999309, -0.00037167, -9.31323e-10, 0.034734, 0.00933895, -0.355857, 0.0132261, 0.00355611, 0.93454, 4.93982, 0.0605862, -58.0793)
 
 [node name="Text_013" parent="Props/Letreros/Toluca" index="0"]
+visible = false
 material_override = ExtResource("8_cd5e5")
+
+[node name="Sprite3D" type="Sprite3D" parent="Props/Letreros/Toluca"]
+transform = Transform3D(5, 1.49012e-08, 2.47383e-10, 1.90735e-06, 0, -5, 3.72529e-09, 5, -2.19792e-07, 0.129645, 348.574, -1.32823)
+billboard = 1
+texture = ExtResource("10_tcwys")
 
 [node name="Valle_Bravo" parent="Props/Letreros" instance=ExtResource("11_q61tt")]
 transform = Transform3D(0.930673, -0.00140507, -0.337795, -1.38681e-08, 0.00923311, -0.384054, 0.365852, 0.00357428, 0.8593, 16.9635, -1.2075, 3.89035)
 
 [node name="Text_012" parent="Props/Letreros/Valle_Bravo" index="0"]
 transform = Transform3D(4.39018, -4.65661e-10, 0, 0, 4.39018, 1.52588e-05, -1.19209e-07, -9.31323e-10, 4.39018, 0, 108.395, -0.450873)
+visible = false
 material_override = ExtResource("8_cd5e5")
+
+[node name="Sprite3D" type="Sprite3D" parent="Props/Letreros/Valle_Bravo"]
+transform = Transform3D(4.88523, -0.957747, 0.127564, -1.71661e-05, 7.94623, 0.338787, -1.06515, -4.39263, 0.585059, 0.916561, -1.27504, -4.3293)
+billboard = 1
+texture = ExtResource("12_ryaj8")
+
+[node name="cmdx_sprite" type="Sprite3D" parent="Props/Letreros"]
+transform = Transform3D(5, 0, 0, 0, 5.368, 0, 0, 0, 1.861, -3.45802, 0, -126.738)
+billboard = 1
+texture = ExtResource("10_rqqqs")
 
 [node name="NubesRoot" type="Node3D" parent="Props"]
 
@@ -2390,7 +2410,6 @@ transform = Transform3D(0.274494, 0, 0, 0, 0.274494, 0, 0, 0, 0.274494, -30.0081
 [connection signal="input_event" from="Terrain/Sitios/CSGBox3D8/Area3D2" to="Terrain/Sitios/CSGBox3D8" method="_on_area_3d_2_input_event"]
 [connection signal="input_event" from="Terrain/Sitios/CSGBox3D9/Area3D2" to="Terrain/Sitios/CSGBox3D9" method="_on_area_3d_2_input_event"]
 
-[editable path="Props/Letreros/CDMX"]
 [editable path="Props/Letreros/EDOMEX"]
 [editable path="Props/Letreros/Toluca"]
 [editable path="Props/Letreros/Valle_Bravo"]

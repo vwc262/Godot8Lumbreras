@@ -4,6 +4,7 @@ signal world_interacted
 signal Go_TO
 signal ResetCameraPosition # Para reestablecer la posicion de la camara
 signal CameraZoom
+signal OnTweenFinished_MovimientoRealizado
 
 var SitesAnchorPositionsDictionary = {}
 var SitesAnchorRotationsDictionary = {}

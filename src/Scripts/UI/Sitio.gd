@@ -13,6 +13,7 @@ extends Node
 @onready var btn_expandir_fondo = $VBoxContainer/HBoxContainer/BTN_expandir_sitios/btn_expandir_fondo
 @onready var sitio_fondo = $sitio_fondo
 @onready var sitio_fondo_seleccionado = $VBoxContainer/HBoxContainer/nombre_fecha_contaier/sitio_fondo_seleccionado
+@onready var button = $VBoxContainer/HBoxContainer/nombre_fecha_contaier/Button
 
 var estacion_ref: Estacion
 var signal_ref = {}
@@ -20,10 +21,11 @@ var signal_instances: Array = []
 var id_estacion: int
 
 var is_hidden = false
+var is_double_click_disabled = false
 
 func _ready():
-	pass
-	
+	NavigationManager.connect("OnTweenFinished_MovimientoRealizado", _on_camera_zoom)
+
 # Función para recibir y establecer los datos de la estación
 func set_datos(estacion: Estacion):
 	estacion_ref = estacion
@@ -65,6 +67,9 @@ func instanciar_señales():
 
 # Función que maneja la señal del botón presionado
 func _on_button_pressed():
+	# Deshabilitar el botón mientras se ejecuta el tween
+	button.disabled = true
+	
 	NavigationManager.emit_signal("Go_TO", estacion_ref.id_estacion)
 	# Usar UIManager para manejar la selección del sitio
 	UIManager.seleccionar_sitio(self)
@@ -114,3 +119,12 @@ func _on_finish_tween():
 func set_fondo(texture: Texture):
 	# Actualizar la textura del fondo
 	sitio_fondo.texture = texture
+
+# Función llamada al finalizar el temporizador de doble clic
+func _on_double_click_timeout():
+	is_double_click_disabled = false
+
+# Función llamada cuando el tween de la cámara ha terminado
+func _on_camera_zoom():
+	# Rehabilitar el botón una vez que el tween de la cámara ha terminado
+	button.disabled = false

@@ -1,0 +1,35 @@
+[gd_resource type="Environment" load_steps=4 format=3 uid="uid://0fg4nrsn8vnu"]
+
+[ext_resource type="Shader" path="res://Recursos/Materiales/SkyEnvironmentParticular.gdshader" id="1_p7vsu"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_1lx84"]
+shader = ExtResource("1_p7vsu")
+shader_parameter/skyColor = Color(0.430811, 0.582097, 0.795856, 1)
+shader_parameter/horizonColor1 = Color(0.711631, 0.803742, 0.929069, 1)
+shader_parameter/horizonColor2 = Color(0.859766, 1, 0.904237, 1)
+shader_parameter/offsetHorizontalColor = 0.82
+
+[sub_resource type="Sky" id="Sky_f7hr0"]
+sky_material = SubResource("ShaderMaterial_1lx84")
+
+[resource]
+background_mode = 2
+background_color = Color(0.130569, 0.472729, 0.718176, 1)
+background_energy_multiplier = 0.94
+sky = SubResource("Sky_f7hr0")
+sky_custom_fov = 34.8
+sky_rotation = Vector3(-0.20944, 0, 0)
+ambient_light_energy = 0.0
+reflected_light_source = 2
+tonemap_exposure = 0.9
+tonemap_white = 2.09
+ssr_fade_in = 1.63925
+ssr_fade_out = 0.420448
+ssr_depth_tolerance = 39.71
+glow_intensity = 3.78
+glow_strength = 0.0
+glow_hdr_threshold = 0.6
+glow_hdr_scale = 2.1
+glow_hdr_luminance_cap = 12.2
+volumetric_fog_density = 0.3132
+volumetric_fog_albedo = Color(0.740995, 0.389801, 0.453136, 1)

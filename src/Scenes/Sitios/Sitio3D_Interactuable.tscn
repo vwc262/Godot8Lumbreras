@@ -21,7 +21,7 @@ transform = Transform3D(0.911152, 0, 0.412064, 0, 1, 0, -0.412064, 0, 0.911152, 
 shape = SubResource("BoxShape3D_kb87j")
 
 [node name="LabelNameSitio" type="Label3D" parent="."]
-transform = Transform3D(1.34988, 0, 0, 0, 1.34988, 0, 0, 0, 1.34988, 0, 2.49967, 0)
+transform = Transform3D(1.34988, 0, 0, 0, 1.34988, 0, 0, 0, 1.34988, -1.80167, 4.14696, 3.63568)
 pixel_size = 0.009
 billboard = 1
 text = "Nombre del sitio"

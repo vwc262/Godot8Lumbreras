@@ -8,7 +8,7 @@ func _ready() -> void:
 
 
 func on_camera_position_changed(position:Vector3):
-	var distanceFromCamera : float = position.distance_to(self.position)	
+	var distanceFromCamera : float = position.distance_to(self.position)
 	var weight = remap(distanceFromCamera,40,60,1,0)
 	material_dissolve.set("shader_parameter/dissolve_amount",lerp(0,1,weight))	
 

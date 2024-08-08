@@ -1,4 +1,4 @@
-[gd_scene load_steps=2 format=3 uid="uid://c30c6gif2rk2t"]
+[gd_scene load_steps=3 format=3 uid="uid://c30c6gif2rk2t"]
 
 [ext_resource type="Texture2D" uid="uid://byb17ru6d5g0e" path="res://Recursos/Textures/Props/Pine_001.png" id="1_dl71v"]
 [ext_resource type="Texture2D" uid="uid://cnreaea36nkby" path="res://Recursos/Textures/Props/Pine_001_Top.png" id="2_kaup5"]

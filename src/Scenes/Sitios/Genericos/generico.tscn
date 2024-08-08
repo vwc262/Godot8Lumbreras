@@ -4,7 +4,7 @@
 [ext_resource type="Script" path="res://Scripts/CutzamalaDissolve.gd" id="2_wou4d"]
 [ext_resource type="Material" uid="uid://cvf8nd65jcev1" path="res://Recursos/Materiales/Dissolve_Mat.tres" id="2_wydlx"]
 [ext_resource type="Texture2D" uid="uid://b1cykwj3hjs4l" path="res://Recursos/Meshes/Particular_Cutzamala_PBR5/Texturas_B5_Particular/bake _albedo_PISO.png" id="4_ha6iy"]
-[ext_resource type="Material" uid="uid://bc661come1l76" path="res://Recursos/Materiales/ParticularMuro_PBR5_Tileable.tres" id="4_ya2r5"]
+[ext_resource type="Material" path="res://Recursos/Materiales/ParticularMuro_PBR5_Tileable.tres" id="4_ya2r5"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_k6phu"]
 albedo_texture = ExtResource("4_ha6iy")

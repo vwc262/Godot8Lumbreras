@@ -117,7 +117,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0634727, 0)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.2555, 0, -45.856)
 
 [node name="Sitios" type="Node3D" parent="Terrain"]
-visible = false
 
 [node name="CSGBox3D4" parent="Terrain/Sitios" instance=ExtResource("3_dfqhc")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30.5412, -3.54248, 69.2573)

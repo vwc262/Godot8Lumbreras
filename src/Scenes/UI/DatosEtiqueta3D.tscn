@@ -1,24 +1,29 @@
-[gd_scene load_steps=3 format=3 uid="uid://bs0nvpdg63k4x"]
+[gd_scene load_steps=5 format=3 uid="uid://bs0nvpdg63k4x"]
 
 [ext_resource type="Script" path="res://Scenes/UI/DatosEtiquetaSitio_3D.gd" id="1_gdc11"]
+[ext_resource type="Shader" uid="uid://d4cf3gpi4jv62" path="res://Recursos/Shaders/shader_letrero_3d.tres" id="2_6dxd3"]
 [ext_resource type="Texture2D" uid="uid://bhsb6c0ey2tiu" path="res://Recursos/UI/3D/Panel_Nivel.png" id="2_pi6rh"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_3an0v"]
+render_priority = 0
+shader = ExtResource("2_6dxd3")
+shader_parameter/texture_albedo = ExtResource("2_pi6rh")
 
 [node name="DatosEtiqueta3D" type="Node3D"]
 script = ExtResource("1_gdc11")
 
 [node name="Sprite3D" type="Sprite3D" parent="."]
 transform = Transform3D(0.85, 0, 0, 0, 0.85, 0, 0, 0, 0.85, 0, 0, 0)
+material_override = SubResource("ShaderMaterial_3an0v")
 cast_shadow = 0
 ignore_occlusion_culling = true
 billboard = 1
 double_sided = false
-no_depth_test = true
-alpha_cut = 2
 render_priority = 1
 texture = ExtResource("2_pi6rh")
 
 [node name="FechaSitio" type="Label3D" parent="Sprite3D"]
-transform = Transform3D(0.035, 0, 0, 0, 0.035, 0, 0, 0, 0.035, -2, 0.177589, 0)
+transform = Transform3D(0.035, 0, 0, 0, 0.035, 0, 0, 0, 0.035, -2, 0.177589, 0.012)
 pixel_size = 0.1
 double_sided = false
 render_priority = 1
@@ -30,7 +35,7 @@ horizontal_alignment = 0
 vertical_alignment = 0
 
 [node name="Nivel" type="Label3D" parent="Sprite3D"]
-transform = Transform3D(0.035, 0, 0, 0, 0.035, 0, 0, 0, 0.035, -2, 0.726002, 0)
+transform = Transform3D(0.035, 0, 0, 0, 0.035, 0, 0, 0, 0.035, -2, 0.726002, 0.012)
 pixel_size = 0.1
 double_sided = false
 render_priority = 1

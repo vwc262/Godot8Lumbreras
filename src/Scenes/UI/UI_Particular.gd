@@ -100,6 +100,8 @@ func _on_finish_tween():
 
 # Función que maneja el botón de inicio
 func _on_btn_home_pressed():
+	NavigationManager.emit_signal('ResetCameraPosition')
+	UIManager.deselect_all_sitios()
 	UIManager.ocultar_particular() 
 	SceneManager.load_scene(SceneManager.idScenePerfil)	
 	SceneManager.set_world_environment(SceneManager.TIPO_NIVEL.PERFIL)

@@ -29,6 +29,7 @@ extends Node3D
 @export_group('Material')
 @export var maxBlurIntensity: float = 3.0
 
+
 #endregion
 
 #region Propiedades para logica
@@ -154,7 +155,6 @@ func OnTweenFinished_MovimientoRealizado():
 	NavigationManager.emit_signal("CameraZoom", position.y, initialZoom, maxZoom)
 	NavigationManager.emit_signal("OnTweenFinished_MovimientoRealizado")
 	last_tween_position = position;
-	print(last_tween_position)
 	
 func OnTweenFinished_Blur():
 	pass
@@ -189,6 +189,7 @@ func MoverCamara(idEstacion:int):
 			NavigationManager.set_lastid_selected(ID_Select)
 
 func ResetCameraPosition():
+	ID_Select = 0
 	DisableNavigation()
 	var tweenRot := TweenManager.init_tween(OnTweenFinished_MovimientoRealizado)
 	tweenRot.set_parallel()

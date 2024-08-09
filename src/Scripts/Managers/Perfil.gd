@@ -33,11 +33,11 @@ func _on_button_pressed():
 func _on_btn_lista_sitios_pressed():
 	if is_hidden:
 		# Mostrar el contenedor
-		btn_lista_sitios.icon = preload("res://Recursos/UI/img/Menu_pie/MenuPie_Expandir_B.png")
+		btn_lista_sitios.icon = preload("res://Recursos/UI/img/Encabezado_B_Submenu/Boton_Expandir_b.png")
 		_show_lista_sitios()
 	else:
 		# Esconder el contenedor
-		btn_lista_sitios.icon = preload("res://Recursos/UI/img/Menu_pie/MenuPie_Expandir_A.png")
+		btn_lista_sitios.icon = preload("res://Recursos/UI/img/Encabezado_B_Submenu/Boton_Expandir_a.png")
 		_hide_lista_sitios()
 
 func _on_world_interacted():

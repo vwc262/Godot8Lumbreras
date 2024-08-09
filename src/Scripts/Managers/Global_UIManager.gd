@@ -13,6 +13,8 @@ var ui_particular: Node = null
 var popUpWindow : Node = null
 var graficador_container
 var modelo3D_container
+var datos_graficador
+var datos_sitio
 
 
 func seleccionar_sitio(sitio):		
@@ -82,3 +84,5 @@ func mostrar_graficador():
 		if graficador_container:
 			modelo3D_container.visible = false
 			graficador_container.visible = true
+			datos_graficador.visible= true
+			datos_sitio.visible= false

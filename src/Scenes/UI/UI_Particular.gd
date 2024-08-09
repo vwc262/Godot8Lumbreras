@@ -25,11 +25,14 @@ extends Control
 @onready var lbl_valor = $VBoxContainer/main_container/progress_bar_container/ProgressBar/lbl_valor
 
 @onready var v_box_container = $VBoxContainer/main_container/lista_sitios_container/ScrollContainer/VBoxContainer
+@onready var graficador_datos = $VBoxContainer/main_container/detalles_container/VBoxContainer/sitio_detalles/graficador_datos
 @onready var lista_sitios_container = $VBoxContainer/main_container/lista_sitios_container
 @onready var header_btn_lista_sitios = $VBoxContainer/header_container/HBoxContainer/header_btn_container/header_btn_lista_sitios
 
 @onready var graficador_container = $VBoxContainer/main_container/graficador_container
 @onready var modelo_3d_container = $VBoxContainer/main_container/modelo_3d_container
+@onready var datos_sitio = $VBoxContainer/main_container/detalles_container/VBoxContainer/sitio_detalles/VBoxContainer
+
 
 @export var new_icon: Texture2D
 @export var texture_online: Texture2D
@@ -60,6 +63,8 @@ var unidades = {
 func _ready():
 	UIManager.graficador_container = graficador_container
 	UIManager.modelo3D_container = modelo_3d_container
+	UIManager.datos_graficador = graficador_datos
+	UIManager.datos_sitio =  datos_sitio
 	original_icon = btn_lista.icon  # Guarda el ícono original
 	btn_lista.connect("pressed", _on_btn_lista_pressed)
 	NavigationManager.connect("Go_TO", _compare_and_print_selected_site)
@@ -239,7 +244,13 @@ func _on_finish_tween_sitios():
 func _on_btn_graficador_pressed():
 	if graficador_container.visible:
 		graficador_container.visible = false
+		graficador_datos.visible = false
+		
 		modelo_3d_container.visible = true
+		datos_sitio.visible = true
 	else:
 		graficador_container.visible = true
+		graficador_datos.visible = true
+		
 		modelo_3d_container.visible = false
+		datos_sitio.visible = false

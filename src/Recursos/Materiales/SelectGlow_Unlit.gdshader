@@ -16,8 +16,8 @@ void fragment() {
 	vec2 base_uv = vec2 (UV.x * tile_size,UV.y);
 	vec4 albedo_tex = texture(texture_albedo,base_uv + (Direction * TIME * Speed));
 	vec4 mask_tex = texture(mask,base_uv);
-	ALBEDO = (albedo.rgb * (albedo_tex.rgb + albedo.rgb));
-	ALPHA = (mask_tex.r);
+	ALBEDO = (albedo.rgb * (albedo_tex.rgb + albedo.rgb));	
+	ALPHA = (mask_tex.r);	
 	// Called for every pixel the material is visible on.
 }
 

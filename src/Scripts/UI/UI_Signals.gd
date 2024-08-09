@@ -17,7 +17,8 @@ extends Control
 #endregion
 
 # Referencia a la señal que se va a mostrar
-var signal_ref : Array[Señal] = []
+var signal_ref: Array[Señal] = []
+var id_estacion: int
 
 # Diccionario para las unidades de tipo de señal
 var unidades = {
@@ -27,43 +28,56 @@ var unidades = {
 }
 
 # Función para recibir y establecer los datos de la señal
-func set_datos(estacion:Estacion):
-	signal_ref.assign(estacion.signals.values())  
+func set_datos(estacion: Estacion):
+	id_estacion = estacion.id_estacion
+	signal_ref.assign(estacion.signals.values())
 	call_deferred("actualizar_datos")
 
-func actualizar_datos():	
+func actualizar_datos():
 	for _signal in signal_ref:
-		
-		# Obtener la unidad correspondiente al tipo de señal
 		var unidad = unidades.get(_signal.tipo_signal, "")
-				
+		
 		if _signal.tipo_signal == 1:
-			lbl_nombre_signal.text = _signal.nombre			
+			lbl_nombre_signal.text = _signal.nombre
 			lbl_valor.text = str(_signal.valor) + " " + unidad if _signal.is_dentro_rango() else "---"
-			
-		elif _signal.tipo_signal == 2: 
+		elif _signal.tipo_signal == 2:
 			lbl_nombre_signal_presion.text = _signal.nombre
 			lbl_presion_valor.text = str(_signal.valor) + " " + unidad if _signal.is_dentro_rango() else "---"
 		elif _signal.tipo_signal == 3:
 			lbl_nombre_signal_gasto.text = _signal.nombre
 			lbl_gasto_valor.text = str(_signal.valor) + " " + unidad if _signal.is_dentro_rango() else "---"
-			
-			# Verificar si el semáforo está presente
+		
 		if _signal.semaforo != null:
-			# Actualizar el texto y la visibilidad del contenedor de la barra de progreso
 			lbl_valor_min.text = "Min: " + str(_signal.semaforo.normal) + " " + unidad
 			lbl_valor_max.text = "Max: " + str(_signal.semaforo.critico) + " " + unidad
-			
-			# Establecer los valores mínimo y máximo de la barra de progreso
 			progress_bar.min_value = float(_signal.semaforo.normal)
 			progress_bar.max_value = float(_signal.semaforo.critico)
 			progress_bar.value = float(_signal.valor) if _signal.is_dentro_rango() else 0
 			
-			# Cambiar el color de la barra de progreso según el valor de la señal
 			if _signal.valor > _signal.semaforo.normal and _signal.valor <= _signal.semaforo.preventivo:
-				progress_bar.modulate = Color(1, 1, 0) # Amarillo
+				progress_bar.modulate = Color(1, 1, 0)  # Amarillo
 			elif _signal.valor > _signal.semaforo.preventivo:
-				progress_bar.modulate = Color(1, 0, 0) # Rojo
+				progress_bar.modulate = Color(1, 0, 0)  # Rojo
 			else:
-				progress_bar.modulate = Color(0, 1, 0) # Verde
+				progress_bar.modulate = Color(0, 1, 0)  # Verde
+
+# Función general para manejar la lógica compartida de los botones
+func manejar_btn_presionado(mostrar_graficador: bool):
+	UIManager.seleccionar_sitio_id(id_estacion)
 	
+	if UIManager.current_selected_site:
+		var nivel_encontrado = SceneManager.load_scene(id_estacion)
+		if nivel_encontrado:
+			if mostrar_graficador:
+				UIManager.mostrar_graficador()
+			UIManager.mostrar_particular()
+			SceneManager.set_world_environment(SceneManager.TIPO_NIVEL.PARTICULAR)
+
+# Llamada al presionar el botón de graficador
+func _on_btn_graficador_pressed():
+	manejar_btn_presionado(true)
+
+# Llamada al presionar el botón de particular
+func _on_bnt_particular_pressed():
+	manejar_btn_presionado(false)
+

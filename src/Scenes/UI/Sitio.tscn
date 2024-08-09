@@ -114,7 +114,7 @@ expand_mode = 1
 
 [node name="PanelContainer" type="PanelContainer" parent="VBoxContainer"]
 self_modulate = Color(1, 1, 1, 0)
-custom_minimum_size = Vector2(0, 160)
+custom_minimum_size = Vector2(0, 260)
 layout_mode = 2
 size_flags_vertical = 2
 mouse_filter = 1

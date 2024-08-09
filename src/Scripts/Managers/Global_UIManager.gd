@@ -11,6 +11,8 @@ var current_lista_site = null  # Nuevo: sitio seleccionado en la lista
 
 var ui_particular: Node = null
 var popUpWindow : Node = null
+var graficador_container
+var modelo3D_container
 
 
 func seleccionar_sitio(sitio):		
@@ -73,4 +75,10 @@ func seleccionar_sitio_id(id_estacion):
 		if sitio.id_estacion == id_estacion:
 			seleccionar_sitio(sitio)
 			
-	
+			
+#  función para mostrar el graficador en la escena particular
+func mostrar_graficador():
+	if ui_particular != null:
+		if graficador_container:
+			modelo3D_container.visible = false
+			graficador_container.visible = true

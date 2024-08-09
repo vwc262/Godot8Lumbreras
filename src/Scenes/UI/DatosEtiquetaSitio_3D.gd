@@ -28,3 +28,12 @@ func refresh_data():
 	if estacion != null and nivel != null:
 		labelFecha.text = "%s" % [GlobalUtils.formatear_fecha(estacion.tiempo)]
 		labelNivel.text = "%s: %s m." % [nivel.nombre, "---" if nivel.dentro_rango == 1 else nivel.valor]
+
+
+func _on_EtiquetaClick(camera: Node, event: InputEvent, position: Vector3, normal: Vector3, shape_idx: int) -> void:
+	if(event is InputEventMouseButton  and event.double_click):
+		var nivel_encontrado = SceneManager.load_scene(estacion.id_estacion)	
+		if(nivel_encontrado):
+			UIManager.mostrar_particular()	
+			SceneManager.set_world_environment(SceneManager.TIPO_NIVEL.PARTICULAR)				
+	

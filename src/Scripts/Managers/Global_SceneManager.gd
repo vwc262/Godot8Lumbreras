@@ -29,7 +29,8 @@ func load_scene(idSceneKey:int):
 		unload_scenes()
 		scenes[idSceneKey].visible = true	
 	else:
-		UIManager.popUpWindow.showPopUp("Sitio en construcción")
+		var estacion : Estacion = GlobalData.get_estacion(idSceneKey)
+		UIManager.popUpWindow.showPopUp( estacion.nombre + " en construcción")
 	return nivel_encontrado		
 		
 

@@ -17,6 +17,8 @@ class_name Estacion
 @export var fallas: int
 @export var tipo_poleo: int
 
+const tolerancia_minutos : int = 15
+
 #Constructo Estacion
 func _init(jsonData):
 	self.id_estacion = jsonData["idEstacion"]
@@ -31,5 +33,13 @@ func _init(jsonData):
 	self.conexiones = jsonData["conexiones"]
 	self.fallas = jsonData["fallas"]
 	self.tipo_poleo = jsonData["tipoPoleo"]
+
+func is_estacion_en_linea() -> bool:	
+	var current_time = Time.get_unix_time_from_datetime_dict(Time.get_datetime_dict_from_system(false))
+	var estacion_time  = Time.get_unix_time_from_datetime_string(tiempo)
+	var difference_minutes = (current_time - estacion_time) / 60
+	if(difference_minutes > tolerancia_minutos):
+		return false			
+	return  enlace in [1, 2, 3] 
 	
 	

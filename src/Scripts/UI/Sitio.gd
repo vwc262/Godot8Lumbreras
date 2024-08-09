@@ -43,11 +43,9 @@ func actualizar_datos():
 	lbl_fecha_sitio.text = GlobalUtils.formatear_fecha(estacion_ref.tiempo)
 
 # Función para actualizar el estado del enlace
-func set_enlace():
-	if estacion_ref.enlace in [1, 2, 3]:
-		texture_estado_enlace.texture = preload("res://Recursos/UI/img/Coneccion_a.png")
-	else:
-		texture_estado_enlace.texture = preload("res://Recursos/UI/img/Coneccion_b.png")
+func set_enlace():	
+	texture_estado_enlace.texture = preload("res://Recursos/UI/img/Coneccion_a.png") if estacion_ref.is_estacion_en_linea() else preload("res://Recursos/UI/img/Coneccion_b.png")	
+		
 
 # Función para instanciar y actualizar señales
 func instanciar_señales():

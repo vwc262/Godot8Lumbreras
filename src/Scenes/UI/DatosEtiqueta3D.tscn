@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://bs0nvpdg63k4x"]
+[gd_scene load_steps=6 format=3 uid="uid://bs0nvpdg63k4x"]
 
 [ext_resource type="Script" path="res://Scenes/UI/DatosEtiquetaSitio_3D.gd" id="1_gdc11"]
 [ext_resource type="Shader" uid="uid://d4cf3gpi4jv62" path="res://Recursos/Shaders/shader_letrero_3d.tres" id="2_6dxd3"]
@@ -8,6 +8,9 @@
 render_priority = 0
 shader = ExtResource("2_6dxd3")
 shader_parameter/texture_albedo = ExtResource("2_pi6rh")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_pmbfv"]
+size = Vector3(4.56239, 2.26019, 1)
 
 [node name="DatosEtiqueta3D" type="Node3D"]
 script = ExtResource("1_gdc11")
@@ -45,3 +48,11 @@ font_size = 100
 outline_size = 20
 horizontal_alignment = 0
 vertical_alignment = 0
+
+[node name="Area3D" type="Area3D" parent="Sprite3D"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Sprite3D/Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.054863, 0.139017, 0.0485852)
+shape = SubResource("BoxShape3D_pmbfv")
+
+[connection signal="input_event" from="Sprite3D/Area3D" to="." method="_on_EtiquetaClick"]

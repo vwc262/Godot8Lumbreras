@@ -33,6 +33,7 @@ flip_faces = true
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ehtxa"]
 transparency = 1
 shading_mode = 0
+albedo_color = Color(0.647059, 0.631373, 0.588235, 1)
 albedo_texture = ExtResource("14_eum0l")
 billboard_mode = 1
 billboard_keep_scale = true
@@ -42,6 +43,7 @@ distance_fade_max_distance = 35.0
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_g6tli"]
 transparency = 1
 shading_mode = 0
+albedo_color = Color(0.670588, 0.65098, 0.603922, 1)
 albedo_texture = ExtResource("15_b33lp")
 billboard_mode = 1
 billboard_keep_scale = true
@@ -51,6 +53,7 @@ distance_fade_max_distance = 35.0
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_k83vo"]
 transparency = 1
 shading_mode = 0
+albedo_color = Color(0.694118, 0.67451, 0.619608, 1)
 albedo_texture = ExtResource("15_b33lp")
 billboard_mode = 1
 billboard_keep_scale = true

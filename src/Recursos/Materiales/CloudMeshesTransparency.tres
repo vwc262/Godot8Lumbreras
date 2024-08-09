@@ -1,11 +1,12 @@
 [gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://b0gkm23d6a2ch"]
 
-[ext_resource type="Texture2D" uid="uid://cw4pt0rum7ikr" path="res://Recursos/Textures/Sky/nube_02.png" id="1_7hsa0"]
+[ext_resource type="Texture2D" uid="uid://cifknfeeyawbh" path="res://Recursos/Textures/Sky/nube_03_x05.png" id="1_32xyy"]
 
 [resource]
 transparency = 1
 shading_mode = 0
-albedo_texture = ExtResource("1_7hsa0")
+albedo_color = Color(0.611765, 0.611765, 0.572549, 1)
+albedo_texture = ExtResource("1_32xyy")
 billboard_mode = 1
 billboard_keep_scale = true
 distance_fade_mode = 1

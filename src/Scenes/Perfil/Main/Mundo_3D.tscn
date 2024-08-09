@@ -94,9 +94,9 @@ maxRotationY = 20.0
 offSetDistanceInclination = 20.0
 zoom_speed = 0.05
 can_zoom = true
-maxZoom = 0.5
+maxZoom = 0.6
 initialZoom = 35.0
-speedAnimation = 0.6
+speedAnimation = 0.4
 maxBlurIntensity = 0.005
 
 [node name="Camera3D" type="Camera3D" parent="CameraParent"]

@@ -24,9 +24,14 @@ func unload_scenes():
 	pass
 
 func load_scene(idSceneKey:int):
-	unload_scenes()
-	if scenes.has(idSceneKey):
+	var nivel_encontrado = scenes.has(idSceneKey)
+	if nivel_encontrado:
+		unload_scenes()
 		scenes[idSceneKey].visible = true	
+	else:
+		UIManager.popUpWindow.showPopUp("Sitio en construcción")
+	return nivel_encontrado		
+		
 
 func init_wolrd_environment_reference(world_environment_reference:WorldEnvironment):
 	world_environment = world_environment_reference

@@ -73,9 +73,10 @@ func _on_btn_graficar_button_down():
 # Actualiza esta función para usar UIManager
 func _on_btn_particular_pressed():
 	if(UIManager.current_selected_site):
-		UIManager.mostrar_particular()	
-		SceneManager.load_scene(UIManager.current_selected_site.id_estacion)
-		SceneManager.set_world_environment(SceneManager.TIPO_NIVEL.PARTICULAR)
+		var nivel_encontrado = SceneManager.load_scene(UIManager.current_selected_site.id_estacion)
+		if(nivel_encontrado):
+			UIManager.mostrar_particular()	
+			SceneManager.set_world_environment(SceneManager.TIPO_NIVEL.PARTICULAR)		
 	else:			
 		UIManager.popUpWindow.showPopUp("Necesita seleccionar \n un particular antes \n de proceder.");
 	

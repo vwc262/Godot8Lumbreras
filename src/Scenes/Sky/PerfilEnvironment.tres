@@ -10,6 +10,7 @@ shader_parameter/horizonColor1 = Color(0.213259, 0.172867, 0.118883, 1)
 shader_parameter/horizonColor2 = Color(1, 0.707555, 0.608554, 1)
 shader_parameter/offsetHorizontalColor = 0.07
 shader_parameter/ofset_coords = 0.1
+shader_parameter/mix_texture = 0.34
 shader_parameter/skyTexture = ExtResource("2_l4ov8")
 
 [sub_resource type="Sky" id="Sky_f7hr0"]
@@ -20,7 +21,7 @@ radiance_size = 0
 [resource]
 background_mode = 2
 background_color = Color(0.130569, 0.472729, 0.718176, 1)
-background_energy_multiplier = 0.5
+background_energy_multiplier = 1.12
 sky = SubResource("Sky_f7hr0")
 sky_rotation = Vector3(0.0698132, 0, 0)
 ambient_light_color = Color(0.821688, 0.765487, 0.670528, 1)

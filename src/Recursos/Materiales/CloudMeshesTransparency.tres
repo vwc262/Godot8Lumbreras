@@ -5,7 +5,7 @@
 [resource]
 transparency = 1
 shading_mode = 0
-albedo_color = Color(0.611765, 0.611765, 0.572549, 1)
+albedo_color = Color(0.862745, 0.831373, 0.8, 1)
 albedo_texture = ExtResource("1_32xyy")
 billboard_mode = 1
 billboard_keep_scale = true

@@ -182,8 +182,7 @@ func handle_drag(event: InputEventScreenDrag):
 			if abs(get_delta_distance(current_dist)) > zoom_treshold:#zoom
 				var direction = -1 if current_dist > last_distance else 1 
 				#position += cameraForward * direction * zoom_speed
-				position += vector_proyectado * -direction * zoom_speed * 8
-				print(vector_proyectado)
+				position += vector_proyectado * -direction * zoom_speed * 8				
 				last_distance = current_dist
 			elif previous_y_diff != 0: #tilt
 				if abs(current_finger_positions.y - previous_y_diff) > tilt_threshold:

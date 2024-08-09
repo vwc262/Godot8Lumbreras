@@ -1,29 +1,24 @@
-[gd_resource type="Environment" load_steps=5 format=3 uid="uid://ccm8vriw4pmnm"]
+[gd_resource type="Environment" load_steps=4 format=3 uid="uid://kh6a2ws5gtp"]
 
-[ext_resource type="Shader" path="res://Recursos/Materiales/SkyEnvironment.gdshader" id="1_tce1v"]
-[ext_resource type="Texture2D" uid="uid://cvh6aa0m7f8r6" path="res://Recursos/Textures/Sky/sunflowers_puresky_1k.hdr" id="2_l4ov8"]
+[ext_resource type="Shader" path="res://Recursos/Materiales/SkyEnvironment.gdshader" id="1_4xsfq"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_1lx84"]
-shader = ExtResource("1_tce1v")
+shader = ExtResource("1_4xsfq")
 shader_parameter/skyColor = Color(8.66354e-06, 0.672741, 0.844546, 1)
 shader_parameter/horizonColor1 = Color(0.213259, 0.172867, 0.118883, 1)
 shader_parameter/horizonColor2 = Color(1, 0.707555, 0.608554, 1)
-shader_parameter/offsetHorizontalColor = 0.07
-shader_parameter/ofset_coords = 0.1
-shader_parameter/skyTexture = ExtResource("2_l4ov8")
+shader_parameter/offsetHorizontalColor = 0.02
+shader_parameter/ofse_coords = 0.1
 
 [sub_resource type="Sky" id="Sky_f7hr0"]
 sky_material = SubResource("ShaderMaterial_1lx84")
-process_mode = 1
-radiance_size = 0
 
 [resource]
 background_mode = 2
 background_color = Color(0.130569, 0.472729, 0.718176, 1)
-background_energy_multiplier = 0.5
+background_energy_multiplier = 0.61
 sky = SubResource("Sky_f7hr0")
 sky_rotation = Vector3(0.0698132, 0, 0)
-ambient_light_color = Color(0.821688, 0.765487, 0.670528, 1)
 ambient_light_energy = 0.0
 reflected_light_source = 2
 tonemap_exposure = 1.01

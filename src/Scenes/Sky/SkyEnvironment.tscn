@@ -12,8 +12,8 @@ script = ExtResource("2_4q7sg")
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="WorldEnvironment"]
 transform = Transform3D(0.650774, -0.274571, 0.707887, 0, 0.932324, 0.361625, -0.759271, -0.235336, 0.606732, 0, 1.28646, 0)
 light_color = Color(0.955734, 0.832482, 0.76637, 1)
-light_energy = 3.5
-light_indirect_energy = 2.259
+light_energy = 1.51
+light_indirect_energy = 0.0
 light_volumetric_fog_energy = 1.25
 light_bake_mode = 1
 shadow_enabled = true

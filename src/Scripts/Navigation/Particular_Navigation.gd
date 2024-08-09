@@ -30,9 +30,11 @@ extends Node3D
 @export var zoom_treshold : float = 5
 @export var pan_dist := 200
 @export var max_pan_speed : float = 0.05
+@export var z_Depth : float = 100
 #endregion
 
 @onready var camera_3_dp : Node3D = $Camera3Dp
+@onready var camera_3_dp2 : Camera3D = $Camera3Dp
 
 #region Signals
 signal on_position_changed
@@ -57,6 +59,8 @@ var factorZoom: float;
 #tilt variables
 var previous_y_diff  : float = 0
 var previous_distance:float=0
+var client_size: Vector2;
+var vector_proyectado: Vector3;
 #endregion
 
 # Called when the node enters the scene tree for the first time.
@@ -65,6 +69,11 @@ func _ready():
 	#camera_3_dp.rotation_degrees.x = initialRotationCamera #Se guarda la rotacion inicial en x de la camara
 	NavigationManager.connect('ResetCameraPosition',ResetCameraPosition) #Suscripcion de evento
 	initalCameraPosition = position # se guarda la posicion inicial de la camara
+	
+	# esta pensado para portrait
+	client_size = DisplayServer.screen_get_size();
+	client_size.x = client_size.x / client_size.y
+	client_size.y = 1
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -101,6 +110,7 @@ func _input(event):
 
 #Se hacen los presets iniciales del touch event
 func handle_touch(event: InputEventScreenTouch):
+
 	if event.pressed:
 		touch_points[event.index] = event.position
 	else:
@@ -115,6 +125,13 @@ func handle_touch(event: InputEventScreenTouch):
 		var current: Vector2 = touch_point_positions[1] - touch_point_positions[0]
 		angle = anclaDistancia.normalized().dot(current.normalized())
 		anclaDistancia = touch_point_positions[1] - touch_point_positions[0]
+		
+		#region hector
+		var _touches = touch_points.values()
+		var vector_centro: Vector2 = ((_touches[1] - _touches[0]) / 2) + _touches[0]
+		vector_proyectado = camera_3_dp2.project_position(vector_centro, z_Depth).normalized()
+		vector_proyectado = Vector3(vector_proyectado.x * client_size.y, vector_proyectado.y * client_size.x, vector_proyectado.z * client_size.x)
+		#endregion
 
 	elif touch_points.size() < 2:
 		start_distance = 0
@@ -136,11 +153,12 @@ func handle_drag(event: InputEventScreenDrag):
 	var right: Vector3 = parentTransform.basis.x
 
 	AdjustPanSpeedByZoom()
-
+	
 	if touch_points.size() == 1:
 		if can_pan:
 			var pan_vector = (forward + (-event.relative.x * right ) + (-event.relative.y * forward)) * pan_speed
 			pan_vector.y = 0
+			# comentado
 			global_translate(pan_vector)
 
 	elif touch_points.size() >= 2:
@@ -153,22 +171,26 @@ func handle_drag(event: InputEventScreenDrag):
 		if can_rotate:
 			var touch = touch_points.values()
 			var delta : Vector2 = touch[1] - touch[0]
+			# comentado
 			if(abs(delta.angle_to(anclaDistancia) * 1000) > rotate_treshold):				
 				rotate_camera(rotate_speed * sign(delta.angle_to(anclaDistancia)))
 			
-			anclaDistancia = delta; 
-			
+			anclaDistancia = delta;
 						
-		if can_zoom:
+		if can_zoom:	
 			# prioridad al zoom mediante una tolerancia
 			if abs(get_delta_distance(current_dist)) > zoom_treshold:#zoom
 				var direction = -1 if current_dist > last_distance else 1 
-				position += cameraForward * direction * zoom_speed
+				#position += cameraForward * direction * zoom_speed
+				position += vector_proyectado * -direction * zoom_speed * 8
+				print(vector_proyectado)
 				last_distance = current_dist
 			elif previous_y_diff != 0: #tilt
 				if abs(current_finger_positions.y - previous_y_diff) > tilt_threshold:
 					var direction : float = sign(event.relative.y)
-					camera_3_dp.rotation_degrees.x += direction * tilt_speed
+					# comentado
+					#camera_3_dp.rotation_degrees.x += direction * tilt_speed
+					position.y += direction * tilt_speed
 			previous_y_diff  = current_finger_positions.y	
 			previous_distance = current_dist
 

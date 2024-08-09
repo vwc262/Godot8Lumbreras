@@ -95,10 +95,12 @@ func handle_touch(event: InputEventScreenTouch):
 func handle_drag(event: InputEventScreenDrag):
 	if last_tween_position.distance_to(position) > deselect_distance:
 		# aqui va el material que se desea poner
-		ID_Select = 0
+		ID_Select = 0	
 		UIManager.deselect_all_sitios()
 		
 	NavigationManager.set_lastid_selected(ID_Select)
+	NavigationManager.select_mini_3d()
+	
 	touch_points[event.index] = event.position
 	var parentTransform = get_global_transform()
 	var forward: Vector3 = parentTransform.basis.z

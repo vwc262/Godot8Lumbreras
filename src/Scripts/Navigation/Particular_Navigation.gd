@@ -158,7 +158,7 @@ func handle_drag(event: InputEventScreenDrag):
 			var pan_vector = (forward + (-event.relative.x * right ) + (-event.relative.y * forward)) * pan_speed
 			pan_vector.y = 0
 			# comentado
-			#global_translate(pan_vector)
+			global_translate(pan_vector)
 
 	elif touch_points.size() >= 2:
 		var up: Vector2 = Vector2(0,1)
@@ -171,8 +171,8 @@ func handle_drag(event: InputEventScreenDrag):
 			var touch = touch_points.values()
 			var delta : Vector2 = touch[1] - touch[0]
 			# comentado
-			#if(abs(delta.angle_to(anclaDistancia) * 1000) > rotate_treshold):				
-				#rotate_camera(rotate_speed * sign(delta.angle_to(anclaDistancia)))
+			if(abs(delta.angle_to(anclaDistancia) * 1000) > rotate_treshold):				
+				rotate_camera(rotate_speed * sign(delta.angle_to(anclaDistancia)))
 			
 			anclaDistancia = delta;
 						
@@ -188,7 +188,7 @@ func handle_drag(event: InputEventScreenDrag):
 				if abs(current_finger_positions.y - previous_y_diff) > tilt_threshold:
 					var direction : float = sign(event.relative.y)
 					# comentado
-					#camera_3_dp.rotation_degrees.x += direction * tilt_speed
+					camera_3_dp.rotation_degrees.x += direction * tilt_speed
 			previous_y_diff  = current_finger_positions.y	
 			previous_distance = current_dist
 

@@ -39,14 +39,14 @@ func actualizar_datos():
 				
 		if _signal.tipo_signal == 1:
 			lbl_nombre_signal.text = _signal.nombre			
-			lbl_valor.text = str(_signal.valor) + " " + unidad
+			lbl_valor.text = str(_signal.valor) + " " + unidad if _signal.is_dentro_rango() else "---"
 			
 		elif _signal.tipo_signal == 2: 
 			lbl_nombre_signal_presion.text = _signal.nombre
-			lbl_presion_valor.text = str(_signal.valor) + " " + unidad
+			lbl_presion_valor.text = str(_signal.valor) + " " + unidad if _signal.is_dentro_rango() else "---"
 		elif _signal.tipo_signal == 3:
 			lbl_nombre_signal_gasto.text = _signal.nombre
-			lbl_gasto_valor.text = str(_signal.valor) + " " + unidad
+			lbl_gasto_valor.text = str(_signal.valor) + " " + unidad if _signal.is_dentro_rango() else "---"
 			
 			# Verificar si el semáforo está presente
 		if _signal.semaforo != null:
@@ -57,7 +57,7 @@ func actualizar_datos():
 			# Establecer los valores mínimo y máximo de la barra de progreso
 			progress_bar.min_value = float(_signal.semaforo.normal)
 			progress_bar.max_value = float(_signal.semaforo.critico)
-			progress_bar.value = float(_signal.valor)
+			progress_bar.value = float(_signal.valor) if _signal.is_dentro_rango() else 0
 			
 			# Cambiar el color de la barra de progreso según el valor de la señal
 			if _signal.valor > _signal.semaforo.normal and _signal.valor <= _signal.semaforo.preventivo:

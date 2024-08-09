@@ -28,3 +28,6 @@ func _init(jsonData):
 	self.dentro_rango = jsonData["dentroRango"]
 	self.linea = jsonData["linea"]
 	self.habilitar = jsonData["habilitar"]
+
+func is_dentro_rango() -> bool:
+	return dentro_rango == 1

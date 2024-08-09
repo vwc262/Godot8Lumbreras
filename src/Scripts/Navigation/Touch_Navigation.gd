@@ -45,6 +45,9 @@ var isTween: bool
 
 var ID_Select = 0
 var factorZoom: float;
+
+var deselect_distance: float = 5;
+var last_tween_position: Vector3 = Vector3(0,0,0)
 #endregion
 
 @onready var blurMaterial:Material = $Camera3D/ColorRect.material
@@ -89,8 +92,11 @@ func handle_touch(event: InputEventScreenTouch):
 		anclaDistancia = Vector2(0,0)
 
 func handle_drag(event: InputEventScreenDrag):
-	ID_Select = 0
-	UIManager.deselect_all_sitios()
+	if last_tween_position.distance_to(position) > deselect_distance:
+		# aqui va el material que se desea poner
+		ID_Select = 0
+		UIManager.deselect_all_sitios()
+		
 	NavigationManager.set_lastid_selected(ID_Select)
 	touch_points[event.index] = event.position
 	var parentTransform = get_global_transform()
@@ -147,6 +153,8 @@ func OnTweenFinished_MovimientoRealizado():
 	isTween = false
 	NavigationManager.emit_signal("CameraZoom", position.y, initialZoom, maxZoom)
 	NavigationManager.emit_signal("OnTweenFinished_MovimientoRealizado")
+	last_tween_position = position;
+	print(last_tween_position)
 	
 func OnTweenFinished_Blur():
 	pass

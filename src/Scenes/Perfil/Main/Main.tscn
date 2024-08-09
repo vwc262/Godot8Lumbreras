@@ -186,6 +186,7 @@ transparent_bg = true
 mode = 3
 initial_position = 2
 size = Vector2i(500, 700)
+visible = true
 script = ExtResource("13_4y2mv")
 
 [node name="Panel" type="Panel" parent="popup_container/Popup"]
@@ -226,6 +227,7 @@ un particular antes
 de proceder."
 horizontal_alignment = 1
 vertical_alignment = 1
+autowrap_mode = 2
 uppercase = true
 
 [node name="btn_close_popup" type="Button" parent="popup_container/Popup/Panel"]

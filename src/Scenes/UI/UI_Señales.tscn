@@ -1,9 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://hro847n58cow"]
+[gd_scene load_steps=8 format=3 uid="uid://hro847n58cow"]
 
 [ext_resource type="Texture2D" uid="uid://b085nmkssb1j7" path="res://Recursos/UI/img/señales/Lista_detalles_Nivel.jpg" id="1_1hrsm"]
 [ext_resource type="Script" path="res://Scripts/UI/UI_Signals.gd" id="1_bisnc"]
 [ext_resource type="Texture2D" uid="uid://dfv7fthqp0uuf" path="res://Recursos/UI/img/señales/Lista_detalles_margen.jpg" id="1_tledo"]
 [ext_resource type="Texture2D" uid="uid://bo7rxrei3drkk" path="res://Recursos/UI/img/señales/Lista_detalles_Gasto_Presion.jpg" id="2_p3fp5"]
+[ext_resource type="Texture2D" uid="uid://d2w8lhyv6px5w" path="res://Recursos/UI/img/Encabezado_A_submenu/Lista_detalles_Submenu_BotonIzq_a.png" id="3_e3itx"]
+[ext_resource type="Texture2D" uid="uid://d2dd3kyoa8thd" path="res://Recursos/UI/img/Encabezado_A_submenu/Lista_detalles_Submenu_BotonDer_a.png" id="4_6a7ql"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_equ42"]
 
@@ -49,8 +51,10 @@ size_flags_horizontal = 3
 theme_override_constants/separation = 0
 
 [node name="botones_container" type="Panel" parent="Panel/HBoxContainer/VBoxContainer"]
-custom_minimum_size = Vector2(0, 100)
+self_modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(620, 50)
 layout_mode = 2
+size_flags_vertical = 2
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Panel/HBoxContainer/VBoxContainer/botones_container"]
 layout_mode = 1
@@ -59,14 +63,74 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+size_flags_vertical = 2
+theme_override_constants/separation = 0
 
 [node name="btn_graficador" type="Button" parent="Panel/HBoxContainer/VBoxContainer/botones_container/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
+focus_mode = 0
+flat = true
+
+[node name="TextureRect" type="TextureRect" parent="Panel/HBoxContainer/VBoxContainer/botones_container/HBoxContainer/btn_graficador"]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+grow_vertical = 2
+texture = ExtResource("3_e3itx")
+expand_mode = 1
+
+[node name="Label" type="Label" parent="Panel/HBoxContainer/VBoxContainer/botones_container/HBoxContainer/btn_graficador/TextureRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 30
+text = "Graficador"
 
 [node name="bnt_particular" type="Button" parent="Panel/HBoxContainer/VBoxContainer/botones_container/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
+focus_mode = 0
+flat = true
+icon_alignment = 2
+
+[node name="TextureRect" type="TextureRect" parent="Panel/HBoxContainer/VBoxContainer/botones_container/HBoxContainer/bnt_particular"]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 0
+grow_vertical = 2
+texture = ExtResource("4_6a7ql")
+expand_mode = 1
+
+[node name="Label2" type="Label" parent="Panel/HBoxContainer/VBoxContainer/botones_container/HBoxContainer/bnt_particular/TextureRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -76.5
+offset_top = -21.0
+offset_right = 76.5
+offset_bottom = 21.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 30
+text = "Particular"
 
 [node name="nivel_container" type="Panel" parent="Panel/HBoxContainer/VBoxContainer"]
 self_modulate = Color(1, 1, 1, 0)

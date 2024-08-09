@@ -7,11 +7,11 @@
 [ext_resource type="Script" path="res://Scripts/Fetcher/VersionFetcher.gd" id="2_yku0o"]
 [ext_resource type="Texture2D" uid="uid://iy3aj6iuo7iq" path="res://Recursos/UI/img/Encabezado_A_submenu/EncabezadoA_base.png" id="3_ohb0y"]
 [ext_resource type="PackedScene" uid="uid://dbs3c52v8n226" path="res://Scenes/UI/ListaSitios.tscn" id="4_lo6xx"]
-[ext_resource type="Texture2D" uid="uid://camxcq3klk8j1" path="res://Recursos/UI/img/Menu_pie/MenuPie_graficador_a.png" id="5_fp8g2"]
 [ext_resource type="PackedScene" uid="uid://bosmqfxs2ibvy" path="res://Scenes/Plotter/ChartControl.tscn" id="6_cdy0v"]
-[ext_resource type="Texture2D" uid="uid://00dq1mhpefe2" path="res://Recursos/UI/img/Menu_pie/MenuPie_Expandir_B.png" id="7_7pp3i"]
-[ext_resource type="Texture2D" uid="uid://pxyl1xaglt1a" path="res://Recursos/UI/img/Menu_pie/MenuPie_ParticularDER_a.png" id="7_r2qur"]
+[ext_resource type="Texture2D" uid="uid://bliv3oeaqcnc7" path="res://Recursos/UI/img/Encabezado_B_Submenu/Boton_Izq.png" id="8_f1qvf"]
+[ext_resource type="Texture2D" uid="uid://dgwbnce3hid3r" path="res://Recursos/UI/img/Encabezado_B_Submenu/Boton_Expandir_b.png" id="9_dfl04"]
 [ext_resource type="Texture2D" uid="uid://bo4b76cn6y4rf" path="res://Recursos/UI/img/Menu_pie/MenuPie_Base.png" id="9_m03wm"]
+[ext_resource type="Texture2D" uid="uid://4oojfxqr3gub" path="res://Recursos/UI/img/Encabezado_B_Submenu/Boton_Der.png" id="10_7kx01"]
 [ext_resource type="PackedScene" uid="uid://mr5ipvv85b1" path="res://Scenes/UI/UI_Particular.tscn" id="11_e8765"]
 [ext_resource type="Script" path="res://Scripts/UI/PopUp/PopupWindow.gd" id="13_4y2mv"]
 [ext_resource type="Texture2D" uid="uid://wtgya2x77u2y" path="res://Recursos/UI/img/PopUp_Dialogo_base.png" id="14_0v8gh"]
@@ -100,46 +100,80 @@ theme_override_constants/separation = 0
 [node name="botones_container" type="Panel" parent="DynamicMargins/VB_MainContainer/main_container/ListaSitiosContainer/VBoxContainer"]
 self_modulate = Color(1, 1, 1, 0)
 layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
+size_flags_vertical = 0
 
 [node name="HBoxContainer" type="HBoxContainer" parent="DynamicMargins/VB_MainContainer/main_container/ListaSitiosContainer/VBoxContainer/botones_container"]
 self_modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(0, 50)
 layout_mode = 1
-anchors_preset = 15
+anchors_preset = 12
+anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -268.0
-offset_top = -128.5
-offset_right = 268.0
-offset_bottom = 8.5
+offset_top = -72.0
 grow_horizontal = 2
-grow_vertical = 2
+grow_vertical = 0
 
 [node name="BTN_graficar" type="Button" parent="DynamicMargins/VB_MainContainer/main_container/ListaSitiosContainer/VBoxContainer/botones_container/HBoxContainer"]
 layout_mode = 2
-size_flags_horizontal = 4
+size_flags_horizontal = 6
 size_flags_vertical = 8
 focus_mode = 0
 theme = SubResource("Theme_0o38m")
-icon = ExtResource("5_fp8g2")
+icon = ExtResource("8_f1qvf")
 flat = true
+
+[node name="Label" type="Label" parent="DynamicMargins/VB_MainContainer/main_container/ListaSitiosContainer/VBoxContainer/botones_container/HBoxContainer/BTN_graficar"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 30
+text = "Graficador"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="BTN_ListaSitios" type="Button" parent="DynamicMargins/VB_MainContainer/main_container/ListaSitiosContainer/VBoxContainer/botones_container/HBoxContainer"]
 layout_mode = 2
-size_flags_horizontal = 4
+size_flags_horizontal = 6
 size_flags_vertical = 8
 focus_mode = 0
-icon = ExtResource("7_7pp3i")
+icon = ExtResource("9_dfl04")
 flat = true
 
 [node name="BTN_particular" type="Button" parent="DynamicMargins/VB_MainContainer/main_container/ListaSitiosContainer/VBoxContainer/botones_container/HBoxContainer"]
 layout_mode = 2
-size_flags_horizontal = 4
+size_flags_horizontal = 6
 size_flags_vertical = 8
 focus_mode = 0
-icon = ExtResource("7_r2qur")
+icon = ExtResource("10_7kx01")
 flat = true
+
+[node name="Label2" type="Label" parent="DynamicMargins/VB_MainContainer/main_container/ListaSitiosContainer/VBoxContainer/botones_container/HBoxContainer/BTN_particular"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -76.5
+offset_top = -21.0
+offset_right = 76.5
+offset_bottom = 21.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 30
+text = "Particular"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="barra_separador" type="Panel" parent="DynamicMargins/VB_MainContainer/main_container/ListaSitiosContainer/VBoxContainer"]
 custom_minimum_size = Vector2(0, 15)
@@ -185,7 +219,6 @@ transparent_bg = true
 mode = 3
 initial_position = 2
 size = Vector2i(500, 700)
-visible = true
 script = ExtResource("13_4y2mv")
 
 [node name="Panel" type="Panel" parent="popup_container/Popup"]

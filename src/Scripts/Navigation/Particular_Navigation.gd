@@ -30,6 +30,7 @@ extends Node3D
 @export var zoom_treshold : float = 5
 @export var pan_dist := 200
 @export var max_pan_speed : float = 0.05
+@export var z_Depth : float = 100
 #endregion
 
 @onready var camera_3_dp : Node3D = $Camera3Dp
@@ -128,7 +129,7 @@ func handle_touch(event: InputEventScreenTouch):
 		#region hector
 		var _touches = touch_points.values()
 		var vector_centro: Vector2 = ((_touches[1] - _touches[0]) / 2) + _touches[0]
-		vector_proyectado = camera_3_dp2.project_position(vector_centro, 100.0).normalized()
+		vector_proyectado = camera_3_dp2.project_position(vector_centro, z_Depth).normalized()
 		vector_proyectado = Vector3(vector_proyectado.x * client_size.y, vector_proyectado.y * client_size.x, vector_proyectado.z * client_size.x)
 		#endregion
 
@@ -188,7 +189,8 @@ func handle_drag(event: InputEventScreenDrag):
 				if abs(current_finger_positions.y - previous_y_diff) > tilt_threshold:
 					var direction : float = sign(event.relative.y)
 					# comentado
-					camera_3_dp.rotation_degrees.x += direction * tilt_speed
+					#camera_3_dp.rotation_degrees.x += direction * tilt_speed
+					position.y += direction * tilt_speed
 			previous_y_diff  = current_finger_positions.y	
 			previous_distance = current_dist
 

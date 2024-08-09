@@ -7,7 +7,7 @@
 [resource]
 render_priority = 0
 shader = ExtResource("1_347qd")
-shader_parameter/albedo = Color(0.677279, 0.251526, 0.472255, 1)
+shader_parameter/albedo = Color(0.698579, 0.210694, 0.506113, 1)
 shader_parameter/Direction = Vector2(0, 1)
 shader_parameter/Speed = 0.74
 shader_parameter/tile_size = 30.12

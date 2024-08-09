@@ -169,6 +169,7 @@ func MoverCamara(idEstacion:int):
 		ID_Select = idEstacion
 		if !isTween:
 			NavigationManager.set_lastid_selected(ID_Select)
+			NavigationManager.select_mini_3d()
 			var tween := TweenManager.init_tween(OnTweenFinished_MovimientoRealizado)
 			isTween = true
 			transform = NavigationManager.GetSiteAnchor(idEstacion)
@@ -190,6 +191,8 @@ func MoverCamara(idEstacion:int):
 
 func ResetCameraPosition():
 	ID_Select = 0
+	NavigationManager.set_lastid_selected(ID_Select)
+	NavigationManager.select_mini_3d()
 	DisableNavigation()
 	var tweenRot := TweenManager.init_tween(OnTweenFinished_MovimientoRealizado)
 	tweenRot.set_parallel()

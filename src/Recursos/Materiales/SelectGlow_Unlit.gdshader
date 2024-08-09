@@ -1,5 +1,6 @@
 shader_type spatial;
 render_mode unshaded;
+render_mode cull_disabled ;
 
 uniform vec4 albedo : source_color;
 uniform sampler2D texture_albedo : source_color,filter_linear_mipmap,repeat_enable;

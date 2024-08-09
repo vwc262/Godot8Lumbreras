@@ -16,6 +16,7 @@ visible = false
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.722967, 0.387336, -0.572092, 0, 0.82806, 0.560639, 0.690882, 0.405324, -0.59866, 0, 0, 0)
+visible = false
 light_color = Color(0.809459, 0.795292, 0.517658, 1)
 light_energy = 3.49
 light_indirect_energy = 0.4

@@ -30,7 +30,7 @@ func actualizar_datos():
 	
 	# Actualizar el nombre y el valor de la señal
 	nombre_se_al.text = signal_ref.nombre
-	valor_se_al.text = str(signal_ref.valor) + " " + unidad
+	valor_se_al.text =  str(signal_ref.valor) + " " + unidad if signal_ref.is_dentro_rango() else "---"
 	
 	# Verificar si el semáforo está presente
 	if signal_ref.semaforo != null:

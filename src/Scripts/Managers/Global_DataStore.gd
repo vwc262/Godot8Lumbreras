@@ -29,7 +29,7 @@ func update_Estaciones(jsonData):
 		var signalsLite = estacionesLite[estacionId]["S"]		
 		for signalKey in signalsLite.keys():									
 			var signalUpdate : Señal = estacion.signals[int(signalKey)]
-			signalUpdate.dentro_rango = signalsLite[signalKey] == -0.9
+			signalUpdate.dentro_rango = 0 if signalsLite[signalKey] == -0.9 else 1
 			signalUpdate.valor = signalsLite[signalKey]
 
 

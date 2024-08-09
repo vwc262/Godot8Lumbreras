@@ -93,7 +93,7 @@ func _on_btn_expandir_sitios_pressed():
 func _show_lista_señales():
 	# Inicializar el Tween y configurar la animación para mostrar
 	var tween = TweenManager.init_tween(_on_finish_tween)
-	TweenManager.tween_animacion(tween, panel_container, "custom_minimum_size:y", 160, 0.5)  # 160 tamaño original
+	TweenManager.tween_animacion(tween, panel_container, "custom_minimum_size:y", 260, 0.5)  # 160 tamaño original
 	panel_container.visible = true
 	is_hidden = false
 	# Cambiar la textura al estado visible
@@ -117,10 +117,6 @@ func _on_finish_tween():
 func set_fondo(texture: Texture):
 	# Actualizar la textura del fondo
 	sitio_fondo.texture = texture
-
-# Función llamada al finalizar el temporizador de doble clic
-func _on_double_click_timeout():
-	is_double_click_disabled = false
 
 # Función llamada cuando el tween de la cámara ha terminado
 func _on_camera_zoom():

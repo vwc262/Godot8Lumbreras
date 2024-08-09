@@ -8,7 +8,7 @@
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_equ42"]
 
 [node name="UiSeñales" type="Control"]
-custom_minimum_size = Vector2(0, 160)
+custom_minimum_size = Vector2(0, 260)
 layout_mode = 3
 anchors_preset = 10
 anchor_right = 1.0
@@ -47,6 +47,26 @@ expand_mode = 1
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_constants/separation = 0
+
+[node name="botones_container" type="Panel" parent="Panel/HBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel/HBoxContainer/VBoxContainer/botones_container"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="btn_graficador" type="Button" parent="Panel/HBoxContainer/VBoxContainer/botones_container/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="bnt_particular" type="Button" parent="Panel/HBoxContainer/VBoxContainer/botones_container/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
 
 [node name="nivel_container" type="Panel" parent="Panel/HBoxContainer/VBoxContainer"]
 self_modulate = Color(1, 1, 1, 0)
@@ -319,3 +339,6 @@ mouse_filter = 1
 theme_override_font_sizes/font_size = 25
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[connection signal="pressed" from="Panel/HBoxContainer/VBoxContainer/botones_container/HBoxContainer/btn_graficador" to="." method="_on_btn_graficador_pressed"]
+[connection signal="pressed" from="Panel/HBoxContainer/VBoxContainer/botones_container/HBoxContainer/bnt_particular" to="." method="_on_bnt_particular_pressed"]

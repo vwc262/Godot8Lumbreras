@@ -58,6 +58,8 @@ var unidades = {
 
 # Función _ready para inicializar los nodos y conectar señales
 func _ready():
+	UIManager.graficador_container = graficador_container
+	UIManager.modelo3D_container = modelo_3d_container
 	original_icon = btn_lista.icon  # Guarda el ícono original
 	btn_lista.connect("pressed", _on_btn_lista_pressed)
 	NavigationManager.connect("Go_TO", _compare_and_print_selected_site)

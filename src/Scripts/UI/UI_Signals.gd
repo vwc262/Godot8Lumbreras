@@ -1,19 +1,22 @@
 extends Control
 
 #region VARIABLES DEL NIVEL
-@onready var lbl_nombre_signal = $Panel/HBoxContainer/VBoxContainer/nivel_container/nivel_container/nombre_container/lbl_nombre_signal
-@onready var lbl_valor_min = $Panel/HBoxContainer/VBoxContainer/nivel_container/nivel_container/progressbar_container/VBoxContainer/valores_progress/HBoxContainer/lbl_valor_min
-@onready var lbl_valor_max = $Panel/HBoxContainer/VBoxContainer/nivel_container/nivel_container/progressbar_container/VBoxContainer/valores_progress/HBoxContainer/lbl_valor_max
-@onready var lbl_valor = $Panel/HBoxContainer/VBoxContainer/nivel_container/nivel_container/valor_container/lbl_valor
-@onready var progress_bar = $Panel/HBoxContainer/VBoxContainer/nivel_container/nivel_container/progressbar_container/VBoxContainer/ProgressBar
+@onready var lbl_nombre_signal = $main_container/HBoxContainer/VBoxContainer/nivel_container/nivel_nombre_container/HBoxContainer/lbl_nivel_nombre
+@onready var lbl_valor_min = $main_container/HBoxContainer/VBoxContainer/nivel_container/nivel_progressbar_container/VBoxContainer/HBoxContainer/lbl_nivel_valor_min
+@onready var lbl_valor_max = $main_container/HBoxContainer/VBoxContainer/nivel_container/nivel_progressbar_container/VBoxContainer/HBoxContainer/lbl_nivel_valor_max
+@onready var lbl_valor = $main_container/HBoxContainer/VBoxContainer/nivel_container/nivel_valor_container/lbl_nivel_valor
+@onready var progress_bar = $main_container/HBoxContainer/VBoxContainer/nivel_container/nivel_progressbar_container/VBoxContainer/ProgressBar
 
 #endregion
 
 #region VARIABLES DE LAS DEMAS SEÑALES
-@onready var lbl_nombre_signal_presion = $"Panel/HBoxContainer/VBoxContainer/señales_container/HBoxContainer/presion_container/HBoxContainer/Panel/lbl_nombre_signal_presion"
-@onready var lbl_presion_valor = $"Panel/HBoxContainer/VBoxContainer/señales_container/HBoxContainer/presion_container/HBoxContainer/Panel2/lbl_presion_valor"
-@onready var lbl_nombre_signal_gasto = $"Panel/HBoxContainer/VBoxContainer/señales_container/HBoxContainer/gasto_container/HBoxContainer/Panel/lbl_nombre_signal_gasto"
-@onready var lbl_gasto_valor = $"Panel/HBoxContainer/VBoxContainer/señales_container/HBoxContainer/gasto_container/HBoxContainer/Panel2/lbl_gasto_valor"
+@onready var lbl_nombre_signal_presion = $main_container/HBoxContainer/VBoxContainer/presion_gasto_container/HBoxContainer/presion_container/HBoxContainer/lbl_presion_nombre
+@onready var lbl_presion_valor = $main_container/HBoxContainer/VBoxContainer/presion_gasto_container/HBoxContainer/presion_container/HBoxContainer/presion_valor_container/presion_valor
+@onready var lbl_nombre_signal_gasto = $main_container/HBoxContainer/VBoxContainer/presion_gasto_container/HBoxContainer/gasto_container/HBoxContainer2/lbl_gasto_nombre
+@onready var lbl_gasto_valor = $main_container/HBoxContainer/VBoxContainer/presion_gasto_container/HBoxContainer/gasto_container/HBoxContainer2/gasto_valor_container/gasto_valor
+@onready var lbl_totalizado_nombre = $main_container/HBoxContainer/VBoxContainer/totalizado_container/lbl_totalizado_nombre
+@onready var lbl_totalizado_valor = $main_container/HBoxContainer/VBoxContainer/totalizado_container/totalizado_valor_container/lbl_totalizado_valor
+
 #endregion
 
 # Referencia a la señal que se va a mostrar
@@ -24,7 +27,8 @@ var id_estacion: int
 var unidades = {
 	1: "m",
 	2: "kg/cm²",
-	3: "l/s"
+	3: "l/s",
+	4: "m³"
 }
 
 # Función para recibir y establecer los datos de la señal
@@ -46,6 +50,9 @@ func actualizar_datos():
 		elif _signal.tipo_signal == 3:
 			lbl_nombre_signal_gasto.text = _signal.nombre
 			lbl_gasto_valor.text = str(_signal.valor) + " " + unidad if _signal.is_dentro_rango() else "---"
+		elif _signal.tipo_signal == 4:
+			lbl_totalizado_nombre.text = _signal.nombre
+			lbl_totalizado_valor.text = str(_signal.valor) + " " + unidad if _signal.is_dentro_rango() else "---"
 		
 		if _signal.semaforo != null:
 			lbl_valor_min.text = "Min: " + str(_signal.semaforo.normal) + " " + unidad
@@ -78,6 +85,5 @@ func _on_btn_graficador_pressed():
 	manejar_btn_presionado(true)
 
 # Llamada al presionar el botón de particular
-func _on_bnt_particular_pressed():
+func _on_btn_particular_pressed():
 	manejar_btn_presionado(false)
-

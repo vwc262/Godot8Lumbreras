@@ -3,8 +3,8 @@
 [ext_resource type="Script" path="res://Scripts/UI/UI_Signals.gd" id="1_bisnc"]
 [ext_resource type="Texture2D" uid="uid://dfv7fthqp0uuf" path="res://Recursos/UI/img/señales/Lista_detalles_margen.jpg" id="1_tledo"]
 [ext_resource type="Texture2D" uid="uid://cjwcuyb61cplu" path="res://Recursos/UI/img/Encabezado_A_submenu/Lista_detalles_Submenu.png" id="2_n8uad"]
-[ext_resource type="Texture2D" uid="uid://d2w8lhyv6px5w" path="res://Recursos/UI/img/Encabezado_A_submenu/Lista_detalles_Submenu_BotonIzq_a.png" id="3_e3itx"]
-[ext_resource type="Texture2D" uid="uid://d2dd3kyoa8thd" path="res://Recursos/UI/img/Encabezado_A_submenu/Lista_detalles_Submenu_BotonDer_a.png" id="4_6a7ql"]
+[ext_resource type="Texture2D" uid="uid://cgyvrt043tfco" path="res://Recursos/UI/img/Encabezado_A_submenu/Lista_detalles_Submenu_BotonIzq_a.png" id="3_e3itx"]
+[ext_resource type="Texture2D" uid="uid://ds38803kd51sp" path="res://Recursos/UI/img/Encabezado_A_submenu/Lista_detalles_Submenu_BotonDer_a.png" id="4_6a7ql"]
 [ext_resource type="Texture2D" uid="uid://ccdb74j068s41" path="res://Recursos/UI/img/Encabezado_A_submenu/Lista_detalles_Submenu_Vineta.png" id="6_aiytj"]
 [ext_resource type="Texture2D" uid="uid://c554rmtw6fjo5" path="res://Recursos/UI/img/Encabezado_A_submenu/Lista_detalles_Submenu_Contenedor.png" id="7_3i1ce"]
 

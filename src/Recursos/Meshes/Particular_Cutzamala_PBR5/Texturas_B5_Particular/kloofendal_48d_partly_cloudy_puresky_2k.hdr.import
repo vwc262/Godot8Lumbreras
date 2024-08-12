@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bhck0l5k147j0"
-path="res://.godot/imported/kloofendal_48d_partly_cloudy_puresky_2k.hdr-f33617edfed88a963f53be8f8b1a2ff2.ctex"
+path="res://.godot/imported/kloofendal_48d_partly_cloudy_puresky_2k.hdr-da3f7ba3059a95c960ba13034e1fb501.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Recursos/Meshes/Particular_Cutzamala_PBR5/textures/kloofendal_48d_partly_cloudy_puresky_2k.hdr"
-dest_files=["res://.godot/imported/kloofendal_48d_partly_cloudy_puresky_2k.hdr-f33617edfed88a963f53be8f8b1a2ff2.ctex"]
+source_file="res://Recursos/Meshes/Particular_Cutzamala_PBR5/Texturas_B5_Particular/kloofendal_48d_partly_cloudy_puresky_2k.hdr"
+dest_files=["res://.godot/imported/kloofendal_48d_partly_cloudy_puresky_2k.hdr-da3f7ba3059a95c960ba13034e1fb501.ctex"]
 
 [params]
 

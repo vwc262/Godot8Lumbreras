@@ -1,7 +1,7 @@
 [gd_resource type="ShaderMaterial" load_steps=3 format=3 uid="uid://b4w4jslh4jm34"]
 
 [ext_resource type="Shader" path="res://Recursos/Materiales/Material_Unlit.gdshader" id="1_73eua"]
-[ext_resource type="Texture2D" uid="uid://b1rsy0rs3ov3m" path="res://Recursos/Meshes/Particular_Cutzamala_PBR5/textures/bake _albedo_PROPS.png" id="2_iqd4y"]
+[ext_resource type="Texture2D" uid="uid://b1rsy0rs3ov3m" path="res://Recursos/Meshes/Particular_Cutzamala_PBR5/Texturas_B5_Particular/bake _albedo_PROPS.png" id="2_iqd4y"]
 
 [resource]
 render_priority = 0

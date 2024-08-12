@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://x5m0onfran4m"]
+[gd_scene load_steps=18 format=3 uid="uid://x5m0onfran4m"]
 
 [ext_resource type="Script" path="res://Scripts/Managers/Perfil.gd" id="1_symg7"]
 [ext_resource type="Script" path="res://Scripts/Fetcher/Fetch_Data.gd" id="1_xo6k0"]
@@ -15,6 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://mr5ipvv85b1" path="res://Scenes/UI/UI_Particular.tscn" id="11_e8765"]
 [ext_resource type="Script" path="res://Scripts/UI/PopUp/PopupWindow.gd" id="13_4y2mv"]
 [ext_resource type="Texture2D" uid="uid://wtgya2x77u2y" path="res://Recursos/UI/img/PopUp_Dialogo_base.png" id="14_0v8gh"]
+[ext_resource type="Material" uid="uid://bexyx5nrr46o1" path="res://Recursos/Materiales/Barrier.tres" id="16_ym8cf"]
 
 [sub_resource type="Theme" id="Theme_0o38m"]
 
@@ -83,7 +84,7 @@ stretch = true
 handle_input_locally = false
 physics_object_picking = true
 physics_object_picking_sort = true
-size = Vector2i(2, 2)
+size = Vector2i(1080, 1130)
 render_target_update_mode = 4
 
 [node name="Perfil" parent="DynamicMargins/VB_MainContainer/main_container/SubViewportContainer/SubViewport" instance=ExtResource("2_2gqy4")]
@@ -280,6 +281,11 @@ focus_mode = 0
 theme_override_font_sizes/font_size = 30
 text = "OK"
 flat = true
+
+[node name="CSGSphere3D" type="CSGSphere3D" parent="."]
+transform = Transform3D(100, 0, 0, 0, 100, 0, 0, 0, 100, 0, 0, 0)
+flip_faces = true
+material = ExtResource("16_ym8cf")
 
 [connection signal="request_completed" from="VersionUpdater" to="VersionUpdater" method="_on_request_completed"]
 [connection signal="OnVersionChanged" from="Endpoint" to="VersionUpdater" method="On_Update_Version"]

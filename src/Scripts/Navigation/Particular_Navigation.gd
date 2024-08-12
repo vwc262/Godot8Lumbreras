@@ -4,10 +4,12 @@ extends Node3D
 @export_group('Pan')
 @export var can_pan: bool
 @export var pan_speed = 0
-@export var minX = -13 # -13 , 20
+@export var minX = -15 # -13 , 20
 @export var maxX = 20 # -13 , 20
-@export var minZ = -10
-@export var maxZ = 10
+@export var minZ = -80
+@export var maxZ = -20
+@export var minY = 5
+@export var maxY = 50
 
 @export_group('Rotation')
 @export var can_rotate: bool
@@ -172,7 +174,7 @@ func handle_drag(event: InputEventScreenDrag):
 			var touch = touch_points.values()
 			var delta : Vector2 = touch[1] - touch[0]
 			# comentado
-			if(abs(delta.angle_to(anclaDistancia) * 1000) > rotate_treshold):				
+			if(abs(delta.angle_to(anclaDistancia) * 1000) > rotate_treshold):
 				rotate_camera(rotate_speed * sign(delta.angle_to(anclaDistancia)))
 			
 			anclaDistancia = delta;
@@ -182,7 +184,7 @@ func handle_drag(event: InputEventScreenDrag):
 			if abs(get_delta_distance(current_dist)) > zoom_treshold:#zoom
 				var direction = -1 if current_dist > last_distance else 1 
 				#position += cameraForward * direction * zoom_speed
-				position += vector_proyectado * -direction * zoom_speed * 8				
+				position += vector_proyectado * -direction * zoom_speed * 8
 				last_distance = current_dist
 			elif previous_y_diff != 0: #tilt
 				if abs(current_finger_positions.y - previous_y_diff) > tilt_threshold:
@@ -194,11 +196,15 @@ func handle_drag(event: InputEventScreenDrag):
 			previous_distance = current_dist
 
 			#position.y = start_zoom / zoom_factor
-			#limit_zoom()
+			limit_zoom()
 			#camera_3_dp.rotation_degrees.x =  lerpf(initialRotationCamera,LimitRotationCamera,inclinate_camera())
 
-	#position.x = clamp(position.x, minX * factorZoom, maxX * factorZoom )
+	#position.x = clamp(position.x, minX * factorZoom, maxX * factorZoom)
 	#position.z = clamp(position.z, minZ * factorZoom, maxZ * factorZoom)
+	#position.y = clamp(position.y, minY * factorZoom, maxY * factorZoom)
+	position.x = clamp(position.x, minX, maxX)
+	position.z = clamp(position.z, minZ, maxZ)
+	position.y = clamp(position.y, minY, maxY)
 
 func rotate_camera(currentangle: float):
 	rotation_degrees.y += -currentangle

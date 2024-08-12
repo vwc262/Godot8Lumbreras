@@ -460,6 +460,7 @@ texture = ExtResource("7_hw4ok")
 expand_mode = 1
 
 [node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/main_container/detalles_container/VBoxContainer/sitio_detalles"]
+visible = false
 clip_contents = true
 layout_mode = 1
 anchors_preset = 8
@@ -640,7 +641,6 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="graficador_datos" type="VBoxContainer" parent="VBoxContainer/main_container/detalles_container/VBoxContainer/sitio_detalles"]
-visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -665,7 +665,7 @@ size_flags_horizontal = 6
 
 [node name="dia_container" type="Panel" parent="VBoxContainer/main_container/detalles_container/VBoxContainer/sitio_detalles/graficador_datos/selector_fecha_container/HBoxContainer"]
 self_modulate = Color(1, 1, 1, 0)
-custom_minimum_size = Vector2(150, 0)
+custom_minimum_size = Vector2(135, 0)
 layout_mode = 2
 
 [node name="fondo_dia" type="TextureRect" parent="VBoxContainer/main_container/detalles_container/VBoxContainer/sitio_detalles/graficador_datos/selector_fecha_container/HBoxContainer/dia_container"]
@@ -677,21 +677,19 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("12_64k7e")
 expand_mode = 1
+stretch_mode = 4
 
-[node name="lbl_dia" type="LineEdit" parent="VBoxContainer/main_container/detalles_container/VBoxContainer/sitio_detalles/graficador_datos/selector_fecha_container/HBoxContainer/dia_container"]
+[node name="option_dia" type="OptionButton" parent="VBoxContainer/main_container/detalles_container/VBoxContainer/sitio_detalles/graficador_datos/selector_fecha_container/HBoxContainer/dia_container"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-focus_mode = 1
 theme_override_font_sizes/font_size = 35
-placeholder_text = "Día"
-alignment = 1
-max_length = 2
-virtual_keyboard_enabled = false
 flat = true
+alignment = 1
+icon_alignment = 1
 
 [node name="Label" type="Label" parent="VBoxContainer/main_container/detalles_container/VBoxContainer/sitio_detalles/graficador_datos/selector_fecha_container/HBoxContainer"]
 layout_mode = 2
@@ -700,7 +698,7 @@ text = "/"
 
 [node name="mes_container" type="Panel" parent="VBoxContainer/main_container/detalles_container/VBoxContainer/sitio_detalles/graficador_datos/selector_fecha_container/HBoxContainer"]
 self_modulate = Color(1, 1, 1, 0)
-custom_minimum_size = Vector2(150, 0)
+custom_minimum_size = Vector2(250, 0)
 layout_mode = 2
 
 [node name="fondo_mes" type="TextureRect" parent="VBoxContainer/main_container/detalles_container/VBoxContainer/sitio_detalles/graficador_datos/selector_fecha_container/HBoxContainer/mes_container"]
@@ -713,19 +711,21 @@ grow_vertical = 2
 texture = ExtResource("12_64k7e")
 expand_mode = 1
 
-[node name="lbl_mes" type="LineEdit" parent="VBoxContainer/main_container/detalles_container/VBoxContainer/sitio_detalles/graficador_datos/selector_fecha_container/HBoxContainer/mes_container"]
+[node name="option_mes" type="OptionButton" parent="VBoxContainer/main_container/detalles_container/VBoxContainer/sitio_detalles/graficador_datos/selector_fecha_container/HBoxContainer/mes_container"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-focus_mode = 0
 theme_override_font_sizes/font_size = 35
-placeholder_text = "Mes"
-alignment = 1
-virtual_keyboard_type = 2
 flat = true
+alignment = 1
+icon_alignment = 1
+item_count = 1
+selected = 0
+popup/item_0/text = "Noviembre"
+popup/item_0/id = 0
 
 [node name="Label2" type="Label" parent="VBoxContainer/main_container/detalles_container/VBoxContainer/sitio_detalles/graficador_datos/selector_fecha_container/HBoxContainer"]
 layout_mode = 2
@@ -734,7 +734,7 @@ text = "/"
 
 [node name="año_container" type="Panel" parent="VBoxContainer/main_container/detalles_container/VBoxContainer/sitio_detalles/graficador_datos/selector_fecha_container/HBoxContainer"]
 self_modulate = Color(1, 1, 1, 0)
-custom_minimum_size = Vector2(150, 0)
+custom_minimum_size = Vector2(135, 0)
 layout_mode = 2
 
 [node name="fondo_año" type="TextureRect" parent="VBoxContainer/main_container/detalles_container/VBoxContainer/sitio_detalles/graficador_datos/selector_fecha_container/HBoxContainer/año_container"]
@@ -746,21 +746,20 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("12_64k7e")
 expand_mode = 1
+stretch_mode = 4
 
-[node name="lbl_año" type="LineEdit" parent="VBoxContainer/main_container/detalles_container/VBoxContainer/sitio_detalles/graficador_datos/selector_fecha_container/HBoxContainer/año_container"]
+[node name="option_año" type="OptionButton" parent="VBoxContainer/main_container/detalles_container/VBoxContainer/sitio_detalles/graficador_datos/selector_fecha_container/HBoxContainer/año_container"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-focus_mode = 0
 theme_override_font_sizes/font_size = 35
-placeholder_text = "Año"
-alignment = 1
-max_length = 2
-virtual_keyboard_type = 2
 flat = true
+alignment = 1
+icon_alignment = 1
+fit_to_longest_item = false
 
 [node name="hora_container" type="Panel" parent="VBoxContainer/main_container/detalles_container/VBoxContainer/sitio_detalles/graficador_datos"]
 self_modulate = Color(1, 1, 1, 0)

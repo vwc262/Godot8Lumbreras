@@ -6,7 +6,6 @@ signal ResetCameraPosition # Para reestablecer la posicion de la camara
 signal CameraZoom
 signal OnTweenFinished_MovimientoRealizado
 
-
 var SitesAnchorPositionsDictionary = {}
 var SitesAnchorRotationsDictionary = {}
 var mini_3d_references = {}

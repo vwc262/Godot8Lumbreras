@@ -17,7 +17,7 @@
 [ext_resource type="Texture2D" uid="uid://jfppoptcm53t" path="res://Recursos/UI/img/Barra_Nivel/Barra_Nivel_Cubierta_Barra.png" id="9_d0do7"]
 [ext_resource type="Texture2D" uid="uid://ccdb74j068s41" path="res://Recursos/UI/img/Encabezado_A_submenu/Lista_detalles_Submenu_Vineta.png" id="9_evgt1"]
 [ext_resource type="Texture2D" uid="uid://beromshj68slv" path="res://Recursos/UI/img/Barra_Nivel/Barra_Nivel_base_marcadores.png" id="10_5sxwf"]
-[ext_resource type="PackedScene" uid="uid://qofjfvol201e" path="res://Scenes/Sitios/Genericos/template_particular.tscn" id="10_l4wa0"]
+[ext_resource type="PackedScene" uid="uid://qofjfvol201e" path="res://Scenes/Sitios/Particulares/PB5_ParticularScene.tscn" id="10_l4wa0"]
 [ext_resource type="Texture2D" uid="uid://bcapbu6jnbtom" path="res://Recursos/UI/img/Encabezado_B_Submenu/EncabezadoB_BotonLista.png" id="11_3q3kn"]
 [ext_resource type="Texture2D" uid="uid://c554rmtw6fjo5" path="res://Recursos/UI/img/Encabezado_A_submenu/Lista_detalles_Submenu_Contenedor.png" id="12_64k7e"]
 [ext_resource type="PackedScene" uid="uid://bosmqfxs2ibvy" path="res://Scenes/Plotter/ChartControl.tscn" id="14_5bas4"]
@@ -213,7 +213,7 @@ stretch = true
 
 [node name="SubViewport" type="SubViewport" parent="VBoxContainer/main_container/modelo_3d_container/SubViewportContainer"]
 handle_input_locally = false
-size = Vector2i(2, 2)
+size = Vector2i(1080, 1795)
 render_target_update_mode = 4
 
 [node name="Template_Particular" parent="VBoxContainer/main_container/modelo_3d_container/SubViewportContainer/SubViewport" instance=ExtResource("10_l4wa0")]

@@ -149,6 +149,19 @@ layout_mode = 2
 [node name="UiParticular" parent="." instance=ExtResource("11_e8765")]
 visible = false
 
+[node name="SubViewport" parent="UiParticular/VBoxContainer/main_container/modelo_3d_container/SubViewportContainer" index="0"]
+size = Vector2i(2, 2)
+render_target_update_mode = 0
+
+[node name="camera_parent" parent="UiParticular/VBoxContainer/main_container/modelo_3d_container/SubViewportContainer/SubViewport/Template_Particular" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.85357, 6.02861, -11.1797)
+
+[node name="Camera3Dp" parent="UiParticular/VBoxContainer/main_container/modelo_3d_container/SubViewportContainer/SubViewport/Template_Particular/camera_parent" index="0"]
+transform = Transform3D(0.922073, 0, 0.387017, 0, 1, 0, -0.387017, 0, 0.922073, 0, 1, 3)
+
+[node name="Camera_POV_1" parent="UiParticular/VBoxContainer/main_container/modelo_3d_container/SubViewportContainer/SubViewport/Template_Particular/SitemaDeCamaras2" index="1"]
+transform = Transform3D(0.999997, 0, 0, 0, 0.866023, 0.499996, 0, -0.499999, 0.866018, 20, -5, 20)
+
 [node name="popup_container" type="Panel" parent="."]
 visible = false
 anchors_preset = 15
@@ -235,3 +248,6 @@ material = ExtResource("16_ym8cf")
 [connection signal="pressed" from="DynamicMargins/VB_MainContainer/main_container/ListaSitiosContainer/VBoxContainer/botones_container/HBoxContainer/BTN_ListaSitios" to="." method="_on_btn_lista_sitios_pressed"]
 [connection signal="visibility_changed" from="popup_container/Popup" to="popup_container/Popup" method="_on_visibility_changed"]
 [connection signal="pressed" from="popup_container/Popup/Panel/btn_close_popup" to="." method="_on_btn_close_popup_pressed"]
+
+[editable path="UiParticular"]
+[editable path="UiParticular/VBoxContainer/main_container/modelo_3d_container/SubViewportContainer/SubViewport/Template_Particular"]

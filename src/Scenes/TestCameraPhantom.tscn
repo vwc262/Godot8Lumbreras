@@ -1,0 +1,113 @@
+[gd_scene load_steps=12 format=3 uid="uid://caunyfuyju0fm"]
+
+[ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_3d.gd" id="1_ff4s7"]
+[ext_resource type="Material" uid="uid://43ccdqs142xj" path="res://Recursos/Materiales/Lake_Material.tres" id="2_engq8"]
+[ext_resource type="Script" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="2_w5cyc"]
+[ext_resource type="Script" path="res://addons/phantom_camera/scripts/resources/camera_3d_resource.gd" id="3_8catw"]
+[ext_resource type="Script" path="res://addons/phantom_camera/scripts/managers/phantom_camera_manager.gd" id="4_tglxe"]
+[ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd" id="5_gbaq4"]
+
+[sub_resource type="Resource" id="Resource_hc2er"]
+script = ExtResource("2_w5cyc")
+duration = 0.3
+transition = 3
+ease = 1
+
+[sub_resource type="Resource" id="Resource_ajv7s"]
+script = ExtResource("3_8catw")
+cull_mask = 1048575
+h_offset = 0.0
+v_offset = 0.0
+projection = 0
+fov = 75.0
+size = 1.0
+frustum_offset = Vector2(0, 0)
+near = 0.05
+far = 4000.0
+
+[sub_resource type="BoxMesh" id="BoxMesh_ifdff"]
+material = ExtResource("2_engq8")
+
+[sub_resource type="Resource" id="Resource_q7cid"]
+script = ExtResource("2_w5cyc")
+duration = 0.3
+transition = 3
+ease = 1
+
+[sub_resource type="Resource" id="Resource_6i73v"]
+script = ExtResource("3_8catw")
+cull_mask = 1048575
+h_offset = 0.0
+v_offset = 0.0
+projection = 0
+fov = 75.0
+size = 1.0
+frustum_offset = Vector2(0, 0)
+near = 0.05
+far = 4000.0
+
+[node name="Root" type="Node3D"]
+
+[node name="SitemaDeCamaras" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20, 5, -20)
+
+[node name="PlayerPhantomCamera3D" type="Node3D" parent="SitemaDeCamaras"]
+unique_name_in_owner = true
+transform = Transform3D(0.999997, 0, 0, 0, 0.866023, 0.499996, 0, -0.499999, 0.866018, 20.9035, -1.5606, 22.619)
+script = ExtResource("1_ff4s7")
+priority = 10
+follow_mode = 6
+tween_resource = SubResource("Resource_hc2er")
+camera_3d_resource = SubResource("Resource_ajv7s")
+follow_damping = true
+follow_distance = 3.5
+spring_length = 3.5
+
+[node name="MainCamera3D" type="Camera3D" parent="SitemaDeCamaras"]
+unique_name_in_owner = true
+transform = Transform3D(0.999997, 0, 0, 0, 0.866023, 0.499996, 0, -0.499999, 0.866018, 20.9035, -1.5606, 22.619)
+current = true
+
+[node name="PhantomCameraHost" type="Node" parent="SitemaDeCamaras/MainCamera3D"]
+script = ExtResource("5_gbaq4")
+
+[node name="PhantomCameraManager" type="Node3D" parent="SitemaDeCamaras"]
+unique_name_in_owner = true
+script = ExtResource("4_tglxe")
+
+[node name="Node3D" type="Node3D" parent="."]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0151949, 0.626905, 0.0211201)
+mesh = SubResource("BoxMesh_ifdff")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="Node3D"]
+transform = Transform3D(13.0279, 0, 0, 0, 13.0279, 0, 0, 0, 13.0279, 2.30518, 0, -13.9344)
+mesh = SubResource("BoxMesh_ifdff")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="Node3D"]
+transform = Transform3D(45.5539, 0, 0, 0, 7.02583, 0, 0, 0, 13.0279, 2.30518, 0, 17.773)
+mesh = SubResource("BoxMesh_ifdff")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="Node3D"]
+transform = Transform3D(20, 0, 0, 0, 0.01, 0, 0, 0, 20, 0, 0, 0)
+mesh = SubResource("BoxMesh_ifdff")
+
+[node name="SitemaDeCamaras2" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20, 5, -20)
+visible = false
+
+[node name="PlayerPhantomCamera3D" type="Node3D" parent="SitemaDeCamaras2"]
+transform = Transform3D(0.999997, 0, 0, 0, 0.866023, 0.499996, 0, -0.499999, 0.866018, 20.9035, -1.5606, 22.619)
+script = ExtResource("1_ff4s7")
+priority = 10
+follow_mode = 6
+tween_resource = SubResource("Resource_q7cid")
+camera_3d_resource = SubResource("Resource_6i73v")
+follow_damping = true
+follow_distance = 3.5
+spring_length = 3.5
+
+[node name="MainCamera3D" type="Camera3D" parent="SitemaDeCamaras2"]
+transform = Transform3D(1, 0, 0, 0, 0.866025, 0.5, 0, -0.5, 0.866025, 20.9035, -1.5606, 22.619)
+current = true

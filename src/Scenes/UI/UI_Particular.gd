@@ -111,10 +111,10 @@ func _on_finish_tween():
 func _on_btn_home_pressed():
 	NavigationManager.emit_signal('ResetCameraPosition')
 	UIManager.deselect_all_sitios()
-	UIManager.ocultar_particular() 
-	SceneManager.load_scene(SceneManager.idScenePerfil)	
+	UIManager.ocultar_particular()
+	SceneManager.load_scene(SceneManager.idScenePerfil)
 	SceneManager.set_world_environment(SceneManager.TIPO_NIVEL.PERFIL)
-	
+
 func reprint():
 	_compare_and_print_selected_site(0)
 	_on_header_btn_lista_sitios_pressed()
@@ -130,7 +130,7 @@ func _compare_and_print_selected_site(parametro):
 # Función para establecer los datos del sitio seleccionado
 func set_datos_particular(sitio: Estacion):
 	lbl_header_nombre.text = sitio.nombre
-	
+
 	if sitio.enlace in [1, 2, 3]:
 		texture_enlace.texture = texture_online
 	else:
@@ -203,14 +203,13 @@ func instanciar_lista_sitios():
 			var lista_sitio_instance = lista_sitio_scene.instantiate()
 			v_box_container.add_child(lista_sitio_instance)
 			lista_sitio_instance.set_datos(sitio)
-			
+
 			# Alternar entre los fondos
 			if use_fondo_1:
 				lista_sitio_instance.set_fondo(lista_sitio_fondo_1)
 			else:
 				lista_sitio_instance.set_fondo(lista_sitio_fondo_2)
 			use_fondo_1 = not use_fondo_1  # Alternar el valor
-			
 			site_instances[sitio.id_estacion] = lista_sitio_instance  # Guardar la instancia en el diccionario
 
 
@@ -247,14 +246,15 @@ func _on_btn_graficador_pressed():
 	if graficador_container.visible:
 		graficador_container.visible = false
 		graficador_datos.visible = false
-		
+
 		modelo_3d_container.visible = true
 		datos_sitio.visible = true
 		btn_graficador_lbl.text = "Graficador"
 	else:
 		graficador_container.visible = true
 		graficador_datos.visible = true
-		
+
 		modelo_3d_container.visible = false
 		datos_sitio.visible = false
 		btn_graficador_lbl.text = "Particular"
+

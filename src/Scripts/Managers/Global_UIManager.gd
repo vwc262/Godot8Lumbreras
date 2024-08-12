@@ -15,9 +15,10 @@ var graficador_container
 var modelo3D_container
 var datos_graficador
 var datos_sitio
+var btn_graficador
 
 
-func seleccionar_sitio(sitio):		
+func seleccionar_sitio(sitio):
 	if current_selected_site == sitio:
 		sitio.deseleccionar()
 		current_selected_site = null
@@ -29,7 +30,7 @@ func seleccionar_sitio(sitio):
 		emit_signal("sitio_seleccionado", sitio)
 
 # Método para seleccionar un sitio de lista
-func seleccionar_lista_sitio(sitio):	
+func seleccionar_lista_sitio(sitio):
 	if current_selected_site == sitio:
 		sitio.deseleccionar()
 		current_selected_site = null
@@ -49,25 +50,32 @@ func add_sitio(sitio):
 	if sitio not in lista_sitios:
 		lista_sitios.append(sitio)
 
-
 func set_ui_particular(particular_node: Node):
 	ui_particular = particular_node
 	
 func mostrar_particular():
 	if ui_particular != null:
-		ui_particular.visible = true		
+		ui_particular.visible = true
 		ui_particular.init_particular(true)
 
 func ocultar_particular():
 	if ui_particular != null:
-		ui_particular.visible = false				
+		ui_particular.visible = false
+		
+func ocultar_graficador():
+	if ui_particular != null:
+		graficador_container.visible = false
+		modelo3D_container.visible = true
+		datos_graficador.visible= false
+		datos_sitio.visible= true
+
 
 # Método para verificar si un sitio está seleccionado
 func is_sitio_selected(sitio) -> bool:
 	return current_selected_site == sitio
 	
 func reprint_ui_particular():
-	ui_particular.reprint()	
+	ui_particular.reprint()
 	
 func set_popUp_window(popUpRef):
 	popUpWindow	= popUpRef
@@ -77,8 +85,7 @@ func seleccionar_sitio_id(id_estacion):
 		if sitio.id_estacion == id_estacion:
 			seleccionar_sitio(sitio)
 			
-			
-#  función para mostrar el graficador en la escena particular
+# función para mostrar el graficador en la escena particular
 func mostrar_graficador():
 	if ui_particular != null:
 		if graficador_container:
@@ -86,3 +93,6 @@ func mostrar_graficador():
 			graficador_container.visible = true
 			datos_graficador.visible= true
 			datos_sitio.visible= false
+
+func is_graficador_visible() -> bool:
+	return graficador_container.visible if graficador_container else false

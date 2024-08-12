@@ -77,8 +77,13 @@ func manejar_btn_presionado(mostrar_graficador: bool):
 		if nivel_encontrado:
 			if mostrar_graficador:
 				UIManager.mostrar_graficador()
+			else:
+				UIManager.ocultar_graficador()
 			UIManager.mostrar_particular()
 			SceneManager.set_world_environment(SceneManager.TIPO_NIVEL.PARTICULAR)
+
+			# Cambiar el texto del botón según la visibilidad del graficador
+			_actualizar_texto_boton_particular()
 
 # Llamada al presionar el botón de graficador
 func _on_btn_graficador_pressed():
@@ -87,3 +92,12 @@ func _on_btn_graficador_pressed():
 # Llamada al presionar el botón de particular
 func _on_btn_particular_pressed():
 	manejar_btn_presionado(false)
+
+# Función para actualizar el texto del botón de particular/graficador
+func _actualizar_texto_boton_particular():
+	
+	if UIManager.is_graficador_visible():
+		UIManager.btn_graficador.text = "Particular"
+	else:
+		UIManager.btn_graficador.text = "Graficador"
+

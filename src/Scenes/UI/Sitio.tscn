@@ -1,8 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://douaugikqj4k4"]
+[gd_scene load_steps=9 format=3 uid="uid://douaugikqj4k4"]
 
 [ext_resource type="Script" path="res://Scripts/UI/Sitio.gd" id="1_065dv"]
 [ext_resource type="Texture2D" uid="uid://d31g8mcyrmffg" path="res://Recursos/UI/img/Coneccion_b.png" id="3_4mmme"]
-[ext_resource type="Texture2D" uid="uid://dwcwsu6jv3s04" path="res://Recursos/UI/img/Encabezado_A_submenu/Lista_Detalles_BotonFlecha_b.png" id="4_umbq1"]
+[ext_resource type="Texture2D" uid="uid://b7p5ru0xriv8k" path="res://Recursos/UI/img/señales/Lista_Detalles_BotonFlecha_a.png" id="3_qb6ml"]
+[ext_resource type="Texture2D" uid="uid://cur4csti5icam" path="res://Recursos/UI/img/señales/Lista_Detalles_BotonFlecha_b.png" id="4_vd73s"]
 [ext_resource type="Texture2D" uid="uid://cq61rscg35w3a" path="res://Recursos/UI/img/Encabezado_A_submenu/Lista_Detalles_BotonFlecha_a.png" id="5_0nl81"]
 [ext_resource type="Texture2D" uid="uid://cs4b3j0mrbpsw" path="res://Recursos/UI/img/Encabezado_A_submenu/Lista_Detalles_b.png" id="5_7vcwa"]
 [ext_resource type="Texture2D" uid="uid://dxhh0m351e20r" path="res://Recursos/UI/img/Encabezado_A_submenu/Lista_Detalles_seleccion.png" id="6_kke6i"]
@@ -16,8 +17,8 @@ grow_horizontal = 2
 mouse_filter = 1
 script = ExtResource("1_065dv")
 signal_scene = ExtResource("7_7pxni")
-texture_visible = ExtResource("5_0nl81")
-texture_hidden = ExtResource("4_umbq1")
+texture_visible = ExtResource("3_qb6ml")
+texture_hidden = ExtResource("4_vd73s")
 
 [node name="sitio_fondo" type="TextureRect" parent="."]
 custom_minimum_size = Vector2(0, 110)

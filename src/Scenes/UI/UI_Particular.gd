@@ -10,6 +10,7 @@ extends Control
 @onready var fondo_render_material : Material = $VBoxContainer/main_container/fondo_render.material
 @onready var fondo_render_final = $VBoxContainer/main_container/fondo_render_final
 @onready var fondo_render = $VBoxContainer/main_container/fondo_render
+@onready var btn_graficador_lbl = $VBoxContainer/main_container/detalles_container/VBoxContainer/botones_container/HBoxContainer/btn_graficador/Label
 
 @onready var texture_enlace = $VBoxContainer/header_container/HBoxContainer/header_icono_container/texture_enlace
 @onready var lbl_presion = $VBoxContainer/main_container/detalles_container/VBoxContainer/sitio_detalles/VBoxContainer/HBoxContainer/Panel/HBoxContainer/Presion_container/HBoxContainer/Panel2/lbl_presion
@@ -65,6 +66,7 @@ func _ready():
 	UIManager.modelo3D_container = modelo_3d_container
 	UIManager.datos_graficador = graficador_datos
 	UIManager.datos_sitio =  datos_sitio
+	UIManager.btn_graficador = btn_graficador_lbl
 	original_icon = btn_lista.icon  # Guarda el ícono original
 	btn_lista.connect("pressed", _on_btn_lista_pressed)
 	NavigationManager.connect("Go_TO", _compare_and_print_selected_site)
@@ -248,9 +250,11 @@ func _on_btn_graficador_pressed():
 		
 		modelo_3d_container.visible = true
 		datos_sitio.visible = true
+		btn_graficador_lbl.text = "Graficador"
 	else:
 		graficador_container.visible = true
 		graficador_datos.visible = true
 		
 		modelo_3d_container.visible = false
 		datos_sitio.visible = false
+		btn_graficador_lbl.text = "Particular"

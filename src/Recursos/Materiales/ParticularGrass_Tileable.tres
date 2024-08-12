@@ -1,13 +1,13 @@
 [gd_resource type="ShaderMaterial" load_steps=4 format=3 uid="uid://d313nvgrewkot"]
 
 [ext_resource type="Shader" path="res://Recursos/Materiales/TilableMaterial_Unlit.gdshader" id="1_p8iaj"]
-[ext_resource type="Texture2D" uid="uid://buhv8ojjobvi4" path="res://Recursos/Meshes/Particular_Cutzamala_PBR5/Texturas_B5_Particular/xevkfgos_1K_Diffuse.jpg" id="2_7qce6"]
-[ext_resource type="Texture2D" uid="uid://ddf1m2v3yjx6x" path="res://Recursos/Meshes/Particular_Cutzamala_PBR5/Texturas_B5_Particular/Shadows_particular_B5.jpg" id="3_3adwd"]
+[ext_resource type="Texture2D" uid="uid://ddjduham0txwg" path="res://Recursos/Meshes/Particular_Cutzamala_PBR5/Texturas_B5_Particular/vcjmej0s_1K_Albedo.jpg" id="2_x8bms"]
+[ext_resource type="Texture2D" uid="uid://2v7gy7mhcpt7" path="res://Recursos/Meshes/Particular_Cutzamala_PBR5/textures/blankPixel.jpg" id="3_6amtj"]
 
 [resource]
 render_priority = 0
 shader = ExtResource("1_p8iaj")
-shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/albedo = Color(1, 0.988235, 1, 1)
 shader_parameter/point_size = null
 shader_parameter/tile_size = -6.0
 shader_parameter/ao_texture_channel = null
@@ -20,5 +20,5 @@ shader_parameter/uv1_scale = Vector3(1, 1, 1)
 shader_parameter/uv1_offset = null
 shader_parameter/uv2_scale = Vector3(1, 1, 1)
 shader_parameter/uv2_offset = null
-shader_parameter/texture_albedo = ExtResource("2_7qce6")
-shader_parameter/texture_detail_ao = ExtResource("3_3adwd")
+shader_parameter/texture_albedo = ExtResource("2_x8bms")
+shader_parameter/texture_detail_ao = ExtResource("3_6amtj")

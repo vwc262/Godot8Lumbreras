@@ -1,0 +1,22 @@
+[gd_resource type="ShaderMaterial" load_steps=3 format=3 uid="uid://clpnronp88bg2"]
+
+[ext_resource type="Shader" path="res://Recursos/Materiales/Material_Unlit.gdshader" id="1_1mdbv"]
+[ext_resource type="Texture2D" uid="uid://b1cykwj3hjs4l" path="res://Recursos/Meshes/Particular_Cutzamala_PBR5/Texturas_B5_Particular/bake _albedo_PISO.png" id="2_livc7"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_1mdbv")
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/point_size = null
+shader_parameter/tile_size = 1.0
+shader_parameter/ao_texture_channel = null
+shader_parameter/ao_light_affect = null
+shader_parameter/heightmap_scale = null
+shader_parameter/heightmap_min_layers = null
+shader_parameter/heightmap_max_layers = null
+shader_parameter/heightmap_flip = null
+shader_parameter/uv1_scale = Vector3(1, 1, 1)
+shader_parameter/uv1_offset = null
+shader_parameter/uv2_scale = Vector3(1, 1, 1)
+shader_parameter/uv2_offset = null
+shader_parameter/texture_albedo = ExtResource("2_livc7")

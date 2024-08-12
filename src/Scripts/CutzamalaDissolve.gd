@@ -1,6 +1,6 @@
 extends Node3D
 
-@onready var material_dissolve: Material = $Edificio_485.material_override
+#@onready var material_dissolve: Material = $Edificio_485.material_override
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:

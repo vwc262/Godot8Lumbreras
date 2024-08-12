@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://bs0nvpdg63k4x" path="res://Scenes/UI/DatosEtiqueta3D.tscn" id="3_osuc0"]
 [ext_resource type="FontFile" uid="uid://dede71l06xv2l" path="res://Recursos/Fonts/Roboto-Regular.ttf" id="3_stj8j"]
 [ext_resource type="PackedScene" uid="uid://bycetavidkv8p" path="res://Recursos/Meshes/Mapa/Sitios/SelectMesh.glb" id="4_dsy6m"]
-[ext_resource type="Material" path="res://Recursos/Materiales/SelectGlow_Unlit.tres" id="5_hma7b"]
+[ext_resource type="Material" uid="uid://xgb8n1gtjwxb" path="res://Recursos/Materiales/SelectGlow_Unlit.tres" id="5_hma7b"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_kb87j"]
 size = Vector3(3.92489, 1.2335, 4.05673)

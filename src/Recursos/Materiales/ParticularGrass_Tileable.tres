@@ -2,7 +2,7 @@
 
 [ext_resource type="Shader" path="res://Recursos/Materiales/TilableMaterial_Unlit.gdshader" id="1_p8iaj"]
 [ext_resource type="Texture2D" uid="uid://ddjduham0txwg" path="res://Recursos/Meshes/Particular_Cutzamala_PBR5/Texturas_B5_Particular/vcjmej0s_1K_Albedo.jpg" id="2_x8bms"]
-[ext_resource type="Texture2D" uid="uid://2v7gy7mhcpt7" path="res://Recursos/Meshes/Particular_Cutzamala_PBR5/textures/blankPixel.jpg" id="3_6amtj"]
+[ext_resource type="Texture2D" uid="uid://2v7gy7mhcpt7" path="res://Recursos/Meshes/Particular_Cutzamala_PBR5/Texturas_B5_Particular/blankPixel.jpg" id="3_6amtj"]
 
 [resource]
 render_priority = 0

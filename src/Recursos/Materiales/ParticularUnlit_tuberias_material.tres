@@ -1,8 +1,8 @@
 [gd_resource type="ShaderMaterial" load_steps=4 format=3 uid="uid://cwdb0xo47d1bn"]
 
 [ext_resource type="Shader" path="res://Recursos/Materiales/Material_Unlit.gdshader" id="1_3omyt"]
-[ext_resource type="Texture2D" uid="uid://c7ma4v1mcijdr" path="res://Recursos/Meshes/Particular_Cutzamala_PBR5/textures/Bake_albedo_Tuberias.png" id="2_bqkp3"]
-[ext_resource type="Texture2D" uid="uid://2v7gy7mhcpt7" path="res://Recursos/Meshes/Particular_Cutzamala_PBR5/textures/blankPixel.jpg" id="3_7dg5y"]
+[ext_resource type="Texture2D" uid="uid://c7ma4v1mcijdr" path="res://Recursos/Meshes/Particular_Cutzamala_PBR5/Texturas_B5_Particular/Bake_albedo_Tuberias.png" id="2_bqkp3"]
+[ext_resource type="Texture2D" uid="uid://2v7gy7mhcpt7" path="res://Recursos/Meshes/Particular_Cutzamala_PBR5/Texturas_B5_Particular/blankPixel.jpg" id="3_7dg5y"]
 
 [resource]
 render_priority = 0

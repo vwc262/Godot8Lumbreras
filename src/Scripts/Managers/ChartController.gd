@@ -8,6 +8,7 @@ var f2: Function
 var f3: Function
 
 func _ready():
+	SceneManager.add_scene(SceneManager.idSceneGraficador,self)	
 	GlobalUtils.ChartControl = self.get_parent()
 	var id_signals: Array[int] = [116, 117, 134]
 	
@@ -86,7 +87,7 @@ func _ready():
 
 var new_val: float = 4.5
 
-func _process(delta: float):
+func _process(_delta: float):
 	# This function updates the values of a function and then updates the plot
 	new_val += 5
 	
@@ -103,10 +104,10 @@ func _on_CheckButton_pressed():
 func get_minutes_from_date_string(date_time: String):
 	
 	#"2024-07-18T06:07:00"
-	var time:String = date_time.split("T")[1]
-	var time_splitted = time.split(":")
-	var hours: int = int(time_splitted[0])
-	var minutes: int = int(time_splitted[1])	
+	#var time:String = date_time.split("T")[1]
+	#var time_splitted = time.split(":")
+	#var hours: int = int(time_splitted[0])
+	#var minutes: int = int(time_splitted[1])	
 	return Time.get_unix_time_from_datetime_string(date_time)
 	#return str(hours * 60 + minutes)
 	#return "%s:%s" % [hours, minutes]

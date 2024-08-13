@@ -236,6 +236,7 @@ offset_right = 39.5
 offset_bottom = 25.0
 grow_horizontal = 2
 grow_vertical = 2
+focus_mode = 1
 theme_override_font_sizes/font_size = 30
 flat = true
 alignment = 1

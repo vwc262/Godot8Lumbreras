@@ -11,6 +11,24 @@ extends Node
 
 var lista_colapsada = false  # Estado inicial de la lista
 
+func _on_btn_colapsar_lista_pressed():
+	if lista_colapsada:
+		descolapsar_lista()
+	else:
+		colapsar_lista()
+	lista_colapsada = !lista_colapsada
+
+func colapsar_lista():
+	var tween = TweenManager.init_tween(_on_finish_tween)
+	TweenManager.tween_animacion(tween, datos_graficador_container, "custom_minimum_size:y", 0, 0.3)
+
+func descolapsar_lista():
+	var tween = TweenManager.init_tween(_on_finish_tween)
+	TweenManager.tween_animacion(tween, datos_graficador_container, "custom_minimum_size:y", 200, 0.3)
+
+func _on_finish_tween():
+	pass
+
 func _ready():
 	SceneManager.add_scene(SceneManager.idSceneGraficador, self)
 	dia_selector.connect("focus_entered", _on_dia_selector_focus_entered)

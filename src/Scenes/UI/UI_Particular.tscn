@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://mr5ipvv85b1"]
+[gd_scene load_steps=31 format=3 uid="uid://mr5ipvv85b1"]
 
 [ext_resource type="Texture2D" uid="uid://c1ich45dgonk4" path="res://Recursos/UI/img/Encabezado_B_Submenu/EncabezadoB_base.png" id="1_gat4c"]
 [ext_resource type="Script" path="res://Scenes/UI/UI_Particular.gd" id="1_wmuh6"]
@@ -21,6 +21,7 @@
 [ext_resource type="Texture2D" uid="uid://bcapbu6jnbtom" path="res://Recursos/UI/img/Encabezado_B_Submenu/EncabezadoB_BotonLista.png" id="11_3q3kn"]
 [ext_resource type="Texture2D" uid="uid://c554rmtw6fjo5" path="res://Recursos/UI/img/Encabezado_A_submenu/Lista_detalles_Submenu_Contenedor.png" id="12_64k7e"]
 [ext_resource type="PackedScene" uid="uid://bosmqfxs2ibvy" path="res://Scenes/Plotter/ChartControl.tscn" id="14_5bas4"]
+[ext_resource type="Texture2D" uid="uid://2ns5spprjcem" path="res://Recursos/Textures/Flipbooks/Virtual_Cargando.PNG" id="17_ybqht"]
 [ext_resource type="Texture2D" uid="uid://bliv3oeaqcnc7" path="res://Recursos/UI/img/Encabezado_B_Submenu/Boton_Izq.png" id="20_s1pqb"]
 [ext_resource type="PackedScene" uid="uid://cgcyx32icu15x" path="res://Scenes/UI/UI_Particular_Sitio_lista.tscn" id="20_stxyf"]
 [ext_resource type="Texture2D" uid="uid://dgwbnce3hid3r" path="res://Recursos/UI/img/Encabezado_B_Submenu/Boton_Expandir_b.png" id="21_8jf3k"]
@@ -33,6 +34,18 @@ shader_parameter/sizeY = 5.0
 shader_parameter/velocidad = 5.0
 shader_parameter/framex = 0.0
 shader_parameter/progress = 29.0
+shader_parameter/use_time = null
+shader_parameter/colorToAdd = null
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_eweqw"]
+shader = ExtResource("7_r4ck1")
+shader_parameter/sizeX = 5.0
+shader_parameter/sizeY = 5.0
+shader_parameter/velocidad = 25.0
+shader_parameter/framex = 25.0
+shader_parameter/progress = 0.0
+shader_parameter/use_time = true
+shader_parameter/colorToAdd = Color(0, 0, 0, 1)
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_wi8d2"]
 
@@ -221,14 +234,26 @@ render_target_update_mode = 0
 visible = false
 idEstacion = 5
 
-[node name="ColorRect" type="ColorRect" parent="VBoxContainer/main_container/modelo_3d_container"]
+[node name="BackgroundFlipBook" type="ColorRect" parent="VBoxContainer/main_container/modelo_3d_container"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0, 1, 1, 1)
+color = Color(0, 0, 0, 1)
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/main_container/modelo_3d_container/BackgroundFlipBook"]
+material = SubResource("ShaderMaterial_eweqw")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("17_ybqht")
+expand_mode = 1
+stretch_mode = 5
 
 [node name="progress_bar_container" type="Panel" parent="VBoxContainer/main_container"]
 self_modulate = Color(1, 1, 1, 0)
@@ -817,5 +842,6 @@ self_modulate = Color(1, 1, 1, 0)
 layout_mode = 2
 
 [connection signal="pressed" from="VBoxContainer/header_container/HBoxContainer/header_btn_container/header_btn_lista_sitios" to="." method="_on_header_btn_lista_sitios_pressed"]
+[connection signal="visibility_changed" from="VBoxContainer/main_container/modelo_3d_container/SubViewportContainer" to="." method="_on_sub_viewport_container_visibility_changed"]
 [connection signal="pressed" from="VBoxContainer/main_container/detalles_container/VBoxContainer/botones_container/HBoxContainer/btn_graficador" to="." method="_on_btn_graficador_pressed"]
 [connection signal="pressed" from="VBoxContainer/main_container/detalles_container/VBoxContainer/botones_container/HBoxContainer/btn_home" to="." method="_on_btn_home_pressed"]

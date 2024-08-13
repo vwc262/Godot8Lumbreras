@@ -1,0 +1,30 @@
+[gd_scene load_steps=4 format=3 uid="uid://cp14ueov0c5ee"]
+
+[ext_resource type="Shader" path="res://Recursos/Shaders/FB_Shader_Particular.gdshader" id="1_3pqyd"]
+[ext_resource type="Texture2D" uid="uid://2ns5spprjcem" path="res://Recursos/Textures/Flipbooks/Virtual_Cargando.PNG" id="2_hqeml"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_o31rs"]
+shader = ExtResource("1_3pqyd")
+shader_parameter/sizeX = 5.0
+shader_parameter/sizeY = 5.0
+shader_parameter/velocidad = 25.0
+shader_parameter/framex = 25.0
+shader_parameter/progress = 0.0
+shader_parameter/use_time = true
+shader_parameter/colorToAdd = Color(0, 0, 0, 1)
+
+[node name="BackgroundFlipBook" type="ColorRect"]
+size_flags_vertical = 3
+color = Color(0, 0, 0, 1)
+
+[node name="TextureRect" type="TextureRect" parent="."]
+material = SubResource("ShaderMaterial_o31rs")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_hqeml")
+expand_mode = 1
+stretch_mode = 5

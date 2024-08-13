@@ -8,17 +8,12 @@
 render_priority = 0
 shader = ExtResource("1_8gxbe")
 shader_parameter/albedo = Color(1, 1, 1, 1)
-shader_parameter/point_size = null
 shader_parameter/tile_size = -6.0
 shader_parameter/ao_texture_channel = null
 shader_parameter/ao_light_affect = null
 shader_parameter/heightmap_scale = null
-shader_parameter/heightmap_min_layers = null
-shader_parameter/heightmap_max_layers = null
 shader_parameter/heightmap_flip = null
 shader_parameter/uv1_scale = Vector3(1, 1, 1)
 shader_parameter/uv1_offset = null
-shader_parameter/uv2_scale = Vector3(1, 1, 1)
-shader_parameter/uv2_offset = null
 shader_parameter/texture_albedo = ExtResource("2_lqnna")
 shader_parameter/texture_detail_ao = ExtResource("3_pxy4r")

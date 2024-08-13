@@ -1,10 +1,11 @@
 extends Node
 #region Editor variables
 @onready var scroll_container: ScrollContainer = $ScrollContainer
-@onready var btn_lista_sitios: Button = $ScrollContainer/HBoxContainer/PerfilWindow/VB_MainContainer/main_container/ListaSitiosContainer/VBoxContainer/botones_container/HBoxContainer/BTN_ListaSitios
-@onready var lista_sitios: Control = $ScrollContainer/HBoxContainer/PerfilWindow/VB_MainContainer/main_container/ListaSitiosContainer/VBoxContainer/PanelContainer/ListaSitios
-@onready var header_fondo: TextureRect = $ScrollContainer/HBoxContainer/PerfilWindow/VB_MainContainer/header_container/header_fondo
-@onready var perfil: Node3D = $ScrollContainer/HBoxContainer/PerfilWindow/VB_MainContainer/main_container/SubViewportContainer/SubViewport/Perfil
+@onready var btn_lista_sitios: Button = $ScrollContainer/WindowsContainer/PerfilWindow/VB_MainContainer/main_container/ListaSitiosContainer/VBoxContainer/botones_container/HBoxContainer/BTN_ListaSitios
+@onready var lista_sitios: Control = $ScrollContainer/WindowsContainer/PerfilWindow/VB_MainContainer/main_container/ListaSitiosContainer/VBoxContainer/PanelContainer/ListaSitios
+@onready var header_fondo: TextureRect = $ScrollContainer/WindowsContainer/PerfilWindow/VB_MainContainer/header_container/header_fondo
+@onready var perfil: Node3D = $ScrollContainer/WindowsContainer/PerfilWindow/VB_MainContainer/main_container/VBoxContainer/SubViewportContainer/SubViewport/Perfil
+
 @export var perfil_world_environment : Environment
 @export var particular_world_environment : Environment
 @onready var windows_container: HBoxContainer = $ScrollContainer/WindowsContainer
@@ -26,6 +27,7 @@ var is_hidden = false  # Variable para rastrear el estado del contenedor
 		
 	
 func _ready() -> void:
+	SceneManager.add_scene(SceneManager.idScenePerfil,perfil)
 	SceneManager.add_subviewport_reference(SceneManager.TIPO_NIVEL.PERFIL,sub_viewport_container)
 	SceneManager.set_scroll_reference(scroll_container)	
 	AdjustWindowsSize()		
@@ -78,8 +80,8 @@ func _on_finish_tween():
 	
 
 func _mostrar_world():
-	SceneManager.load_scene(SceneManager.idScenePerfil)
-	SceneManager.set_world_environment(SceneManager.TIPO_NIVEL.PERFIL)
+	SceneManager.scroll_scene(SceneManager.TIPO_NIVEL.PERFIL,SceneManager.idScenePerfil)
+	
 
 
 func _on_btn_close_popup_pressed():

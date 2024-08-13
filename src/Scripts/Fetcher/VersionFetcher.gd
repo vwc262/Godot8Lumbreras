@@ -7,8 +7,7 @@ extends HTTPRequest
 
 func On_Update_Version(newVersion):
 	print("Actualizando a la version " , newVersion)	
-	var dataFile = get_file(filePath)
-	var parsedResult =JSON.parse_string(dataFile.get_as_text())
+	var dataFile = get_file(filePath)	
 	var toSave = '{"V": %d}' %newVersion
 	dataFile.store_line(toSave) 		
 	dataFile.close()	
@@ -16,7 +15,7 @@ func On_Update_Version(newVersion):
 			
 
 
-func _on_request_completed(result, response_code, headers, body):
+func _on_request_completed(result, _response_code, _headers, body):
 	if(result == RESULT_SUCCESS):
 		print("Actualizando Archivo de infraestrucutra")				
 		var dataFile = get_file(InfraEstrcuturaPath)
@@ -24,8 +23,8 @@ func _on_request_completed(result, response_code, headers, body):
 		dataFile.close()
 		get_tree().reload_current_scene() # Reseteo
 
-func get_file(filePath:String) -> FileAccess:
-	return FileAccess.open(filePath,FileAccess.WRITE_READ)
+func get_file(filePathUpdate:String) -> FileAccess:
+	return FileAccess.open(filePathUpdate,FileAccess.WRITE_READ)
 	
 	
 	

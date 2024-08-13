@@ -59,7 +59,7 @@ func actualizar_datos():
 			lbl_valor_max.text = "Max: " + str(_signal.semaforo.critico) + " " + unidad
 			progress_bar.min_value = float(_signal.semaforo.normal)
 			progress_bar.max_value = float(_signal.semaforo.critico)
-			progress_bar.value = float(_signal.valor) if _signal.is_dentro_rango() else 0
+			progress_bar.value = float(_signal.valor) if _signal.is_dentro_rango() else 0.0
 			
 			if _signal.valor > _signal.semaforo.normal and _signal.valor <= _signal.semaforo.preventivo:
 				progress_bar.modulate = Color(1, 1, 0)  # Amarillo
@@ -69,25 +69,29 @@ func actualizar_datos():
 				progress_bar.modulate = Color(0, 1, 0)  # Verde
 
 # Función general para manejar la lógica compartida de los botones
-func manejar_btn_presionado(mostrar_graficador: bool):
+func manejar_btn_presionado(_mostrar_graficador: bool):
 	UIManager.seleccionar_sitio_id(id_estacion)
 	
 	if UIManager.current_selected_site:
-		var nivel_encontrado = SceneManager.load_scene(id_estacion)
-		if nivel_encontrado:
-			if mostrar_graficador:
-				UIManager.mostrar_graficador()
-			else:
-				UIManager.ocultar_graficador()
-			UIManager.mostrar_particular()
-			SceneManager.set_world_environment(SceneManager.TIPO_NIVEL.PARTICULAR)
-
-			# Cambiar el texto del botón según la visibilidad del graficador
-			_actualizar_texto_boton_particular()
+		SceneManager.scroll_scene(SceneManager.TIPO_NIVEL.PARTICULAR,id_estacion)
+		NavigationManager.set_lastid_selected(id_estacion)
+		UIManager.mostrar_particular()
+		#var nivel_encontrado = SceneManager.load_scene(id_estacion)
+		#if nivel_encontrado:
+			#if mostrar_graficador:
+				#UIManager.mostrar_graficador()
+			#else:
+				#UIManager.ocultar_graficador()
+			#UIManager.mostrar_particular()
+			#SceneManager.set_world_environment(SceneManager.TIPO_NIVEL.PARTICULAR)
+#
+			## Cambiar el texto del botón según la visibilidad del graficador
+			#_actualizar_texto_boton_particular()
 
 # Llamada al presionar el botón de graficador
 func _on_btn_graficador_pressed():
-	manejar_btn_presionado(true)
+	#manejar_btn_presionado(true)
+	SceneManager.scroll_scene(SceneManager.TIPO_NIVEL.GRAFICADOR,SceneManager.idSceneGraficador)
 
 # Llamada al presionar el botón de particular
 func _on_btn_particular_pressed():

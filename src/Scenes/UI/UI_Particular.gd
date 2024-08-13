@@ -1,5 +1,8 @@
 extends Control
 
+@onready var sub_viewport_container: SubViewportContainer = $VBoxContainer/main_container/modelo_3d_container/SubViewportContainer
+@onready var background_flip_book: ColorRect = $VBoxContainer/main_container/modelo_3d_container/BackgroundFlipBook
+
 @onready var btn_lista = $VBoxContainer/main_container/detalles_container/VBoxContainer/botones_container/HBoxContainer/btn_lista
 @onready var sitio_detalles = $VBoxContainer/main_container/detalles_container/VBoxContainer/sitio_detalles
 @onready var ui_particular = $"."
@@ -70,6 +73,7 @@ var unidades = {
 
 # Función _ready para inicializar los nodos y conectar señales
 func _ready():
+	SceneManager.add_subviewport_reference(SceneManager.TIPO_NIVEL.PARTICULAR,sub_viewport_container)
 	UIManager.graficador_container = graficador_container
 	UIManager.modelo3D_container = modelo_3d_container
 	UIManager.datos_graficador = graficador_datos
@@ -127,11 +131,10 @@ func _on_finish_tween():
 
 # Función que maneja el botón de inicio
 func _on_btn_home_pressed():
-	NavigationManager.emit_signal('ResetCameraPosition')
-	UIManager.deselect_all_sitios()
-	UIManager.ocultar_particular()
-	SceneManager.load_scene(SceneManager.idScenePerfil)
-	SceneManager.set_world_environment(SceneManager.TIPO_NIVEL.PERFIL)
+	#NavigationManager.emit_signal('ResetCameraPosition')
+	#UIManager.deselect_all_sitios()
+	#UIManager.ocultar_particular()
+	SceneManager.scroll_scene(SceneManager.TIPO_NIVEL.PERFIL)
 
 func reprint():
 	_compare_and_print_selected_site(0)
@@ -307,3 +310,7 @@ func _on_month_selected(index):
 func _on_year_selected(index):
 	var selected_year = option_year.get_item_text(index)
 	print("Año seleccionado:", selected_year)
+
+
+func _on_sub_viewport_container_visibility_changed() -> void:
+	background_flip_book.visible = true if !sub_viewport_container.visible else false

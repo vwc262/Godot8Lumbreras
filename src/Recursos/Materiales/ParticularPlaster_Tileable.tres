@@ -2,23 +2,18 @@
 
 [ext_resource type="Shader" path="res://Recursos/Materiales/TilableMaterial_Unlit.gdshader" id="1_28t0h"]
 [ext_resource type="Texture2D" uid="uid://dkrvhitecb72x" path="res://Recursos/Meshes/Particular_Cutzamala_PBR5/Texturas_B5_Particular/Albedo_Edificio.jpg" id="2_oqe3j"]
-[ext_resource type="Texture2D" uid="uid://cxltv27wunyvy" path="res://Recursos/Meshes/Particular_Cutzamala_PBR5/Texturas_B5_Particular/Sombras_edificio.png" id="3_nnj1s"]
+[ext_resource type="Texture2D" uid="uid://bdoo2e1iy3qh6" path="res://Recursos/Meshes/Particular_Cutzamala_PBR5/Texturas_B5_Particular/Sombras_edificio.jpg" id="3_b4mjw"]
 
 [resource]
 render_priority = 0
 shader = ExtResource("1_28t0h")
 shader_parameter/albedo = Color(1, 1, 1, 1)
-shader_parameter/point_size = null
 shader_parameter/tile_size = -6.0
 shader_parameter/ao_texture_channel = null
 shader_parameter/ao_light_affect = null
 shader_parameter/heightmap_scale = null
-shader_parameter/heightmap_min_layers = null
-shader_parameter/heightmap_max_layers = null
 shader_parameter/heightmap_flip = null
 shader_parameter/uv1_scale = Vector3(1, 1, 1)
 shader_parameter/uv1_offset = null
-shader_parameter/uv2_scale = Vector3(1, 1, 1)
-shader_parameter/uv2_offset = null
 shader_parameter/texture_albedo = ExtResource("2_oqe3j")
-shader_parameter/texture_detail_ao = ExtResource("3_nnj1s")
+shader_parameter/texture_detail_ao = ExtResource("3_b4mjw")

@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://d4nifki50ahlx"]
+[gd_scene load_steps=15 format=3 uid="uid://d4nifki50ahlx"]
 
 [ext_resource type="Material" uid="uid://bexyx5nrr46o1" path="res://Recursos/Materiales/Barrier.tres" id="1_kyf4m"]
 [ext_resource type="PackedScene" uid="uid://cee4bu1xjnrjv" path="res://Recursos/Meshes/Particular_Cutzamala_PBR5/Cutzamala_PBR5_Berros_RecursosMaster.blend" id="1_pynes"]
@@ -8,9 +8,12 @@
 [ext_resource type="Material" uid="uid://d313nvgrewkot" path="res://Recursos/Materiales/ParticularGrass_Tileable.tres" id="5_w6ac8"]
 [ext_resource type="Material" uid="uid://cuffxlgpe8lrr" path="res://Recursos/Materiales/ParticularMuro2_Tileable.tres" id="6_3hd1d"]
 [ext_resource type="Material" uid="uid://cwdb0xo47d1bn" path="res://Recursos/Materiales/ParticularUnlit_tuberias_material.tres" id="7_8dcvh"]
-[ext_resource type="Material" path="res://Recursos/Materiales/ParticularPlaster_Tileable.tres" id="8_pkd8q"]
-[ext_resource type="Material" path="res://Recursos/Materiales/ParticularUnlit_Gasto_material.tres" id="8_q8xrq"]
+[ext_resource type="Material" uid="uid://b01vby7vqyu2y" path="res://Recursos/Materiales/ParticularPlaster_Tileable.tres" id="8_pkd8q"]
+[ext_resource type="Material" uid="uid://bonstudrdm2ew" path="res://Recursos/Materiales/ParticularUnlit_Gasto_material.tres" id="8_q8xrq"]
 [ext_resource type="Material" uid="uid://dc4d50uixwgaw" path="res://Recursos/Materiales/ParticularRoof_Tileable.tres" id="10_0p4qj"]
+[ext_resource type="Material" uid="uid://ca8npxbjn72ic" path="res://Recursos/Materiales/ParticularUnlit_Props2.tres" id="12_bbenv"]
+[ext_resource type="PackedScene" uid="uid://dwwulixxwdeat" path="res://Recursos/Meshes/Particular_Cutzamala_PBR5/Meshes_colision/Cutzamala_collision_fence_visual.glb" id="13_yladn"]
+[ext_resource type="Material" uid="uid://xgb8n1gtjwxb" path="res://Recursos/Materiales/SelectGlow_Unlit.tres" id="14_1ydro"]
 
 [node name="Generico" type="Node3D"]
 
@@ -46,6 +49,7 @@ material_override = ExtResource("4_ya2r5")
 material_override = ExtResource("4_iyxlv")
 
 [node name="Barrera_Particular" parent="Cutzamala_PBR5_Berros_RecursosMaster" index="4"]
+visible = false
 material_override = ExtResource("1_kyf4m")
 
 [node name="Pasto" parent="Cutzamala_PBR5_Berros_RecursosMaster" index="5"]
@@ -66,4 +70,14 @@ material_override = ExtResource("8_pkd8q")
 [node name="Edificio_003" parent="Cutzamala_PBR5_Berros_RecursosMaster" index="10"]
 material_override = ExtResource("10_0p4qj")
 
+[node name="Edificio_005" parent="Cutzamala_PBR5_Berros_RecursosMaster" index="11"]
+material_override = ExtResource("12_bbenv")
+
+[node name="Cutzamala_collision_fence_visual" parent="Cutzamala_PBR5_Berros_RecursosMaster" instance=ExtResource("13_yladn")]
+
+[node name="collision_fence_visual" parent="Cutzamala_PBR5_Berros_RecursosMaster/Cutzamala_collision_fence_visual" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -32.1978, 0)
+material_override = ExtResource("14_1ydro")
+
 [editable path="Cutzamala_PBR5_Berros_RecursosMaster"]
+[editable path="Cutzamala_PBR5_Berros_RecursosMaster/Cutzamala_collision_fence_visual"]

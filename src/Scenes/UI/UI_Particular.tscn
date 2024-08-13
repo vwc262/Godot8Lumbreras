@@ -203,6 +203,7 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="SubViewportContainer" type="SubViewportContainer" parent="VBoxContainer/main_container/modelo_3d_container"]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -214,10 +215,20 @@ stretch = true
 [node name="SubViewport" type="SubViewport" parent="VBoxContainer/main_container/modelo_3d_container/SubViewportContainer"]
 handle_input_locally = false
 size = Vector2i(1080, 1795)
-render_target_update_mode = 4
+render_target_update_mode = 0
 
 [node name="Template_Particular" parent="VBoxContainer/main_container/modelo_3d_container/SubViewportContainer/SubViewport" instance=ExtResource("10_l4wa0")]
+visible = false
 idEstacion = 5
+
+[node name="ColorRect" type="ColorRect" parent="VBoxContainer/main_container/modelo_3d_container"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 1, 1, 1)
 
 [node name="progress_bar_container" type="Panel" parent="VBoxContainer/main_container"]
 self_modulate = Color(1, 1, 1, 0)

@@ -37,6 +37,7 @@ grow_vertical = 2
 size_flags_horizontal = 4
 
 [node name="ScrollContainer" type="ScrollContainer" parent="DynamicMargins"]
+clip_contents = false
 custom_minimum_size = Vector2(1080, 0)
 layout_direction = 2
 layout_mode = 2
@@ -49,6 +50,13 @@ clip_contents = true
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+
+[node name="GraficadorWindow" type="PanelContainer" parent="DynamicMargins/ScrollContainer/WindowsContainer"]
+clip_contents = true
+layout_mode = 2
+
+[node name="ChartControl" parent="DynamicMargins/ScrollContainer/WindowsContainer/GraficadorWindow" instance=ExtResource("6_cdy0v")]
+layout_mode = 2
 
 [node name="PerfilWindow" type="PanelContainer" parent="DynamicMargins/ScrollContainer/WindowsContainer"]
 clip_contents = true
@@ -172,13 +180,6 @@ layout_mode = 2
 size_flags_horizontal = 3
 
 [node name="UiParticular" parent="DynamicMargins/ScrollContainer/WindowsContainer/ParticularWindow" instance=ExtResource("11_e8765")]
-layout_mode = 2
-
-[node name="GraficadorWindow" type="PanelContainer" parent="DynamicMargins/ScrollContainer/WindowsContainer"]
-clip_contents = true
-layout_mode = 2
-
-[node name="ChartControl" parent="DynamicMargins/ScrollContainer/WindowsContainer/GraficadorWindow" instance=ExtResource("6_cdy0v")]
 layout_mode = 2
 
 [node name="popup_container" type="Panel" parent="."]

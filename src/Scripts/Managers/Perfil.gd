@@ -3,13 +3,13 @@ extends Node
 @onready var btn_lista_sitios: Button = $DynamicMargins/ScrollContainer/HBoxContainer/PerfilWindow/VB_MainContainer/main_container/ListaSitiosContainer/VBoxContainer/botones_container/HBoxContainer/BTN_ListaSitios
 @onready var lista_sitios: Control = $DynamicMargins/ScrollContainer/HBoxContainer/PerfilWindow/VB_MainContainer/main_container/ListaSitiosContainer/VBoxContainer/PanelContainer/ListaSitios
 @onready var header_fondo: TextureRect = $DynamicMargins/ScrollContainer/HBoxContainer/PerfilWindow/VB_MainContainer/header_container/header_fondo
-@onready var ui_particular: Control = $DynamicMargins/ScrollContainer/HBoxContainer/ParticularWindow/UiParticular
 @onready var dynamic_margins = $DynamicMargins
 @onready var perfil: Node3D = $DynamicMargins/ScrollContainer/HBoxContainer/PerfilWindow/VB_MainContainer/main_container/SubViewportContainer/SubViewport/Perfil
 @export var perfil_world_environment : Environment
 @export var particular_world_environment : Environment
 @onready var scroll_container: ScrollContainer = $DynamicMargins/ScrollContainer
 @onready var windows_container: HBoxContainer = $DynamicMargins/ScrollContainer/WindowsContainer
+@onready var ui_particular: Control = $DynamicMargins/ScrollContainer/WindowsContainer/ParticularWindow/UiParticular
 
 #endregion
 
@@ -22,16 +22,16 @@ signal in_particular
 var is_hidden = false  # Variable para rastrear el estado del contenedor
 
 func _ready():
-	SceneManager.set_scroll_reference(scroll_container)
-	SceneManager.add_scene(SceneManager.idScenePerfil,perfil)
-	SceneManager.load_environments(perfil_world_environment,particular_world_environment)
-	AdjustWindowsSize()
+	SceneManager.set_scroll_reference(scroll_container)	
+	AdjustWindowsSize()		
+	#SceneManager.set_initial_window()
 	# Conectar señales a las funciones correspondientes
-	UIManager.set_ui_particular(ui_particular)  # Establecer la referencia a ui_particular
-	#UIManager.connect("mostrar_world", _mostrar_world)  # Conectar la señal mostrar_world
+	UIManager.set_ui_particular(ui_particular)  # Establecer la referencia a ui_particular	
+	
 
 func AdjustWindowsSize():
 	var size = get_viewport().size	
+	SceneManager.set_viewport_size_x(size.x)
 	for window : PanelContainer in windows_container.get_children():
 		window.custom_minimum_size.x = size.x		
 
@@ -70,15 +70,6 @@ func _on_finish_tween():
 ##endregion
 
 
-# Actualiza esta función para usar UIManager
-func _on_btn_particular_pressed():
-	if(UIManager.current_selected_site):
-		var nivel_encontrado = SceneManager.load_scene(UIManager.current_selected_site.id_estacion)
-		if(nivel_encontrado):
-			UIManager.mostrar_particular()	
-			SceneManager.set_world_environment(SceneManager.TIPO_NIVEL.PARTICULAR)		
-	else:			
-		UIManager.popUpWindow.showPopUp("Necesita seleccionar \n un particular antes \n de proceder.");
 	
 
 func _mostrar_world():

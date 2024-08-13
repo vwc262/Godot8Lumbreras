@@ -77,9 +77,6 @@ func _ready():
 	client_size.x = client_size.x / client_size.y
 	client_size.y = 1
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
 
 func ResetCameraPosition():
 	DisableNavigation()
@@ -144,7 +141,7 @@ func handle_touch(event: InputEventScreenTouch):
 		last_distance = 0
 
 func handle_drag(event: InputEventScreenDrag):
-	var cameraForward:Vector3 = camera_3_dp.get_global_transform().basis.z
+	#var cameraForward:Vector3 = camera_3_dp.get_global_transform().basis.z
 	emit_signal("on_position_changed",position)
 	ID_Select = 0
 	UIManager.deselect_all_sitios()
@@ -164,11 +161,11 @@ func handle_drag(event: InputEventScreenDrag):
 			global_translate(pan_vector)
 
 	elif touch_points.size() >= 2:
-		var up: Vector2 = Vector2(0,1)
+		#var up: Vector2 = Vector2(0,1)
 		var touch_point_positions = touch_points.values()
 		var current_finger_positions: Vector2 = touch_point_positions[1] - touch_point_positions[0]
 		var current_dist = touch_point_positions[1].distance_to(touch_point_positions[0])
-		var zoom_factor = current_dist / start_distance
+		#var zoom_factor = current_dist / start_distance
 
 		if can_rotate:
 			var touch = touch_points.values()

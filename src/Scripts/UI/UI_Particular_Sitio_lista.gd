@@ -25,20 +25,18 @@ func set_datos(sitio: Estacion):
 	lbl_fecha_sitio.text = GlobalUtils.formatear_fecha(sitio.tiempo)
 	
 	# Cambia la textura en función del estado del enlace
-	if sitio.enlace in [1, 2, 3]:
-		texture_enlace.texture = texture_online
-	else:
-		texture_enlace.texture = texture_offline
+	texture_enlace.texture = texture_online if sitio.is_estacion_en_linea() else texture_offline	
 
 func _on_btn_lista_sitio_pressed():
 	if UIManager.is_sitio_selected(self):
 		print("sitio seleccionado")
 	else:
-		var nivel_encontrado = SceneManager.load_scene(id_Estacion)
-		if(nivel_encontrado):			
-			UIManager.seleccionar_lista_sitio(self)
-			NavigationManager.set_lastid_selected(id_Estacion)
-			UIManager.reprint_ui_particular()
+		SceneManager.scroll_scene(SceneManager.TIPO_NIVEL.PARTICULAR,id_Estacion)
+		#var nivel_encontrado = SceneManager.load_scene(id_Estacion)
+		#if(nivel_encontrado):			
+			#UIManager.seleccionar_lista_sitio(self)
+			#NavigationManager.set_lastid_selected(id_Estacion)
+			#UIManager.reprint_ui_particular()
 
 func seleccionar():
 	sitio_fondo_seleccionado.visible = true

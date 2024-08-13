@@ -54,13 +54,12 @@ var last_tween_position: Vector3 = Vector3(0,0,0)
 @onready var blurMaterial:Material = $Camera3D/ColorRect.material
 
 #region Godot Functions
-func _ready():
+func _ready():	
 	$Camera3D.rotation_degrees.x = initialRotationCamera #Se guarda la rotacion inicial en x de la camara
 	NavigationManager.connect("Go_TO",MoverCamara)  #Suscripcion de evento
 	NavigationManager.connect('ResetCameraPosition',ResetCameraPosition) #Suscripcion de evento
 	initalCameraPosition = position # se guarda la posicion inicial de la camara
 	
-
 func _input(event):
 	if event is InputEventScreenTouch:
 		handle_touch(event)
@@ -164,7 +163,7 @@ func OnTweenFinished_Blur():
 func MoverCamara(idEstacion:int):
 	DisableNavigation()
 	
-	var transform: Array
+	var transform_estacion: Array
 	var tweenBlur := TweenManager.init_tween(OnTweenFinished_Blur)
 	
 	if ID_Select != idEstacion:
@@ -174,10 +173,9 @@ func MoverCamara(idEstacion:int):
 			NavigationManager.select_mini_3d()
 			var tween := TweenManager.init_tween(OnTweenFinished_MovimientoRealizado)
 			isTween = true
-			transform = NavigationManager.GetSiteAnchor(idEstacion)
-			var new_vec3 = Vector3(rotation.x, transform[1].y, rotation.z)
+			transform_estacion = NavigationManager.GetSiteAnchor(idEstacion)			
 			tween.set_parallel()
-			var positionToGo = transform[0]
+			var positionToGo = transform_estacion[0]
 			positionToGo.y = clamp(positionToGo.y,maxZoom,initialZoom)
 			tween.tween_property(self,"position", positionToGo, speedAnimation)			
 			var val = remap(positionToGo.y, initialZoom - offSetDistanceInclination, maxZoom, 0, 1)

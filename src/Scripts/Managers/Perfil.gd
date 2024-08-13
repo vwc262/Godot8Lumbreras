@@ -1,14 +1,18 @@
 extends Node
 #region Editor variables
-@onready var btn_lista_sitios = $DynamicMargins/VB_MainContainer/main_container/ListaSitiosContainer/VBoxContainer/botones_container/HBoxContainer/BTN_ListaSitios
-@onready var lista_sitios = $DynamicMargins/VB_MainContainer/main_container/ListaSitiosContainer/VBoxContainer/PanelContainer/ListaSitios
-@onready var header_fondo = $DynamicMargins/VB_MainContainer/header_container/header_fondo
-@onready var ui_particular = $UiParticular
-@onready var dynamic_margins = $DynamicMargins
-@onready var perfil = $DynamicMargins/VB_MainContainer/main_container/SubViewportContainer/SubViewport/Perfil
-@onready var chart_control = $DynamicMargins/VB_MainContainer/main_container/ListaSitiosContainer/VBoxContainer/PanelContainer/ChartControl
+@onready var scroll_container: ScrollContainer = $ScrollContainer
+@onready var btn_lista_sitios: Button = $ScrollContainer/WindowsContainer/PerfilWindow/VB_MainContainer/main_container/ListaSitiosContainer/VBoxContainer/botones_container/HBoxContainer/BTN_ListaSitios
+@onready var lista_sitios: Control = $ScrollContainer/WindowsContainer/PerfilWindow/VB_MainContainer/main_container/ListaSitiosContainer/VBoxContainer/PanelContainer/ListaSitios
+@onready var header_fondo: TextureRect = $ScrollContainer/WindowsContainer/PerfilWindow/VB_MainContainer/header_container/header_fondo
+@onready var perfil: Node3D = $ScrollContainer/WindowsContainer/PerfilWindow/VB_MainContainer/main_container/VBoxContainer/SubViewportContainer/SubViewport/Perfil
+
 @export var perfil_world_environment : Environment
 @export var particular_world_environment : Environment
+@onready var windows_container: HBoxContainer = $ScrollContainer/WindowsContainer
+@onready var ui_particular: Control = $ScrollContainer/WindowsContainer/ParticularWindow/UiParticular
+@onready var sub_viewport_container: SubViewportContainer = $ScrollContainer/WindowsContainer/PerfilWindow/VB_MainContainer/main_container/VBoxContainer/SubViewportContainer
+@onready var background_flip_book: ColorRect = $ScrollContainer/WindowsContainer/PerfilWindow/VB_MainContainer/main_container/VBoxContainer/BackgroundFlipBook
+
 #endregion
 
 #region script variables
@@ -19,12 +23,24 @@ signal in_particular
 
 var is_hidden = false  # Variable para rastrear el estado del contenedor
 
-func _ready():
+	
+		
+	
+func _ready() -> void:
 	SceneManager.add_scene(SceneManager.idScenePerfil,perfil)
-	SceneManager.load_environments(perfil_world_environment,particular_world_environment)
-	# Conectar señales a las funciones correspondientes
-	UIManager.set_ui_particular(ui_particular)  # Establecer la referencia a ui_particular
-	#UIManager.connect("mostrar_world", _mostrar_world)  # Conectar la señal mostrar_world
+	SceneManager.add_subviewport_reference(SceneManager.TIPO_NIVEL.PERFIL,sub_viewport_container)
+	SceneManager.set_scroll_reference(scroll_container)	
+	AdjustWindowsSize()		
+	# Conectar señasles a las funciones correspondientes
+	UIManager.set_ui_particular(ui_particular)  # Establecer la referencia a ui_particular	
+	SceneManager.set_initial_window()
+		
+	
+func AdjustWindowsSize():
+	var size = get_viewport().size	
+	SceneManager.set_viewport_size_x(size.x )
+	for window : PanelContainer in windows_container.get_children():
+		window.custom_minimum_size.x = size.x			
 
 func _on_button_pressed():
 	NavigationManager.emit_signal('ResetCameraPosition')
@@ -60,31 +76,26 @@ func _on_finish_tween():
 		lista_sitios.visible = false
 ##endregion
 
-##region FUNCIONES PARA MOSTRAR LA GRAFICA
-func _on_btn_graficar_button_down():
-	if chart_control.visible:
-		chart_control.visible = false
-		lista_sitios.visible = true
-	else:
-		chart_control.visible = true
-		lista_sitios.visible = false
-##endregion
 
-# Actualiza esta función para usar UIManager
-func _on_btn_particular_pressed():
-	if(UIManager.current_selected_site):
-		var nivel_encontrado = SceneManager.load_scene(UIManager.current_selected_site.id_estacion)
-		if(nivel_encontrado):
-			UIManager.mostrar_particular()	
-			SceneManager.set_world_environment(SceneManager.TIPO_NIVEL.PARTICULAR)		
-	else:			
-		UIManager.popUpWindow.showPopUp("Necesita seleccionar \n un particular antes \n de proceder.");
 	
 
 func _mostrar_world():
-	SceneManager.load_scene(SceneManager.idScenePerfil)
-	SceneManager.set_world_environment(SceneManager.TIPO_NIVEL.PERFIL)
+	SceneManager.scroll_scene(SceneManager.TIPO_NIVEL.PERFIL,SceneManager.idScenePerfil)
+	
 
 
 func _on_btn_close_popup_pressed():
 	UIManager.popUpWindow.hide_popup()
+
+
+func _on_scroll_container_ready() -> void:
+	SceneManager.set_initial_window()	
+
+
+func _on_ready() -> void:
+	SceneManager.set_initial_window()	
+
+
+func _on_sub_viewport_container_visibility_changed() -> void:
+	background_flip_book.visible = true if !sub_viewport_container.visible else false
+	

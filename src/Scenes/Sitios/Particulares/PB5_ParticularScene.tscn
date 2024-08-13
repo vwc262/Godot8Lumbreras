@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://qofjfvol201e"]
+[gd_scene load_steps=14 format=3 uid="uid://qofjfvol201e"]
 
 [ext_resource type="Script" path="res://Scripts/Environment/Particular.gd" id="1_mvh1e"]
 [ext_resource type="PackedScene" uid="uid://d4nifki50ahlx" path="res://Scenes/Sitios/Particulares/PB5_Model.tscn" id="2_3ceb2"]
@@ -9,11 +9,7 @@
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_3d.gd" id="5_qc0mw"]
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="6_bkdkv"]
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/resources/camera_3d_resource.gd" id="7_skwsb"]
-[ext_resource type="PackedScene" uid="uid://cee4bu1xjnrjv" path="res://Recursos/Meshes/Particular_Cutzamala_PBR5/Cutzamala_PBR5_Berros_RecursosMaster.blend" id="8_ibr6t"]
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd" id="8_sii0s"]
-[ext_resource type="Script" path="res://Scripts/CutzamalaDissolve.gd" id="9_kgpig"]
-[ext_resource type="Material" uid="uid://bc661come1l76" path="res://Recursos/Materiales/ParticularMuro_PBR5_Tileable.tres" id="10_v8ja5"]
-[ext_resource type="Texture2D" uid="uid://b1cykwj3hjs4l" path="res://Recursos/Meshes/Particular_Cutzamala_PBR5/Texturas_B5_Particular/bake _albedo_PISO.png" id="11_htm2j"]
 
 [sub_resource type="Resource" id="Resource_6rtdx"]
 script = ExtResource("6_bkdkv")
@@ -32,9 +28,6 @@ size = 1.0
 frustum_offset = Vector2(0, 0)
 near = 0.05
 far = 4000.0
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ohfed"]
-albedo_texture = ExtResource("11_htm2j")
 
 [sub_resource type="LabelSettings" id="LabelSettings_dc2cm"]
 font_size = 101
@@ -58,7 +51,7 @@ virtualCameras = [NodePath("../camera_parent/Camera_POV_0"), NodePath("../Camera
 keyCodes = Array[int]([49, 50, 51, 52])
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(0.999387, 0, -0.0350043, 0.00159461, 0.998962, 0.0455269, 0.0349679, -0.0455548, 0.99835, 7.16729, 5.85234, -79.4011)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20, 9.17423, -20)
 current = true
 
 [node name="CameraHost" type="Node3D" parent="Camera3D"]
@@ -99,17 +92,6 @@ tween_resource = SubResource("Resource_6rtdx")
 camera_3d_resource = SubResource("Resource_d1nsl")
 
 [node name="Container" type="Node3D" parent="."]
-
-[node name="Cutzamala_PBR5_Berros_RecursosMaster" parent="Container" instance=ExtResource("8_ibr6t")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, 0)
-visible = false
-script = ExtResource("9_kgpig")
-
-[node name="Muros" parent="Container/Cutzamala_PBR5_Berros_RecursosMaster" index="2"]
-material_override = ExtResource("10_v8ja5")
-
-[node name="Desnivel_002" parent="Container/Cutzamala_PBR5_Berros_RecursosMaster" index="3"]
-material_override = SubResource("StandardMaterial3D_ohfed")
 
 [node name="Camera_POV_1" type="Node3D" parent="."]
 transform = Transform3D(0.999387, 0, -0.0350043, 0.00159461, 0.998962, 0.0455269, 0.0349679, -0.0455548, 0.99835, 7.16729, 5.85234, -79.4011)
@@ -213,5 +195,3 @@ text = "4"
 label_settings = SubResource("LabelSettings_dc2cm")
 horizontal_alignment = 1
 vertical_alignment = 1
-
-[editable path="Container/Cutzamala_PBR5_Berros_RecursosMaster"]

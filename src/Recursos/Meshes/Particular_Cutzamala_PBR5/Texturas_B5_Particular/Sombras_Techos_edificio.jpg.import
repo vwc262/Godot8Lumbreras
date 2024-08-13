@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cw8fqypsv5m1k"
-path="res://.godot/imported/Sombras_Techos_edificio.jpg-70e944bea23a77b27b92a8d6eaa64b9f.ctex"
+path="res://.godot/imported/Sombras_Techos_edificio.jpg-2a2531ae927297fcae0de28af346b510.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Recursos/Textures/Sombras_Techos_edificio.jpg"
-dest_files=["res://.godot/imported/Sombras_Techos_edificio.jpg-70e944bea23a77b27b92a8d6eaa64b9f.ctex"]
+source_file="res://Recursos/Meshes/Particular_Cutzamala_PBR5/Texturas_B5_Particular/Sombras_Techos_edificio.jpg"
+dest_files=["res://.godot/imported/Sombras_Techos_edificio.jpg-2a2531ae927297fcae0de28af346b510.ctex"]
 
 [params]
 

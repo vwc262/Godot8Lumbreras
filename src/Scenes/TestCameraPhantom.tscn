@@ -1,0 +1,146 @@
+[gd_scene load_steps=15 format=3 uid="uid://caunyfuyju0fm"]
+
+[ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_3d.gd" id="1_ff4s7"]
+[ext_resource type="Material" uid="uid://43ccdqs142xj" path="res://Recursos/Materiales/Lake_Material.tres" id="2_engq8"]
+[ext_resource type="Script" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="2_w5cyc"]
+[ext_resource type="Script" path="res://addons/phantom_camera/scripts/resources/camera_3d_resource.gd" id="3_8catw"]
+[ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd" id="5_gbaq4"]
+[ext_resource type="Script" path="res://Scripts/Estructuras/Estructura_Tripods.gd" id="7_0chpj"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_ifdff"]
+material = ExtResource("2_engq8")
+
+[sub_resource type="BoxMesh" id="BoxMesh_t21uq"]
+material = ExtResource("2_engq8")
+
+[sub_resource type="Resource" id="Resource_676xs"]
+script = ExtResource("2_w5cyc")
+duration = 0.3
+transition = 3
+ease = 1
+
+[sub_resource type="Resource" id="Resource_sqiq5"]
+script = ExtResource("3_8catw")
+cull_mask = 1048575
+h_offset = 0.0
+v_offset = 0.0
+projection = 0
+fov = 75.0
+size = 1.0
+frustum_offset = Vector2(0, 0)
+near = 0.05
+far = 4000.0
+
+[sub_resource type="Resource" id="Resource_bhfnw"]
+script = ExtResource("2_w5cyc")
+duration = 1.0
+transition = 9
+ease = 2
+
+[sub_resource type="Resource" id="Resource_gedfr"]
+script = ExtResource("3_8catw")
+cull_mask = 1048575
+h_offset = 0.0
+v_offset = 0.0
+projection = 0
+fov = 75.0
+size = 1.0
+frustum_offset = Vector2(0, 0)
+near = 0.05
+far = 4000.0
+
+[sub_resource type="Resource" id="Resource_xxfqt"]
+script = ExtResource("2_w5cyc")
+duration = 5.0
+transition = 10
+ease = 2
+
+[sub_resource type="Resource" id="Resource_6cepd"]
+script = ExtResource("3_8catw")
+cull_mask = 1048575
+h_offset = 0.0
+v_offset = 0.0
+projection = 0
+fov = 75.0
+size = 1.0
+frustum_offset = Vector2(0, 0)
+near = 0.05
+far = 4000.0
+
+[node name="Root" type="Node3D"]
+
+[node name="World" type="Node3D" parent="."]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="World"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0151949, 0.626905, 0.0211201)
+mesh = SubResource("BoxMesh_ifdff")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="World"]
+transform = Transform3D(13.0279, 0, 0, 0, 13.0279, 0, 0, 0, 13.0279, 2.30518, 0, -13.9344)
+mesh = SubResource("BoxMesh_ifdff")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="World"]
+transform = Transform3D(45.5539, 0, 0, 0, 7.02583, 0, 0, 0, 13.0279, 2.30518, 0, 17.773)
+mesh = SubResource("BoxMesh_ifdff")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="World"]
+transform = Transform3D(20, 0, 0, 0, 0.01, 0, 0, 0, 20, 0, 0, 0)
+mesh = SubResource("BoxMesh_ifdff")
+
+[node name="SitemaDeCamaras2" type="Node3D" parent="." node_paths=PackedStringArray("virtualCameras")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20, 5, -20)
+script = ExtResource("7_0chpj")
+virtualCameras = [NodePath("../Camera_POV_1"), NodePath("../Camera_POV_2"), NodePath("../Camera_POV_3")]
+keyCodes = Array[int]([49, 50, 51])
+
+[node name="MainCamera3D" type="Camera3D" parent="."]
+unique_name_in_owner = true
+transform = Transform3D(0.999997, 0, 0, 0, 0.866023, 0.499996, 0, -0.499999, 0.866018, 7.19671, 4.54909, 0.942909)
+
+[node name="CameraHost" type="Node3D" parent="MainCamera3D"]
+transform = Transform3D(1, -1.06581e-14, 0, -4.37712e-15, 1, -2.98023e-08, -6.62945e-15, 2.98023e-08, 1, 2.38419e-07, 0, 0)
+script = ExtResource("5_gbaq4")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="MainCamera3D"]
+transform = Transform3D(-8.74228e-08, 1.78814e-07, -2, -2, 0, 8.74228e-08, 0, 2, 1.78814e-07, -0.337891, 5.454, -15.0641)
+mesh = SubResource("BoxMesh_t21uq")
+skeleton = NodePath("")
+
+[node name="PlayerPhantomCamera3D" type="Node3D" parent="." node_paths=PackedStringArray("follow_target")]
+transform = Transform3D(0.999997, 0, 0, 0, 0.866023, 0.499996, 0, -0.499999, 0.866018, -20, 29.3255, -54.0739)
+script = ExtResource("1_ff4s7")
+follow_mode = 6
+follow_target = NodePath("../FollowTarget")
+tween_resource = SubResource("Resource_676xs")
+camera_3d_resource = SubResource("Resource_sqiq5")
+follow_damping = true
+follow_distance = 3.5
+spring_length = 3.5
+
+[node name="Camera_POV_1" type="Node3D" parent="."]
+transform = Transform3D(0.77471, -0.316156, 0.547595, 0, 0.866023, 0.499996, -0.632311, -0.387356, 0.670915, 0, 3.10763, 0)
+script = ExtResource("1_ff4s7")
+tween_resource = SubResource("Resource_bhfnw")
+camera_3d_resource = SubResource("Resource_gedfr")
+
+[node name="Camera_POV_2" type="Node3D" parent="."]
+transform = Transform3D(0.999997, 0, 0, 0, 0.866023, 0.499996, 0, -0.499999, 0.866018, 7.19671, 4.54909, 0.942909)
+script = ExtResource("1_ff4s7")
+priority = 2
+tween_resource = SubResource("Resource_xxfqt")
+camera_3d_resource = SubResource("Resource_6cepd")
+
+[node name="Camera_POV_3" type="Node3D" parent="."]
+transform = Transform3D(0.999997, 0, 0, 0, 0.866023, 0.499996, 0, -0.499999, 0.866018, -7.36689, 3.66812, -2.05731)
+script = ExtResource("1_ff4s7")
+tween_resource = SubResource("Resource_xxfqt")
+camera_3d_resource = SubResource("Resource_6cepd")
+
+[node name="FollowTarget" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20, 27.5755, -57.105)
+
+[node name="Node2D" type="Node2D" parent="."]
+
+[node name="Button" type="Button" parent="Node2D"]
+offset_right = 67.0
+offset_bottom = 59.0

@@ -1,0 +1,206 @@
+[gd_scene load_steps=16 format=3 uid="uid://dynympoemol1h"]
+
+[ext_resource type="Script" path="res://Scripts/Environment/Particular.gd" id="1_5axap"]
+[ext_resource type="PackedScene" uid="uid://d4nifki50ahlx" path="res://Scenes/Sitios/Particulares/PB5_Model.tscn" id="2_gsfxs"]
+[ext_resource type="Script" path="res://Scripts/Managers/ParticularCameraManager.gd" id="3_eo44o"]
+[ext_resource type="Script" path="res://Scripts/Navigation/Particular_Navigation.gd" id="4_u7qqj"]
+[ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_3d.gd" id="5_sdksh"]
+[ext_resource type="Script" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="6_6y134"]
+[ext_resource type="Script" path="res://addons/phantom_camera/scripts/resources/camera_3d_resource.gd" id="7_tsv7n"]
+[ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd" id="8_1fulj"]
+[ext_resource type="Material" uid="uid://43ccdqs142xj" path="res://Recursos/Materiales/Lake_Material.tres" id="9_c6ywy"]
+[ext_resource type="Script" path="res://Scripts/UI/CamarasParticular/UI_CamarasParticular.gd" id="10_0tf4c"]
+[ext_resource type="Texture2D" uid="uid://b0n0yu4r2uwv5" path="res://Recursos/UI/CameraIcon.png" id="11_i3be2"]
+
+[sub_resource type="Resource" id="Resource_6rtdx"]
+script = ExtResource("6_6y134")
+duration = 1.0
+transition = 9
+ease = 2
+
+[sub_resource type="Resource" id="Resource_d1nsl"]
+script = ExtResource("7_tsv7n")
+cull_mask = 1048575
+h_offset = 0.0
+v_offset = 0.0
+projection = 0
+fov = 75.0
+size = 1.0
+frustum_offset = Vector2(0, 0)
+near = 0.05
+far = 4000.0
+
+[sub_resource type="BoxMesh" id="BoxMesh_bvetc"]
+material = ExtResource("9_c6ywy")
+
+[sub_resource type="LabelSettings" id="LabelSettings_dc2cm"]
+font_size = 101
+font_color = Color(1, 0.443137, 0, 1)
+outline_size = 50
+outline_color = Color(0, 0, 0, 0.698039)
+shadow_size = 2756
+
+[node name="Particular" type="Node3D"]
+script = ExtResource("1_5axap")
+particular_scene = ExtResource("2_gsfxs")
+idEstacion = 1
+
+[node name="ParticularCameraManager" type="Node3D" parent="." node_paths=PackedStringArray("cameraTripod", "freeCameraRoot", "buttons", "virtualCameras")]
+script = ExtResource("3_eo44o")
+cameraTripod = [null]
+freeCameraRoot = NodePath("../camera_parent")
+buttons = [NodePath("../Canvas/VBoxContainer/Button_1"), NodePath("../Canvas/VBoxContainer/Button_2"), NodePath("../Canvas/VBoxContainer/Button_3"), NodePath("../Canvas/VBoxContainer/Button_4")]
+virtualCameras = [NodePath("../camera_parent/Camera_POV_0"), NodePath("../Camera_POV_1"), NodePath("../Camera_POV_2"), NodePath("../Camera_POV_3")]
+keyCodes = Array[int]([49, 50, 51, 52])
+
+[node name="camera_parent" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20, 9.17423, -20)
+visible = false
+script = ExtResource("4_u7qqj")
+can_pan = true
+maxX = 40
+maxZ = 20
+maxY = 20
+can_rotate = true
+rotate_speed = 1.0
+initialRotationCamera = -45
+LimitRotationCamera = 0
+minRotationY = -30.0
+maxRotationY = 30.0
+offSetDistanceInclination = 10.0
+tilt_speed = 0.25
+zoom_speed = 0.5
+can_zoom = true
+maxZoom = 5.0
+initialZoom = 30.0
+zoom_treshold = 45.0
+max_pan_speed = 0.01
+z_Depth = 1000.0
+
+[node name="Camera_POV_0" type="Node3D" parent="camera_parent"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 3)
+script = ExtResource("5_sdksh")
+tween_resource = SubResource("Resource_6rtdx")
+camera_3d_resource = SubResource("Resource_d1nsl")
+
+[node name="Camera3Dp" type="Camera3D" parent="camera_parent"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 3)
+visible = false
+current = true
+
+[node name="Container" type="Node3D" parent="."]
+
+[node name="MainCamera3D" type="Camera3D" parent="."]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20, 10.1742, -17)
+
+[node name="CameraHost" type="Node3D" parent="MainCamera3D"]
+transform = Transform3D(1, -1.06581e-14, 0, -4.37712e-15, 1, -2.98023e-08, -6.62945e-15, 2.98023e-08, 1, 2.38419e-07, 0, 0)
+script = ExtResource("8_1fulj")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="MainCamera3D"]
+transform = Transform3D(-8.74228e-08, 1.78814e-07, -2, -2, 0, 8.74228e-08, 0, 2, 1.78814e-07, -0.337891, 5.454, -15.0641)
+mesh = SubResource("BoxMesh_bvetc")
+skeleton = NodePath("")
+
+[node name="Camera_POV_1" type="Node3D" parent="."]
+script = ExtResource("5_sdksh")
+tween_resource = SubResource("Resource_6rtdx")
+camera_3d_resource = SubResource("Resource_d1nsl")
+
+[node name="Camera_POV_2" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.443596, 0, 0)
+script = ExtResource("5_sdksh")
+tween_resource = SubResource("Resource_6rtdx")
+camera_3d_resource = SubResource("Resource_d1nsl")
+
+[node name="Camera_POV_3" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.880594, 0, 0)
+script = ExtResource("5_sdksh")
+tween_resource = SubResource("Resource_6rtdx")
+camera_3d_resource = SubResource("Resource_d1nsl")
+
+[node name="Canvas" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("10_0tf4c")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Canvas"]
+layout_mode = 1
+offset_top = 237.0
+offset_right = 208.0
+offset_bottom = 794.0
+
+[node name="Button_1" type="Button" parent="Canvas/VBoxContainer"]
+layout_mode = 2
+text = "1"
+icon = ExtResource("11_i3be2")
+flat = true
+icon_alignment = 1
+
+[node name="Label" type="Label" parent="Canvas/VBoxContainer/Button_1"]
+layout_mode = 0
+offset_left = 105.0
+offset_top = 4.0
+offset_right = 197.0
+offset_bottom = 142.0
+text = "1"
+label_settings = SubResource("LabelSettings_dc2cm")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button_2" type="Button" parent="Canvas/VBoxContainer"]
+layout_mode = 2
+text = "1"
+icon = ExtResource("11_i3be2")
+flat = true
+icon_alignment = 1
+
+[node name="Label" type="Label" parent="Canvas/VBoxContainer/Button_2"]
+layout_mode = 0
+offset_left = 105.0
+offset_top = 4.0
+offset_right = 197.0
+offset_bottom = 142.0
+text = "2"
+label_settings = SubResource("LabelSettings_dc2cm")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button_3" type="Button" parent="Canvas/VBoxContainer"]
+layout_mode = 2
+text = "1"
+icon = ExtResource("11_i3be2")
+flat = true
+icon_alignment = 1
+
+[node name="Label" type="Label" parent="Canvas/VBoxContainer/Button_3"]
+layout_mode = 0
+offset_left = 105.0
+offset_top = 4.0
+offset_right = 197.0
+offset_bottom = 142.0
+text = "3"
+label_settings = SubResource("LabelSettings_dc2cm")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button_4" type="Button" parent="Canvas/VBoxContainer"]
+layout_mode = 2
+text = "1"
+icon = ExtResource("11_i3be2")
+flat = true
+icon_alignment = 1
+
+[node name="Label" type="Label" parent="Canvas/VBoxContainer/Button_4"]
+layout_mode = 0
+offset_left = 105.0
+offset_top = 4.0
+offset_right = 197.0
+offset_bottom = 142.0
+text = "4"
+label_settings = SubResource("LabelSettings_dc2cm")
+horizontal_alignment = 1
+vertical_alignment = 1

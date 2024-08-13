@@ -25,6 +25,7 @@ TweenManager="*res://Scripts/Managers/Global_TweenManager.gd"
 GlobalUtils="*res://Scripts/Managers/Global_Utils.gd"
 UIManager="*res://Scripts/Managers/Global_UIManager.gd"
 SceneManager="*res://Scripts/Managers/Global_SceneManager.gd"
+PhantomCameraManager="*res://addons/phantom_camera/scripts/managers/phantom_camera_manager.gd"
 
 [display]
 
@@ -36,7 +37,7 @@ window/handheld/orientation=1
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/easy_charts/plugin.cfg")
+enabled=PackedStringArray("res://addons/anthonyec.camera_preview/plugin.cfg", "res://addons/easy_charts/plugin.cfg", "res://addons/phantom_camera/plugin.cfg")
 
 [filesystem]
 

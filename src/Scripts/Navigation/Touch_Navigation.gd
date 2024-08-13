@@ -54,13 +54,12 @@ var last_tween_position: Vector3 = Vector3(0,0,0)
 @onready var blurMaterial:Material = $Camera3D/ColorRect.material
 
 #region Godot Functions
-func _ready():
+func _ready():	
 	$Camera3D.rotation_degrees.x = initialRotationCamera #Se guarda la rotacion inicial en x de la camara
 	NavigationManager.connect("Go_TO",MoverCamara)  #Suscripcion de evento
 	NavigationManager.connect('ResetCameraPosition',ResetCameraPosition) #Suscripcion de evento
 	initalCameraPosition = position # se guarda la posicion inicial de la camara
 	
-
 func _input(event):
 	if event is InputEventScreenTouch:
 		handle_touch(event)

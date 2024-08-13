@@ -2,9 +2,9 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c7ma4v1mcijdr"
-path.s3tc="res://.godot/imported/Bake_albedo_Tuberias.png-97e1cd266674ad2ed518070a38fbf138.s3tc.ctex"
-path.etc2="res://.godot/imported/Bake_albedo_Tuberias.png-97e1cd266674ad2ed518070a38fbf138.etc2.ctex"
+uid="uid://cl8sboleiws0g"
+path.s3tc="res://.godot/imported/Bake_albedo_Tuberias.jpg-796a14d0dcf718e279647df85fca483b.s3tc.ctex"
+path.etc2="res://.godot/imported/Bake_albedo_Tuberias.jpg-796a14d0dcf718e279647df85fca483b.etc2.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
@@ -12,8 +12,8 @@ metadata={
 
 [deps]
 
-source_file="res://Recursos/Meshes/Particular_Cutzamala_PBR5/Texturas_B5_Particular/Bake_albedo_Tuberias.png"
-dest_files=["res://.godot/imported/Bake_albedo_Tuberias.png-97e1cd266674ad2ed518070a38fbf138.s3tc.ctex", "res://.godot/imported/Bake_albedo_Tuberias.png-97e1cd266674ad2ed518070a38fbf138.etc2.ctex"]
+source_file="res://Recursos/Meshes/Particular_Cutzamala_PBR5/Texturas_B5_Particular/Bake_albedo_Tuberias.jpg"
+dest_files=["res://.godot/imported/Bake_albedo_Tuberias.jpg-796a14d0dcf718e279647df85fca483b.s3tc.ctex", "res://.godot/imported/Bake_albedo_Tuberias.jpg-796a14d0dcf718e279647df85fca483b.etc2.ctex"]
 
 [params]
 

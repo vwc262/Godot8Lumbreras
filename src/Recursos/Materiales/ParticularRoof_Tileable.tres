@@ -1,0 +1,24 @@
+[gd_resource type="ShaderMaterial" load_steps=4 format=3 uid="uid://dc4d50uixwgaw"]
+
+[ext_resource type="Shader" path="res://Recursos/Materiales/TilableMaterial_Unlit.gdshader" id="1_wyscs"]
+[ext_resource type="Texture2D" uid="uid://dium1xnsjar80" path="res://Recursos/Meshes/Particular_Cutzamala_PBR5/Texturas_B5_Particular/Techos_Albedo.jpg" id="2_ipcc6"]
+[ext_resource type="Texture2D" uid="uid://cw8fqypsv5m1k" path="res://Recursos/Meshes/Particular_Cutzamala_PBR5/Texturas_B5_Particular/Sombras_Techos_edificio.jpg" id="3_vtbap"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_wyscs")
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/point_size = null
+shader_parameter/tile_size = 9.0
+shader_parameter/ao_texture_channel = null
+shader_parameter/ao_light_affect = null
+shader_parameter/heightmap_scale = null
+shader_parameter/heightmap_min_layers = null
+shader_parameter/heightmap_max_layers = null
+shader_parameter/heightmap_flip = null
+shader_parameter/uv1_scale = Vector3(1, 1, 1)
+shader_parameter/uv1_offset = null
+shader_parameter/uv2_scale = Vector3(1, 1, 1)
+shader_parameter/uv2_offset = null
+shader_parameter/texture_albedo = ExtResource("2_ipcc6")
+shader_parameter/texture_detail_ao = ExtResource("3_vtbap")

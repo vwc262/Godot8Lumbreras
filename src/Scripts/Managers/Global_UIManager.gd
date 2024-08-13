@@ -55,6 +55,7 @@ func set_ui_particular(particular_node: Node):
 	
 func mostrar_particular():
 	if ui_particular != null:
+		SceneManager.scroll_scene(SceneManager.TIPO_NIVEL.PARTICULAR)
 		ui_particular.visible = true
 		ui_particular.init_particular(true)
 

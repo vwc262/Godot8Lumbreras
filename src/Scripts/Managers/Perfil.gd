@@ -1,15 +1,17 @@
 extends Node
 #region Editor variables
-@onready var btn_lista_sitios: Button = $DynamicMargins/ScrollContainer/HBoxContainer/PerfilWindow/VB_MainContainer/main_container/ListaSitiosContainer/VBoxContainer/botones_container/HBoxContainer/BTN_ListaSitios
-@onready var lista_sitios: Control = $DynamicMargins/ScrollContainer/HBoxContainer/PerfilWindow/VB_MainContainer/main_container/ListaSitiosContainer/VBoxContainer/PanelContainer/ListaSitios
-@onready var header_fondo: TextureRect = $DynamicMargins/ScrollContainer/HBoxContainer/PerfilWindow/VB_MainContainer/header_container/header_fondo
-@onready var dynamic_margins = $DynamicMargins
-@onready var perfil: Node3D = $DynamicMargins/ScrollContainer/HBoxContainer/PerfilWindow/VB_MainContainer/main_container/SubViewportContainer/SubViewport/Perfil
+@onready var scroll_container: ScrollContainer = $ScrollContainer
+@onready var btn_lista_sitios: Button = $ScrollContainer/HBoxContainer/PerfilWindow/VB_MainContainer/main_container/ListaSitiosContainer/VBoxContainer/botones_container/HBoxContainer/BTN_ListaSitios
+@onready var lista_sitios: Control = $ScrollContainer/HBoxContainer/PerfilWindow/VB_MainContainer/main_container/ListaSitiosContainer/VBoxContainer/PanelContainer/ListaSitios
+@onready var header_fondo: TextureRect = $ScrollContainer/HBoxContainer/PerfilWindow/VB_MainContainer/header_container/header_fondo
+@onready var perfil: Node3D = $ScrollContainer/WindowsContainer/PerfilWindow/VB_MainContainer/main_container/VBoxContainer/SubViewportContainer/SubViewport/Perfil
+
 @export var perfil_world_environment : Environment
 @export var particular_world_environment : Environment
-@onready var scroll_container: ScrollContainer = $DynamicMargins/ScrollContainer
-@onready var windows_container: HBoxContainer = $DynamicMargins/ScrollContainer/WindowsContainer
-@onready var ui_particular: Control = $DynamicMargins/ScrollContainer/WindowsContainer/ParticularWindow/UiParticular
+@onready var windows_container: HBoxContainer = $ScrollContainer/WindowsContainer
+@onready var ui_particular: Control = $ScrollContainer/WindowsContainer/ParticularWindow/UiParticular
+@onready var sub_viewport_container: SubViewportContainer = $ScrollContainer/WindowsContainer/PerfilWindow/VB_MainContainer/main_container/VBoxContainer/SubViewportContainer
+@onready var background_flip_book: ColorRect = $ScrollContainer/WindowsContainer/PerfilWindow/VB_MainContainer/main_container/VBoxContainer/BackgroundFlipBook
 
 #endregion
 
@@ -21,19 +23,24 @@ signal in_particular
 
 var is_hidden = false  # Variable para rastrear el estado del contenedor
 
-func _ready():
+	
+		
+	
+func _ready() -> void:
+	SceneManager.add_scene(SceneManager.idScenePerfil,perfil)
+	SceneManager.add_subviewport_reference(SceneManager.TIPO_NIVEL.PERFIL,sub_viewport_container)
 	SceneManager.set_scroll_reference(scroll_container)	
 	AdjustWindowsSize()		
-	#SceneManager.set_initial_window()
-	# Conectar señales a las funciones correspondientes
+	# Conectar señasles a las funciones correspondientes
 	UIManager.set_ui_particular(ui_particular)  # Establecer la referencia a ui_particular	
+	SceneManager.set_initial_window()
+		
 	
-
 func AdjustWindowsSize():
 	var size = get_viewport().size	
-	SceneManager.set_viewport_size_x(size.x)
+	SceneManager.set_viewport_size_x(size.x )
 	for window : PanelContainer in windows_container.get_children():
-		window.custom_minimum_size.x = size.x		
+		window.custom_minimum_size.x = size.x			
 
 func _on_button_pressed():
 	NavigationManager.emit_signal('ResetCameraPosition')
@@ -73,9 +80,22 @@ func _on_finish_tween():
 	
 
 func _mostrar_world():
-	SceneManager.load_scene(SceneManager.idScenePerfil)
-	SceneManager.set_world_environment(SceneManager.TIPO_NIVEL.PERFIL)
+	SceneManager.scroll_scene(SceneManager.TIPO_NIVEL.PERFIL,SceneManager.idScenePerfil)
+	
 
 
 func _on_btn_close_popup_pressed():
 	UIManager.popUpWindow.hide_popup()
+
+
+func _on_scroll_container_ready() -> void:
+	SceneManager.set_initial_window()	
+
+
+func _on_ready() -> void:
+	SceneManager.set_initial_window()	
+
+
+func _on_sub_viewport_container_visibility_changed() -> void:
+	background_flip_book.visible = true if !sub_viewport_container.visible else false
+	

@@ -1,5 +1,6 @@
-[gd_scene load_steps=11 format=3 uid="uid://d4nifki50ahlx"]
+[gd_scene load_steps=12 format=3 uid="uid://d4nifki50ahlx"]
 
+[ext_resource type="Material" uid="uid://bexyx5nrr46o1" path="res://Recursos/Materiales/Barrier.tres" id="1_kyf4m"]
 [ext_resource type="PackedScene" uid="uid://cee4bu1xjnrjv" path="res://Recursos/Meshes/Particular_Cutzamala_PBR5/Cutzamala_PBR5_Berros_RecursosMaster.blend" id="1_pynes"]
 [ext_resource type="Script" path="res://Scripts/CutzamalaDissolve.gd" id="2_wou4d"]
 [ext_resource type="Material" uid="uid://clpnronp88bg2" path="res://Recursos/Materiales/ParticularUnlit_sec1.tres" id="4_iyxlv"]
@@ -7,14 +8,16 @@
 [ext_resource type="Material" uid="uid://d313nvgrewkot" path="res://Recursos/Materiales/ParticularGrass_Tileable.tres" id="5_w6ac8"]
 [ext_resource type="Material" uid="uid://cuffxlgpe8lrr" path="res://Recursos/Materiales/ParticularMuro2_Tileable.tres" id="6_3hd1d"]
 [ext_resource type="Material" uid="uid://cwdb0xo47d1bn" path="res://Recursos/Materiales/ParticularUnlit_tuberias_material.tres" id="7_8dcvh"]
-[ext_resource type="Material" uid="uid://b01vby7vqyu2y" path="res://Recursos/Materiales/ParticularPlaster_Tileable.tres" id="8_pkd8q"]
-[ext_resource type="Material" uid="uid://bonstudrdm2ew" path="res://Recursos/Materiales/ParticularUnlit_Gasto_material.tres" id="8_q8xrq"]
+[ext_resource type="Material" path="res://Recursos/Materiales/ParticularPlaster_Tileable.tres" id="8_pkd8q"]
+[ext_resource type="Material" path="res://Recursos/Materiales/ParticularUnlit_Gasto_material.tres" id="8_q8xrq"]
 [ext_resource type="Material" uid="uid://dc4d50uixwgaw" path="res://Recursos/Materiales/ParticularRoof_Tileable.tres" id="10_0p4qj"]
 
 [node name="Generico" type="Node3D"]
 
 [node name="CSGBox3D" type="CSGBox3D" parent="."]
+transform = Transform3D(15.3787, 0, 0, 0, 6.58029, 0, 0, 0, 12.7871, 0, 60.1369, -6.19295)
 visible = false
+material_override = ExtResource("1_kyf4m")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.722967, 0.387336, -0.572092, 0, 0.82806, 0.560639, 0.690882, 0.405324, -0.59866, 0, 0, 0)
@@ -41,6 +44,9 @@ material_override = ExtResource("4_ya2r5")
 
 [node name="Desnivel_002" parent="Cutzamala_PBR5_Berros_RecursosMaster" index="2"]
 material_override = ExtResource("4_iyxlv")
+
+[node name="Barrera_Particular" parent="Cutzamala_PBR5_Berros_RecursosMaster" index="4"]
+material_override = ExtResource("1_kyf4m")
 
 [node name="Pasto" parent="Cutzamala_PBR5_Berros_RecursosMaster" index="5"]
 material_override = ExtResource("5_w6ac8")

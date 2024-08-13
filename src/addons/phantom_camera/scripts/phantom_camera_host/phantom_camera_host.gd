@@ -128,8 +128,9 @@ func _get_configuration_warnings() -> PackedStringArray:
 func _enter_tree() -> void:
 
 	#_phantom_camera_manager = get_tree().root.get_node(_constants.PCAM_MANAGER_NODE_NAME)
-	_phantom_camera_manager = get_tree().current_scene.get_node(_constants.PCAM_MANAGER_NODE_NAME)
-
+	#_phantom_camera_manager = get_tree().current_scene.get_node(_constants.PCAM_MANAGER_NODE_NAME)
+	_phantom_camera_manager = PhantomCameraManager
+	
 	var parent = get_parent()
 
 	if parent is Camera2D or parent.is_class("Camera3D"): ## Note: To support disable_3d export templates for 2D projects, this is purposely not strongly typed.

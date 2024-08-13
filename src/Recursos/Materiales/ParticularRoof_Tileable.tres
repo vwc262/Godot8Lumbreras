@@ -8,7 +8,7 @@
 render_priority = 0
 shader = ExtResource("1_wyscs")
 shader_parameter/albedo = Color(1, 1, 1, 1)
-shader_parameter/tile_size = 9.0
+shader_parameter/tile_size = 5.0
 shader_parameter/ao_texture_channel = null
 shader_parameter/ao_light_affect = null
 shader_parameter/heightmap_scale = null

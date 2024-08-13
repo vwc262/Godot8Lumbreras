@@ -141,7 +141,7 @@ func reprint():
 	_on_header_btn_lista_sitios_pressed()
 
 # Función que compara y actualiza el sitio seleccionado
-func _compare_and_print_selected_site(parametro):
+func _compare_and_print_selected_site(_parametro):
 	var last_selected_id = NavigationManager.last_selected
 	for sitio in datos_sitios:
 		if sitio.id_estacion == last_selected_id:
@@ -151,11 +151,7 @@ func _compare_and_print_selected_site(parametro):
 # Función para establecer los datos del sitio seleccionado
 func set_datos_particular(sitio: Estacion):
 	lbl_header_nombre.text = sitio.nombre
-
-	if sitio.enlace in [1, 2, 3]:
-		texture_enlace.texture = texture_online
-	else:
-		texture_enlace.texture = texture_offline
+	texture_enlace.texture = texture_online if sitio.is_estacion_en_linea() else texture_offline
 
 	for _signal in sitio.signals.values():
 		var unidad = unidades.get(_signal.tipo_signal, "")
@@ -204,11 +200,7 @@ func set_progress_bar(_signal: Señal, unidad):
 # Función para inicializar los parámetros particulares
 func init_particular(is_particular):
 	if is_particular:
-		fondo_render_final.visible = false
-		fondo_render.visible = true
-		fondo_render_material.set("shader_parameter/progress", 0)
-		var tweenFlipbook = TweenManager.init_tween(On_FlipbookAnimationEnded)
-		tweenFlipbook.tween_property(fondo_render_material, "shader_parameter/progress", 29, 1.6)
+		_on_datos_actualizados(GlobalData.get_data())
 
 # Función que se llama al terminar la animación del flipbook
 func On_FlipbookAnimationEnded():
@@ -265,20 +257,20 @@ func _on_finish_tween_sitios():
 # Funcion para mostrar/ocultar el graficador
 func _on_btn_graficador_pressed():
 	SceneManager.scroll_scene(SceneManager.TIPO_NIVEL.GRAFICADOR,200)
-	if graficador_container.visible:
-		graficador_container.visible = false
-		graficador_datos.visible = false
-
-		modelo_3d_container.visible = true
-		datos_sitio.visible = true
-		btn_graficador_lbl.text = "Graficador"
-	else:
-		graficador_container.visible = true
-		graficador_datos.visible = true
-
-		modelo_3d_container.visible = false
-		datos_sitio.visible = false
-		btn_graficador_lbl.text = "Particular"
+	#if graficador_container.visible:
+		#graficador_container.visible = false
+		#graficador_datos.visible = false
+#
+		#modelo_3d_container.visible = true
+		#datos_sitio.visible = true
+		#btn_graficador_lbl.text = "Graficador"
+	#else:
+		#graficador_container.visible = true
+		#graficador_datos.visible = true
+#
+		#modelo_3d_container.visible = false
+		#datos_sitio.visible = false
+		#btn_graficador_lbl.text = "Particular"
 
 func _fill_days():
 	# Llenar el OptionButton de días del 1 al 31

@@ -22,7 +22,7 @@ var viewports_references = {}
 
 #region Funciones
 #Almacena las referencias de los particulares
-func add_scene(idSceneKey:int,scene:Node3D):
+func add_scene(idSceneKey:int,scene:Node):
 	scenes[idSceneKey] = scene
 	pass
 	
@@ -49,10 +49,14 @@ func get_scroll_step() -> float:
 	return viewport_size_x / total_windows	
 
 func scroll_scene(tipo_nivel:TIPO_NIVEL,idKeySceneToLoad):
-	var step = get_scroll_step()
-	var scroll_amount : float = step * tipo_nivel
-	var tweenScroll = TweenManager.init_tween(on_scroll_finished.bind(tipo_nivel,true,idKeySceneToLoad))
-	tweenScroll.tween_property(scroll_reference, "scroll_horizontal", scroll_amount, .35)	
+	var nivel_existente = scenes.has(idKeySceneToLoad)
+	if nivel_existente:
+		var step = get_scroll_step()
+		var scroll_amount : float = step * tipo_nivel
+		var tweenScroll = TweenManager.init_tween(on_scroll_finished.bind(tipo_nivel,true,idKeySceneToLoad))
+		tweenScroll.tween_property(scroll_reference, "scroll_horizontal", scroll_amount, .35)
+	else:
+		UIManager.popUpWindow.showPopUp("En construcción")		
 	
 	
 func set_initial_window():
@@ -89,7 +93,8 @@ func add_subviewport_reference(keyScene:int,viewport:Control):
 	viewports_references[keyScene] = viewport 		
 
 func set_viewport_visibility(sceneKey,makeVisible):
-	viewports_references[sceneKey].visible = makeVisible
+	if viewports_references.has(sceneKey):
+		viewports_references[sceneKey].visible = makeVisible
 	
 			
 			

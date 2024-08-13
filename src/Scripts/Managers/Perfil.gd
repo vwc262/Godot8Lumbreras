@@ -1,9 +1,9 @@
 extends Node
 #region Editor variables
 @onready var scroll_container: ScrollContainer = $ScrollContainer
-@onready var btn_lista_sitios: Button = $ScrollContainer/HBoxContainer/PerfilWindow/VB_MainContainer/main_container/ListaSitiosContainer/VBoxContainer/botones_container/HBoxContainer/BTN_ListaSitios
-@onready var lista_sitios: Control = $ScrollContainer/HBoxContainer/PerfilWindow/VB_MainContainer/main_container/ListaSitiosContainer/VBoxContainer/PanelContainer/ListaSitios
-@onready var header_fondo: TextureRect = $ScrollContainer/HBoxContainer/PerfilWindow/VB_MainContainer/header_container/header_fondo
+@onready var btn_lista_sitios: Button = $ScrollContainer/WindowsContainer/PerfilWindow/VB_MainContainer/main_container/ListaSitiosContainer/VBoxContainer/botones_container/HBoxContainer/BTN_ListaSitios
+@onready var lista_sitios: Control = $ScrollContainer/WindowsContainer/PerfilWindow/VB_MainContainer/main_container/ListaSitiosContainer/VBoxContainer/PanelContainer/ListaSitios
+@onready var header_fondo: TextureRect = $ScrollContainer/WindowsContainer/PerfilWindow/VB_MainContainer/header_container/header_fondo
 @onready var perfil: Node3D = $ScrollContainer/WindowsContainer/PerfilWindow/VB_MainContainer/main_container/VBoxContainer/SubViewportContainer/SubViewport/Perfil
 
 @export var perfil_world_environment : Environment

@@ -35,7 +35,7 @@ func update_Estaciones(jsonData):
 
 # Función para obtener los datos
 func get_data() -> Array[Estacion]:
-	var estaciones :Array[Estacion] 
+	var estaciones :Array[Estacion] = []
 	estaciones.assign(estacionesDict.values())
 	return estaciones	
 

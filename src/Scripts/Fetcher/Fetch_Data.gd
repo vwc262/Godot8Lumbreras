@@ -34,7 +34,7 @@ func iniciar_fetch_api():
 	request(url_api_update)
 	pass
 
-func _solicitud_completada(result, codigo_respuesta, headers, body):	
+func _solicitud_completada(result, codigo_respuesta, _headers, body):	
 	if not usando_datos_reales:
 		#_update_data_global(generar_datos_aleatorios(GlobalData.get_data()))
 		return

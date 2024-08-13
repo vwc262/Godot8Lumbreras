@@ -37,7 +37,7 @@ func _init(jsonData):
 func is_estacion_en_linea() -> bool:	
 	var current_time = Time.get_unix_time_from_datetime_dict(Time.get_datetime_dict_from_system(false))
 	var estacion_time  = Time.get_unix_time_from_datetime_string(tiempo)
-	var difference_minutes = (current_time - estacion_time) / 60
+	var difference_minutes = (current_time - estacion_time) / 60.0
 	if(difference_minutes > tolerancia_minutos):
 		return false			
 	return  enlace in [1, 2, 3] 

@@ -1,7 +1,7 @@
 extends Control
 
 @onready var sub_viewport_container: SubViewportContainer = $VBoxContainer/main_container/modelo_3d_container/SubViewportContainer
-@onready var background_flip_book: ColorRect = $VBoxContainer/main_container/modelo_3d_container/BackgroundFlipBook
+@onready var background_flip_book: ColorRect = $VBoxContainer/main_container/modelo_3d_container/BackgroundFlipBook2
 
 @onready var btn_lista = $VBoxContainer/main_container/detalles_container/VBoxContainer/botones_container/HBoxContainer/btn_lista
 @onready var sitio_detalles = $VBoxContainer/main_container/detalles_container/VBoxContainer/sitio_detalles

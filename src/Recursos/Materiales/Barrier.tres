@@ -1,20 +1,3 @@
-[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://bexyx5nrr46o1"]
-
-[ext_resource type="Shader" path="res://Recursos/Materiales/Barrier_shader.gdshader" id="1_jmrby"]
+[gd_resource type="ShaderMaterial" format=3 uid="uid://bexyx5nrr46o1"]
 
 [resource]
-render_priority = 0
-shader = ExtResource("1_jmrby")
-shader_parameter/scale = 110.0
-shader_parameter/line_speed = 1.0
-shader_parameter/ripple_speed = 1.0
-shader_parameter/line_color = Color(0.2, 1, 1, 1)
-shader_parameter/ripple_color = Color(0.6, 0.7, 1, 0.7)
-shader_parameter/surface_color = Color(0.01, 0.18, 0.7, 0.4)
-shader_parameter/sphere_size = 1.5
-shader_parameter/pos1 = Vector3(0, 0, 0)
-shader_parameter/pos2 = Vector3(10000, 10000, 10000)
-shader_parameter/pos3 = Vector3(10000, 10000, 10000)
-shader_parameter/pos4 = Vector3(10000, 10000, 10000)
-shader_parameter/pos5 = Vector3(10000, 10000, 10000)
-shader_parameter/pos6 = Vector3(10000, 10000, 10000)

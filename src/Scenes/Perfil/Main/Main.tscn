@@ -114,6 +114,7 @@ size = Vector2i(2, 2)
 render_target_update_mode = 0
 
 [node name="Perfil" parent="ScrollContainer/WindowsContainer/PerfilWindow/VB_MainContainer/main_container/VBoxContainer/SubViewportContainer/SubViewport" instance=ExtResource("2_2gqy4")]
+visible = false
 
 [node name="BackgroundFlipBook" parent="ScrollContainer/WindowsContainer/PerfilWindow/VB_MainContainer/main_container/VBoxContainer" instance=ExtResource("8_txe4o")]
 layout_mode = 2

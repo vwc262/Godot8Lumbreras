@@ -8,13 +8,13 @@ uniform sampler2D texture_clouds : source_color,filter_linear_mipmap,repeat_enab
 uniform sampler2D texture_heightmap : hint_default_black,filter_linear_mipmap,repeat_enable;
 uniform float heightmap_scale;
 uniform float tile_size = 1;
-uniform int heightmap_min_layers;
-uniform int heightmap_max_layers;
+//uniform int heightmap_min_layers;
+//uniform int heightmap_max_layers;
 uniform vec2 heightmap_flip;
 uniform vec3 uv1_scale;
 uniform vec3 uv1_offset;
-uniform vec3 uv2_scale;
-uniform vec3 uv2_offset;
+//uniform vec3 uv2_scale;
+//uniform vec3 uv2_offset;
 uniform vec2 Direction = vec2(1.0,0.0);
 uniform float Speed = 0.02;
 

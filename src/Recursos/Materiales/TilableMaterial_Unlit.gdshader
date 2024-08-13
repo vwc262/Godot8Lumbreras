@@ -3,22 +3,17 @@ shader_type spatial;
 render_mode unshaded;
 uniform vec4 albedo : source_color;
 uniform sampler2D texture_albedo : source_color,filter_linear_mipmap,repeat_enable;
-uniform float point_size : hint_range(0,128);
+
 uniform sampler2D texture_detail_ao : hint_default_white, filter_linear_mipmap,repeat_enable;
-uniform sampler2D mask_normal_texture : hint_roughness_r,filter_linear_mipmap,repeat_enable;
 uniform float tile_size = 1;
 uniform sampler2D texture_ambient_occlusion : hint_default_white, filter_linear_mipmap,repeat_enable;
 uniform vec4 ao_texture_channel;
 uniform float ao_light_affect;
 uniform sampler2D texture_heightmap : hint_default_black,filter_linear_mipmap,repeat_enable;
 uniform float heightmap_scale;
-uniform int heightmap_min_layers;
-uniform int heightmap_max_layers;
 uniform vec2 heightmap_flip;
 uniform vec3 uv1_scale;
 uniform vec3 uv1_offset;
-uniform vec3 uv2_scale;
-uniform vec3 uv2_offset;
 
 
 

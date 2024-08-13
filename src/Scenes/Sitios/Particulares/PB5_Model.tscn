@@ -1,0 +1,39 @@
+[gd_scene load_steps=6 format=3 uid="uid://d4nifki50ahlx"]
+
+[ext_resource type="PackedScene" uid="uid://cee4bu1xjnrjv" path="res://Recursos/Meshes/Particular_Cutzamala_PBR5/Cutzamala_PBR5_Berros_RecursosMaster.blend" id="1_lw3b4"]
+[ext_resource type="Script" path="res://Scripts/CutzamalaDissolve.gd" id="2_1lfsx"]
+[ext_resource type="Material" uid="uid://bc661come1l76" path="res://Recursos/Materiales/ParticularMuro_PBR5_Tileable.tres" id="3_m05u4"]
+[ext_resource type="Texture2D" uid="uid://b1cykwj3hjs4l" path="res://Recursos/Meshes/Particular_Cutzamala_PBR5/Texturas_B5_Particular/bake _albedo_PISO.png" id="4_8tbed"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_k6phu"]
+albedo_texture = ExtResource("4_8tbed")
+
+[node name="Generico" type="Node3D"]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.722967, 0.387336, -0.572092, 0, 0.82806, 0.560639, 0.690882, 0.405324, -0.59866, 0, 0, 0)
+visible = false
+light_color = Color(0.809459, 0.795292, 0.517658, 1)
+light_energy = 3.5
+light_indirect_energy = 0.4
+light_volumetric_fog_energy = 1.25
+light_angular_distance = 2.56
+shadow_enabled = true
+shadow_bias = 0.0
+shadow_normal_bias = 10.0
+directional_shadow_split_1 = 0.545
+directional_shadow_split_2 = 0.274
+directional_shadow_split_3 = 0.552
+directional_shadow_fade_start = 1.0
+
+[node name="Cutzamala_PBR5_Berros_RecursosMaster" parent="." instance=ExtResource("1_lw3b4")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, 0)
+script = ExtResource("2_1lfsx")
+
+[node name="Muros" parent="Cutzamala_PBR5_Berros_RecursosMaster" index="2"]
+material_override = ExtResource("3_m05u4")
+
+[node name="Desnivel_002" parent="Cutzamala_PBR5_Berros_RecursosMaster" index="3"]
+material_override = SubResource("StandardMaterial3D_k6phu")
+
+[editable path="Cutzamala_PBR5_Berros_RecursosMaster"]

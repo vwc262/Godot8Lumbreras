@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://d4nifki50ahlx"]
+[gd_scene load_steps=9 format=3 uid="uid://d4nifki50ahlx"]
 
 [ext_resource type="PackedScene" uid="uid://cee4bu1xjnrjv" path="res://Recursos/Meshes/Particular_Cutzamala_PBR5/Cutzamala_PBR5_Berros_RecursosMaster.blend" id="1_pynes"]
 [ext_resource type="Script" path="res://Scripts/CutzamalaDissolve.gd" id="2_wou4d"]
@@ -7,6 +7,7 @@
 [ext_resource type="Material" uid="uid://d313nvgrewkot" path="res://Recursos/Materiales/ParticularGrass_Tileable.tres" id="5_w6ac8"]
 [ext_resource type="Material" uid="uid://cuffxlgpe8lrr" path="res://Recursos/Materiales/ParticularMuro2_Tileable.tres" id="6_3hd1d"]
 [ext_resource type="Material" uid="uid://cwdb0xo47d1bn" path="res://Recursos/Materiales/ParticularUnlit_tuberias_material.tres" id="7_8dcvh"]
+[ext_resource type="Material" uid="uid://b01vby7vqyu2y" path="res://Recursos/Materiales/ParticularPlaster_Tileable.tres" id="8_pkd8q"]
 
 [node name="Generico" type="Node3D"]
 
@@ -47,5 +48,9 @@ material_override = ExtResource("6_3hd1d")
 
 [node name="Piso_001" parent="Cutzamala_PBR5_Berros_RecursosMaster" index="8"]
 material_override = ExtResource("7_8dcvh")
+
+[node name="Edificio_012" parent="Cutzamala_PBR5_Berros_RecursosMaster" index="10"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.92375, 5.65348, -12.4742)
+material_override = ExtResource("8_pkd8q")
 
 [editable path="Cutzamala_PBR5_Berros_RecursosMaster"]

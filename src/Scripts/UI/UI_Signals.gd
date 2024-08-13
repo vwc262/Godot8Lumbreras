@@ -73,17 +73,18 @@ func manejar_btn_presionado(mostrar_graficador: bool):
 	UIManager.seleccionar_sitio_id(id_estacion)
 	
 	if UIManager.current_selected_site:
-		var nivel_encontrado = SceneManager.load_scene(id_estacion)
-		if nivel_encontrado:
-			if mostrar_graficador:
-				UIManager.mostrar_graficador()
-			else:
-				UIManager.ocultar_graficador()
-			UIManager.mostrar_particular()
-			SceneManager.set_world_environment(SceneManager.TIPO_NIVEL.PARTICULAR)
-
-			# Cambiar el texto del botón según la visibilidad del graficador
-			_actualizar_texto_boton_particular()
+		SceneManager.scroll_scene(SceneManager.TIPO_NIVEL.PARTICULAR,id_estacion)
+		#var nivel_encontrado = SceneManager.load_scene(id_estacion)
+		#if nivel_encontrado:
+			#if mostrar_graficador:
+				#UIManager.mostrar_graficador()
+			#else:
+				#UIManager.ocultar_graficador()
+			#UIManager.mostrar_particular()
+			#SceneManager.set_world_environment(SceneManager.TIPO_NIVEL.PARTICULAR)
+#
+			## Cambiar el texto del botón según la visibilidad del graficador
+			#_actualizar_texto_boton_particular()
 
 # Llamada al presionar el botón de graficador
 func _on_btn_graficador_pressed():

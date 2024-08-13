@@ -131,10 +131,10 @@ func _on_finish_tween():
 
 # Función que maneja el botón de inicio
 func _on_btn_home_pressed():
-	#NavigationManager.emit_signal('ResetCameraPosition')
-	#UIManager.deselect_all_sitios()
+	NavigationManager.emit_signal('ResetCameraPosition')
+	UIManager.deselect_all_sitios()
 	#UIManager.ocultar_particular()
-	SceneManager.scroll_scene(SceneManager.TIPO_NIVEL.PERFIL)
+	SceneManager.scroll_scene(SceneManager.TIPO_NIVEL.PERFIL,SceneManager.idScenePerfil)	
 
 func reprint():
 	_compare_and_print_selected_site(0)
@@ -264,6 +264,7 @@ func _on_finish_tween_sitios():
 
 # Funcion para mostrar/ocultar el graficador
 func _on_btn_graficador_pressed():
+	SceneManager.scroll_scene(SceneManager.TIPO_NIVEL.GRAFICADOR,200)
 	if graficador_container.visible:
 		graficador_container.visible = false
 		graficador_datos.visible = false

@@ -34,11 +34,12 @@ func _on_btn_lista_sitio_pressed():
 	if UIManager.is_sitio_selected(self):
 		print("sitio seleccionado")
 	else:
-		var nivel_encontrado = SceneManager.load_scene(id_Estacion)
-		if(nivel_encontrado):			
-			UIManager.seleccionar_lista_sitio(self)
-			NavigationManager.set_lastid_selected(id_Estacion)
-			UIManager.reprint_ui_particular()
+		SceneManager.scroll_scene(SceneManager.TIPO_NIVEL.PARTICULAR,id_Estacion)
+		#var nivel_encontrado = SceneManager.load_scene(id_Estacion)
+		#if(nivel_encontrado):			
+			#UIManager.seleccionar_lista_sitio(self)
+			#NavigationManager.set_lastid_selected(id_Estacion)
+			#UIManager.reprint_ui_particular()
 
 func seleccionar():
 	sitio_fondo_seleccionado.visible = true

@@ -1,6 +1,5 @@
 extends Node
 
-
 #region Variables
 var scenes = {}
 var idScenePerfil = 100

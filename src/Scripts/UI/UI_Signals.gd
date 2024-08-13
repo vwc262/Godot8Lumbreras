@@ -91,6 +91,7 @@ func manejar_btn_presionado(_mostrar_graficador: bool):
 # Llamada al presionar el botón de graficador
 func _on_btn_graficador_pressed():
 	#manejar_btn_presionado(true)
+	NavigationManager.set_lastid_selected(id_estacion)
 	SceneManager.scroll_scene(SceneManager.TIPO_NIVEL.GRAFICADOR,SceneManager.idSceneGraficador)
 
 # Llamada al presionar el botón de particular

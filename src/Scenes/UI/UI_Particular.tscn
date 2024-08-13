@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://mr5ipvv85b1"]
+[gd_scene load_steps=29 format=3 uid="uid://mr5ipvv85b1"]
 
 [ext_resource type="Texture2D" uid="uid://c1ich45dgonk4" path="res://Recursos/UI/img/Encabezado_B_Submenu/EncabezadoB_base.png" id="1_gat4c"]
 [ext_resource type="Script" path="res://Scenes/UI/UI_Particular.gd" id="1_wmuh6"]
@@ -20,7 +20,6 @@
 [ext_resource type="PackedScene" uid="uid://qofjfvol201e" path="res://Scenes/Sitios/Particulares/PB5_ParticularScene.tscn" id="10_l4wa0"]
 [ext_resource type="Texture2D" uid="uid://bcapbu6jnbtom" path="res://Recursos/UI/img/Encabezado_B_Submenu/EncabezadoB_BotonLista.png" id="11_3q3kn"]
 [ext_resource type="Texture2D" uid="uid://c554rmtw6fjo5" path="res://Recursos/UI/img/Encabezado_A_submenu/Lista_detalles_Submenu_Contenedor.png" id="12_64k7e"]
-[ext_resource type="PackedScene" uid="uid://bosmqfxs2ibvy" path="res://Scenes/Plotter/ChartControl.tscn" id="14_5bas4"]
 [ext_resource type="PackedScene" uid="uid://cp14ueov0c5ee" path="res://Scenes/UI/Loading_Scene.tscn" id="17_iw8u2"]
 [ext_resource type="Texture2D" uid="uid://bliv3oeaqcnc7" path="res://Recursos/UI/img/Encabezado_B_Submenu/Boton_Izq.png" id="20_s1pqb"]
 [ext_resource type="PackedScene" uid="uid://cgcyx32icu15x" path="res://Scenes/UI/UI_Particular_Sitio_lista.tscn" id="20_stxyf"]
@@ -182,19 +181,6 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("9_cuo7b")
 expand_mode = 1
-
-[node name="graficador_container" type="Panel" parent="VBoxContainer/main_container"]
-visible = false
-self_modulate = Color(1, 1, 1, 0)
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="ChartControl" parent="VBoxContainer/main_container/graficador_container" instance=ExtResource("14_5bas4")]
-layout_mode = 1
 
 [node name="modelo_3d_container" type="Panel" parent="VBoxContainer/main_container"]
 self_modulate = Color(1, 1, 1, 0)
@@ -649,157 +635,6 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/font_size = 30
 text = "00:00 hrs, 00/00/0000"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="graficador_datos" type="VBoxContainer" parent="VBoxContainer/main_container/detalles_container/VBoxContainer/sitio_detalles"]
-visible = false
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 94.0
-offset_top = 20.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="selector_fecha_container" type="HBoxContainer" parent="VBoxContainer/main_container/detalles_container/VBoxContainer/sitio_detalles/graficador_datos"]
-layout_mode = 2
-size_flags_vertical = 3
-
-[node name="Label" type="Label" parent="VBoxContainer/main_container/detalles_container/VBoxContainer/sitio_detalles/graficador_datos/selector_fecha_container"]
-layout_mode = 2
-theme_override_font_sizes/font_size = 40
-text = "Fecha:"
-
-[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/main_container/detalles_container/VBoxContainer/sitio_detalles/graficador_datos/selector_fecha_container"]
-layout_mode = 2
-size_flags_horizontal = 6
-
-[node name="dia_container" type="Panel" parent="VBoxContainer/main_container/detalles_container/VBoxContainer/sitio_detalles/graficador_datos/selector_fecha_container/HBoxContainer"]
-self_modulate = Color(1, 1, 1, 0)
-custom_minimum_size = Vector2(135, 0)
-layout_mode = 2
-
-[node name="fondo_dia" type="TextureRect" parent="VBoxContainer/main_container/detalles_container/VBoxContainer/sitio_detalles/graficador_datos/selector_fecha_container/HBoxContainer/dia_container"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("12_64k7e")
-expand_mode = 1
-stretch_mode = 4
-
-[node name="option_dia" type="OptionButton" parent="VBoxContainer/main_container/detalles_container/VBoxContainer/sitio_detalles/graficador_datos/selector_fecha_container/HBoxContainer/dia_container"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_font_sizes/font_size = 35
-flat = true
-alignment = 1
-icon_alignment = 1
-
-[node name="Label" type="Label" parent="VBoxContainer/main_container/detalles_container/VBoxContainer/sitio_detalles/graficador_datos/selector_fecha_container/HBoxContainer"]
-layout_mode = 2
-theme_override_font_sizes/font_size = 45
-text = "/"
-
-[node name="mes_container" type="Panel" parent="VBoxContainer/main_container/detalles_container/VBoxContainer/sitio_detalles/graficador_datos/selector_fecha_container/HBoxContainer"]
-self_modulate = Color(1, 1, 1, 0)
-custom_minimum_size = Vector2(250, 0)
-layout_mode = 2
-
-[node name="fondo_mes" type="TextureRect" parent="VBoxContainer/main_container/detalles_container/VBoxContainer/sitio_detalles/graficador_datos/selector_fecha_container/HBoxContainer/mes_container"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("12_64k7e")
-expand_mode = 1
-
-[node name="option_mes" type="OptionButton" parent="VBoxContainer/main_container/detalles_container/VBoxContainer/sitio_detalles/graficador_datos/selector_fecha_container/HBoxContainer/mes_container"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_font_sizes/font_size = 35
-flat = true
-alignment = 1
-icon_alignment = 1
-item_count = 1
-selected = 0
-popup/item_0/text = "Noviembre"
-popup/item_0/id = 0
-
-[node name="Label2" type="Label" parent="VBoxContainer/main_container/detalles_container/VBoxContainer/sitio_detalles/graficador_datos/selector_fecha_container/HBoxContainer"]
-layout_mode = 2
-theme_override_font_sizes/font_size = 45
-text = "/"
-
-[node name="año_container" type="Panel" parent="VBoxContainer/main_container/detalles_container/VBoxContainer/sitio_detalles/graficador_datos/selector_fecha_container/HBoxContainer"]
-self_modulate = Color(1, 1, 1, 0)
-custom_minimum_size = Vector2(135, 0)
-layout_mode = 2
-
-[node name="fondo_año" type="TextureRect" parent="VBoxContainer/main_container/detalles_container/VBoxContainer/sitio_detalles/graficador_datos/selector_fecha_container/HBoxContainer/año_container"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("12_64k7e")
-expand_mode = 1
-stretch_mode = 4
-
-[node name="option_año" type="OptionButton" parent="VBoxContainer/main_container/detalles_container/VBoxContainer/sitio_detalles/graficador_datos/selector_fecha_container/HBoxContainer/año_container"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_font_sizes/font_size = 35
-flat = true
-alignment = 1
-icon_alignment = 1
-fit_to_longest_item = false
-
-[node name="hora_container" type="Panel" parent="VBoxContainer/main_container/detalles_container/VBoxContainer/sitio_detalles/graficador_datos"]
-self_modulate = Color(1, 1, 1, 0)
-custom_minimum_size = Vector2(300, 0)
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 3
-
-[node name="TextureRect" type="TextureRect" parent="VBoxContainer/main_container/detalles_container/VBoxContainer/sitio_detalles/graficador_datos/hora_container"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("12_64k7e")
-expand_mode = 1
-
-[node name="lbl_hora" type="Label" parent="VBoxContainer/main_container/detalles_container/VBoxContainer/sitio_detalles/graficador_datos/hora_container"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_font_sizes/font_size = 30
-text = "14:53hrs"
 horizontal_alignment = 1
 vertical_alignment = 1
 

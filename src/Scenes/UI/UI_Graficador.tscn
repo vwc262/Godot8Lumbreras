@@ -1,0 +1,363 @@
+[gd_scene load_steps=14 format=3 uid="uid://ggu8wjqomq4"]
+
+[ext_resource type="Script" path="res://Scripts/UI/UI_Graficador.gd" id="1_i2lpi"]
+[ext_resource type="Texture2D" uid="uid://iy3aj6iuo7iq" path="res://Recursos/UI/img/Encabezado_A_submenu/EncabezadoA_base.png" id="2_y2kcr"]
+[ext_resource type="Texture2D" uid="uid://bliv3oeaqcnc7" path="res://Recursos/UI/img/Encabezado_B_Submenu/Boton_Izq.png" id="3_c62jl"]
+[ext_resource type="PackedScene" uid="uid://bosmqfxs2ibvy" path="res://Scenes/Plotter/ChartControl.tscn" id="3_nnaxr"]
+[ext_resource type="Texture2D" uid="uid://dgwbnce3hid3r" path="res://Recursos/UI/img/Encabezado_B_Submenu/Boton_Expandir_b.png" id="4_ywile"]
+[ext_resource type="Texture2D" uid="uid://4oojfxqr3gub" path="res://Recursos/UI/img/Encabezado_B_Submenu/Boton_Der.png" id="5_7265w"]
+[ext_resource type="Texture2D" uid="uid://bdck1ukjrrdlu" path="res://Recursos/UI/img/Encabezado_B_Submenu/EncabezadoB_Detalles.png" id="6_7qb2l"]
+[ext_resource type="Texture2D" uid="uid://c554rmtw6fjo5" path="res://Recursos/UI/img/Encabezado_A_submenu/Lista_detalles_Submenu_Contenedor.png" id="7_xbxuo"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0mx5s"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_odk8i"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_sssg5"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_v6qrn"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_gr6qk"]
+
+[node name="UiGraficador" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_i2lpi")
+
+[node name="Panel" type="Panel" parent="."]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 0
+
+[node name="header_container" type="Panel" parent="Panel/VBoxContainer"]
+custom_minimum_size = Vector2(0, 125)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_0mx5s")
+
+[node name="header_fondo" type="TextureRect" parent="Panel/VBoxContainer/header_container"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_y2kcr")
+expand_mode = 1
+
+[node name="lbl_nombre_sitio" type="Label" parent="Panel/VBoxContainer/header_container"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 55
+text = "nombre del sitio"
+horizontal_alignment = 1
+uppercase = true
+
+[node name="main_content" type="Panel" parent="Panel/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="ChartControl" parent="Panel/VBoxContainer/main_content" instance=ExtResource("3_nnaxr")]
+layout_mode = 1
+
+[node name="footer_container" type="PanelContainer" parent="Panel/VBoxContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel/VBoxContainer/footer_container"]
+layout_mode = 2
+
+[node name="botones_container" type="Panel" parent="Panel/VBoxContainer/footer_container/VBoxContainer"]
+self_modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel/VBoxContainer/footer_container/VBoxContainer/botones_container"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="btn_perfil" type="Button" parent="Panel/VBoxContainer/footer_container/VBoxContainer/botones_container/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 8
+focus_mode = 0
+icon = ExtResource("3_c62jl")
+flat = true
+
+[node name="lbl_bnt_perfil" type="Label" parent="Panel/VBoxContainer/footer_container/VBoxContainer/botones_container/HBoxContainer/btn_perfil"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 25
+text = "Perfil
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="btn_colapsar_lista" type="Button" parent="Panel/VBoxContainer/footer_container/VBoxContainer/botones_container/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 8
+focus_mode = 0
+icon = ExtResource("4_ywile")
+flat = true
+
+[node name="btn_particular" type="Button" parent="Panel/VBoxContainer/footer_container/VBoxContainer/botones_container/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 8
+focus_mode = 0
+icon = ExtResource("5_7265w")
+flat = true
+
+[node name="lbl_bnt_perfil" type="Label" parent="Panel/VBoxContainer/footer_container/VBoxContainer/botones_container/HBoxContainer/btn_particular"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 25
+text = "Particular
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="datos_graficador_container" type="Panel" parent="Panel/VBoxContainer/footer_container/VBoxContainer"]
+clip_contents = true
+custom_minimum_size = Vector2(0, 200)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_odk8i")
+
+[node name="datos_graficador_container_fondo" type="TextureRect" parent="Panel/VBoxContainer/footer_container/VBoxContainer/datos_graficador_container"]
+clip_contents = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("6_7qb2l")
+expand_mode = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel/VBoxContainer/footer_container/VBoxContainer/datos_graficador_container"]
+clip_contents = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 97.0
+offset_top = 21.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="fecha_container" type="Panel" parent="Panel/VBoxContainer/footer_container/VBoxContainer/datos_graficador_container/VBoxContainer"]
+clip_contents = true
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxEmpty_sssg5")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel/VBoxContainer/footer_container/VBoxContainer/datos_graficador_container/VBoxContainer/fecha_container"]
+clip_contents = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="lbl_fecha" type="Label" parent="Panel/VBoxContainer/footer_container/VBoxContainer/datos_graficador_container/VBoxContainer/fecha_container/HBoxContainer"]
+clip_contents = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "Fecha:"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel/VBoxContainer/footer_container/VBoxContainer/datos_graficador_container/VBoxContainer/fecha_container/HBoxContainer"]
+clip_contents = true
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+
+[node name="dia_container" type="Panel" parent="Panel/VBoxContainer/footer_container/VBoxContainer/datos_graficador_container/VBoxContainer/fecha_container/HBoxContainer/HBoxContainer"]
+clip_contents = true
+custom_minimum_size = Vector2(90, 50)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxEmpty_v6qrn")
+
+[node name="fondo_selector" type="TextureRect" parent="Panel/VBoxContainer/footer_container/VBoxContainer/datos_graficador_container/VBoxContainer/fecha_container/HBoxContainer/HBoxContainer/dia_container"]
+clip_contents = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("7_xbxuo")
+expand_mode = 1
+
+[node name="dia_selector" type="OptionButton" parent="Panel/VBoxContainer/footer_container/VBoxContainer/datos_graficador_container/VBoxContainer/fecha_container/HBoxContainer/HBoxContainer/dia_container"]
+clip_contents = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -39.5
+offset_top = -25.0
+offset_right = 39.5
+offset_bottom = 25.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 30
+flat = true
+alignment = 1
+fit_to_longest_item = false
+
+[node name="lbl_separador1" type="Label" parent="Panel/VBoxContainer/footer_container/VBoxContainer/datos_graficador_container/VBoxContainer/fecha_container/HBoxContainer/HBoxContainer"]
+clip_contents = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "/"
+
+[node name="mes_container" type="Panel" parent="Panel/VBoxContainer/footer_container/VBoxContainer/datos_graficador_container/VBoxContainer/fecha_container/HBoxContainer/HBoxContainer"]
+clip_contents = true
+custom_minimum_size = Vector2(220, 50)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxEmpty_v6qrn")
+
+[node name="fondo_selector" type="TextureRect" parent="Panel/VBoxContainer/footer_container/VBoxContainer/datos_graficador_container/VBoxContainer/fecha_container/HBoxContainer/HBoxContainer/mes_container"]
+clip_contents = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("7_xbxuo")
+expand_mode = 1
+
+[node name="mes_selector" type="OptionButton" parent="Panel/VBoxContainer/footer_container/VBoxContainer/datos_graficador_container/VBoxContainer/fecha_container/HBoxContainer/HBoxContainer/mes_container"]
+clip_contents = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -103.0
+offset_top = -25.0
+offset_right = 103.0
+offset_bottom = 25.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 30
+flat = true
+alignment = 1
+
+[node name="lbl_separador2" type="Label" parent="Panel/VBoxContainer/footer_container/VBoxContainer/datos_graficador_container/VBoxContainer/fecha_container/HBoxContainer/HBoxContainer"]
+clip_contents = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "/"
+
+[node name="año_container" type="Panel" parent="Panel/VBoxContainer/footer_container/VBoxContainer/datos_graficador_container/VBoxContainer/fecha_container/HBoxContainer/HBoxContainer"]
+clip_contents = true
+custom_minimum_size = Vector2(130, 50)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxEmpty_v6qrn")
+
+[node name="fondo_selector" type="TextureRect" parent="Panel/VBoxContainer/footer_container/VBoxContainer/datos_graficador_container/VBoxContainer/fecha_container/HBoxContainer/HBoxContainer/año_container"]
+clip_contents = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("7_xbxuo")
+expand_mode = 1
+
+[node name="año_selector" type="OptionButton" parent="Panel/VBoxContainer/footer_container/VBoxContainer/datos_graficador_container/VBoxContainer/fecha_container/HBoxContainer/HBoxContainer/año_container"]
+clip_contents = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -56.5
+offset_top = -25.0
+offset_right = 56.5
+offset_bottom = 25.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 30
+flat = true
+alignment = 1
+
+[node name="hora_container" type="Panel" parent="Panel/VBoxContainer/footer_container/VBoxContainer/datos_graficador_container/VBoxContainer"]
+clip_contents = true
+custom_minimum_size = Vector2(180, 60)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 6
+theme_override_styles/panel = SubResource("StyleBoxEmpty_gr6qk")
+
+[node name="hora_fondo" type="TextureRect" parent="Panel/VBoxContainer/footer_container/VBoxContainer/datos_graficador_container/VBoxContainer/hora_container"]
+clip_contents = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("7_xbxuo")
+expand_mode = 1
+
+[node name="lbl_fecha" type="Label" parent="Panel/VBoxContainer/footer_container/VBoxContainer/datos_graficador_container/VBoxContainer/hora_container"]
+clip_contents = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 30
+text = "15:30, hrs"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="visibility_changed" from="." to="." method="_on_visibility_changed"]
+[connection signal="pressed" from="Panel/VBoxContainer/footer_container/VBoxContainer/botones_container/HBoxContainer/btn_perfil" to="." method="_on_btn_perfil_pressed"]
+[connection signal="pressed" from="Panel/VBoxContainer/footer_container/VBoxContainer/botones_container/HBoxContainer/btn_colapsar_lista" to="." method="_on_btn_colapsar_lista_pressed"]
+[connection signal="pressed" from="Panel/VBoxContainer/footer_container/VBoxContainer/botones_container/HBoxContainer/btn_particular" to="." method="_on_btn_particular_pressed"]

@@ -39,7 +39,8 @@ func load_scene(idSceneKey:int):
 	return nivel_encontrado	
 
 func set_viewport_size_x(viewportsizeX):
-	viewport_size_x = viewportsizeX
+	viewport_size_x = viewportsizeX * total_windows
+	scroll_reference.get_h_scroll_bar().max_value = viewport_size_x
 
 func get_scroll_step() -> float:	
 	return viewport_size_x / total_windows	

@@ -4,6 +4,7 @@ extends Node
 #region Variables
 var scenes = {}
 var idScenePerfil = 100
+var idSceneGraficador = 200
 var world_environment : WorldEnvironment
 var perfil_environment: Environment
 var particular_environment: Environment
@@ -47,20 +48,22 @@ func set_viewport_size_x(viewportsizeX):
 func get_scroll_step() -> float:	
 	return viewport_size_x / total_windows	
 
-func scroll_scene(scene_key:TIPO_NIVEL):
+func scroll_scene(tipo_nivel:TIPO_NIVEL,idKeySceneToLoad):
 	var step = get_scroll_step()
-	var scroll_amount : float = step * scene_key
-	var tweenScroll = TweenManager.init_tween(on_scroll_finished.bind(scene_key,true))
-	tweenScroll.tween_property(scroll_reference, "scroll_horizontal", scroll_amount, .5)	
+	var scroll_amount : float = step * tipo_nivel
+	var tweenScroll = TweenManager.init_tween(on_scroll_finished.bind(tipo_nivel,true,idKeySceneToLoad))
+	tweenScroll.tween_property(scroll_reference, "scroll_horizontal", scroll_amount, .35)	
 	
 	
 func set_initial_window():
-	scroll_scene(TIPO_NIVEL.PERFIL)	
+	scroll_scene(TIPO_NIVEL.PERFIL,idScenePerfil)	
 	
-func on_scroll_finished(tipo_nivel,makeVisible):
+func on_scroll_finished(tipo_nivel,makeVisible,idKeySceneToLoad):
 	for viewportWindow  in viewports_references.values():
 		viewportWindow.visible = false
+	load_scene(idKeySceneToLoad)
 	set_viewport_visibility(tipo_nivel,makeVisible)
+	
 	
 	
 			

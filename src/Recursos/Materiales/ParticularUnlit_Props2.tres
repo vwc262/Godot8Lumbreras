@@ -1,0 +1,17 @@
+[gd_resource type="ShaderMaterial" load_steps=3 format=3 uid="uid://ca8npxbjn72ic"]
+
+[ext_resource type="Shader" path="res://Recursos/Materiales/Material_Unlit.gdshader" id="1_2g7uq"]
+[ext_resource type="Texture2D" uid="uid://dprmylkllysl8" path="res://Recursos/Meshes/Particular_Cutzamala_PBR5/Texturas_B5_Particular/Props2_Albedo.jpg" id="2_weu4j"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_2g7uq")
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/tile_size = 1.0
+shader_parameter/ao_texture_channel = null
+shader_parameter/ao_light_affect = null
+shader_parameter/heightmap_scale = null
+shader_parameter/heightmap_flip = null
+shader_parameter/uv1_scale = Vector3(1, 1, 1)
+shader_parameter/uv1_offset = null
+shader_parameter/texture_albedo = ExtResource("2_weu4j")

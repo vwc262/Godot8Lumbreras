@@ -28,23 +28,43 @@ script = ExtResource("1_xo6k0")
 url_api = "https://www.virtualwavecontrol.com.mx/Core24/crud/ReadSignalsEstacion?idProyecto=7"
 url_api_update = "https://virtualwavecontrol.com.mx/api24/VWC/Unreal/PlantasPotabilizadoras2024/GetUpdateLite"
 
-[node name="DynamicMargins" type="MarginContainer" parent="."]
-anchors_preset = 15
-anchor_right = 1.0
+[node name="DynamicMargins" type="PanelContainer" parent="."]
+custom_minimum_size = Vector2(1080, 0)
+anchors_preset = 9
 anchor_bottom = 1.0
-grow_horizontal = 2
+offset_right = 1080.0
 grow_vertical = 2
+size_flags_horizontal = 4
 
-[node name="VB_MainContainer" type="VBoxContainer" parent="DynamicMargins"]
+[node name="ScrollContainer" type="ScrollContainer" parent="DynamicMargins"]
+custom_minimum_size = Vector2(1080, 0)
+layout_direction = 2
+layout_mode = 2
+follow_focus = true
+horizontal_scroll_mode = 2
+vertical_scroll_mode = 0
+
+[node name="WindowsContainer" type="HBoxContainer" parent="DynamicMargins/ScrollContainer"]
+clip_contents = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="PerfilWindow" type="PanelContainer" parent="DynamicMargins/ScrollContainer/WindowsContainer"]
+clip_contents = true
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="VB_MainContainer" type="VBoxContainer" parent="DynamicMargins/ScrollContainer/WindowsContainer/PerfilWindow"]
 layout_mode = 2
 theme_override_constants/separation = 0
 
-[node name="header_container" type="Panel" parent="DynamicMargins/VB_MainContainer"]
+[node name="header_container" type="Panel" parent="DynamicMargins/ScrollContainer/WindowsContainer/PerfilWindow/VB_MainContainer"]
 custom_minimum_size = Vector2(0, 125)
 layout_mode = 2
 size_flags_vertical = 0
 
-[node name="header_fondo" type="TextureRect" parent="DynamicMargins/VB_MainContainer/header_container"]
+[node name="header_fondo" type="TextureRect" parent="DynamicMargins/ScrollContainer/WindowsContainer/PerfilWindow/VB_MainContainer/header_container"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -54,7 +74,7 @@ grow_vertical = 2
 texture = ExtResource("3_ohb0y")
 expand_mode = 1
 
-[node name="Label" type="Label" parent="DynamicMargins/VB_MainContainer/header_container"]
+[node name="Label" type="Label" parent="DynamicMargins/ScrollContainer/WindowsContainer/PerfilWindow/VB_MainContainer/header_container"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -66,40 +86,40 @@ text = "Sistema Cutzamala"
 horizontal_alignment = 1
 uppercase = true
 
-[node name="main_container" type="VBoxContainer" parent="DynamicMargins/VB_MainContainer"]
+[node name="main_container" type="VBoxContainer" parent="DynamicMargins/ScrollContainer/WindowsContainer/PerfilWindow/VB_MainContainer"]
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_constants/separation = 0
 
-[node name="SubViewportContainer" type="SubViewportContainer" parent="DynamicMargins/VB_MainContainer/main_container"]
+[node name="SubViewportContainer" type="SubViewportContainer" parent="DynamicMargins/ScrollContainer/WindowsContainer/PerfilWindow/VB_MainContainer/main_container"]
 layout_mode = 2
 size_flags_vertical = 3
 stretch = true
 
-[node name="SubViewport" type="SubViewport" parent="DynamicMargins/VB_MainContainer/main_container/SubViewportContainer"]
+[node name="SubViewport" type="SubViewport" parent="DynamicMargins/ScrollContainer/WindowsContainer/PerfilWindow/VB_MainContainer/main_container/SubViewportContainer"]
 handle_input_locally = false
 physics_object_picking = true
 physics_object_picking_sort = true
-size = Vector2i(1080, 1130)
+size = Vector2i(536, 1122)
 render_target_update_mode = 4
 
-[node name="Perfil" parent="DynamicMargins/VB_MainContainer/main_container/SubViewportContainer/SubViewport" instance=ExtResource("2_2gqy4")]
+[node name="Perfil" parent="DynamicMargins/ScrollContainer/WindowsContainer/PerfilWindow/VB_MainContainer/main_container/SubViewportContainer/SubViewport" instance=ExtResource("2_2gqy4")]
 
-[node name="ListaSitiosContainer" type="PanelContainer" parent="DynamicMargins/VB_MainContainer/main_container"]
+[node name="ListaSitiosContainer" type="PanelContainer" parent="DynamicMargins/ScrollContainer/WindowsContainer/PerfilWindow/VB_MainContainer/main_container"]
 self_modulate = Color(1, 1, 1, 0)
 layout_mode = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="DynamicMargins/VB_MainContainer/main_container/ListaSitiosContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="DynamicMargins/ScrollContainer/WindowsContainer/PerfilWindow/VB_MainContainer/main_container/ListaSitiosContainer"]
 self_modulate = Color(1, 1, 1, 0)
 layout_mode = 2
 theme_override_constants/separation = 0
 
-[node name="botones_container" type="Panel" parent="DynamicMargins/VB_MainContainer/main_container/ListaSitiosContainer/VBoxContainer"]
+[node name="botones_container" type="Panel" parent="DynamicMargins/ScrollContainer/WindowsContainer/PerfilWindow/VB_MainContainer/main_container/ListaSitiosContainer/VBoxContainer"]
 self_modulate = Color(1, 1, 1, 0)
 layout_mode = 2
 size_flags_vertical = 0
 
-[node name="HBoxContainer" type="HBoxContainer" parent="DynamicMargins/VB_MainContainer/main_container/ListaSitiosContainer/VBoxContainer/botones_container"]
+[node name="HBoxContainer" type="HBoxContainer" parent="DynamicMargins/ScrollContainer/WindowsContainer/PerfilWindow/VB_MainContainer/main_container/ListaSitiosContainer/VBoxContainer/botones_container"]
 self_modulate = Color(1, 1, 1, 0)
 custom_minimum_size = Vector2(0, 50)
 layout_mode = 1
@@ -111,7 +131,7 @@ offset_top = -72.0
 grow_horizontal = 2
 grow_vertical = 0
 
-[node name="BTN_ListaSitios" type="Button" parent="DynamicMargins/VB_MainContainer/main_container/ListaSitiosContainer/VBoxContainer/botones_container/HBoxContainer"]
+[node name="BTN_ListaSitios" type="Button" parent="DynamicMargins/ScrollContainer/WindowsContainer/PerfilWindow/VB_MainContainer/main_container/ListaSitiosContainer/VBoxContainer/botones_container/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 6
 size_flags_vertical = 8
@@ -119,11 +139,11 @@ focus_mode = 0
 icon = ExtResource("9_dfl04")
 flat = true
 
-[node name="barra_separador" type="Panel" parent="DynamicMargins/VB_MainContainer/main_container/ListaSitiosContainer/VBoxContainer"]
+[node name="barra_separador" type="Panel" parent="DynamicMargins/ScrollContainer/WindowsContainer/PerfilWindow/VB_MainContainer/main_container/ListaSitiosContainer/VBoxContainer"]
 custom_minimum_size = Vector2(0, 15)
 layout_mode = 2
 
-[node name="TextureRect" type="TextureRect" parent="DynamicMargins/VB_MainContainer/main_container/ListaSitiosContainer/VBoxContainer/barra_separador"]
+[node name="TextureRect" type="TextureRect" parent="DynamicMargins/ScrollContainer/WindowsContainer/PerfilWindow/VB_MainContainer/main_container/ListaSitiosContainer/VBoxContainer/barra_separador"]
 custom_minimum_size = Vector2(0, 15)
 layout_mode = 1
 anchors_preset = 15
@@ -134,20 +154,32 @@ grow_vertical = 2
 texture = ExtResource("9_m03wm")
 expand_mode = 1
 
-[node name="PanelContainer" type="PanelContainer" parent="DynamicMargins/VB_MainContainer/main_container/ListaSitiosContainer/VBoxContainer"]
+[node name="PanelContainer" type="PanelContainer" parent="DynamicMargins/ScrollContainer/WindowsContainer/PerfilWindow/VB_MainContainer/main_container/ListaSitiosContainer/VBoxContainer"]
 layout_mode = 2
 
-[node name="ListaSitios" parent="DynamicMargins/VB_MainContainer/main_container/ListaSitiosContainer/VBoxContainer/PanelContainer" instance=ExtResource("4_lo6xx")]
+[node name="ListaSitios" parent="DynamicMargins/ScrollContainer/WindowsContainer/PerfilWindow/VB_MainContainer/main_container/ListaSitiosContainer/VBoxContainer/PanelContainer" instance=ExtResource("4_lo6xx")]
 custom_minimum_size = Vector2(0, 650)
 layout_mode = 2
 
-[node name="ChartControl" parent="DynamicMargins/VB_MainContainer/main_container/ListaSitiosContainer/VBoxContainer/PanelContainer" instance=ExtResource("6_cdy0v")]
+[node name="ChartControl" parent="DynamicMargins/ScrollContainer/WindowsContainer/PerfilWindow/VB_MainContainer/main_container/ListaSitiosContainer/VBoxContainer/PanelContainer" instance=ExtResource("6_cdy0v")]
 visible = false
 custom_minimum_size = Vector2(0, 650)
 layout_mode = 2
 
-[node name="UiParticular" parent="." instance=ExtResource("11_e8765")]
-visible = false
+[node name="ParticularWindow" type="PanelContainer" parent="DynamicMargins/ScrollContainer/WindowsContainer"]
+clip_contents = true
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="UiParticular" parent="DynamicMargins/ScrollContainer/WindowsContainer/ParticularWindow" instance=ExtResource("11_e8765")]
+layout_mode = 2
+
+[node name="GraficadorWindow" type="PanelContainer" parent="DynamicMargins/ScrollContainer/WindowsContainer"]
+clip_contents = true
+layout_mode = 2
+
+[node name="ChartControl" parent="DynamicMargins/ScrollContainer/WindowsContainer/GraficadorWindow" instance=ExtResource("6_cdy0v")]
+layout_mode = 2
 
 [node name="popup_container" type="Panel" parent="."]
 visible = false
@@ -232,6 +264,6 @@ material = ExtResource("16_ym8cf")
 
 [connection signal="request_completed" from="VersionUpdater" to="VersionUpdater" method="_on_request_completed"]
 [connection signal="OnVersionChanged" from="Endpoint" to="VersionUpdater" method="On_Update_Version"]
-[connection signal="pressed" from="DynamicMargins/VB_MainContainer/main_container/ListaSitiosContainer/VBoxContainer/botones_container/HBoxContainer/BTN_ListaSitios" to="." method="_on_btn_lista_sitios_pressed"]
+[connection signal="pressed" from="DynamicMargins/ScrollContainer/WindowsContainer/PerfilWindow/VB_MainContainer/main_container/ListaSitiosContainer/VBoxContainer/botones_container/HBoxContainer/BTN_ListaSitios" to="." method="_on_btn_lista_sitios_pressed"]
 [connection signal="visibility_changed" from="popup_container/Popup" to="popup_container/Popup" method="_on_visibility_changed"]
 [connection signal="pressed" from="popup_container/Popup/Panel/btn_close_popup" to="." method="_on_btn_close_popup_pressed"]

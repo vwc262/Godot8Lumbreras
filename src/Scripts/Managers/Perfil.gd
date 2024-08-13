@@ -1,14 +1,16 @@
 extends Node
 #region Editor variables
-@onready var btn_lista_sitios = $DynamicMargins/VB_MainContainer/main_container/ListaSitiosContainer/VBoxContainer/botones_container/HBoxContainer/BTN_ListaSitios
-@onready var lista_sitios = $DynamicMargins/VB_MainContainer/main_container/ListaSitiosContainer/VBoxContainer/PanelContainer/ListaSitios
-@onready var header_fondo = $DynamicMargins/VB_MainContainer/header_container/header_fondo
-@onready var ui_particular = $UiParticular
+@onready var btn_lista_sitios: Button = $DynamicMargins/ScrollContainer/HBoxContainer/PerfilWindow/VB_MainContainer/main_container/ListaSitiosContainer/VBoxContainer/botones_container/HBoxContainer/BTN_ListaSitios
+@onready var lista_sitios: Control = $DynamicMargins/ScrollContainer/HBoxContainer/PerfilWindow/VB_MainContainer/main_container/ListaSitiosContainer/VBoxContainer/PanelContainer/ListaSitios
+@onready var header_fondo: TextureRect = $DynamicMargins/ScrollContainer/HBoxContainer/PerfilWindow/VB_MainContainer/header_container/header_fondo
+@onready var ui_particular: Control = $DynamicMargins/ScrollContainer/HBoxContainer/ParticularWindow/UiParticular
 @onready var dynamic_margins = $DynamicMargins
-@onready var perfil = $DynamicMargins/VB_MainContainer/main_container/SubViewportContainer/SubViewport/Perfil
-@onready var chart_control = $DynamicMargins/VB_MainContainer/main_container/ListaSitiosContainer/VBoxContainer/PanelContainer/ChartControl
+@onready var perfil: Node3D = $DynamicMargins/ScrollContainer/HBoxContainer/PerfilWindow/VB_MainContainer/main_container/SubViewportContainer/SubViewport/Perfil
 @export var perfil_world_environment : Environment
 @export var particular_world_environment : Environment
+@onready var scroll_container: ScrollContainer = $DynamicMargins/ScrollContainer
+@onready var windows_container: HBoxContainer = $DynamicMargins/ScrollContainer/WindowsContainer
+
 #endregion
 
 #region script variables
@@ -20,11 +22,18 @@ signal in_particular
 var is_hidden = false  # Variable para rastrear el estado del contenedor
 
 func _ready():
+	SceneManager.set_scroll_reference(scroll_container)
 	SceneManager.add_scene(SceneManager.idScenePerfil,perfil)
 	SceneManager.load_environments(perfil_world_environment,particular_world_environment)
+	AdjustWindowsSize()
 	# Conectar señales a las funciones correspondientes
 	UIManager.set_ui_particular(ui_particular)  # Establecer la referencia a ui_particular
 	#UIManager.connect("mostrar_world", _mostrar_world)  # Conectar la señal mostrar_world
+
+func AdjustWindowsSize():
+	var size = get_viewport().size	
+	for window : PanelContainer in windows_container.get_children():
+		window.custom_minimum_size.x = size.x		
 
 func _on_button_pressed():
 	NavigationManager.emit_signal('ResetCameraPosition')
@@ -60,15 +69,6 @@ func _on_finish_tween():
 		lista_sitios.visible = false
 ##endregion
 
-##region FUNCIONES PARA MOSTRAR LA GRAFICA
-func _on_btn_graficar_button_down():
-	if chart_control.visible:
-		chart_control.visible = false
-		lista_sitios.visible = true
-	else:
-		chart_control.visible = true
-		lista_sitios.visible = false
-##endregion
 
 # Actualiza esta función para usar UIManager
 func _on_btn_particular_pressed():

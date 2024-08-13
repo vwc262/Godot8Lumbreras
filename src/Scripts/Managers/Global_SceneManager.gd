@@ -8,6 +8,8 @@ var world_environment : WorldEnvironment
 var perfil_environment: Environment
 var particular_environment: Environment
 
+var scroll_reference : ScrollContainer = null
+
 enum TIPO_NIVEL {PERFIL,PARTICULAR}
 #endregion
 
@@ -32,7 +34,9 @@ func load_scene(idSceneKey:int):
 		var estacion : Estacion = GlobalData.get_estacion(idSceneKey)
 		UIManager.popUpWindow.showPopUp( estacion.nombre + " en construcción")
 	return nivel_encontrado		
-		
+
+func set_scroll_reference(scroll:ScrollContainer):
+	scroll_reference = scroll		
 
 func init_wolrd_environment_reference(world_environment_reference:WorldEnvironment):
 	world_environment = world_environment_reference

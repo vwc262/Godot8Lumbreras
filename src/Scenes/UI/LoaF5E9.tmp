@@ -12,6 +12,7 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_vertical = 3
 color = Color(0, 0, 0, 1)
+script = ExtResource("1_hirp1")
 
 [node name="PanelContainer" type="PanelContainer" parent="."]
 layout_mode = 1
@@ -22,18 +23,15 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="Arrows" type="TextureRect" parent="PanelContainer"]
-custom_minimum_size = Vector2(128, 128)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 texture = ExtResource("1_8hinu")
-expand_mode = 1
-script = ExtResource("1_hirp1")
+stretch_mode = 3
 
 [node name="Logo" type="TextureRect" parent="PanelContainer"]
-custom_minimum_size = Vector2(256, 256)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 texture = ExtResource("2_vtnpc")
-expand_mode = 1
+stretch_mode = 5

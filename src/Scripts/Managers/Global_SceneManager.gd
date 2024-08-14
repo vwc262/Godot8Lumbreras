@@ -16,6 +16,7 @@ var viewport_size_x = 0
 enum TIPO_NIVEL {GRAFICADOR,PERFIL,PARTICULAR,}
 
 var viewports_references = {}
+var speed_transition_screen = 1.5
 #endregion
 
 
@@ -53,7 +54,7 @@ func scroll_scene(tipo_nivel:TIPO_NIVEL,idKeySceneToLoad):
 		var step = get_scroll_step()
 		var scroll_amount : float = step * tipo_nivel
 		var tweenScroll = TweenManager.init_tween(on_scroll_finished.bind(tipo_nivel,true,idKeySceneToLoad))
-		tweenScroll.tween_property(scroll_reference, "scroll_horizontal", scroll_amount, .35)
+		tweenScroll.tween_property(scroll_reference, "scroll_horizontal", scroll_amount, speed_transition_screen)
 	else:
 		UIManager.popUpWindow.showPopUp("En construcción")		
 	

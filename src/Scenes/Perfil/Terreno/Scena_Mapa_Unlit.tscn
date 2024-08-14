@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://vxu3fnea8kdx"]
+[gd_scene load_steps=16 format=3 uid="uid://vxu3fnea8kdx"]
 
 [ext_resource type="PackedScene" uid="uid://cvidg0qtj6nqn" path="res://Recursos/Meshes/Mapa/Mapa 3D/Terreno_Prueba_08.glb" id="1_1cncs"]
 [ext_resource type="Material" uid="uid://b34rsa0vdy1l3" path="res://Recursos/Materiales/CloudShadows_unlit.tres" id="2_5m1vx"]
@@ -7,7 +7,10 @@
 [ext_resource type="PackedScene" uid="uid://w2xt3672qu6l" path="res://Recursos/Meshes/Mapa/Tuberia/aguaPrueba.glb" id="5_3yd0m"]
 [ext_resource type="Shader" path="res://Recursos/Materiales/WaterFlow_Unlit.gdshader" id="6_qs18x"]
 [ext_resource type="Texture2D" uid="uid://xici68e82c16" path="res://Recursos/Textures/Mapa_3D/Tuberia/Agua_Tubo_Cutzamala_v1.png" id="7_c6ilu"]
+[ext_resource type="PackedScene" uid="uid://cr01jjq3ig6j8" path="res://Recursos/Meshes/Mapa/Tuberia/Agua_002_v001.glb" id="8_2i4n8"]
 [ext_resource type="Texture2D" uid="uid://bv28nryga1w4m" path="res://Recursos/Textures/Textos/Flecha_Cutzamala.png" id="8_8n25p"]
+[ext_resource type="Material" uid="uid://cvpy0hx25tn6o" path="res://Recursos/Materiales/WaterFlow_Unlit.tres" id="9_mqv58"]
+[ext_resource type="PackedScene" uid="uid://bryds7jgi4rdg" path="res://Recursos/Meshes/Mapa/Tuberia/Tuberia_001.glb" id="10_8553l"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_k4e6n"]
 resource_name = "Lagos"
@@ -75,7 +78,15 @@ mesh = SubResource("ArrayMesh_ey6vf")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -7.7, 0)
 
 [node name="Plane" parent="aguaPrueba" index="0"]
+visible = false
 material_override = SubResource("ShaderMaterial_0huhs")
+
+[node name="Agua_002_v0012" parent="aguaPrueba" instance=ExtResource("8_2i4n8")]
+
+[node name="Agua_002_v001" parent="aguaPrueba/Agua_002_v0012" index="0"]
+material_override = ExtResource("9_mqv58")
+
+[node name="Tuberia_001" parent="aguaPrueba" instance=ExtResource("10_8553l")]
 
 [node name="Flechas" type="Node3D" parent="."]
 
@@ -94,3 +105,4 @@ texture = ExtResource("8_8n25p")
 [editable path="Terreno_Prueba_08"]
 [editable path="Lagos_01"]
 [editable path="aguaPrueba"]
+[editable path="aguaPrueba/Agua_002_v0012"]

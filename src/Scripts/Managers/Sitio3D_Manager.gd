@@ -18,6 +18,10 @@ signal IrA
 
 var estacion: Estacion
 
+@export var min_drag_elapsed_time: int = 300
+var pressed_over_area = false
+var first_drag_time
+
 func _ready():
 	etiqueta3D.IdEstacion = IdEstacion;
 	var node = modelo.get_node("Mini_005/Empty")
@@ -29,9 +33,28 @@ func _ready():
 	labelSitio.text = "%s" % [estacion.abreviacion]
 
 func _on_area_3d_input_event(_camera, event, _position, _normal, _shape_idx):
-	if event is InputEventMouseButton and event.double_click:
-		NavigationManager.emit_signal("Go_TO",IdEstacion)
-		UIManager.seleccionar_sitio_id(IdEstacion)
+	if event is InputEventMouseButton and event.pressed:
+		if !pressed_over_area:
+			first_drag_time = Time.get_unix_time_from_system()
+			pressed_over_area = true
+			
+		else:
+			var current_time = Time.get_unix_time_from_system()	
+			if ((current_time - first_drag_time) * 1000) > min_drag_elapsed_time:
+				pressed_over_area = false
+			
+	if event is InputEventMouseButton and event.is_released():
+		var current_time = Time.get_unix_time_from_system()
+
+		if ((current_time - first_drag_time) * 1000) < min_drag_elapsed_time:
+			if pressed_over_area:
+				NavigationManager.emit_signal("Go_TO",IdEstacion)
+				UIManager.seleccionar_sitio_id(IdEstacion)
+				pressed_over_area = false
+	
+	#if event is InputEventMouseButton and event.double_click:
+		#NavigationManager.emit_signal("Go_TO",IdEstacion)
+		#UIManager.seleccionar_sitio_id(IdEstacion)
 
 func _on_camera_moved(positionY: float, maxZoom, minZoom):	
 	labelSitio.font_size = lerp(fontSizeMin, fontSizeMax, remap(positionY, minZoom, maxZoom, 0, 1))

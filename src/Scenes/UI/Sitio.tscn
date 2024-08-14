@@ -74,27 +74,28 @@ size_flags_vertical = 0
 texture = ExtResource("6_kke6i")
 expand_mode = 1
 
-[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/HBoxContainer/nombre_fecha_contaier"]
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/HBoxContainer/nombre_fecha_contaier"]
 layout_mode = 1
-anchors_preset = 9
+anchors_preset = 15
+anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 30.0
-offset_right = 530.0
+offset_left = 18.0
+grow_horizontal = 2
 grow_vertical = 2
 
-[node name="nombre_sitio" type="Label" parent="VBoxContainer/HBoxContainer/nombre_fecha_contaier/VBoxContainer"]
+[node name="nombre_sitio" type="Label" parent="VBoxContainer/HBoxContainer/nombre_fecha_contaier/HBoxContainer"]
 layout_mode = 2
-size_flags_horizontal = 0
-size_flags_vertical = 3
-theme_override_font_sizes/font_size = 35
+size_flags_horizontal = 2
+theme_override_font_sizes/font_size = 50
 text = "Nombre Sitio"
 
-[node name="fecha_sitio" type="Label" parent="VBoxContainer/HBoxContainer/nombre_fecha_contaier/VBoxContainer"]
+[node name="fecha_sitio" type="Label" parent="VBoxContainer/HBoxContainer/nombre_fecha_contaier/HBoxContainer"]
 layout_mode = 2
-size_flags_vertical = 3
+size_flags_horizontal = 2
 theme_override_colors/font_color = Color(0.672064, 0.672064, 0.672064, 1)
-theme_override_font_sizes/font_size = 20
+theme_override_font_sizes/font_size = 30
 text = "00:00hrs, 00/00/0000"
+horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Button" type="Button" parent="VBoxContainer/HBoxContainer/nombre_fecha_contaier"]

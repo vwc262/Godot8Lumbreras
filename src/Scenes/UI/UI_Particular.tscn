@@ -138,7 +138,7 @@ layout_mode = 2
 size_flags_horizontal = 2
 
 [node name="texture_enlace" type="TextureRect" parent="VBoxContainer/header_container/HBoxContainer/header_icono_container"]
-custom_minimum_size = Vector2(100, 100)
+custom_minimum_size = Vector2(150, 150)
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -153,6 +153,7 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("5_tjj0m")
 expand_mode = 1
+stretch_mode = 4
 
 [node name="main_container" type="Panel" parent="VBoxContainer"]
 self_modulate = Color(1, 1, 1, 0)
@@ -203,7 +204,7 @@ stretch = true
 
 [node name="SubViewport" type="SubViewport" parent="VBoxContainer/main_container/modelo_3d_container/SubViewportContainer"]
 handle_input_locally = false
-size = Vector2i(2, 2)
+size = Vector2i(1080, 1795)
 render_target_update_mode = 0
 
 [node name="Template_Particular" parent="VBoxContainer/main_container/modelo_3d_container/SubViewportContainer/SubViewport" instance=ExtResource("10_l4wa0")]
@@ -224,7 +225,7 @@ layout_mode = 1
 anchors_preset = 10
 anchor_right = 1.0
 offset_top = 15.0
-offset_bottom = 115.0
+offset_bottom = 165.0
 grow_horizontal = 2
 
 [node name="progress_bar_fondo" type="TextureRect" parent="VBoxContainer/main_container/progress_bar_container"]
@@ -243,9 +244,9 @@ anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
 offset_left = 56.0
-offset_top = -32.0
+offset_top = -50.0
 offset_right = -161.0
-offset_bottom = -7.0
+offset_bottom = -9.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/background = SubResource("StyleBoxEmpty_wi8d2")
@@ -266,6 +267,7 @@ offset_right = 20.0
 offset_bottom = 11.5
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_font_sizes/font_size = 30
 text = "0 m"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -299,14 +301,15 @@ texture = ExtResource("10_5sxwf")
 
 [node name="min_container" type="HBoxContainer" parent="VBoxContainer/main_container/progress_bar_container/progress_bar_marcadores_container"]
 layout_mode = 0
-offset_left = 133.0
-offset_top = 54.0
-offset_right = 274.0
-offset_bottom = 91.0
+offset_left = 134.0
+offset_top = 81.0
+offset_right = 273.0
+offset_bottom = 133.0
 
 [node name="lbl_progress_bar_min" type="Label" parent="VBoxContainer/main_container/progress_bar_container/progress_bar_marcadores_container/min_container"]
 layout_mode = 2
 size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 25
 text = "Min. "
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -314,20 +317,22 @@ vertical_alignment = 1
 [node name="lbl_progress_bar_valor_min" type="Label" parent="VBoxContainer/main_container/progress_bar_container/progress_bar_marcadores_container/min_container"]
 layout_mode = 2
 size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 25
 text = "2cm"
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="max_container" type="HBoxContainer" parent="VBoxContainer/main_container/progress_bar_container/progress_bar_marcadores_container"]
 layout_mode = 0
-offset_left = 673.0
-offset_top = 54.0
-offset_right = 817.0
-offset_bottom = 90.0
+offset_left = 677.0
+offset_top = 83.0
+offset_right = 814.0
+offset_bottom = 133.0
 
 [node name="lbl_progress_bar_max" type="Label" parent="VBoxContainer/main_container/progress_bar_container/progress_bar_marcadores_container/max_container"]
 layout_mode = 2
 size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 25
 text = "Max. "
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -335,17 +340,18 @@ vertical_alignment = 1
 [node name="lbl_progress_bar_valor_max" type="Label" parent="VBoxContainer/main_container/progress_bar_container/progress_bar_marcadores_container/max_container"]
 layout_mode = 2
 size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 25
 text = "2cm"
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="lbl_nivel_nombre" type="Label" parent="VBoxContainer/main_container/progress_bar_container"]
 layout_mode = 0
-offset_left = 941.0
-offset_top = 6.0
-offset_right = 1072.0
-offset_bottom = 50.0
-theme_override_font_sizes/font_size = 30
+offset_left = 937.0
+offset_top = 9.0
+offset_right = 1075.0
+offset_bottom = 78.0
+theme_override_font_sizes/font_size = 40
 text = "N1"
 horizontal_alignment = 1
 vertical_alignment = 1

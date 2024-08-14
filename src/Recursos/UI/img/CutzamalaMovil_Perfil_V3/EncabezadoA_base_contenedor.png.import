@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://8kxaa2nc0w28"
-path="res://.godot/imported/EncabezadoA_base.png-f3751aad1ec6bee73623eb61b8938b15.ctex"
+uid="uid://bom2ge4j2826j"
+path="res://.godot/imported/EncabezadoA_base_contenedor.png-d5cc18881a845adac8d9f9329143ed12.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Recursos/UI/img/CutzamalaMovil_Perfil_V3/EncabezadoA_base.png"
-dest_files=["res://.godot/imported/EncabezadoA_base.png-f3751aad1ec6bee73623eb61b8938b15.ctex"]
+source_file="res://Recursos/UI/img/CutzamalaMovil_Perfil_V3/EncabezadoA_base_contenedor.png"
+dest_files=["res://.godot/imported/EncabezadoA_base_contenedor.png-d5cc18881a845adac8d9f9329143ed12.ctex"]
 
 [params]
 

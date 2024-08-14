@@ -36,7 +36,9 @@ extends Node3D
 #endregion
 
 @onready var camera_3_dp : Node3D = $Camera3Dp
-@onready var camera_3_dp2 : Camera3D = $Camera3Dp
+@onready var camera_3_dp2: Camera3D = $Camera3Dp
+@onready var shape_cast_3d: ShapeCast3D = $Camera3Dp/ShapeCast3D
+
 
 #region Signals
 signal on_position_changed
@@ -158,7 +160,10 @@ func handle_drag(event: InputEventScreenDrag):
 			var pan_vector = (forward + (-event.relative.x * right ) + (-event.relative.y * forward)) * pan_speed
 			pan_vector.y = 0
 			# comentado
-			global_translate(pan_vector)
+			shape_cast_3d.target_position = pan_vector
+			shape_cast_3d.force_shapecast_update()
+			if(!shape_cast_3d.is_colliding()):	
+				global_translate(pan_vector)
 
 	elif touch_points.size() >= 2:
 		#var up: Vector2 = Vector2(0,1)
@@ -199,6 +204,7 @@ func handle_drag(event: InputEventScreenDrag):
 	#position.x = clamp(position.x, minX * factorZoom, maxX * factorZoom)
 	#position.z = clamp(position.z, minZ * factorZoom, maxZ * factorZoom)
 	#position.y = clamp(position.y, minY * factorZoom, maxY * factorZoom)
+	
 	position.x = clamp(position.x, minX, maxX)
 	position.z = clamp(position.z, minZ, maxZ)
 	position.y = clamp(position.y, minY, maxY)

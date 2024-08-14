@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://qofjfvol201e"]
+[gd_scene load_steps=15 format=3 uid="uid://qofjfvol201e"]
 
 [ext_resource type="Script" path="res://Scripts/Environment/Particular.gd" id="1_mvh1e"]
 [ext_resource type="PackedScene" uid="uid://d4nifki50ahlx" path="res://Scenes/Sitios/Particulares/PB5_Model.tscn" id="2_3ceb2"]
@@ -10,6 +10,9 @@
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="6_bkdkv"]
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/resources/camera_3d_resource.gd" id="7_skwsb"]
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd" id="8_sii0s"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_va5u2"]
+radius = 1.0
 
 [sub_resource type="Resource" id="Resource_6rtdx"]
 script = ExtResource("6_bkdkv")
@@ -83,8 +86,10 @@ max_pan_speed = 0.01
 z_Depth = 1000.0
 
 [node name="Camera3Dp" type="Camera3D" parent="camera_parent"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.139114, 9.70283, 63.5923)
 visible = false
+
+[node name="ShapeCast3D" type="ShapeCast3D" parent="camera_parent/Camera3Dp"]
+shape = SubResource("SphereShape3D_va5u2")
 
 [node name="Camera_POV_0" type="Node3D" parent="camera_parent"]
 script = ExtResource("5_qc0mw")

@@ -186,7 +186,7 @@ stretch = true
 handle_input_locally = false
 physics_object_picking = true
 physics_object_picking_sort = true
-size = Vector2i(1080, 563)
+size = Vector2i(2, 2)
 render_target_update_mode = 0
 
 [node name="Perfil" parent="ScrollContainer/WindowsContainer/PerfilWindow/VB_MainContainer/Panel/main_container/VBoxContainer/SubViewportContainer/SubViewport" instance=ExtResource("2_2gqy4")]

@@ -144,8 +144,8 @@ func handle_drag(event: InputEventScreenDrag):
 	#var cameraForward:Vector3 = camera_3_dp.get_global_transform().basis.z
 	emit_signal("on_position_changed",position)
 	ID_Select = 0
-	UIManager.deselect_all_sitios()
-	NavigationManager.set_lastid_selected(ID_Select)
+	#UIManager.deselect_all_sitios()
+	#NavigationManager.set_lastid_selected(ID_Select)
 	touch_points[event.index] = event.position
 	var parentTransform = get_global_transform()
 	var forward: Vector3 = parentTransform.basis.z

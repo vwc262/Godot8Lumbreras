@@ -16,7 +16,7 @@ var viewport_size_x = 0
 enum TIPO_NIVEL {GRAFICADOR,PERFIL,PARTICULAR,}
 
 var viewports_references = {}
-var speed_transition_screen = 1.5
+var speed_transition_screen = .35
 #endregion
 
 

@@ -5,6 +5,7 @@ class_name  ParticularCameraManager
 @export var cameraTripod : Array[Estructura_Tripods]
 @export var freeCamera : Camera3D
 @export var phantomCamera : Camera3D
+@export var buttonHome : Button
 @export var buttons : Array[Button]
 @export var virtualCameras : Array[PhantomCamera3D]
 @export var keyCodes : Array[Key]

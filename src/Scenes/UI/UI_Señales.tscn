@@ -53,87 +53,6 @@ texture = ExtResource("1_tledo")
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="botones_container" type="HBoxContainer" parent="main_container/HBoxContainer/VBoxContainer"]
-custom_minimum_size = Vector2(0, 65)
-layout_mode = 2
-size_flags_vertical = 0
-
-[node name="btn_graficador" type="Button" parent="main_container/HBoxContainer/VBoxContainer/botones_container"]
-custom_minimum_size = Vector2(300, 0)
-layout_mode = 2
-size_flags_horizontal = 2
-focus_mode = 0
-mouse_filter = 1
-flat = true
-
-[node name="bnt_graficador_fondo" type="TextureRect" parent="main_container/HBoxContainer/VBoxContainer/botones_container/btn_graficador"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("3_e3itx")
-expand_mode = 1
-stretch_mode = 4
-
-[node name="lbl_graficador" type="Label" parent="main_container/HBoxContainer/VBoxContainer/botones_container/btn_graficador"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -11.5
-offset_right = 20.0
-offset_bottom = 11.5
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 1
-theme_override_font_sizes/font_size = 30
-text = "Graficador"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="btn_particular" type="Button" parent="main_container/HBoxContainer/VBoxContainer/botones_container"]
-custom_minimum_size = Vector2(300, 0)
-layout_mode = 2
-size_flags_horizontal = 10
-focus_mode = 0
-mouse_filter = 1
-flat = true
-
-[node name="bnt_particular_fondo" type="TextureRect" parent="main_container/HBoxContainer/VBoxContainer/botones_container/btn_particular"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("4_6a7ql")
-expand_mode = 1
-stretch_mode = 4
-
-[node name="lbl_particular" type="Label" parent="main_container/HBoxContainer/VBoxContainer/botones_container/btn_particular"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -11.5
-offset_right = 20.0
-offset_bottom = 11.5
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 1
-theme_override_font_sizes/font_size = 30
-text = "Particular"
-horizontal_alignment = 1
-vertical_alignment = 1
-
 [node name="nivel_container" type="HBoxContainer" parent="main_container/HBoxContainer/VBoxContainer"]
 custom_minimum_size = Vector2(0, 60)
 layout_mode = 2
@@ -282,88 +201,7 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 1
 theme_override_font_sizes/font_size = 25
-text = "000000000000 l/s"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="botones_container" type="HBoxContainer" parent="main_container/HBoxContainer/VBoxContainer"]
-custom_minimum_size = Vector2(0, 65)
-layout_mode = 2
-size_flags_vertical = 0
-
-[node name="btn_graficador" type="Button" parent="main_container/HBoxContainer/VBoxContainer/botones_container"]
-custom_minimum_size = Vector2(300, 0)
-layout_mode = 2
-size_flags_horizontal = 2
-focus_mode = 0
-mouse_filter = 1
-flat = true
-
-[node name="bnt_graficador_fondo" type="TextureRect" parent="main_container/HBoxContainer/VBoxContainer/botones_container/btn_graficador"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("3_e3itx")
-expand_mode = 1
-stretch_mode = 4
-
-[node name="lbl_graficador" type="Label" parent="main_container/HBoxContainer/VBoxContainer/botones_container/btn_graficador"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -11.5
-offset_right = 20.0
-offset_bottom = 11.5
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 1
-theme_override_font_sizes/font_size = 30
-text = "Graficador"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="btn_particular" type="Button" parent="main_container/HBoxContainer/VBoxContainer/botones_container"]
-custom_minimum_size = Vector2(300, 0)
-layout_mode = 2
-size_flags_horizontal = 10
-focus_mode = 0
-mouse_filter = 1
-flat = true
-
-[node name="bnt_particular_fondo" type="TextureRect" parent="main_container/HBoxContainer/VBoxContainer/botones_container/btn_particular"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("4_6a7ql")
-expand_mode = 1
-stretch_mode = 4
-
-[node name="lbl_particular" type="Label" parent="main_container/HBoxContainer/VBoxContainer/botones_container/btn_particular"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -11.5
-offset_right = 20.0
-offset_bottom = 11.5
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 1
-theme_override_font_sizes/font_size = 30
-text = "Particular"
+text = "0"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -467,7 +305,88 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 1
 theme_override_font_sizes/font_size = 25
-text = "0"
+text = "000000000000 l/s"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="botones_container" type="HBoxContainer" parent="main_container/HBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 65)
+layout_mode = 2
+size_flags_vertical = 0
+
+[node name="btn_graficador" type="Button" parent="main_container/HBoxContainer/VBoxContainer/botones_container"]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+size_flags_horizontal = 2
+focus_mode = 0
+mouse_filter = 1
+flat = true
+
+[node name="bnt_graficador_fondo" type="TextureRect" parent="main_container/HBoxContainer/VBoxContainer/botones_container/btn_graficador"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_e3itx")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="lbl_graficador" type="Label" parent="main_container/HBoxContainer/VBoxContainer/botones_container/btn_graficador"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+theme_override_font_sizes/font_size = 30
+text = "Graficador"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="btn_particular" type="Button" parent="main_container/HBoxContainer/VBoxContainer/botones_container"]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+size_flags_horizontal = 10
+focus_mode = 0
+mouse_filter = 1
+flat = true
+
+[node name="bnt_particular_fondo" type="TextureRect" parent="main_container/HBoxContainer/VBoxContainer/botones_container/btn_particular"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_6a7ql")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="lbl_particular" type="Label" parent="main_container/HBoxContainer/VBoxContainer/botones_container/btn_particular"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+theme_override_font_sizes/font_size = 30
+text = "Particular"
 horizontal_alignment = 1
 vertical_alignment = 1
 

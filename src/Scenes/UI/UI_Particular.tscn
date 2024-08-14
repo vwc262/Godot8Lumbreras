@@ -21,10 +21,10 @@
 [ext_resource type="Texture2D" uid="uid://bcapbu6jnbtom" path="res://Recursos/UI/img/Encabezado_B_Submenu/EncabezadoB_BotonLista.png" id="11_3q3kn"]
 [ext_resource type="Texture2D" uid="uid://c554rmtw6fjo5" path="res://Recursos/UI/img/Encabezado_A_submenu/Lista_detalles_Submenu_Contenedor.png" id="12_64k7e"]
 [ext_resource type="PackedScene" uid="uid://cp14ueov0c5ee" path="res://Scenes/UI/Loading_Scene.tscn" id="17_iw8u2"]
-[ext_resource type="Texture2D" uid="uid://bliv3oeaqcnc7" path="res://Recursos/UI/img/Encabezado_B_Submenu/Boton_Izq.png" id="20_s1pqb"]
 [ext_resource type="PackedScene" uid="uid://cgcyx32icu15x" path="res://Scenes/UI/UI_Particular_Sitio_lista.tscn" id="20_stxyf"]
+[ext_resource type="Texture2D" uid="uid://c8d8g2yovmdy4" path="res://Recursos/UI/img/CutzamalaMovil_Perfil_V3/Lista_detalles_Submenu_BotonIzq_a.png" id="20_svqoy"]
 [ext_resource type="Texture2D" uid="uid://dgwbnce3hid3r" path="res://Recursos/UI/img/Encabezado_B_Submenu/Boton_Expandir_b.png" id="21_8jf3k"]
-[ext_resource type="Texture2D" uid="uid://4oojfxqr3gub" path="res://Recursos/UI/img/Encabezado_B_Submenu/Boton_Der.png" id="22_tkpve"]
+[ext_resource type="Texture2D" uid="uid://b6bsk0t7jo2ks" path="res://Recursos/UI/img/CutzamalaMovil_Perfil_V3/Lista_detalles_Submenu_BotonDer_a.png" id="22_vqkpq"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_hi4es"]
 shader = ExtResource("7_r4ck1")
@@ -204,7 +204,7 @@ stretch = true
 
 [node name="SubViewport" type="SubViewport" parent="VBoxContainer/main_container/modelo_3d_container/SubViewportContainer"]
 handle_input_locally = false
-size = Vector2i(2, 2)
+size = Vector2i(1080, 1795)
 render_target_update_mode = 0
 
 [node name="Template_Particular" parent="VBoxContainer/main_container/modelo_3d_container/SubViewportContainer/SubViewport" instance=ExtResource("10_l4wa0")]
@@ -384,9 +384,9 @@ theme_override_constants/separation = 0
 custom_minimum_size = Vector2(150, 100)
 layout_mode = 2
 size_flags_horizontal = 6
-size_flags_vertical = 8
+size_flags_vertical = 4
 focus_mode = 0
-icon = ExtResource("20_s1pqb")
+icon = ExtResource("20_svqoy")
 flat = true
 
 [node name="Label" type="Label" parent="VBoxContainer/main_container/detalles_container/VBoxContainer/botones_container/HBoxContainer/btn_graficador"]
@@ -396,13 +396,13 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -11.5
-offset_right = 20.0
-offset_bottom = 11.5
+offset_left = -132.5
+offset_top = -27.5
+offset_right = 71.5
+offset_bottom = 27.5
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_font_sizes/font_size = 25
+theme_override_font_sizes/font_size = 40
 text = "Graficador"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -410,19 +410,18 @@ vertical_alignment = 1
 [node name="btn_lista" type="Button" parent="VBoxContainer/main_container/detalles_container/VBoxContainer/botones_container/HBoxContainer"]
 custom_minimum_size = Vector2(150, 100)
 layout_mode = 2
-size_flags_horizontal = 6
-size_flags_vertical = 8
+size_flags_horizontal = 4
+size_flags_vertical = 4
 focus_mode = 0
 icon = ExtResource("21_8jf3k")
 flat = true
 
 [node name="btn_home" type="Button" parent="VBoxContainer/main_container/detalles_container/VBoxContainer/botones_container/HBoxContainer"]
-custom_minimum_size = Vector2(150, 100)
 layout_mode = 2
 size_flags_horizontal = 6
-size_flags_vertical = 8
+size_flags_vertical = 4
 focus_mode = 0
-icon = ExtResource("22_tkpve")
+icon = ExtResource("22_vqkpq")
 flat = true
 
 [node name="Label2" type="Label" parent="VBoxContainer/main_container/detalles_container/VBoxContainer/botones_container/HBoxContainer/btn_home"]
@@ -432,13 +431,13 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -64.5
-offset_top = -17.5
-offset_right = 64.5
-offset_bottom = 17.5
+offset_left = -82.5
+offset_top = -27.5
+offset_right = 117.5
+offset_bottom = 27.5
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_font_sizes/font_size = 25
+theme_override_font_sizes/font_size = 40
 text = "Perfil"
 horizontal_alignment = 1
 vertical_alignment = 1

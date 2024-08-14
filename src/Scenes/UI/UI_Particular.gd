@@ -76,16 +76,6 @@ func _ready():
 	NavigationManager.connect("Go_TO", _compare_and_print_selected_site)
 	GlobalData.connect("datos_actualizados", _on_datos_actualizados)
 	instanciar_lista_sitios()  # Llama a la función para instanciar los sitios
-	
-	 ## Inicializar los OptionButtons
-	#_fill_days()
-	#_fill_months()
-	#_fill_years()
-	#
-	## Conectar las señales si necesitas reaccionar a cambios
-	#option_day.connect("item_selected", _on_day_selected)
-	#option_month.connect("item_selected", _on_month_selected)
-	#option_year.connect("item_selected", _on_year_selected)
 
 # Función que se llama cuando se actualizan los datos
 func _on_datos_actualizados(estaciones: Array[Estacion]):
@@ -249,53 +239,6 @@ func _on_finish_tween_sitios():
 # Funcion para mostrar/ocultar el graficador
 func _on_btn_graficador_pressed():
 	SceneManager.scroll_scene(SceneManager.TIPO_NIVEL.GRAFICADOR,200)
-	#if graficador_container.visible:
-		#graficador_container.visible = false
-		#graficador_datos.visible = false
-#
-		#modelo_3d_container.visible = true
-		#datos_sitio.visible = true
-		#btn_graficador_lbl.text = "Graficador"
-	#else:
-		#graficador_container.visible = true
-		#graficador_datos.visible = true
-#
-		#modelo_3d_container.visible = false
-		#datos_sitio.visible = false
-		#btn_graficador_lbl.text = "Particular"
-
-#func _fill_days():
-	## Llenar el OptionButton de días del 1 al 31
-	#option_day.clear()
-	#for i in range(1, 32):
-		#option_day.add_item(str(i))
-#
-#func _fill_months():
-	## Llenar el OptionButton de meses del 1 al 12
-	#var months = ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"]
-	#option_month.clear()
-	#for i in range(12):
-		#option_month.add_item(months[i], i + 1)  # Puedes usar el índice como ID
-#
-#func _fill_years():
-	## Llenar el OptionButton de años desde start_year hasta end_year
-	#option_year.clear()
-	#for i in range(start_year, end_year + 1):
-		#option_year.add_item(str(i), i)
-		#
-##Manejar las señales si necesitas hacer algo al seleccionar un día, mes o año
-#func _on_day_selected(index):
-	#var selected_day = option_day.get_item_text(index)
-	#print("Día seleccionado:", selected_day)
-#
-#func _on_month_selected(index):
-	#var selected_month = option_month.get_item_text(index)
-	#print("Mes seleccionado:", selected_month)
-#
-#func _on_year_selected(index):
-	#var selected_year = option_year.get_item_text(index)
-	#print("Año seleccionado:", selected_year)
-
 
 func _on_sub_viewport_container_visibility_changed() -> void:
 	background_flip_book.visible = true if !sub_viewport_container.visible else false

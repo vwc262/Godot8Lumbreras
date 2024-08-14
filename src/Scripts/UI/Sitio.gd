@@ -4,23 +4,23 @@ extends Node
 @export var texture_visible: Texture  # Textura cuando está visible
 @export var texture_hidden: Texture   # Textura cuando está oculto
 
-@onready var texture_estado_enlace = $VBoxContainer/HBoxContainer/estado_enlace
-@onready var lbl_nombre_sitio = $VBoxContainer/HBoxContainer/nombre_fecha_contaier/HBoxContainer/nombre_sitio
-@onready var lbl_fecha_sitio = $VBoxContainer/HBoxContainer/nombre_fecha_contaier/HBoxContainer/fecha_sitio
+@onready var texture_estado_enlace = $VBoxContainer/datos_sitio_container/HBoxContainer/estado_enlace
+@onready var lbl_nombre_sitio = $VBoxContainer/datos_sitio_container/HBoxContainer/nombre_fecha_contaier/HBoxContainer/nombre_sitio
+@onready var lbl_fecha_sitio = $VBoxContainer/datos_sitio_container/HBoxContainer/nombre_fecha_contaier/HBoxContainer/fecha_sitio
 @onready var se_ales_sitios = $"VBoxContainer/PanelContainer/Control/señales_sitios"
 @onready var panel_container = $VBoxContainer/PanelContainer
 @onready var btn_expandir_sitios = $VBoxContainer/HBoxContainer/BTN_expandir_sitios
-@onready var btn_expandir_fondo = $VBoxContainer/HBoxContainer/BTN_expandir_sitios/btn_expandir_fondo
-@onready var sitio_fondo = $sitio_fondo
-@onready var sitio_fondo_seleccionado = $VBoxContainer/HBoxContainer/nombre_fecha_contaier/sitio_fondo_seleccionado
-@onready var button = $VBoxContainer/HBoxContainer/nombre_fecha_contaier/Button
+@onready var btn_expandir_fondo = $VBoxContainer/datos_sitio_container/HBoxContainer/BTN_expandir_sitios/btn_expandir_fondo
+@onready var sitio_fondo = $VBoxContainer/datos_sitio_container/sitio_fondo
+@onready var sitio_fondo_seleccionado = $VBoxContainer/datos_sitio_container/sitio_fondo_seleccionado
+@onready var button = $VBoxContainer/datos_sitio_container/HBoxContainer/nombre_fecha_contaier/Button
 
 var estacion_ref: Estacion
 var signal_ref = {}
 var signal_instances: Array = []
 var id_estacion: int
 
-var is_hidden = false
+var is_hidden = true
 var is_double_click_disabled = false
 
 func _ready():
@@ -44,7 +44,7 @@ func actualizar_datos():
 
 # Función para actualizar el estado del enlace
 func set_enlace():	
-	texture_estado_enlace.texture = preload("res://Recursos/UI/img/Coneccion_a.png") if estacion_ref.is_estacion_en_linea() else preload("res://Recursos/UI/img/Coneccion_b.png")	
+	texture_estado_enlace.texture = preload("res://Recursos/UI/img/CutzamalaMovil_Perfil_V3/EncabezadoB_base_Conexion_a.png") if estacion_ref.is_estacion_en_linea() else preload("res://Recursos/UI/img/CutzamalaMovil_Perfil_V3/EncabezadoB_base_Conexion_b.png")	
 		
 
 # Función para instanciar y actualizar señales
@@ -93,7 +93,7 @@ func _on_btn_expandir_sitios_pressed():
 func _show_lista_señales():
 	# Inicializar el Tween y configurar la animación para mostrar
 	var tween = TweenManager.init_tween(_on_finish_tween)
-	TweenManager.tween_animacion(tween, panel_container, "custom_minimum_size:y", 260, 0.5)  # 160 tamaño original
+	TweenManager.tween_animacion(tween, panel_container, "custom_minimum_size:y", 290, 0.2)  # 160 tamaño original
 	panel_container.visible = true
 	is_hidden = false
 	# Cambiar la textura al estado visible
@@ -103,7 +103,7 @@ func _show_lista_señales():
 func _hide_lista_señales():
 	# Inicializar el Tween y configurar la animación para esconder
 	var tween = TweenManager.init_tween(_on_finish_tween)
-	TweenManager.tween_animacion(tween, panel_container, "custom_minimum_size:y", 0, 0.5)
+	TweenManager.tween_animacion(tween, panel_container, "custom_minimum_size:y", 0, 0.2)
 	is_hidden = true
 	# Cambiar la textura al estado oculto
 	btn_expandir_fondo.texture = texture_hidden

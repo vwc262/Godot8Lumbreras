@@ -1,18 +1,21 @@
-[gd_scene load_steps=15 format=3 uid="uid://qofjfvol201e"]
+[gd_scene load_steps=20 format=3 uid="uid://qofjfvol201e"]
 
 [ext_resource type="Script" path="res://Scripts/Environment/Particular.gd" id="1_mvh1e"]
 [ext_resource type="PackedScene" uid="uid://d4nifki50ahlx" path="res://Scenes/Sitios/Particulares/PB5_Model.tscn" id="2_3ceb2"]
 [ext_resource type="Script" path="res://Scripts/Navigation/Particular_Navigation.gd" id="3_56rpr"]
 [ext_resource type="Script" path="res://Scripts/Managers/ParticularCameraManager.gd" id="3_xyga1"]
 [ext_resource type="Script" path="res://Scripts/UI/CamarasParticular/UI_CamarasParticular.gd" id="4_mgldc"]
-[ext_resource type="Texture2D" uid="uid://b0n0yu4r2uwv5" path="res://Recursos/UI/CameraIcon.png" id="5_faltc"]
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_3d.gd" id="5_qc0mw"]
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="6_bkdkv"]
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/resources/camera_3d_resource.gd" id="7_skwsb"]
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd" id="8_sii0s"]
-
-[sub_resource type="SphereShape3D" id="SphereShape3D_va5u2"]
-radius = 1.0
+[ext_resource type="Texture2D" uid="uid://d3t35nmgqbmuj" path="res://Recursos/UI/Botones_Vistas/Boton_Vistas_a.png" id="10_jcs8k"]
+[ext_resource type="Script" path="res://Scripts/UI/Animations/AnimationComponent.gd" id="11_0aio5"]
+[ext_resource type="Texture2D" uid="uid://dg5oipusuww6x" path="res://Recursos/UI/Botones_Vistas/Boton_Vistas_expDerecha.png" id="11_vdkxb"]
+[ext_resource type="Texture2D" uid="uid://b3h43rm52tco1" path="res://Recursos/UI/Botones_Vistas/Boton_Vistas_VistaLibre_a.png" id="11_vltqw"]
+[ext_resource type="Script" path="res://addons/easy_charts/utilities/containers/canvas/canvas.gd" id="12_c5vs0"]
+[ext_resource type="Texture2D" uid="uid://6wyhls7pma6d" path="res://Recursos/UI/Botones_Vistas/Boton_Vistas_expInferior.png" id="12_dl2wb"]
+[ext_resource type="Texture2D" uid="uid://dmvxf7j1gk80r" path="res://Recursos/UI/Botones_Vistas/Boton_Vistas_Camara_a.png" id="12_qmh32"]
 
 [sub_resource type="Resource" id="Resource_6rtdx"]
 script = ExtResource("6_bkdkv")
@@ -33,10 +36,10 @@ near = 0.05
 far = 4000.0
 
 [sub_resource type="LabelSettings" id="LabelSettings_dc2cm"]
-font_size = 101
-font_color = Color(1, 0.443137, 0, 1)
-outline_size = 50
-outline_color = Color(0, 0, 0, 0.698039)
+font_size = 20
+font_color = Color(0, 0, 0, 1)
+outline_size = 10
+outline_color = Color(0.74902, 0.831373, 1, 0.698039)
 shadow_size = 2756
 
 [node name="Particular" type="Node3D"]
@@ -49,7 +52,7 @@ script = ExtResource("3_xyga1")
 cameraTripod = [null]
 freeCamera = NodePath("../camera_parent/Camera3Dp")
 phantomCamera = NodePath("../Camera3D")
-buttons = [NodePath("../Canvas/VBoxContainer/Button_1"), NodePath("../Canvas/VBoxContainer/Button_2"), NodePath("../Canvas/VBoxContainer/Button_3"), NodePath("../Canvas/VBoxContainer/Button_4")]
+buttons = [NodePath("../Canvas/Control/Button_0"), NodePath("../Canvas/Control/Button_1"), NodePath("../Canvas/Control/Button_2"), NodePath("../Canvas/Control/Button_3"), NodePath("../Canvas/HBoxContainer2/Button_4")]
 virtualCameras = [NodePath("../camera_parent/Camera_POV_0"), NodePath("../Camera_POV_1"), NodePath("../Camera_POV_2"), NodePath("../Camera_POV_3")]
 keyCodes = Array[int]([49, 50, 51, 52])
 
@@ -86,10 +89,8 @@ max_pan_speed = 0.01
 z_Depth = 1000.0
 
 [node name="Camera3Dp" type="Camera3D" parent="camera_parent"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.139114, 9.70283, 63.5923)
 visible = false
-
-[node name="ShapeCast3D" type="ShapeCast3D" parent="camera_parent/Camera3Dp"]
-shape = SubResource("SphereShape3D_va5u2")
 
 [node name="Camera_POV_0" type="Node3D" parent="camera_parent"]
 script = ExtResource("5_qc0mw")
@@ -116,87 +117,223 @@ script = ExtResource("5_qc0mw")
 tween_resource = SubResource("Resource_6rtdx")
 camera_3d_resource = SubResource("Resource_d1nsl")
 
-[node name="Canvas" type="Control" parent="."]
+[node name="Canvas" type="Control" parent="." node_paths=PackedStringArray("verticalBackground", "horizontalBackground", "buttons")]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 script = ExtResource("4_mgldc")
+verticalBackground = NodePath("Vertical_Background")
+horizontalBackground = NodePath("Horizontal_Background")
+buttons = [NodePath("Control/Button_0"), NodePath("Control/Button_1"), NodePath("Control/Button_2"), NodePath("Control/Button_3"), NodePath("HBoxContainer2/Button_4")]
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Canvas"]
-layout_mode = 1
-offset_top = 168.0
-offset_right = 208.0
-offset_bottom = 1012.0
+[node name="Vertical_Background" type="TextureRect" parent="Canvas"]
+layout_mode = 0
+offset_left = 17.0
+offset_top = 240.0
+offset_right = 130.0
+offset_bottom = 630.0
+texture = ExtResource("12_dl2wb")
 
-[node name="Button_1" type="Button" parent="Canvas/VBoxContainer"]
+[node name="Horizontal_Background" type="TextureRect" parent="Canvas"]
+layout_mode = 0
+offset_left = 96.0
+offset_top = 158.0
+offset_right = 274.0
+offset_bottom = 265.0
+texture = ExtResource("11_vdkxb")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Canvas"]
 layout_mode = 2
-text = "1"
-icon = ExtResource("5_faltc")
+offset_left = 3.0
+offset_top = 153.0
+offset_right = 142.0
+offset_bottom = 286.0
+
+[node name="Button_Home" type="Button" parent="Canvas/HBoxContainer"]
+layout_mode = 2
+icon = ExtResource("10_jcs8k")
 flat = true
 icon_alignment = 1
 
-[node name="Label" type="Label" parent="Canvas/VBoxContainer/Button_1"]
+[node name="HBoxContainer2" type="HBoxContainer" parent="Canvas"]
+layout_mode = 2
+offset_left = 151.0
+offset_top = 158.0
+offset_right = 253.0
+offset_bottom = 260.0
+
+[node name="Button_4" type="Button" parent="Canvas/HBoxContainer2"]
+layout_mode = 2
+icon = ExtResource("11_vltqw")
+flat = true
+icon_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Canvas"]
+clip_contents = true
+layout_mode = 2
+offset_left = 20.0
+offset_top = 282.0
+offset_right = 117.0
+offset_bottom = 653.0
+theme_override_constants/separation = -10
+
+[node name="Control" type="Control" parent="Canvas"]
+layout_mode = 1
+anchor_left = 0.5
+anchor_top = 6.15
+anchor_right = 2.975
+anchor_bottom = 15.125
+offset_left = -2.0
+offset_bottom = -6.10352e-05
+
+[node name="Button_Origin" type="Button" parent="Canvas/Control"]
+visible = false
+offset_top = -67.0
+offset_right = 97.0
+offset_bottom = 21.0
+icon = ExtResource("12_qmh32")
+flat = true
+icon_alignment = 1
+
+[node name="Label" type="Label" parent="Canvas/Control/Button_Origin"]
 layout_mode = 0
-offset_left = 105.0
-offset_top = 4.0
-offset_right = 197.0
-offset_bottom = 142.0
+offset_left = 63.0
+offset_top = 33.0
+offset_right = 87.0
+offset_bottom = 61.0
+text = "0"
+label_settings = SubResource("LabelSettings_dc2cm")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AnimationComponent" type="Node" parent="Canvas/Control/Button_Origin"]
+script = ExtResource("11_0aio5")
+
+[node name="Button_0" type="Button" parent="Canvas/Control"]
+layout_mode = 2
+offset_top = 31.0
+offset_right = 97.0
+offset_bottom = 119.0
+icon = ExtResource("12_qmh32")
+flat = true
+icon_alignment = 1
+
+[node name="Label" type="Label" parent="Canvas/Control/Button_0"]
+layout_mode = 0
+offset_left = 63.0
+offset_top = 33.0
+offset_right = 87.0
+offset_bottom = 61.0
+text = "0"
+label_settings = SubResource("LabelSettings_dc2cm")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AnimationComponent" type="Node" parent="Canvas/Control/Button_0"]
+script = ExtResource("11_0aio5")
+useOriginalProperty = 1
+time = 0.5
+
+[node name="Button_1" type="Button" parent="Canvas/Control"]
+layout_mode = 2
+offset_top = 109.0
+offset_right = 97.0
+offset_bottom = 197.0
+icon = ExtResource("12_qmh32")
+flat = true
+icon_alignment = 1
+
+[node name="Label" type="Label" parent="Canvas/Control/Button_1"]
+layout_mode = 0
+offset_left = 63.0
+offset_top = 33.0
+offset_right = 87.0
+offset_bottom = 61.0
 text = "1"
 label_settings = SubResource("LabelSettings_dc2cm")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Button_2" type="Button" parent="Canvas/VBoxContainer"]
+[node name="AnimationComponent" type="Node" parent="Canvas/Control/Button_1"]
+script = ExtResource("11_0aio5")
+useOriginalProperty = 1
+time = 0.5
+
+[node name="Button_2" type="Button" parent="Canvas/Control"]
 layout_mode = 2
-text = "1"
-icon = ExtResource("5_faltc")
+offset_top = 187.0
+offset_right = 97.0
+offset_bottom = 275.0
+icon = ExtResource("12_qmh32")
 flat = true
 icon_alignment = 1
 
-[node name="Label" type="Label" parent="Canvas/VBoxContainer/Button_2"]
+[node name="Label" type="Label" parent="Canvas/Control/Button_2"]
 layout_mode = 0
-offset_left = 105.0
-offset_top = 4.0
-offset_right = 197.0
-offset_bottom = 142.0
+offset_left = 63.0
+offset_top = 33.0
+offset_right = 87.0
+offset_bottom = 61.0
 text = "2"
 label_settings = SubResource("LabelSettings_dc2cm")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Button_3" type="Button" parent="Canvas/VBoxContainer"]
+[node name="AnimationComponent" type="Node" parent="Canvas/Control/Button_2"]
+script = ExtResource("11_0aio5")
+useOriginalProperty = 1
+time = 0.5
+
+[node name="Button_3" type="Button" parent="Canvas/Control"]
 layout_mode = 2
-text = "1"
-icon = ExtResource("5_faltc")
+offset_top = 265.0
+offset_right = 97.0
+offset_bottom = 353.0
+icon = ExtResource("12_qmh32")
 flat = true
 icon_alignment = 1
 
-[node name="Label" type="Label" parent="Canvas/VBoxContainer/Button_3"]
+[node name="Label" type="Label" parent="Canvas/Control/Button_3"]
 layout_mode = 0
-offset_left = 105.0
-offset_top = 4.0
-offset_right = 197.0
-offset_bottom = 142.0
+offset_left = 63.0
+offset_top = 33.0
+offset_right = 87.0
+offset_bottom = 61.0
 text = "3"
 label_settings = SubResource("LabelSettings_dc2cm")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Button_4" type="Button" parent="Canvas/VBoxContainer"]
-layout_mode = 2
-text = "1"
-icon = ExtResource("5_faltc")
-flat = true
-icon_alignment = 1
+[node name="AnimationComponent" type="Node" parent="Canvas/Control/Button_3"]
+script = ExtResource("11_0aio5")
+useOriginalProperty = 1
+time = 0.5
 
-[node name="Label" type="Label" parent="Canvas/VBoxContainer/Button_4"]
+[node name="Window" type="Window" parent="."]
+position = Vector2i(569, 200)
+size = Vector2i(300, 300)
+
+[node name="Canvas" type="Control" parent="Window"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("12_c5vs0")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Window/Canvas"]
 layout_mode = 0
-offset_left = 105.0
-offset_top = 4.0
-offset_right = 197.0
-offset_bottom = 142.0
-text = "4"
-label_settings = SubResource("LabelSettings_dc2cm")
-horizontal_alignment = 1
-vertical_alignment = 1
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Button_AnimIn_1" type="Button" parent="Window/Canvas/HBoxContainer"]
+layout_mode = 2
+text = "Anim In"
+
+[node name="Button_AnimOut_1" type="Button" parent="Window/Canvas/HBoxContainer"]
+layout_mode = 2
+text = "Anim Out"
+
+[connection signal="pressed" from="Canvas/HBoxContainer/Button_Home" to="Canvas" method="ToggleUI"]
+[connection signal="pressed" from="Window/Canvas/HBoxContainer/Button_AnimIn_1" to="Canvas/Control/Button_0/AnimationComponent" method="AnimIn"]
+[connection signal="pressed" from="Window/Canvas/HBoxContainer/Button_AnimOut_1" to="Canvas/Control/Button_0/AnimationComponent" method="AnimOut"]

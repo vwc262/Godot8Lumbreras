@@ -5,8 +5,8 @@ extends Node
 @export var texture_hidden: Texture   # Textura cuando está oculto
 
 @onready var texture_estado_enlace = $VBoxContainer/HBoxContainer/estado_enlace
-@onready var lbl_nombre_sitio = $VBoxContainer/HBoxContainer/nombre_fecha_contaier/VBoxContainer/nombre_sitio
-@onready var lbl_fecha_sitio = $VBoxContainer/HBoxContainer/nombre_fecha_contaier/VBoxContainer/fecha_sitio
+@onready var lbl_nombre_sitio = $VBoxContainer/HBoxContainer/nombre_fecha_contaier/HBoxContainer/nombre_sitio
+@onready var lbl_fecha_sitio = $VBoxContainer/HBoxContainer/nombre_fecha_contaier/HBoxContainer/fecha_sitio
 @onready var se_ales_sitios = $"VBoxContainer/PanelContainer/Control/señales_sitios"
 @onready var panel_container = $VBoxContainer/PanelContainer
 @onready var btn_expandir_sitios = $VBoxContainer/HBoxContainer/BTN_expandir_sitios

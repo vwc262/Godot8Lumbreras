@@ -1,15 +1,15 @@
 [gd_scene load_steps=10 format=3 uid="uid://hro847n58cow"]
 
 [ext_resource type="Script" path="res://Scripts/UI/UI_Signals.gd" id="1_bisnc"]
-[ext_resource type="Texture2D" uid="uid://dfv7fthqp0uuf" path="res://Recursos/UI/img/señales/Lista_detalles_margen.jpg" id="1_tledo"]
-[ext_resource type="Texture2D" uid="uid://cjwcuyb61cplu" path="res://Recursos/UI/img/Encabezado_A_submenu/Lista_detalles_Submenu.png" id="2_n8uad"]
-[ext_resource type="Texture2D" uid="uid://cgyvrt043tfco" path="res://Recursos/UI/img/Encabezado_A_submenu/Lista_detalles_Submenu_BotonIzq_a.png" id="3_e3itx"]
-[ext_resource type="Texture2D" uid="uid://ds38803kd51sp" path="res://Recursos/UI/img/Encabezado_A_submenu/Lista_detalles_Submenu_BotonDer_a.png" id="4_6a7ql"]
+[ext_resource type="Texture2D" uid="uid://bok445pb34lgv" path="res://Recursos/UI/img/CutzamalaMovil_Perfil_V3/Lista_detalles_Submenu.png" id="2_bqmp1"]
+[ext_resource type="Texture2D" uid="uid://icmsncm6083a" path="res://Recursos/UI/img/CutzamalaMovil_Perfil_V3/Lista_detalles_Submenu_Contenedor01.png" id="4_lrkvm"]
+[ext_resource type="Texture2D" uid="uid://c8d8g2yovmdy4" path="res://Recursos/UI/img/CutzamalaMovil_Perfil_V3/Lista_detalles_Submenu_BotonIzq_a.png" id="5_2pkkb"]
+[ext_resource type="Texture2D" uid="uid://b042r5slx7vwq" path="res://Recursos/UI/img/CutzamalaMovil_Perfil_V3/Lista_detalles_Submenu_Contenedor02.png" id="5_8ytvd"]
 [ext_resource type="Texture2D" uid="uid://ccdb74j068s41" path="res://Recursos/UI/img/Encabezado_A_submenu/Lista_detalles_Submenu_Vineta.png" id="6_aiytj"]
-[ext_resource type="Texture2D" uid="uid://c554rmtw6fjo5" path="res://Recursos/UI/img/Encabezado_A_submenu/Lista_detalles_Submenu_Contenedor.png" id="7_3i1ce"]
+[ext_resource type="Texture2D" uid="uid://b6bsk0t7jo2ks" path="res://Recursos/UI/img/CutzamalaMovil_Perfil_V3/Lista_detalles_Submenu_BotonDer_a.png" id="6_f4h5k"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_4gqpt"]
-texture = ExtResource("2_n8uad")
+texture = ExtResource("2_bqmp1")
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_dfaim"]
 
@@ -41,13 +41,10 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = 40.0
+offset_right = -16.0
 grow_horizontal = 2
 grow_vertical = 2
-
-[node name="margen" type="TextureRect" parent="main_container/HBoxContainer"]
-modulate = Color(1, 1, 1, 0)
-layout_mode = 2
-texture = ExtResource("1_tledo")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="main_container/HBoxContainer"]
 layout_mode = 2
@@ -57,10 +54,11 @@ size_flags_horizontal = 3
 custom_minimum_size = Vector2(0, 60)
 layout_mode = 2
 size_flags_vertical = 0
+theme_override_constants/separation = 0
 
 [node name="nivel_nombre_container" type="Panel" parent="main_container/HBoxContainer/VBoxContainer/nivel_container"]
 self_modulate = Color(1, 1, 1, 0)
-custom_minimum_size = Vector2(300, 0)
+custom_minimum_size = Vector2(310, 0)
 layout_mode = 2
 size_flags_horizontal = 0
 
@@ -80,23 +78,20 @@ expand_mode = 1
 
 [node name="lbl_nivel_nombre" type="Label" parent="main_container/HBoxContainer/VBoxContainer/nivel_container/nivel_nombre_container/HBoxContainer"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 30
-text = "label nivel"
+theme_override_font_sizes/font_size = 35
+text = "Nivel"
 
 [node name="nivel_progressbar_container" type="Panel" parent="main_container/HBoxContainer/VBoxContainer/nivel_container"]
 self_modulate = Color(1, 1, 1, 0)
-custom_minimum_size = Vector2(485, 0)
+custom_minimum_size = Vector2(395, 0)
 layout_mode = 2
-size_flags_horizontal = 3
+size_flags_horizontal = 6
 
 [node name="VBoxContainer" type="VBoxContainer" parent="main_container/HBoxContainer/VBoxContainer/nivel_container/nivel_progressbar_container"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 8.0
-offset_top = 3.0
-offset_right = -2.0
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -106,25 +101,38 @@ size_flags_vertical = 3
 
 [node name="lbl_nivel_valor_min" type="Label" parent="main_container/HBoxContainer/VBoxContainer/nivel_container/nivel_progressbar_container/VBoxContainer/HBoxContainer"]
 layout_mode = 2
-size_flags_horizontal = 3
-text = "min:00"
+size_flags_horizontal = 2
+theme_override_font_sizes/font_size = 20
+text = "min: 1m"
 
 [node name="lbl_nivel_valor_max" type="Label" parent="main_container/HBoxContainer/VBoxContainer/nivel_container/nivel_progressbar_container/VBoxContainer/HBoxContainer"]
 layout_mode = 2
-size_flags_horizontal = 3
-text = "max:00"
+size_flags_horizontal = 10
+theme_override_font_sizes/font_size = 20
+text = "max: 3m"
 horizontal_alignment = 2
 
 [node name="ProgressBar" type="ProgressBar" parent="main_container/HBoxContainer/VBoxContainer/nivel_container/nivel_progressbar_container/VBoxContainer"]
 layout_mode = 2
+theme_override_font_sizes/font_size = 15
 theme_override_styles/background = SubResource("StyleBoxEmpty_dfaim")
 value = 20.0
 
 [node name="nivel_valor_container" type="Panel" parent="main_container/HBoxContainer/VBoxContainer/nivel_container"]
 self_modulate = Color(1, 1, 1, 0)
-custom_minimum_size = Vector2(150, 40)
+custom_minimum_size = Vector2(95, 0)
 layout_mode = 2
-size_flags_horizontal = 2
+size_flags_horizontal = 6
+
+[node name="TextureRect" type="TextureRect" parent="main_container/HBoxContainer/VBoxContainer/nivel_container/nivel_valor_container"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_lrkvm")
+expand_mode = 1
 
 [node name="lbl_nivel_valor" type="Label" parent="main_container/HBoxContainer/VBoxContainer/nivel_container/nivel_valor_container"]
 layout_mode = 1
@@ -168,17 +176,19 @@ size_flags_horizontal = 0
 texture = ExtResource("6_aiytj")
 
 [node name="lbl_presion_nombre" type="Label" parent="main_container/HBoxContainer/VBoxContainer/presion_gasto_container/HBoxContainer/presion_container/HBoxContainer"]
+custom_minimum_size = Vector2(130, 0)
 layout_mode = 2
 size_flags_horizontal = 0
 mouse_filter = 1
-theme_override_font_sizes/font_size = 30
-text = "presion nombre
+theme_override_font_sizes/font_size = 35
+text = "Presion
 "
 
 [node name="presion_valor_container" type="Panel" parent="main_container/HBoxContainer/VBoxContainer/presion_gasto_container/HBoxContainer/presion_container/HBoxContainer"]
+self_modulate = Color(1, 1, 1, 0)
 custom_minimum_size = Vector2(95, 0)
 layout_mode = 2
-size_flags_horizontal = 2
+size_flags_horizontal = 6
 mouse_filter = 1
 
 [node name="TextureRect" type="TextureRect" parent="main_container/HBoxContainer/VBoxContainer/presion_gasto_container/HBoxContainer/presion_container/HBoxContainer/presion_valor_container"]
@@ -188,9 +198,8 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("7_3i1ce")
+texture = ExtResource("4_lrkvm")
 expand_mode = 1
-stretch_mode = 4
 
 [node name="presion_valor" type="Label" parent="main_container/HBoxContainer/VBoxContainer/presion_gasto_container/HBoxContainer/presion_container/HBoxContainer/presion_valor_container"]
 layout_mode = 1
@@ -229,14 +238,15 @@ texture = ExtResource("6_aiytj")
 layout_mode = 2
 size_flags_horizontal = 0
 mouse_filter = 1
-theme_override_font_sizes/font_size = 30
-text = "gasto nombre
+theme_override_font_sizes/font_size = 35
+text = "Gasto 1
 "
 
 [node name="gasto_valor_container" type="Panel" parent="main_container/HBoxContainer/VBoxContainer/presion_gasto_container/HBoxContainer/gasto_container/HBoxContainer2"]
+self_modulate = Color(1, 1, 1, 0)
 custom_minimum_size = Vector2(95, 0)
 layout_mode = 2
-size_flags_horizontal = 0
+size_flags_horizontal = 6
 mouse_filter = 1
 
 [node name="TextureRect" type="TextureRect" parent="main_container/HBoxContainer/VBoxContainer/presion_gasto_container/HBoxContainer/gasto_container/HBoxContainer2/gasto_valor_container"]
@@ -246,9 +256,8 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("7_3i1ce")
+texture = ExtResource("4_lrkvm")
 expand_mode = 1
-stretch_mode = 4
 
 [node name="gasto_valor" type="Label" parent="main_container/HBoxContainer/VBoxContainer/presion_gasto_container/HBoxContainer/gasto_container/HBoxContainer2/gasto_valor_container"]
 layout_mode = 1
@@ -274,16 +283,17 @@ layout_mode = 2
 texture = ExtResource("6_aiytj")
 
 [node name="lbl_totalizado_nombre" type="Label" parent="main_container/HBoxContainer/VBoxContainer/totalizado_container"]
+custom_minimum_size = Vector2(240, 0)
 layout_mode = 2
 mouse_filter = 1
-theme_override_font_sizes/font_size = 30
-text = "totalizado nombre"
+theme_override_font_sizes/font_size = 35
+text = "Totalizado"
 
 [node name="totalizado_valor_container" type="Panel" parent="main_container/HBoxContainer/VBoxContainer/totalizado_container"]
 self_modulate = Color(1, 1, 1, 0)
-custom_minimum_size = Vector2(400, 0)
+custom_minimum_size = Vector2(605, 0)
 layout_mode = 2
-size_flags_horizontal = 6
+size_flags_horizontal = 2
 mouse_filter = 1
 
 [node name="TextureRect" type="TextureRect" parent="main_container/HBoxContainer/VBoxContainer/totalizado_container/totalizado_valor_container"]
@@ -293,7 +303,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("7_3i1ce")
+texture = ExtResource("5_8ytvd")
 expand_mode = 1
 
 [node name="lbl_totalizado_valor" type="Label" parent="main_container/HBoxContainer/VBoxContainer/totalizado_container/totalizado_valor_container"]
@@ -329,9 +339,8 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("3_e3itx")
+texture = ExtResource("5_2pkkb")
 expand_mode = 1
-stretch_mode = 4
 
 [node name="lbl_graficador" type="Label" parent="main_container/HBoxContainer/VBoxContainer/botones_container/btn_graficador"]
 layout_mode = 1
@@ -340,10 +349,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -11.5
-offset_right = 20.0
-offset_bottom = 11.5
+offset_left = -90.0
+offset_top = -21.0
+offset_right = 63.0
+offset_bottom = 21.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 1
@@ -367,9 +376,8 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("4_6a7ql")
+texture = ExtResource("6_f4h5k")
 expand_mode = 1
-stretch_mode = 4
 
 [node name="lbl_particular" type="Label" parent="main_container/HBoxContainer/VBoxContainer/botones_container/btn_particular"]
 layout_mode = 1
@@ -378,10 +386,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -11.5
-offset_right = 20.0
-offset_bottom = 11.5
+offset_left = -50.0
+offset_top = -21.0
+offset_right = 90.0
+offset_bottom = 21.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 1

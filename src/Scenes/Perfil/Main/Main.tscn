@@ -186,7 +186,7 @@ stretch = true
 handle_input_locally = false
 physics_object_picking = true
 physics_object_picking_sort = true
-size = Vector2i(1080, 563)
+size = Vector2i(2, 2)
 render_target_update_mode = 0
 
 [node name="Perfil" parent="ScrollContainer/WindowsContainer/PerfilWindow/VB_MainContainer/Panel/main_container/VBoxContainer/SubViewportContainer/SubViewport" instance=ExtResource("2_2gqy4")]
@@ -252,7 +252,6 @@ custom_minimum_size = Vector2(0, 650)
 layout_mode = 2
 
 [node name="bnt_reset_camera" type="Button" parent="ScrollContainer/WindowsContainer/PerfilWindow/VB_MainContainer/Panel"]
-self_modulate = Color(0.0392157, 0, 1, 1)
 custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
 offset_left = 30.0
@@ -261,6 +260,7 @@ offset_right = 130.0
 offset_bottom = 130.0
 size_flags_horizontal = 0
 size_flags_vertical = 0
+flat = true
 
 [node name="ParticularWindow" type="PanelContainer" parent="ScrollContainer/WindowsContainer"]
 clip_contents = true

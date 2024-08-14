@@ -275,8 +275,11 @@ offset_left = 30.0
 offset_top = 30.0
 offset_right = 130.0
 offset_bottom = 130.0
+grow_horizontal = 2
+grow_vertical = 2
 size_flags_horizontal = 0
 size_flags_vertical = 0
+focus_mode = 0
 flat = true
 
 [node name="TextureRect" type="TextureRect" parent="ScrollContainer/WindowsContainer/PerfilWindow/VB_MainContainer/Panel/bnt_reset_camera"]

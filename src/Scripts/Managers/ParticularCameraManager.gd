@@ -47,8 +47,8 @@ func SwitchToVirtualCamera(index):
 	for camera in virtualCameras:
 		camera.priority = 0
 
-	freeCamera.current = index == 0
-	phantomCamera.current = index != 0
+	freeCamera.current = index == 4
+	phantomCamera.current = index != 4
 
 	virtualCameras[virtualCameraIndex].priority = 1
 	virtualCameras[virtualCameraIndex].transform.basis = originalRotations[virtualCameraIndex]

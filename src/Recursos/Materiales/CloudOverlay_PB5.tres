@@ -1,0 +1,17 @@
+[gd_resource type="ShaderMaterial" load_steps=3 format=3 uid="uid://bg4v1n7n5sscq"]
+
+[ext_resource type="Shader" path="res://Recursos/Materiales/CloudShadows_Additive.gdshader" id="1_1ccb1"]
+[ext_resource type="Texture2D" uid="uid://bvierywl6h5eu" path="res://Recursos/Textures/Mapa_3D/clouds.png" id="2_p78jo"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_1ccb1")
+shader_parameter/albedo = Color(0.266575, 0.266575, 0.266575, 1)
+shader_parameter/tile_size = 1.0
+shader_parameter/heightmap_scale = null
+shader_parameter/heightmap_flip = null
+shader_parameter/uv1_scale = Vector3(1, 1, 1)
+shader_parameter/uv1_offset = null
+shader_parameter/Direction = Vector2(0, 1)
+shader_parameter/Speed = 0.01
+shader_parameter/texture_clouds = ExtResource("2_p78jo")

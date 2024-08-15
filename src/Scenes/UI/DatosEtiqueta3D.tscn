@@ -1,16 +1,27 @@
-[gd_scene load_steps=6 format=3 uid="uid://bs0nvpdg63k4x"]
+[gd_scene load_steps=9 format=3 uid="uid://bs0nvpdg63k4x"]
 
 [ext_resource type="Script" path="res://Scenes/UI/DatosEtiquetaSitio_3D.gd" id="1_gdc11"]
 [ext_resource type="Shader" uid="uid://d4cf3gpi4jv62" path="res://Recursos/Shaders/shader_letrero_3d.tres" id="2_6dxd3"]
-[ext_resource type="Texture2D" uid="uid://bhsb6c0ey2tiu" path="res://Recursos/UI/3D/Panel_Nivel.png" id="2_pi6rh"]
+[ext_resource type="Texture2D" uid="uid://drk0b2w5kqolm" path="res://Recursos/UI/3D/Panel_Nivel_b.png" id="3_cn13y"]
+[ext_resource type="Shader" path="res://Scenes/UI/Progressbar3D.gdshader" id="4_rv2d4"]
+[ext_resource type="Texture2D" uid="uid://ckyvnml6hiw7b" path="res://Recursos/UI/3D/progressbar.png" id="5_os3l8"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_3an0v"]
 render_priority = 0
 shader = ExtResource("2_6dxd3")
-shader_parameter/texture_albedo = ExtResource("2_pi6rh")
+shader_parameter/texture_albedo = ExtResource("3_cn13y")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_pmbfv"]
 size = Vector3(4.56239, 2.26019, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_0vdun"]
+resource_local_to_scene = true
+render_priority = 0
+shader = ExtResource("4_rv2d4")
+shader_parameter/color = Color(0.105882, 0.45098, 0.792157, 1)
+shader_parameter/offset = 0.4
+shader_parameter/alpha_scissor = 0.4
+shader_parameter/texture_albedo = ExtResource("5_os3l8")
 
 [node name="DatosEtiqueta3D" type="Node3D"]
 script = ExtResource("1_gdc11")
@@ -23,7 +34,19 @@ ignore_occlusion_culling = true
 billboard = 1
 double_sided = false
 render_priority = 1
-texture = ExtResource("2_pi6rh")
+texture = ExtResource("3_cn13y")
+
+[node name="NombreSitio" type="Label3D" parent="Sprite3D"]
+transform = Transform3D(0.035, 0, 0, 0, 0.035, 0, 0, 0, 0.035, -2, 1.25795, 0.012)
+pixel_size = 0.1
+double_sided = false
+render_priority = 1
+outline_render_priority = 0
+text = "Nombre Sitio"
+font_size = 85
+outline_size = 20
+horizontal_alignment = 0
+vertical_alignment = 0
 
 [node name="FechaSitio" type="Label3D" parent="Sprite3D"]
 transform = Transform3D(0.035, 0, 0, 0, 0.035, 0, 0, 0, 0.035, -2, 0.177589, 0.012)
@@ -54,5 +77,11 @@ vertical_alignment = 0
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Sprite3D/Area3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.054863, 0.139017, 0.0485852)
 shape = SubResource("BoxShape3D_pmbfv")
+
+[node name="Sprite3D" type="Sprite3D" parent="Sprite3D"]
+transform = Transform3D(1.65, 0, 0, 0, 0.85, 0, 0, 0, 1, 0, -0.585556, 0.01)
+material_override = SubResource("ShaderMaterial_0vdun")
+cast_shadow = 0
+texture = ExtResource("5_os3l8")
 
 [connection signal="input_event" from="Sprite3D/Area3D" to="." method="_on_EtiquetaClick"]

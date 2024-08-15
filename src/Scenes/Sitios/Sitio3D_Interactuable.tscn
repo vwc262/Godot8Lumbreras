@@ -25,7 +25,7 @@ transform = Transform3D(0.911152, 0, 0.412064, 0, 1, 0, -0.412064, 0, 0.911152, 
 shape = SubResource("BoxShape3D_kb87j")
 
 [node name="DatosEtiqueta3D" parent="Mini_3D_05" instance=ExtResource("3_osuc0")]
-transform = Transform3D(0.01, 0, 0, 0, 0.01, 0, 0, 0, 0.01, 0, 2.94545, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.94545, 0)
 
 [node name="SelectMesh" parent="Mini_3D_05" instance=ExtResource("4_dsy6m")]
 

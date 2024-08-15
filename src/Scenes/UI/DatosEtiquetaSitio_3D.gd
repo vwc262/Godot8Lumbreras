@@ -3,6 +3,7 @@ extends Node3D
 @export var IdEstacion: int = 0;
 @onready var labelFecha = $Sprite3D/FechaSitio
 @onready var labelNivel = $Sprite3D/Nivel
+@onready var labelNombre = $Sprite3D/NombreSitio
 
 var estacion: Estacion = null;
 var nivel: Señal = null;
@@ -25,6 +26,7 @@ func _on_datos_actualizados(_estaciones: Array[Estacion]):
 
 func refresh_data():
 	if estacion != null and nivel != null:
+		labelNombre.text = "%s" % [estacion.nombre]
 		labelFecha.text = "%s" % [GlobalUtils.formatear_fecha(estacion.tiempo)]
 		labelNivel.text = nivel.nombre + " :" + str(nivel.valor) + " m." if nivel.is_dentro_rango() else  "---" 
 

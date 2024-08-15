@@ -7,7 +7,7 @@
 [node name="ArbolDetail_Prefab" type="Node3D"]
 
 [node name="arbolDetailed" parent="." instance=ExtResource("1_f5qwe")]
-transform = Transform3D(2.05754, 0, 0, 0, 2.05754, 0, 0, 0, 2.05754, 97.9867, 19.8562, 44.0278)
+transform = Transform3D(2.05754, 0, 0, 0, 2.05754, 0, 0, 0, 2.05754, 0, 0, 0)
 
 [node name="Plane" parent="arbolDetailed" index="0"]
 material_override = ExtResource("2_03nsn")

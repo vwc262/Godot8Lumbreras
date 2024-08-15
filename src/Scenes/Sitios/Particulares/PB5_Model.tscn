@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://d4nifki50ahlx"]
+[gd_scene load_steps=28 format=3 uid="uid://d4nifki50ahlx"]
 
 [ext_resource type="PackedScene" uid="uid://cee4bu1xjnrjv" path="res://Recursos/Meshes/Particular_Cutzamala_PBR5/Cutzamala_PBR5_Berros_RecursosMaster.blend" id="1_lw3b4"]
 [ext_resource type="Script" path="res://Scripts/CutzamalaDissolve.gd" id="2_1lfsx"]
@@ -15,6 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://dwwulixxwdeat" path="res://Recursos/Meshes/Particular_Cutzamala_PBR5/Meshes_colision/Cutzamala_collision_fence_visual.glb" id="13_cnd0g"]
 [ext_resource type="Material" uid="uid://xgb8n1gtjwxb" path="res://Recursos/Materiales/SelectGlow_Unlit.tres" id="14_5wcxd"]
 [ext_resource type="PackedScene" uid="uid://qarbp5cx5k7w" path="res://Recursos/Meshes/Particular_Cutzamala_PBR5/Meshes_colision/SimplifiedCollisions.glb" id="15_kcofc"]
+[ext_resource type="PackedScene" path="res://Recursos/Meshes/Props/Marker_sprite_3d.tscn" id="16_qeikr"]
 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_j1av6"]
 data = PackedVector3Array(-114.767, 41.3061, -80.4187, 130.262, 88.6649, -80.4187, 130.262, 41.3061, -80.4187, -114.767, 41.3061, -80.4187, -114.767, 88.6649, -80.4187, 130.262, 88.6649, -80.4187, 130.262, 41.3061, -80.4187, 131.839, 88.6649, 54.8306, 131.839, 41.3061, 54.8306, 130.262, 41.3061, -80.4187, 130.262, 88.6649, -80.4187, 131.839, 88.6649, 54.8306, -114.767, 41.3061, -80.4187, -114.767, 88.6649, 63.4096, -114.767, 88.6649, -80.4187, -114.767, 41.3061, -80.4187, -114.767, 41.3061, 63.4096, -114.767, 88.6649, 63.4096, -114.767, 41.3061, 63.4096, 131.839, 88.6649, 54.8306, -114.767, 88.6649, 63.4096, -114.767, 41.3061, 63.4096, 131.839, 41.3061, 54.8306, 131.839, 88.6649, 54.8306)
@@ -166,6 +167,9 @@ shape = SubResource("ConcavePolygonShape3D_i1nu5")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="SimplifiedCollisions/simplifiedCollision_011/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_idcbi")
+
+[node name="Sprite3D" parent="." instance=ExtResource("16_qeikr")]
+transform = Transform3D(-1.03955e-08, 0.237822, -1.03955e-08, 0, -1.03955e-08, -0.237822, -0.237822, -1.03955e-08, 4.54404e-16, 7.50652, 5.03335, -82.8403)
 
 [editable path="Cutzamala_PBR5_Berros_RecursosMaster"]
 [editable path="Cutzamala_PBR5_Berros_RecursosMaster/Cutzamala_collision_fence_visual"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://qofjfvol201e"]
+[gd_scene load_steps=21 format=3 uid="uid://qofjfvol201e"]
 
 [ext_resource type="Script" path="res://Scripts/Environment/Particular.gd" id="1_mvh1e"]
 [ext_resource type="PackedScene" uid="uid://d4nifki50ahlx" path="res://Scenes/Sitios/Particulares/PB5_Model.tscn" id="2_3ceb2"]
@@ -35,6 +35,10 @@ frustum_offset = Vector2(0, 0)
 near = 0.05
 far = 4000.0
 
+[sub_resource type="SphereShape3D" id="SphereShape3D_uu0ns"]
+margin = 0.5
+radius = 1.0
+
 [sub_resource type="LabelSettings" id="LabelSettings_dc2cm"]
 font_size = 20
 font_color = Color(0, 0, 0, 1)
@@ -50,23 +54,25 @@ idEstacion = 1
 [node name="ParticularCameraManager" type="Node3D" parent="." node_paths=PackedStringArray("cameraTripod", "freeCamera", "phantomCamera", "buttons", "virtualCameras")]
 script = ExtResource("3_xyga1")
 cameraTripod = [null]
-freeCamera = NodePath("../camera_parent/Camera3Dp")
+freeCamera = NodePath("../camera_parent/CollisionShape3D/Camera3Dp")
 phantomCamera = NodePath("../Camera3D")
 buttons = [NodePath("../Canvas/Control/Button_0"), NodePath("../Canvas/Control/Button_1"), NodePath("../Canvas/Control/Button_2"), NodePath("../Canvas/Control/Button_3"), NodePath("../Canvas/HBoxContainer2/Button_4")]
 virtualCameras = [NodePath("../camera_parent/Camera_POV_0"), NodePath("../Camera_POV_1"), NodePath("../Camera_POV_2"), NodePath("../Camera_POV_3")]
 keyCodes = Array[int]([49, 50, 51, 52])
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20, 9.17423, -20)
+transform = Transform3D(0.999387, 0, -0.0350043, 0.00159461, 0.998962, 0.0455269, 0.0349679, -0.0455548, 0.99835, 7.16729, 5.85234, -79.4011)
 current = true
 
 [node name="CameraHost" type="Node3D" parent="Camera3D"]
 transform = Transform3D(0.654912, -2.25218e-08, -0.755705, -0.199397, 0.964562, -0.172803, 0.728924, 0.263856, 0.631704, -63.7768, -30.5909, -33.7907)
 script = ExtResource("8_sii0s")
 
-[node name="camera_parent" type="Node3D" parent="."]
+[node name="camera_parent" type="CharacterBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20, 9.17423, -20)
-visible = false
+input_capture_on_drag = true
+platform_wall_layers = 1
+safe_margin = 0.5
 script = ExtResource("3_56rpr")
 can_pan = true
 maxX = 40
@@ -88,14 +94,15 @@ zoom_treshold = 45.0
 max_pan_speed = 0.01
 z_Depth = 1000.0
 
-[node name="Camera3Dp" type="Camera3D" parent="camera_parent"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.139114, 9.70283, 63.5923)
-visible = false
-
 [node name="Camera_POV_0" type="Node3D" parent="camera_parent"]
 script = ExtResource("5_qc0mw")
 tween_resource = SubResource("Resource_6rtdx")
 camera_3d_resource = SubResource("Resource_d1nsl")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="camera_parent"]
+shape = SubResource("SphereShape3D_uu0ns")
+
+[node name="Camera3Dp" type="Camera3D" parent="camera_parent/CollisionShape3D"]
 
 [node name="Container" type="Node3D" parent="."]
 
@@ -189,6 +196,7 @@ offset_bottom = -6.10352e-05
 
 [node name="Button_Origin" type="Button" parent="Canvas/Control"]
 visible = false
+layout_mode = 0
 offset_top = -67.0
 offset_right = 97.0
 offset_bottom = 21.0

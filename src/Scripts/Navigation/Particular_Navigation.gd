@@ -10,6 +10,7 @@ extends Node3D
 @export var maxZ = -20
 @export var minY = 5
 @export var maxY = 50
+@export var use_limites : bool = false
 
 @export_group('Rotation')
 @export var can_rotate: bool
@@ -34,10 +35,14 @@ extends Node3D
 @export var max_pan_speed : float = 0.05
 @export var z_Depth : float = 100
 #endregion
+@onready var camera_parent: CharacterBody3D = $"."
 
-@onready var camera_3_dp : Node3D = $Camera3Dp
-@onready var camera_3_dp2: Camera3D = $Camera3Dp
-@onready var shape_cast_3d: ShapeCast3D = $Camera3Dp/ShapeCast3D
+@onready var camera_3_dp : Node3D = $CollisionShape3D/Camera3Dp
+@onready var camera_3_dp2: Camera3D = $CollisionShape3D/Camera3Dp
+
+@export_group('Propiedades de colision de camara')
+@export var max_number_handle_collisions : int = 10
+@export var margen_seguro : int = 0.01
 
 
 #region Signals
@@ -65,6 +70,8 @@ var previous_y_diff  : float = 0
 var previous_distance:float=0
 var client_size: Vector2;
 var vector_proyectado: Vector3;
+
+
 #endregion
 
 # Called when the node enters the scene tree for the first time.
@@ -158,12 +165,9 @@ func handle_drag(event: InputEventScreenDrag):
 	if touch_points.size() == 1:
 		if can_pan:
 			var pan_vector = (forward + (-event.relative.x * right ) + (-event.relative.y * forward)) * pan_speed
-			pan_vector.y = 0
-			# comentado
-			shape_cast_3d.target_position = pan_vector
-			shape_cast_3d.force_shapecast_update()
-			if(!shape_cast_3d.is_colliding()):	
-				global_translate(pan_vector)
+			pan_vector.y = 0					
+			camera_parent.move_and_collide(pan_vector,false,margen_seguro,true,max_number_handle_collisions)		
+			
 
 	elif touch_points.size() >= 2:
 		#var up: Vector2 = Vector2(0,1)
@@ -186,14 +190,17 @@ func handle_drag(event: InputEventScreenDrag):
 			if abs(get_delta_distance(current_dist)) > zoom_treshold:#zoom
 				var direction = -1 if current_dist > last_distance else 1 
 				#position += cameraForward * direction * zoom_speed
-				position += vector_proyectado * -direction * zoom_speed * 8
+				var to_zoom_move = vector_proyectado * -direction * zoom_speed * 8
+				camera_parent.move_and_collide(to_zoom_move,false,margen_seguro,true,max_number_handle_collisions)		
 				last_distance = current_dist
 			elif previous_y_diff != 0: #tilt
 				if abs(current_finger_positions.y - previous_y_diff) > tilt_threshold:
 					var direction : float = sign(event.relative.y)
 					# comentado
 					#camera_3_dp.rotation_degrees.x += direction * tilt_speed
-					position.y += direction * tilt_speed
+					var up_down_pos : Vector3 = Vector3(0.0,position.y,0.0)
+					up_down_pos.y =  direction * tilt_speed
+					camera_parent.move_and_collide(up_down_pos ,false,margen_seguro,true,max_number_handle_collisions)		
 			previous_y_diff  = current_finger_positions.y	
 			previous_distance = current_dist
 
@@ -204,10 +211,10 @@ func handle_drag(event: InputEventScreenDrag):
 	#position.x = clamp(position.x, minX * factorZoom, maxX * factorZoom)
 	#position.z = clamp(position.z, minZ * factorZoom, maxZ * factorZoom)
 	#position.y = clamp(position.y, minY * factorZoom, maxY * factorZoom)
-	
-	position.x = clamp(position.x, minX, maxX)
-	position.z = clamp(position.z, minZ, maxZ)
-	position.y = clamp(position.y, minY, maxY)
+	if use_limites:
+		position.x = clamp(position.x, minX, maxX)
+		position.z = clamp(position.z, minZ, maxZ)
+		position.y = clamp(position.y, minY, maxY)
 
 func rotate_camera(currentangle: float):
 	rotation_degrees.y += -currentangle

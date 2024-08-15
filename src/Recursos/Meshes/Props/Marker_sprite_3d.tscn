@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://cku6aj81y664y"]
+
+[ext_resource type="Texture2D" uid="uid://be8fri3h85dym" path="res://Recursos/Textures/Mapa_3D/circulo_sitioPB_v1.png" id="1_n5tqf"]
+[ext_resource type="Script" path="res://Scripts/Environment/Marker_sprite_3d.gd" id="2_oqx1p"]
+
+[node name="Sprite3D" type="Sprite3D"]
+transform = Transform3D(-4.37114e-08, 1, -4.37114e-08, 0, -4.37114e-08, -1, -1, -4.37114e-08, 1.91069e-15, 0, 0, 0)
+modulate = Color(0.763902, 0.474626, 0.987046, 1)
+texture = ExtResource("1_n5tqf")
+script = ExtResource("2_oqx1p")

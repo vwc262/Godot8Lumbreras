@@ -141,6 +141,7 @@ layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
+scale = Vector2(1.35996, 1.35996)
 script = ExtResource("4_mgldc")
 verticalBackground = NodePath("Vertical_Background")
 horizontalBackground = NodePath("Horizontal_Background")

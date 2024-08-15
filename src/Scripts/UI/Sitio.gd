@@ -49,7 +49,7 @@ func actualizar_datos():
 
 # Función para actualizar el estado del enlace
 func set_enlace():	
-	texture_estado_enlace.texture = preload("res://Recursos/UI/img/CutzamalaMovil_Perfil_V3/EncabezadoB_base_Conexion_a.png") if estacion_ref.is_estacion_en_linea() else preload("res://Recursos/UI/img/CutzamalaMovil_Perfil_V3/EncabezadoB_base_Conexion_a-1.png")	
+	texture_estado_enlace.texture = preload("res://Recursos/UI/img/CutzamalaMovil_Perfil_V3/EncabezadoB_base_Conexion_a.png") if estacion_ref.is_estacion_en_linea() else preload("res://Recursos/UI/img/CutzamalaMovil_Perfil_V3/EncabezadoB_base_Conexion_b.png")	
 
 # Función para instanciar y actualizar señales
 func instanciar_señales():

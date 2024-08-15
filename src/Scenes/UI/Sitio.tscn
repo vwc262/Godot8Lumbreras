@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://6pb72kocguii" path="res://Recursos/UI/img/CutzamalaMovil_Perfil_V3/Lista_Detalles_seleccion.png" id="6_476dq"]
 [ext_resource type="PackedScene" uid="uid://hro847n58cow" path="res://Scenes/UI/UI_Señales.tscn" id="7_7pxni"]
 [ext_resource type="Texture2D" uid="uid://b6ak0dychqgwd" path="res://Recursos/UI/img/CutzamalaMovil_Perfil_V3/Lista_Detalles_BotonFlecha_a.png" id="7_d3qat"]
-[ext_resource type="Texture2D" path="res://Recursos/UI/img/CutzamalaMovil_Perfil_V3/EncabezadoB_base_Conexion_b.png" id="8_adn6f"]
+[ext_resource type="Texture2D" uid="uid://cqa0owk40erpl" path="res://Recursos/UI/img/CutzamalaMovil_Perfil_V3/EncabezadoB_base_Conexion_b.png" id="8_adn6f"]
 
 [node name="Sitio" type="PanelContainer"]
 self_modulate = Color(1, 1, 1, 0)

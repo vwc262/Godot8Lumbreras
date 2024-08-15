@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://cvtphbfv0wfr4"]
+
+[ext_resource type="PackedScene" uid="uid://bmmdgtnsjudjj" path="res://Recursos/Meshes/Mapa/Sitios/Mini_Sitios/Mini_3D_04.glb" id="1_0awts"]
+[ext_resource type="Material" uid="uid://dh2n3p2wcagt2" path="res://Recursos/Materiales/Emissivo/m_Emissive_window.tres" id="2_esj21"]
+
+[node name="Mini_3D_04" instance=ExtResource("1_0awts")]
+
+[node name="Mini_005" parent="." index="0"]
+surface_material_override/1 = ExtResource("2_esj21")

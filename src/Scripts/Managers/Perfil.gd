@@ -27,6 +27,7 @@ signal in_particular
 var is_hidden = false  # Variable para rastrear el estado del contenedor
 
 func _ready() -> void:
+	var estaciones: Array[Estacion] = GlobalData.get_data()
 	SceneManager.add_scene(SceneManager.idScenePerfil,perfil)
 	SceneManager.add_subviewport_reference(SceneManager.TIPO_NIVEL.PERFIL,sub_viewport_container)
 	SceneManager.set_scroll_reference(scroll_container)
@@ -34,9 +35,13 @@ func _ready() -> void:
 	# Conectar señasles a las funciones correspondientes
 	UIManager.set_ui_particular(ui_particular)  # Establecer la referencia a ui_particular
 	SceneManager.set_initial_window()
-	set_contador_sitios()
-		
 	
+	set_contador_sitios(estaciones)
+	GlobalData.connect("datos_actualizados", _on_datos_actualizados)
+
+func _on_datos_actualizados(estaciones: Array[Estacion]):
+	set_contador_sitios(estaciones)
+
 func AdjustWindowsSize():
 	var size = get_viewport().size
 	SceneManager.set_viewport_size_x(size.x )
@@ -92,8 +97,8 @@ func _on_ready() -> void:
 func _on_sub_viewport_container_visibility_changed() -> void:
 	background_flip_book.visible = true if !sub_viewport_container.visible else false
 	
-func set_contador_sitios():
-	var sitios_info = GlobalData.get_data()
+func set_contador_sitios(estaciones):
+	var sitios_info = estaciones
 	var offline_count = 0
 	var online_count = 0
 	

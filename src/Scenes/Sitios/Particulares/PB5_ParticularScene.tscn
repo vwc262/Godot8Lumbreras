@@ -61,7 +61,7 @@ virtualCameras = [NodePath("../camera_parent/Camera_POV_0"), NodePath("../Camera
 keyCodes = Array[int]([49, 50, 51, 52])
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(0.999387, 0, -0.0350043, 0.00159461, 0.998962, 0.0455269, 0.0349679, -0.0455548, 0.99835, 7.16729, 5.85234, -79.4011)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20, 9.17423, -20)
 current = true
 
 [node name="CameraHost" type="Node3D" parent="Camera3D"]

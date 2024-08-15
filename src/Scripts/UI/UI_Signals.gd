@@ -89,7 +89,7 @@ func set_progress_bar(_signal: Señal, unidad):
 	tween.tween_property(progress_bar, "value", display_value, 1)
 
 	
-func _on_tween_finished(valor_a_poner): pass
+func _on_tween_finished(_valor_a_poner): pass
 
 # Función general para manejar la lógica compartida de los botones
 func manejar_btn_presionado(_mostrar_graficador: bool):

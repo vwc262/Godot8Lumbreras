@@ -20,6 +20,7 @@ enum BOY_ORIGINAL_PROPERTY
 @export var animatedProperty : BOY_ANIMATED_PROPERTY
 @export var transition_type : Tween.TransitionType
 
+var animInOut : bool
 var target : Control
 
 func _ready():
@@ -40,15 +41,25 @@ func _ready():
 			vecOut = auxVec
 
 func AnimIn():
-	add_tween(BOY_ANIMATED_PROPERTY.keys()[animatedProperty],vecOut, time)
+	animInOut = false
+	add_tween(BOY_ANIMATED_PROPERTY.keys()[animatedProperty],vecIn, time)
 	
 func AnimOut():
-	add_tween(BOY_ANIMATED_PROPERTY.keys()[animatedProperty],vecIn, time)
+	animInOut = true
+	target.visible = true
+	add_tween(BOY_ANIMATED_PROPERTY.keys()[animatedProperty],vecOut, time)
 
 func add_tween(property : String, value, seconds : float):
 	var tween = get_tree().create_tween()
 	tween.tween_property(target, property, value, seconds).set_trans(transition_type)
-
+	tween.connect("finished", EndTween)
 
 func AuxFunc():
 	print("Hola Boy")
+
+
+func _on_button_anim_in_1_pressed():
+	pass # Replace with function body.
+
+func EndTween():
+	target.visible = animInOut

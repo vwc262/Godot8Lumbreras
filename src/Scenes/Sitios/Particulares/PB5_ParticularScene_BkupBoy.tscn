@@ -74,7 +74,7 @@ virtualCameras = [NodePath("../Camera_POV_0"), NodePath("../Camera_POV_1"), Node
 keyCodes = Array[int]([49, 50, 51, 52])
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(0.999387, 0, -0.0350043, 0.00159461, 0.998962, 0.0455269, 0.0349679, -0.0455548, 0.99835, 7.16729, 5.85234, -79.4011)
+transform = Transform3D(0.783772, 0.148427, -0.60305, -0.00131471, 0.971415, 0.237383, 0.621047, -0.185261, 0.761563, -35.8581, 33.5905, -23.1691)
 current = true
 
 [node name="CameraHost" type="Node3D" parent="Camera3D"]
@@ -239,6 +239,7 @@ time = 0.25
 visible = false
 modulate = Color(0, 1, 1, 1)
 show_behind_parent = true
+layout_mode = 0
 offset_left = 4.00002
 offset_top = 5.0
 offset_right = 135.0
@@ -257,6 +258,7 @@ offset_bottom = -6.10352e-05
 
 [node name="Button_Origin" type="Button" parent="Canvas_UI_camarasParticular/Control_POV"]
 visible = false
+layout_mode = 0
 offset_top = -67.0
 offset_right = 97.0
 offset_bottom = 21.0
@@ -295,6 +297,7 @@ time = 0.25
 visible = false
 modulate = Color(0, 1, 1, 1)
 show_behind_parent = true
+layout_mode = 0
 offset_right = 89.0
 offset_bottom = 80.0
 texture = ExtResource("30_oen02")
@@ -330,6 +333,7 @@ time = 0.25
 visible = false
 modulate = Color(0, 1, 1, 1)
 show_behind_parent = true
+layout_mode = 0
 offset_top = 1.0
 offset_right = 89.0
 offset_bottom = 81.0
@@ -366,6 +370,7 @@ time = 0.25
 visible = false
 modulate = Color(0, 1, 1, 1)
 show_behind_parent = true
+layout_mode = 0
 offset_top = -1.0
 offset_right = 89.0
 offset_bottom = 79.0
@@ -402,6 +407,7 @@ time = 0.25
 visible = false
 modulate = Color(0, 1, 1, 1)
 show_behind_parent = true
+layout_mode = 0
 offset_top = 2.0
 offset_right = 89.0
 offset_bottom = 82.0
@@ -423,6 +429,7 @@ icon_alignment = 1
 visible = false
 modulate = Color(0, 1, 1, 1)
 show_behind_parent = true
+layout_mode = 0
 offset_right = 131.0
 offset_bottom = 125.0
 texture = ExtResource("28_3bn0d")
@@ -453,16 +460,16 @@ layout_mode = 2
 text = "Anim Out"
 
 [connection signal="pressed" from="Canvas_UI_camarasParticular/Button_Home" to="Canvas_UI_camarasParticular" method="ToggleUI"]
+[connection signal="pressed" from="Window/Canvas/HBoxContainer/Button_AnimIn_1" to="Canvas_UI_camarasParticular/Control_Free/Button_4/AnimationComponent" method="AnimIn"]
 [connection signal="pressed" from="Window/Canvas/HBoxContainer/Button_AnimIn_1" to="Canvas_UI_camarasParticular/Control_POV/Button_0/AnimationComponent" method="AnimIn"]
 [connection signal="pressed" from="Window/Canvas/HBoxContainer/Button_AnimIn_1" to="Canvas_UI_camarasParticular/Control_POV/Button_1/AnimationComponent" method="AnimIn"]
 [connection signal="pressed" from="Window/Canvas/HBoxContainer/Button_AnimIn_1" to="Canvas_UI_camarasParticular/Control_POV/Button_2/AnimationComponent" method="AnimIn"]
 [connection signal="pressed" from="Window/Canvas/HBoxContainer/Button_AnimIn_1" to="Canvas_UI_camarasParticular/Control_POV/Button_3/AnimationComponent" method="AnimIn"]
-[connection signal="pressed" from="Window/Canvas/HBoxContainer/Button_AnimIn_1" to="Canvas_UI_camarasParticular/Control_Free/Button_4/AnimationComponent" method="AnimIn"]
+[connection signal="pressed" from="Window/Canvas/HBoxContainer/Button_AnimOut_1" to="Canvas_UI_camarasParticular/Control_Free/Button_4/AnimationComponent" method="AnimOut"]
 [connection signal="pressed" from="Window/Canvas/HBoxContainer/Button_AnimOut_1" to="Canvas_UI_camarasParticular/Control_POV/Button_0/AnimationComponent" method="AnimOut"]
 [connection signal="pressed" from="Window/Canvas/HBoxContainer/Button_AnimOut_1" to="Canvas_UI_camarasParticular/Control_POV/Button_1/AnimationComponent" method="AnimOut"]
 [connection signal="pressed" from="Window/Canvas/HBoxContainer/Button_AnimOut_1" to="Canvas_UI_camarasParticular/Control_POV/Button_2/AnimationComponent" method="AnimOut"]
 [connection signal="pressed" from="Window/Canvas/HBoxContainer/Button_AnimOut_1" to="Canvas_UI_camarasParticular/Control_POV/Button_3/AnimationComponent" method="AnimOut"]
-[connection signal="pressed" from="Window/Canvas/HBoxContainer/Button_AnimOut_1" to="Canvas_UI_camarasParticular/Control_Free/Button_4/AnimationComponent" method="AnimOut"]
 
 [editable path="Container/Cutzamala_PBR5_Berros_RecursosMaster"]
 [editable path="Container/Cutzamala_PBR5_Berros_RecursosMaster/Cutzamala_collision_fence_visual"]

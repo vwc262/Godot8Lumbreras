@@ -15,6 +15,7 @@ signal IrA
 @onready var etiqueta3D = $Mini_3D_05/DatosEtiqueta3D
 @onready var labelSitio = $LabelNameSitio
 @onready var select_mesh: Node3D = $Mini_3D_05/SelectMesh
+@onready var sprite_3d: Sprite3D = $Mini_3D_05/Sprite3D
 
 var estacion: Estacion
 
@@ -63,4 +64,5 @@ func _on_camera_moved(positionY: float, maxZoom, minZoom):
 	etiqueta3D.scale = Vector3(actualScale, actualScale, actualScale)
 
 func _set_selection(do_select:bool):
-	select_mesh.visible = true if do_select else false
+	sprite_3d.visible = true if do_select else false
+	#select_mesh.visible = true if do_select else false

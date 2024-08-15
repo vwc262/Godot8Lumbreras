@@ -298,7 +298,6 @@ expand_mode = 1
 stretch_mode = 5
 
 [node name="ParticularWindow" type="PanelContainer" parent="ScrollContainer/WindowsContainer"]
-visible = false
 clip_contents = true
 layout_mode = 2
 size_flags_horizontal = 3

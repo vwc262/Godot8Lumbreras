@@ -21,8 +21,7 @@ var semaforo: Semaforo = null;
 var tweenBlur;
 
 # Called when the node enters the scene tree for the first time.
-func _ready():
-	tweenBlur = TweenManager.init_tween(OnTweenFinished)
+func _ready():		
 	GlobalData.connect("datos_actualizados", _on_datos_actualizados)
 	refresh_data();
 
@@ -49,8 +48,9 @@ func refresh_data():
 		
 		progressbar_material.set_shader_parameter("color", base_color if nivel.dentro_rango else color_rango)
 		var offset_parameter = remap(nivel.valor, 0.0, semaforo.critico, 0.0, 1.0)
-		progressbar_material.set_shader_parameter("offset", offset_parameter)
-		#tweenBlur.tween_property(progressbar_material, "shader_parameter/offset", offset_parameter, 0.2)
+		#progressbar_material.set_shader_parameter("offset", offset_parameter)
+		tweenBlur = TweenManager.init_tween(OnTweenFinished)
+		tweenBlur.tween_property(progressbar_material, "shader_parameter/offset", offset_parameter, 0.2)
 		
 		canvas_container.texture = online_texture if estacion.enlace != 0 else offline_texture
 		canvas_material.set("shader_parameter/texture_albedo", online_texture if estacion.enlace != 0 else offline_texture)

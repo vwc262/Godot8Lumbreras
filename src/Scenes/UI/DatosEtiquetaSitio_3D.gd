@@ -4,15 +4,20 @@ extends Node3D
 @onready var labelFecha = $Sprite3D/FechaSitio
 @onready var labelNivel = $Sprite3D/Nivel
 @onready var labelNombre = $Sprite3D/NombreSitio
+@onready var canvas_container = $Sprite3D
 
 @export var base_color: Color = Color(27, 115, 202, 255);
 @export var color_rango: Color = Color(112, 112, 112, 255);
+
+const online_texture = preload("res://Recursos/UI/3D/Panel_Nivel_a.png");
+const offline_texture = preload("res://Recursos/UI/3D/Panel_Nivel_b.png");
 
 var estacion: Estacion = null;
 var nivel: Señal = null;
 var semaforo: Semaforo = null;
 
 @onready var progressbar_material:Material = $Sprite3D/Progressbar3D.material_override
+@onready var canvas_material:Material = $Sprite3D.material_override
 var tweenBlur;
 
 # Called when the node enters the scene tree for the first time.
@@ -45,7 +50,10 @@ func refresh_data():
 		progressbar_material.set_shader_parameter("color", base_color if nivel.dentro_rango else color_rango)
 		var offset_parameter = remap(nivel.valor, 0.0, semaforo.critico, 0.0, 1.0)
 		progressbar_material.set_shader_parameter("offset", offset_parameter)
-		#tweenBlur.tween_property(progressbar_material, "shader_parameter/Offset", offset_parameter, 0.2)
+		#tweenBlur.tween_property(progressbar_material, "shader_parameter/offset", offset_parameter, 0.2)
+		
+		canvas_container.texture = online_texture if estacion.enlace != 0 else offline_texture
+		canvas_material.set("shader_parameter/texture_albedo", online_texture if estacion.enlace != 0 else offline_texture)
 
 func _on_EtiquetaClick(_camera: Node, event: InputEvent, _position: Vector3, _normal: Vector3, _shape_idx: int) -> void:
 	if(event is InputEventMouseButton  and event.double_click):

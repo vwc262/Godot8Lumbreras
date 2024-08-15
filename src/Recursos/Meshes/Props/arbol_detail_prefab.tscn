@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://b2n2iu7men4tk"]
+
+[ext_resource type="PackedScene" uid="uid://p506ipj8rwk" path="res://Recursos/Meshes/Props/arbolDetailed.glb" id="1_f5qwe"]
+[ext_resource type="Material" uid="uid://bqp14n7u4kch1" path="res://Recursos/Materiales/ArbolDetailedUnlit_material.tres" id="2_03nsn"]
+[ext_resource type="Texture2D" uid="uid://byb17ru6d5g0e" path="res://Recursos/Textures/Props/Pine_001.png" id="3_l2b2m"]
+
+[node name="ArbolDetail_Prefab" type="Node3D"]
+
+[node name="arbolDetailed" parent="." instance=ExtResource("1_f5qwe")]
+transform = Transform3D(2.05754, 0, 0, 0, 2.05754, 0, 0, 0, 2.05754, 97.9867, 19.8562, 44.0278)
+
+[node name="Plane" parent="arbolDetailed" index="0"]
+material_override = ExtResource("2_03nsn")
+gi_mode = 0
+
+[node name="Sprite_Shadow" type="Sprite3D" parent="arbolDetailed"]
+transform = Transform3D(-3.02327, 3.09309, 1.1285e-07, -6.14023e-15, -2.15926e-07, 4.1231, 2.4279, 3.85157, 1.40522e-07, 3.60395, 0, 4.60122)
+modulate = Color(0.239216, 0.239216, 0.239216, 0.572549)
+texture = ExtResource("3_l2b2m")
+
+[editable path="arbolDetailed"]

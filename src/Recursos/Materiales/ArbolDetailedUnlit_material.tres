@@ -1,0 +1,16 @@
+[gd_resource type="ShaderMaterial" load_steps=3 format=3 uid="uid://bqp14n7u4kch1"]
+
+[ext_resource type="Shader" path="res://Recursos/Materiales/Material_Alpha_Unlit.gdshader" id="1_i6a81"]
+[ext_resource type="Texture2D" uid="uid://cldk6rdoosg3m" path="res://Recursos/Textures/Props/arbolDetailed_Arbol.png" id="2_ntkms"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_i6a81")
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/ao_texture_channel = null
+shader_parameter/ao_light_affect = null
+shader_parameter/heightmap_scale = null
+shader_parameter/heightmap_flip = null
+shader_parameter/uv1_scale = Vector3(1, 1, 1)
+shader_parameter/uv1_offset = null
+shader_parameter/texture_albedo = ExtResource("2_ntkms")

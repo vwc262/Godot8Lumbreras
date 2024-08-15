@@ -9,7 +9,7 @@ extends Node
 @onready var lbl_fecha_sitio = $VBoxContainer/datos_sitio_container/HBoxContainer/nombre_fecha_contaier/HBoxContainer/fecha_sitio
 @onready var se_ales_sitios = $"VBoxContainer/PanelContainer/Control/señales_sitios"
 @onready var panel_container = $VBoxContainer/PanelContainer
-@onready var btn_expandir_sitios = $VBoxContainer/HBoxContainer/BTN_expandir_sitios
+@onready var btn_expandir_sitios = $VBoxContainer/datos_sitio_container/HBoxContainer/BTN_expandir_sitios
 @onready var btn_expandir_fondo = $VBoxContainer/datos_sitio_container/HBoxContainer/BTN_expandir_sitios/btn_expandir_fondo
 @onready var sitio_fondo = $VBoxContainer/datos_sitio_container/sitio_fondo
 @onready var sitio_fondo_seleccionado = $VBoxContainer/datos_sitio_container/sitio_fondo_seleccionado
@@ -23,6 +23,8 @@ var id_estacion: int
 var is_hidden = true
 var is_double_click_disabled = false
 
+var is_signals_instantiated = false
+
 func _ready():
 	NavigationManager.connect("OnTweenFinished_MovimientoRealizado", _on_camera_zoom)
 
@@ -34,7 +36,10 @@ func set_datos(estacion: Estacion):
 	signal_ref = estacion_ref.signals
 	call_deferred("actualizar_datos")
 	call_deferred("set_enlace")
-	call_deferred("instanciar_señales")
+	if !is_signals_instantiated:
+		call_deferred("instanciar_señales")
+	else:
+		call_deferred("update_signals")
 
 # Función para actualizar los datos mostrados
 func actualizar_datos():
@@ -45,7 +50,6 @@ func actualizar_datos():
 # Función para actualizar el estado del enlace
 func set_enlace():	
 	texture_estado_enlace.texture = preload("res://Recursos/UI/img/CutzamalaMovil_Perfil_V3/EncabezadoB_base_Conexion_a.png") if estacion_ref.is_estacion_en_linea() else preload("res://Recursos/UI/img/CutzamalaMovil_Perfil_V3/EncabezadoB_base_Conexion_b.png")	
-		
 
 # Función para instanciar y actualizar señales
 func instanciar_señales():
@@ -62,7 +66,13 @@ func instanciar_señales():
 
 	# Ocultar el panel de señales si no hay señales
 	panel_container.visible = signal_ref.size() > 0
-
+	
+	is_signals_instantiated = true
+	
+func update_signals():
+	for instance_singal in se_ales_sitios.get_children():
+		instance_singal.set_datos(estacion_ref)
+	
 # Función que maneja la señal del botón presionado
 func _on_button_pressed():
 	# Deshabilitar el botón mientras se ejecuta el tween

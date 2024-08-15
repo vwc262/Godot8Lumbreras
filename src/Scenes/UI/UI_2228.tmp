@@ -121,7 +121,7 @@ show_percentage = false
 
 [node name="nivel_valor_container" type="Panel" parent="main_container/HBoxContainer/VBoxContainer/nivel_container"]
 self_modulate = Color(1, 1, 1, 0)
-custom_minimum_size = Vector2(150, 0)
+custom_minimum_size = Vector2(95, 0)
 layout_mode = 2
 size_flags_horizontal = 8
 
@@ -187,7 +187,7 @@ text = "Presion
 
 [node name="presion_valor_container" type="Panel" parent="main_container/HBoxContainer/VBoxContainer/presion_gasto_container/HBoxContainer/presion_container/HBoxContainer"]
 self_modulate = Color(1, 1, 1, 0)
-custom_minimum_size = Vector2(150, 0)
+custom_minimum_size = Vector2(95, 0)
 layout_mode = 2
 size_flags_horizontal = 6
 mouse_filter = 1
@@ -245,7 +245,7 @@ text = "Gasto 1
 
 [node name="gasto_valor_container" type="Panel" parent="main_container/HBoxContainer/VBoxContainer/presion_gasto_container/HBoxContainer/gasto_container/HBoxContainer2"]
 self_modulate = Color(1, 1, 1, 0)
-custom_minimum_size = Vector2(150, 0)
+custom_minimum_size = Vector2(95, 0)
 layout_mode = 2
 size_flags_horizontal = 10
 mouse_filter = 1
@@ -284,7 +284,7 @@ layout_mode = 2
 texture = ExtResource("6_aiytj")
 
 [node name="lbl_totalizado_nombre" type="Label" parent="main_container/HBoxContainer/VBoxContainer/totalizado_container"]
-custom_minimum_size = Vector2(220, 0)
+custom_minimum_size = Vector2(240, 0)
 layout_mode = 2
 mouse_filter = 1
 theme_override_font_sizes/font_size = 35
@@ -292,7 +292,7 @@ text = "Totalizado"
 
 [node name="totalizado_valor_container" type="Panel" parent="main_container/HBoxContainer/VBoxContainer/totalizado_container"]
 self_modulate = Color(1, 1, 1, 0)
-custom_minimum_size = Vector2(720, 0)
+custom_minimum_size = Vector2(710, 0)
 layout_mode = 2
 size_flags_horizontal = 2
 mouse_filter = 1

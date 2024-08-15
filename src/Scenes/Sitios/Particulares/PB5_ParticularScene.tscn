@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=3 uid="uid://qofjfvol201e"]
+[gd_scene load_steps=21 format=3 uid="uid://qofjfvol201e"]
 
 [ext_resource type="Script" path="res://Scripts/Environment/Particular.gd" id="1_mvh1e"]
 [ext_resource type="PackedScene" uid="uid://d4nifki50ahlx" path="res://Scenes/Sitios/Particulares/PB5_Model.tscn" id="2_3ceb2"]
@@ -7,31 +7,15 @@
 [ext_resource type="Script" path="res://Scripts/UI/CamarasParticular/UI_CamarasParticular.gd" id="4_mgldc"]
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_3d.gd" id="5_qc0mw"]
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="6_bkdkv"]
-[ext_resource type="PackedScene" uid="uid://cee4bu1xjnrjv" path="res://Recursos/Meshes/Particular_Cutzamala_PBR5/Cutzamala_PBR5_Berros_RecursosMaster.blend" id="6_g7f6j"]
-[ext_resource type="Script" path="res://Scripts/CutzamalaDissolve.gd" id="7_ghwda"]
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/resources/camera_3d_resource.gd" id="7_skwsb"]
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd" id="8_sii0s"]
-[ext_resource type="Material" uid="uid://bc661come1l76" path="res://Recursos/Materiales/ParticularMuro_PBR5_Tileable.tres" id="8_uakuw"]
-[ext_resource type="Material" uid="uid://clpnronp88bg2" path="res://Recursos/Materiales/ParticularUnlit_sec1.tres" id="9_llpte"]
 [ext_resource type="Texture2D" uid="uid://d3t35nmgqbmuj" path="res://Recursos/UI/Botones_Vistas/Boton_Vistas_a.png" id="10_jcs8k"]
-[ext_resource type="Material" uid="uid://bexyx5nrr46o1" path="res://Recursos/Materiales/Barrier.tres" id="10_yx0t6"]
 [ext_resource type="Script" path="res://Scripts/UI/Animations/AnimationComponent.gd" id="11_0aio5"]
-[ext_resource type="Material" uid="uid://d313nvgrewkot" path="res://Recursos/Materiales/ParticularGrass_Tileable.tres" id="11_7r8b0"]
 [ext_resource type="Texture2D" uid="uid://dg5oipusuww6x" path="res://Recursos/UI/Botones_Vistas/Boton_Vistas_expDerecha.png" id="11_vdkxb"]
 [ext_resource type="Texture2D" uid="uid://b3h43rm52tco1" path="res://Recursos/UI/Botones_Vistas/Boton_Vistas_VistaLibre_a.png" id="11_vltqw"]
 [ext_resource type="Script" path="res://addons/easy_charts/utilities/containers/canvas/canvas.gd" id="12_c5vs0"]
 [ext_resource type="Texture2D" uid="uid://6wyhls7pma6d" path="res://Recursos/UI/Botones_Vistas/Boton_Vistas_expInferior.png" id="12_dl2wb"]
 [ext_resource type="Texture2D" uid="uid://dmvxf7j1gk80r" path="res://Recursos/UI/Botones_Vistas/Boton_Vistas_Camara_a.png" id="12_qmh32"]
-[ext_resource type="Material" uid="uid://cuffxlgpe8lrr" path="res://Recursos/Materiales/ParticularMuro2_Tileable.tres" id="12_qrcg2"]
-[ext_resource type="Material" uid="uid://cwdb0xo47d1bn" path="res://Recursos/Materiales/ParticularUnlit_tuberias_material.tres" id="13_ae6fs"]
-[ext_resource type="Material" uid="uid://bonstudrdm2ew" path="res://Recursos/Materiales/ParticularUnlit_Gasto_material.tres" id="14_prshu"]
-[ext_resource type="Texture2D" uid="uid://b1bsb8ip8ktty" path="res://Recursos/UI/Botones_Vistas/Boton_Vistas_Camara_b.png" id="15_xx1k6"]
-[ext_resource type="Material" uid="uid://b01vby7vqyu2y" path="res://Recursos/Materiales/ParticularPlaster_Tileable.tres" id="15_yoojp"]
-[ext_resource type="Material" uid="uid://dc4d50uixwgaw" path="res://Recursos/Materiales/ParticularRoof_Tileable.tres" id="16_isi2d"]
-[ext_resource type="Material" uid="uid://ca8npxbjn72ic" path="res://Recursos/Materiales/ParticularUnlit_Props2.tres" id="17_bpwju"]
-[ext_resource type="Texture2D" uid="uid://chnkg8sy7fkq6" path="res://Recursos/UI/Botones_Vistas/Boton_Vistas_b.png" id="17_drb0s"]
-[ext_resource type="PackedScene" uid="uid://dwwulixxwdeat" path="res://Recursos/Meshes/Particular_Cutzamala_PBR5/Meshes_colision/Cutzamala_collision_fence_visual.glb" id="18_yb5wt"]
-[ext_resource type="Material" uid="uid://xgb8n1gtjwxb" path="res://Recursos/Materiales/SelectGlow_Unlit.tres" id="19_bxgp2"]
 
 [sub_resource type="Resource" id="Resource_6rtdx"]
 script = ExtResource("6_bkdkv")
@@ -51,6 +35,10 @@ frustum_offset = Vector2(0, 0)
 near = 0.05
 far = 4000.0
 
+[sub_resource type="SphereShape3D" id="SphereShape3D_uu0ns"]
+margin = 0.5
+radius = 1.0
+
 [sub_resource type="LabelSettings" id="LabelSettings_dc2cm"]
 font_size = 20
 font_color = Color(0, 0, 0, 1)
@@ -63,27 +51,28 @@ script = ExtResource("1_mvh1e")
 particular_scene = ExtResource("2_3ceb2")
 idEstacion = 1
 
-[node name="ParticularCameraManager" type="Node3D" parent="." node_paths=PackedStringArray("cameraTripod", "freeCamera", "phantomCamera", "buttonHome", "buttons", "virtualCameras")]
+[node name="ParticularCameraManager" type="Node3D" parent="." node_paths=PackedStringArray("cameraTripod", "freeCamera", "phantomCamera", "buttons", "virtualCameras")]
 script = ExtResource("3_xyga1")
 cameraTripod = [null]
-freeCamera = NodePath("../camera_parent/Camera3Dp")
+freeCamera = NodePath("../camera_parent/CollisionShape3D/Camera3Dp")
 phantomCamera = NodePath("../Camera3D")
-buttonHome = NodePath("../Canvas_UI_camarasParticular/Button_Home")
-buttons = [NodePath("../Canvas_UI_camarasParticular/Control_POV/Button_0"), NodePath("../Canvas_UI_camarasParticular/Control_POV/Button_1"), NodePath("../Canvas_UI_camarasParticular/Control_POV/Button_2"), NodePath("../Canvas_UI_camarasParticular/Control_POV/Button_3"), NodePath("../Canvas_UI_camarasParticular/Control_Free/Button_4")]
-virtualCameras = [NodePath("../Camera_POV_0"), NodePath("../Camera_POV_1"), NodePath("../Camera_POV_2"), NodePath("../Camera_POV_3"), NodePath("../Camera_POV_4")]
+buttons = [NodePath("../Canvas/Control/Button_0"), NodePath("../Canvas/Control/Button_1"), NodePath("../Canvas/Control/Button_2"), NodePath("../Canvas/Control/Button_3"), NodePath("../Canvas/HBoxContainer2/Button_4")]
+virtualCameras = [NodePath("../camera_parent/Camera_POV_0"), NodePath("../Camera_POV_1"), NodePath("../Camera_POV_2"), NodePath("../Camera_POV_3")]
 keyCodes = Array[int]([49, 50, 51, 52])
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(0.783772, 0.148427, -0.60305, -0.00131471, 0.971415, 0.237383, 0.621047, -0.185261, 0.761563, -35.8581, 33.5905, -23.1691)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20, 9.17423, -20)
 current = true
 
 [node name="CameraHost" type="Node3D" parent="Camera3D"]
 transform = Transform3D(0.654912, -2.25218e-08, -0.755705, -0.199397, 0.964562, -0.172803, 0.728924, 0.263856, 0.631704, -63.7768, -30.5909, -33.7907)
 script = ExtResource("8_sii0s")
 
-[node name="camera_parent" type="Node3D" parent="."]
+[node name="camera_parent" type="CharacterBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20, 9.17423, -20)
-visible = false
+input_capture_on_drag = true
+platform_wall_layers = 1
+safe_margin = 0.5
 script = ExtResource("3_56rpr")
 can_pan = true
 maxX = 40
@@ -105,61 +94,17 @@ zoom_treshold = 45.0
 max_pan_speed = 0.01
 z_Depth = 1000.0
 
-[node name="Camera3Dp" type="Camera3D" parent="camera_parent"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.139114, 9.70283, 63.5923)
-visible = false
-
-[node name="RemoteTransform3D" type="RemoteTransform3D" parent="camera_parent/Camera3Dp"]
-remote_path = NodePath("../../../Camera_POV_4")
-
-[node name="Container" type="Node3D" parent="."]
-
-[node name="Cutzamala_PBR5_Berros_RecursosMaster" parent="Container" instance=ExtResource("6_g7f6j")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, 0)
-script = ExtResource("7_ghwda")
-
-[node name="Muros" parent="Container/Cutzamala_PBR5_Berros_RecursosMaster" index="1"]
-material_override = ExtResource("8_uakuw")
-
-[node name="Desnivel_002" parent="Container/Cutzamala_PBR5_Berros_RecursosMaster" index="2"]
-material_override = ExtResource("9_llpte")
-
-[node name="Barrera_Particular" parent="Container/Cutzamala_PBR5_Berros_RecursosMaster" index="4"]
-visible = false
-material_override = ExtResource("10_yx0t6")
-
-[node name="Pasto" parent="Container/Cutzamala_PBR5_Berros_RecursosMaster" index="5"]
-material_override = ExtResource("11_7r8b0")
-
-[node name="Muros_2" parent="Container/Cutzamala_PBR5_Berros_RecursosMaster" index="6"]
-material_override = ExtResource("12_qrcg2")
-
-[node name="Piso_001" parent="Container/Cutzamala_PBR5_Berros_RecursosMaster" index="7"]
-material_override = ExtResource("13_ae6fs")
-
-[node name="Gasto" parent="Container/Cutzamala_PBR5_Berros_RecursosMaster" index="8"]
-material_override = ExtResource("14_prshu")
-
-[node name="Edificio_012" parent="Container/Cutzamala_PBR5_Berros_RecursosMaster" index="9"]
-material_override = ExtResource("15_yoojp")
-
-[node name="Edificio_003" parent="Container/Cutzamala_PBR5_Berros_RecursosMaster" index="10"]
-material_override = ExtResource("16_isi2d")
-
-[node name="Edificio_005" parent="Container/Cutzamala_PBR5_Berros_RecursosMaster" index="11"]
-material_override = ExtResource("17_bpwju")
-
-[node name="Cutzamala_collision_fence_visual" parent="Container/Cutzamala_PBR5_Berros_RecursosMaster" instance=ExtResource("18_yb5wt")]
-
-[node name="collision_fence_visual" parent="Container/Cutzamala_PBR5_Berros_RecursosMaster/Cutzamala_collision_fence_visual" index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -32.1978, 0)
-material_override = ExtResource("19_bxgp2")
-
-[node name="Camera_POV_0" type="Node3D" parent="."]
-transform = Transform3D(0.783772, 0.148427, -0.60305, -0.00131471, 0.971415, 0.237383, 0.621047, -0.185261, 0.761563, -35.8581, 33.5905, -23.1691)
+[node name="Camera_POV_0" type="Node3D" parent="camera_parent"]
 script = ExtResource("5_qc0mw")
 tween_resource = SubResource("Resource_6rtdx")
 camera_3d_resource = SubResource("Resource_d1nsl")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="camera_parent"]
+shape = SubResource("SphereShape3D_uu0ns")
+
+[node name="Camera3Dp" type="Camera3D" parent="camera_parent/CollisionShape3D"]
+
+[node name="Container" type="Node3D" parent="."]
 
 [node name="Camera_POV_1" type="Node3D" parent="."]
 transform = Transform3D(0.999387, 0, -0.0350043, 0.00159461, 0.998962, 0.0455269, 0.0349679, -0.0455548, 0.99835, 7.16729, 5.85234, -79.4011)
@@ -168,7 +113,7 @@ tween_resource = SubResource("Resource_6rtdx")
 camera_3d_resource = SubResource("Resource_d1nsl")
 
 [node name="Camera_POV_2" type="Node3D" parent="."]
-transform = Transform3D(0.823641, 0.0037116, -0.567099, 0.0149672, 0.999488, 0.0282796, 0.566913, -0.0317801, 0.823164, -9.26891, 2.2914, -44.2502)
+transform = Transform3D(0.8555, 0.239351, -0.459163, 0, 0.886753, 0.462244, 0.517803, -0.39545, 0.758617, -14.2918, 19.5768, -52.4485)
 script = ExtResource("5_qc0mw")
 tween_resource = SubResource("Resource_6rtdx")
 camera_3d_resource = SubResource("Resource_d1nsl")
@@ -179,13 +124,7 @@ script = ExtResource("5_qc0mw")
 tween_resource = SubResource("Resource_6rtdx")
 camera_3d_resource = SubResource("Resource_d1nsl")
 
-[node name="Camera_POV_4" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.8609, 18.8771, 43.5923)
-script = ExtResource("5_qc0mw")
-tween_resource = SubResource("Resource_6rtdx")
-camera_3d_resource = SubResource("Resource_d1nsl")
-
-[node name="Canvas_UI_camarasParticular" type="Control" parent="." node_paths=PackedStringArray("verticalBackground", "horizontalBackground", "buttons", "indicationSpriteHome", "indicationSprites")]
+[node name="Canvas" type="Control" parent="." node_paths=PackedStringArray("verticalBackground", "horizontalBackground", "buttons")]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
@@ -193,11 +132,9 @@ offset_bottom = 40.0
 script = ExtResource("4_mgldc")
 verticalBackground = NodePath("Vertical_Background")
 horizontalBackground = NodePath("Horizontal_Background")
-buttons = [NodePath("Control_POV/Button_0"), NodePath("Control_POV/Button_1"), NodePath("Control_POV/Button_2"), NodePath("Control_POV/Button_3"), NodePath("Control_Free/Button_4")]
-indicationSpriteHome = NodePath("Button_Home/Active_Background")
-indicationSprites = [NodePath("Control_POV/Button_0/Active_Background_0"), NodePath("Control_POV/Button_1/Active_Background_1"), NodePath("Control_POV/Button_2/Active_Background_2"), NodePath("Control_POV/Button_3/Active_Background_3"), NodePath("Control_Free/Button_4/Active_Background_4")]
+buttons = [NodePath("Control/Button_0"), NodePath("Control/Button_1"), NodePath("Control/Button_2"), NodePath("Control/Button_3"), NodePath("HBoxContainer2/Button_4")]
 
-[node name="Vertical_Background" type="TextureRect" parent="Canvas_UI_camarasParticular"]
+[node name="Vertical_Background" type="TextureRect" parent="Canvas"]
 layout_mode = 0
 offset_left = 17.0
 offset_top = 240.0
@@ -205,7 +142,7 @@ offset_right = 130.0
 offset_bottom = 630.0
 texture = ExtResource("12_dl2wb")
 
-[node name="Horizontal_Background" type="TextureRect" parent="Canvas_UI_camarasParticular"]
+[node name="Horizontal_Background" type="TextureRect" parent="Canvas"]
 layout_mode = 0
 offset_left = 96.0
 offset_top = 158.0
@@ -213,41 +150,42 @@ offset_right = 274.0
 offset_bottom = 265.0
 texture = ExtResource("11_vdkxb")
 
-[node name="Control_Free" type="Control" parent="Canvas_UI_camarasParticular"]
+[node name="HBoxContainer" type="HBoxContainer" parent="Canvas"]
 layout_mode = 2
-anchors_preset = 0
+offset_left = 3.0
 offset_top = 153.0
+offset_right = 142.0
 offset_bottom = 286.0
 
-[node name="Button_4" type="Button" parent="Canvas_UI_camarasParticular/Control_Free"]
+[node name="Button_Home" type="Button" parent="Canvas/HBoxContainer"]
+layout_mode = 2
+icon = ExtResource("10_jcs8k")
+flat = true
+icon_alignment = 1
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="Canvas"]
 layout_mode = 2
 offset_left = 151.0
-offset_top = 5.0
+offset_top = 158.0
 offset_right = 253.0
-offset_bottom = 107.0
+offset_bottom = 260.0
+
+[node name="Button_4" type="Button" parent="Canvas/HBoxContainer2"]
+layout_mode = 2
 icon = ExtResource("11_vltqw")
 flat = true
 icon_alignment = 1
 
-[node name="AnimationComponent" type="Node" parent="Canvas_UI_camarasParticular/Control_Free/Button_4"]
-script = ExtResource("11_0aio5")
-vecIn = Vector2(19, 5)
-useOriginalProperty = 1
-time = 0.25
+[node name="VBoxContainer" type="VBoxContainer" parent="Canvas"]
+clip_contents = true
+layout_mode = 2
+offset_left = 20.0
+offset_top = 282.0
+offset_right = 117.0
+offset_bottom = 653.0
+theme_override_constants/separation = -10
 
-[node name="Active_Background_4" type="TextureRect" parent="Canvas_UI_camarasParticular/Control_Free/Button_4"]
-visible = false
-modulate = Color(0, 1, 1, 1)
-show_behind_parent = true
-layout_mode = 0
-offset_left = 4.00002
-offset_top = 5.0
-offset_right = 135.0
-offset_bottom = 130.0
-scale = Vector2(0.778, 0.778)
-texture = ExtResource("17_drb0s")
-
-[node name="Control_POV" type="Control" parent="Canvas_UI_camarasParticular"]
+[node name="Control" type="Control" parent="Canvas"]
 layout_mode = 1
 anchor_left = 0.5
 anchor_top = 6.15
@@ -256,7 +194,7 @@ anchor_bottom = 15.125
 offset_left = -2.0
 offset_bottom = -6.10352e-05
 
-[node name="Button_Origin" type="Button" parent="Canvas_UI_camarasParticular/Control_POV"]
+[node name="Button_Origin" type="Button" parent="Canvas/Control"]
 visible = false
 layout_mode = 0
 offset_top = -67.0
@@ -266,17 +204,7 @@ icon = ExtResource("12_qmh32")
 flat = true
 icon_alignment = 1
 
-[node name="Button_0" type="Button" parent="Canvas_UI_camarasParticular/Control_POV"]
-modulate = Color(0.768627, 0.839216, 1, 0.717647)
-layout_mode = 2
-offset_top = 31.0
-offset_right = 97.0
-offset_bottom = 119.0
-icon = ExtResource("12_qmh32")
-flat = true
-icon_alignment = 1
-
-[node name="Label" type="Label" parent="Canvas_UI_camarasParticular/Control_POV/Button_0"]
+[node name="Label" type="Label" parent="Canvas/Control/Button_Origin"]
 layout_mode = 0
 offset_left = 63.0
 offset_top = 33.0
@@ -287,23 +215,35 @@ label_settings = SubResource("LabelSettings_dc2cm")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="AnimationComponent" type="Node" parent="Canvas_UI_camarasParticular/Control_POV/Button_0"]
+[node name="AnimationComponent" type="Node" parent="Canvas/Control/Button_Origin"]
 script = ExtResource("11_0aio5")
-vecIn = Vector2(0, -67)
-useOriginalProperty = 1
-time = 0.25
 
-[node name="Active_Background_0" type="TextureRect" parent="Canvas_UI_camarasParticular/Control_POV/Button_0"]
-visible = false
-modulate = Color(0, 1, 1, 1)
-show_behind_parent = true
+[node name="Button_0" type="Button" parent="Canvas/Control"]
+layout_mode = 2
+offset_top = 31.0
+offset_right = 97.0
+offset_bottom = 119.0
+icon = ExtResource("12_qmh32")
+flat = true
+icon_alignment = 1
+
+[node name="Label" type="Label" parent="Canvas/Control/Button_0"]
 layout_mode = 0
-offset_right = 89.0
-offset_bottom = 80.0
-texture = ExtResource("15_xx1k6")
+offset_left = 63.0
+offset_top = 33.0
+offset_right = 87.0
+offset_bottom = 61.0
+text = "0"
+label_settings = SubResource("LabelSettings_dc2cm")
+horizontal_alignment = 1
+vertical_alignment = 1
 
-[node name="Button_1" type="Button" parent="Canvas_UI_camarasParticular/Control_POV"]
-modulate = Color(0.768627, 0.839216, 1, 1)
+[node name="AnimationComponent" type="Node" parent="Canvas/Control/Button_0"]
+script = ExtResource("11_0aio5")
+useOriginalProperty = 1
+time = 0.5
+
+[node name="Button_1" type="Button" parent="Canvas/Control"]
 layout_mode = 2
 offset_top = 109.0
 offset_right = 97.0
@@ -312,7 +252,7 @@ icon = ExtResource("12_qmh32")
 flat = true
 icon_alignment = 1
 
-[node name="Label" type="Label" parent="Canvas_UI_camarasParticular/Control_POV/Button_1"]
+[node name="Label" type="Label" parent="Canvas/Control/Button_1"]
 layout_mode = 0
 offset_left = 63.0
 offset_top = 33.0
@@ -323,24 +263,12 @@ label_settings = SubResource("LabelSettings_dc2cm")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="AnimationComponent" type="Node" parent="Canvas_UI_camarasParticular/Control_POV/Button_1"]
+[node name="AnimationComponent" type="Node" parent="Canvas/Control/Button_1"]
 script = ExtResource("11_0aio5")
-vecIn = Vector2(0, -67)
 useOriginalProperty = 1
-time = 0.25
+time = 0.5
 
-[node name="Active_Background_1" type="TextureRect" parent="Canvas_UI_camarasParticular/Control_POV/Button_1"]
-visible = false
-modulate = Color(0, 1, 1, 1)
-show_behind_parent = true
-layout_mode = 0
-offset_top = 1.0
-offset_right = 89.0
-offset_bottom = 81.0
-texture = ExtResource("15_xx1k6")
-
-[node name="Button_2" type="Button" parent="Canvas_UI_camarasParticular/Control_POV"]
-modulate = Color(0.768627, 0.839216, 1, 1)
+[node name="Button_2" type="Button" parent="Canvas/Control"]
 layout_mode = 2
 offset_top = 187.0
 offset_right = 97.0
@@ -349,7 +277,7 @@ icon = ExtResource("12_qmh32")
 flat = true
 icon_alignment = 1
 
-[node name="Label" type="Label" parent="Canvas_UI_camarasParticular/Control_POV/Button_2"]
+[node name="Label" type="Label" parent="Canvas/Control/Button_2"]
 layout_mode = 0
 offset_left = 63.0
 offset_top = 33.0
@@ -360,24 +288,12 @@ label_settings = SubResource("LabelSettings_dc2cm")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="AnimationComponent" type="Node" parent="Canvas_UI_camarasParticular/Control_POV/Button_2"]
+[node name="AnimationComponent" type="Node" parent="Canvas/Control/Button_2"]
 script = ExtResource("11_0aio5")
-vecIn = Vector2(0, -67)
 useOriginalProperty = 1
-time = 0.25
+time = 0.5
 
-[node name="Active_Background_2" type="TextureRect" parent="Canvas_UI_camarasParticular/Control_POV/Button_2"]
-visible = false
-modulate = Color(0, 1, 1, 1)
-show_behind_parent = true
-layout_mode = 0
-offset_top = -1.0
-offset_right = 89.0
-offset_bottom = 79.0
-texture = ExtResource("15_xx1k6")
-
-[node name="Button_3" type="Button" parent="Canvas_UI_camarasParticular/Control_POV"]
-modulate = Color(0.768627, 0.839216, 1, 1)
+[node name="Button_3" type="Button" parent="Canvas/Control"]
 layout_mode = 2
 offset_top = 265.0
 offset_right = 97.0
@@ -386,7 +302,7 @@ icon = ExtResource("12_qmh32")
 flat = true
 icon_alignment = 1
 
-[node name="Label" type="Label" parent="Canvas_UI_camarasParticular/Control_POV/Button_3"]
+[node name="Label" type="Label" parent="Canvas/Control/Button_3"]
 layout_mode = 0
 offset_left = 63.0
 offset_top = 33.0
@@ -397,47 +313,14 @@ label_settings = SubResource("LabelSettings_dc2cm")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="AnimationComponent" type="Node" parent="Canvas_UI_camarasParticular/Control_POV/Button_3"]
+[node name="AnimationComponent" type="Node" parent="Canvas/Control/Button_3"]
 script = ExtResource("11_0aio5")
-vecIn = Vector2(0, -67)
 useOriginalProperty = 1
-time = 0.25
-
-[node name="Active_Background_3" type="TextureRect" parent="Canvas_UI_camarasParticular/Control_POV/Button_3"]
-visible = false
-modulate = Color(0, 1, 1, 1)
-show_behind_parent = true
-layout_mode = 0
-offset_top = 2.0
-offset_right = 89.0
-offset_bottom = 82.0
-texture = ExtResource("15_xx1k6")
-
-[node name="Button_Home" type="Button" parent="Canvas_UI_camarasParticular"]
-modulate = Color(0.768627, 0.839216, 1, 1)
-z_index = 1
-layout_mode = 2
-offset_left = 3.0
-offset_top = 153.0
-offset_right = 142.0
-offset_bottom = 286.0
-icon = ExtResource("10_jcs8k")
-flat = true
-icon_alignment = 1
-
-[node name="Active_Background" type="TextureRect" parent="Canvas_UI_camarasParticular/Button_Home"]
-visible = false
-modulate = Color(0, 1, 1, 1)
-show_behind_parent = true
-layout_mode = 0
-offset_right = 131.0
-offset_bottom = 125.0
-texture = ExtResource("17_drb0s")
+time = 0.5
 
 [node name="Window" type="Window" parent="."]
 position = Vector2i(569, 200)
 size = Vector2i(300, 300)
-visible = false
 
 [node name="Canvas" type="Control" parent="Window"]
 layout_mode = 3
@@ -459,17 +342,6 @@ text = "Anim In"
 layout_mode = 2
 text = "Anim Out"
 
-[connection signal="pressed" from="Canvas_UI_camarasParticular/Button_Home" to="Canvas_UI_camarasParticular" method="ToggleUI"]
-[connection signal="pressed" from="Window/Canvas/HBoxContainer/Button_AnimIn_1" to="Canvas_UI_camarasParticular/Control_Free/Button_4/AnimationComponent" method="AnimIn"]
-[connection signal="pressed" from="Window/Canvas/HBoxContainer/Button_AnimIn_1" to="Canvas_UI_camarasParticular/Control_POV/Button_0/AnimationComponent" method="AnimIn"]
-[connection signal="pressed" from="Window/Canvas/HBoxContainer/Button_AnimIn_1" to="Canvas_UI_camarasParticular/Control_POV/Button_1/AnimationComponent" method="AnimIn"]
-[connection signal="pressed" from="Window/Canvas/HBoxContainer/Button_AnimIn_1" to="Canvas_UI_camarasParticular/Control_POV/Button_2/AnimationComponent" method="AnimIn"]
-[connection signal="pressed" from="Window/Canvas/HBoxContainer/Button_AnimIn_1" to="Canvas_UI_camarasParticular/Control_POV/Button_3/AnimationComponent" method="AnimIn"]
-[connection signal="pressed" from="Window/Canvas/HBoxContainer/Button_AnimOut_1" to="Canvas_UI_camarasParticular/Control_Free/Button_4/AnimationComponent" method="AnimOut"]
-[connection signal="pressed" from="Window/Canvas/HBoxContainer/Button_AnimOut_1" to="Canvas_UI_camarasParticular/Control_POV/Button_0/AnimationComponent" method="AnimOut"]
-[connection signal="pressed" from="Window/Canvas/HBoxContainer/Button_AnimOut_1" to="Canvas_UI_camarasParticular/Control_POV/Button_1/AnimationComponent" method="AnimOut"]
-[connection signal="pressed" from="Window/Canvas/HBoxContainer/Button_AnimOut_1" to="Canvas_UI_camarasParticular/Control_POV/Button_2/AnimationComponent" method="AnimOut"]
-[connection signal="pressed" from="Window/Canvas/HBoxContainer/Button_AnimOut_1" to="Canvas_UI_camarasParticular/Control_POV/Button_3/AnimationComponent" method="AnimOut"]
-
-[editable path="Container/Cutzamala_PBR5_Berros_RecursosMaster"]
-[editable path="Container/Cutzamala_PBR5_Berros_RecursosMaster/Cutzamala_collision_fence_visual"]
+[connection signal="pressed" from="Canvas/HBoxContainer/Button_Home" to="Canvas" method="ToggleUI"]
+[connection signal="pressed" from="Window/Canvas/HBoxContainer/Button_AnimIn_1" to="Canvas/Control/Button_0/AnimationComponent" method="AnimIn"]
+[connection signal="pressed" from="Window/Canvas/HBoxContainer/Button_AnimOut_1" to="Canvas/Control/Button_0/AnimationComponent" method="AnimOut"]

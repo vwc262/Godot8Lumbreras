@@ -3,7 +3,7 @@ uniform vec3 skyColor : source_color;
 uniform vec3 horizonColor1 : source_color;
 uniform vec3 horizonColor2 : source_color;
 uniform float offsetHorizontalColor: hint_range(0,1,0.01) = 0.4;
-uniform sampler2D skyTexture;
+uniform sampler2D skyTexture: filter_linear;
 uniform float ofset_coords: hint_range(0.0, 1.0, 0.1) = 0.1;
 uniform float mix_texture: hint_range(0.0, 1.0, 0.01) = 0.6;
 

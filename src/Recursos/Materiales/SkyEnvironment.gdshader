@@ -8,8 +8,6 @@ uniform float ofset_coords: hint_range(0.0, 1.0, 0.1) = 0.1;
 uniform float mix_texture: hint_range(0.0, 1.0, 0.01) = 0.6;
 
 void sky() {
-	
-	
     // Called for every visible pixel in the sky background, as well as all pixels
     // in the radiance cubemap.
     float col1 = clamp(EYEDIR.y / .3,0.1,1.0) + offsetHorizontalColor;

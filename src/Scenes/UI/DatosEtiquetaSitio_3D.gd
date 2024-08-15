@@ -5,14 +5,24 @@ extends Node3D
 @onready var labelNivel = $Sprite3D/Nivel
 @onready var labelNombre = $Sprite3D/NombreSitio
 
+@export var base_color: Color = Color(27, 115, 202, 255);
+@export var color_rango: Color = Color(112, 112, 112, 255);
+
 var estacion: Estacion = null;
 var nivel: Señal = null;
+var semaforo: Semaforo = null;
+
+@onready var progressbar_material:Material = $Sprite3D/Progressbar3D.material_override
+var tweenBlur;
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	tweenBlur = TweenManager.init_tween(OnTweenFinished)
 	GlobalData.connect("datos_actualizados", _on_datos_actualizados)
 	refresh_data();
 
+func OnTweenFinished():
+	pass
 
 # Función que se llama cuando se actualizan los datos
 func _on_datos_actualizados(_estaciones: Array[Estacion]):
@@ -21,6 +31,8 @@ func _on_datos_actualizados(_estaciones: Array[Estacion]):
 		for _signal: Señal in estacion.signals.values():
 			if _signal.tipo_signal == 1:
 				nivel = _signal;
+				if semaforo == null:
+					semaforo = nivel.semaforo
 				break;
 	refresh_data();
 
@@ -28,7 +40,12 @@ func refresh_data():
 	if estacion != null and nivel != null:
 		labelNombre.text = "%s" % [estacion.nombre]
 		labelFecha.text = "%s" % [GlobalUtils.formatear_fecha(estacion.tiempo)]
-		labelNivel.text = nivel.nombre + " :" + str(nivel.valor) + " m." if nivel.is_dentro_rango() else  "---" 
+		labelNivel.text = nivel.nombre + ": " + str(nivel.valor) + " m." if nivel.is_dentro_rango() else  "---"
+		
+		progressbar_material.set_shader_parameter("color", base_color if nivel.dentro_rango else color_rango)
+		var offset_parameter = remap(nivel.valor, 0.0, semaforo.critico, 0.0, 1.0)
+		progressbar_material.set_shader_parameter("offset", offset_parameter)
+		#tweenBlur.tween_property(progressbar_material, "shader_parameter/Offset", offset_parameter, 0.2)
 
 func _on_EtiquetaClick(_camera: Node, event: InputEvent, _position: Vector3, _normal: Vector3, _shape_idx: int) -> void:
 	if(event is InputEventMouseButton  and event.double_click):

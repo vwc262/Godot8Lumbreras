@@ -4,12 +4,21 @@ extends Node
 @export var verticalBackground : Node
 @export var horizontalBackground : Node
 @export var buttons : Array[Button]
+@export var indicationSpriteHome : TextureRect
+@export var indicationSprites : Array[TextureRect]
+
 
 func _ready():
-	pass # Replace with function body.
+	foldState = true
+	verticalBackground.visible = false
+	horizontalBackground.visible = false
+	var i = 0
+	for but in buttons:
+		but.visible = false
+		but.connect("pressed", func(): _buttonPressed(i))
+		i += 1
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	pass
 
@@ -20,8 +29,18 @@ func ToggleUI():
 	else:
 		foldState = true
 
+	indicationSpriteHome.visible =foldState
 	verticalBackground.visible = foldState
 	horizontalBackground.visible = foldState
 	for but in buttons:
-		but.visible = foldState
+		if foldState:
+			but.get_node("AnimationComponent").AnimOut()
+		else:
+			but.get_node("AnimationComponent").AnimIn()
 		
+func _buttonPressed(index : int):
+	print("Button pressed " + str(index))
+	for indi in indicationSprites:
+		indi.visible = false
+		
+	indicationSprites[index].visible = true

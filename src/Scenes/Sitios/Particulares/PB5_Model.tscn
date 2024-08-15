@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://d4nifki50ahlx"]
+[gd_scene load_steps=30 format=3 uid="uid://d4nifki50ahlx"]
 
 [ext_resource type="PackedScene" uid="uid://cee4bu1xjnrjv" path="res://Recursos/Meshes/Particular_Cutzamala_PBR5/Cutzamala_PBR5_Berros_RecursosMaster.blend" id="1_lw3b4"]
 [ext_resource type="Script" path="res://Scripts/CutzamalaDissolve.gd" id="2_1lfsx"]
@@ -14,8 +14,10 @@
 [ext_resource type="Material" uid="uid://ca8npxbjn72ic" path="res://Recursos/Materiales/ParticularUnlit_Props2.tres" id="12_83oiy"]
 [ext_resource type="PackedScene" uid="uid://dwwulixxwdeat" path="res://Recursos/Meshes/Particular_Cutzamala_PBR5/Meshes_colision/Cutzamala_collision_fence_visual.glb" id="13_cnd0g"]
 [ext_resource type="Material" uid="uid://xgb8n1gtjwxb" path="res://Recursos/Materiales/SelectGlow_Unlit.tres" id="14_5wcxd"]
+[ext_resource type="PackedScene" uid="uid://bic00hnmkt4ns" path="res://Recursos/Meshes/Particular_Cutzamala_PBR5/Cutzamala_particularCloudsOverlay.glb" id="15_6kmu4"]
 [ext_resource type="PackedScene" uid="uid://qarbp5cx5k7w" path="res://Recursos/Meshes/Particular_Cutzamala_PBR5/Meshes_colision/SimplifiedCollisions.glb" id="15_kcofc"]
-[ext_resource type="PackedScene" path="res://Recursos/Meshes/Props/Marker_sprite_3d.tscn" id="16_qeikr"]
+[ext_resource type="Material" uid="uid://bg4v1n7n5sscq" path="res://Recursos/Materiales/CloudOverlay_PB5.tres" id="16_18u0t"]
+[ext_resource type="PackedScene" uid="uid://cku6aj81y664y" path="res://Recursos/Meshes/Props/Marker_sprite_3d.tscn" id="16_qeikr"]
 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_j1av6"]
 data = PackedVector3Array(-114.767, 41.3061, -80.4187, 130.262, 88.6649, -80.4187, 130.262, 41.3061, -80.4187, -114.767, 41.3061, -80.4187, -114.767, 88.6649, -80.4187, 130.262, 88.6649, -80.4187, 130.262, 41.3061, -80.4187, 131.839, 88.6649, 54.8306, 131.839, 41.3061, 54.8306, 130.262, 41.3061, -80.4187, 130.262, 88.6649, -80.4187, 131.839, 88.6649, 54.8306, -114.767, 41.3061, -80.4187, -114.767, 88.6649, 63.4096, -114.767, 88.6649, -80.4187, -114.767, 41.3061, -80.4187, -114.767, 41.3061, 63.4096, -114.767, 88.6649, 63.4096, -114.767, 41.3061, 63.4096, 131.839, 88.6649, 54.8306, -114.767, 88.6649, 63.4096, -114.767, 41.3061, 63.4096, 131.839, 41.3061, 54.8306, 131.839, 88.6649, 54.8306)
@@ -114,6 +116,12 @@ material_override = ExtResource("14_5wcxd")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Cutzamala_PBR5_Berros_RecursosMaster/Cutzamala_collision_fence_visual/collision_fence_visual/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_j1av6")
 
+[node name="Cutzamala_particularCloudsOverlay" parent="Cutzamala_PBR5_Berros_RecursosMaster" instance=ExtResource("15_6kmu4")]
+
+[node name="simplifiedCollision" parent="Cutzamala_PBR5_Berros_RecursosMaster/Cutzamala_particularCloudsOverlay" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -41.2217, 0)
+material_override = ExtResource("16_18u0t")
+
 [node name="SimplifiedCollisions" parent="." instance=ExtResource("15_kcofc")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, 0)
 visible = false
@@ -173,4 +181,5 @@ transform = Transform3D(-1.03955e-08, 0.237822, -1.03955e-08, 0, -1.03955e-08, -
 
 [editable path="Cutzamala_PBR5_Berros_RecursosMaster"]
 [editable path="Cutzamala_PBR5_Berros_RecursosMaster/Cutzamala_collision_fence_visual"]
+[editable path="Cutzamala_PBR5_Berros_RecursosMaster/Cutzamala_particularCloudsOverlay"]
 [editable path="SimplifiedCollisions"]

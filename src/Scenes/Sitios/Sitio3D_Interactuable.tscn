@@ -13,6 +13,8 @@ size = Vector3(3.92489, 1.2335, 4.05673)
 [node name="Node3D" type="Node3D"]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)
 script = ExtResource("1_1pcy1")
+fontSizeMin = 0
+outlineSizeMin = 0
 min_drag_elapsed_time = 215
 
 [node name="Mini_3D_05" parent="." instance=ExtResource("2_injop")]
@@ -25,7 +27,7 @@ transform = Transform3D(0.911152, 0, 0.412064, 0, 1, 0, -0.412064, 0, 0.911152, 
 shape = SubResource("BoxShape3D_kb87j")
 
 [node name="DatosEtiqueta3D" parent="Mini_3D_05" instance=ExtResource("3_osuc0")]
-transform = Transform3D(0.01, 0, 0, 0, 0.01, 0, 0, 0, 0.01, 0, 2.94545, 0)
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 2.94545, 0)
 
 [node name="SelectMesh" parent="Mini_3D_05" instance=ExtResource("4_dsy6m")]
 

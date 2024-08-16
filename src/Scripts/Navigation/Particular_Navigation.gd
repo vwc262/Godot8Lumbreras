@@ -70,6 +70,7 @@ var previous_y_diff  : float = 0
 var previous_distance:float=0
 var client_size: Vector2;
 var vector_proyectado: Vector3;
+var isRotating = false
 
 
 #endregion
@@ -180,12 +181,15 @@ func handle_drag(event: InputEventScreenDrag):
 			var touch = touch_points.values()
 			var delta : Vector2 = touch[1] - touch[0]
 			# comentado
-			if(abs(delta.angle_to(anclaDistancia) * 1000) > rotate_treshold):
+			if(abs(delta.angle_to(anclaDistancia) * 1000) > rotate_treshold):				
 				rotate_camera(rotate_speed * sign(delta.angle_to(anclaDistancia)))
-			
+				isRotating = true
+			else:
+				isRotating = false				
 			anclaDistancia = delta;
+		
 						
-		if can_zoom:	
+		if can_zoom and !isRotating:	
 			# prioridad al zoom mediante una tolerancia
 			if abs(get_delta_distance(current_dist)) > zoom_treshold:#zoom
 				var cameraForward:Vector3 = camera_3_dp.get_global_transform().basis.z

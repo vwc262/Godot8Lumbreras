@@ -47,7 +47,7 @@ func refresh_data():
 		labelNivel.text = nivel.nombre + ": " + str(nivel.valor) + " m." if nivel.is_dentro_rango() else "N.D."
 		
 		progressbar_material.set_shader_parameter("color", base_color if nivel.dentro_rango else color_rango)
-		var offset_parameter = 0.01 if nivel.dentro_rango else remap(nivel.valor, 0.0, semaforo.critico, 0.01, 1.0)
+		var offset_parameter = 1.0 if nivel.dentro_rango else remap(nivel.valor, 0.0, semaforo.critico, 0.01, 1.0)
 		#progressbar_material.set_shader_parameter("offset", offset_parameter)
 		tweenBlur = TweenManager.init_tween(OnTweenFinished)
 		tweenBlur.tween_property(progressbar_material, "shader_parameter/offset", offset_parameter, 0.2)

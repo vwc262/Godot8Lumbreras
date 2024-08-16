@@ -92,6 +92,7 @@ func deseleccionar():
 
 # Función que maneja el botón de expandir/esconder
 func _on_btn_expandir_sitios_pressed():
+	btn_expandir_sitios.disabled = true
 	if is_hidden:
 		# Mostrar el contenedor
 		_show_lista_señales()
@@ -120,6 +121,7 @@ func _hide_lista_señales():
 
 # Función llamada al terminar la animación del Tween
 func _on_finish_tween():
+	btn_expandir_sitios.disabled = false
 	# Confirmación de que el tween ha terminado
 	if is_hidden:
 		panel_container.visible = false

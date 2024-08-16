@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://qofjfvol201e"]
+[gd_scene load_steps=22 format=3 uid="uid://qofjfvol201e"]
 
 [ext_resource type="Script" path="res://Scripts/Environment/Particular.gd" id="1_mvh1e"]
 [ext_resource type="PackedScene" uid="uid://d4nifki50ahlx" path="res://Scenes/Sitios/Particulares/PB5_Model.tscn" id="2_3ceb2"]
@@ -13,7 +13,6 @@
 [ext_resource type="Script" path="res://Scripts/UI/Animations/AnimationComponent.gd" id="11_0aio5"]
 [ext_resource type="Texture2D" uid="uid://dg5oipusuww6x" path="res://Recursos/UI/Botones_Vistas/Boton_Vistas_expDerecha.png" id="11_vdkxb"]
 [ext_resource type="Texture2D" uid="uid://b3h43rm52tco1" path="res://Recursos/UI/Botones_Vistas/Boton_Vistas_VistaLibre_a.png" id="11_vltqw"]
-[ext_resource type="Script" path="res://addons/easy_charts/utilities/containers/canvas/canvas.gd" id="12_c5vs0"]
 [ext_resource type="Texture2D" uid="uid://6wyhls7pma6d" path="res://Recursos/UI/Botones_Vistas/Boton_Vistas_expInferior.png" id="12_dl2wb"]
 [ext_resource type="Texture2D" uid="uid://dmvxf7j1gk80r" path="res://Recursos/UI/Botones_Vistas/Boton_Vistas_Camara_a.png" id="12_qmh32"]
 [ext_resource type="Texture2D" uid="uid://chnkg8sy7fkq6" path="res://Recursos/UI/Botones_Vistas/Boton_Vistas_b.png" id="14_qgw4j"]
@@ -391,30 +390,5 @@ layout_mode = 0
 offset_right = 131.0
 offset_bottom = 125.0
 texture = ExtResource("14_qgw4j")
-
-[node name="Window" type="Window" parent="."]
-position = Vector2i(569, 200)
-size = Vector2i(300, 300)
-visible = false
-
-[node name="Canvas" type="Control" parent="Window"]
-layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
-script = ExtResource("12_c5vs0")
-
-[node name="HBoxContainer" type="HBoxContainer" parent="Window/Canvas"]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="Button_AnimIn_1" type="Button" parent="Window/Canvas/HBoxContainer"]
-layout_mode = 2
-text = "Anim In"
-
-[node name="Button_AnimOut_1" type="Button" parent="Window/Canvas/HBoxContainer"]
-layout_mode = 2
-text = "Anim Out"
 
 [connection signal="pressed" from="Canvas_UI_camarasParticular/Button_Home" to="Canvas_UI_camarasParticular" method="ToggleUI"]

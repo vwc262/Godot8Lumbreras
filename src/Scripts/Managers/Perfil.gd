@@ -113,3 +113,7 @@ func set_contador_sitios(estaciones):
 		
 	lbl_offline_contador.text = str(offline_count)
 	lbl_online_contador.text = str(online_count)
+
+
+func _on_bnt_reset_camera_pressed() -> void:
+	NavigationManager.emit_signal("ResetCameraPosition")	

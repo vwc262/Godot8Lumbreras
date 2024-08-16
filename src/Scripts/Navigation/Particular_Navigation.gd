@@ -134,11 +134,11 @@ func handle_touch(event: InputEventScreenTouch):
 		angle = anclaDistancia.normalized().dot(current.normalized())
 		anclaDistancia = touch_point_positions[1] - touch_point_positions[0]
 		
-		#region hector
-		var _touches = touch_points.values()
-		var vector_centro: Vector2 = ((_touches[1] - _touches[0]) / 2) + _touches[0]
-		vector_proyectado = camera_3_dp2.project_position(vector_centro, z_Depth).normalized()
-		vector_proyectado = Vector3(vector_proyectado.x * client_size.y, vector_proyectado.y * client_size.x, vector_proyectado.z * client_size.x)
+		#region pinch
+		#var _touches = touch_points.values()
+		#var vector_centro: Vector2 = ((_touches[1] - _touches[0]) / 2) + _touches[0]
+		#vector_proyectado = camera_3_dp2.project_position(vector_centro, z_Depth).normalized()
+		#vector_proyectado = Vector3(vector_proyectado.x * client_size.y, vector_proyectado.y * client_size.x, vector_proyectado.z * client_size.x)
 		#endregion
 
 	elif touch_points.size() < 2:
@@ -188,9 +188,11 @@ func handle_drag(event: InputEventScreenDrag):
 		if can_zoom:	
 			# prioridad al zoom mediante una tolerancia
 			if abs(get_delta_distance(current_dist)) > zoom_treshold:#zoom
+				var cameraForward:Vector3 = camera_3_dp.get_global_transform().basis.z
 				var direction = -1 if current_dist > last_distance else 1 
 				#position += cameraForward * direction * zoom_speed
-				var to_zoom_move = vector_proyectado * -direction * zoom_speed * 8
+				var to_zoom_move = cameraForward * direction * zoom_speed * 3
+				#var to_zoom_move = vector_proyectado * -direction * zoom_speed * 8
 				camera_parent.move_and_collide(to_zoom_move,false,margen_seguro,true,max_number_handle_collisions)		
 				last_distance = current_dist
 			elif previous_y_diff != 0: #tilt

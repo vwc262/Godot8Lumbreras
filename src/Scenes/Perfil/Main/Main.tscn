@@ -404,5 +404,6 @@ flat = true
 [connection signal="OnVersionChanged" from="Endpoint" to="VersionUpdater" method="On_Update_Version"]
 [connection signal="visibility_changed" from="ScrollContainer/WindowsContainer/PerfilWindow/VB_MainContainer/Panel/main_container/VBoxContainer/SubViewportContainer" to="." method="_on_sub_viewport_container_visibility_changed"]
 [connection signal="pressed" from="ScrollContainer/WindowsContainer/PerfilWindow/VB_MainContainer/Panel/main_container/ListaSitiosContainer/VBoxContainer/botones_container/HBoxContainer/BTN_ListaSitios" to="." method="_on_btn_lista_sitios_pressed"]
+[connection signal="pressed" from="ScrollContainer/WindowsContainer/PerfilWindow/VB_MainContainer/Panel/bnt_reset_camera" to="." method="_on_bnt_reset_camera_pressed"]
 [connection signal="visibility_changed" from="popup_container/Popup" to="popup_container/Popup" method="_on_visibility_changed"]
 [connection signal="pressed" from="popup_container/Popup/Panel/btn_close_popup" to="." method="_on_btn_close_popup_pressed"]

@@ -104,7 +104,7 @@ func _on_btn_expandir_sitios_pressed():
 func _show_lista_señales():
 	# Inicializar el Tween y configurar la animación para mostrar
 	var tween = TweenManager.init_tween(_on_finish_tween)
-	TweenManager.tween_animacion(tween, panel_container, "custom_minimum_size:y", 290, 0.2)  # 160 tamaño original
+	TweenManager.tween_animacion(tween, panel_container, "custom_minimum_size:y", 360, 0.2)  # 160 tamaño original
 	panel_container.visible = true
 	is_hidden = false
 	# Cambiar la textura al estado visible

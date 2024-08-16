@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://Scripts/UI/Sitio.gd" id="1_065dv"]
 [ext_resource type="Texture2D" uid="uid://bje8sq0eus5s" path="res://Recursos/UI/img/CutzamalaMovil_Perfil_V3/Lista_Detalles_BotonFlecha_b.png" id="4_1lj4y"]
-[ext_resource type="Texture2D" uid="uid://dkqfm2r00pv2r" path="res://Recursos/UI/img/CutzamalaMovil_Perfil_V3/Lista_Detalles_a-1.png" id="5_ci0c8"]
+[ext_resource type="Texture2D" uid="uid://cpelva5nmmloj" path="res://Recursos/UI/img/CutzamalaMovil_Perfil_V3/Lista_Detalles_a-1.png" id="5_ci0c8"]
 [ext_resource type="Texture2D" uid="uid://6pb72kocguii" path="res://Recursos/UI/img/CutzamalaMovil_Perfil_V3/Lista_Detalles_seleccion.png" id="6_476dq"]
 [ext_resource type="PackedScene" uid="uid://hro847n58cow" path="res://Scenes/UI/UI_Señales.tscn" id="7_7pxni"]
 [ext_resource type="Texture2D" uid="uid://b6ak0dychqgwd" path="res://Recursos/UI/img/CutzamalaMovil_Perfil_V3/Lista_Detalles_BotonFlecha_a.png" id="7_d3qat"]
@@ -94,7 +94,7 @@ text = "Nombre Sitio"
 layout_mode = 2
 size_flags_horizontal = 2
 mouse_filter = 1
-theme_override_colors/font_color = Color(0.672064, 0.672064, 0.672064, 1)
+theme_override_colors/font_color = Color(0.818299, 0.647427, 0.169606, 1)
 theme_override_font_sizes/font_size = 30
 text = "00:00hrs, 00/00/0000"
 horizontal_alignment = 1

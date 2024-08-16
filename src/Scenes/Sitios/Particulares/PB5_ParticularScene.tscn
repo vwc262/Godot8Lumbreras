@@ -19,8 +19,8 @@
 [ext_resource type="Texture2D" uid="uid://b1bsb8ip8ktty" path="res://Recursos/UI/Botones_Vistas/Boton_Vistas_Camara_b.png" id="16_druso"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_uu0ns"]
-margin = 0.5
-radius = 1.0
+margin = 0.1
+radius = 0.2
 
 [sub_resource type="Resource" id="Resource_4oduj"]
 script = ExtResource("6_bkdkv")
@@ -76,22 +76,23 @@ platform_wall_layers = 1
 safe_margin = 0.5
 script = ExtResource("3_56rpr")
 can_pan = true
+pan_speed = 50
 maxX = 40
 maxZ = 20
-maxY = 20
+maxY = 10
 can_rotate = true
 rotate_speed = 1.0
-rotate_treshold = 20
 LimitRotationCamera = 0
 minRotationY = -30.0
 maxRotationY = 30.0
 offSetDistanceInclination = 10.0
-tilt_speed = 0.25
+tilt_speed = 0.05
+tilt_threshold = 5.0
 zoom_speed = 0.5
 can_zoom = true
 maxZoom = 5.0
 initialZoom = 30.0
-zoom_treshold = 45.0
+zoom_treshold = 40.0
 max_pan_speed = 0.01
 z_Depth = 1000.0
 

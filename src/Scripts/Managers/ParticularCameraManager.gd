@@ -24,6 +24,8 @@ func _ready():
 		i+=1
 	for cam in virtualCameras:
 		originalRotations.append(cam.transform.basis)
+	
+	SwitchToVirtualCamera(4)	
 
 
 

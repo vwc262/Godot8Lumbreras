@@ -153,31 +153,38 @@ func set_datos_particular(sitio: Estacion):
 func set_progress_bar(_signal: Señal, unidad):
 	progress_bar.min_value = 0.5
 	progress_bar.max_value = _signal.semaforo["critico"]
-	lbl_valor.text = str(_signal.valor) + " " + unidad
+	if _signal.is_dentro_rango():
+		lbl_valor.text = str(_signal.valor) + " " + unidad
+	
+		#Asegurarse de que el valor mínimo visible siempre esté presente
+		var display_value = max(_signal.valor, _signal.semaforo["normal"])
+		if _signal.valor < 1.0:
+			display_value = remap(_signal.valor, 0.0, _signal.semaforo["normal"], 0.67, 1.15)
+		else:
+			display_value = remap(_signal.valor, _signal.semaforo["normal"], _signal.semaforo["critico"], 1.15, 2.7)
+	
+		#progress_bar.value = display_value
+		lbl_progress_bar_valor_min.text = str(_signal.semaforo["normal"]) + " " + unidad
+		lbl_progress_bar_valor_max.text = str(_signal.semaforo["critico"]) + " " + unidad
+		lbl_nivel_nombre.text = _signal.nombre
+	
+		# Cambiar el color de la barra de progreso según el valor de la señal
+		if _signal.valor > _signal.semaforo.normal and _signal.valor <= _signal.semaforo.preventivo:
+			progress_bar.modulate = Color(1, 1, 0) # Amarillo
+		elif _signal.valor > _signal.semaforo.preventivo:
+			progress_bar.modulate = Color(1, 0, 0) # Rojo
+		else:
+			progress_bar.modulate = Color(0, 1, 0) # Verde
+	
+		#Usar Tween para animar la barra de progreso
+		var tween = create_tween()
+		tween.tween_property(progress_bar, "value", display_value, 1)
+	
+	else: 
+		lbl_valor.text = "N.D." 
+		progress_bar.value = progress_bar.max_value
+		progress_bar.modulate = Color(.7, .7, .7)
 
-	#Asegurarse de que el valor mínimo visible siempre esté presente
-	var display_value = max(_signal.valor, _signal.semaforo["normal"])
-	if _signal.valor < 1.0:
-		display_value = remap(_signal.valor, 0.0, _signal.semaforo["normal"], 0.67, 1.15)
-	else:
-		display_value = remap(_signal.valor, _signal.semaforo["normal"], _signal.semaforo["critico"], 1.15, 2.7)
-
-	#progress_bar.value = display_value
-	lbl_progress_bar_valor_min.text = str(_signal.semaforo["normal"]) + " " + unidad
-	lbl_progress_bar_valor_max.text = str(_signal.semaforo["critico"]) + " " + unidad
-	lbl_nivel_nombre.text = _signal.nombre
-
-	# Cambiar el color de la barra de progreso según el valor de la señal
-	if _signal.valor > _signal.semaforo.normal and _signal.valor <= _signal.semaforo.preventivo:
-		progress_bar.modulate = Color(1, 1, 0) # Amarillo
-	elif _signal.valor > _signal.semaforo.preventivo:
-		progress_bar.modulate = Color(1, 0, 0) # Rojo
-	else:
-		progress_bar.modulate = Color(0, 1, 0) # Verde
-
-	#Usar Tween para animar la barra de progreso
-	var tween = create_tween()
-	tween.tween_property(progress_bar, "value", display_value, 1)
 
 # Función para inicializar los parámetros particulares
 func init_particular(is_particular):

@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://mr5ipvv85b1"]
+[gd_scene load_steps=28 format=3 uid="uid://mr5ipvv85b1"]
 
 [ext_resource type="Texture2D" uid="uid://c1ich45dgonk4" path="res://Recursos/UI/img/Encabezado_B_Submenu/EncabezadoB_base.png" id="1_gat4c"]
 [ext_resource type="Script" path="res://Scenes/UI/UI_Particular.gd" id="1_wmuh6"]
@@ -35,8 +35,6 @@ shader_parameter/framex = 0.0
 shader_parameter/progress = 29.0
 shader_parameter/use_time = null
 shader_parameter/colorToAdd = null
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_wi8d2"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_76qfk"]
 texture = ExtResource("12_64k7e")
@@ -244,7 +242,6 @@ offset_right = -161.0
 offset_bottom = -9.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_styles/background = SubResource("StyleBoxEmpty_wi8d2")
 min_value = 0.5
 value = 1.15
 show_percentage = false
@@ -282,8 +279,11 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_top = -40.0
+offset_bottom = -40.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 1
 
 [node name="progress_bar_marcadores" type="TextureRect" parent="VBoxContainer/main_container/progress_bar_container/progress_bar_marcadores_container"]
 layout_mode = 1
@@ -293,18 +293,19 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("10_5sxwf")
+flip_v = true
 
 [node name="min_container" type="HBoxContainer" parent="VBoxContainer/main_container/progress_bar_container/progress_bar_marcadores_container"]
 layout_mode = 0
-offset_left = 134.0
-offset_top = 81.0
-offset_right = 273.0
-offset_bottom = 133.0
+offset_left = 132.0
+offset_top = 16.0
+offset_right = 276.0
+offset_bottom = 68.0
 
 [node name="lbl_progress_bar_min" type="Label" parent="VBoxContainer/main_container/progress_bar_container/progress_bar_marcadores_container/min_container"]
 layout_mode = 2
 size_flags_horizontal = 3
-theme_override_font_sizes/font_size = 25
+theme_override_font_sizes/font_size = 30
 text = "Min. "
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -312,7 +313,7 @@ vertical_alignment = 1
 [node name="lbl_progress_bar_valor_min" type="Label" parent="VBoxContainer/main_container/progress_bar_container/progress_bar_marcadores_container/min_container"]
 layout_mode = 2
 size_flags_horizontal = 3
-theme_override_font_sizes/font_size = 25
+theme_override_font_sizes/font_size = 30
 text = "2cm"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -320,14 +321,14 @@ vertical_alignment = 1
 [node name="max_container" type="HBoxContainer" parent="VBoxContainer/main_container/progress_bar_container/progress_bar_marcadores_container"]
 layout_mode = 0
 offset_left = 677.0
-offset_top = 83.0
-offset_right = 814.0
-offset_bottom = 133.0
+offset_top = 16.0
+offset_right = 815.0
+offset_bottom = 68.0
 
 [node name="lbl_progress_bar_max" type="Label" parent="VBoxContainer/main_container/progress_bar_container/progress_bar_marcadores_container/max_container"]
 layout_mode = 2
 size_flags_horizontal = 3
-theme_override_font_sizes/font_size = 25
+theme_override_font_sizes/font_size = 30
 text = "Max. "
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -335,7 +336,7 @@ vertical_alignment = 1
 [node name="lbl_progress_bar_valor_max" type="Label" parent="VBoxContainer/main_container/progress_bar_container/progress_bar_marcadores_container/max_container"]
 layout_mode = 2
 size_flags_horizontal = 3
-theme_override_font_sizes/font_size = 25
+theme_override_font_sizes/font_size = 30
 text = "2cm"
 horizontal_alignment = 1
 vertical_alignment = 1

@@ -118,8 +118,7 @@ shape = SubResource("ConcavePolygonShape3D_j1av6")
 
 [node name="Cutzamala_particularCloudsOverlay" parent="Cutzamala_PBR5_Berros_RecursosMaster" instance=ExtResource("15_6kmu4")]
 
-[node name="simplifiedCollision" parent="Cutzamala_PBR5_Berros_RecursosMaster/Cutzamala_particularCloudsOverlay" index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -41.2217, 0)
+[node name="CloudMesh" parent="Cutzamala_PBR5_Berros_RecursosMaster/Cutzamala_particularCloudsOverlay" index="0"]
 material_override = ExtResource("16_18u0t")
 
 [node name="SimplifiedCollisions" parent="." instance=ExtResource("15_kcofc")]

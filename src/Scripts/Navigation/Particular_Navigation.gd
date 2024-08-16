@@ -16,7 +16,7 @@ extends Node3D
 @export var can_rotate: bool
 @export var rotate_speed = 0.9
 @export var rotate_treshold = 15
-@export var initialRotationCamera = -75
+@export var initialRotationCamera :float = -75
 @export var LimitRotationCamera = -15
 @export var minRotationY : float = -13
 @export var maxRotationY : float= 13
@@ -42,7 +42,7 @@ extends Node3D
 
 @export_group('Propiedades de colision de camara')
 @export var max_number_handle_collisions : int = 10
-@export var margen_seguro : int = 0.01
+@export var margen_seguro : float = 0.01
 
 
 #region Signals
@@ -92,7 +92,7 @@ func ResetCameraPosition():
 	var tweenRot := TweenManager.init_tween(OnTweenFinished_MovimientoRealizado)
 	tweenRot.set_parallel()
 	tweenRot.tween_property(self,"position",initalCameraPosition,speedAnimation)
-	tweenRot.tween_property(self,"rotation_degrees",initialRotationCamera,speedAnimation)
+	tweenRot.tween_property(self,"rotation_degrees",Vector3(initialRotationCamera,0,0),speedAnimation)
 	
 	var tweenRotCamara := TweenManager.init_tween(func(): return)
 	tweenRotCamara.tween_property(camera_3_dp,"rotation_degrees",Vector3(initialRotationCamera,0,0),speedAnimation)

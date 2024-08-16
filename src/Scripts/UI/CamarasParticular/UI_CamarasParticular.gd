@@ -18,11 +18,6 @@ func _ready():
 		but.connect("pressed", func(): _buttonPressed(i))
 		i += 1
 
-
-func _process(delta):
-	pass
-
-
 func ToggleUI():
 	if foldState:
 		foldState = false

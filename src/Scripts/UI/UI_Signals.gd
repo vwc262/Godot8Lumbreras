@@ -42,7 +42,8 @@ var unidades = {
 func set_maximos_minimos(senal:Señal):
 	if !set_maximos:
 		progress_bar.max_value = senal.semaforo["critico"]
-		progress_bar.min_value = 2.5
+		progress_bar.min_value = 0
+		
 	set_maximos = true	
 	
 
@@ -78,24 +79,28 @@ func actualizar_datos():
 func set_progress_bar(_signal: Señal, unidad):
 	set_maximos_minimos(_signal)
 	##Asegurarse de que el valor mínimo visible siempre esté presente	
-	var display_value =  clamp(_signal.valor,progress_bar.min_value,progress_bar.max_value)	#
-	lbl_valor_min.text = str(_signal.semaforo["normal"]) + " " + unidad
-	lbl_valor_max.text = str(_signal.semaforo["critico"]) + " " + unidad
+	var display_value =  clamp(_signal.valor,.18,progress_bar.max_value)	#
+	lbl_valor_min.text = "min : " + str(_signal.semaforo["normal"]) + " " + unidad
+	lbl_valor_max.text = "max : " + str(_signal.semaforo["critico"]) + " " + unidad
 #
 	# Cambiar el color de la barra de progreso según el valor de la señal
-	if _signal.valor > _signal.semaforo.normal and _signal.valor <= _signal.semaforo.preventivo:
-		progress_bar.modulate = Color(1, 1, 0) # Amarillo
-	elif _signal.valor > _signal.semaforo.preventivo:
-		progress_bar.modulate = Color(1, 0, 0) # Rojo
-	else:
-		progress_bar.modulate = Color(0, 1, 0) # Verde
+	if !_signal.is_dentro_rango():
+		progress_bar.modulate = Color(.7, .7, .7) # Gris
+	else:	
+		if _signal.valor > _signal.semaforo.normal and _signal.valor <= _signal.semaforo.preventivo:
+			progress_bar.modulate = Color(1, 1, 0) # Amarillo
+		elif _signal.valor > _signal.semaforo.preventivo:
+			progress_bar.modulate = Color(1, 0, 0) # Rojo
+		else:
+			progress_bar.modulate = Color(0, 1, 0) # Verde
 
 	#Usar Tween para animar la barra de progreso
 	var tween = TweenManager.init_tween(_on_tween_finished.bind(display_value))
-	tween.tween_property(progress_bar, "value", display_value, 1)
+	tween.tween_property(progress_bar, "value",display_value if _signal.is_dentro_rango() else progress_bar.max_value , 1)
 
 	
-func _on_tween_finished(_valor_a_poner): pass
+func _on_tween_finished(_valor_a_poner): 
+	pass
 
 # Función general para manejar la lógica compartida de los botones
 func manejar_btn_presionado(_mostrar_graficador: bool):

@@ -84,7 +84,7 @@ size = Vector3(3.92489, 1.2335, 4.05673)
 [node name="Node3D" type="Node3D"]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)
 script = ExtResource("1_1pcy1")
-fontSizeMin = 0
+fontSizeMin = 10
 outlineSizeMin = 0
 min_drag_elapsed_time = 215
 

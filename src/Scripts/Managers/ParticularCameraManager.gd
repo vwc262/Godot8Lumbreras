@@ -26,9 +26,7 @@ func _ready():
 		originalRotations.append(cam.transform.basis)
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
+
 	
 func _input(event):
 	
@@ -55,13 +53,13 @@ func SwitchToVirtualCamera(index):
 	print("Enable POV camera "+ str(virtualCameraIndex))
 
 
-func handle_touch(event: InputEventScreenTouch):
+func handle_touch(_event: InputEventScreenTouch):
 	pass
 	
 func handle_drag(event: InputEventScreenDrag):
-	var cameraForward:Vector3 = virtualCameras[virtualCameraIndex].get_global_transform().basis.z
+	#var cameraForward:Vector3 = virtualCameras[virtualCameraIndex].get_global_transform().basis.z
 	var cameraRight:Vector3 = virtualCameras[virtualCameraIndex].get_global_transform().basis.x
-	var cameraUp:Vector3 = virtualCameras[virtualCameraIndex].get_global_transform().basis.y
+	#var cameraUp:Vector3 = virtualCameras[virtualCameraIndex].get_global_transform().basis.y
 	touch_points[event.index] = event.position
 	#print(event.relative.x)
 	#print(event.relative.y)

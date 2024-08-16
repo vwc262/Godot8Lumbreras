@@ -6,9 +6,9 @@
 [ext_resource type="FontFile" uid="uid://dede71l06xv2l" path="res://Recursos/Fonts/Roboto-Regular.ttf" id="3_stj8j"]
 [ext_resource type="Texture2D" uid="uid://d0wki5ixbre4d" path="res://Recursos/Meshes/Mapa/Sitios/Mini_Sitios/Mini_3D_04_Bake_Mini.png" id="4_36tf5"]
 [ext_resource type="PackedScene" uid="uid://bycetavidkv8p" path="res://Recursos/Meshes/Mapa/Sitios/SelectMesh.glb" id="4_dsy6m"]
-[ext_resource type="Material" uid="uid://xgb8n1gtjwxb" path="res://Recursos/Materiales/SelectGlow_Unlit.tres" id="5_hma7b"]
+[ext_resource type="Material" path="res://Recursos/Materiales/SelectGlow_Unlit.tres" id="5_hma7b"]
 [ext_resource type="Material" uid="uid://dh2n3p2wcagt2" path="res://Recursos/Materiales/Emissivo/m_Emissive_window.tres" id="5_xuyoy"]
-[ext_resource type="PackedScene" uid="uid://cku6aj81y664y" path="res://Recursos/Meshes/Props/Marker_sprite_3d.tscn" id="6_nlsnm"]
+[ext_resource type="PackedScene" path="res://Recursos/Meshes/Props/Marker_sprite_3d.tscn" id="6_nlsnm"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2h7ld"]
 resource_name = "Vertex"
@@ -84,7 +84,7 @@ size = Vector3(3.92489, 1.2335, 4.05673)
 [node name="Node3D" type="Node3D"]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)
 script = ExtResource("1_1pcy1")
-fontSizeMin = 10
+fontSizeMin = 1
 outlineSizeMin = 0
 min_drag_elapsed_time = 215
 

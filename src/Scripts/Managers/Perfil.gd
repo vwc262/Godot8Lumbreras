@@ -53,6 +53,7 @@ func _on_button_pressed():
 
 ##region FUNCIONES PARA MOSTRAR U OCULTAR LISTA DE SITIOS
 func _on_btn_lista_sitios_pressed():
+	btn_lista_sitios.disabled = true
 	if is_hidden:
 		# Mostrar el contenedor
 		btn_lista_sitios.icon = preload("res://Recursos/UI/img/Encabezado_B_Submenu/Boton_Expandir_b.png")
@@ -78,6 +79,7 @@ func _hide_lista_sitios():
 	is_hidden = true
 
 func _on_finish_tween():
+	btn_lista_sitios.disabled = false
 	if is_hidden:
 		lista_sitios.visible = false
 ##endregion
@@ -102,12 +104,12 @@ func set_contador_sitios(estaciones):
 	var offline_count = 0
 	var online_count = 0
 	
-	for sitio in sitios_info:
-		match sitio.enlace:
-			0:
-				offline_count += 1
-			1, 2, 3:
-				online_count += 1
-
+	
+	for sitio:Estacion in sitios_info:
+		if sitio.is_estacion_en_linea():
+			online_count += 1
+		else: 
+			offline_count += 1
+		
 	lbl_offline_contador.text = str(offline_count)
 	lbl_online_contador.text = str(online_count)

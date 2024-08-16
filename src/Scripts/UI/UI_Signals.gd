@@ -10,14 +10,19 @@ class_name SegnalLista
 @onready var progress_bar = $main_container/HBoxContainer/VBoxContainer/nivel_container/nivel_progressbar_container/VBoxContainer/ProgressBar
 
 #endregion
-
-#region VARIABLES DE LAS DEMAS SEÑALES
-@onready var lbl_nombre_signal_presion = $main_container/HBoxContainer/VBoxContainer/presion_gasto_container/HBoxContainer/presion_container/HBoxContainer/lbl_presion_nombre
-@onready var lbl_presion_valor = $main_container/HBoxContainer/VBoxContainer/presion_gasto_container/HBoxContainer/presion_container/HBoxContainer/presion_valor_container/presion_valor
-@onready var lbl_nombre_signal_gasto = $main_container/HBoxContainer/VBoxContainer/presion_gasto_container/HBoxContainer/gasto_container/HBoxContainer2/lbl_gasto_nombre
-@onready var lbl_gasto_valor = $main_container/HBoxContainer/VBoxContainer/presion_gasto_container/HBoxContainer/gasto_container/HBoxContainer2/gasto_valor_container/gasto_valor
+@onready var lbl_nivel_valor_min = $main_container/HBoxContainer/VBoxContainer/nivel_container/nivel_progressbar_container/VBoxContainer/HBoxContainer/lbl_nivel_valor_min
+@onready var lbl_nivel_valor_max = $main_container/HBoxContainer/VBoxContainer/nivel_container/nivel_progressbar_container/VBoxContainer/HBoxContainer/lbl_nivel_valor_max
+@onready var lbl_presion_nombre = $main_container/HBoxContainer/VBoxContainer/presion_container/presion_container/HBoxContainer/lbl_presion_nombre
+@onready var lbl_gasto_nombre = $main_container/HBoxContainer/VBoxContainer/gasto_container/gasto_container/HBoxContainer2/lbl_gasto_nombre
+@onready var lbl_nivel_nombre = $main_container/HBoxContainer/VBoxContainer/nivel_container/nivel_nombre_container/HBoxContainer/lbl_nivel_nombre
+@onready var presion_valor = $main_container/HBoxContainer/VBoxContainer/presion_container/presion_container/HBoxContainer/presion_valor_container/presion_valor
+@onready var gasto_valor = $main_container/HBoxContainer/VBoxContainer/gasto_container/gasto_container/HBoxContainer2/gasto_valor_container/gasto_valor
 @onready var lbl_totalizado_nombre = $main_container/HBoxContainer/VBoxContainer/totalizado_container/lbl_totalizado_nombre
 @onready var lbl_totalizado_valor = $main_container/HBoxContainer/VBoxContainer/totalizado_container/totalizado_valor_container/lbl_totalizado_valor
+
+#region VARIABLES DE LAS DEMAS SEÑALES
+
+
 
 #endregion
 
@@ -37,7 +42,7 @@ var unidades = {
 func set_maximos_minimos(senal:Señal):
 	if !set_maximos:
 		progress_bar.max_value = senal.semaforo["critico"]
-		progress_bar.min_value = 0.6
+		progress_bar.min_value = 2.5
 	set_maximos = true	
 	
 
@@ -48,21 +53,22 @@ func set_datos(estacion: Estacion):
 	call_deferred("actualizar_datos")
 
 func actualizar_datos():
+	var fuera_de_rango = "N.D."
 	for _signal in signal_ref:
 		var unidad = unidades.get(_signal.tipo_signal, "")
 		
 		if _signal.tipo_signal == 1:
 			lbl_nombre_signal.text = _signal.nombre
-			lbl_valor.text = str(_signal.valor) + " " + unidad if _signal.is_dentro_rango() else "---"
+			lbl_valor.text = str(_signal.valor) + " " + unidad if _signal.is_dentro_rango() else fuera_de_rango
 		elif _signal.tipo_signal == 2:
-			lbl_nombre_signal_presion.text = _signal.nombre
-			lbl_presion_valor.text = str(_signal.valor) + " " + unidad if _signal.is_dentro_rango() else "---"
+			lbl_presion_nombre.text = _signal.nombre
+			presion_valor.text = str(_signal.valor) + " " + unidad if _signal.is_dentro_rango() else fuera_de_rango
 		elif _signal.tipo_signal == 3:
-			lbl_nombre_signal_gasto.text = _signal.nombre
-			lbl_gasto_valor.text = str(_signal.valor) + " " + unidad if _signal.is_dentro_rango() else "---"
+			lbl_gasto_nombre.text = _signal.nombre
+			gasto_valor.text = str(_signal.valor) + " " + unidad if _signal.is_dentro_rango() else fuera_de_rango
 		elif _signal.tipo_signal == 4:
 			lbl_totalizado_nombre.text = _signal.nombre
-			lbl_totalizado_valor.text = str(_signal.valor) + " " + unidad if _signal.is_dentro_rango() else "---"
+			lbl_totalizado_valor.text = str(_signal.valor) + " " + unidad if _signal.is_dentro_rango() else fuera_de_rango
 		
 		if _signal.semaforo != null:
 			set_progress_bar(_signal, unidad)

@@ -1,10 +1,7 @@
-[gd_resource type="ShaderMaterial" load_steps=6 format=3 uid="uid://cogvlnnly8grq"]
+[gd_resource type="ShaderMaterial" load_steps=3 format=3 uid="uid://cogvlnnly8grq"]
 
 [ext_resource type="Shader" path="res://Recursos/Materiales/CloudShadows.gdshader" id="1_4w7yi"]
-[ext_resource type="Texture2D" uid="uid://cnkjbw354aakx" path="res://Recursos/Meshes/Mapa_Pruebas/Prueba_04/Terreno_Prueba_04_albedo.png" id="2_pq5vl"]
-[ext_resource type="Texture2D" uid="uid://bfqhi3aoyrj4o" path="res://Recursos/Meshes/Mapa_Pruebas/Sitios/Lumbrera0/Texturas/clouds.png" id="4_2c8m0"]
 [ext_resource type="Texture2D" uid="uid://cdltyp15p8e64" path="res://Recursos/Textures/T_Rough_Asphalt_ulsidirew_2K_N.EXR" id="4_ew4yp"]
-[ext_resource type="Texture2D" uid="uid://b1av0q5trshpt" path="res://Recursos/Meshes/Mapa_Pruebas/Prueba_04/Terreno_Prueba_04_Normal.png" id="4_uwdvb"]
 
 [resource]
 render_priority = 0
@@ -29,7 +26,4 @@ shader_parameter/uv2_scale = Vector3(1, 1, 1)
 shader_parameter/uv2_offset = Vector3(0, 0, 0)
 shader_parameter/Direction = Vector2(0, 1)
 shader_parameter/Speed = 0.01
-shader_parameter/texture_albedo = ExtResource("2_pq5vl")
-shader_parameter/texture_clouds = ExtResource("4_2c8m0")
-shader_parameter/texture_normal = ExtResource("4_uwdvb")
 shader_parameter/texture_detail_normal = ExtResource("4_ew4yp")

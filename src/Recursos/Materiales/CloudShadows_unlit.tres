@@ -3,7 +3,7 @@
 [ext_resource type="Shader" path="res://Recursos/Materiales/CloudShadows_Unlit.gdshader" id="1_7nowk"]
 [ext_resource type="Texture2D" uid="uid://dyirce2y65af0" path="res://Recursos/Meshes/Mapa/Mapa 3D/Terreno_Prueba_08_Albedo_atardecer_camino.png" id="2_lcrge"]
 [ext_resource type="Texture2D" uid="uid://bvierywl6h5eu" path="res://Recursos/Textures/Mapa_3D/clouds.png" id="3_c66vu"]
-[ext_resource type="Texture2D" uid="uid://cj75cg5mk4vxm" path="res://Recursos/Textures/Mapa_3D/AO_Noise.bmp" id="4_072lk"]
+[ext_resource type="Texture2D" uid="uid://cblv7kuukbhyy" path="res://Recursos/Textures/Mapa_3D/AO_Noise.jpg" id="4_q2kj1"]
 
 [resource]
 render_priority = 0
@@ -20,4 +20,4 @@ shader_parameter/Direction = Vector2(0, 1)
 shader_parameter/Speed = 0.01
 shader_parameter/texture_albedo = ExtResource("2_lcrge")
 shader_parameter/texture_clouds = ExtResource("3_c66vu")
-shader_parameter/texture_detail_ao = ExtResource("4_072lk")
+shader_parameter/texture_detail_ao = ExtResource("4_q2kj1")

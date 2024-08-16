@@ -6,7 +6,7 @@
 [resource]
 render_priority = 0
 shader = ExtResource("1_1ccb1")
-shader_parameter/albedo = Color(0.266575, 0.266575, 0.266575, 1)
+shader_parameter/albedo = Color(0.133196, 0.133196, 0.133196, 1)
 shader_parameter/tile_size = 1.0
 shader_parameter/heightmap_scale = null
 shader_parameter/heightmap_flip = null

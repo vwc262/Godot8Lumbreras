@@ -3,7 +3,7 @@
 [ext_resource type="Shader" path="res://Recursos/Materiales/Lake_Material_shader.gdshader" id="1_wvl8w"]
 [ext_resource type="Texture2D" uid="uid://duy8u3nkcxqb0" path="res://Recursos/Textures/Mapa_3D/lagos.jpg" id="2_vssbb"]
 [ext_resource type="Texture2D" uid="uid://bvierywl6h5eu" path="res://Recursos/Textures/Mapa_3D/clouds.png" id="3_bh3mo"]
-[ext_resource type="Texture2D" uid="uid://rc0ieej0tsuj" path="res://Recursos/Textures/Mapa_3D/AO_Waves.bmp" id="4_j5mja"]
+[ext_resource type="Texture2D" uid="uid://dycuwnyvmkcrh" path="res://Recursos/Textures/Mapa_3D/AO_Waves.jpg" id="4_l23mh"]
 
 [resource]
 render_priority = 0
@@ -17,5 +17,5 @@ shader_parameter/uv1_offset = null
 shader_parameter/Direction = Vector2(0, 1)
 shader_parameter/Speed = 0.01
 shader_parameter/texture_albedo = ExtResource("2_vssbb")
-shader_parameter/texture_waves = ExtResource("4_j5mja")
+shader_parameter/texture_waves = ExtResource("4_l23mh")
 shader_parameter/texture_clouds = ExtResource("3_bh3mo")

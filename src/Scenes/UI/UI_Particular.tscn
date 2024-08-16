@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://mr5ipvv85b1"]
+[gd_scene load_steps=28 format=3 uid="uid://mr5ipvv85b1"]
 
 [ext_resource type="Texture2D" uid="uid://c1ich45dgonk4" path="res://Recursos/UI/img/Encabezado_B_Submenu/EncabezadoB_base.png" id="1_gat4c"]
 [ext_resource type="Script" path="res://Scenes/UI/UI_Particular.gd" id="1_wmuh6"]
@@ -35,8 +35,6 @@ shader_parameter/framex = 0.0
 shader_parameter/progress = 29.0
 shader_parameter/use_time = null
 shader_parameter/colorToAdd = null
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_wi8d2"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_76qfk"]
 texture = ExtResource("12_64k7e")
@@ -244,7 +242,6 @@ offset_right = -161.0
 offset_bottom = -9.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_styles/background = SubResource("StyleBoxEmpty_wi8d2")
 min_value = 0.5
 value = 1.15
 show_percentage = false

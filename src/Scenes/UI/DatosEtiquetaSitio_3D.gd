@@ -57,4 +57,4 @@ func refresh_data():
 
 func _on_EtiquetaClick(_camera: Node, event: InputEvent, _position: Vector3, _normal: Vector3, _shape_idx: int) -> void:
 	if(event is InputEventMouseButton  and event.double_click):
-		SceneManager.scroll_scene(SceneManager.TIPO_NIVEL.PARTICULAR,estacion.id_estacion)		
+		SceneManager.scroll_scene(SceneManager.TIPO_NIVEL.PARTICULAR,estacion.id_estacion)				

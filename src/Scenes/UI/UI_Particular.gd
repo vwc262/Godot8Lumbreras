@@ -153,6 +153,10 @@ func set_datos_particular(sitio: Estacion):
 func set_progress_bar(_signal: Señal, unidad):
 	progress_bar.min_value = 0.5
 	progress_bar.max_value = _signal.semaforo["critico"]
+	lbl_nivel_nombre.text = _signal.nombre
+	#progress_bar.value = display_value
+	lbl_progress_bar_valor_min.text = str(_signal.semaforo["normal"]) + " " + unidad
+	lbl_progress_bar_valor_max.text = str(_signal.semaforo["critico"]) + " " + unidad
 	if _signal.is_dentro_rango():
 		lbl_valor.text = str(_signal.valor) + " " + unidad
 	
@@ -162,11 +166,9 @@ func set_progress_bar(_signal: Señal, unidad):
 			display_value = remap(_signal.valor, 0.0, _signal.semaforo["normal"], 0.67, 1.15)
 		else:
 			display_value = remap(_signal.valor, _signal.semaforo["normal"], _signal.semaforo["critico"], 1.15, 2.7)
+		
 	
-		#progress_bar.value = display_value
-		lbl_progress_bar_valor_min.text = str(_signal.semaforo["normal"]) + " " + unidad
-		lbl_progress_bar_valor_max.text = str(_signal.semaforo["critico"]) + " " + unidad
-		lbl_nivel_nombre.text = _signal.nombre
+		
 	
 		# Cambiar el color de la barra de progreso según el valor de la señal
 		if _signal.valor > _signal.semaforo.normal and _signal.valor <= _signal.semaforo.preventivo:

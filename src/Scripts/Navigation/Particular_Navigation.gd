@@ -189,7 +189,7 @@ func handle_drag(event: InputEventScreenDrag):
 			anclaDistancia = delta;
 		
 						
-		if can_zoom and !isRotating:	
+		if can_zoom :	
 			# prioridad al zoom mediante una tolerancia
 			if abs(get_delta_distance(current_dist)) > zoom_treshold:#zoom
 				var cameraForward:Vector3 = camera_3_dp.get_global_transform().basis.z

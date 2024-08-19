@@ -1,6 +1,5 @@
-[gd_scene load_steps=25 format=3 uid="uid://mr5ipvv85b1"]
+[gd_scene load_steps=26 format=3 uid="uid://mr5ipvv85b1"]
 
-[ext_resource type="Texture2D" uid="uid://c1ich45dgonk4" path="res://Recursos/UI/img/Encabezado_B_Submenu/EncabezadoB_base.png" id="1_gat4c"]
 [ext_resource type="Script" path="res://Scenes/UI/UI_Particular.gd" id="1_wmuh6"]
 [ext_resource type="Texture2D" uid="uid://bmr0ayd77jkpp" path="res://Recursos/UI/img/Encabezado_B_Submenu/Boton_Expandir_a.png" id="2_3p15m"]
 [ext_resource type="Texture2D" uid="uid://d3vnt3taxqfqo" path="res://Recursos/UI/img/Encabezado_B_Submenu/EncabezadoB_base_Expandir_a.png" id="2_kablv"]
@@ -15,8 +14,10 @@
 [ext_resource type="Texture2D" uid="uid://ccdb74j068s41" path="res://Recursos/UI/img/Encabezado_A_submenu/Lista_detalles_Submenu_Vineta.png" id="9_evgt1"]
 [ext_resource type="Texture2D" uid="uid://beromshj68slv" path="res://Recursos/UI/img/Barra_Nivel/Barra_Nivel_base_marcadores.png" id="10_5sxwf"]
 [ext_resource type="PackedScene" uid="uid://qofjfvol201e" path="res://Scenes/Sitios/Particulares/PB5_ParticularScene.tscn" id="10_l4wa0"]
+[ext_resource type="Texture2D" uid="uid://cj8h7au2iw3ch" path="res://Recursos/UI/img/EncabezadoB_base.png" id="10_t44yw"]
 [ext_resource type="Texture2D" uid="uid://bcapbu6jnbtom" path="res://Recursos/UI/img/Encabezado_B_Submenu/EncabezadoB_BotonLista.png" id="11_3q3kn"]
 [ext_resource type="Texture2D" uid="uid://c554rmtw6fjo5" path="res://Recursos/UI/img/Encabezado_A_submenu/Lista_detalles_Submenu_Contenedor.png" id="12_64k7e"]
+[ext_resource type="Texture2D" uid="uid://cdq3mpic4rx3g" path="res://Recursos/UI/img/EncabezadoB_base_Contenedor.png" id="12_wrw6q"]
 [ext_resource type="PackedScene" uid="uid://cp14ueov0c5ee" path="res://Scenes/UI/Loading_Scene.tscn" id="17_iw8u2"]
 [ext_resource type="PackedScene" uid="uid://cgcyx32icu15x" path="res://Scenes/UI/UI_Particular_Sitio_lista.tscn" id="20_stxyf"]
 [ext_resource type="Texture2D" uid="uid://c8d8g2yovmdy4" path="res://Recursos/UI/img/CutzamalaMovil_Perfil_V3/Lista_detalles_Submenu_BotonIzq_a.png" id="20_svqoy"]
@@ -66,7 +67,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("1_gat4c")
+texture = ExtResource("10_t44yw")
 expand_mode = 1
 
 [node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/header_container"]
@@ -82,7 +83,7 @@ theme_override_constants/separation = 0
 self_modulate = Color(1, 1, 1, 0)
 custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
-size_flags_horizontal = 0
+size_flags_horizontal = 2
 
 [node name="header_btn_lista_sitios" type="Button" parent="VBoxContainer/header_container/HBoxContainer/header_btn_container"]
 layout_mode = 1
@@ -105,42 +106,51 @@ flat = true
 self_modulate = Color(1, 1, 1, 0)
 custom_minimum_size = Vector2(800, 0)
 layout_mode = 2
-size_flags_horizontal = 2
+size_flags_horizontal = 6
 
 [node name="lbl_header_nombre" type="Label" parent="VBoxContainer/header_container/HBoxContainer/header_nombre_container"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_font_sizes/font_size = 55
-text = "Planta Potabilizadora 4"
-vertical_alignment = 1
-
-[node name="header_icono_container" type="Panel" parent="VBoxContainer/header_container/HBoxContainer"]
-self_modulate = Color(1, 1, 1, 0)
-custom_minimum_size = Vector2(130, 0)
-layout_mode = 2
-size_flags_horizontal = 2
-
-[node name="texture_enlace" type="TextureRect" parent="VBoxContainer/header_container/HBoxContainer/header_icono_container"]
-custom_minimum_size = Vector2(150, 150)
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -45.0
-offset_top = -49.5
-offset_right = 55.0
-offset_bottom = 50.5
+offset_left = -306.0
+offset_top = -38.0
+offset_right = 306.0
+offset_bottom = 38.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 55
+text = "Planta Potabilizadora 4"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="header_icono_container" type="Panel" parent="VBoxContainer/header_container/HBoxContainer"]
+self_modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(130, 0)
+layout_mode = 2
+size_flags_horizontal = 10
+
+[node name="enlace_fondo" type="TextureRect" parent="VBoxContainer/header_container/HBoxContainer/header_icono_container"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("12_wrw6q")
+expand_mode = 1
+
+[node name="texture_enlace" type="TextureRect" parent="VBoxContainer/header_container/HBoxContainer/header_icono_container"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("5_tjj0m")
 expand_mode = 1
-stretch_mode = 4
 
 [node name="main_container" type="Panel" parent="VBoxContainer"]
 self_modulate = Color(1, 1, 1, 0)
@@ -168,7 +178,7 @@ stretch = true
 
 [node name="SubViewport" type="SubViewport" parent="VBoxContainer/main_container/modelo_3d_container/SubViewportContainer"]
 handle_input_locally = false
-size = Vector2i(2, 2)
+size = Vector2i(1080, 1795)
 render_target_update_mode = 0
 
 [node name="Template_Particular" parent="VBoxContainer/main_container/modelo_3d_container/SubViewportContainer/SubViewport" instance=ExtResource("10_l4wa0")]
@@ -309,11 +319,13 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="lbl_nivel_nombre" type="Label" parent="VBoxContainer/main_container/progress_bar_container"]
-layout_mode = 0
-offset_left = 937.0
-offset_top = 9.0
-offset_right = 1075.0
-offset_bottom = 78.0
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -154.0
+offset_bottom = 84.0
+grow_horizontal = 0
 theme_override_font_sizes/font_size = 40
 text = "N1"
 horizontal_alignment = 1

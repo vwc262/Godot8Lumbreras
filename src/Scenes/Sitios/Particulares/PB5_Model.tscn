@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://d4nifki50ahlx"]
+[gd_scene load_steps=32 format=3 uid="uid://d4nifki50ahlx"]
 
 [ext_resource type="PackedScene" uid="uid://cee4bu1xjnrjv" path="res://Recursos/Meshes/Particular_Cutzamala_PBR5/Cutzamala_PBR5_Berros_RecursosMaster.blend" id="1_lw3b4"]
 [ext_resource type="Script" path="res://Scripts/CutzamalaDissolve.gd" id="2_1lfsx"]
@@ -15,12 +15,11 @@
 [ext_resource type="PackedScene" uid="uid://dwwulixxwdeat" path="res://Recursos/Meshes/Particular_Cutzamala_PBR5/Meshes_colision/Cutzamala_collision_fence_visual.glb" id="13_cnd0g"]
 [ext_resource type="Material" uid="uid://xgb8n1gtjwxb" path="res://Recursos/Materiales/SelectGlow_Unlit.tres" id="14_5wcxd"]
 [ext_resource type="PackedScene" uid="uid://bic00hnmkt4ns" path="res://Recursos/Meshes/Particular_Cutzamala_PBR5/Cutzamala_particularCloudsOverlay.glb" id="15_6kmu4"]
+[ext_resource type="PackedScene" uid="uid://dadmaepermepa" path="res://Recursos/Meshes/Particular_Cutzamala_PBR5/glb/Cutzamala_PBR5_Berros_RecursosMaster.glb" id="15_bqp5d"]
 [ext_resource type="PackedScene" uid="uid://qarbp5cx5k7w" path="res://Recursos/Meshes/Particular_Cutzamala_PBR5/Meshes_colision/SimplifiedCollisions.glb" id="15_kcofc"]
 [ext_resource type="Material" uid="uid://bg4v1n7n5sscq" path="res://Recursos/Materiales/CloudOverlay_PB5.tres" id="16_18u0t"]
 [ext_resource type="PackedScene" uid="uid://cku6aj81y664y" path="res://Recursos/Meshes/Props/Marker_sprite_3d.tscn" id="16_qeikr"]
-
-[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_j1av6"]
-data = PackedVector3Array(-114.767, 41.3061, -80.4187, 130.262, 88.6649, -80.4187, 130.262, 41.3061, -80.4187, -114.767, 41.3061, -80.4187, -114.767, 88.6649, -80.4187, 130.262, 88.6649, -80.4187, 130.262, 41.3061, -80.4187, 131.839, 88.6649, 54.8306, 131.839, 41.3061, 54.8306, 130.262, 41.3061, -80.4187, 130.262, 88.6649, -80.4187, 131.839, 88.6649, 54.8306, -114.767, 41.3061, -80.4187, -114.767, 88.6649, 63.4096, -114.767, 88.6649, -80.4187, -114.767, 41.3061, -80.4187, -114.767, 41.3061, 63.4096, -114.767, 88.6649, 63.4096, -114.767, 41.3061, 63.4096, 131.839, 88.6649, 54.8306, -114.767, 88.6649, 63.4096, -114.767, 41.3061, 63.4096, 131.839, 41.3061, 54.8306, 131.839, 88.6649, 54.8306)
+[ext_resource type="Material" uid="uid://b4w4jslh4jm34" path="res://Recursos/Materiales/ParticularUnlit_material.tres" id="16_qgfso"]
 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_0n1bo"]
 data = PackedVector3Array(120.211, 61.7079, -74.4871, 238.464, 61.7079, -134.575, 238.464, 61.7079, -74.4871, 120.211, 61.7079, -74.4871, 120.211, 61.7079, -134.575, 238.464, 61.7079, -134.575, -104.593, 61.7079, -74.4871, -165.377, 61.7079, -134.575, -86.2848, 51.534, -134.575, 71.3325, 61.7079, -74.4871, 120.211, 61.7079, -134.575, 120.211, 61.7079, -74.4871, 71.3325, 61.7079, -74.4871, 71.3325, 61.7079, -134.575, 120.211, 61.7079, -134.575, 71.3325, 61.7079, 189.397, 120.211, 61.7079, 40.756, 120.211, 61.7079, 189.397, 71.3325, 61.7079, 189.397, 57.1963, 61.7079, 39.9848, 120.211, 61.7079, 40.756, -165.377, 61.7079, 189.397, -104.593, 61.7079, 57.4699, -110.921, 61.7079, 189.397, -165.377, 61.7079, 189.397, -165.377, 61.7079, 69.4827, -104.593, 61.7079, 57.4699, 120.211, 61.7079, 189.397, 238.464, 61.7079, 69.4827, 238.464, 61.7079, 189.397, 120.211, 61.7079, 189.397, 120.211, 61.7079, 40.756, 238.464, 61.7079, 69.4827, -165.377, 61.7079, 69.4827, -104.593, 61.7079, -74.4871, -104.593, 61.7079, 57.4699, -165.377, 61.7079, 69.4827, -165.377, 61.7079, -74.4871, -104.593, 61.7079, -74.4871, 120.211, 61.7079, 40.756, 238.464, 61.7079, -74.4871, 238.464, 61.7079, 69.4827, 120.211, 61.7079, 40.756, 120.211, 61.7079, -74.4871, 238.464, 61.7079, -74.4871, -41.1281, 61.7079, 189.397, 28.6714, 61.7079, 69.4827, 28.6714, 61.7079, 189.397, -41.1281, 61.7079, 189.397, -53.1383, 61.7079, 57.4699, 28.6714, 61.7079, 69.4827, -71.4216, 43.5256, -75.0259, -19.0304, 43.5256, -89.6142, -14.8647, 43.5256, -49.2801, -71.4216, 43.5256, -75.0259, -71.4216, 43.5256, -89.6142, -19.0304, 43.5256, -89.6142, -71.4216, 43.5256, -75.0259, -86.2848, 51.534, -134.575, -71.4216, 43.5256, -89.6142, -71.4216, 43.5256, -75.0259, -104.593, 61.7079, -74.4871, -86.2848, 51.534, -134.575, -19.1844, 43.5256, 24.215, -104.593, 61.7079, 57.4699, -71.4216, 43.5256, 24.215, -19.1844, 43.5256, 24.215, -53.1383, 61.7079, 57.4699, -104.593, 61.7079, 57.4699, -71.4216, 43.5256, 24.215, -104.593, 61.7079, -74.4871, -71.4216, 43.5256, -75.0259, -71.4216, 43.5256, 24.215, -104.593, 61.7079, 57.4699, -104.593, 61.7079, -74.4871, 87.6131, 43.5256, -49.2801, 120.211, 61.7079, 40.756, 87.6131, 43.5256, 9.073, 87.6131, 43.5256, -49.2801, 120.211, 61.7079, -74.4871, 120.211, 61.7079, 40.756, 13.0995, 43.5256, 8.4007, 28.6714, 61.7079, 69.4827, 11.5466, 43.5256, 26.0589, 13.0995, 43.5256, 8.4007, 57.1963, 61.7079, 39.9848, 28.6714, 61.7079, 69.4827, 37.6498, 43.5256, -49.2801, 120.211, 61.7079, -74.4871, 87.6131, 43.5256, -49.2801, 37.6498, 43.5256, -49.2801, 71.3325, 61.7079, -74.4871, 120.211, 61.7079, -74.4871, -67.8721, 51.022, -134.575, -19.0304, 43.5256, -89.6142, -71.4216, 43.5256, -89.6142, -67.8721, 51.022, -134.575, -14.6367, 51.022, -134.575, -19.0304, 43.5256, -89.6142, -60.6007, 43.5256, -21.7843, -14.8647, 43.5256, -49.2801, -8.7394, 43.5256, -21.7843, -60.6007, 43.5256, -21.7843, -71.4216, 43.5256, -75.0259, -14.8647, 43.5256, -49.2801, -60.6007, 43.5256, -21.7843, -71.4216, 43.5256, 24.215, -71.4216, 43.5256, -75.0259, 13.0995, 43.5256, 8.4007, 11.5466, 43.5256, 26.0589, -8.7394, 43.5256, -21.7843, -14.8647, 43.5256, -49.2801, 71.3325, 61.7079, -74.4871, 37.6498, 43.5256, -49.2801, -14.8647, 43.5256, -49.2801, 22.4537, 61.7079, -74.4871, 71.3325, 61.7079, -74.4871, 87.6131, 43.5256, 9.073, 57.1963, 61.7079, 39.9848, 13.0995, 43.5256, 8.4007, 87.6131, 43.5256, 9.073, 120.211, 61.7079, 40.756, 57.1963, 61.7079, 39.9848, 28.6714, 61.7079, 189.397, 57.1963, 61.7079, 39.9848, 71.3325, 61.7079, 189.397, 28.6714, 61.7079, 189.397, 28.6714, 61.7079, 69.4827, 57.1963, 61.7079, 39.9848, 22.4537, 61.7079, -74.4871, 71.3325, 61.7079, -134.575, 71.3325, 61.7079, -74.4871, 22.4537, 61.7079, -74.4871, 19.2186, 61.7079, -134.575, 71.3325, 61.7079, -134.575, 11.5466, 43.5256, 26.0589, -53.1383, 61.7079, 57.4699, -19.1844, 43.5256, 24.215, 11.5466, 43.5256, 26.0589, 28.6714, 61.7079, 69.4827, -53.1383, 61.7079, 57.4699, -71.4216, 43.5256, -89.6142, -86.2848, 51.534, -134.575, -67.8721, 51.022, -134.575, -110.921, 61.7079, 189.397, -53.1383, 61.7079, 57.4699, -41.1281, 61.7079, 189.397, -110.921, 61.7079, 189.397, -104.593, 61.7079, 57.4699, -53.1383, 61.7079, 57.4699, -165.377, 61.7079, -74.4871, -165.377, 61.7079, -134.575, -104.593, 61.7079, -74.4871, -19.0304, 43.5256, -89.6142, 22.4537, 61.7079, -74.4871, -14.8647, 43.5256, -49.2801, -19.0304, 43.5256, -89.6142, -14.6367, 51.022, -134.575, 22.4537, 61.7079, -74.4871, -14.6367, 51.022, -134.575, 19.2186, 61.7079, -134.575, 22.4537, 61.7079, -74.4871, 84.495, 49.6771, -39.6798, 106.131, 53.2686, -63.0873, 103.906, 51.0647, -16.3613, 84.495, 49.6771, -39.6798, 53.9427, 49.6771, -58.9397, 106.131, 53.2686, -63.0873, 84.495, 49.6771, -39.6798, 47.5463, 43.1885, -55.2568, 53.9427, 49.6771, -58.9397, 84.495, 49.6771, -39.6798, 78.1048, 43.1885, -35.992, 47.5463, 43.1885, -55.2568, 103.906, 51.0647, -16.3613, 78.1048, 43.1885, -35.992, 84.495, 49.6771, -39.6798, 103.906, 51.0647, -16.3613, 97.5158, 43.5061, -12.6735, 78.1048, 43.1885, -35.992, -8.7394, 43.5256, -21.7843, 37.6498, 43.5256, -49.2801, 13.0995, 43.5256, 8.4007, -8.7394, 43.5256, -21.7843, -14.8647, 43.5256, -49.2801, 37.6498, 43.5256, -49.2801, 87.6131, 43.5256, -49.2801, 13.0995, 43.5256, 8.4007, 37.6498, 43.5256, -49.2801, 87.6131, 43.5256, -49.2801, 87.6131, 43.5256, 9.073, 13.0995, 43.5256, 8.4007, 11.5466, 43.5256, 26.0589, -19.1844, 43.5256, 24.215, -8.7394, 43.5256, -21.7843, -8.7394, 43.5256, -21.7843, -71.4216, 43.5256, 24.215, -60.6007, 43.5256, -21.7843, -8.7394, 43.5256, -21.7843, -19.1844, 43.5256, 24.215, -71.4216, 43.5256, 24.215)
@@ -52,6 +51,9 @@ data = PackedVector3Array(-1, -1, 1, -1, 1, -1, -1, 1, 1, -1, -1, 1, -1, -1, -1,
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_idcbi"]
 data = PackedVector3Array(-1, -1, 1, -1, 1, -1, -1, 1, 1, -1, -1, 1, -1, -1, -1, -1, 1, -1, -1, -1, -1, 1, 1, -1, -1, 1, -1, -1, -1, -1, 1, -1, -1, 1, 1, -1, 1, -1, -1, 1, 1, 1, 1, 1, -1, 1, -1, -1, 1, -1, 1, 1, 1, 1, 1, -1, 1, -1, 1, 1, 1, 1, 1, 1, -1, 1, -1, -1, 1, -1, 1, 1, -1, -1, -1, 1, -1, 1, 1, -1, -1, -1, -1, -1, -1, -1, 1, 1, -1, 1, 1, 1, -1, -1, 1, 1, -1, 1, -1, 1, 1, -1, 1, 1, 1, -1, 1, 1)
 
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_j1av6"]
+data = PackedVector3Array(-114.767, 41.3061, -80.4187, 130.262, 88.6649, -80.4187, 130.262, 41.3061, -80.4187, -114.767, 41.3061, -80.4187, -114.767, 88.6649, -80.4187, 130.262, 88.6649, -80.4187, 130.262, 41.3061, -80.4187, 131.839, 88.6649, 54.8306, 131.839, 41.3061, 54.8306, 130.262, 41.3061, -80.4187, 130.262, 88.6649, -80.4187, 131.839, 88.6649, 54.8306, -114.767, 41.3061, -80.4187, -114.767, 88.6649, 63.4096, -114.767, 88.6649, -80.4187, -114.767, 41.3061, -80.4187, -114.767, 41.3061, 63.4096, -114.767, 88.6649, 63.4096, -114.767, 41.3061, 63.4096, 131.839, 88.6649, 54.8306, -114.767, 88.6649, 63.4096, -114.767, 41.3061, 63.4096, 131.839, 41.3061, 54.8306, 131.839, 88.6649, 54.8306)
+
 [node name="Generico" type="Node3D"]
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
@@ -70,56 +72,40 @@ directional_shadow_split_2 = 0.274
 directional_shadow_split_3 = 0.552
 directional_shadow_fade_start = 1.0
 
-[node name="Cutzamala_PBR5_Berros_RecursosMaster" parent="." instance=ExtResource("1_lw3b4")]
+[node name="Cutzamala_PBR5_Berros_RecursosMaster_Blender" parent="." instance=ExtResource("1_lw3b4")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, 0)
 script = ExtResource("2_1lfsx")
 
-[node name="Muros" parent="Cutzamala_PBR5_Berros_RecursosMaster" index="1"]
+[node name="Muros" parent="Cutzamala_PBR5_Berros_RecursosMaster_Blender" index="1"]
 material_override = ExtResource("3_m05u4")
 
-[node name="Desnivel_002" parent="Cutzamala_PBR5_Berros_RecursosMaster" index="2"]
+[node name="Desnivel_002" parent="Cutzamala_PBR5_Berros_RecursosMaster_Blender" index="2"]
 material_override = ExtResource("4_wnw7k")
 
-[node name="Barrera_Particular" parent="Cutzamala_PBR5_Berros_RecursosMaster" index="4"]
+[node name="Barrera_Particular" parent="Cutzamala_PBR5_Berros_RecursosMaster_Blender" index="4"]
 visible = false
 material_override = ExtResource("5_r7p2u")
 
-[node name="Pasto" parent="Cutzamala_PBR5_Berros_RecursosMaster" index="5"]
+[node name="Pasto" parent="Cutzamala_PBR5_Berros_RecursosMaster_Blender" index="5"]
 material_override = ExtResource("6_ra7lq")
 
-[node name="Muros_2" parent="Cutzamala_PBR5_Berros_RecursosMaster" index="6"]
+[node name="Muros_2" parent="Cutzamala_PBR5_Berros_RecursosMaster_Blender" index="6"]
 material_override = ExtResource("7_shu4i")
 
-[node name="Piso_001" parent="Cutzamala_PBR5_Berros_RecursosMaster" index="7"]
+[node name="Piso_001" parent="Cutzamala_PBR5_Berros_RecursosMaster_Blender" index="7"]
 material_override = ExtResource("8_78fag")
 
-[node name="Gasto" parent="Cutzamala_PBR5_Berros_RecursosMaster" index="8"]
+[node name="Gasto" parent="Cutzamala_PBR5_Berros_RecursosMaster_Blender" index="8"]
 material_override = ExtResource("9_hkhsi")
 
-[node name="Edificio_012" parent="Cutzamala_PBR5_Berros_RecursosMaster" index="9"]
+[node name="Edificio_012" parent="Cutzamala_PBR5_Berros_RecursosMaster_Blender" index="9"]
 material_override = ExtResource("10_cx2u4")
 
-[node name="Edificio_003" parent="Cutzamala_PBR5_Berros_RecursosMaster" index="10"]
+[node name="Edificio_003" parent="Cutzamala_PBR5_Berros_RecursosMaster_Blender" index="10"]
 material_override = ExtResource("11_k0qch")
 
-[node name="Edificio_005" parent="Cutzamala_PBR5_Berros_RecursosMaster" index="11"]
+[node name="Edificio_005" parent="Cutzamala_PBR5_Berros_RecursosMaster_Blender" index="11"]
 material_override = ExtResource("12_83oiy")
-
-[node name="Cutzamala_collision_fence_visual" parent="Cutzamala_PBR5_Berros_RecursosMaster" instance=ExtResource("13_cnd0g")]
-
-[node name="collision_fence_visual" parent="Cutzamala_PBR5_Berros_RecursosMaster/Cutzamala_collision_fence_visual" index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -32.1978, 0)
-material_override = ExtResource("14_5wcxd")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="Cutzamala_PBR5_Berros_RecursosMaster/Cutzamala_collision_fence_visual/collision_fence_visual" index="0"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Cutzamala_PBR5_Berros_RecursosMaster/Cutzamala_collision_fence_visual/collision_fence_visual/StaticBody3D"]
-shape = SubResource("ConcavePolygonShape3D_j1av6")
-
-[node name="Cutzamala_particularCloudsOverlay" parent="Cutzamala_PBR5_Berros_RecursosMaster" instance=ExtResource("15_6kmu4")]
-
-[node name="CloudMesh" parent="Cutzamala_PBR5_Berros_RecursosMaster/Cutzamala_particularCloudsOverlay" index="0"]
-material_override = ExtResource("16_18u0t")
 
 [node name="SimplifiedCollisions" parent="." instance=ExtResource("15_kcofc")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, 0)
@@ -178,7 +164,59 @@ shape = SubResource("ConcavePolygonShape3D_idcbi")
 [node name="Sprite3D" parent="." instance=ExtResource("16_qeikr")]
 transform = Transform3D(-1.03955e-08, 0.237822, -1.03955e-08, 0, -1.03955e-08, -0.237822, -0.237822, -1.03955e-08, 4.54404e-16, 7.50652, 5.03335, -82.8403)
 
-[editable path="Cutzamala_PBR5_Berros_RecursosMaster"]
-[editable path="Cutzamala_PBR5_Berros_RecursosMaster/Cutzamala_collision_fence_visual"]
-[editable path="Cutzamala_PBR5_Berros_RecursosMaster/Cutzamala_particularCloudsOverlay"]
+[node name="Cutzamala_PBR5_Berros_RecursosMaster_GLB" parent="." instance=ExtResource("15_bqp5d")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, 0)
+
+[node name="Pasto" parent="Cutzamala_PBR5_Berros_RecursosMaster_GLB" index="0"]
+material_override = ExtResource("6_ra7lq")
+
+[node name="Muros_2" parent="Cutzamala_PBR5_Berros_RecursosMaster_GLB" index="1"]
+material_override = ExtResource("7_shu4i")
+
+[node name="Tuberias" parent="Cutzamala_PBR5_Berros_RecursosMaster_GLB" index="2"]
+material_override = ExtResource("8_78fag")
+
+[node name="Gasto" parent="Cutzamala_PBR5_Berros_RecursosMaster_GLB" index="3"]
+material_override = ExtResource("9_hkhsi")
+
+[node name="Edificio" parent="Cutzamala_PBR5_Berros_RecursosMaster_GLB" index="4"]
+material_override = ExtResource("10_cx2u4")
+
+[node name="Techos" parent="Cutzamala_PBR5_Berros_RecursosMaster_GLB" index="5"]
+material_override = ExtResource("11_k0qch")
+
+[node name="Props2" parent="Cutzamala_PBR5_Berros_RecursosMaster_GLB" index="6"]
+material_override = ExtResource("12_83oiy")
+
+[node name="Piso1" parent="Cutzamala_PBR5_Berros_RecursosMaster_GLB" index="7"]
+material_override = ExtResource("4_wnw7k")
+
+[node name="Props1" parent="Cutzamala_PBR5_Berros_RecursosMaster_GLB" index="8"]
+material_override = ExtResource("16_qgfso")
+
+[node name="Muros" parent="Cutzamala_PBR5_Berros_RecursosMaster_GLB" index="9"]
+material_override = ExtResource("3_m05u4")
+
+[node name="Cutzamala_collision_fence_visual" parent="Cutzamala_PBR5_Berros_RecursosMaster_GLB" instance=ExtResource("13_cnd0g")]
+transform = Transform3D(1, 0, -1.06581e-14, 0, 1, 0, 1.06581e-14, 0, 1, 0, 0, 0)
+
+[node name="collision_fence_visual" parent="Cutzamala_PBR5_Berros_RecursosMaster_GLB/Cutzamala_collision_fence_visual" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -32.1978, 0)
+material_override = ExtResource("14_5wcxd")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Cutzamala_PBR5_Berros_RecursosMaster_GLB/Cutzamala_collision_fence_visual/collision_fence_visual" index="0"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Cutzamala_PBR5_Berros_RecursosMaster_GLB/Cutzamala_collision_fence_visual/collision_fence_visual/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_j1av6")
+
+[node name="Cutzamala_particularCloudsOverlay" parent="Cutzamala_PBR5_Berros_RecursosMaster_GLB" instance=ExtResource("15_6kmu4")]
+transform = Transform3D(1, 0, -1.06581e-14, 0, 1, 0, 1.06581e-14, 0, 1, 0, 0, 0)
+
+[node name="CloudMesh" parent="Cutzamala_PBR5_Berros_RecursosMaster_GLB/Cutzamala_particularCloudsOverlay" index="0"]
+material_override = ExtResource("16_18u0t")
+
+[editable path="Cutzamala_PBR5_Berros_RecursosMaster_Blender"]
 [editable path="SimplifiedCollisions"]
+[editable path="Cutzamala_PBR5_Berros_RecursosMaster_GLB"]
+[editable path="Cutzamala_PBR5_Berros_RecursosMaster_GLB/Cutzamala_collision_fence_visual"]
+[editable path="Cutzamala_PBR5_Berros_RecursosMaster_GLB/Cutzamala_particularCloudsOverlay"]

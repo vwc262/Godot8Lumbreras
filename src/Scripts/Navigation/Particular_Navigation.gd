@@ -150,6 +150,7 @@ func handle_touch(event: InputEventScreenTouch):
 		previous_distance = 0
 		last_distance = 0
 		start_angle = 0
+		gesture_type = GESTURE_TYPE.NONE
 
 func handle_drag(event: InputEventScreenDrag):
 	#var cameraForward:Vector3 = camera_3_dp.get_global_transform().basis.z
@@ -165,6 +166,7 @@ func handle_drag(event: InputEventScreenDrag):
 	AdjustPanSpeedByZoom()
 	
 	if touch_points.size() == 1:
+		gesture_type = GESTURE_TYPE.NONE
 		if can_pan:
 			var pan_vector = (forward + (-event.relative.x * right ) + (-event.relative.y * forward)) * pan_speed
 			pan_vector.y = 0					
@@ -187,9 +189,9 @@ func handle_drag(event: InputEventScreenDrag):
 		previous_y_diff = current_finger_positions.y
 		
 		
-		var get_gesture_type = identificar_gesto(rot_amount,distance_amount,y_amount)
+		gesture_type = gesture_type if gesture_type != GESTURE_TYPE.NONE else identificar_gesto(rot_amount,distance_amount,y_amount)
 		
-		match get_gesture_type:
+		match gesture_type:
 			GESTURE_TYPE.ROTATE:				
 				rotate_camera(rot_amount)
 			GESTURE_TYPE.ZOOM:				

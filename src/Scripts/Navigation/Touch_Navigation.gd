@@ -222,4 +222,3 @@ func AdjustPanSpeedByZoom():
 	
 
 #endregion
-

@@ -12,6 +12,7 @@
 self_modulate = Color(1, 1, 1, 0)
 anchors_preset = 10
 anchor_right = 1.0
+offset_bottom = 110.0
 grow_horizontal = 2
 mouse_filter = 1
 script = ExtResource("1_065dv")
@@ -25,15 +26,17 @@ theme_override_constants/separation = 0
 
 [node name="datos_sitio_container" type="Panel" parent="VBoxContainer"]
 self_modulate = Color(1, 1, 1, 0)
+clip_contents = true
 custom_minimum_size = Vector2(0, 110)
 layout_mode = 2
 mouse_filter = 1
 
 [node name="sitio_fondo" type="TextureRect" parent="VBoxContainer/datos_sitio_container"]
 custom_minimum_size = Vector2(0, 110)
-layout_mode = 2
-offset_right = 1080.0
-offset_bottom = 110.0
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+grow_horizontal = 2
 size_flags_vertical = 0
 texture = ExtResource("5_ci0c8")
 expand_mode = 1
@@ -41,11 +44,10 @@ expand_mode = 1
 [node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/datos_sitio_container"]
 custom_minimum_size = Vector2(0, 110)
 layout_mode = 1
-anchors_preset = 15
+anchors_preset = 10
 anchor_right = 1.0
-anchor_bottom = 1.0
+offset_bottom = 110.0
 grow_horizontal = 2
-grow_vertical = 2
 size_flags_vertical = 2
 theme_override_constants/separation = 0
 
@@ -79,7 +81,6 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 18.0
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -132,6 +133,7 @@ texture = ExtResource("6_476dq")
 expand_mode = 1
 
 [node name="PanelContainer" type="PanelContainer" parent="VBoxContainer"]
+visible = false
 self_modulate = Color(1, 1, 1, 0)
 layout_mode = 2
 size_flags_vertical = 2

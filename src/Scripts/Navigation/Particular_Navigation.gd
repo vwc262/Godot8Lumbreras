@@ -292,4 +292,3 @@ func AdjustPanSpeedByZoom():
 
 func get_delta_distance(currentDistance:float):
 	return currentDistance - last_distance 
-

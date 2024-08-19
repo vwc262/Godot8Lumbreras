@@ -13,4 +13,3 @@ func _ready() -> void:
 	#var distanceFromCamera : float = position_camera.distance_to(self.position_camera)
 	#var weight = remap(distanceFromCamera,40,60,1,0)
 	#material_dissolve.set("shader_parameter/dissolve_amount",lerp(0,1,weight))	
-

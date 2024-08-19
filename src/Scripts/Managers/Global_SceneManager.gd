@@ -101,5 +101,3 @@ func set_viewport_visibility(sceneKey,makeVisible):
 		
 	
 #endregion
-
-

@@ -35,7 +35,7 @@ void fragment() {
 	vec4 shadow_tex = texture(texture_detail_ao,base_uv);
 	ALBEDO = (albedo.rgb * albedo_tex.rgb) * shadow_tex.rgb;
 
-	
+
 	//NORMAL_MAP = texture(texture_normal,base_uv).rgb;
 	AO = dot(texture(texture_ambient_occlusion,base_uv),ao_texture_channel);
 	AO_LIGHT_AFFECT = ao_light_affect;

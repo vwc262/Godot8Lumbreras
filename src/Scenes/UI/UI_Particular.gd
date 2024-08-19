@@ -10,9 +10,6 @@ extends Control
 @onready var datos_sitios: Array[Estacion] = GlobalData.get_data()
 
 @onready var lbl_header_nombre = $VBoxContainer/header_container/HBoxContainer/header_nombre_container/lbl_header_nombre
-@onready var fondo_render_material : Material = $VBoxContainer/main_container/fondo_render.material
-@onready var fondo_render_final = $VBoxContainer/main_container/fondo_render_final
-@onready var fondo_render = $VBoxContainer/main_container/fondo_render
 @onready var btn_graficador_lbl = $VBoxContainer/main_container/detalles_container/VBoxContainer/botones_container/HBoxContainer/btn_graficador/Label
 
 @onready var texture_enlace = $VBoxContainer/header_container/HBoxContainer/header_icono_container/texture_enlace
@@ -44,10 +41,6 @@ extends Control
 @export var flecha_lista_sitio_open: Texture2D
 @export var flecha_lista_sitio_close: Texture2D
 @export var lista_sitio_scene: PackedScene
-
-# Rango de años que quieres mostrar
-@export var start_year: int = 2014
-@export var end_year: int = 2024
 
 var original_icon: Texture2D
 var is_new_icon_active: bool = false
@@ -166,10 +159,7 @@ func set_progress_bar(_signal: Señal, unidad):
 			display_value = remap(_signal.valor, 0.0, _signal.semaforo["normal"], 0.67, 1.15)
 		else:
 			display_value = remap(_signal.valor, _signal.semaforo["normal"], _signal.semaforo["critico"], 1.15, 2.7)
-		
-	
-		
-	
+
 		# Cambiar el color de la barra de progreso según el valor de la señal
 		if _signal.valor > _signal.semaforo.normal and _signal.valor <= _signal.semaforo.preventivo:
 			progress_bar.modulate = Color(1, 1, 0) # Amarillo
@@ -192,11 +182,6 @@ func set_progress_bar(_signal: Señal, unidad):
 func init_particular(is_particular):
 	if is_particular:
 		_on_datos_actualizados(GlobalData.get_data())
-
-# Función que se llama al terminar la animación del flipbook
-func On_FlipbookAnimationEnded():
-	fondo_render_final.visible = true
-	fondo_render.visible = false
 
 # Función para instanciar escenas de la lista de sitios
 func instanciar_lista_sitios():

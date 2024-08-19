@@ -56,6 +56,5 @@ func refresh_data():
 		canvas_material.set("shader_parameter/texture_albedo", online_texture if estacion.enlace != 0 else offline_texture)
 
 func _on_EtiquetaClick(_camera: Node, event: InputEvent, _position: Vector3, _normal: Vector3, _shape_idx: int) -> void:
-	#if(event is InputEventMouseButton  and event.double_click):
-		#SceneManager.scroll_scene(SceneManager.TIPO_NIVEL.PARTICULAR,estacion.id_estacion)	
-	pass			
+	if(event is InputEventMouseButton  and event.double_click):
+		SceneManager.scroll_scene(SceneManager.TIPO_NIVEL.PARTICULAR,estacion.id_estacion)	

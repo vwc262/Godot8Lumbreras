@@ -14,6 +14,7 @@ extends Node
 @onready var sitio_fondo = $VBoxContainer/datos_sitio_container/sitio_fondo
 @onready var sitio_fondo_seleccionado = $VBoxContainer/datos_sitio_container/sitio_fondo_seleccionado
 @onready var button = $VBoxContainer/datos_sitio_container/HBoxContainer/nombre_fecha_contaier/Button
+@onready var sitio: PanelContainer = $"."
 
 var estacion_ref: Estacion
 var signal_ref = {}
@@ -27,7 +28,8 @@ var is_signals_instantiated = false
 
 func _ready():
 	NavigationManager.connect("OnTweenFinished_MovimientoRealizado", _on_camera_zoom)
-
+	
+	
 # Función para recibir y establecer los datos de la estación
 func set_datos(estacion: Estacion):
 	estacion_ref = estacion

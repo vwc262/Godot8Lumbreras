@@ -39,11 +39,11 @@ void fragment() {
 	vec4 colorGradiente = vec4(0.0);
     vec2 direction = SCREEN_UV - blur_center;
 	vec4 c = vec4( 0.0, 0.0, 0.0,0.0 );
-	float f = 1.0 / float( sampling_count );	
-	for( int i=0; i < sampling_count; i++ ) {		
+	float f = 1.0 / float( sampling_count );
+	for( int i=0; i < sampling_count; i++ ) {
 		c += texture( screen_texture, SCREEN_UV - blur_amount * direction * float(i) ).rgba * f;
-	    colorGradiente = get_gradiente(SCREEN_UV).rgba;			
-		c.a *= colorGradiente.a;							
+	    colorGradiente = get_gradiente(SCREEN_UV).rgba;
+		c.a *= colorGradiente.a;
 	    //c = colorGradiente;
 	}
 	COLOR.rgba = c;

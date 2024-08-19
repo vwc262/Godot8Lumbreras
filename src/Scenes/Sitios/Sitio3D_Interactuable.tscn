@@ -6,9 +6,9 @@
 [ext_resource type="FontFile" uid="uid://dede71l06xv2l" path="res://Recursos/Fonts/Roboto-Regular.ttf" id="3_stj8j"]
 [ext_resource type="Texture2D" uid="uid://d0wki5ixbre4d" path="res://Recursos/Meshes/Mapa/Sitios/Mini_Sitios/Mini_3D_04_Bake_Mini.png" id="4_36tf5"]
 [ext_resource type="PackedScene" uid="uid://bycetavidkv8p" path="res://Recursos/Meshes/Mapa/Sitios/SelectMesh.glb" id="4_dsy6m"]
-[ext_resource type="Material" uid="uid://xgb8n1gtjwxb" path="res://Recursos/Materiales/SelectGlow_Unlit.tres" id="5_hma7b"]
+[ext_resource type="Material" path="res://Recursos/Materiales/SelectGlow_Unlit.tres" id="5_hma7b"]
 [ext_resource type="Material" uid="uid://dh2n3p2wcagt2" path="res://Recursos/Materiales/Emissivo/m_Emissive_window.tres" id="5_xuyoy"]
-[ext_resource type="PackedScene" uid="uid://cku6aj81y664y" path="res://Recursos/Meshes/Props/Marker_sprite_3d.tscn" id="6_nlsnm"]
+[ext_resource type="PackedScene" path="res://Recursos/Meshes/Props/Marker_sprite_3d.tscn" id="6_nlsnm"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2h7ld"]
 resource_name = "Vertex"
@@ -89,7 +89,7 @@ outlineSizeMin = 0
 min_drag_elapsed_time = 215
 
 [node name="LabelNameSitio" type="Label3D" parent="."]
-transform = Transform3D(1.34988, 0, 0, 0, 1.34988, 0, 0, 0, 1.34988, 0, 4.56973, 0)
+transform = Transform3D(1.34988, 0, 0, 0, 1.34988, 0, 0, 0, 1.34988, -1.0921, 4.56973, -1.91745)
 pixel_size = 0.009
 billboard = 1
 alpha_cut = 1
@@ -108,7 +108,7 @@ surface_material_override/1 = SubResource("StandardMaterial3D_1mkq7")
 [node name="Area3D" type="Area3D" parent="Mini_3D_04"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Mini_3D_04/Area3D"]
-transform = Transform3D(0.911152, 0, 0.412064, 0, 1, 0, -0.412064, 0, 0.911152, -0.226565, 0.613594, -0.276398)
+transform = Transform3D(1.36673, 0, 0.618098, 0, 1.5, 0, -0.618098, 0, 1.36673, -0.226565, 0.613594, -0.276398)
 shape = SubResource("BoxShape3D_kb87j")
 
 [node name="DatosEtiqueta3D" parent="Mini_3D_04" instance=ExtResource("3_osuc0")]

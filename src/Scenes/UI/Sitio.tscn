@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://Scripts/UI/Sitio.gd" id="1_065dv"]
 [ext_resource type="Texture2D" uid="uid://bje8sq0eus5s" path="res://Recursos/UI/img/CutzamalaMovil_Perfil_V3/Lista_Detalles_BotonFlecha_b.png" id="4_1lj4y"]
-[ext_resource type="Texture2D" uid="uid://cpelva5nmmloj" path="res://Recursos/UI/img/CutzamalaMovil_Perfil_V3/Lista_Detalles_a-1.png" id="5_ci0c8"]
+[ext_resource type="Texture2D" uid="uid://cpelva5nmmloj" path="res://Recursos/UI/img/CutzamalaMovil_Perfil_V3/Lista_Detalles_b.png" id="5_nhgav"]
 [ext_resource type="Texture2D" uid="uid://6pb72kocguii" path="res://Recursos/UI/img/CutzamalaMovil_Perfil_V3/Lista_Detalles_seleccion.png" id="6_476dq"]
 [ext_resource type="PackedScene" uid="uid://hro847n58cow" path="res://Scenes/UI/UI_Señales.tscn" id="7_7pxni"]
 [ext_resource type="Texture2D" uid="uid://b6ak0dychqgwd" path="res://Recursos/UI/img/CutzamalaMovil_Perfil_V3/Lista_Detalles_BotonFlecha_a.png" id="7_d3qat"]
@@ -38,7 +38,7 @@ anchors_preset = 10
 anchor_right = 1.0
 grow_horizontal = 2
 size_flags_vertical = 0
-texture = ExtResource("5_ci0c8")
+texture = ExtResource("5_nhgav")
 expand_mode = 1
 
 [node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/datos_sitio_container"]

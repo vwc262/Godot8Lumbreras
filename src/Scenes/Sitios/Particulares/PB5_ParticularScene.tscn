@@ -62,7 +62,7 @@ virtualCameras = [NodePath("../Camera_POV_0"), NodePath("../Camera_POV_1"), Node
 keyCodes = Array[int]([49, 50, 51, 52])
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(0.783772, 0.148427, -0.603051, -0.00131471, 0.971415, 0.237383, 0.621047, -0.185261, 0.761563, -35.8581, 33.5905, -23.1691)
+transform = Transform3D(0.783772, 0.148427, -0.60305, -0.00131471, 0.971415, 0.237383, 0.621047, -0.185261, 0.761563, -35.8581, 33.5905, -23.1691)
 current = true
 
 [node name="CameraHost" type="Node3D" parent="Camera3D"]
@@ -81,18 +81,18 @@ maxX = 40
 maxZ = 20
 maxY = 10
 can_rotate = true
-rotate_speed = 1.0
+rotate_speed = 0.5
+rotate_treshold = 18.0
 LimitRotationCamera = 0
 minRotationY = -30.0
 maxRotationY = 30.0
 offSetDistanceInclination = 10.0
-tilt_speed = 0.05
-tilt_threshold = 5.0
-zoom_speed = 0.5
+tilt_speed = 0.38
+tilt_threshold = 5.5
+zoom_speed = 0.05
 can_zoom = true
 maxZoom = 5.0
 initialZoom = 30.0
-zoom_treshold = 40.0
 max_pan_speed = 0.01
 z_Depth = 1000.0
 

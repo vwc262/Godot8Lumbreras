@@ -15,7 +15,7 @@ extends Node3D
 @export_group('Rotation')
 @export var can_rotate: bool
 @export var rotate_speed = 0.9
-@export var rotate_treshold = 15
+@export var rotate_treshold : float = 1
 @export var initialRotationCamera :float = -75
 @export var LimitRotationCamera = -15
 @export var minRotationY : float = -13
@@ -50,15 +50,17 @@ signal on_position_changed
 #endregion
 
 #region Propiedades para logica
+enum GESTURE_TYPE {ROTATE,ZOOM,TILT , NONE}
+var gesture_type = GESTURE_TYPE.NONE
 var last_distance = 0
 var touch_points: Dictionary = {}
 var start_distance
 var start_zoom
-var start_angle
 
 var current_angle
 var anclaDistancia : Vector2
-var angle : float = 0
+var start_angle : float = 0
+var new_angle : float = 0
 var initalCameraPosition : Vector3
 var isTween: bool
 
@@ -131,9 +133,9 @@ func handle_touch(event: InputEventScreenTouch):
 		last_distance = start_distance
 		start_zoom = position.y
 
-		var current: Vector2 = touch_point_positions[1] - touch_point_positions[0]
-		angle = anclaDistancia.normalized().dot(current.normalized())
-		anclaDistancia = touch_point_positions[1] - touch_point_positions[0]
+		var current: Vector2 = touch_point_positions[1] - touch_point_positions[0]		
+		previous_y_diff = current.y
+		start_angle = current.normalized().angle()				
 		
 		#region pinch
 		#var _touches = touch_points.values()
@@ -143,12 +145,11 @@ func handle_touch(event: InputEventScreenTouch):
 		#endregion
 
 	elif touch_points.size() < 2:
-		start_distance = 0
-		angle = 0
-		anclaDistancia = Vector2(0,0)
+		start_distance = 0				
 		previous_y_diff  = 0
 		previous_distance = 0
 		last_distance = 0
+		start_angle = 0
 
 func handle_drag(event: InputEventScreenDrag):
 	#var cameraForward:Vector3 = camera_3_dp.get_global_transform().basis.z
@@ -175,44 +176,64 @@ func handle_drag(event: InputEventScreenDrag):
 		var touch_point_positions = touch_points.values()
 		var current_finger_positions: Vector2 = touch_point_positions[1] - touch_point_positions[0]
 		var current_dist = touch_point_positions[1].distance_to(touch_point_positions[0])
+		new_angle = current_finger_positions.normalized().angle()
+		var rot_amount = (new_angle - start_angle) * 100			
+		start_angle = new_angle
+		
+		var distance_amount = current_dist - start_distance				
+		start_distance = current_dist
+		
+		var y_amount = current_finger_positions.y - previous_y_diff				
+		previous_y_diff = current_finger_positions.y
+		
+		
+		var get_gesture_type = identificar_gesto(rot_amount,distance_amount,y_amount)
+		
+		match get_gesture_type:
+			GESTURE_TYPE.ROTATE:				
+				rotate_camera(rot_amount)
+			GESTURE_TYPE.ZOOM:				
+				do_zoom(-distance_amount)						
+			GESTURE_TYPE.TILT:
+				do_tilt(-event.relative.y)
+		
 		#var zoom_factor = current_dist / start_distance
 
-		if can_rotate:
-			var touch = touch_points.values()
-			var delta : Vector2 = touch[1] - touch[0]
-			# comentado
-			if(abs(delta.angle_to(anclaDistancia) * 1000) > rotate_treshold):				
-				rotate_camera(rotate_speed * sign(delta.angle_to(anclaDistancia)))
-				isRotating = true
-			else:
-				isRotating = false				
-			anclaDistancia = delta;
-		
-						
-		if can_zoom :	
-			# prioridad al zoom mediante una tolerancia
-			if abs(get_delta_distance(current_dist)) > zoom_treshold:#zoom
-				var cameraForward:Vector3 = camera_3_dp.get_global_transform().basis.z
-				var direction = -1 if current_dist > last_distance else 1 
-				#position += cameraForward * direction * zoom_speed
-				var to_zoom_move = cameraForward * direction * zoom_speed * 3
-				#var to_zoom_move = vector_proyectado * -direction * zoom_speed * 8
-				camera_parent.move_and_collide(to_zoom_move,false,margen_seguro,true,max_number_handle_collisions)		
-				last_distance = current_dist
-			elif previous_y_diff != 0: #tilt
-				if abs(current_finger_positions.y - previous_y_diff) > tilt_threshold:
-					var direction : float = sign(event.relative.y)
+		#if can_rotate:
+			#var touch = touch_points.values()
+			#var delta : Vector2 = touch[1] - touch[0]
+			## comentado
+			#if(abs(delta.angle_to(anclaDistancia) * 1000) > rotate_treshold):				
+				#rotate_camera(rotate_speed * sign(delta.angle_to(anclaDistancia)))
+				#isRotating = true
+			#else:
+				#isRotating = false				
+			#anclaDistancia = delta;
+		#
+						#
+		#if can_zoom :	
+			## prioridad al zoom mediante una tolerancia
+			#if abs(get_delta_distance(current_dist)) > zoom_treshold:#zoom
+				#var cameraForward:Vector3 = camera_3_dp.get_global_transform().basis.z
+				#var direction = -1 if current_dist > last_distance else 1 
+				##position += cameraForward * direction * zoom_speed
+				#var to_zoom_move = cameraForward * direction * zoom_speed * 3
+				##var to_zoom_move = vector_proyectado * -direction * zoom_speed * 8
+				#camera_parent.move_and_collide(to_zoom_move,false,margen_seguro,true,max_number_handle_collisions)		
+				#last_distance = current_dist
+			#if previous_y_diff != 0: #tilt
+				#if abs(current_finger_positions.y - previous_y_diff) > tilt_threshold:
+					#var direction : float = sign(event.relative.y)
 					# comentado
 					#camera_3_dp.rotation_degrees.x += direction * tilt_speed
-					var up_down_pos : Vector3 = Vector3(0.0,position.y,0.0)
-					up_down_pos.y =  direction * tilt_speed
-					camera_parent.move_and_collide(up_down_pos ,false,margen_seguro,true,max_number_handle_collisions)		
-			previous_y_diff  = current_finger_positions.y	
-			previous_distance = current_dist
-
-			#position.y = start_zoom / zoom_factor
-			limit_zoom()
-			#camera_3_dp.rotation_degrees.x =  lerpf(initialRotationCamera,LimitRotationCamera,inclinate_camera())
+					#var up_down_pos : Vector3 = Vector3(0.0,position.y,0.0)
+					#up_down_pos.y =  direction * tilt_speed
+					#camera_parent.move_and_collide(up_down_pos ,false,margen_seguro,true,max_number_handle_collisions)		
+			#previous_y_diff  = current_finger_positions.y				
+#
+			##position.y = start_zoom / zoom_factor
+			#limit_zoom()
+			##camera_3_dp.rotation_degrees.x =  lerpf(initialRotationCamera,LimitRotationCamera,inclinate_camera())
 
 	#position.x = clamp(position.x, minX * factorZoom, maxX * factorZoom)
 	#position.z = clamp(position.z, minZ * factorZoom, maxZ * factorZoom)
@@ -222,9 +243,35 @@ func handle_drag(event: InputEventScreenDrag):
 		position.z = clamp(position.z, minZ, maxZ)
 		position.y = clamp(position.y, minY, maxY)
 
+func identificar_gesto(rot_amount,distance_amount,y_amount) -> GESTURE_TYPE:
+	var gesture = GESTURE_TYPE.NONE	
+	if abs(rot_amount * 10) > rotate_treshold :
+		gesture = GESTURE_TYPE.ROTATE
+	elif abs(distance_amount) > zoom_treshold :		
+		gesture = GESTURE_TYPE.ZOOM
+	elif  abs(y_amount) > tilt_threshold:
+		gesture = GESTURE_TYPE.TILT
+			
+	return gesture
+	
+
 func rotate_camera(currentangle: float):
-	rotation_degrees.y += -currentangle
+	rotation_degrees.y += -currentangle * rotate_speed
 	#rotation_degrees.y = clamp(rotation_degrees.y, minRotationY, maxRotationY)
+func do_zoom( distance_amount):
+	var cameraForward:Vector3 = camera_3_dp.get_global_transform().basis.z	
+	#position += cameraForward * distance_amount * zoom_speed
+	var to_zoom_move = cameraForward * distance_amount * zoom_speed 
+	#var to_zoom_move = vector_proyectado * -direction * zoom_speed * 8
+	camera_parent.move_and_collide(to_zoom_move,false,margen_seguro,true,max_number_handle_collisions)			
+
+func do_tilt(y_amount):				
+	##camera_3_dp.rotation_degrees.x += direction * tilt_speed
+	var direction = sign(y_amount)
+	var up_down_pos : Vector3 = Vector3(0.0,position.y,0.0)	
+	up_down_pos.y =  direction
+	camera_parent.move_and_collide(up_down_pos * tilt_speed ,false,margen_seguro,true,max_number_handle_collisions)		
+	pass	
 
 func limit_zoom():
 	#position.y +=  clamp(position.y, maxZoom, initialZoom )
@@ -245,4 +292,3 @@ func AdjustPanSpeedByZoom():
 
 func get_delta_distance(currentDistance:float):
 	return currentDistance - last_distance 
-

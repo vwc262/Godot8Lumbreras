@@ -1,14 +1,11 @@
-[gd_scene load_steps=32 format=3 uid="uid://d4nifki50ahlx"]
+[gd_scene load_steps=29 format=3 uid="uid://d4nifki50ahlx"]
 
-[ext_resource type="PackedScene" uid="uid://cee4bu1xjnrjv" path="res://Recursos/Meshes/Particular_Cutzamala_PBR5/Cutzamala_PBR5_Berros_RecursosMaster.blend" id="1_lw3b4"]
-[ext_resource type="Script" path="res://Scripts/CutzamalaDissolve.gd" id="2_1lfsx"]
 [ext_resource type="Material" uid="uid://bc661come1l76" path="res://Recursos/Materiales/ParticularMuro_PBR5_Tileable.tres" id="3_m05u4"]
 [ext_resource type="Material" uid="uid://clpnronp88bg2" path="res://Recursos/Materiales/ParticularUnlit_sec1.tres" id="4_wnw7k"]
-[ext_resource type="Material" uid="uid://bexyx5nrr46o1" path="res://Recursos/Materiales/Barrier.tres" id="5_r7p2u"]
 [ext_resource type="Material" uid="uid://d313nvgrewkot" path="res://Recursos/Materiales/ParticularGrass_Tileable.tres" id="6_ra7lq"]
 [ext_resource type="Material" uid="uid://cuffxlgpe8lrr" path="res://Recursos/Materiales/ParticularMuro2_Tileable.tres" id="7_shu4i"]
 [ext_resource type="Material" uid="uid://cwdb0xo47d1bn" path="res://Recursos/Materiales/ParticularUnlit_tuberias_material.tres" id="8_78fag"]
-[ext_resource type="Material" uid="uid://bonstudrdm2ew" path="res://Recursos/Materiales/ParticularUnlit_Gasto_material.tres" id="9_hkhsi"]
+[ext_resource type="Material" path="res://Recursos/Materiales/ParticularUnlit_Gasto_material.tres" id="9_hkhsi"]
 [ext_resource type="Material" uid="uid://b01vby7vqyu2y" path="res://Recursos/Materiales/ParticularPlaster_Tileable.tres" id="10_cx2u4"]
 [ext_resource type="Material" uid="uid://dc4d50uixwgaw" path="res://Recursos/Materiales/ParticularRoof_Tileable.tres" id="11_k0qch"]
 [ext_resource type="Material" uid="uid://ca8npxbjn72ic" path="res://Recursos/Materiales/ParticularUnlit_Props2.tres" id="12_83oiy"]
@@ -71,41 +68,6 @@ directional_shadow_split_1 = 0.545
 directional_shadow_split_2 = 0.274
 directional_shadow_split_3 = 0.552
 directional_shadow_fade_start = 1.0
-
-[node name="Cutzamala_PBR5_Berros_RecursosMaster_Blender" parent="." instance=ExtResource("1_lw3b4")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, 0)
-script = ExtResource("2_1lfsx")
-
-[node name="Muros" parent="Cutzamala_PBR5_Berros_RecursosMaster_Blender" index="1"]
-material_override = ExtResource("3_m05u4")
-
-[node name="Desnivel_002" parent="Cutzamala_PBR5_Berros_RecursosMaster_Blender" index="2"]
-material_override = ExtResource("4_wnw7k")
-
-[node name="Barrera_Particular" parent="Cutzamala_PBR5_Berros_RecursosMaster_Blender" index="4"]
-visible = false
-material_override = ExtResource("5_r7p2u")
-
-[node name="Pasto" parent="Cutzamala_PBR5_Berros_RecursosMaster_Blender" index="5"]
-material_override = ExtResource("6_ra7lq")
-
-[node name="Muros_2" parent="Cutzamala_PBR5_Berros_RecursosMaster_Blender" index="6"]
-material_override = ExtResource("7_shu4i")
-
-[node name="Piso_001" parent="Cutzamala_PBR5_Berros_RecursosMaster_Blender" index="7"]
-material_override = ExtResource("8_78fag")
-
-[node name="Gasto" parent="Cutzamala_PBR5_Berros_RecursosMaster_Blender" index="8"]
-material_override = ExtResource("9_hkhsi")
-
-[node name="Edificio_012" parent="Cutzamala_PBR5_Berros_RecursosMaster_Blender" index="9"]
-material_override = ExtResource("10_cx2u4")
-
-[node name="Edificio_003" parent="Cutzamala_PBR5_Berros_RecursosMaster_Blender" index="10"]
-material_override = ExtResource("11_k0qch")
-
-[node name="Edificio_005" parent="Cutzamala_PBR5_Berros_RecursosMaster_Blender" index="11"]
-material_override = ExtResource("12_83oiy")
 
 [node name="SimplifiedCollisions" parent="." instance=ExtResource("15_kcofc")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, 0)
@@ -215,7 +177,6 @@ transform = Transform3D(1, 0, -1.06581e-14, 0, 1, 0, 1.06581e-14, 0, 1, 0, 0, 0)
 [node name="CloudMesh" parent="Cutzamala_PBR5_Berros_RecursosMaster_GLB/Cutzamala_particularCloudsOverlay" index="0"]
 material_override = ExtResource("16_18u0t")
 
-[editable path="Cutzamala_PBR5_Berros_RecursosMaster_Blender"]
 [editable path="SimplifiedCollisions"]
 [editable path="Cutzamala_PBR5_Berros_RecursosMaster_GLB"]
 [editable path="Cutzamala_PBR5_Berros_RecursosMaster_GLB/Cutzamala_collision_fence_visual"]

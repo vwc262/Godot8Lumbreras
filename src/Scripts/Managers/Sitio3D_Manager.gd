@@ -41,9 +41,11 @@ func _ready():
 func _on_area_3d_input_event(_camera, event, _position, _normal, _shape_idx):
 	
 	if event is InputEventMouseButton and event.double_click:
+		
 		if UIManager.current_selected_site != null:
 			UIManager.seleccionar_sitio_id(IdEstacion)
 		SceneManager.scroll_scene(SceneManager.TIPO_NIVEL.PARTICULAR, estacion.id_estacion)	
+		return
 	
 	if event is InputEventMouseButton and event.pressed:
 		

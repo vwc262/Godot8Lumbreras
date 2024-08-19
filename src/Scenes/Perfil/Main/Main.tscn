@@ -12,12 +12,12 @@
 [ext_resource type="Texture2D" uid="uid://cr241prf282v" path="res://Recursos/UI/img/CutzamalaMovil_Perfil_V3/EncabezadoB_base_Conexion_a.png" id="8_i1y6s"]
 [ext_resource type="PackedScene" uid="uid://cp14ueov0c5ee" path="res://Scenes/UI/Loading_Scene.tscn" id="8_txe4o"]
 [ext_resource type="Texture2D" uid="uid://dgwbnce3hid3r" path="res://Recursos/UI/img/Encabezado_B_Submenu/Boton_Expandir_b.png" id="9_dfl04"]
-[ext_resource type="Texture2D" uid="uid://bo4b76cn6y4rf" path="res://Recursos/UI/img/Menu_pie/MenuPie_Base.png" id="9_m03wm"]
 [ext_resource type="Texture2D" uid="uid://cqa0owk40erpl" path="res://Recursos/UI/img/CutzamalaMovil_Perfil_V3/EncabezadoB_base_Conexion_b.png" id="9_n8tr3"]
 [ext_resource type="Texture2D" uid="uid://drbg18gc7a6sy" path="res://Recursos/UI/img/CutzamalaMovil_Perfil_V3/EncabezadoA_base_LogoVWC.png" id="10_oix2o"]
 [ext_resource type="PackedScene" uid="uid://mr5ipvv85b1" path="res://Scenes/UI/UI_Particular.tscn" id="11_e8765"]
 [ext_resource type="Script" path="res://Scripts/UI/PopUp/PopupWindow.gd" id="13_4y2mv"]
 [ext_resource type="Texture2D" uid="uid://wtgya2x77u2y" path="res://Recursos/UI/img/PopUp_Dialogo_base.png" id="14_0v8gh"]
+[ext_resource type="Texture2D" uid="uid://dl0hbpjs1hb82" path="res://Recursos/UI/img/señales/Lista_detalles_Nivel_barra.png" id="14_v1tbx"]
 [ext_resource type="Texture2D" uid="uid://cci03rah376hd" path="res://Recursos/UI/Botones_Vistas/Boton_CamaraReset.png" id="15_wbwd8"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_42kcc"]
@@ -280,7 +280,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("9_m03wm")
+texture = ExtResource("14_v1tbx")
 expand_mode = 1
 
 [node name="PanelContainer" type="PanelContainer" parent="ScrollContainer/WindowsContainer/PerfilWindow/VB_MainContainer/Panel/main_container/ListaSitiosContainer/VBoxContainer"]

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bliv3oeaqcnc7"
-path="res://.godot/imported/Boton_Izq.png-c6deea7b53e0ad79b4e39bea6cf960b2.ctex"
+uid="uid://cpelva5nmmloj"
+path="res://.godot/imported/Lista_Detalles_b.png-707d15aeb675061196841400797c7935.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Recursos/UI/img/Encabezado_B_Submenu/Boton_Izq.png"
-dest_files=["res://.godot/imported/Boton_Izq.png-c6deea7b53e0ad79b4e39bea6cf960b2.ctex"]
+source_file="res://Recursos/UI/img/CutzamalaMovil_Perfil_V3/Lista_Detalles_b.png"
+dest_files=["res://.godot/imported/Lista_Detalles_b.png-707d15aeb675061196841400797c7935.ctex"]
 
 [params]
 

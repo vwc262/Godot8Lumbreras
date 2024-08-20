@@ -35,6 +35,7 @@ jobs:
         run: |
           mkdir -p .godot/editor .godot/imported
           mkdir -v -p build/windows
+          mkdir -v -p build/android
           echo "$GITHUB_REF" > build/version.txt
       - name: Windows Build
         run: |

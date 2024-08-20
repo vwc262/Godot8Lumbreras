@@ -27,7 +27,7 @@ signal in_particular
 var is_hidden = false  # Variable para rastrear el estado del contenedor
 
 func _ready() -> void:
-	get_tree().root.size_changed.connect(AdjustWindowsSize)
+	get_tree().root.size_changed.connect(reload_app)
 	var estaciones: Array[Estacion] = GlobalData.get_data()
 	SceneManager.add_scene(SceneManager.idScenePerfil,perfil)
 	SceneManager.add_subviewport_reference(SceneManager.TIPO_NIVEL.PERFIL,sub_viewport_container)
@@ -43,8 +43,13 @@ func _ready() -> void:
 func _on_datos_actualizados(estaciones: Array[Estacion]):
 	set_contador_sitios(estaciones)
 
-func AdjustWindowsSize():
-	
+func reload_app():
+	var tree = get_tree()
+	if tree != null:
+		UIManager.free_manager()
+		tree.reload_current_scene()
+
+func AdjustWindowsSize():			
 	var size = get_viewport().size
 	SceneManager.set_viewport_size_x(size.x )
 	scroll_container.custom_minimum_size.x = size.x	

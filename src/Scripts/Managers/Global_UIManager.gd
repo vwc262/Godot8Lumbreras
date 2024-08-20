@@ -96,3 +96,8 @@ func mostrar_graficador():
 
 func is_graficador_visible() -> bool:
 	return graficador_container.visible if graficador_container else false
+	
+func free_manager():
+	lista_sitios.clear()
+
+		

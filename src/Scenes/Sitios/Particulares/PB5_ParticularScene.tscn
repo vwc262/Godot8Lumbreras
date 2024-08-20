@@ -113,7 +113,7 @@ tween_resource = SubResource("Resource_4oduj")
 camera_3d_resource = SubResource("Resource_3ffli")
 
 [node name="Camera_POV_1" type="Node3D" parent="."]
-transform = Transform3D(0.999387, 0, -0.0350043, 0.00159461, 0.998962, 0.0455269, 0.0349679, -0.0455548, 0.99835, 7.16729, 5.85234, -79.4011)
+transform = Transform3D(0.999387, 0, -0.0350043, 0.00159461, 0.998962, 0.0455269, 0.0349679, -0.0455548, 0.99835, 6.90443, 7.15353, -77.736)
 script = ExtResource("5_qc0mw")
 tween_resource = SubResource("Resource_4oduj")
 camera_3d_resource = SubResource("Resource_3ffli")

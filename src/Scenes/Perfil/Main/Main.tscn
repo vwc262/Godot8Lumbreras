@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://x5m0onfran4m"]
+[gd_scene load_steps=22 format=3 uid="uid://x5m0onfran4m"]
 
 [ext_resource type="Script" path="res://Scripts/Managers/Perfil.gd" id="1_symg7"]
 [ext_resource type="Script" path="res://Scripts/Fetcher/Fetch_Data.gd" id="1_xo6k0"]
@@ -19,6 +19,7 @@
 [ext_resource type="Texture2D" uid="uid://wtgya2x77u2y" path="res://Recursos/UI/img/PopUp_Dialogo_base.png" id="14_0v8gh"]
 [ext_resource type="Texture2D" uid="uid://dl0hbpjs1hb82" path="res://Recursos/UI/img/señales/Lista_detalles_Nivel_barra.png" id="14_v1tbx"]
 [ext_resource type="Texture2D" uid="uid://cci03rah376hd" path="res://Recursos/UI/Botones_Vistas/Boton_CamaraReset.png" id="15_wbwd8"]
+[ext_resource type="PackedScene" uid="uid://bw8x014747jnj" path="res://Scenes/UI_Helpers/UI_Paleta.tscn" id="20_rrgx0"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_42kcc"]
 
@@ -34,6 +35,8 @@ script = ExtResource("2_yku0o")
 script = ExtResource("1_xo6k0")
 url_api = "https://www.virtualwavecontrol.com.mx/Core24/crud/ReadSignalsEstacion?idProyecto=7"
 url_api_update = "https://virtualwavecontrol.com.mx/api24/VWC/Unreal/PlantasPotabilizadoras2024/GetUpdateLite"
+
+[node name="UiPaleta" parent="." instance=ExtResource("20_rrgx0")]
 
 [node name="ScrollContainer" type="ScrollContainer" parent="."]
 clip_contents = false

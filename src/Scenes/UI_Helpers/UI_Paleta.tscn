@@ -1,0 +1,110 @@
+[gd_scene load_steps=2 format=3 uid="uid://bw8x014747jnj"]
+
+[ext_resource type="Script" path="res://Scenes/UI_Helpers/PaletaManager.gd" id="1_qk8or"]
+
+[node name="UiPaleta" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+script = ExtResource("1_qk8or")
+
+[node name="Window" type="Window" parent="."]
+handle_input_locally = false
+position = Vector2i(0, 36)
+size = Vector2i(335, 235)
+visible = false
+
+[node name="OptionButton" type="OptionButton" parent="Window"]
+offset_right = 32.0
+offset_bottom = 20.0
+selected = 0
+item_count = 2
+popup/item_0/text = "Paleta 1"
+popup/item_1/text = "Plaeta 2"
+popup/item_1/id = 1
+
+[node name="Button" type="Button" parent="Window"]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -4.0
+offset_top = -8.0
+offset_right = 4.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Repintar
+"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Window"]
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -4.0
+offset_bottom = 4.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Window/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Window/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "Color :"
+
+[node name="ColorPickerButton" type="ColorPickerButton" parent="Window/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="Window/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Window/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+text = "Color :"
+
+[node name="ColorPickerButton" type="ColorPickerButton" parent="Window/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="Window/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Window/VBoxContainer/HBoxContainer3"]
+layout_mode = 2
+text = "Color :"
+
+[node name="ColorPickerButton" type="ColorPickerButton" parent="Window/VBoxContainer/HBoxContainer3"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="HBoxContainer4" type="HBoxContainer" parent="Window/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Window/VBoxContainer/HBoxContainer4"]
+layout_mode = 2
+text = "Color :"
+
+[node name="ColorPickerButton" type="ColorPickerButton" parent="Window/VBoxContainer/HBoxContainer4"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="HBoxContainer5" type="HBoxContainer" parent="Window/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Window/VBoxContainer/HBoxContainer5"]
+layout_mode = 2
+text = "Color :"
+
+[node name="ColorPickerButton" type="ColorPickerButton" parent="Window/VBoxContainer/HBoxContainer5"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[connection signal="item_selected" from="Window/OptionButton" to="." method="_on_option_button_item_selected"]
+[connection signal="pressed" from="Window/Button" to="." method="_on_button_pressed"]

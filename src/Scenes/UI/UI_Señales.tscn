@@ -67,7 +67,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="point" type="TextureRect" parent="main_container/HBoxContainer/VBoxContainer/nivel_container/nivel_nombre_container/HBoxContainer"]
+[node name="texture_punto_nivel" type="TextureRect" parent="main_container/HBoxContainer/VBoxContainer/nivel_container/nivel_nombre_container/HBoxContainer"]
 custom_minimum_size = Vector2(60, 0)
 layout_mode = 2
 texture = ExtResource("6_aiytj")
@@ -123,7 +123,7 @@ custom_minimum_size = Vector2(150, 0)
 layout_mode = 2
 size_flags_horizontal = 8
 
-[node name="TextureRect" type="TextureRect" parent="main_container/HBoxContainer/VBoxContainer/nivel_container/nivel_valor_container"]
+[node name="texture_valor_nivel" type="TextureRect" parent="main_container/HBoxContainer/VBoxContainer/nivel_container/nivel_valor_container"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -164,7 +164,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="point" type="TextureRect" parent="main_container/HBoxContainer/VBoxContainer/presion_container/presion_container/HBoxContainer"]
+[node name="texture_punto_presion" type="TextureRect" parent="main_container/HBoxContainer/VBoxContainer/presion_container/presion_container/HBoxContainer"]
 custom_minimum_size = Vector2(60, 0)
 layout_mode = 2
 size_flags_horizontal = 0
@@ -186,7 +186,7 @@ layout_mode = 2
 size_flags_horizontal = 2
 mouse_filter = 1
 
-[node name="TextureRect" type="TextureRect" parent="main_container/HBoxContainer/VBoxContainer/presion_container/presion_container/HBoxContainer/presion_valor_container"]
+[node name="texture_valor_presion" type="TextureRect" parent="main_container/HBoxContainer/VBoxContainer/presion_container/presion_container/HBoxContainer/presion_valor_container"]
 layout_mode = 2
 texture = ExtResource("4_lrkvm")
 expand_mode = 1
@@ -218,7 +218,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="point" type="TextureRect" parent="main_container/HBoxContainer/VBoxContainer/gasto_container/gasto_container/HBoxContainer2"]
+[node name="texture_punto_gasto" type="TextureRect" parent="main_container/HBoxContainer/VBoxContainer/gasto_container/gasto_container/HBoxContainer2"]
 custom_minimum_size = Vector2(60, 0)
 layout_mode = 2
 size_flags_horizontal = 0
@@ -240,7 +240,7 @@ layout_mode = 2
 size_flags_horizontal = 2
 mouse_filter = 1
 
-[node name="TextureRect" type="TextureRect" parent="main_container/HBoxContainer/VBoxContainer/gasto_container/gasto_container/HBoxContainer2/gasto_valor_container"]
+[node name="texture_valor_gasto" type="TextureRect" parent="main_container/HBoxContainer/VBoxContainer/gasto_container/gasto_container/HBoxContainer2/gasto_valor_container"]
 layout_mode = 2
 texture = ExtResource("4_lrkvm")
 expand_mode = 1
@@ -257,7 +257,7 @@ vertical_alignment = 1
 custom_minimum_size = Vector2(0, 60)
 layout_mode = 2
 
-[node name="point" type="TextureRect" parent="main_container/HBoxContainer/VBoxContainer/totalizado_container"]
+[node name="texture_punto_totalizado" type="TextureRect" parent="main_container/HBoxContainer/VBoxContainer/totalizado_container"]
 custom_minimum_size = Vector2(60, 0)
 layout_mode = 2
 texture = ExtResource("6_aiytj")
@@ -277,7 +277,7 @@ layout_mode = 2
 size_flags_horizontal = 2
 mouse_filter = 1
 
-[node name="TextureRect" type="TextureRect" parent="main_container/HBoxContainer/VBoxContainer/totalizado_container/totalizado_valor_container"]
+[node name="texture_valor_totalizado" type="TextureRect" parent="main_container/HBoxContainer/VBoxContainer/totalizado_container/totalizado_valor_container"]
 layout_mode = 2
 texture = ExtResource("5_8ytvd")
 expand_mode = 1

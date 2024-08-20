@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="paleta_colores" load_steps=2 format=3 uid="uid://c3xhfdlxur5dj"]
+
+[ext_resource type="Script" path="res://Scripts/Resources/ColorPaletaResource.gd" id="1_tjaho"]
+
+[resource]
+script = ExtResource("1_tjaho")
+paleta_activa = 0
+paleta_1 = Array[Color]([Color(0.623529, 0.133333, 0.254902, 1), Color(0.701961, 0.690196, 0.364706, 1), Color(0.239216, 0.486275, 0.788235, 1), Color(0.109804, 0.207843, 0.368627, 1), Color(0.309804, 0.309804, 0.309804, 1)])
+paleta_2 = Array[Color]([Color(0.701961, 0.690196, 0.364706, 1), Color(0.109804, 0.207843, 0.368627, 1), Color(0.623529, 0.133333, 0.254902, 1), Color(0.239216, 0.486275, 0.788235, 1), Color(0.309804, 0.309804, 0.309804, 1)])

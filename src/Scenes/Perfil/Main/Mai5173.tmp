@@ -1,0 +1,413 @@
+[gd_scene load_steps=22 format=3 uid="uid://x5m0onfran4m"]
+
+[ext_resource type="Script" path="res://Scripts/Managers/Perfil.gd" id="1_symg7"]
+[ext_resource type="Script" path="res://Scripts/Fetcher/Fetch_Data.gd" id="1_xo6k0"]
+[ext_resource type="PackedScene" uid="uid://cyug4nnq0yh1a" path="res://Scenes/Perfil/Main/Mundo_3D.tscn" id="2_2gqy4"]
+[ext_resource type="Environment" uid="uid://ccm8vriw4pmnm" path="res://Scenes/Sky/PerfilEnvironment.tres" id="2_notvr"]
+[ext_resource type="Script" path="res://Scripts/Fetcher/VersionFetcher.gd" id="2_yku0o"]
+[ext_resource type="PackedScene" uid="uid://dbs3c52v8n226" path="res://Scenes/UI/ListaSitios.tscn" id="4_lo6xx"]
+[ext_resource type="PackedScene" uid="uid://ggu8wjqomq4" path="res://Scenes/UI/UI_Graficador.tscn" id="5_vw305"]
+[ext_resource type="Texture2D" uid="uid://8kxaa2nc0w28" path="res://Recursos/UI/img/CutzamalaMovil_Perfil_V3/EncabezadoA_base.png" id="6_12d1m"]
+[ext_resource type="Texture2D" uid="uid://bom2ge4j2826j" path="res://Recursos/UI/img/CutzamalaMovil_Perfil_V3/EncabezadoA_base_contenedor.png" id="7_l0ja0"]
+[ext_resource type="Texture2D" uid="uid://cr241prf282v" path="res://Recursos/UI/img/CutzamalaMovil_Perfil_V3/EncabezadoB_base_Conexion_a.png" id="8_i1y6s"]
+[ext_resource type="PackedScene" uid="uid://cp14ueov0c5ee" path="res://Scenes/UI/Loading_Scene.tscn" id="8_txe4o"]
+[ext_resource type="Texture2D" uid="uid://dgwbnce3hid3r" path="res://Recursos/UI/img/Encabezado_B_Submenu/Boton_Expandir_b.png" id="9_dfl04"]
+[ext_resource type="Texture2D" uid="uid://cqa0owk40erpl" path="res://Recursos/UI/img/CutzamalaMovil_Perfil_V3/EncabezadoB_base_Conexion_b.png" id="9_n8tr3"]
+[ext_resource type="Texture2D" uid="uid://drbg18gc7a6sy" path="res://Recursos/UI/img/CutzamalaMovil_Perfil_V3/EncabezadoA_base_LogoVWC.png" id="10_oix2o"]
+[ext_resource type="PackedScene" uid="uid://mr5ipvv85b1" path="res://Scenes/UI/UI_Particular.tscn" id="11_e8765"]
+[ext_resource type="Script" path="res://Scripts/UI/PopUp/PopupWindow.gd" id="13_4y2mv"]
+[ext_resource type="Texture2D" uid="uid://wtgya2x77u2y" path="res://Recursos/UI/img/PopUp_Dialogo_base.png" id="14_0v8gh"]
+[ext_resource type="Texture2D" uid="uid://dl0hbpjs1hb82" path="res://Recursos/UI/img/señales/Lista_detalles_Nivel_barra.png" id="14_v1tbx"]
+[ext_resource type="Texture2D" uid="uid://cci03rah376hd" path="res://Recursos/UI/Botones_Vistas/Boton_CamaraReset.png" id="15_wbwd8"]
+[ext_resource type="PackedScene" uid="uid://bw8x014747jnj" path="res://Scenes/UI_Helpers/UI_Paleta.tscn" id="20_rrgx0"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_42kcc"]
+
+[node name="Main" type="Node"]
+script = ExtResource("1_symg7")
+perfil_world_environment = ExtResource("2_notvr")
+particular_world_environment = ExtResource("2_notvr")
+
+[node name="VersionUpdater" type="HTTPRequest" parent="."]
+script = ExtResource("2_yku0o")
+
+[node name="Endpoint" type="HTTPRequest" parent="."]
+script = ExtResource("1_xo6k0")
+url_api = "https://www.virtualwavecontrol.com.mx/Core24/crud/ReadSignalsEstacion?idProyecto=7"
+url_api_update = "https://virtualwavecontrol.com.mx/api24/VWC/Unreal/PlantasPotabilizadoras2024/GetUpdateLite"
+
+[node name="UiPaleta" parent="." instance=ExtResource("20_rrgx0")]
+
+[node name="ScrollContainer" type="ScrollContainer" parent="."]
+clip_contents = false
+custom_minimum_size = Vector2(1080, 0)
+layout_direction = 2
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+follow_focus = true
+horizontal_scroll_mode = 3
+vertical_scroll_mode = 3
+
+[node name="WindowsContainer" type="HBoxContainer" parent="ScrollContainer"]
+clip_contents = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 0
+
+[node name="GraficadorWindow" type="PanelContainer" parent="ScrollContainer/WindowsContainer"]
+clip_contents = true
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_42kcc")
+
+[node name="UiGraficador" parent="ScrollContainer/WindowsContainer/GraficadorWindow" instance=ExtResource("5_vw305")]
+layout_mode = 2
+
+[node name="PerfilWindow" type="PanelContainer" parent="ScrollContainer/WindowsContainer"]
+clip_contents = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxEmpty_42kcc")
+
+[node name="VB_MainContainer" type="VBoxContainer" parent="ScrollContainer/WindowsContainer/PerfilWindow"]
+layout_mode = 2
+
+[node name="header_container" type="Panel" parent="ScrollContainer/WindowsContainer/PerfilWindow/VB_MainContainer"]
+self_modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(0, 125)
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxEmpty_42kcc")
+
+[node name="header_fondo" type="TextureRect" parent="ScrollContainer/WindowsContainer/PerfilWindow/VB_MainContainer/header_container"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("6_12d1m")
+expand_mode = 1
+
+[node name="Label" type="Label" parent="ScrollContainer/WindowsContainer/PerfilWindow/VB_MainContainer/header_container"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 55
+text = "Sistema Cutzamala"
+horizontal_alignment = 1
+uppercase = true
+
+[node name="contador_contaier" type="Panel" parent="ScrollContainer/WindowsContainer/PerfilWindow/VB_MainContainer/header_container"]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -95.0
+offset_top = -60.0
+offset_right = 115.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxEmpty_42kcc")
+
+[node name="TextureRect" type="TextureRect" parent="ScrollContainer/WindowsContainer/PerfilWindow/VB_MainContainer/header_container/contador_contaier"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("7_l0ja0")
+expand_mode = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ScrollContainer/WindowsContainer/PerfilWindow/VB_MainContainer/header_container/contador_contaier"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -86.0
+offset_top = -24.5
+offset_right = 86.0
+offset_bottom = 24.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="online_container" type="HBoxContainer" parent="ScrollContainer/WindowsContainer/PerfilWindow/VB_MainContainer/header_container/contador_contaier/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+theme_override_constants/separation = 10
+
+[node name="lbl_online_contador" type="Label" parent="ScrollContainer/WindowsContainer/PerfilWindow/VB_MainContainer/header_container/contador_contaier/HBoxContainer/online_container"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+theme_override_font_sizes/font_size = 40
+text = "00"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="icono_online" type="TextureRect" parent="ScrollContainer/WindowsContainer/PerfilWindow/VB_MainContainer/header_container/contador_contaier/HBoxContainer/online_container"]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("8_i1y6s")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="offline_container" type="HBoxContainer" parent="ScrollContainer/WindowsContainer/PerfilWindow/VB_MainContainer/header_container/contador_contaier/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+theme_override_constants/separation = 10
+
+[node name="lbl_offline_contador" type="Label" parent="ScrollContainer/WindowsContainer/PerfilWindow/VB_MainContainer/header_container/contador_contaier/HBoxContainer/offline_container"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "00"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="icono_online" type="TextureRect" parent="ScrollContainer/WindowsContainer/PerfilWindow/VB_MainContainer/header_container/contador_contaier/HBoxContainer/offline_container"]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("9_n8tr3")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="logo_vwc" type="TextureRect" parent="ScrollContainer/WindowsContainer/PerfilWindow/VB_MainContainer/header_container"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 1
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("10_oix2o")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Panel" type="Panel" parent="ScrollContainer/WindowsContainer/PerfilWindow/VB_MainContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxEmpty_42kcc")
+
+[node name="main_container" type="VBoxContainer" parent="ScrollContainer/WindowsContainer/PerfilWindow/VB_MainContainer/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer/WindowsContainer/PerfilWindow/VB_MainContainer/Panel/main_container"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="ScrollContainer/WindowsContainer/PerfilWindow/VB_MainContainer/Panel/main_container/VBoxContainer"]
+visible = false
+layout_mode = 2
+size_flags_vertical = 3
+stretch = true
+
+[node name="SubViewport" type="SubViewport" parent="ScrollContainer/WindowsContainer/PerfilWindow/VB_MainContainer/Panel/main_container/VBoxContainer/SubViewportContainer"]
+handle_input_locally = false
+physics_object_picking = true
+physics_object_picking_sort = true
+size = Vector2i(2, 2)
+render_target_update_mode = 0
+
+[node name="Perfil" parent="ScrollContainer/WindowsContainer/PerfilWindow/VB_MainContainer/Panel/main_container/VBoxContainer/SubViewportContainer/SubViewport" instance=ExtResource("2_2gqy4")]
+visible = false
+
+[node name="BackgroundFlipBook" parent="ScrollContainer/WindowsContainer/PerfilWindow/VB_MainContainer/Panel/main_container/VBoxContainer" instance=ExtResource("8_txe4o")]
+layout_mode = 2
+
+[node name="ListaSitiosContainer" type="PanelContainer" parent="ScrollContainer/WindowsContainer/PerfilWindow/VB_MainContainer/Panel/main_container"]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_42kcc")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer/WindowsContainer/PerfilWindow/VB_MainContainer/Panel/main_container/ListaSitiosContainer"]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="botones_container" type="Panel" parent="ScrollContainer/WindowsContainer/PerfilWindow/VB_MainContainer/Panel/main_container/ListaSitiosContainer/VBoxContainer"]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+size_flags_vertical = 0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ScrollContainer/WindowsContainer/PerfilWindow/VB_MainContainer/Panel/main_container/ListaSitiosContainer/VBoxContainer/botones_container"]
+self_modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -72.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="BTN_ListaSitios" type="Button" parent="ScrollContainer/WindowsContainer/PerfilWindow/VB_MainContainer/Panel/main_container/ListaSitiosContainer/VBoxContainer/botones_container/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 8
+focus_mode = 0
+icon = ExtResource("9_dfl04")
+flat = true
+
+[node name="barra_separador" type="Panel" parent="ScrollContainer/WindowsContainer/PerfilWindow/VB_MainContainer/Panel/main_container/ListaSitiosContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 15)
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="ScrollContainer/WindowsContainer/PerfilWindow/VB_MainContainer/Panel/main_container/ListaSitiosContainer/VBoxContainer/barra_separador"]
+custom_minimum_size = Vector2(0, 15)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("14_v1tbx")
+expand_mode = 1
+
+[node name="PanelContainer" type="PanelContainer" parent="ScrollContainer/WindowsContainer/PerfilWindow/VB_MainContainer/Panel/main_container/ListaSitiosContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="ListaSitios" parent="ScrollContainer/WindowsContainer/PerfilWindow/VB_MainContainer/Panel/main_container/ListaSitiosContainer/VBoxContainer/PanelContainer" instance=ExtResource("4_lo6xx")]
+custom_minimum_size = Vector2(0, 650)
+layout_mode = 2
+
+[node name="bnt_reset_camera" type="Button" parent="ScrollContainer/WindowsContainer/PerfilWindow/VB_MainContainer/Panel"]
+custom_minimum_size = Vector2(150, 150)
+layout_mode = 2
+offset_left = 30.0
+offset_top = 30.0
+offset_right = 130.0
+offset_bottom = 130.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+focus_mode = 0
+flat = true
+
+[node name="TextureRect" type="TextureRect" parent="ScrollContainer/WindowsContainer/PerfilWindow/VB_MainContainer/Panel/bnt_reset_camera"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("15_wbwd8")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="ParticularWindow" type="PanelContainer" parent="ScrollContainer/WindowsContainer"]
+clip_contents = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxEmpty_42kcc")
+
+[node name="UiParticular" parent="ScrollContainer/WindowsContainer/ParticularWindow" instance=ExtResource("11_e8765")]
+layout_mode = 2
+
+[node name="popup_container" type="Panel" parent="."]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+
+[node name="Popup" type="Popup" parent="popup_container"]
+transparent_bg = true
+mode = 3
+initial_position = 2
+size = Vector2i(500, 700)
+script = ExtResource("13_4y2mv")
+
+[node name="Panel" type="Panel" parent="popup_container/Popup"]
+modulate = Color(1, 1, 1, 0)
+self_modulate = Color(1, 1, 1, 0)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="popup_container/Popup/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("14_0v8gh")
+expand_mode = 1
+
+[node name="Label" type="Label" parent="popup_container/Popup/Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -112.0
+offset_top = -111.5
+offset_right = 112.0
+offset_bottom = -88.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 30
+text = "Necesita seleccionar 
+un particular antes 
+de proceder."
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+uppercase = true
+
+[node name="btn_close_popup" type="Button" parent="popup_container/Popup/Panel"]
+custom_minimum_size = Vector2(200, 65)
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -100.0
+offset_top = -245.0
+offset_right = 100.0
+offset_bottom = -180.0
+grow_horizontal = 2
+grow_vertical = 0
+focus_mode = 0
+theme_override_font_sizes/font_size = 30
+text = "OK"
+flat = true
+
+[connection signal="request_completed" from="VersionUpdater" to="VersionUpdater" method="_on_request_completed"]
+[connection signal="OnVersionChanged" from="Endpoint" to="VersionUpdater" method="On_Update_Version"]
+[connection signal="visibility_changed" from="ScrollContainer/WindowsContainer/PerfilWindow/VB_MainContainer/Panel/main_container/VBoxContainer/SubViewportContainer" to="." method="_on_sub_viewport_container_visibility_changed"]
+[connection signal="pressed" from="ScrollContainer/WindowsContainer/PerfilWindow/VB_MainContainer/Panel/main_container/ListaSitiosContainer/VBoxContainer/botones_container/HBoxContainer/BTN_ListaSitios" to="." method="_on_btn_lista_sitios_pressed"]
+[connection signal="pressed" from="ScrollContainer/WindowsContainer/PerfilWindow/VB_MainContainer/Panel/bnt_reset_camera" to="." method="_on_bnt_reset_camera_pressed"]
+[connection signal="visibility_changed" from="popup_container/Popup" to="popup_container/Popup" method="_on_visibility_changed"]
+[connection signal="pressed" from="popup_container/Popup/Panel/btn_close_popup" to="." method="_on_btn_close_popup_pressed"]

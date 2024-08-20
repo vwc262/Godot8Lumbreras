@@ -140,7 +140,3 @@ func _actualizar_texto_boton_particular():
 		UIManager.btn_graficador.text = "Particular"
 	else:
 		UIManager.btn_graficador.text = "Graficador"
-<<<<<<< Updated upstream
-=======
-		
->>>>>>> Stashed changes

@@ -18,6 +18,9 @@ extends Node
 
 #endregion
 
+@onready var ui_paleta: Control = $UiPaleta
+
+
 #region script variables
 @onready var popup = $popup_container/Popup
 #endregion
@@ -126,3 +129,8 @@ func set_contador_sitios(estaciones):
 
 func _on_bnt_reset_camera_pressed() -> void:
 	NavigationManager.emit_signal("ResetCameraPosition")	
+
+
+func _unhandled_key_input(event: InputEvent) -> void:
+	if Input.is_physical_key_pressed(KEY_P):
+		ui_paleta.change_visibility( true if !ui_paleta.window.visible else false)

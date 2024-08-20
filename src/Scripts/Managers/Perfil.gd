@@ -44,17 +44,18 @@ func _on_datos_actualizados(estaciones: Array[Estacion]):
 	set_contador_sitios(estaciones)
 
 func reload_app():
-	var tree = get_tree()
-	if tree != null:
-		UIManager.free_manager()
-		tree.reload_current_scene()
+	AdjustWindowsSize()
 
-func AdjustWindowsSize():			
+func AdjustWindowsSize():				
 	var size = get_viewport().size
 	SceneManager.set_viewport_size_x(size.x )
-	scroll_container.custom_minimum_size.x = size.x	
 	for window : PanelContainer in windows_container.get_children():
 		window.custom_minimum_size.x = size.x
+	scroll_container.custom_minimum_size.x = size.x
+	SceneManager.scroll_scene(SceneManager.current_tipoNivel,SceneManager.current_scene_id)
+	
+	
+		
 
 func _on_button_pressed():
 	NavigationManager.emit_signal('ResetCameraPosition')

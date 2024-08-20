@@ -17,19 +17,19 @@ enum TIPO_NIVEL {GRAFICADOR,PERFIL,PARTICULAR,}
 
 var viewports_references = {}
 var speed_transition_screen = .35
+var current_scene_id = idScenePerfil
+var current_tipoNivel : TIPO_NIVEL = TIPO_NIVEL.PERFIL
 #endregion
 
 
 #region Funciones
 #Almacena las referencias de los particulares
 func add_scene(idSceneKey:int,scene:Node):
-	scenes[idSceneKey] = scene
-	pass
+	scenes[idSceneKey] = scene	
 	
 func unload_scenes():
 	for scene in scenes.values():
-		scene.visible = false
-	pass
+		scene.visible = false	
 
 func load_scene(idSceneKey:int):
 	var nivel_encontrado = scenes.has(idSceneKey)
@@ -51,6 +51,8 @@ func get_scroll_step() -> float:
 func scroll_scene(tipo_nivel:TIPO_NIVEL,idKeySceneToLoad):
 	var nivel_existente = scenes.has(idKeySceneToLoad)
 	if nivel_existente:
+		current_tipoNivel = tipo_nivel
+		current_scene_id = idKeySceneToLoad
 		var step = get_scroll_step()
 		var scroll_amount : float = step * tipo_nivel
 		var tweenScroll = TweenManager.init_tween(on_scroll_finished.bind(tipo_nivel,true,idKeySceneToLoad))

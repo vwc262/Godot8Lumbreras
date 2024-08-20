@@ -179,7 +179,7 @@ transform = Transform3D(1, 0, -1.06581e-14, 0, 1, 0, 1.06581e-14, 0, 1, 0, 0, 0)
 material_override = ExtResource("16_18u0t")
 
 [node name="DatosEtiqueta3D" parent="." instance=ExtResource("18_wr333")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.99128, 8.07853, -82.9627)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.44552, 8.16275, -82.7013)
 IdEstacion = 5
 
 [editable path="SimplifiedCollisions"]

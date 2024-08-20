@@ -30,12 +30,13 @@ render_priority = 1
 texture = ExtResource("3_pgqt3")
 
 [node name="Nivel" type="Label3D" parent="Sprite3D"]
-transform = Transform3D(0.065, 0, 0, 0, 0.065, 0, 0, 0, 0.065, -2, 0.755, 0.012)
+transform = Transform3D(0.065, 0, 0, 0, 0.065, 0, 0, 0, 0.065, -2, 0.793179, 0.012)
 pixel_size = 0.1
 double_sided = false
 render_priority = 1
 outline_render_priority = 0
-text = "G1: 999.99 l/s
+text = "Gasto 1
+999.99 l/s
 "
 font_size = 100
 outline_size = 20

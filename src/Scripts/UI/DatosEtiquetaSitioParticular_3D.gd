@@ -33,8 +33,7 @@ func _on_datos_actualizados(_estaciones: Array[Estacion]):
 
 func refresh_data():
 	if estacion != null and segnal != null:
-		labelNivel.text = segnal.nombre + ": " + str(segnal.valor) + " m." if segnal.is_dentro_rango() else "N.D."
-		labelNivel.text = "G1: %s" % [labelNivel.text]
+		labelNivel.text = segnal.nombre + "\r\n" + str(segnal.valor) + " l/s" if segnal.is_dentro_rango() else "N.D."
 
 
 func _on_EtiquetaClick(_camera: Node, event: InputEvent, _position: Vector3, _normal: Vector3, _shape_idx: int) -> void:

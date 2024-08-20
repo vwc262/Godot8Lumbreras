@@ -26,6 +26,7 @@ GlobalUtils="*res://Scripts/Managers/Global_Utils.gd"
 UIManager="*res://Scripts/Managers/Global_UIManager.gd"
 SceneManager="*res://Scripts/Managers/Global_SceneManager.gd"
 PhantomCameraManager="*res://addons/phantom_camera/scripts/managers/phantom_camera_manager.gd"
+GlobalPaletaColores="*res://Scripts/Managers/Global_Paleta_Colores.gd"
 
 [display]
 

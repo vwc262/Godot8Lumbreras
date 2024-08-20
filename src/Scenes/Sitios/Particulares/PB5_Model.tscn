@@ -2,20 +2,20 @@
 
 [ext_resource type="Material" uid="uid://bc661come1l76" path="res://Recursos/Materiales/ParticularMuro_PBR5_Tileable.tres" id="3_m05u4"]
 [ext_resource type="Material" uid="uid://clpnronp88bg2" path="res://Recursos/Materiales/ParticularUnlit_sec1.tres" id="4_wnw7k"]
-[ext_resource type="Material" uid="uid://d313nvgrewkot" path="res://Recursos/Materiales/ParticularGrass_Tileable.tres" id="6_ra7lq"]
-[ext_resource type="Material" uid="uid://cuffxlgpe8lrr" path="res://Recursos/Materiales/ParticularMuro2_Tileable.tres" id="7_shu4i"]
+[ext_resource type="Material" path="res://Recursos/Materiales/ParticularGrass_Tileable.tres" id="6_ra7lq"]
+[ext_resource type="Material" path="res://Recursos/Materiales/ParticularMuro2_Tileable.tres" id="7_shu4i"]
 [ext_resource type="Material" uid="uid://cwdb0xo47d1bn" path="res://Recursos/Materiales/ParticularUnlit_tuberias_material.tres" id="8_78fag"]
-[ext_resource type="Material" path="res://Recursos/Materiales/ParticularUnlit_Gasto_material.tres" id="9_hkhsi"]
+[ext_resource type="Material" uid="uid://bonstudrdm2ew" path="res://Recursos/Materiales/ParticularUnlit_Gasto_material.tres" id="9_hkhsi"]
 [ext_resource type="Material" uid="uid://b01vby7vqyu2y" path="res://Recursos/Materiales/ParticularPlaster_Tileable.tres" id="10_cx2u4"]
 [ext_resource type="Material" uid="uid://dc4d50uixwgaw" path="res://Recursos/Materiales/ParticularRoof_Tileable.tres" id="11_k0qch"]
 [ext_resource type="Material" uid="uid://ca8npxbjn72ic" path="res://Recursos/Materiales/ParticularUnlit_Props2.tres" id="12_83oiy"]
 [ext_resource type="PackedScene" uid="uid://dwwulixxwdeat" path="res://Recursos/Meshes/Particular_Cutzamala_PBR5/Meshes_colision/Cutzamala_collision_fence_visual.glb" id="13_cnd0g"]
-[ext_resource type="Material" uid="uid://xgb8n1gtjwxb" path="res://Recursos/Materiales/SelectGlow_Unlit.tres" id="14_5wcxd"]
+[ext_resource type="Material" path="res://Recursos/Materiales/SelectGlow_Unlit.tres" id="14_5wcxd"]
 [ext_resource type="PackedScene" uid="uid://bic00hnmkt4ns" path="res://Recursos/Meshes/Particular_Cutzamala_PBR5/Cutzamala_particularCloudsOverlay.glb" id="15_6kmu4"]
 [ext_resource type="PackedScene" uid="uid://dadmaepermepa" path="res://Recursos/Meshes/Particular_Cutzamala_PBR5/glb/Cutzamala_PBR5_Berros_RecursosMaster.glb" id="15_bqp5d"]
 [ext_resource type="PackedScene" uid="uid://qarbp5cx5k7w" path="res://Recursos/Meshes/Particular_Cutzamala_PBR5/Meshes_colision/SimplifiedCollisions.glb" id="15_kcofc"]
 [ext_resource type="Material" uid="uid://bg4v1n7n5sscq" path="res://Recursos/Materiales/CloudOverlay_PB5.tres" id="16_18u0t"]
-[ext_resource type="PackedScene" uid="uid://cku6aj81y664y" path="res://Recursos/Meshes/Props/Marker_sprite_3d.tscn" id="16_qeikr"]
+[ext_resource type="PackedScene" path="res://Recursos/Meshes/Props/Marker_sprite_3d.tscn" id="16_qeikr"]
 [ext_resource type="Material" uid="uid://b4w4jslh4jm34" path="res://Recursos/Materiales/ParticularUnlit_material.tres" id="16_qgfso"]
 [ext_resource type="PackedScene" uid="uid://b678w3xrbqqlv" path="res://Scenes/UI/DatosEtiquetaParticular3D.tscn" id="18_wr333"]
 
@@ -179,10 +179,8 @@ transform = Transform3D(1, 0, -1.06581e-14, 0, 1, 0, 1.06581e-14, 0, 1, 0, 0, 0)
 material_override = ExtResource("16_18u0t")
 
 [node name="DatosEtiqueta3D" parent="." instance=ExtResource("18_wr333")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.99128, 8.96125, -84.6541)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.99128, 8.07853, -82.9627)
 IdEstacion = 5
-base_color = Color(0.129505, 0.368892, 0.638391, 1)
-color_rango = Color(0.409603, 0.409603, 0.409603, 1)
 
 [editable path="SimplifiedCollisions"]
 [editable path="Cutzamala_PBR5_Berros_RecursosMaster_GLB"]

@@ -1,88 +1,48 @@
-[gd_scene load_steps=9 format=3 uid="uid://b678w3xrbqqlv"]
+[gd_scene load_steps=7 format=3 uid="uid://b678w3xrbqqlv"]
 
 [ext_resource type="Script" path="res://Scripts/UI/DatosEtiquetaSitioParticular_3D.gd" id="1_2u832"]
 [ext_resource type="Shader" uid="uid://d4cf3gpi4jv62" path="res://Recursos/Shaders/shader_letrero_3d.tres" id="2_1ica8"]
-[ext_resource type="Texture2D" uid="uid://bhsb6c0ey2tiu" path="res://Recursos/UI/3D/Panel_Nivel.png" id="3_s2uyj"]
-[ext_resource type="Shader" path="res://Scenes/UI/Progressbar3D.gdshader" id="4_hmuv1"]
-[ext_resource type="Texture2D" uid="uid://ckyvnml6hiw7b" path="res://Recursos/UI/3D/progressbar.png" id="5_04f6t"]
+[ext_resource type="Texture2D" uid="uid://bvspxavqd61h4" path="res://Recursos/UI/3D/Etiqueta_Sensor_Base.png" id="3_pgqt3"]
+[ext_resource type="Texture2D" uid="uid://dx2hy5mjy3lrl" path="res://Recursos/UI/3D/Destello.png" id="4_smpy2"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_3an0v"]
-render_priority = 0
-shader = ExtResource("2_1ica8")
-shader_parameter/texture_albedo = ExtResource("3_s2uyj")
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_pmbfv"]
-size = Vector3(4.56239, 2.26019, 1)
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_0vdun"]
 resource_local_to_scene = true
 render_priority = 0
-shader = ExtResource("4_hmuv1")
-shader_parameter/color = Color(0, 0, 0, 1)
-shader_parameter/offset = 0.4
-shader_parameter/alpha_scissor = 0.4
-shader_parameter/texture_albedo = ExtResource("5_04f6t")
+shader = ExtResource("2_1ica8")
+shader_parameter/texture_albedo = ExtResource("3_pgqt3")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_v8kgh"]
+render_priority = 0
+shader = ExtResource("2_1ica8")
+shader_parameter/texture_albedo = ExtResource("4_smpy2")
 
 [node name="DatosEtiqueta3D" type="Node3D"]
 script = ExtResource("1_2u832")
 
 [node name="Sprite3D" type="Sprite3D" parent="."]
-transform = Transform3D(0.85, 0, 0, 0, 0.85, 0, 0, 0, 0.85, 0, 0, 0)
+transform = Transform3D(0.65, 0, 0, 0, 0.65, 0, 0, 0, 0.65, 0, 0, 0)
 material_override = SubResource("ShaderMaterial_3an0v")
 cast_shadow = 0
 ignore_occlusion_culling = true
 billboard = 1
 double_sided = false
 render_priority = 1
-texture = ExtResource("3_s2uyj")
-
-[node name="NombreSitio" type="Label3D" parent="Sprite3D"]
-transform = Transform3D(0.035, 0, 0, 0, 0.035, 0, 0, 0, 0.035, -2, 1.25795, 0.012)
-pixel_size = 0.1
-double_sided = false
-render_priority = 1
-outline_render_priority = 0
-text = "Nombre Sitio"
-font_size = 85
-outline_size = 20
-horizontal_alignment = 0
-vertical_alignment = 0
-
-[node name="FechaSitio" type="Label3D" parent="Sprite3D"]
-transform = Transform3D(0.035, 0, 0, 0, 0.035, 0, 0, 0, 0.035, -2, 0.177589, 0.012)
-pixel_size = 0.1
-double_sided = false
-render_priority = 1
-outline_render_priority = 0
-modulate = Color(0.819608, 0.647059, 0.168627, 1)
-text = "Fecha Sitio"
-font_size = 85
-outline_size = 20
-horizontal_alignment = 0
-vertical_alignment = 0
+texture = ExtResource("3_pgqt3")
 
 [node name="Nivel" type="Label3D" parent="Sprite3D"]
-transform = Transform3D(0.035, 0, 0, 0, 0.035, 0, 0, 0, 0.035, -2, 0.754771, 0.012)
+transform = Transform3D(0.065, 0, 0, 0, 0.065, 0, 0, 0, 0.065, -2, 0.755, 0.012)
 pixel_size = 0.1
 double_sided = false
 render_priority = 1
 outline_render_priority = 0
-text = "Nivel"
+text = "G1: 999.99 l/s
+"
 font_size = 100
 outline_size = 20
 horizontal_alignment = 0
 vertical_alignment = 0
 
-[node name="Area3D" type="Area3D" parent="Sprite3D"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Sprite3D/Area3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.054863, 0.139017, 0.0485852)
-shape = SubResource("BoxShape3D_pmbfv")
-
-[node name="Progressbar3D" type="Sprite3D" parent="Sprite3D"]
-transform = Transform3D(1.65, 0, 0, 0, 0.85, 0, 0, 0, 1, 0, -0.585556, 0.01)
-material_override = SubResource("ShaderMaterial_0vdun")
-cast_shadow = 0
-texture = ExtResource("5_04f6t")
-
-[connection signal="input_event" from="Sprite3D/Area3D" to="." method="_on_EtiquetaClick"]
+[node name="Sprite3D" type="Sprite3D" parent="Sprite3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0626892, -2.33157, 0)
+material_override = SubResource("ShaderMaterial_v8kgh")
+texture = ExtResource("4_smpy2")

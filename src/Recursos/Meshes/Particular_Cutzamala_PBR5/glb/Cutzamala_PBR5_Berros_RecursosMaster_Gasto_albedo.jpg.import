@@ -1,0 +1,39 @@
+[remap]
+
+importer="texture"
+type="CompressedTexture2D"
+uid="uid://bn6nbf6wgn0yp"
+path.s3tc="res://.godot/imported/Cutzamala_PBR5_Berros_RecursosMaster_Gasto_albedo.jpg-b62f3a2b573f29c5b450d11fdb08d404.s3tc.ctex"
+path.etc2="res://.godot/imported/Cutzamala_PBR5_Berros_RecursosMaster_Gasto_albedo.jpg-b62f3a2b573f29c5b450d11fdb08d404.etc2.ctex"
+metadata={
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
+"vram_texture": true
+}
+generator_parameters={
+"md5": "8b953fad2a8c576b8a73e83fce249c4e"
+}
+
+[deps]
+
+source_file="res://Recursos/Meshes/Particular_Cutzamala_PBR5/glb/Cutzamala_PBR5_Berros_RecursosMaster_Gasto_albedo.jpg"
+dest_files=["res://.godot/imported/Cutzamala_PBR5_Berros_RecursosMaster_Gasto_albedo.jpg-b62f3a2b573f29c5b450d11fdb08d404.s3tc.ctex", "res://.godot/imported/Cutzamala_PBR5_Berros_RecursosMaster_Gasto_albedo.jpg-b62f3a2b573f29c5b450d11fdb08d404.etc2.ctex"]
+
+[params]
+
+compress/mode=2
+compress/high_quality=false
+compress/lossy_quality=0.7
+compress/hdr_compression=1
+compress/normal_map=0
+compress/channel_pack=0
+mipmaps/generate=true
+mipmaps/limit=-1
+roughness/mode=0
+roughness/src_normal=""
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/normal_map_invert_y=false
+process/hdr_as_srgb=false
+process/hdr_clamp_exposure=false
+process/size_limit=0
+detect_3d/compress_to=0

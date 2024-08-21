@@ -10,7 +10,8 @@ env:
   
 jobs:
   deploy:
-    runs-on: ubuntu-18.04
+    name: 'build'
+    runs-on: ubuntu-20.04
 
     container:
       image: barichello/godot-ci:3.2.2

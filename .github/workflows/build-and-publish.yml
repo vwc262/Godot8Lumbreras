@@ -5,116 +5,99 @@ on:
     tags:
       - "[0-9]+.[0-9]+.[0-9]+"
 
+# Global Settings
+# SCONS_CACHE for windows must be set in the build environment
 env:
-  GODOT_VERSION: 4.3
+  # Used for the cache key. Add version suffix to force clean build.
+  GODOT_BASE_BRANCH: master
+  SCONSFLAGS: verbose=yes warnings=extra werror=yes module_text_server_fb_enabled=yes d3d12=yes "angle_libs=${{github.workspace}}/"
+  SCONS_CACHE_MSVC_CONFIG: true
+
+concurrency:
+  group: ci-${{github.actor}}-${{github.head_ref || github.run_number}}-${{github.ref}}-windows
+  cancel-in-progress: true
 
 jobs:
-  build:
-    runs-on: ${{ matrix.runner }}
+  build-windows:
+    # Windows 10 with latest image
+    runs-on: "windows-latest"
     name: ${{ matrix.name }}
     strategy:
       fail-fast: false
       matrix:
         include:
-          - identifier: linux-debug
-            name: Linux Debug
-            runner: ubuntu-20.04
-            target: template_debug
-            platform: linux
-            arch: x86_64
-          - identifier: linux-release
-            name: Linux Release
-            runner: ubuntu-20.04
+          - name: Editor (target=editor, tests=yes)
+            cache-name: windows-editor
+            target: editor
+            tests: true
+            # Skip debug symbols, they're way too big with MSVC.
+            sconsflags: debug_symbols=no vsproj=yes vsproj_gen_only=no windows_subsystem=console
+            bin: "./bin/godot.windows.editor.x86_64.exe"
+
+          - name: Template (target=template_release)
+            cache-name: windows-template
             target: template_release
-            platform: linux
-            arch: x86_64
-          - identifier: windows-debug
-            name: Windows Debug
-            runner: ubuntu-20.04
-            target: template_debug
-            platform: windows
-            arch: x86_64
-          - identifier: windows-release
-            name: Windows Release
-            runner: ubuntu-20.04
-            target: template_release
-            platform: windows
-            arch: x86_64
-          - identifier: android-release
-            name: Android Release
-            runner: ubuntu-20.04
-            target: template_release
-            platform: android
-            arch: arm64
+            tests: true
+            sconsflags: debug_symbols=no tests=yes
+            bin: "./bin/godot.windows.template_release.x86_64.console.exe"
 
     steps:
-      - name: (Windows) Install mingw64
-        if: ${{ startsWith(matrix.identifier, 'windows-') }}
-        shell: sh
-        run: |
-          sudo apt-get install mingw-w64
-          sudo update-alternatives --set x86_64-w64-mingw32-gcc /usr/bin/x86_64-w64-mingw32-gcc-posix
-          sudo update-alternatives --set x86_64-w64-mingw32-g++ /usr/bin/x86_64-w64-mingw32-g++-posix
-
-      - name: (Android) Install JDK 17
-        if: ${{ startsWith(matrix.identifier, 'android-') }}
-        uses: actions/setup-java@v3
-        with:
-          java-version: 17
-          distribution: temurin
-
-      - name: (Android) Install Android SDK
-        if: ${{ startsWith(matrix.identifier, 'android-') }}
-        uses: android-actions/setup-android@v3
-
-      # From Godot docs, might not be necessary.
-      #- name: (Android) Install Android Tools
-      #  if: ${{ startsWith(matrix.identifier, 'android-') }}
-      #  shell: sh
-      #  run: |
-      #    "$ANDROID_SDK_ROOT"/cmdline-tools/latest/bin/sdkmanager --sdk_root="$ANDROID_SDK_ROOT" "platform-tools" "build-tools;30.0.3" "platforms;android-29" "cmdline-tools;latest" "cmake;3.10.2.4988404"
-
-      - name: (Android) Install NDK r23c
-        if: ${{ matrix.platform == 'android' }}
-        uses: nttld/setup-ndk@v1
-        with:
-          ndk-version: r23c
-          link-to-sdk: true
-
-      - name: Install Python
-        uses: actions/setup-python@v2
-
-      - name: Install SCons
-        shell: bash
-        run: |
-          python -c "import sys; print(sys.version)"
-          python -m pip install scons
-          scons --version
-
-      - name: Checkout project
-        uses: actions/checkout@v2
+      - uses: actions/checkout@v4
         with:
           submodules: recursive
 
-      - name: Compile extension
-        shell: sh
-        #        env:
-        #          SCONS_CACHE: '${{ github.workspace }}/.scons-cache/'
-        #          SCONS_CACHE_LIMIT: 8192
-        run: |
-          scons target='${{ matrix.target }}' platform='${{ matrix.platform }}' arch='${{ matrix.arch }}' -j2
-          ls -l project/addons/*/bin/
+      - name: Restore Godot build cache
+        uses: ./.github/actions/godot-cache-restore
+        with:
+          cache-name: ${{ matrix.cache-name }}
+        continue-on-error: true
 
-      - name: Copy extra files to addon
-        shell: sh
+      - name: Setup Python and SCons
+        uses: ./.github/actions/godot-deps
+
+      - name: Download Direct3D 12 SDK components
+        run: python ./misc/scripts/install_d3d12_sdk_windows.py
+
+      - name: Download pre-built ANGLE static libraries
+        uses: dsaltares/fetch-gh-release-asset@1.1.2
+        with:
+          repo: godotengine/godot-angle-static
+          version: tags/chromium/6029
+          file: Windows.6029-1.MSVC_17.x86_64.x86_32.zip
+          target: angle/angle.zip
+
+      - name: Extract pre-built ANGLE static libraries
+        run: Expand-Archive -Force angle/angle.zip ${{github.workspace}}/
+
+      - name: Setup MSVC problem matcher
+        uses: ammaraskar/msvc-problem-matcher@master
+
+      - name: Compilation
+        uses: ./.github/actions/godot-build
+        with:
+          sconsflags: ${{ env.SCONSFLAGS }} ${{ matrix.sconsflags }}
+          platform: windows
+          target: ${{ matrix.target }}
+          tests: ${{ matrix.tests }}
+
+      - name: Save Godot build cache
+        uses: ./.github/actions/godot-cache-save
+        with:
+          cache-name: ${{ matrix.cache-name }}
+        continue-on-error: true
+
+      - name: Prepare artifact
         run: |
-          for addon in ${{ github.workspace }}/project/addons/*/; do
-            cp --no-clobber '${{ github.workspace }}/README.md' '${{ github.workspace }}/LICENSE' "$addon"
-          done
+          Remove-Item bin/* -Include *.exp,*.lib,*.pdb -Force
 
       - name: Upload artifact
-        uses: actions/upload-artifact@v2
+        uses: ./.github/actions/upload-artifact
         with:
-          name: ${{ github.event.repository.name }}
-          path: |
-            ${{ github.workspace }}/project/
+          name: ${{ matrix.cache-name }}
+
+      - name: Unit tests
+        if: ${{ matrix.tests }}
+        run: |
+          ${{ matrix.bin }} --version
+          ${{ matrix.bin }} --help
+          ${{ matrix.bin }} --test --force-colors

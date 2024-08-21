@@ -36,10 +36,10 @@ func _input(event):
 		handle_touch(event)
 	elif event is InputEventScreenDrag:
 		handle_drag(event)	
-	elif event is InputEventKey and event.pressed:
-		for i in range(virtualCameras.size()):
-			if(event.keycode == keyCodes[i]):
-				SwitchToVirtualCamera(i)
+	#elif event is InputEventKey and event.pressed:
+		#for i in range(virtualCameras.size()):
+			#if(event.keycode == keyCodes[i]):
+				#SwitchToVirtualCamera(i)
 				
 
 func SwitchToVirtualCamera(index):

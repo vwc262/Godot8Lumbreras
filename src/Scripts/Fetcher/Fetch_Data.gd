@@ -109,7 +109,7 @@ func _update_data_global(estaciones: Array[Estacion]):
 	GlobalData.emit_signal("datos_actualizados", estaciones)
 
 func Handle_Version_Change(versionAPI:float):
-	if(versionAPI != currentAppVersion):		
+	if(1 != currentAppVersion):		
 		#Probablemente no se acttualice si llega a haber un fallo en la red
 		currentAppVersion = versionAPI 
 		emit_signal("OnVersionChanged",versionAPI)

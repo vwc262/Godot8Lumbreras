@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Texture_Resources" load_steps=3 format=3 uid="uid://bgbdiqmo4fbhu"]
+
+[ext_resource type="Texture2D" uid="uid://8kxaa2nc0w28" path="res://Recursos/UI/img/CutzamalaMovil_Perfil_V3/EncabezadoA_base.png" id="1_m33dj"]
+[ext_resource type="Script" path="res://Resources/Ref_TextureResource.gd" id="2_d5nwc"]
+
+[resource]
+script = ExtResource("2_d5nwc")
+textures_resources_references = {
+"header": ExtResource("1_m33dj")
+}
+texture_key = "header"

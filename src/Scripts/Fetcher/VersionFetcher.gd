@@ -3,15 +3,16 @@ extends HTTPRequest
 @onready var InfraEstrcuturaPath = "res://Scripts/OffLineaData/OffLineData.json"
 @export var urlInfraestructura : String  = "https://www.virtualwavecontrol.com.mx/Core24/crud/ReadSignalsEstacion?idProyecto=7"
 
-
+const ENCABEZADO_A_BASE = preload("res://Recursos/UI/img/CutzamalaMovil_Perfil_V3/EncabezadoA_base.png")
 
 func On_Update_Version(newVersion):
-	print("Actualizando a la version " , newVersion)	
-	var dataFile = get_file(filePath)	
-	var toSave = '{"V": %d}' %newVersion
-	dataFile.store_line(toSave) 		
-	dataFile.close()	
-	request(urlInfraestructura)
+	change_resources()
+	#print("Actualizando a la version " , newVersion)	
+	#var dataFile = get_file(filePath)	
+	#var toSave = '{"V": %d}' %newVersion
+	#dataFile.store_line(toSave) 		
+	#dataFile.close()	
+	#request(urlInfraestructura)
 			
 
 
@@ -25,6 +26,14 @@ func _on_request_completed(result, _response_code, _headers, body):
 
 func get_file(filePathUpdate:String) -> FileAccess:
 	return FileAccess.open(filePathUpdate,FileAccess.WRITE_READ)
+	
+func change_resources():		
+	#var header = GlobalTextureResource.get_header_perfil()
+	#var reemplazo =	GlobalTextureResource.get_reemplazo()				
+	#GlobalTextureResource.update_header()		
+	ResourceSaver.save(GlobalTextureResource.get_curret_resource(),"user://Resources/Texture_Resource.tres")
+	GlobalTextureResource.set_saved_ref()
+
 	
 	
 	

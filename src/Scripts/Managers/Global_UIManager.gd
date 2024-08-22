@@ -4,7 +4,6 @@ extends Node
 signal sitio_seleccionado
 signal mostrar_world  # Señal para mostrar el world
 
-
 var lista_sitios: Array[Control] = []
 var current_selected_site = null
 var current_lista_site = null  # Nuevo: sitio seleccionado en la lista
@@ -68,7 +67,6 @@ func ocultar_graficador():
 		modelo3D_container.visible = true
 		datos_graficador.visible= false
 		datos_sitio.visible= true
-
 
 # Método para verificar si un sitio está seleccionado
 func is_sitio_selected(sitio) -> bool:

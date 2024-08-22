@@ -175,7 +175,7 @@ func set_progress_bar(_signal: Señal, unidad):
 	else: 
 		lbl_valor.text = "N.D." 
 		progress_bar.value = progress_bar.max_value
-		progress_bar.modulate = Color(.7, .7, .7)
+		progress_bar.modulate = Color(0.7, 0.7, 0.7,1.0)
 
 
 # Función para inicializar los parámetros particulares
@@ -200,7 +200,6 @@ func instanciar_lista_sitios():
 				lista_sitio_instance.set_fondo(lista_sitio_fondo_2)
 			use_fondo_1 = not use_fondo_1  # Alternar el valor
 			site_instances[sitio.id_estacion] = lista_sitio_instance  # Guardar la instancia en el diccionario
-
 
 # Función que maneja el botón de la lista de sitios en el encabezado
 func _on_header_btn_lista_sitios_pressed():

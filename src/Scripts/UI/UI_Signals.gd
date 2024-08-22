@@ -2,29 +2,33 @@ extends Control
 
 class_name SegnalLista
 
-#region VARIABLES DEL NIVEL
-@onready var lbl_nombre_signal = $main_container/HBoxContainer/VBoxContainer/nivel_container/nivel_nombre_container/HBoxContainer/lbl_nivel_nombre
-@onready var lbl_valor_min = $main_container/HBoxContainer/VBoxContainer/nivel_container/nivel_progressbar_container/VBoxContainer/HBoxContainer/lbl_nivel_valor_min
-@onready var lbl_valor_max = $main_container/HBoxContainer/VBoxContainer/nivel_container/nivel_progressbar_container/VBoxContainer/HBoxContainer/lbl_nivel_valor_max
-@onready var lbl_valor = $main_container/HBoxContainer/VBoxContainer/nivel_container/nivel_valor_container/lbl_nivel_valor
-@onready var progress_bar = $main_container/HBoxContainer/VBoxContainer/nivel_container/nivel_progressbar_container/VBoxContainer/ProgressBar
+@onready var progress_bar: ProgressBar = $main_container/HBoxContainer/VBoxContainer/nivel_container/nivel_progressbar_container/VBoxContainer/ProgressBar
 
-#endregion
-@onready var lbl_nivel_valor_min = $main_container/HBoxContainer/VBoxContainer/nivel_container/nivel_progressbar_container/VBoxContainer/HBoxContainer/lbl_nivel_valor_min
-@onready var lbl_nivel_valor_max = $main_container/HBoxContainer/VBoxContainer/nivel_container/nivel_progressbar_container/VBoxContainer/HBoxContainer/lbl_nivel_valor_max
-@onready var lbl_presion_nombre = $main_container/HBoxContainer/VBoxContainer/presion_container/presion_container/HBoxContainer/lbl_presion_nombre
-@onready var lbl_gasto_nombre = $main_container/HBoxContainer/VBoxContainer/gasto_container/gasto_container/HBoxContainer2/lbl_gasto_nombre
-@onready var lbl_nivel_nombre = $main_container/HBoxContainer/VBoxContainer/nivel_container/nivel_nombre_container/HBoxContainer/lbl_nivel_nombre
-@onready var presion_valor = $main_container/HBoxContainer/VBoxContainer/presion_container/presion_container/HBoxContainer/presion_valor_container/presion_valor
-@onready var gasto_valor = $main_container/HBoxContainer/VBoxContainer/gasto_container/gasto_container/HBoxContainer2/gasto_valor_container/gasto_valor
-@onready var lbl_totalizado_nombre = $main_container/HBoxContainer/VBoxContainer/totalizado_container/lbl_totalizado_nombre
-@onready var lbl_totalizado_valor = $main_container/HBoxContainer/VBoxContainer/totalizado_container/totalizado_valor_container/lbl_totalizado_valor
+@onready var lbl_nivel_nombre: Label = $main_container/HBoxContainer/VBoxContainer/nivel_container/nivel_nombre_container/HBoxContainer/lbl_nivel_nombre
+@onready var lbl_nivel_valor_min: Label = $main_container/HBoxContainer/VBoxContainer/nivel_container/nivel_progressbar_container/VBoxContainer/HBoxContainer/lbl_nivel_valor_min
+@onready var lbl_nivel_valor_max: Label = $main_container/HBoxContainer/VBoxContainer/nivel_container/nivel_progressbar_container/VBoxContainer/HBoxContainer/lbl_nivel_valor_max
+@onready var lbl_presion_nombre: Label = $main_container/HBoxContainer/VBoxContainer/presion_container/presion_container/HBoxContainer/lbl_presion_nombre
+@onready var lbl_gasto_nombre: Label = $main_container/HBoxContainer/VBoxContainer/gasto_container/gasto_container/HBoxContainer2/lbl_gasto_nombre
+@onready var lbl_totalizado_nombre: Label = $main_container/HBoxContainer/VBoxContainer/totalizado_container/lbl_totalizado_nombre
+@onready var lbl_totalizado_valor: Label = $main_container/HBoxContainer/VBoxContainer/totalizado_container/totalizado_valor_container/lbl_totalizado_valor
+@onready var lbl_nivel_valor: Label = $main_container/HBoxContainer/VBoxContainer/nivel_container/nivel_valor_container/lbl_nivel_valor
+@onready var presion_valor: Label = $main_container/HBoxContainer/VBoxContainer/presion_container/presion_container/HBoxContainer/presion_valor_container/presion_valor
+@onready var gasto_valor: Label = $main_container/HBoxContainer/VBoxContainer/gasto_container/gasto_container/HBoxContainer2/gasto_valor_container/gasto_valor
+@onready var texture_punto_nivel: TextureRect = $main_container/HBoxContainer/VBoxContainer/nivel_container/nivel_nombre_container/HBoxContainer/texture_punto_nivel
 
-#region VARIABLES DE LAS DEMAS SEÑALES
+@onready var texturas_señales: Dictionary = {
+	"punto_nivel": $main_container/HBoxContainer/VBoxContainer/nivel_container/nivel_nombre_container/HBoxContainer/texture_punto_nivel,
+	"valor_nivel": $main_container/HBoxContainer/VBoxContainer/nivel_container/nivel_valor_container/texture_valor_nivel,
+	"punto_presion": $main_container/HBoxContainer/VBoxContainer/presion_container/presion_container/HBoxContainer/texture_punto_presion,
+	"valor_presion": $main_container/HBoxContainer/VBoxContainer/presion_container/presion_container/HBoxContainer/presion_valor_container/texture_valor_presion,
+	"punto_gasto": $main_container/HBoxContainer/VBoxContainer/gasto_container/gasto_container/HBoxContainer2/texture_punto_gasto,
+	"valor_gasto": $main_container/HBoxContainer/VBoxContainer/gasto_container/gasto_container/HBoxContainer2/gasto_valor_container/texture_valor_gasto,
+	"punto_totalizado": $main_container/HBoxContainer/VBoxContainer/totalizado_container/texture_punto_totalizado,
+	"valor_totalizado": $main_container/HBoxContainer/VBoxContainer/totalizado_container/totalizado_valor_container/texture_valor_totalizado,
+	"bnt_graficador_fondo": $main_container/HBoxContainer/VBoxContainer/botones_container/btn_graficador/bnt_graficador_fondo,
+	"bnt_particular_fondo": $main_container/HBoxContainer/VBoxContainer/botones_container/btn_particular/bnt_particular_fondo
+}
 
-
-
-#endregion
 
 # Referencia a la señal que se va a mostrar
 var signal_ref: Array[Señal] = []
@@ -39,6 +43,14 @@ var unidades = {
 	4: "m³"
 }
 
+func _ready() -> void:
+	GlobalPaletaColores.connect("repintar_ui", _repintar_UI)
+	_repintar_UI()
+
+func _repintar_UI():
+	texturas_señales["punto_nivel"].modulate = GlobalPaletaColores.CR_PALETA_COLORES.get_color_texture(0)
+
+	
 func set_maximos_minimos(senal:Señal):
 	if !set_maximos:
 		progress_bar.max_value = senal.semaforo["critico"]
@@ -59,8 +71,8 @@ func actualizar_datos():
 		var unidad = unidades.get(_signal.tipo_signal, "")
 		
 		if _signal.tipo_signal == 1:
-			lbl_nombre_signal.text = _signal.nombre
-			lbl_valor.text = str(_signal.valor) + " " + unidad if _signal.is_dentro_rango() else fuera_de_rango
+			lbl_nivel_nombre.text = _signal.nombre
+			lbl_nivel_valor.text = str(_signal.valor) + " " + unidad if _signal.is_dentro_rango() else fuera_de_rango
 		elif _signal.tipo_signal == 2:
 			lbl_presion_nombre.text = _signal.nombre
 			presion_valor.text = str(_signal.valor) + " " + unidad if _signal.is_dentro_rango() else fuera_de_rango
@@ -80,8 +92,8 @@ func set_progress_bar(_signal: Señal, unidad):
 	set_maximos_minimos(_signal)
 	##Asegurarse de que el valor mínimo visible siempre esté presente	
 	var display_value =  clamp(_signal.valor,.18,progress_bar.max_value)	#
-	lbl_valor_min.text = "min : " + str(_signal.semaforo["normal"]) + " " + unidad
-	lbl_valor_max.text = "max : " + str(_signal.semaforo["critico"]) + " " + unidad
+	lbl_nivel_valor_min.text = "min : " + str(_signal.semaforo["normal"]) + " " + unidad
+	lbl_nivel_valor_max.text = "max : " + str(_signal.semaforo["critico"]) + " " + unidad
 #
 	# Cambiar el color de la barra de progreso según el valor de la señal
 	if !_signal.is_dentro_rango():

@@ -11,16 +11,22 @@ signal OnVersionChanged
 @onready var timer = Timer.new()
 
 var offLineDataPath = "res://Scripts/OffLineaData/OffLineData.json"
+var versionfilePath = "res://Scripts/OffLineaData/AppVersion.json"
 var App_Version_File = "res://Scripts/OffLineaData/AppVersion.json"
+
+var offLineDataPathUser = "user://OffLineData/OffLineData.json"
+var App_Version_File_User = "user://OffLineData/AppVersion.json"
+
 var usando_datos_reales = true # Variable para controlar el toggle
-var currentAppVersion = 0.0
+var currentAppVersion :float = 0.0
+var version_data : float = 0
 
 
 func _ready():
 	#Se carga la informacion de la estructura independientemente de que haya conexion a internet o no
 	#Desventaja por ahora es que si llega a cambiar la estructura hay que actualizar el archivo
 	LoadJsonFile(offLineDataPath)
-	LoadAppVersionFile(App_Version_File)
+	#LoadAppVersionFile(App_Version_File)
 	#Se configura el timer para que cada determinado tiempo haga la peticion
 	connect("request_completed", _solicitud_completada)		
 	timer.wait_time = 10.0
@@ -31,7 +37,7 @@ func _ready():
 	
 
 func iniciar_fetch_api():
-	request(url_api_update)
+	await request(url_api_update)		
 	pass
 
 func _solicitud_completada(result, codigo_respuesta, _headers, body):	
@@ -42,7 +48,7 @@ func _solicitud_completada(result, codigo_respuesta, _headers, body):
 	if result == RESULT_SUCCESS:
 		var data = JSON.parse_string(body.get_string_from_utf8())				
 		updateGLobalData(data)
-		Handle_Version_Change(data["V"])
+		Handle_Version_Change(data["V"])		
 
 	else:
 		print("Error en la solicitud HTTP, Código de respuesta:", codigo_respuesta)
@@ -50,13 +56,36 @@ func _solicitud_completada(result, codigo_respuesta, _headers, body):
 func _on_timer_timeout():
 	iniciar_fetch_api()
 	
+func create_user_offline_file():
+	var directory_offline = "user://OffLineData/"
+	DirAccess.make_dir_absolute(directory_offline)	
+	var data_file_infra = FileAccess.open(offLineDataPathUser,FileAccess.WRITE_READ)
+	var data_file_infra_local = FileAccess.open(offLineDataPath,FileAccess.READ)
+	data_file_infra.store_string(data_file_infra_local.get_as_text())
+	data_file_infra.close()
+	var data_file_version = FileAccess.open(versionfilePath,FileAccess.READ)	
+	var data_file_version_user = FileAccess.open(App_Version_File_User,FileAccess.WRITE_READ)
+	data_file_version_user.store_string(data_file_version.get_as_text())
+	data_file_version_user.close()
+	
+	
+	
 func LoadJsonFile(filePath:String):
-	if FileAccess.file_exists(filePath):
-		var dataFile = FileAccess.open(filePath,FileAccess.READ)
+	if !FileAccess.file_exists(offLineDataPathUser) or !FileAccess.file_exists(App_Version_File_User):
+		create_user_offline_file()
+		
+	if FileAccess.file_exists(offLineDataPathUser):
+		set_current_version()
+		var dataFile = FileAccess.open(offLineDataPathUser,FileAccess.READ)
 		var parsedResult =JSON.parse_string(dataFile.get_as_text())
 		setDataToGlobal(parsedResult)
 		iniciar_fetch_api()
 
+func set_current_version():
+	var dataFile = FileAccess.open(App_Version_File_User,FileAccess.READ)
+	var parsedResult =JSON.parse_string(dataFile.get_as_text())
+	currentAppVersion = parsedResult["V"]
+	
 func LoadAppVersionFile(AppVersionFile :String):
 	if FileAccess.file_exists(AppVersionFile):
 		var dataFile = FileAccess.open(AppVersionFile,FileAccess.READ)
@@ -109,7 +138,7 @@ func _update_data_global(estaciones: Array[Estacion]):
 	GlobalData.emit_signal("datos_actualizados", estaciones)
 
 func Handle_Version_Change(versionAPI:float):
-	if(versionAPI != currentAppVersion):		
+	if(float(versionAPI) != float(currentAppVersion)):		
 		#Probablemente no se acttualice si llega a haber un fallo en la red
 		currentAppVersion = versionAPI 
 		emit_signal("OnVersionChanged",versionAPI)

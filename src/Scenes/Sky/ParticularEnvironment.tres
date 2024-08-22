@@ -8,7 +8,8 @@ shader_parameter/skyColor = Color(0.430811, 0.582097, 0.795856, 1)
 shader_parameter/horizonColor1 = Color(0.711631, 0.803742, 0.929069, 1)
 shader_parameter/horizonColor2 = Color(0.859766, 1, 0.904237, 1)
 shader_parameter/offsetHorizontalColor = 0.82
-shader_parameter/ofse_coords = 0.1
+shader_parameter/ofset_coords = 0.1
+shader_parameter/mix_texture = 0.6
 
 [sub_resource type="Sky" id="Sky_f7hr0"]
 sky_material = SubResource("ShaderMaterial_1lx84")

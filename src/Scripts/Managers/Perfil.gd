@@ -29,7 +29,8 @@ signal in_particular
 
 var is_hidden = false  # Variable para rastrear el estado del contenedor
 
-func _ready() -> void:
+func _ready() -> void:	
+	header_fondo.texture = GlobalTextureResource.get_curret_resource().get_texture("header")
 	get_tree().root.size_changed.connect(reload_app)
 	var estaciones: Array[Estacion] = GlobalData.get_data()
 	SceneManager.add_scene(SceneManager.idScenePerfil,perfil)

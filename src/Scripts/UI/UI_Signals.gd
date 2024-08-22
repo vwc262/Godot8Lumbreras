@@ -43,12 +43,12 @@ var unidades = {
 	4: "m³"
 }
 
-func _ready() -> void:
-	GlobalPaletaColores.connect("repintar_ui", _repintar_UI)
-	_repintar_UI()
-
-func _repintar_UI():
-	texturas_señales["punto_nivel"].modulate = GlobalPaletaColores.CR_PALETA_COLORES.get_color_texture(0)
+#func _ready() -> void:
+	#GlobalPaletaColores.connect("repintar_ui", _repintar_UI)
+	#_repintar_UI()
+#
+#func _repintar_UI():
+	#texturas_señales["punto_nivel"].modulate = GlobalPaletaColores.CR_PALETA_COLORES.get_color_texture(0)
 
 	
 func set_maximos_minimos(senal:Señal):

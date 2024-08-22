@@ -3,101 +3,52 @@ name: "godot-ci build-and-release"
 on:
   push:
     tags:
-      - "[0-9]+.[0-9]+.[0-9]+"
+      - '[0-9]+.[0-9]+.[0-9]+'
 
-# Global Settings
-# SCONS_CACHE for windows must be set in the build environment
 env:
-  # Used for the cache key. Add version suffix to force clean build.
-  GODOT_BASE_BRANCH: master
-  SCONSFLAGS: verbose=yes warnings=extra werror=yes module_text_server_fb_enabled=yes d3d12=yes "angle_libs=${{github.workspace}}/"
-  SCONS_CACHE_MSVC_CONFIG: true
-
-concurrency:
-  group: ci-${{github.actor}}-${{github.head_ref || github.run_number}}-${{github.ref}}-windows
-  cancel-in-progress: true
-
+  GODOT_VERSION: 4.3
+  EXPORT_NAME: Cutzamala
+  PROJECT_PATH: src
+  
 jobs:
-  build-windows:
-    # Windows 10 with latest image
-    runs-on: "windows-latest"
-    name: ${{ matrix.name }}
-    strategy:
-      fail-fast: false
-      matrix:
-        include:
-          - name: Editor (target=editor, tests=yes)
-            cache-name: windows-editor
-            target: editor
-            tests: true
-            # Skip debug symbols, they're way too big with MSVC.
-            sconsflags: debug_symbols=no vsproj=yes vsproj_gen_only=no windows_subsystem=console
-            bin: "./bin/godot.windows.editor.x86_64.exe"
-
-          - name: Template (target=template_release)
-            cache-name: windows-template
-            target: template_release
-            tests: true
-            sconsflags: debug_symbols=no tests=yes
-            bin: "./bin/godot.windows.template_release.x86_64.console.exe"
-
+  build:
+    name: Build
+    runs-on: ubuntu-20.04
+    container:
+      image: barichello/godot-ci:4.1.1
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout
+        uses: actions/checkout@v2
         with:
-          submodules: recursive
-
-      - name: Restore Godot build cache
-        uses: ./.github/actions/godot-cache-restore
-        with:
-          cache-name: ${{ matrix.cache-name }}
-        continue-on-error: true
-
-      - name: Setup Python and SCons
-        uses: ./.github/actions/godot-deps
-
-      - name: Download Direct3D 12 SDK components
-        run: python ./misc/scripts/install_d3d12_sdk_windows.py
-
-      - name: Download pre-built ANGLE static libraries
-        uses: dsaltares/fetch-gh-release-asset@1.1.2
-        with:
-          repo: godotengine/godot-angle-static
-          version: tags/chromium/6029
-          file: Windows.6029-1.MSVC_17.x86_64.x86_32.zip
-          target: angle/angle.zip
-
-      - name: Extract pre-built ANGLE static libraries
-        run: Expand-Archive -Force angle/angle.zip ${{github.workspace}}/
-
-      - name: Setup MSVC problem matcher
-        uses: ammaraskar/msvc-problem-matcher@master
-
-      - name: Compilation
-        uses: ./.github/actions/godot-build
-        with:
-          sconsflags: ${{ env.SCONSFLAGS }} ${{ matrix.sconsflags }}
-          platform: windows
-          target: ${{ matrix.target }}
-          tests: ${{ matrix.tests }}
-
-      - name: Save Godot build cache
-        uses: ./.github/actions/godot-cache-save
-        with:
-          cache-name: ${{ matrix.cache-name }}
-        continue-on-error: true
-
-      - name: Prepare artifact
+          lfs: true
+      - name: Templates
         run: |
-          Remove-Item bin/* -Include *.exp,*.lib,*.pdb -Force
-
-      - name: Upload artifact
-        uses: ./.github/actions/upload-artifact
-        with:
-          name: ${{ matrix.cache-name }}
-
-      - name: Unit tests
-        if: ${{ matrix.tests }}
+          mkdir -v -p ~/.local/share/godot/export_templates
+          mv /root/.local/share/godot/templates/${GODOT_VERSION}.stable ~/.local/share/godot/export_templates/${GODOT_VERSION}.stable
+          ls ~/.local/share/godot/export_templates/
+          ls ~/.local/share/godot/export_templates/${GODOT_VERSION}.stable
+      - name: GitHub Tag Name
         run: |
-          ${{ matrix.bin }} --version
-          ${{ matrix.bin }} --help
-          ${{ matrix.bin }} --test --force-colors
+         echo "Tag name from GITHUB_REF_NAME: $GITHUB_REF_NAME"
+         echo "Tag name from github.ref_name: ${{  github.ref_name }}"
+      - name: Setup folders
+        run: |
+          mkdir -p .godot/editor .godot/imported
+          mkdir -v -p build/windows
+          mkdir -v -p build/android
+          echo "$GITHUB_REF" > build/version.txt
+      - name: Android
+        run: |
+          cd $PROJECT_PATH
+          ls
+          godot -v --headless --export-release "Android" ../build/Android/$EXPORT_NAME.apk
+      - name: Windows Build
+        run: |
+          cd $PROJECT_PATH
+          ls
+          godot -v --headless --export-release "Windows Desktop" ../build/windows/$EXPORT_NAME.exe
+      - name: Upload Artifacts
+        uses: actions/upload-artifact@v3
+        with:
+          name: my-builds
+          path: build

@@ -8,4 +8,3 @@ script = ExtResource("2_d5nwc")
 textures_resources_references = {
 "header": ExtResource("1_m33dj")
 }
-texture_key = "header"

@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://x5m0onfran4m"]
+[gd_scene load_steps=23 format=3 uid="uid://x5m0onfran4m"]
 
 [ext_resource type="Script" path="res://Scripts/Managers/Perfil.gd" id="1_symg7"]
 [ext_resource type="Script" path="res://Scripts/Fetcher/Fetch_Data.gd" id="1_xo6k0"]
@@ -8,8 +8,10 @@
 [ext_resource type="PackedScene" uid="uid://dbs3c52v8n226" path="res://Scenes/UI/ListaSitios.tscn" id="4_lo6xx"]
 [ext_resource type="PackedScene" uid="uid://bw8x014747jnj" path="res://Scenes/UI_Helpers/UI_Paleta.tscn" id="5_d0yyb"]
 [ext_resource type="PackedScene" uid="uid://ggu8wjqomq4" path="res://Scenes/UI/UI_Graficador.tscn" id="5_vw305"]
+[ext_resource type="Texture2D" uid="uid://bjdbybrp6r7yd" path="res://Recursos/UI/img/CutzamalaMovil_Perfil_V3/EncabezadoA_Sombra.png" id="7_5ymb5"]
 [ext_resource type="Texture2D" uid="uid://bom2ge4j2826j" path="res://Recursos/UI/img/CutzamalaMovil_Perfil_V3/EncabezadoA_base_contenedor.png" id="7_l0ja0"]
 [ext_resource type="Texture2D" uid="uid://cr241prf282v" path="res://Recursos/UI/img/CutzamalaMovil_Perfil_V3/EncabezadoB_base_Conexion_a.png" id="8_i1y6s"]
+[ext_resource type="Texture2D" uid="uid://fx4kbj2u8825" path="res://Recursos/UI/img/CutzamalaMovil_Perfil_V3/EncabezadoB_base.png" id="8_ociiu"]
 [ext_resource type="PackedScene" uid="uid://cp14ueov0c5ee" path="res://Scenes/UI/Loading_Scene.tscn" id="8_txe4o"]
 [ext_resource type="Texture2D" uid="uid://dgwbnce3hid3r" path="res://Recursos/UI/img/Encabezado_B_Submenu/Boton_Expandir_b.png" id="9_dfl04"]
 [ext_resource type="Texture2D" uid="uid://cqa0owk40erpl" path="res://Recursos/UI/img/CutzamalaMovil_Perfil_V3/EncabezadoB_base_Conexion_b.png" id="9_n8tr3"]
@@ -75,13 +77,28 @@ theme_override_styles/panel = SubResource("StyleBoxEmpty_42kcc")
 
 [node name="VB_MainContainer" type="VBoxContainer" parent="ScrollContainer/WindowsContainer/PerfilWindow"]
 layout_mode = 2
+theme_override_constants/separation = 0
 
 [node name="header_container" type="Panel" parent="ScrollContainer/WindowsContainer/PerfilWindow/VB_MainContainer"]
 self_modulate = Color(1, 1, 1, 0)
-custom_minimum_size = Vector2(0, 125)
+z_index = 1
+custom_minimum_size = Vector2(0, 110)
 layout_mode = 2
 size_flags_vertical = 0
 theme_override_styles/panel = SubResource("StyleBoxEmpty_42kcc")
+
+[node name="header_sombra" type="TextureRect" parent="ScrollContainer/WindowsContainer/PerfilWindow/VB_MainContainer/header_container"]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 80.0
+offset_bottom = 80.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("7_5ymb5")
+expand_mode = 1
 
 [node name="header_fondo" type="TextureRect" parent="ScrollContainer/WindowsContainer/PerfilWindow/VB_MainContainer/header_container"]
 layout_mode = 1
@@ -90,6 +107,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+texture = ExtResource("8_ociiu")
 expand_mode = 1
 
 [node name="Label" type="Label" parent="ScrollContainer/WindowsContainer/PerfilWindow/VB_MainContainer/header_container"]
@@ -113,8 +131,9 @@ anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
 offset_left = -95.0
-offset_top = -60.0
+offset_top = -40.0
 offset_right = 115.0
+offset_bottom = 20.0
 grow_horizontal = 2
 grow_vertical = 0
 theme_override_styles/panel = SubResource("StyleBoxEmpty_42kcc")
@@ -319,6 +338,7 @@ expand_mode = 1
 stretch_mode = 5
 
 [node name="ParticularWindow" type="PanelContainer" parent="ScrollContainer/WindowsContainer"]
+visible = false
 clip_contents = true
 layout_mode = 2
 size_flags_horizontal = 3

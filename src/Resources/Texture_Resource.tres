@@ -1,12 +1,62 @@
-[gd_resource type="Resource" script_class="Texture_Resources" load_steps=4 format=3 uid="uid://bgbdiqmo4fbhu"]
+[gd_resource type="Resource" script_class="Texture_Resources" load_steps=29 format=3 uid="uid://bgbdiqmo4fbhu"]
 
-[ext_resource type="Texture2D" uid="uid://8kxaa2nc0w28" path="res://Recursos/UI/img/CutzamalaMovil_Perfil_V3/EncabezadoA_base.png" id="1_m33dj"]
+[ext_resource type="Texture2D" uid="uid://fx4kbj2u8825" path="res://Recursos/UI/img/CutzamalaMovil_Perfil_V3/EncabezadoB_base.png" id="2_8sgse"]
 [ext_resource type="Script" path="res://Resources/Ref_TextureResource.gd" id="2_d5nwc"]
-[ext_resource type="Texture2D" uid="uid://cl5fsgun8qm7x" path="res://Recursos/UI/img/CutzamalaMovil_Perfil_V3/reemplazo.png" id="3_t2lh8"]
+[ext_resource type="Texture2D" uid="uid://bjdbybrp6r7yd" path="res://Recursos/UI/img/CutzamalaMovil_Perfil_V3/EncabezadoA_Sombra.png" id="3_copid"]
+[ext_resource type="Texture2D" uid="uid://bom2ge4j2826j" path="res://Recursos/UI/img/CutzamalaMovil_Perfil_V3/EncabezadoA_base_contenedor.png" id="4_d5ccn"]
+[ext_resource type="Texture2D" uid="uid://cr241prf282v" path="res://Recursos/UI/img/CutzamalaMovil_Perfil_V3/EncabezadoB_base_Conexion_a.png" id="5_4k7cw"]
+[ext_resource type="Texture2D" uid="uid://cqa0owk40erpl" path="res://Recursos/UI/img/CutzamalaMovil_Perfil_V3/EncabezadoB_base_Conexion_b.png" id="6_8qbog"]
+[ext_resource type="Texture2D" uid="uid://b6ak0dychqgwd" path="res://Recursos/UI/img/CutzamalaMovil_Perfil_V3/Lista_Detalles_BotonFlecha_a.png" id="7_rm8hw"]
+[ext_resource type="Texture2D" uid="uid://bje8sq0eus5s" path="res://Recursos/UI/img/CutzamalaMovil_Perfil_V3/Lista_Detalles_BotonFlecha_b.png" id="8_lxja4"]
+[ext_resource type="Texture2D" uid="uid://6pb72kocguii" path="res://Recursos/UI/img/CutzamalaMovil_Perfil_V3/Lista_Detalles_seleccion.png" id="9_inbmu"]
+[ext_resource type="Texture2D" uid="uid://c8d8g2yovmdy4" path="res://Recursos/UI/img/CutzamalaMovil_Perfil_V3/Lista_detalles_Submenu_BotonIzq_a.png" id="10_7njoo"]
+[ext_resource type="Texture2D" uid="uid://b6bsk0t7jo2ks" path="res://Recursos/UI/img/CutzamalaMovil_Perfil_V3/Lista_detalles_Submenu_BotonDer_a.png" id="11_aalgm"]
+[ext_resource type="Texture2D" uid="uid://icmsncm6083a" path="res://Recursos/UI/img/CutzamalaMovil_Perfil_V3/Lista_detalles_Submenu_Contenedor01.png" id="12_u5j6b"]
+[ext_resource type="Texture2D" uid="uid://b4rbxu42i1sxa" path="res://Recursos/UI/img/Lista_fondo01.jpg" id="13_pohqo"]
+[ext_resource type="Texture2D" uid="uid://wtgya2x77u2y" path="res://Recursos/UI/img/PopUp_Dialogo_base.png" id="14_3tr0s"]
+[ext_resource type="Texture2D" uid="uid://cvg4awppr0ceb" path="res://Recursos/UI/img/Barra_Nivel/Barra_Nivel_base.png" id="15_hyeoc"]
+[ext_resource type="Texture2D" uid="uid://beromshj68slv" path="res://Recursos/UI/img/Barra_Nivel/Barra_Nivel_base_marcadores.png" id="16_axmji"]
+[ext_resource type="Texture2D" uid="uid://jfppoptcm53t" path="res://Recursos/UI/img/Barra_Nivel/Barra_Nivel_Cubierta_Barra.png" id="17_jr2ne"]
+[ext_resource type="Texture2D" uid="uid://drbg18gc7a6sy" path="res://Recursos/UI/img/CutzamalaMovil_Perfil_V3/EncabezadoA_base_LogoVWC.png" id="18_vpxx4"]
+[ext_resource type="Texture2D" uid="uid://cdq3mpic4rx3g" path="res://Recursos/UI/img/EncabezadoB_base_Contenedor.png" id="19_qq0n1"]
+[ext_resource type="Texture2D" uid="uid://j5m7bmtmnoqq" path="res://Recursos/UI/img/Encabezado_B_Submenu/EncabezadoB_Submenu_conexion_a.png" id="20_5aenc"]
+[ext_resource type="Texture2D" uid="uid://crjctqusud75g" path="res://Recursos/UI/img/Encabezado_B_Submenu/EncabezadoB_Submenu_conexion_b.png" id="21_pnqc1"]
+[ext_resource type="Texture2D" uid="uid://bcapbu6jnbtom" path="res://Recursos/UI/img/Encabezado_B_Submenu/EncabezadoB_BotonLista.png" id="22_scb6k"]
+[ext_resource type="Texture2D" uid="uid://b35vbjfn62q2p" path="res://Recursos/UI/img/Encabezado_B_Submenu/EncabezadoB_Submenu_a.png" id="23_ownjp"]
+[ext_resource type="Texture2D" uid="uid://cu7w6pd76y3rh" path="res://Recursos/UI/img/Encabezado_B_Submenu/EncabezadoB_Submenu_b.png" id="24_0gixu"]
+[ext_resource type="Texture2D" uid="uid://5jdmssliqvru" path="res://Recursos/UI/img/CutzamalaMovil_Perfil_V3/Lista_Detalles_a.png" id="25_n564k"]
+[ext_resource type="Texture2D" uid="uid://cpelva5nmmloj" path="res://Recursos/UI/img/CutzamalaMovil_Perfil_V3/Lista_Detalles_b.png" id="26_2ctgi"]
+[ext_resource type="Texture2D" uid="uid://dgwbnce3hid3r" path="res://Recursos/UI/img/Encabezado_B_Submenu/Boton_Expandir_b.png" id="27_sqb6h"]
+[ext_resource type="Texture2D" uid="uid://bmr0ayd77jkpp" path="res://Recursos/UI/img/Encabezado_B_Submenu/Boton_Expandir_a.png" id="28_8gweh"]
 
 [resource]
 script = ExtResource("2_d5nwc")
 textures_resources_references = {
-"header": ExtResource("1_m33dj"),
-"header2": ExtResource("3_t2lh8")
+"boton_cambio_scene_der": ExtResource("11_aalgm"),
+"boton_cambio_scene_izq": ExtResource("10_7njoo"),
+"boton_flecha_close": ExtResource("7_rm8hw"),
+"boton_flecha_open": ExtResource("8_lxja4"),
+"boton_hide_lista": ExtResource("27_sqb6h"),
+"boton_show_lista": ExtResource("28_8gweh"),
+"header": ExtResource("2_8sgse"),
+"header_contenedor_estado": ExtResource("19_qq0n1"),
+"header_estado_offline": ExtResource("21_pnqc1"),
+"header_estado_online": ExtResource("20_5aenc"),
+"header_icono_lista": ExtResource("22_scb6k"),
+"header_lista_a": ExtResource("23_ownjp"),
+"header_lista_b": ExtResource("24_0gixu"),
+"header_pildora": ExtResource("4_d5ccn"),
+"icono_offline": ExtResource("6_8qbog"),
+"icono_online": ExtResource("5_4k7cw"),
+"lista_fondo": ExtResource("13_pohqo"),
+"lista_sitio_a": ExtResource("25_n564k"),
+"lista_sitio_b": ExtResource("26_2ctgi"),
+"lista_valor_contenedor": ExtResource("12_u5j6b"),
+"logo_vwc": ExtResource("18_vpxx4"),
+"popup_fondo": ExtResource("14_3tr0s"),
+"progressbar_base": ExtResource("15_hyeoc"),
+"progressbar_cubierta": ExtResource("17_jr2ne"),
+"progressbar_max_min": ExtResource("16_axmji"),
+"sitio_seleccionado": ExtResource("9_inbmu"),
+"sombra_headers": ExtResource("3_copid")
 }

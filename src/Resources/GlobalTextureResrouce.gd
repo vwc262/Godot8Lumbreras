@@ -21,5 +21,7 @@ func get_curret_resource() -> Texture_Resources:
 	return ref_texture if !is_instance_valid(saved_ref) else saved_ref	
 	
 func set_saved_ref():
-	if saved_ref == null:
+	if !is_instance_valid(saved_ref):
 		saved_ref = load("user://Resources/Texture_Resource.tres")
+		#if is_instance_valid(saved_ref):
+			#UIManager.popUpWindow.showPopUp("Actualizacion de recursos realizada!")

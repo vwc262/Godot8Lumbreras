@@ -137,6 +137,9 @@ material_override = ExtResource("6_ra7lq")
 [node name="Edificio" parent="Cutzamala_PBR5_Berros_RecursosMaster_GLB" index="5"]
 material_override = ExtResource("10_cx2u4")
 
+[node name="Gasto" parent="Cutzamala_PBR5_Berros_RecursosMaster_GLB" index="11"]
+material_override = ExtResource("9_hkhsi")
+
 [node name="Cutzamala_collision_fence_visual" parent="Cutzamala_PBR5_Berros_RecursosMaster_GLB" instance=ExtResource("13_cnd0g")]
 transform = Transform3D(1, 0, -1.06581e-14, 0, 1, 0, 1.06581e-14, 0, 1, 0, 0, 0)
 
@@ -154,9 +157,6 @@ transform = Transform3D(1, 0, -1.06581e-14, 0, 1, 0, 1.06581e-14, 0, 1, 0, 0, 0)
 
 [node name="CloudMesh" parent="Cutzamala_PBR5_Berros_RecursosMaster_GLB/Cutzamala_particularCloudsOverlay" index="0"]
 material_override = ExtResource("16_18u0t")
-
-[node name="Gasto" parent="Cutzamala_PBR5_Berros_RecursosMaster_GLB" index="13"]
-material_override = ExtResource("9_hkhsi")
 
 [node name="DatosEtiqueta3D" parent="." instance=ExtResource("18_wr333")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.44552, 8.16275, -82.7013)

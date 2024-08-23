@@ -41,7 +41,6 @@ glow_hdr_luminance_cap = 43.67
 glow_map_strength = 1.0
 volumetric_fog_density = 0.3132
 volumetric_fog_albedo = Color(0.740995, 0.389801, 0.453136, 1)
-adjustment_enabled = true
 adjustment_brightness = 1.16
 adjustment_contrast = 1.11
 adjustment_saturation = 1.19

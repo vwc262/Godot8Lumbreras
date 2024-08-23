@@ -105,6 +105,7 @@ maxBlurIntensity = 0.005
 [node name="Camera3D" type="Camera3D" parent="CameraParent"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0)
 fov = 85.0
+far = 200.0
 
 [node name="ColorRect" type="ColorRect" parent="CameraParent/Camera3D"]
 process_mode = 3

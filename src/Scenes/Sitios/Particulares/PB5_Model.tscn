@@ -1,10 +1,13 @@
-[gd_scene load_steps=25 format=3 uid="uid://d4nifki50ahlx"]
+[gd_scene load_steps=29 format=3 uid="uid://d4nifki50ahlx"]
 
-[ext_resource type="Material" uid="uid://bc661come1l76" path="res://Recursos/Materiales/ParticularMuro_PBR5_Tileable.tres" id="3_m05u4"]
-[ext_resource type="Material" uid="uid://d313nvgrewkot" path="res://Recursos/Materiales/ParticularGrass_Tileable.tres" id="6_ra7lq"]
-[ext_resource type="Material" uid="uid://cwdb0xo47d1bn" path="res://Recursos/Materiales/ParticularUnlit_tuberias_material.tres" id="8_78fag"]
-[ext_resource type="Material" path="res://Recursos/Materiales/ParticularUnlit_Gasto_material.tres" id="9_hkhsi"]
+[ext_resource type="Material" uid="uid://ba41igxid6ea7" path="res://Recursos/Materiales/Mat_Particular_Tuberias_Tileable.tres" id="4_4r0dk"]
+[ext_resource type="Material" uid="uid://d313nvgrewkot" path="res://Recursos/Materiales/Mat_Particular_Pasto_Tileable.tres" id="6_ra7lq"]
+[ext_resource type="Material" uid="uid://0130dbik3wqc" path="res://Recursos/Materiales/Mat_Particular_Edificio.tres" id="7_p41md"]
+[ext_resource type="Material" uid="uid://bkithohsl1e2q" path="res://Recursos/Materiales/Mat_Particular_Piso.tres" id="7_yv54r"]
+[ext_resource type="Material" uid="uid://bonstudrdm2ew" path="res://Recursos/Materiales/Mat_Particular_Gasto.tres" id="9_hkhsi"]
+[ext_resource type="Material" uid="uid://ca8npxbjn72ic" path="res://Recursos/Materiales/Mat_Particular_Props.tres" id="9_lncf6"]
 [ext_resource type="Material" uid="uid://b01vby7vqyu2y" path="res://Recursos/Materiales/ParticularPlaster_Tileable.tres" id="10_cx2u4"]
+[ext_resource type="Material" uid="uid://e4dvntxowbda" path="res://Recursos/Materiales/Mat_Particular_Ventanas.tres" id="11_a4p26"]
 [ext_resource type="PackedScene" uid="uid://dwwulixxwdeat" path="res://Recursos/Meshes/Particular_Cutzamala_PBR5/Meshes_colision/Cutzamala_collision_fence_visual.glb" id="13_cnd0g"]
 [ext_resource type="Material" uid="uid://xgb8n1gtjwxb" path="res://Recursos/Materiales/SelectGlow_Unlit.tres" id="14_5wcxd"]
 [ext_resource type="PackedScene" uid="uid://bic00hnmkt4ns" path="res://Recursos/Meshes/Particular_Cutzamala_PBR5/Cutzamala_particularCloudsOverlay.glb" id="15_6kmu4"]
@@ -12,6 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://qarbp5cx5k7w" path="res://Recursos/Meshes/Particular_Cutzamala_PBR5/Meshes_colision/SimplifiedCollisions.glb" id="15_kcofc"]
 [ext_resource type="Material" uid="uid://bg4v1n7n5sscq" path="res://Recursos/Materiales/CloudOverlay_PB5.tres" id="16_18u0t"]
 [ext_resource type="PackedScene" uid="uid://cku6aj81y664y" path="res://Recursos/Meshes/Props/Marker_sprite_3d.tscn" id="16_qeikr"]
+[ext_resource type="PackedScene" uid="uid://b2n2iu7men4tk" path="res://Recursos/Meshes/Props/arbol_detail_prefab.tscn" id="17_pjqse"]
 [ext_resource type="PackedScene" uid="uid://b678w3xrbqqlv" path="res://Scenes/UI/DatosEtiquetaParticular3D.tscn" id="18_wr333"]
 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_0n1bo"]
@@ -125,20 +129,41 @@ transform = Transform3D(-1.03955e-08, 0.237822, -1.03955e-08, 0, -1.03955e-08, -
 [node name="Cutzamala_PBR5_Berros_RecursosMaster_GLB" parent="." instance=ExtResource("15_bqp5d")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, 0)
 
-[node name="Muros" parent="Cutzamala_PBR5_Berros_RecursosMaster_GLB" index="0"]
-material_override = ExtResource("3_m05u4")
+[node name="Tuberias" parent="Cutzamala_PBR5_Berros_RecursosMaster_GLB" index="0"]
+material_override = ExtResource("4_4r0dk")
 
-[node name="Tuberias" parent="Cutzamala_PBR5_Berros_RecursosMaster_GLB" index="1"]
-material_override = ExtResource("8_78fag")
-
-[node name="Pasto" parent="Cutzamala_PBR5_Berros_RecursosMaster_GLB" index="2"]
+[node name="Pasto" parent="Cutzamala_PBR5_Berros_RecursosMaster_GLB" index="1"]
 material_override = ExtResource("6_ra7lq")
 
-[node name="Edificio" parent="Cutzamala_PBR5_Berros_RecursosMaster_GLB" index="5"]
+[node name="Piso" parent="Cutzamala_PBR5_Berros_RecursosMaster_GLB" index="2"]
+material_override = ExtResource("7_yv54r")
+
+[node name="Edificio" parent="Cutzamala_PBR5_Berros_RecursosMaster_GLB" index="3"]
+material_override = ExtResource("7_p41md")
+
+[node name="Props" parent="Cutzamala_PBR5_Berros_RecursosMaster_GLB" index="4"]
+material_override = ExtResource("9_lncf6")
+
+[node name="Masetas_1" parent="Cutzamala_PBR5_Berros_RecursosMaster_GLB" index="5"]
+material_override = ExtResource("9_lncf6")
+
+[node name="Muros" parent="Cutzamala_PBR5_Berros_RecursosMaster_GLB" index="6"]
 material_override = ExtResource("10_cx2u4")
 
-[node name="Gasto" parent="Cutzamala_PBR5_Berros_RecursosMaster_GLB" index="11"]
+[node name="Maseta_2" parent="Cutzamala_PBR5_Berros_RecursosMaster_GLB" index="7"]
+material_override = ExtResource("9_lncf6")
+
+[node name="Maseta_3" parent="Cutzamala_PBR5_Berros_RecursosMaster_GLB" index="8"]
+material_override = ExtResource("9_lncf6")
+
+[node name="Masetas_4" parent="Cutzamala_PBR5_Berros_RecursosMaster_GLB" index="9"]
+material_override = ExtResource("9_lncf6")
+
+[node name="Gasto" parent="Cutzamala_PBR5_Berros_RecursosMaster_GLB" index="10"]
 material_override = ExtResource("9_hkhsi")
+
+[node name="Ventanas" parent="Cutzamala_PBR5_Berros_RecursosMaster_GLB" index="11"]
+material_override = ExtResource("11_a4p26")
 
 [node name="Cutzamala_collision_fence_visual" parent="Cutzamala_PBR5_Berros_RecursosMaster_GLB" instance=ExtResource("13_cnd0g")]
 transform = Transform3D(1, 0, -1.06581e-14, 0, 1, 0, 1.06581e-14, 0, 1, 0, 0, 0)
@@ -161,6 +186,87 @@ material_override = ExtResource("16_18u0t")
 [node name="DatosEtiqueta3D" parent="." instance=ExtResource("18_wr333")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.44552, 8.16275, -82.7013)
 IdEstacion = 5
+
+[node name="Arboles" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.1, 0)
+
+[node name="ArbolDetail_Prefab" parent="Arboles" instance=ExtResource("17_pjqse")]
+transform = Transform3D(-0.192471, 0, 0.981303, 0, 1, 0, -0.981303, 0, -0.192471, -79.9011, 19.8562, -80.4734)
+
+[node name="ArbolDetail_Prefab2" parent="Arboles" instance=ExtResource("17_pjqse")]
+transform = Transform3D(-0.192471, 0, 0.981303, 0, 1, 0, -0.981303, 0, -0.192471, -79.268, 19.8562, -88.5089)
+
+[node name="ArbolDetail_Prefab3" parent="Arboles" instance=ExtResource("17_pjqse")]
+transform = Transform3D(-0.192471, 0, 0.981303, 0, 1, 0, -0.981303, 0, -0.192471, -80.6828, 19.8562, -96.2113)
+
+[node name="ArbolDetail_Prefab4" parent="Arboles" instance=ExtResource("17_pjqse")]
+transform = Transform3D(-0.0866689, 0, 0.996237, 0, 1, 0, -0.996237, 0, -0.0866689, -55.8443, 19.8562, -115.813)
+
+[node name="ArbolDetail_Prefab5" parent="Arboles" instance=ExtResource("17_pjqse")]
+transform = Transform3D(0.108433, 0, 0.994104, 0, 1, 0, -0.994104, 0, 0.108433, -47.8347, 19.8562, -114.91)
+
+[node name="ArbolDetail_Prefab6" parent="Arboles" instance=ExtResource("17_pjqse")]
+transform = Transform3D(0.318496, 0, 0.947924, 0, 1, 0, -0.947924, 0, 0.318496, -40.089, 19.8562, -116.065)
+
+[node name="ArbolDetail_Prefab7" parent="Arboles" instance=ExtResource("17_pjqse")]
+transform = Transform3D(-0.0866689, 0, 0.996237, 0, 1, 0, -0.996237, 0, -0.0866689, -17.7958, 19.8562, -115.813)
+
+[node name="ArbolDetail_Prefab8" parent="Arboles" instance=ExtResource("17_pjqse")]
+transform = Transform3D(0.108433, 0, 0.994104, 0, 1, 0, -0.994104, 0, 0.108433, -9.7862, 19.8562, -114.91)
+
+[node name="ArbolDetail_Prefab9" parent="Arboles" instance=ExtResource("17_pjqse")]
+transform = Transform3D(0.318496, 0, 0.947924, 0, 1, 0, -0.947924, 0, 0.318496, -2.04052, 19.8562, -116.065)
+
+[node name="ArbolDetail_Prefab10" parent="Arboles" instance=ExtResource("17_pjqse")]
+transform = Transform3D(-0.0866689, 0, 0.996237, 0, 1, 0, -0.996237, 0, -0.0866689, -55.8443, 19.8562, -115.813)
+
+[node name="ArbolDetail_Prefab11" parent="Arboles" instance=ExtResource("17_pjqse")]
+transform = Transform3D(0.108433, 0, 0.994104, 0, 1, 0, -0.994104, 0, 0.108433, -47.8347, 19.8562, -114.91)
+
+[node name="ArbolDetail_Prefab12" parent="Arboles" instance=ExtResource("17_pjqse")]
+transform = Transform3D(0.318496, 0, 0.947924, 0, 1, 0, -0.947924, 0, 0.318496, -40.089, 19.8562, -116.065)
+
+[node name="ArbolDetail_Prefab13" parent="Arboles" instance=ExtResource("17_pjqse")]
+transform = Transform3D(-0.0866689, 0, 0.996237, 0, 1, 0, -0.996237, 0, -0.0866689, 32.0271, 19.8562, -115.813)
+
+[node name="ArbolDetail_Prefab14" parent="Arboles" instance=ExtResource("17_pjqse")]
+transform = Transform3D(0.108433, 0, 0.994104, 0, 1, 0, -0.994104, 0, 0.108433, 42.0336, 19.8562, -114.91)
+
+[node name="ArbolDetail_Prefab15" parent="Arboles" instance=ExtResource("17_pjqse")]
+transform = Transform3D(0.318496, 0, 0.947924, 0, 1, 0, -0.947924, 0, 0.318496, 50.2025, 19.8562, -116.065)
+
+[node name="ArbolDetail_Prefab16" parent="Arboles" instance=ExtResource("17_pjqse")]
+transform = Transform3D(-0.0866689, 0, 0.996237, 0, 1, 0, -0.996237, 0, -0.0866689, 6.5818, 19.8562, -115.813)
+
+[node name="ArbolDetail_Prefab17" parent="Arboles" instance=ExtResource("17_pjqse")]
+transform = Transform3D(0.108433, 0, 0.994104, 0, 1, 0, -0.994104, 0, 0.108433, 14.5914, 19.8562, -114.91)
+
+[node name="ArbolDetail_Prefab18" parent="Arboles" instance=ExtResource("17_pjqse")]
+transform = Transform3D(0.318496, 0, 0.947924, 0, 1, 0, -0.947924, 0, 0.318496, 22.3371, 19.8562, -116.065)
+
+[node name="ArbolDetail_Prefab19" parent="Arboles" instance=ExtResource("17_pjqse")]
+transform = Transform3D(0.108433, 0, 0.994104, 0, 1, 0, -0.994104, 0, 0.108433, -52.7541, 19.8562, -125.092)
+
+[node name="ArbolDetail_Prefab20" parent="Arboles" instance=ExtResource("17_pjqse")]
+transform = Transform3D(0.318496, 0, 0.947924, 0, 1, 0, -0.947924, 0, 0.318496, -45.0084, 19.8562, -126.247)
+
+[node name="ArbolDetail_Prefab21" parent="Arboles" instance=ExtResource("17_pjqse")]
+transform = Transform3D(-0.0866689, 0, 0.996237, 0, 1, 0, -0.996237, 0, -0.0866689, 27.1077, 20.2797, -136.33)
+
+[node name="ArbolDetail_Prefab22" parent="Arboles" instance=ExtResource("17_pjqse")]
+transform = Transform3D(0.108433, 0, 0.994104, 0, 1, 0, -0.994104, 0, 0.108433, 37.1141, 19.8562, -125.092)
+
+[node name="ArbolDetail_Prefab23" parent="Arboles" instance=ExtResource("17_pjqse")]
+transform = Transform3D(0.318496, 0, 0.947924, 0, 1, 0, -0.947924, 0, 0.318496, 45.2831, 19.8562, -126.247)
+
+[node name="ArbolDetail_Prefab24" parent="Arboles" instance=ExtResource("17_pjqse")]
+transform = Transform3D(-0.0866689, 0, 0.996237, 0, 1, 0, -0.996237, 0, -0.0866689, 1.66236, 20.8956, -152.935)
+
+[node name="ArbolDetail_Prefab25" parent="Arboles" instance=ExtResource("17_pjqse")]
+transform = Transform3D(0.108433, 0, 0.994104, 0, 1, 0, -0.994104, 0, 0.108433, 11.4781, 21.0184, -151.809)
+
+[node name="ArbolDetail_Prefab26" parent="Arboles" instance=ExtResource("17_pjqse")]
+transform = Transform3D(-0.0467926, 0, 0.998905, 0, 1, 0, -0.998905, 0, -0.0467926, 17.4177, 20.4739, -126.247)
 
 [editable path="SimplifiedCollisions"]
 [editable path="Cutzamala_PBR5_Berros_RecursosMaster_GLB"]

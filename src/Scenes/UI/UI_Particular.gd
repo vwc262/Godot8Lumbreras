@@ -16,7 +16,7 @@ extends Control
 @onready var lbl_presion_valor = $VBoxContainer/main_container/detalles_container/VBoxContainer/sitio_detalles/VBoxContainer/HBoxContainer/Panel/HBoxContainer/Presion_container/HBoxContainer/Panel/lbl_presion_valor
 @onready var lbl_gasto = $"VBoxContainer/main_container/detalles_container/VBoxContainer/sitio_detalles/VBoxContainer/HBoxContainer/Panel/HBoxContainer/Gasto_container/HBoxContainer/Panel2/lbl_gasto"
 @onready var lbl_gasto_valor = $"VBoxContainer/main_container/detalles_container/VBoxContainer/sitio_detalles/VBoxContainer/HBoxContainer/Panel/HBoxContainer/Gasto_container/HBoxContainer/Panel/lbl_gasto_valor"
-@onready var lbl_fecha = $VBoxContainer/main_container/detalles_container/VBoxContainer/sitio_detalles/VBoxContainer/fecha_container/lbl_fecha
+@onready var lbl_fecha: Label = $VBoxContainer/main_container/detalles_container/VBoxContainer/sitio_detalles/VBoxContainer/fecha_container/PanelContainer/lbl_fecha
 
 @onready var progress_bar = $VBoxContainer/main_container/progress_bar_container/ProgressBar
 @onready var lbl_progress_bar_valor_min = $VBoxContainer/main_container/progress_bar_container/progress_bar_marcadores_container/min_container/lbl_progress_bar_valor_min
@@ -46,7 +46,9 @@ extends Control
 @onready var btn_icono_mid: TextureRect = $VBoxContainer/main_container/detalles_container/VBoxContainer/botones_container/HBoxContainer/btn_lista/btn_icono_mid
 @onready var btn_icono_der: TextureRect = $VBoxContainer/main_container/detalles_container/VBoxContainer/botones_container/HBoxContainer/btn_home/btn_icono_der
 @onready var btn_lista_icono: TextureRect = $VBoxContainer/header_container/HBoxContainer/header_btn_container/header_btn_lista_sitios/btn_lista_icono
-@onready var header_sombra: TextureRect = $VBoxContainer/header_container/header_sombra
+@onready var fecha_fondo: TextureRect = $VBoxContainer/main_container/detalles_container/VBoxContainer/sitio_detalles/VBoxContainer/fecha_container/PanelContainer/fecha_fondo
+@onready var gasto_fondo: TextureRect = $VBoxContainer/main_container/detalles_container/VBoxContainer/sitio_detalles/VBoxContainer/HBoxContainer/Panel/HBoxContainer/Gasto_container/HBoxContainer/Panel/gasto_fondo
+@onready var presion_fondo: TextureRect = $VBoxContainer/main_container/detalles_container/VBoxContainer/sitio_detalles/VBoxContainer/HBoxContainer/Panel/HBoxContainer/Presion_container/HBoxContainer/Panel/presion_fondo
 @onready var original_icon: Texture
 @onready var new_icon: Texture
 @onready var flecha_lista_sitio_open: Texture
@@ -55,6 +57,7 @@ extends Control
 @onready var texture_offline: Texture
 @onready var lista_sitio_fondo_1: Texture
 @onready var lista_sitio_fondo_2: Texture
+
 #endregion
 
 var is_new_icon_active: bool = false
@@ -95,7 +98,9 @@ func set_textures():
 	texture_offline = _GlobalTextureResource.get_texture("header_estado_offline")
 	lista_sitio_fondo_1 = _GlobalTextureResource.get_texture("header_lista_a")
 	lista_sitio_fondo_2 = _GlobalTextureResource.get_texture("header_lista_b")
-	header_sombra.texture = _GlobalTextureResource.get_texture("sombra_headers")
+	fecha_fondo.texture = _GlobalTextureResource.get_texture("lista_valor_contenedor")
+	gasto_fondo.texture = _GlobalTextureResource.get_texture("lista_valor_contenedor")
+	presion_fondo.texture = _GlobalTextureResource.get_texture("lista_valor_contenedor")
 
 # Función _ready para inicializar los nodos y conectar señales
 func _ready():

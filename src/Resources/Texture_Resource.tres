@@ -1,72 +1,69 @@
-[gd_resource type="Resource" script_class="Texture_Resources" load_steps=34 format=3 uid="uid://bgbdiqmo4fbhu"]
+[gd_resource type="Resource" script_class="Texture_Resources" load_steps=31 format=3 uid="uid://bgbdiqmo4fbhu"]
 
 [ext_resource type="Script" path="res://Resources/Ref_TextureResource.gd" id="2_d5nwc"]
-[ext_resource type="Texture2D" uid="uid://bom2ge4j2826j" path="res://Recursos/UI/img/CutzamalaMovil_Perfil_V3/EncabezadoA_base_contenedor.png" id="4_d5ccn"]
-[ext_resource type="Texture2D" uid="uid://cr241prf282v" path="res://Recursos/UI/img/CutzamalaMovil_Perfil_V3/EncabezadoB_base_Conexion_a.png" id="5_4k7cw"]
-[ext_resource type="Texture2D" uid="uid://cqa0owk40erpl" path="res://Recursos/UI/img/CutzamalaMovil_Perfil_V3/EncabezadoB_base_Conexion_b.png" id="6_8qbog"]
-[ext_resource type="Texture2D" uid="uid://b6ak0dychqgwd" path="res://Recursos/UI/img/CutzamalaMovil_Perfil_V3/Lista_Detalles_BotonFlecha_a.png" id="7_rm8hw"]
-[ext_resource type="Texture2D" uid="uid://bje8sq0eus5s" path="res://Recursos/UI/img/CutzamalaMovil_Perfil_V3/Lista_Detalles_BotonFlecha_b.png" id="8_lxja4"]
-[ext_resource type="Texture2D" uid="uid://6pb72kocguii" path="res://Recursos/UI/img/CutzamalaMovil_Perfil_V3/Lista_Detalles_seleccion.png" id="9_inbmu"]
-[ext_resource type="Texture2D" uid="uid://c8d8g2yovmdy4" path="res://Recursos/UI/img/CutzamalaMovil_Perfil_V3/Lista_detalles_Submenu_BotonIzq_a.png" id="10_7njoo"]
-[ext_resource type="Texture2D" uid="uid://b6bsk0t7jo2ks" path="res://Recursos/UI/img/CutzamalaMovil_Perfil_V3/Lista_detalles_Submenu_BotonDer_a.png" id="11_aalgm"]
-[ext_resource type="Texture2D" uid="uid://8kxaa2nc0w28" path="res://Recursos/UI/img/CutzamalaMovil_Perfil_V3/EncabezadoA_base.png" id="11_f4yg5"]
-[ext_resource type="Texture2D" uid="uid://icmsncm6083a" path="res://Recursos/UI/img/CutzamalaMovil_Perfil_V3/Lista_detalles_Submenu_Contenedor01.png" id="12_u5j6b"]
-[ext_resource type="Texture2D" uid="uid://b4rbxu42i1sxa" path="res://Recursos/UI/img/Lista_fondo01.jpg" id="13_pohqo"]
-[ext_resource type="Texture2D" uid="uid://wtgya2x77u2y" path="res://Recursos/UI/img/PopUp_Dialogo_base.png" id="14_3tr0s"]
-[ext_resource type="Texture2D" uid="uid://cvg4awppr0ceb" path="res://Recursos/UI/img/Barra_Nivel/Barra_Nivel_base.png" id="15_hyeoc"]
-[ext_resource type="Texture2D" uid="uid://beromshj68slv" path="res://Recursos/UI/img/Barra_Nivel/Barra_Nivel_base_marcadores.png" id="16_axmji"]
-[ext_resource type="Texture2D" uid="uid://jfppoptcm53t" path="res://Recursos/UI/img/Barra_Nivel/Barra_Nivel_Cubierta_Barra.png" id="17_jr2ne"]
+[ext_resource type="Texture2D" uid="uid://c0f8tqgtjo2wr" path="res://Recursos/UI/img/cutzamala_v_final/boton_cambio_scene_der.png" id="2_yw5bt"]
+[ext_resource type="Texture2D" uid="uid://dhndxshyuu0v7" path="res://Recursos/UI/img/cutzamala_v_final/boton_cambio_scene_izq.png" id="3_8r7me"]
+[ext_resource type="Texture2D" uid="uid://b2s4ufaegoyof" path="res://Recursos/UI/img/cutzamala_v_final/boton_flecha_close.png" id="4_tks4d"]
+[ext_resource type="Texture2D" uid="uid://cuaote86s755p" path="res://Recursos/UI/img/cutzamala_v_final/boton_flecha_open.png" id="5_sqcla"]
+[ext_resource type="Texture2D" uid="uid://cmiax8itprl5x" path="res://Recursos/UI/img/cutzamala_v_final/boton_show_lista.png" id="7_5qvp5"]
+[ext_resource type="Texture2D" uid="uid://dmvusy8xhk7oa" path="res://Recursos/UI/img/cutzamala_v_final/detalles_fondo.png" id="9_8fjs8"]
+[ext_resource type="Texture2D" uid="uid://dwek43ydxgfdf" path="res://Recursos/UI/img/cutzamala_v_final/fondo_señales.png" id="10_syk8g"]
+[ext_resource type="Texture2D" uid="uid://cjl41d8o5kkn7" path="res://Recursos/UI/img/cutzamala_v_final/header.png" id="11_xcw8e"]
+[ext_resource type="Texture2D" uid="uid://b7q5echuvbyco" path="res://Recursos/UI/img/cutzamala_v_final/header_contenedor_estado.png" id="12_meu1p"]
+[ext_resource type="Texture2D" uid="uid://n0o8wds0fiqa" path="res://Recursos/UI/img/cutzamala_v_final/header_estado_offline.png" id="12_rhrid"]
+[ext_resource type="Texture2D" uid="uid://ckntjc5gjcnml" path="res://Recursos/UI/img/cutzamala_v_final/header_estado_online.png" id="13_10i24"]
+[ext_resource type="Texture2D" uid="uid://clxu3k4u05ig2" path="res://Recursos/UI/img/cutzamala_v_final/header_icono_lista.png" id="15_654un"]
+[ext_resource type="Texture2D" uid="uid://cr3m4hfb4xk0s" path="res://Recursos/UI/img/cutzamala_v_final/header_lista_a.png" id="16_lw15g"]
+[ext_resource type="Texture2D" uid="uid://c6f10qmebhjdj" path="res://Recursos/UI/img/cutzamala_v_final/header_lista_b.png" id="17_hjar0"]
+[ext_resource type="Texture2D" uid="uid://bky24jnivq0yb" path="res://Recursos/UI/img/cutzamala_v_final/header_lista_icono.png" id="18_my77i"]
 [ext_resource type="Texture2D" uid="uid://drbg18gc7a6sy" path="res://Recursos/UI/img/CutzamalaMovil_Perfil_V3/EncabezadoA_base_LogoVWC.png" id="18_vpxx4"]
-[ext_resource type="Texture2D" uid="uid://cdq3mpic4rx3g" path="res://Recursos/UI/img/EncabezadoB_base_Contenedor.png" id="19_qq0n1"]
-[ext_resource type="Texture2D" uid="uid://j5m7bmtmnoqq" path="res://Recursos/UI/img/Encabezado_B_Submenu/EncabezadoB_Submenu_conexion_a.png" id="20_5aenc"]
-[ext_resource type="Texture2D" uid="uid://crjctqusud75g" path="res://Recursos/UI/img/Encabezado_B_Submenu/EncabezadoB_Submenu_conexion_b.png" id="21_pnqc1"]
-[ext_resource type="Texture2D" uid="uid://bcapbu6jnbtom" path="res://Recursos/UI/img/Encabezado_B_Submenu/EncabezadoB_BotonLista.png" id="22_scb6k"]
-[ext_resource type="Texture2D" uid="uid://b35vbjfn62q2p" path="res://Recursos/UI/img/Encabezado_B_Submenu/EncabezadoB_Submenu_a.png" id="23_ownjp"]
-[ext_resource type="Texture2D" uid="uid://cu7w6pd76y3rh" path="res://Recursos/UI/img/Encabezado_B_Submenu/EncabezadoB_Submenu_b.png" id="24_0gixu"]
-[ext_resource type="Texture2D" uid="uid://5jdmssliqvru" path="res://Recursos/UI/img/CutzamalaMovil_Perfil_V3/Lista_Detalles_a.png" id="25_n564k"]
-[ext_resource type="Texture2D" uid="uid://cpelva5nmmloj" path="res://Recursos/UI/img/CutzamalaMovil_Perfil_V3/Lista_Detalles_b.png" id="26_2ctgi"]
-[ext_resource type="Texture2D" uid="uid://dgwbnce3hid3r" path="res://Recursos/UI/img/Encabezado_B_Submenu/Boton_Expandir_b.png" id="27_sqb6h"]
-[ext_resource type="Texture2D" uid="uid://bmr0ayd77jkpp" path="res://Recursos/UI/img/Encabezado_B_Submenu/Boton_Expandir_a.png" id="28_8gweh"]
+[ext_resource type="Texture2D" uid="uid://cwt517ugwoqdf" path="res://Recursos/UI/img/cutzamala_v_final/header_pildora.png" id="19_tb5js"]
+[ext_resource type="Texture2D" uid="uid://ds6y1ccwuv1w6" path="res://Recursos/UI/img/cutzamala_v_final/icono_offline.png" id="20_0eawm"]
+[ext_resource type="Texture2D" uid="uid://dueopnpxhjgox" path="res://Recursos/UI/img/cutzamala_v_final/icono_online.png" id="21_056di"]
+[ext_resource type="Texture2D" uid="uid://cavcek3wsj87y" path="res://Recursos/UI/img/cutzamala_v_final/lista_sitio_a.png" id="23_bnka3"]
+[ext_resource type="Texture2D" uid="uid://d4ly3aj627pin" path="res://Recursos/UI/img/cutzamala_v_final/lista_valores_contenedor.png" id="24_ser8e"]
+[ext_resource type="Texture2D" uid="uid://3dc53qsahnpt" path="res://Recursos/UI/img/cutzamala_v_final/popup_fondo.png" id="25_7pdyu"]
+[ext_resource type="Texture2D" uid="uid://b4qyyji32m7br" path="res://Recursos/UI/img/cutzamala_v_final/progressbar_base.png" id="26_yse4i"]
+[ext_resource type="Texture2D" uid="uid://brab1j0xtn2bl" path="res://Recursos/UI/img/cutzamala_v_final/progressbar_cubierta.png" id="27_lmr7r"]
+[ext_resource type="Texture2D" uid="uid://c7pgn5lqr1m8n" path="res://Recursos/UI/img/cutzamala_v_final/progressbar_max_min.png" id="28_o6let"]
+[ext_resource type="Texture2D" uid="uid://cvdoytup7q17b" path="res://Recursos/UI/img/cutzamala_v_final/punto_listas.png" id="29_3ogdm"]
 [ext_resource type="Texture2D" uid="uid://cci03rah376hd" path="res://Recursos/UI/Botones_Vistas/Boton_CamaraReset.png" id="29_vippd"]
-[ext_resource type="Texture2D" uid="uid://ccdb74j068s41" path="res://Recursos/UI/img/Encabezado_A_submenu/Lista_detalles_Submenu_Vineta.png" id="30_bv4hp"]
-[ext_resource type="Texture2D" uid="uid://bok445pb34lgv" path="res://Recursos/UI/img/CutzamalaMovil_Perfil_V3/Lista_detalles_Submenu.png" id="31_vvkkh"]
-[ext_resource type="Texture2D" uid="uid://bdck1ukjrrdlu" path="res://Recursos/UI/img/Encabezado_B_Submenu/EncabezadoB_Detalles.png" id="32_wets2"]
-[ext_resource type="Texture2D" uid="uid://dj8kgxcp4jteo" path="res://Recursos/UI/img/Encabezado_B_Submenu/EncabezadoB_base_Expandir_b.png" id="33_gak8i"]
-[ext_resource type="Texture2D" uid="uid://bjdbybrp6r7yd" path="res://Recursos/UI/img/CutzamalaMovil_Perfil_V3/EncabezadoA_Sombra.png" id="33_vkel2"]
+[ext_resource type="Texture2D" uid="uid://b2wq23nnrkl8s" path="res://Recursos/UI/img/cutzamala_v_final/sombra_headers.png" id="30_aysp4"]
+[ext_resource type="Texture2D" uid="uid://tw2ddfg0gnil" path="res://Recursos/UI/img/cutzamala_v_final/sitio_seleccionado.png" id="31_drrq0"]
 
 [resource]
 script = ExtResource("2_d5nwc")
 textures_resources_references = {
-"boton_cambio_scene_der": ExtResource("11_aalgm"),
-"boton_cambio_scene_izq": ExtResource("10_7njoo"),
-"boton_flecha_close": ExtResource("7_rm8hw"),
-"boton_flecha_open": ExtResource("8_lxja4"),
-"boton_hide_lista": ExtResource("27_sqb6h"),
-"boton_show_lista": ExtResource("28_8gweh"),
+"boton_cambio_scene_der": ExtResource("2_yw5bt"),
+"boton_cambio_scene_izq": ExtResource("3_8r7me"),
+"boton_flecha_close": ExtResource("4_tks4d"),
+"boton_flecha_open": ExtResource("5_sqcla"),
+"boton_hide_lista": ExtResource("7_5qvp5"),
+"boton_show_lista": ExtResource("7_5qvp5"),
 "btn_reset_camara": ExtResource("29_vippd"),
-"detalles_fondo": ExtResource("32_wets2"),
-"fondo_señales": ExtResource("31_vvkkh"),
-"header": ExtResource("11_f4yg5"),
-"header_contenedor_estado": ExtResource("19_qq0n1"),
-"header_estado_offline": ExtResource("21_pnqc1"),
-"header_estado_online": ExtResource("20_5aenc"),
-"header_icono_lista": ExtResource("22_scb6k"),
-"header_lista_a": ExtResource("23_ownjp"),
-"header_lista_b": ExtResource("24_0gixu"),
-"header_lista_icono": ExtResource("33_gak8i"),
-"header_pildora": ExtResource("4_d5ccn"),
-"icono_offline": ExtResource("6_8qbog"),
-"icono_online": ExtResource("5_4k7cw"),
-"lista_fondo": ExtResource("13_pohqo"),
-"lista_sitio_a": ExtResource("25_n564k"),
-"lista_sitio_b": ExtResource("26_2ctgi"),
-"lista_valor_contenedor": ExtResource("12_u5j6b"),
+"detalles_fondo": ExtResource("9_8fjs8"),
+"fondo_señales": ExtResource("10_syk8g"),
+"header": ExtResource("11_xcw8e"),
+"header_contenedor_estado": ExtResource("12_meu1p"),
+"header_estado_offline": ExtResource("12_rhrid"),
+"header_estado_online": ExtResource("13_10i24"),
+"header_icono_lista": ExtResource("15_654un"),
+"header_lista_a": ExtResource("16_lw15g"),
+"header_lista_b": ExtResource("17_hjar0"),
+"header_lista_icono": ExtResource("18_my77i"),
+"header_pildora": ExtResource("19_tb5js"),
+"icono_offline": ExtResource("20_0eawm"),
+"icono_online": ExtResource("21_056di"),
+"lista_fondo": ExtResource("10_syk8g"),
+"lista_sitio_a": ExtResource("23_bnka3"),
+"lista_sitio_b": ExtResource("23_bnka3"),
+"lista_valor_contenedor": ExtResource("24_ser8e"),
 "logo_vwc": ExtResource("18_vpxx4"),
-"popup_fondo": ExtResource("14_3tr0s"),
-"progressbar_base": ExtResource("15_hyeoc"),
-"progressbar_cubierta": ExtResource("17_jr2ne"),
-"progressbar_max_min": ExtResource("16_axmji"),
-"punto_listas": ExtResource("30_bv4hp"),
-"sitio_seleccionado": ExtResource("9_inbmu"),
-"sombra_headers": ExtResource("33_vkel2")
+"popup_fondo": ExtResource("25_7pdyu"),
+"progressbar_base": ExtResource("26_yse4i"),
+"progressbar_cubierta": ExtResource("27_lmr7r"),
+"progressbar_max_min": ExtResource("28_o6let"),
+"punto_listas": ExtResource("29_3ogdm"),
+"sitio_seleccionado": ExtResource("31_drrq0"),
+"sombra_headers": ExtResource("30_aysp4")
 }

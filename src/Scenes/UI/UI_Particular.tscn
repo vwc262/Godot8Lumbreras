@@ -1,22 +1,23 @@
-[gd_scene load_steps=20 format=3 uid="uid://mr5ipvv85b1"]
+[gd_scene load_steps=21 format=3 uid="uid://mr5ipvv85b1"]
 
 [ext_resource type="Script" path="res://Scenes/UI/UI_Particular.gd" id="1_wmuh6"]
-[ext_resource type="Texture2D" uid="uid://bjdbybrp6r7yd" path="res://Recursos/UI/img/CutzamalaMovil_Perfil_V3/EncabezadoA_Sombra.png" id="2_rruff"]
+[ext_resource type="Texture2D" uid="uid://cjl41d8o5kkn7" path="res://Recursos/UI/img/cutzamala_v_final/header.png" id="2_jw64o"]
+[ext_resource type="Texture2D" uid="uid://clxu3k4u05ig2" path="res://Recursos/UI/img/cutzamala_v_final/header_icono_lista.png" id="3_ngtsx"]
+[ext_resource type="Texture2D" uid="uid://b7q5echuvbyco" path="res://Recursos/UI/img/cutzamala_v_final/header_contenedor_estado.png" id="4_e57bg"]
 [ext_resource type="Texture2D" uid="uid://j5m7bmtmnoqq" path="res://Recursos/UI/img/Encabezado_B_Submenu/EncabezadoB_Submenu_conexion_a.png" id="5_tjj0m"]
-[ext_resource type="Texture2D" uid="uid://bdck1ukjrrdlu" path="res://Recursos/UI/img/Encabezado_B_Submenu/EncabezadoB_Detalles.png" id="7_hw4ok"]
-[ext_resource type="Texture2D" uid="uid://cvg4awppr0ceb" path="res://Recursos/UI/img/Barra_Nivel/Barra_Nivel_base.png" id="8_kv5h6"]
-[ext_resource type="Texture2D" uid="uid://jfppoptcm53t" path="res://Recursos/UI/img/Barra_Nivel/Barra_Nivel_Cubierta_Barra.png" id="9_d0do7"]
+[ext_resource type="Texture2D" uid="uid://b4qyyji32m7br" path="res://Recursos/UI/img/cutzamala_v_final/progressbar_base.png" id="8_d176y"]
+[ext_resource type="Texture2D" uid="uid://brab1j0xtn2bl" path="res://Recursos/UI/img/cutzamala_v_final/progressbar_cubierta.png" id="9_enlit"]
 [ext_resource type="Texture2D" uid="uid://ccdb74j068s41" path="res://Recursos/UI/img/Encabezado_A_submenu/Lista_detalles_Submenu_Vineta.png" id="9_evgt1"]
-[ext_resource type="Texture2D" uid="uid://beromshj68slv" path="res://Recursos/UI/img/Barra_Nivel/Barra_Nivel_base_marcadores.png" id="10_5sxwf"]
+[ext_resource type="Texture2D" uid="uid://c7pgn5lqr1m8n" path="res://Recursos/UI/img/cutzamala_v_final/progressbar_max_min.png" id="10_76wex"]
 [ext_resource type="PackedScene" uid="uid://qofjfvol201e" path="res://Scenes/Sitios/Particulares/PB5_ParticularScene.tscn" id="10_l4wa0"]
-[ext_resource type="Texture2D" uid="uid://cj8h7au2iw3ch" path="res://Recursos/UI/img/EncabezadoB_base.png" id="10_t44yw"]
-[ext_resource type="Texture2D" uid="uid://bcapbu6jnbtom" path="res://Recursos/UI/img/Encabezado_B_Submenu/EncabezadoB_BotonLista.png" id="11_3q3kn"]
+[ext_resource type="Texture2D" uid="uid://dhndxshyuu0v7" path="res://Recursos/UI/img/cutzamala_v_final/boton_cambio_scene_izq.png" id="11_rg0ro"]
 [ext_resource type="Texture2D" uid="uid://c554rmtw6fjo5" path="res://Recursos/UI/img/Encabezado_A_submenu/Lista_detalles_Submenu_Contenedor.png" id="12_64k7e"]
-[ext_resource type="Texture2D" uid="uid://cdq3mpic4rx3g" path="res://Recursos/UI/img/EncabezadoB_base_Contenedor.png" id="12_wrw6q"]
+[ext_resource type="Texture2D" uid="uid://c0f8tqgtjo2wr" path="res://Recursos/UI/img/cutzamala_v_final/boton_cambio_scene_der.png" id="13_nr06j"]
+[ext_resource type="Texture2D" uid="uid://dmvusy8xhk7oa" path="res://Recursos/UI/img/cutzamala_v_final/detalles_fondo.png" id="14_q7x1n"]
+[ext_resource type="Texture2D" uid="uid://cvdoytup7q17b" path="res://Recursos/UI/img/cutzamala_v_final/punto_listas.png" id="15_tf5ss"]
 [ext_resource type="PackedScene" uid="uid://cp14ueov0c5ee" path="res://Scenes/UI/Loading_Scene.tscn" id="17_iw8u2"]
-[ext_resource type="Texture2D" uid="uid://c8d8g2yovmdy4" path="res://Recursos/UI/img/CutzamalaMovil_Perfil_V3/Lista_detalles_Submenu_BotonIzq_a.png" id="20_svqoy"]
+[ext_resource type="Texture2D" uid="uid://d4ly3aj627pin" path="res://Recursos/UI/img/cutzamala_v_final/lista_valores_contenedor.png" id="17_o7p78"]
 [ext_resource type="Texture2D" uid="uid://dgwbnce3hid3r" path="res://Recursos/UI/img/Encabezado_B_Submenu/Boton_Expandir_b.png" id="21_8jf3k"]
-[ext_resource type="Texture2D" uid="uid://b6bsk0t7jo2ks" path="res://Recursos/UI/img/CutzamalaMovil_Perfil_V3/Lista_detalles_Submenu_BotonDer_a.png" id="22_vqkpq"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_r72ta"]
 
@@ -47,18 +48,6 @@ z_index = 1
 custom_minimum_size = Vector2(0, 125)
 layout_mode = 2
 
-[node name="header_sombra" type="TextureRect" parent="VBoxContainer/header_container"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_top = 60.0
-offset_bottom = 60.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("2_rruff")
-expand_mode = 1
-
 [node name="header_fondo" type="TextureRect" parent="VBoxContainer/header_container"]
 layout_mode = 1
 anchors_preset = 15
@@ -66,7 +55,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("10_t44yw")
+texture = ExtResource("2_jw64o")
 expand_mode = 1
 
 [node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/header_container"]
@@ -108,7 +97,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("11_3q3kn")
+texture = ExtResource("3_ngtsx")
 expand_mode = 1
 
 [node name="header_nombre_container" type="Panel" parent="VBoxContainer/header_container/HBoxContainer"]
@@ -148,7 +137,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("12_wrw6q")
+texture = ExtResource("4_e57bg")
 expand_mode = 1
 
 [node name="texture_enlace" type="TextureRect" parent="VBoxContainer/header_container/HBoxContainer/header_icono_container"]
@@ -213,7 +202,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("8_kv5h6")
+texture = ExtResource("8_d176y")
 
 [node name="ProgressBar" type="ProgressBar" parent="VBoxContainer/main_container/progress_bar_container"]
 layout_mode = 1
@@ -257,7 +246,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("9_d0do7")
+texture = ExtResource("9_enlit")
 
 [node name="progress_bar_marcadores_container" type="Panel" parent="VBoxContainer/main_container/progress_bar_container"]
 self_modulate = Color(1, 1, 1, 0)
@@ -278,7 +267,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("10_5sxwf")
+texture = ExtResource("10_76wex")
 flip_v = true
 
 [node name="min_container" type="HBoxContainer" parent="VBoxContainer/main_container/progress_bar_container/progress_bar_marcadores_container"]
@@ -384,7 +373,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("20_svqoy")
+texture = ExtResource("11_rg0ro")
 expand_mode = 1
 
 [node name="Label" type="Label" parent="VBoxContainer/main_container/detalles_container/VBoxContainer/botones_container/HBoxContainer/btn_graficador"]
@@ -400,6 +389,7 @@ offset_right = 71.5
 offset_bottom = 27.5
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_colors/font_color = Color(0.623529, 0.133333, 0.254902, 1)
 theme_override_font_sizes/font_size = 40
 text = "Graficador"
 horizontal_alignment = 1
@@ -438,7 +428,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("22_vqkpq")
+texture = ExtResource("13_nr06j")
 
 [node name="Label2" type="Label" parent="VBoxContainer/main_container/detalles_container/VBoxContainer/botones_container/HBoxContainer/btn_home"]
 layout_mode = 1
@@ -453,6 +443,7 @@ offset_right = 117.5
 offset_bottom = 27.5
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_colors/font_color = Color(0.623529, 0.133333, 0.254902, 1)
 theme_override_font_sizes/font_size = 40
 text = "Perfil"
 horizontal_alignment = 1
@@ -471,7 +462,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("7_hw4ok")
+texture = ExtResource("14_q7x1n")
 expand_mode = 1
 
 [node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/main_container/detalles_container/VBoxContainer/sitio_detalles"]
@@ -529,7 +520,7 @@ theme_override_constants/separation = 0
 [node name="punto_1" type="TextureRect" parent="VBoxContainer/main_container/detalles_container/VBoxContainer/sitio_detalles/VBoxContainer/HBoxContainer/Panel/HBoxContainer/Presion_container/HBoxContainer"]
 custom_minimum_size = Vector2(90, 0)
 layout_mode = 2
-texture = ExtResource("9_evgt1")
+texture = ExtResource("15_tf5ss")
 expand_mode = 1
 
 [node name="Panel2" type="Panel" parent="VBoxContainer/main_container/detalles_container/VBoxContainer/sitio_detalles/VBoxContainer/HBoxContainer/Panel/HBoxContainer/Presion_container/HBoxContainer"]
@@ -556,6 +547,15 @@ self_modulate = Color(1, 1, 1, 0)
 custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_76qfk")
+
+[node name="presion_fondo" type="TextureRect" parent="VBoxContainer/main_container/detalles_container/VBoxContainer/sitio_detalles/VBoxContainer/HBoxContainer/Panel/HBoxContainer/Presion_container/HBoxContainer/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("17_o7p78")
 
 [node name="lbl_presion_valor" type="Label" parent="VBoxContainer/main_container/detalles_container/VBoxContainer/sitio_detalles/VBoxContainer/HBoxContainer/Panel/HBoxContainer/Presion_container/HBoxContainer/Panel"]
 layout_mode = 1
@@ -622,6 +622,15 @@ custom_minimum_size = Vector2(150, 0)
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_76qfk")
 
+[node name="gasto_fondo" type="TextureRect" parent="VBoxContainer/main_container/detalles_container/VBoxContainer/sitio_detalles/VBoxContainer/HBoxContainer/Panel/HBoxContainer/Gasto_container/HBoxContainer/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("17_o7p78")
+
 [node name="lbl_gasto_valor" type="Label" parent="VBoxContainer/main_container/detalles_container/VBoxContainer/sitio_detalles/VBoxContainer/HBoxContainer/Panel/HBoxContainer/Gasto_container/HBoxContainer/Panel"]
 layout_mode = 1
 anchors_preset = 15
@@ -642,13 +651,28 @@ clip_contents = true
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="lbl_fecha" type="Label" parent="VBoxContainer/main_container/detalles_container/VBoxContainer/sitio_detalles/VBoxContainer/fecha_container"]
+[node name="PanelContainer" type="PanelContainer" parent="VBoxContainer/main_container/detalles_container/VBoxContainer/sitio_detalles/VBoxContainer/fecha_container"]
+self_modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(350, 70)
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="fecha_fondo" type="TextureRect" parent="VBoxContainer/main_container/detalles_container/VBoxContainer/sitio_detalles/VBoxContainer/fecha_container/PanelContainer"]
+layout_mode = 2
+texture = ExtResource("17_o7p78")
+
+[node name="lbl_fecha" type="Label" parent="VBoxContainer/main_container/detalles_container/VBoxContainer/sitio_detalles/VBoxContainer/fecha_container/PanelContainer"]
+layout_mode = 2
 theme_override_font_sizes/font_size = 30
 text = "00:00 hrs, 00/00/0000"
 horizontal_alignment = 1

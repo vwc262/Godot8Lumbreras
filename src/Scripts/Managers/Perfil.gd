@@ -23,7 +23,6 @@ extends Node
 @onready var header_pildora: TextureRect = $ScrollContainer/WindowsContainer/PerfilWindow/VB_MainContainer/header_container/contador_contaier/header_pildora
 @onready var icono_online: TextureRect = $ScrollContainer/WindowsContainer/PerfilWindow/VB_MainContainer/header_container/contador_contaier/HBoxContainer/online_container/icono_online
 @onready var icono_offline: TextureRect = $ScrollContainer/WindowsContainer/PerfilWindow/VB_MainContainer/header_container/contador_contaier/HBoxContainer/offline_container/icono_offline
-@onready var header_logo_vwc: TextureRect = $ScrollContainer/WindowsContainer/PerfilWindow/VB_MainContainer/header_container/header_logo_vwc
 @onready var btn_reset_camara: TextureRect = $ScrollContainer/WindowsContainer/PerfilWindow/VB_MainContainer/Panel/bnt_reset_camera/btn_reset_camara
 #endregion
 
@@ -43,7 +42,6 @@ func set_textures():
 	header_pildora.texture = _GlobalTextureResource.get_texture("header_pildora")
 	icono_online.texture = _GlobalTextureResource.get_texture("icono_online")
 	icono_offline.texture = _GlobalTextureResource.get_texture("icono_offline")
-	header_logo_vwc.texture = _GlobalTextureResource.get_texture("logo_vwc")
 	btn_reset_camara.texture = _GlobalTextureResource.get_texture("btn_reset_camara")
 
 func _ready() -> void:	

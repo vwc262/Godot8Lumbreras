@@ -1,9 +1,13 @@
-[gd_scene load_steps=20 format=3 uid="uid://mr5ipvv85b1"]
+[gd_scene load_steps=25 format=3 uid="uid://mr5ipvv85b1"]
 
 [ext_resource type="Script" path="res://Scenes/UI/UI_Particular.gd" id="1_wmuh6"]
-[ext_resource type="Texture2D" uid="uid://bjdbybrp6r7yd" path="res://Recursos/UI/img/CutzamalaMovil_Perfil_V3/EncabezadoA_Sombra.png" id="2_rruff"]
+[ext_resource type="Texture2D" uid="uid://d3vnt3taxqfqo" path="res://Recursos/UI/img/Encabezado_B_Submenu/EncabezadoB_base_Expandir_a.png" id="2_kablv"]
+[ext_resource type="Texture2D" uid="uid://crjctqusud75g" path="res://Recursos/UI/img/Encabezado_B_Submenu/EncabezadoB_Submenu_conexion_b.png" id="4_f77s0"]
+[ext_resource type="Texture2D" uid="uid://b35vbjfn62q2p" path="res://Recursos/UI/img/Encabezado_B_Submenu/EncabezadoB_Submenu_a.png" id="5_7xquo"]
 [ext_resource type="Texture2D" uid="uid://j5m7bmtmnoqq" path="res://Recursos/UI/img/Encabezado_B_Submenu/EncabezadoB_Submenu_conexion_a.png" id="5_tjj0m"]
+[ext_resource type="Texture2D" uid="uid://cu7w6pd76y3rh" path="res://Recursos/UI/img/Encabezado_B_Submenu/EncabezadoB_Submenu_b.png" id="6_c5nrp"]
 [ext_resource type="Texture2D" uid="uid://bdck1ukjrrdlu" path="res://Recursos/UI/img/Encabezado_B_Submenu/EncabezadoB_Detalles.png" id="7_hw4ok"]
+[ext_resource type="Texture2D" uid="uid://dj8kgxcp4jteo" path="res://Recursos/UI/img/Encabezado_B_Submenu/EncabezadoB_base_Expandir_b.png" id="7_i0kr6"]
 [ext_resource type="Texture2D" uid="uid://cvg4awppr0ceb" path="res://Recursos/UI/img/Barra_Nivel/Barra_Nivel_base.png" id="8_kv5h6"]
 [ext_resource type="Texture2D" uid="uid://jfppoptcm53t" path="res://Recursos/UI/img/Barra_Nivel/Barra_Nivel_Cubierta_Barra.png" id="9_d0do7"]
 [ext_resource type="Texture2D" uid="uid://ccdb74j068s41" path="res://Recursos/UI/img/Encabezado_A_submenu/Lista_detalles_Submenu_Vineta.png" id="9_evgt1"]
@@ -14,6 +18,7 @@
 [ext_resource type="Texture2D" uid="uid://c554rmtw6fjo5" path="res://Recursos/UI/img/Encabezado_A_submenu/Lista_detalles_Submenu_Contenedor.png" id="12_64k7e"]
 [ext_resource type="Texture2D" uid="uid://cdq3mpic4rx3g" path="res://Recursos/UI/img/EncabezadoB_base_Contenedor.png" id="12_wrw6q"]
 [ext_resource type="PackedScene" uid="uid://cp14ueov0c5ee" path="res://Scenes/UI/Loading_Scene.tscn" id="17_iw8u2"]
+[ext_resource type="PackedScene" uid="uid://cgcyx32icu15x" path="res://Scenes/UI/UI_Particular_Sitio_lista.tscn" id="20_stxyf"]
 [ext_resource type="Texture2D" uid="uid://c8d8g2yovmdy4" path="res://Recursos/UI/img/CutzamalaMovil_Perfil_V3/Lista_detalles_Submenu_BotonIzq_a.png" id="20_svqoy"]
 [ext_resource type="Texture2D" uid="uid://dgwbnce3hid3r" path="res://Recursos/UI/img/Encabezado_B_Submenu/Boton_Expandir_b.png" id="21_8jf3k"]
 [ext_resource type="Texture2D" uid="uid://b6bsk0t7jo2ks" path="res://Recursos/UI/img/CutzamalaMovil_Perfil_V3/Lista_detalles_Submenu_BotonDer_a.png" id="22_vqkpq"]
@@ -31,6 +36,13 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_wmuh6")
+texture_online = ExtResource("5_tjj0m")
+texture_offline = ExtResource("4_f77s0")
+lista_sitio_fondo_1 = ExtResource("5_7xquo")
+lista_sitio_fondo_2 = ExtResource("6_c5nrp")
+flecha_lista_sitio_open = ExtResource("7_i0kr6")
+flecha_lista_sitio_close = ExtResource("2_kablv")
+lista_sitio_scene = ExtResource("20_stxyf")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
@@ -43,23 +55,20 @@ theme_override_constants/separation = 0
 
 [node name="header_container" type="Panel" parent="VBoxContainer"]
 self_modulate = Color(1, 1, 1, 0)
-z_index = 1
 custom_minimum_size = Vector2(0, 125)
 layout_mode = 2
 
-[node name="header_sombra" type="TextureRect" parent="VBoxContainer/header_container"]
+[node name="header_fondo" type="TextureRect" parent="VBoxContainer/header_container"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = 60.0
-offset_bottom = 60.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("2_rruff")
+texture = ExtResource("10_t44yw")
 expand_mode = 1
 
-[node name="header_fondo" type="TextureRect" parent="VBoxContainer/header_container"]
+[node name="header_sombra" type="TextureRect" parent="VBoxContainer/header_container"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -406,7 +415,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="btn_lista" type="Button" parent="VBoxContainer/main_container/detalles_container/VBoxContainer/botones_container/HBoxContainer"]
-custom_minimum_size = Vector2(170, 50)
+custom_minimum_size = Vector2(170, 60)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4

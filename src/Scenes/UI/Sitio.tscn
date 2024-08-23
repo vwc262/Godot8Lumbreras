@@ -3,9 +3,9 @@
 [ext_resource type="Script" path="res://Scripts/UI/Sitio.gd" id="1_065dv"]
 [ext_resource type="Texture2D" uid="uid://cavcek3wsj87y" path="res://Recursos/UI/img/cutzamala_v_final/lista_sitio_a.png" id="3_2lm8p"]
 [ext_resource type="Texture2D" uid="uid://cuaote86s755p" path="res://Recursos/UI/img/cutzamala_v_final/boton_flecha_open.png" id="4_acln0"]
+[ext_resource type="Texture2D" uid="uid://ds6y1ccwuv1w6" path="res://Recursos/UI/img/cutzamala_v_final/icono_offline.png" id="5_rlimt"]
 [ext_resource type="Texture2D" uid="uid://tw2ddfg0gnil" path="res://Recursos/UI/img/cutzamala_v_final/sitio_seleccionado.png" id="6_0bvoi"]
 [ext_resource type="PackedScene" uid="uid://hro847n58cow" path="res://Scenes/UI/UI_Señales.tscn" id="7_7pxni"]
-[ext_resource type="Texture2D" uid="uid://cqa0owk40erpl" path="res://Recursos/UI/img/CutzamalaMovil_Perfil_V3/EncabezadoB_base_Conexion_b.png" id="8_adn6f"]
 
 [node name="Sitio" type="PanelContainer"]
 self_modulate = Color(1, 1, 1, 0)
@@ -114,7 +114,7 @@ mouse_filter = 1
 custom_minimum_size = Vector2(60, 60)
 layout_mode = 2
 size_flags_vertical = 4
-texture = ExtResource("8_adn6f")
+texture = ExtResource("5_rlimt")
 expand_mode = 1
 
 [node name="sitio_fondo_seleccionado" type="TextureRect" parent="VBoxContainer/datos_sitio_container"]

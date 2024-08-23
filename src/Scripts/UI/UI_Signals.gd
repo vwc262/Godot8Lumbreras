@@ -57,7 +57,7 @@ func set_textures():
 	valor_totalizado.texture =  _GlobalTextureResource.get_texture("lista_valor_contenedor")
 	bnt_graficador_fondo.texture =  _GlobalTextureResource.get_texture("boton_cambio_scene_izq")
 	bnt_particular_fondo.texture =  _GlobalTextureResource.get_texture("boton_cambio_scene_der")
-	fondo_se_al.texture = _GlobalTextureResource.get_texture("fondo_señales")
+	fondo_se_al.texture = _GlobalTextureResource.get_texture("fondo_senales")
 
 func _ready() -> void:
 	set_textures()

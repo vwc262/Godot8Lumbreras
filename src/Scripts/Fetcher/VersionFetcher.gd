@@ -54,8 +54,7 @@ func get_file(filePathUpdate:String) -> FileAccess:
 	
 func change_resources():		
 	var async_resorce = AsyncResourceSaver.new(GlobalTextureResource.get_curret_resource(),"user://Resources/Texture_Resource.tres")
-	await async_resorce.start(async_resorce._save_async,Thread.PRIORITY_NORMAL)						
-	GlobalTextureResource.set_saved_ref()
+	async_resorce.start(async_resorce._save_async.bind(GlobalTextureResource.set_saved_ref),Thread.PRIORITY_NORMAL)								
 	number_of_update_textures = 0
 	UIManager.popUpWindow.showPopUp("Nueva version detectada, Favor de reiniciar la app")
 

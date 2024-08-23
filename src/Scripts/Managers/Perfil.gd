@@ -87,11 +87,11 @@ func _on_btn_lista_sitios_pressed():
 	btn_lista_sitios.disabled = true
 	if is_hidden:
 		# Mostrar el contenedor
-		btn_lista_sitios.icon = preload("res://Recursos/UI/img/Encabezado_B_Submenu/Boton_Expandir_b.png")
+		btn_lista_sitios.icon = preload("res://Recursos/UI/img/cutzamala_v_final/boton_hide_lista.png")
 		_show_lista_sitios()
 	else:
 		# Esconder el contenedor
-		btn_lista_sitios.icon = preload("res://Recursos/UI/img/Encabezado_B_Submenu/Boton_Expandir_a.png")
+		btn_lista_sitios.icon = preload("res://Recursos/UI/img/cutzamala_v_final/boton_show_lista.png")
 		_hide_lista_sitios()
 
 func _on_world_interacted():

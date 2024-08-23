@@ -1,8 +1,8 @@
 [gd_scene load_steps=4 format=3 uid="uid://cgcyx32icu15x"]
 
 [ext_resource type="Script" path="res://Scripts/UI/UI_Particular_Sitio_lista.gd" id="1_65n6e"]
-[ext_resource type="Texture2D" uid="uid://cu7w6pd76y3rh" path="res://Recursos/UI/img/Encabezado_B_Submenu/EncabezadoB_Submenu_b.png" id="1_rsysw"]
-[ext_resource type="Texture2D" uid="uid://j5m7bmtmnoqq" path="res://Recursos/UI/img/Encabezado_B_Submenu/EncabezadoB_Submenu_conexion_a.png" id="3_k1wig"]
+[ext_resource type="Texture2D" uid="uid://cr3m4hfb4xk0s" path="res://Recursos/UI/img/cutzamala_v_final/header_lista_a.png" id="2_x2e6o"]
+[ext_resource type="Texture2D" uid="uid://ckntjc5gjcnml" path="res://Recursos/UI/img/cutzamala_v_final/header_estado_online.png" id="3_tci48"]
 
 [node name="UiParticularSitioLista" type="Control"]
 custom_minimum_size = Vector2(600, 100)
@@ -26,7 +26,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("1_rsysw")
+texture = ExtResource("2_x2e6o")
 expand_mode = 1
 
 [node name="HBoxContainer" type="HBoxContainer" parent="sitio_container"]
@@ -51,11 +51,13 @@ size_flags_vertical = 4
 
 [node name="lbl_nombre_sitio" type="Label" parent="sitio_container/HBoxContainer/VBoxContainer"]
 layout_mode = 2
+theme_override_colors/font_color = Color(0.623529, 0.133333, 0.254902, 1)
 theme_override_font_sizes/font_size = 35
 text = "Planta Potabilizadora 5"
 
 [node name="lbl_fecha_sitio" type="Label" parent="sitio_container/HBoxContainer/VBoxContainer"]
 layout_mode = 2
+theme_override_colors/font_color = Color(0.623529, 0.133333, 0.254902, 1)
 theme_override_font_sizes/font_size = 20
 text = "00:00hrs, 00/00/0000"
 vertical_alignment = 1
@@ -73,7 +75,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("3_k1wig")
+texture = ExtResource("3_tci48")
 
 [node name="btn_lista_sitio" type="Button" parent="sitio_container"]
 self_modulate = Color(1, 1, 1, 0)

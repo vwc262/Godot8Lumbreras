@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://x5m0onfran4m"]
+[gd_scene load_steps=22 format=3 uid="uid://x5m0onfran4m"]
 
 [ext_resource type="Script" path="res://Scripts/Managers/Perfil.gd" id="1_symg7"]
 [ext_resource type="Script" path="res://Scripts/Fetcher/Fetch_Data.gd" id="1_xo6k0"]
@@ -8,17 +8,16 @@
 [ext_resource type="PackedScene" uid="uid://dbs3c52v8n226" path="res://Scenes/UI/ListaSitios.tscn" id="4_lo6xx"]
 [ext_resource type="PackedScene" uid="uid://bw8x014747jnj" path="res://Scenes/UI_Helpers/UI_Paleta.tscn" id="5_d0yyb"]
 [ext_resource type="PackedScene" uid="uid://ggu8wjqomq4" path="res://Scenes/UI/UI_Graficador.tscn" id="5_vw305"]
-[ext_resource type="Texture2D" uid="uid://bjdbybrp6r7yd" path="res://Recursos/UI/img/CutzamalaMovil_Perfil_V3/EncabezadoA_Sombra.png" id="7_5ymb5"]
-[ext_resource type="Texture2D" uid="uid://bom2ge4j2826j" path="res://Recursos/UI/img/CutzamalaMovil_Perfil_V3/EncabezadoA_base_contenedor.png" id="7_l0ja0"]
+[ext_resource type="Texture2D" uid="uid://b2wq23nnrkl8s" path="res://Recursos/UI/img/cutzamala_v_final/sombra_headers.png" id="7_ocsq0"]
+[ext_resource type="Texture2D" uid="uid://cjl41d8o5kkn7" path="res://Recursos/UI/img/cutzamala_v_final/header.png" id="8_e5bye"]
 [ext_resource type="Texture2D" uid="uid://cr241prf282v" path="res://Recursos/UI/img/CutzamalaMovil_Perfil_V3/EncabezadoB_base_Conexion_a.png" id="8_i1y6s"]
-[ext_resource type="Texture2D" uid="uid://fx4kbj2u8825" path="res://Recursos/UI/img/CutzamalaMovil_Perfil_V3/EncabezadoB_base.png" id="8_ociiu"]
 [ext_resource type="PackedScene" uid="uid://cp14ueov0c5ee" path="res://Scenes/UI/Loading_Scene.tscn" id="8_txe4o"]
-[ext_resource type="Texture2D" uid="uid://dgwbnce3hid3r" path="res://Recursos/UI/img/Encabezado_B_Submenu/Boton_Expandir_b.png" id="9_dfl04"]
+[ext_resource type="Texture2D" uid="uid://cwt517ugwoqdf" path="res://Recursos/UI/img/cutzamala_v_final/header_pildora.png" id="9_5l4s1"]
 [ext_resource type="Texture2D" uid="uid://cqa0owk40erpl" path="res://Recursos/UI/img/CutzamalaMovil_Perfil_V3/EncabezadoB_base_Conexion_b.png" id="9_n8tr3"]
-[ext_resource type="Texture2D" uid="uid://drbg18gc7a6sy" path="res://Recursos/UI/img/CutzamalaMovil_Perfil_V3/EncabezadoA_base_LogoVWC.png" id="10_oix2o"]
 [ext_resource type="PackedScene" uid="uid://mr5ipvv85b1" path="res://Scenes/UI/UI_Particular.tscn" id="11_e8765"]
 [ext_resource type="Script" path="res://Scripts/UI/PopUp/PopupWindow.gd" id="13_4y2mv"]
 [ext_resource type="Texture2D" uid="uid://wtgya2x77u2y" path="res://Recursos/UI/img/PopUp_Dialogo_base.png" id="14_0v8gh"]
+[ext_resource type="Texture2D" uid="uid://cmiax8itprl5x" path="res://Recursos/UI/img/cutzamala_v_final/boton_show_lista.png" id="14_80mpx"]
 [ext_resource type="Texture2D" uid="uid://dl0hbpjs1hb82" path="res://Recursos/UI/img/señales/Lista_detalles_Nivel_barra.png" id="14_v1tbx"]
 [ext_resource type="Texture2D" uid="uid://cci03rah376hd" path="res://Recursos/UI/Botones_Vistas/Boton_CamaraReset.png" id="15_wbwd8"]
 
@@ -97,7 +96,7 @@ offset_top = 80.0
 offset_bottom = 80.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("7_5ymb5")
+texture = ExtResource("7_ocsq0")
 expand_mode = 1
 
 [node name="header_fondo" type="TextureRect" parent="ScrollContainer/WindowsContainer/PerfilWindow/VB_MainContainer/header_container"]
@@ -107,7 +106,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("8_ociiu")
+texture = ExtResource("8_e5bye")
 expand_mode = 1
 
 [node name="Label" type="Label" parent="ScrollContainer/WindowsContainer/PerfilWindow/VB_MainContainer/header_container"]
@@ -145,7 +144,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("7_l0ja0")
+texture = ExtResource("9_5l4s1")
 expand_mode = 1
 
 [node name="HBoxContainer" type="HBoxContainer" parent="ScrollContainer/WindowsContainer/PerfilWindow/VB_MainContainer/header_container/contador_contaier"]
@@ -205,15 +204,6 @@ layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 texture = ExtResource("9_n8tr3")
-expand_mode = 1
-stretch_mode = 5
-
-[node name="header_logo_vwc" type="TextureRect" parent="ScrollContainer/WindowsContainer/PerfilWindow/VB_MainContainer/header_container"]
-custom_minimum_size = Vector2(100, 100)
-layout_mode = 1
-offset_right = 40.0
-offset_bottom = 40.0
-texture = ExtResource("10_oix2o")
 expand_mode = 1
 stretch_mode = 5
 
@@ -287,7 +277,7 @@ layout_mode = 2
 size_flags_horizontal = 6
 size_flags_vertical = 8
 focus_mode = 0
-icon = ExtResource("9_dfl04")
+icon = ExtResource("14_80mpx")
 flat = true
 
 [node name="barra_separador" type="Panel" parent="ScrollContainer/WindowsContainer/PerfilWindow/VB_MainContainer/Panel/main_container/ListaSitiosContainer/VBoxContainer"]

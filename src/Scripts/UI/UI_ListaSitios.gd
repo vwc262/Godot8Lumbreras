@@ -15,7 +15,7 @@ var sitio_instancias = []
 func set_textures():
 	var _GlobalTextureResource = GlobalTextureResource.get_curret_resource()
 	textura1 = _GlobalTextureResource.get_texture("lista_sitio_a")
-	textura2 = _GlobalTextureResource.get_texture("lista_sitio_b")
+	textura2 = _GlobalTextureResource.get_texture("lista_sitio_a")
 	lista_sitios_fondo.texture = _GlobalTextureResource.get_texture("lista_fondo")
 
 

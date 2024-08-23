@@ -22,6 +22,11 @@ func get_curret_resource() -> Texture_Resources:
 	
 func set_saved_ref():
 	if !is_instance_valid(saved_ref):
-		saved_ref = load("user://Resources/Texture_Resource.tres")
-		#if is_instance_valid(saved_ref):
-			#UIManager.popUpWindow.showPopUp("Actualizacion de recursos realizada!")
+		var async_load = AsyncResourceLoader.new("user://Resources/Texture_Resource.tres")
+		async_load.start(async_load._save_async.bind(set_instance_value),Thread.PRIORITY_NORMAL)
+		async_load.wait_to_finish()		
+
+func set_instance_value(resource_loaded:Resource):
+	saved_ref = resource_loaded
+	print("Instancia lista!")
+	

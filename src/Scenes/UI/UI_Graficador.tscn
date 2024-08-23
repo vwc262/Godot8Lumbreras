@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://iy3aj6iuo7iq" path="res://Recursos/UI/img/Encabezado_A_submenu/EncabezadoA_base.png" id="2_y2kcr"]
 [ext_resource type="PackedScene" uid="uid://bosmqfxs2ibvy" path="res://Scenes/Plotter/ChartControl.tscn" id="3_nnaxr"]
 [ext_resource type="Texture2D" uid="uid://c8d8g2yovmdy4" path="res://Recursos/UI/img/CutzamalaMovil_Perfil_V3/Lista_detalles_Submenu_BotonIzq_a.png" id="4_a4soq"]
-[ext_resource type="Texture2D" uid="uid://dgwbnce3hid3r" path="res://Recursos/UI/img/Encabezado_B_Submenu/Boton_Expandir_b.png" id="4_ywile"]
+[ext_resource type="Texture2D" uid="uid://cmiax8itprl5x" path="res://Recursos/UI/img/cutzamala_v_final/boton_show_lista.png" id="5_cp7w2"]
 [ext_resource type="Texture2D" uid="uid://bdck1ukjrrdlu" path="res://Recursos/UI/img/Encabezado_B_Submenu/EncabezadoB_Detalles.png" id="6_7qb2l"]
 [ext_resource type="Texture2D" uid="uid://b6bsk0t7jo2ks" path="res://Recursos/UI/img/CutzamalaMovil_Perfil_V3/Lista_detalles_Submenu_BotonDer_a.png" id="6_ndcft"]
 [ext_resource type="Texture2D" uid="uid://c554rmtw6fjo5" path="res://Recursos/UI/img/Encabezado_A_submenu/Lista_detalles_Submenu_Contenedor.png" id="7_xbxuo"]
@@ -151,7 +151,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("4_ywile")
+texture = ExtResource("5_cp7w2")
 expand_mode = 1
 
 [node name="btn_particular" type="Button" parent="Panel/VBoxContainer/footer_container/VBoxContainer/botones_container/HBoxContainer"]

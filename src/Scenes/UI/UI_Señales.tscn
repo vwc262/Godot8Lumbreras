@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://hro847n58cow"]
 
 [ext_resource type="Script" path="res://Scripts/UI/UI_Signals.gd" id="1_bisnc"]
-[ext_resource type="Texture2D" uid="uid://dwek43ydxgfdf" path="res://Recursos/UI/img/cutzamala_v_final/fondo_señales.png" id="2_k82vq"]
+[ext_resource type="Texture2D" uid="uid://dwek43ydxgfdf" path="res://Recursos/UI/img/cutzamala_v_final/fondo_senales.png" id="2_k82vq"]
 [ext_resource type="Texture2D" uid="uid://d4ly3aj627pin" path="res://Recursos/UI/img/cutzamala_v_final/lista_valores_contenedor.png" id="4_p2cjr"]
 [ext_resource type="Texture2D" uid="uid://dhndxshyuu0v7" path="res://Recursos/UI/img/cutzamala_v_final/boton_cambio_scene_izq.png" id="5_fogpq"]
 [ext_resource type="Texture2D" uid="uid://ccdb74j068s41" path="res://Recursos/UI/img/Encabezado_A_submenu/Lista_detalles_Submenu_Vineta.png" id="6_aiytj"]

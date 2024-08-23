@@ -31,6 +31,7 @@ extends Control
 @onready var datos_sitio = $VBoxContainer/main_container/detalles_container/VBoxContainer/sitio_detalles/VBoxContainer
 
 @onready var lista_sitio_scene = preload("res://Scenes/UI/UI_Particular_Sitio_lista.tscn")
+#@export var lista_sitio_scene : PackedScene 
 
 #region
 @onready var header_fondo: TextureRect = $VBoxContainer/header_container/header_fondo

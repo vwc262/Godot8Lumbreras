@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://cjl41d8o5kkn7" path="res://Recursos/UI/img/cutzamala_v_final/header.png" id="2_jw64o"]
 [ext_resource type="Texture2D" uid="uid://clxu3k4u05ig2" path="res://Recursos/UI/img/cutzamala_v_final/header_icono_lista.png" id="3_ngtsx"]
 [ext_resource type="Texture2D" uid="uid://b7q5echuvbyco" path="res://Recursos/UI/img/cutzamala_v_final/header_contenedor_estado.png" id="4_e57bg"]
-[ext_resource type="Texture2D" uid="uid://j5m7bmtmnoqq" path="res://Recursos/UI/img/Encabezado_B_Submenu/EncabezadoB_Submenu_conexion_a.png" id="5_tjj0m"]
+[ext_resource type="Texture2D" uid="uid://ckntjc5gjcnml" path="res://Recursos/UI/img/cutzamala_v_final/header_estado_online.png" id="5_jywsw"]
 [ext_resource type="Texture2D" uid="uid://b4qyyji32m7br" path="res://Recursos/UI/img/cutzamala_v_final/progressbar_base.png" id="8_d176y"]
 [ext_resource type="Texture2D" uid="uid://brab1j0xtn2bl" path="res://Recursos/UI/img/cutzamala_v_final/progressbar_cubierta.png" id="9_enlit"]
 [ext_resource type="Texture2D" uid="uid://ccdb74j068s41" path="res://Recursos/UI/img/Encabezado_A_submenu/Lista_detalles_Submenu_Vineta.png" id="9_evgt1"]
@@ -12,12 +12,12 @@
 [ext_resource type="PackedScene" uid="uid://qofjfvol201e" path="res://Scenes/Sitios/Particulares/PB5_ParticularScene.tscn" id="10_l4wa0"]
 [ext_resource type="Texture2D" uid="uid://dhndxshyuu0v7" path="res://Recursos/UI/img/cutzamala_v_final/boton_cambio_scene_izq.png" id="11_rg0ro"]
 [ext_resource type="Texture2D" uid="uid://c554rmtw6fjo5" path="res://Recursos/UI/img/Encabezado_A_submenu/Lista_detalles_Submenu_Contenedor.png" id="12_64k7e"]
+[ext_resource type="Texture2D" uid="uid://cmiax8itprl5x" path="res://Recursos/UI/img/cutzamala_v_final/boton_show_lista.png" id="12_rw807"]
 [ext_resource type="Texture2D" uid="uid://c0f8tqgtjo2wr" path="res://Recursos/UI/img/cutzamala_v_final/boton_cambio_scene_der.png" id="13_nr06j"]
 [ext_resource type="Texture2D" uid="uid://dmvusy8xhk7oa" path="res://Recursos/UI/img/cutzamala_v_final/detalles_fondo.png" id="14_q7x1n"]
 [ext_resource type="Texture2D" uid="uid://cvdoytup7q17b" path="res://Recursos/UI/img/cutzamala_v_final/punto_listas.png" id="15_tf5ss"]
 [ext_resource type="PackedScene" uid="uid://cp14ueov0c5ee" path="res://Scenes/UI/Loading_Scene.tscn" id="17_iw8u2"]
 [ext_resource type="Texture2D" uid="uid://d4ly3aj627pin" path="res://Recursos/UI/img/cutzamala_v_final/lista_valores_contenedor.png" id="17_o7p78"]
-[ext_resource type="Texture2D" uid="uid://dgwbnce3hid3r" path="res://Recursos/UI/img/Encabezado_B_Submenu/Boton_Expandir_b.png" id="21_8jf3k"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_r72ta"]
 
@@ -147,7 +147,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("5_tjj0m")
+texture = ExtResource("5_jywsw")
 expand_mode = 1
 
 [node name="main_container" type="Panel" parent="VBoxContainer"]
@@ -410,7 +410,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("21_8jf3k")
+texture = ExtResource("12_rw807")
 expand_mode = 1
 
 [node name="btn_home" type="Button" parent="VBoxContainer/main_container/detalles_container/VBoxContainer/botones_container/HBoxContainer"]

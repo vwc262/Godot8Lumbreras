@@ -28,6 +28,7 @@ func request_individual_texture(total:int):
 			var image_to_create = Image.new()
 			image_to_create.load_png_from_buffer(body)
 			current_resource.update_texture(currnet_key,ImageTexture.create_from_image(image_to_create))
+			print(currnet_key)
 			number_of_update_textures += 1
 			if number_of_update_textures < total:
 				request_individual_texture(total)
@@ -37,7 +38,7 @@ func request_individual_texture(total:int):
 
 	request_completed.connect(callable.bind(callable))
 	var texture_url = url_texturas+currnet_key+".png"		
-	await request(texture_url)
+	request(texture_url)
 
 
 func _on_request_completed(result, _response_code, _headers, body):
@@ -51,9 +52,9 @@ func _on_request_completed(result, _response_code, _headers, body):
 func get_file(filePathUpdate:String) -> FileAccess:
 	return FileAccess.open(filePathUpdate,FileAccess.WRITE_READ)
 	
-func change_resources():				
-	ResourceSaver.save(GlobalTextureResource.get_curret_resource(),"user://Resources/Texture_Resource.tres")
-	GlobalTextureResource.set_saved_ref()
+func change_resources():		
+	var async_resorce = AsyncResourceSaver.new(GlobalTextureResource.get_curret_resource(),"user://Resources/Texture_Resource.tres")
+	async_resorce.start(async_resorce._save_async.bind(GlobalTextureResource.set_saved_ref),Thread.PRIORITY_NORMAL)								
 	number_of_update_textures = 0
 	UIManager.popUpWindow.showPopUp("Nueva version detectada, Favor de reiniciar la app")
 

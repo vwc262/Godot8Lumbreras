@@ -1,0 +1,16 @@
+[gd_resource type="ShaderMaterial" load_steps=3 format=3 uid="uid://daa8xp5hx2al"]
+
+[ext_resource type="Shader" path="res://Recursos/Materiales/Material_Alpha_Unlit.gdshader" id="1_gw04q"]
+[ext_resource type="Texture2D" uid="uid://bfkbht7f0qfoc" path="res://Recursos/Meshes/Particular_Cutzamala_PBR5/glb/arboles.png" id="2_pfprb"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_gw04q")
+shader_parameter/albedo = Color(0.60933, 0.60933, 0.60933, 1)
+shader_parameter/ao_texture_channel = null
+shader_parameter/ao_light_affect = null
+shader_parameter/heightmap_scale = null
+shader_parameter/heightmap_flip = null
+shader_parameter/uv1_scale = Vector3(1, 1, 1)
+shader_parameter/uv1_offset = null
+shader_parameter/texture_albedo = ExtResource("2_pfprb")

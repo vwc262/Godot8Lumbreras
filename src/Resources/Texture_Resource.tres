@@ -1,8 +1,6 @@
 [gd_resource type="Resource" script_class="Texture_Resources" load_steps=34 format=3 uid="uid://bgbdiqmo4fbhu"]
 
-[ext_resource type="Texture2D" uid="uid://fx4kbj2u8825" path="res://Recursos/UI/img/CutzamalaMovil_Perfil_V3/EncabezadoB_base.png" id="2_8sgse"]
 [ext_resource type="Script" path="res://Resources/Ref_TextureResource.gd" id="2_d5nwc"]
-[ext_resource type="Texture2D" uid="uid://bjdbybrp6r7yd" path="res://Recursos/UI/img/CutzamalaMovil_Perfil_V3/EncabezadoA_Sombra.png" id="3_copid"]
 [ext_resource type="Texture2D" uid="uid://bom2ge4j2826j" path="res://Recursos/UI/img/CutzamalaMovil_Perfil_V3/EncabezadoA_base_contenedor.png" id="4_d5ccn"]
 [ext_resource type="Texture2D" uid="uid://cr241prf282v" path="res://Recursos/UI/img/CutzamalaMovil_Perfil_V3/EncabezadoB_base_Conexion_a.png" id="5_4k7cw"]
 [ext_resource type="Texture2D" uid="uid://cqa0owk40erpl" path="res://Recursos/UI/img/CutzamalaMovil_Perfil_V3/EncabezadoB_base_Conexion_b.png" id="6_8qbog"]
@@ -11,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://6pb72kocguii" path="res://Recursos/UI/img/CutzamalaMovil_Perfil_V3/Lista_Detalles_seleccion.png" id="9_inbmu"]
 [ext_resource type="Texture2D" uid="uid://c8d8g2yovmdy4" path="res://Recursos/UI/img/CutzamalaMovil_Perfil_V3/Lista_detalles_Submenu_BotonIzq_a.png" id="10_7njoo"]
 [ext_resource type="Texture2D" uid="uid://b6bsk0t7jo2ks" path="res://Recursos/UI/img/CutzamalaMovil_Perfil_V3/Lista_detalles_Submenu_BotonDer_a.png" id="11_aalgm"]
+[ext_resource type="Texture2D" uid="uid://8kxaa2nc0w28" path="res://Recursos/UI/img/CutzamalaMovil_Perfil_V3/EncabezadoA_base.png" id="11_f4yg5"]
 [ext_resource type="Texture2D" uid="uid://icmsncm6083a" path="res://Recursos/UI/img/CutzamalaMovil_Perfil_V3/Lista_detalles_Submenu_Contenedor01.png" id="12_u5j6b"]
 [ext_resource type="Texture2D" uid="uid://b4rbxu42i1sxa" path="res://Recursos/UI/img/Lista_fondo01.jpg" id="13_pohqo"]
 [ext_resource type="Texture2D" uid="uid://wtgya2x77u2y" path="res://Recursos/UI/img/PopUp_Dialogo_base.png" id="14_3tr0s"]
@@ -33,6 +32,7 @@
 [ext_resource type="Texture2D" uid="uid://bok445pb34lgv" path="res://Recursos/UI/img/CutzamalaMovil_Perfil_V3/Lista_detalles_Submenu.png" id="31_vvkkh"]
 [ext_resource type="Texture2D" uid="uid://bdck1ukjrrdlu" path="res://Recursos/UI/img/Encabezado_B_Submenu/EncabezadoB_Detalles.png" id="32_wets2"]
 [ext_resource type="Texture2D" uid="uid://dj8kgxcp4jteo" path="res://Recursos/UI/img/Encabezado_B_Submenu/EncabezadoB_base_Expandir_b.png" id="33_gak8i"]
+[ext_resource type="Texture2D" uid="uid://bjdbybrp6r7yd" path="res://Recursos/UI/img/CutzamalaMovil_Perfil_V3/EncabezadoA_Sombra.png" id="33_vkel2"]
 
 [resource]
 script = ExtResource("2_d5nwc")
@@ -46,7 +46,7 @@ textures_resources_references = {
 "btn_reset_camara": ExtResource("29_vippd"),
 "detalles_fondo": ExtResource("32_wets2"),
 "fondo_señales": ExtResource("31_vvkkh"),
-"header": ExtResource("2_8sgse"),
+"header": ExtResource("11_f4yg5"),
 "header_contenedor_estado": ExtResource("19_qq0n1"),
 "header_estado_offline": ExtResource("21_pnqc1"),
 "header_estado_online": ExtResource("20_5aenc"),
@@ -68,5 +68,5 @@ textures_resources_references = {
 "progressbar_max_min": ExtResource("16_axmji"),
 "punto_listas": ExtResource("30_bv4hp"),
 "sitio_seleccionado": ExtResource("9_inbmu"),
-"sombra_headers": ExtResource("3_copid")
+"sombra_headers": ExtResource("33_vkel2")
 }

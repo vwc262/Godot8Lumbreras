@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="Texture_Resources" load_steps=29 format=3 uid="uid://bgbdiqmo4fbhu"]
+[gd_resource type="Resource" script_class="Texture_Resources" load_steps=32 format=3 uid="uid://bgbdiqmo4fbhu"]
 
 [ext_resource type="Texture2D" uid="uid://fx4kbj2u8825" path="res://Recursos/UI/img/CutzamalaMovil_Perfil_V3/EncabezadoB_base.png" id="2_8sgse"]
 [ext_resource type="Script" path="res://Resources/Ref_TextureResource.gd" id="2_d5nwc"]
@@ -28,6 +28,9 @@
 [ext_resource type="Texture2D" uid="uid://cpelva5nmmloj" path="res://Recursos/UI/img/CutzamalaMovil_Perfil_V3/Lista_Detalles_b.png" id="26_2ctgi"]
 [ext_resource type="Texture2D" uid="uid://dgwbnce3hid3r" path="res://Recursos/UI/img/Encabezado_B_Submenu/Boton_Expandir_b.png" id="27_sqb6h"]
 [ext_resource type="Texture2D" uid="uid://bmr0ayd77jkpp" path="res://Recursos/UI/img/Encabezado_B_Submenu/Boton_Expandir_a.png" id="28_8gweh"]
+[ext_resource type="Texture2D" uid="uid://cci03rah376hd" path="res://Recursos/UI/Botones_Vistas/Boton_CamaraReset.png" id="29_vippd"]
+[ext_resource type="Texture2D" uid="uid://ccdb74j068s41" path="res://Recursos/UI/img/Encabezado_A_submenu/Lista_detalles_Submenu_Vineta.png" id="30_bv4hp"]
+[ext_resource type="Texture2D" uid="uid://bok445pb34lgv" path="res://Recursos/UI/img/CutzamalaMovil_Perfil_V3/Lista_detalles_Submenu.png" id="31_vvkkh"]
 
 [resource]
 script = ExtResource("2_d5nwc")
@@ -38,6 +41,8 @@ textures_resources_references = {
 "boton_flecha_open": ExtResource("8_lxja4"),
 "boton_hide_lista": ExtResource("27_sqb6h"),
 "boton_show_lista": ExtResource("28_8gweh"),
+"btn_reset_camara": ExtResource("29_vippd"),
+"fondo_señales": ExtResource("31_vvkkh"),
 "header": ExtResource("2_8sgse"),
 "header_contenedor_estado": ExtResource("19_qq0n1"),
 "header_estado_offline": ExtResource("21_pnqc1"),
@@ -57,6 +62,7 @@ textures_resources_references = {
 "progressbar_base": ExtResource("15_hyeoc"),
 "progressbar_cubierta": ExtResource("17_jr2ne"),
 "progressbar_max_min": ExtResource("16_axmji"),
+"punto_listas": ExtResource("30_bv4hp"),
 "sitio_seleccionado": ExtResource("9_inbmu"),
 "sombra_headers": ExtResource("3_copid")
 }

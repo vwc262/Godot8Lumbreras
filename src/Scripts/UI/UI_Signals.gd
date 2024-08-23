@@ -14,20 +14,22 @@ class_name SegnalLista
 @onready var lbl_nivel_valor: Label = $main_container/HBoxContainer/VBoxContainer/nivel_container/nivel_valor_container/lbl_nivel_valor
 @onready var presion_valor: Label = $main_container/HBoxContainer/VBoxContainer/presion_container/presion_container/HBoxContainer/presion_valor_container/presion_valor
 @onready var gasto_valor: Label = $main_container/HBoxContainer/VBoxContainer/gasto_container/gasto_container/HBoxContainer2/gasto_valor_container/gasto_valor
-@onready var texture_punto_nivel: TextureRect = $main_container/HBoxContainer/VBoxContainer/nivel_container/nivel_nombre_container/HBoxContainer/texture_punto_nivel
 
-@onready var texturas_señales: Dictionary = {
-	"punto_nivel": $main_container/HBoxContainer/VBoxContainer/nivel_container/nivel_nombre_container/HBoxContainer/texture_punto_nivel,
-	"valor_nivel": $main_container/HBoxContainer/VBoxContainer/nivel_container/nivel_valor_container/texture_valor_nivel,
-	"punto_presion": $main_container/HBoxContainer/VBoxContainer/presion_container/presion_container/HBoxContainer/texture_punto_presion,
-	"valor_presion": $main_container/HBoxContainer/VBoxContainer/presion_container/presion_container/HBoxContainer/presion_valor_container/texture_valor_presion,
-	"punto_gasto": $main_container/HBoxContainer/VBoxContainer/gasto_container/gasto_container/HBoxContainer2/texture_punto_gasto,
-	"valor_gasto": $main_container/HBoxContainer/VBoxContainer/gasto_container/gasto_container/HBoxContainer2/gasto_valor_container/texture_valor_gasto,
-	"punto_totalizado": $main_container/HBoxContainer/VBoxContainer/totalizado_container/texture_punto_totalizado,
-	"valor_totalizado": $main_container/HBoxContainer/VBoxContainer/totalizado_container/totalizado_valor_container/texture_valor_totalizado,
-	"bnt_graficador_fondo": $main_container/HBoxContainer/VBoxContainer/botones_container/btn_graficador/bnt_graficador_fondo,
-	"bnt_particular_fondo": $main_container/HBoxContainer/VBoxContainer/botones_container/btn_particular/bnt_particular_fondo
-}
+#region TEXTURAS
+@onready var texture_punto_nivel: TextureRect = $main_container/HBoxContainer/VBoxContainer/nivel_container/nivel_nombre_container/HBoxContainer/texture_punto_nivel
+@onready var punto_nivel: TextureRect =  $main_container/HBoxContainer/VBoxContainer/nivel_container/nivel_nombre_container/HBoxContainer/texture_punto_nivel
+@onready var valor_nivel: TextureRect =  $main_container/HBoxContainer/VBoxContainer/nivel_container/nivel_valor_container/texture_valor_nivel
+@onready var punto_presion: TextureRect =  $main_container/HBoxContainer/VBoxContainer/presion_container/presion_container/HBoxContainer/texture_punto_presion
+@onready var valor_presion: TextureRect =  $main_container/HBoxContainer/VBoxContainer/presion_container/presion_container/HBoxContainer/presion_valor_container/texture_valor_presion
+@onready var punto_gasto: TextureRect =  $main_container/HBoxContainer/VBoxContainer/gasto_container/gasto_container/HBoxContainer2/texture_punto_gasto
+@onready var valor_gasto: TextureRect =  $main_container/HBoxContainer/VBoxContainer/gasto_container/gasto_container/HBoxContainer2/gasto_valor_container/texture_valor_gasto
+@onready var punto_totalizado: TextureRect =  $main_container/HBoxContainer/VBoxContainer/totalizado_container/texture_punto_totalizado
+@onready var valor_totalizado: TextureRect =  $main_container/HBoxContainer/VBoxContainer/totalizado_container/totalizado_valor_container/texture_valor_totalizado
+@onready var bnt_graficador_fondo: TextureRect =  $main_container/HBoxContainer/VBoxContainer/botones_container/btn_graficador/bnt_graficador_fondo
+@onready var bnt_particular_fondo: TextureRect =  $main_container/HBoxContainer/VBoxContainer/botones_container/btn_particular/bnt_particular_fondo
+@onready var fondo_se_al: TextureRect = $"main_container/fondo_señal"
+
+#endregion
 
 
 # Referencia a la señal que se va a mostrar
@@ -43,12 +45,22 @@ var unidades = {
 	4: "m³"
 }
 
-#func _ready() -> void:
-	#GlobalPaletaColores.connect("repintar_ui", _repintar_UI)
-	#_repintar_UI()
-#
-#func _repintar_UI():
-	#texturas_señales["punto_nivel"].modulate = GlobalPaletaColores.CR_PALETA_COLORES.get_color_texture(0)
+func set_textures():
+	var _GlobalTextureResource = GlobalTextureResource.get_curret_resource()
+	punto_nivel.texture =  _GlobalTextureResource.get_texture("punto_listas")
+	punto_presion.texture =  _GlobalTextureResource.get_texture("punto_listas")
+	punto_gasto.texture =  _GlobalTextureResource.get_texture("punto_listas")
+	punto_totalizado.texture =  _GlobalTextureResource.get_texture("punto_listas")
+	valor_nivel.texture =  _GlobalTextureResource.get_texture("lista_valor_contenedor")
+	valor_presion.texture =  _GlobalTextureResource.get_texture("lista_valor_contenedor")
+	valor_gasto.texture =  _GlobalTextureResource.get_texture("lista_valor_contenedor")
+	valor_totalizado.texture =  _GlobalTextureResource.get_texture("lista_valor_contenedor")
+	bnt_graficador_fondo.texture =  _GlobalTextureResource.get_texture("boton_cambio_scene_izq")
+	bnt_particular_fondo.texture =  _GlobalTextureResource.get_texture("boton_cambio_scene_der")
+	fondo_se_al.texture = _GlobalTextureResource.get_texture("fondo_señales")
+
+func _ready() -> void:
+	set_textures()
 
 	
 func set_maximos_minimos(senal:Señal):

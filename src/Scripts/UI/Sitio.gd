@@ -1,8 +1,6 @@
 extends Node
 
 @export var signal_scene: PackedScene
-@export var texture_visible: Texture  # Textura cuando está visible
-@export var texture_hidden: Texture   # Textura cuando está oculto
 
 @onready var texture_estado_enlace = $VBoxContainer/datos_sitio_container/HBoxContainer/estado_enlace
 @onready var lbl_nombre_sitio = $VBoxContainer/datos_sitio_container/HBoxContainer/nombre_fecha_contaier/HBoxContainer/nombre_sitio
@@ -10,11 +8,20 @@ extends Node
 @onready var se_ales_sitios = $"VBoxContainer/PanelContainer/Control/señales_sitios"
 @onready var panel_container = $VBoxContainer/PanelContainer
 @onready var btn_expandir_sitios = $VBoxContainer/datos_sitio_container/HBoxContainer/BTN_expandir_sitios
-@onready var btn_expandir_fondo = $VBoxContainer/datos_sitio_container/HBoxContainer/BTN_expandir_sitios/btn_expandir_fondo
-@onready var sitio_fondo = $VBoxContainer/datos_sitio_container/sitio_fondo
-@onready var sitio_fondo_seleccionado = $VBoxContainer/datos_sitio_container/sitio_fondo_seleccionado
 @onready var button = $VBoxContainer/datos_sitio_container/HBoxContainer/nombre_fecha_contaier/Button
 @onready var sitio: PanelContainer = $"."
+
+#region
+@onready var sitio_fondo: TextureRect = $VBoxContainer/datos_sitio_container/sitio_fondo #SE ASIGNA SU TEXTURA EN LISTA SITIO
+@onready var estado_enlace: TextureRect = $VBoxContainer/datos_sitio_container/HBoxContainer/estado_enlace
+@onready var sitio_fondo_seleccionado: TextureRect = $VBoxContainer/datos_sitio_container/sitio_fondo_seleccionado
+@onready var btn_expandir_fondo: TextureRect = $VBoxContainer/datos_sitio_container/HBoxContainer/BTN_expandir_sitios/btn_expandir_fondo
+@onready var texture_hidden: Texture   # Textura cuando está oculto
+@onready var texture_visible: Texture  # Textura cuando está visible
+@onready var estado_online: Texture
+@onready var estado_offline: Texture
+
+#endregion
 
 var estacion_ref: Estacion
 var signal_ref = {}
@@ -26,9 +33,18 @@ var is_double_click_disabled = false
 
 var is_signals_instantiated = false
 
-func _ready():
-	NavigationManager.connect("OnTweenFinished_MovimientoRealizado", _on_camera_zoom)
+func set_textures():
+	var _GlobalTextureResource = GlobalTextureResource.get_curret_resource()
+	texture_hidden = _GlobalTextureResource.get_texture("boton_flecha_close")
+	texture_visible = _GlobalTextureResource.get_texture("boton_flecha_open")
+	estado_online = _GlobalTextureResource.get_texture("icono_online")
+	estado_offline = _GlobalTextureResource.get_texture("icono_offline")
+	sitio_fondo_seleccionado.texture = _GlobalTextureResource.get_texture("sitio_seleccionado")
 	
+
+func _ready():
+	set_textures()
+	NavigationManager.connect("OnTweenFinished_MovimientoRealizado", _on_camera_zoom)
 	
 # Función para recibir y establecer los datos de la estación
 func set_datos(estacion: Estacion):
@@ -51,7 +67,10 @@ func actualizar_datos():
 
 # Función para actualizar el estado del enlace
 func set_enlace():	
-	texture_estado_enlace.texture = preload("res://Recursos/UI/img/CutzamalaMovil_Perfil_V3/EncabezadoB_base_Conexion_a.png") if estacion_ref.is_estacion_en_linea() else preload("res://Recursos/UI/img/CutzamalaMovil_Perfil_V3/EncabezadoB_base_Conexion_b.png")	
+	if estacion_ref.is_estacion_en_linea():
+		texture_estado_enlace.texture = estado_online
+	else:
+		texture_estado_enlace.texture = estado_offline
 
 # Función para instanciar y actualizar señales
 func instanciar_señales():

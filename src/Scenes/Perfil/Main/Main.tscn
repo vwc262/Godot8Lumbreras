@@ -138,7 +138,7 @@ grow_horizontal = 2
 grow_vertical = 0
 theme_override_styles/panel = SubResource("StyleBoxEmpty_42kcc")
 
-[node name="TextureRect" type="TextureRect" parent="ScrollContainer/WindowsContainer/PerfilWindow/VB_MainContainer/header_container/contador_contaier"]
+[node name="header_pildora" type="TextureRect" parent="ScrollContainer/WindowsContainer/PerfilWindow/VB_MainContainer/header_container/contador_contaier"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -199,7 +199,7 @@ text = "00"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="icono_online" type="TextureRect" parent="ScrollContainer/WindowsContainer/PerfilWindow/VB_MainContainer/header_container/contador_contaier/HBoxContainer/offline_container"]
+[node name="icono_offline" type="TextureRect" parent="ScrollContainer/WindowsContainer/PerfilWindow/VB_MainContainer/header_container/contador_contaier/HBoxContainer/offline_container"]
 custom_minimum_size = Vector2(40, 40)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -208,7 +208,7 @@ texture = ExtResource("9_n8tr3")
 expand_mode = 1
 stretch_mode = 5
 
-[node name="logo_vwc" type="TextureRect" parent="ScrollContainer/WindowsContainer/PerfilWindow/VB_MainContainer/header_container"]
+[node name="header_logo_vwc" type="TextureRect" parent="ScrollContainer/WindowsContainer/PerfilWindow/VB_MainContainer/header_container"]
 custom_minimum_size = Vector2(100, 100)
 layout_mode = 1
 offset_right = 40.0
@@ -326,7 +326,7 @@ size_flags_vertical = 0
 focus_mode = 0
 flat = true
 
-[node name="TextureRect" type="TextureRect" parent="ScrollContainer/WindowsContainer/PerfilWindow/VB_MainContainer/Panel/bnt_reset_camera"]
+[node name="btn_reset_camara" type="TextureRect" parent="ScrollContainer/WindowsContainer/PerfilWindow/VB_MainContainer/Panel/bnt_reset_camera"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -338,7 +338,6 @@ expand_mode = 1
 stretch_mode = 5
 
 [node name="ParticularWindow" type="PanelContainer" parent="ScrollContainer/WindowsContainer"]
-visible = false
 clip_contents = true
 layout_mode = 2
 size_flags_horizontal = 3

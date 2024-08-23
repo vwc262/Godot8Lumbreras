@@ -1,7 +1,7 @@
 [gd_resource type="Environment" load_steps=5 format=3 uid="uid://ccm8vriw4pmnm"]
 
 [ext_resource type="Shader" path="res://Recursos/Materiales/SkyEnvironment.gdshader" id="1_tce1v"]
-[ext_resource type="Texture2D" uid="uid://cvh6aa0m7f8r6" path="res://Recursos/Textures/Sky/sunflowers_puresky_1k.hdr" id="2_l4ov8"]
+[ext_resource type="Texture2D" uid="uid://brkhi7awjex82" path="res://Recursos/Meshes/Particular_Cutzamala_PBR5/glb/kloppenheim_06_puresky_1k.exr" id="2_mjx85"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_1lx84"]
 shader = ExtResource("1_tce1v")
@@ -12,7 +12,7 @@ shader_parameter/offsetHorizontalColor = 0.07
 shader_parameter/ofset_coords = 0.1
 shader_parameter/mix_texture = 0.34
 shader_parameter/use_sky_texture = true
-shader_parameter/skyTexture = ExtResource("2_l4ov8")
+shader_parameter/skyTexture = ExtResource("2_mjx85")
 
 [sub_resource type="Sky" id="Sky_f7hr0"]
 sky_material = SubResource("ShaderMaterial_1lx84")
@@ -22,9 +22,9 @@ radiance_size = 0
 [resource]
 background_mode = 2
 background_color = Color(0.130569, 0.472729, 0.718176, 1)
-background_energy_multiplier = 1.12
+background_energy_multiplier = 0.35
 sky = SubResource("Sky_f7hr0")
-sky_rotation = Vector3(-0.0698132, 0, 0)
+sky_rotation = Vector3(0, 1.5708, 0)
 ambient_light_color = Color(0.821688, 0.765487, 0.670528, 1)
 ambient_light_energy = 0.0
 reflected_light_source = 2
@@ -41,6 +41,6 @@ glow_hdr_luminance_cap = 43.67
 glow_map_strength = 1.0
 volumetric_fog_density = 0.3132
 volumetric_fog_albedo = Color(0.740995, 0.389801, 0.453136, 1)
-adjustment_brightness = 1.16
-adjustment_contrast = 1.11
-adjustment_saturation = 1.19
+adjustment_brightness = 1.21
+adjustment_contrast = 1.26
+adjustment_saturation = 1.4

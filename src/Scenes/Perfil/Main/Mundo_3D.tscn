@@ -1,6 +1,5 @@
-[gd_scene load_steps=27 format=3 uid="uid://cyug4nnq0yh1a"]
+[gd_scene load_steps=26 format=3 uid="uid://cyug4nnq0yh1a"]
 
-[ext_resource type="Material" uid="uid://beqh7jr7h3tmm" path="res://Recursos/Materiales/BlurVignette.tres" id="2_0rlw3"]
 [ext_resource type="Script" path="res://Scripts/Navigation/Touch_Navigation.gd" id="2_ui4vn"]
 [ext_resource type="PackedScene" uid="uid://vw46h30r4ia4" path="res://Scenes/Sitios/Sitio3D_Interactuable.tscn" id="3_dfqhc"]
 [ext_resource type="PackedScene" uid="uid://bhakmsdspl7on" path="res://Scenes/Sky/SkyEnvironment.tscn" id="5_a3vqv"]
@@ -69,6 +68,7 @@ mesh = SubResource("SphereMesh_dsd57")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(0.0882372, -0.129919, 0.987591, -0.895821, 0.423188, 0.135709, -0.435567, -0.896679, -0.0790431, 0.595018, 12.0503, 10.8077)
+visible = false
 light_color = Color(0.89, 0.82058, 0.7743, 1)
 light_energy = 4.0
 light_indirect_energy = 0.025
@@ -105,16 +105,7 @@ maxBlurIntensity = 0.005
 [node name="Camera3D" type="Camera3D" parent="CameraParent"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0)
 fov = 85.0
-
-[node name="ColorRect" type="ColorRect" parent="CameraParent/Camera3D"]
-process_mode = 3
-material = ExtResource("2_0rlw3")
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 1
+far = 110.0
 
 [node name="SkyEnvironment" parent="." instance=ExtResource("5_a3vqv")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0634727, 0)
@@ -253,6 +244,8 @@ visibility_range_end = 40.0
 visibility_range_end_margin = 100.0
 visibility_range_fade_mode = 1
 billboard = 1
+transparent = false
+double_sided = false
 texture = ExtResource("7_5pikp")
 
 [node name="Sprite3D2" type="Sprite3D" parent="Props/NubesRoot/Nubes3D"]

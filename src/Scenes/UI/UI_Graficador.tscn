@@ -100,12 +100,22 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="btn_perfil" type="Button" parent="Panel/VBoxContainer/footer_container/VBoxContainer/botones_container/HBoxContainer"]
+custom_minimum_size = Vector2(450, 80)
 layout_mode = 2
 size_flags_horizontal = 6
 size_flags_vertical = 8
 focus_mode = 0
-icon = ExtResource("4_a4soq")
 flat = true
+
+[node name="btn_icono_izq" type="TextureRect" parent="Panel/VBoxContainer/footer_container/VBoxContainer/botones_container/HBoxContainer/btn_perfil"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_a4soq")
+expand_mode = 1
 
 [node name="lbl_bnt_perfil" type="Label" parent="Panel/VBoxContainer/footer_container/VBoxContainer/botones_container/HBoxContainer/btn_perfil"]
 layout_mode = 1
@@ -127,20 +137,40 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="btn_colapsar_lista" type="Button" parent="Panel/VBoxContainer/footer_container/VBoxContainer/botones_container/HBoxContainer"]
+custom_minimum_size = Vector2(170, 50)
 layout_mode = 2
 size_flags_horizontal = 6
 size_flags_vertical = 8
 focus_mode = 0
-icon = ExtResource("4_ywile")
 flat = true
 
+[node name="btn_icono_mid" type="TextureRect" parent="Panel/VBoxContainer/footer_container/VBoxContainer/botones_container/HBoxContainer/btn_colapsar_lista"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_ywile")
+expand_mode = 1
+
 [node name="btn_particular" type="Button" parent="Panel/VBoxContainer/footer_container/VBoxContainer/botones_container/HBoxContainer"]
+custom_minimum_size = Vector2(450, 80)
 layout_mode = 2
 size_flags_horizontal = 6
 size_flags_vertical = 8
 focus_mode = 0
-icon = ExtResource("6_ndcft")
 flat = true
+
+[node name="btn_icono_der" type="TextureRect" parent="Panel/VBoxContainer/footer_container/VBoxContainer/botones_container/HBoxContainer/btn_particular"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("6_ndcft")
+expand_mode = 1
 
 [node name="lbl_bnt_perfil" type="Label" parent="Panel/VBoxContainer/footer_container/VBoxContainer/botones_container/HBoxContainer/btn_particular"]
 layout_mode = 1

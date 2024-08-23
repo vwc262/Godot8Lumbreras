@@ -11,11 +11,12 @@ shader_parameter/horizonColor2 = Color(1, 0.707555, 0.608554, 1)
 shader_parameter/offsetHorizontalColor = 0.07
 shader_parameter/ofset_coords = 0.1
 shader_parameter/mix_texture = 0.34
+shader_parameter/use_sky_texture = true
 shader_parameter/skyTexture = ExtResource("2_l4ov8")
 
 [sub_resource type="Sky" id="Sky_f7hr0"]
 sky_material = SubResource("ShaderMaterial_1lx84")
-process_mode = 1
+process_mode = 2
 radiance_size = 0
 
 [resource]
@@ -23,19 +24,23 @@ background_mode = 2
 background_color = Color(0.130569, 0.472729, 0.718176, 1)
 background_energy_multiplier = 1.12
 sky = SubResource("Sky_f7hr0")
-sky_rotation = Vector3(0.0698132, 0, 0)
+sky_rotation = Vector3(-0.0698132, 0, 0)
 ambient_light_color = Color(0.821688, 0.765487, 0.670528, 1)
 ambient_light_energy = 0.0
 reflected_light_source = 2
-tonemap_exposure = 1.01
-tonemap_white = 2.09
+tonemap_white = 2.5
 ssr_fade_in = 1.63925
 ssr_fade_out = 0.420448
 ssr_depth_tolerance = 39.71
-glow_intensity = 3.78
+glow_intensity = 2.75
 glow_strength = 0.0
-glow_hdr_threshold = 0.6
-glow_hdr_scale = 2.1
-glow_hdr_luminance_cap = 12.2
+glow_bloom = 0.5
+glow_hdr_threshold = 0.48
+glow_hdr_scale = 2.29
+glow_hdr_luminance_cap = 43.67
+glow_map_strength = 1.0
 volumetric_fog_density = 0.3132
 volumetric_fog_albedo = Color(0.740995, 0.389801, 0.453136, 1)
+adjustment_brightness = 1.16
+adjustment_contrast = 1.11
+adjustment_saturation = 1.19

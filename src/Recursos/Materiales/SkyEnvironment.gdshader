@@ -7,6 +7,8 @@ uniform sampler2D skyTexture: filter_linear;
 uniform float ofset_coords: hint_range(0.0, 1.0, 0.1) = 0.1;
 uniform float mix_texture: hint_range(0.0, 1.0, 0.01) = 0.6;
 
+uniform bool use_sky_texture = false;
+
 void sky() {
     // Called for every visible pixel in the sky background, as well as all pixels
     // in the radiance cubemap.
@@ -16,6 +18,6 @@ void sky() {
     vec3 finalColor1 = mix(horizonColor1,skyColor,col1);
     vec3 finalColor2 = mix(horizonColor2,skyColor,col2);
     vec3 finalColor3 = mix(finalColor1,finalColor2, 0.9f);
-    // COLOR = finalColor3;
-    COLOR = mix(texture(skyTexture,vec2(SKY_COORDS.x + TIME * ofset_coords / 100.0,SKY_COORDS.y)).rgb, finalColor3, mix_texture);
+     COLOR = use_sky_texture ?mix(texture(skyTexture,vec2(SKY_COORDS.x + TIME * ofset_coords / 100.0,SKY_COORDS.y)).rgb, finalColor3, mix_texture) : finalColor3;
+    //COLOR = mix(texture(skyTexture,vec2(SKY_COORDS.x + TIME * ofset_coords / 100.0,SKY_COORDS.y)).rgb, finalColor3, mix_texture);
 }

@@ -1,19 +1,19 @@
 [gd_resource type="ShaderMaterial" load_steps=4 format=3 uid="uid://b01vby7vqyu2y"]
 
 [ext_resource type="Shader" path="res://Recursos/Materiales/TilableMaterial_Unlit.gdshader" id="1_28t0h"]
-[ext_resource type="Texture2D" uid="uid://dkrvhitecb72x" path="res://Recursos/Meshes/Particular_Cutzamala_PBR5/Texturas_B5_Particular/Albedo_Edificio.jpg" id="2_oqe3j"]
-[ext_resource type="Texture2D" uid="uid://bdoo2e1iy3qh6" path="res://Recursos/Meshes/Particular_Cutzamala_PBR5/Texturas_B5_Particular/Sombras_edificio.jpg" id="3_b4mjw"]
+[ext_resource type="Texture2D" uid="uid://dja8tlttfcr6k" path="res://Recursos/Meshes/Particular_Cutzamala_PBR5/glb/Cutzamala_PBR5_Berros_RecursosMaster_Muros_Albedo.jpg" id="2_2c3op"]
+[ext_resource type="Texture2D" uid="uid://btyqo1qh71ru" path="res://Recursos/Meshes/Particular_Cutzamala_PBR5/glb/Shadows_Muros.jpg" id="3_18pq4"]
 
 [resource]
 render_priority = 0
 shader = ExtResource("1_28t0h")
 shader_parameter/albedo = Color(1, 1, 1, 1)
-shader_parameter/tile_size = -6.0
+shader_parameter/tile_size = 7.0
 shader_parameter/ao_texture_channel = null
 shader_parameter/ao_light_affect = null
 shader_parameter/heightmap_scale = null
 shader_parameter/heightmap_flip = null
 shader_parameter/uv1_scale = Vector3(1, 1, 1)
 shader_parameter/uv1_offset = null
-shader_parameter/texture_albedo = ExtResource("2_oqe3j")
-shader_parameter/texture_detail_ao = ExtResource("3_b4mjw")
+shader_parameter/texture_albedo = ExtResource("2_2c3op")
+shader_parameter/texture_detail_ao = ExtResource("3_18pq4")

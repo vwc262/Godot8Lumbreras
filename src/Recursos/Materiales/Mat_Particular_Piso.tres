@@ -1,0 +1,19 @@
+[gd_resource type="ShaderMaterial" load_steps=4 format=3 uid="uid://bkithohsl1e2q"]
+
+[ext_resource type="Shader" path="res://Recursos/Materiales/Material_Unlit.gdshader" id="1_dmfxm"]
+[ext_resource type="Texture2D" uid="uid://cwb306y8ef5fq" path="res://Recursos/Meshes/Particular_Cutzamala_PBR5/glb/Cutzamala_PBR5_Berros_RecursosMaster_Piso_Albedo.jpg" id="2_krlcp"]
+[ext_resource type="Texture2D" uid="uid://2v7gy7mhcpt7" path="res://Recursos/Meshes/Particular_Cutzamala_PBR5/Texturas_B5_Particular/blankPixel.jpg" id="3_ujphf"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_dmfxm")
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/tile_size = 1.0
+shader_parameter/ao_texture_channel = null
+shader_parameter/ao_light_affect = null
+shader_parameter/heightmap_scale = null
+shader_parameter/heightmap_flip = null
+shader_parameter/uv1_scale = Vector3(1, 1, 1)
+shader_parameter/uv1_offset = null
+shader_parameter/texture_albedo = ExtResource("2_krlcp")
+shader_parameter/texture_ambient_occlusion = ExtResource("3_ujphf")

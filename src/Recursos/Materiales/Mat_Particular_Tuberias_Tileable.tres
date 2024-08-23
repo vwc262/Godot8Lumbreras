@@ -1,0 +1,19 @@
+[gd_resource type="ShaderMaterial" load_steps=4 format=3 uid="uid://ba41igxid6ea7"]
+
+[ext_resource type="Shader" path="res://Recursos/Materiales/TilableMaterial_Unlit.gdshader" id="1_p84eq"]
+[ext_resource type="Texture2D" uid="uid://di1gaaexmjkg0" path="res://Recursos/Meshes/Particular_Cutzamala_PBR5/glb/Cutzamala_PBR5_Berros_RecursosMaster_Tuberia_Albedo.jpg" id="2_tslqj"]
+[ext_resource type="Texture2D" uid="uid://cwh251gc17r0n" path="res://Recursos/Meshes/Particular_Cutzamala_PBR5/glb/Tuberia_Shadows.jpg" id="3_58vhw"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_p84eq")
+shader_parameter/albedo = Color(0.765655, 0.746173, 0.682406, 1)
+shader_parameter/tile_size = 10.0
+shader_parameter/ao_texture_channel = null
+shader_parameter/ao_light_affect = null
+shader_parameter/heightmap_scale = null
+shader_parameter/heightmap_flip = null
+shader_parameter/uv1_scale = Vector3(1, 1, 1)
+shader_parameter/uv1_offset = null
+shader_parameter/texture_albedo = ExtResource("2_tslqj")
+shader_parameter/texture_detail_ao = ExtResource("3_58vhw")

@@ -6,7 +6,7 @@
 [resource]
 render_priority = 0
 shader = ExtResource("1_i6a81")
-shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/albedo = Color(0.99697, 0.882144, 0.496435, 1)
 shader_parameter/ao_texture_channel = null
 shader_parameter/ao_light_affect = null
 shader_parameter/heightmap_scale = null

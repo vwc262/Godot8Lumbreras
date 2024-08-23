@@ -44,6 +44,8 @@ func _ready() -> void:
 	set_contador_sitios(estaciones)
 	GlobalData.connect("datos_actualizados", _on_datos_actualizados)
 
+func _process(delta: float) -> void:
+	print(Engine.get_frames_per_second())
 func _on_datos_actualizados(estaciones: Array[Estacion]):
 	set_contador_sitios(estaciones)
 

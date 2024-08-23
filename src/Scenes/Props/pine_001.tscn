@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://cnreaea36nkby" path="res://Recursos/Textures/Props/Pine_001_Top.png" id="2_kaup5"]
 
 [node name="Pine_001" type="Node3D"]
+process_mode = 4
 transform = Transform3D(0.274494, 0, 0, 0, 0.274494, 0, 0, 0, 0.274494, 0, 0, 0)
 
 [node name="Sprite_Front" type="Sprite3D" parent="."]
@@ -16,7 +17,6 @@ texture = ExtResource("1_dl71v")
 transform = Transform3D(0.680342, 0, 0, 0, -2.97387e-08, 0.680342, 0, -0.680342, -2.97387e-08, -0.0970554, 1.94573, -0.0465517)
 visibility_range_begin = 8.0
 visibility_range_begin_margin = 4.0
-visibility_range_fade_mode = 1
 modulate = Color(1, 1, 1, 0.862745)
 billboard = 1
 texture = ExtResource("2_kaup5")

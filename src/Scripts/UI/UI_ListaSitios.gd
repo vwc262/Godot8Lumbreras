@@ -1,14 +1,26 @@
 extends Node
 
 @export var sitio_scene: PackedScene
-@export var textura1: Texture
-@export var textura2: Texture
 @onready var v_box_container = $ScrollContainer/VBoxContainer
+
+#region TEXTURAS
+@onready var textura1: Texture
+@onready var textura2: Texture
+@onready var lista_sitios_fondo: TextureRect = $lista_sitios_fondo
+#endregion
 
 # Lista para almacenar las instancias de los sitios
 var sitio_instancias = []
 
+func set_textures():
+	var _GlobalTextureResource = GlobalTextureResource.get_curret_resource()
+	textura1 = _GlobalTextureResource.get_texture("lista_sitio_a")
+	textura2 = _GlobalTextureResource.get_texture("lista_sitio_b")
+	lista_sitios_fondo.texture = _GlobalTextureResource.get_texture("lista_fondo")
+
+
 func _ready():
+	set_textures()
 	# Conectarse a la señal datos_actualizados de DatosGlobales
 	GlobalData.connect("datos_actualizados", _on_datos_actualizados)
 	

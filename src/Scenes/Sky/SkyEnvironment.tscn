@@ -6,6 +6,7 @@
 [node name="SkyEnvironment" type="Node3D"]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+physics_interpolation_mode = 2
 environment = ExtResource("1_xm8lf")
 script = ExtResource("2_4q7sg")
 

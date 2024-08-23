@@ -51,7 +51,7 @@ var deselect_distance: float = 5;
 var last_tween_position: Vector3 = Vector3(0,0,0)
 #endregion
 
-@onready var blurMaterial:Material = $Camera3D/ColorRect.material
+#@onready var blurMaterial:Material = $Camera3D/ColorRect.material
 
 #region Godot Functions
 func _ready():	
@@ -105,7 +105,7 @@ func handle_drag(event: InputEventScreenDrag):
 	var forward: Vector3 = parentTransform.basis.z
 	var right: Vector3 = parentTransform.basis.x
 
-	SetBlurMaterial()
+	#SetBlurMaterial()
 	AdjustPanSpeedByZoom()
 	
 	if touch_points.size() == 1:
@@ -180,13 +180,13 @@ func MoverCamara(idEstacion:int):
 			tween.tween_property(self,"position", positionToGo, speedAnimation)			
 			var val = remap(positionToGo.y, initialZoom - offSetDistanceInclination, maxZoom, 0, 1)
 			tween.tween_property($Camera3D, "rotation_degrees", Vector3(lerp(initialRotationCamera, LimitRotationCamera, val),0,0), speedAnimation)
-			tweenBlur.tween_property(blurMaterial, "shader_parameter/blur_amount", maxBlurIntensity, speedAnimation)
+			#tweenBlur.tween_property(blurMaterial, "shader_parameter/blur_amount", maxBlurIntensity, speedAnimation)
 
 	else:
 		if !isTween:
 			ID_Select = 0
 			ResetCameraPosition()
-			tweenBlur.tween_property(blurMaterial, "shader_parameter/blur_amount", 0, speedAnimation)
+			#tweenBlur.tween_property(blurMaterial, "shader_parameter/blur_amount", 0, speedAnimation)
 			NavigationManager.set_lastid_selected(ID_Select)
 
 func ResetCameraPosition():
@@ -204,7 +204,7 @@ func ResetCameraPosition():
 
 func SetBlurMaterial():	
 	var blurAmount = lerp(0.0, maxBlurIntensity, remap(GetZoomFactor(), 1.0, 2.0, 0, 1))
-	blurMaterial.set_shader_parameter("blur_amount", blurAmount)
+	#blurMaterial.set_shader_parameter("blur_amount", blurAmount)
 
 #Deshabilita la navegacion mientras este ocurriendo una animacion
 func DisableNavigation():

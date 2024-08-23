@@ -4,7 +4,6 @@ extends Node
 @onready var btn_lista_sitios: Button = $ScrollContainer/WindowsContainer/PerfilWindow/VB_MainContainer/Panel/main_container/ListaSitiosContainer/VBoxContainer/botones_container/HBoxContainer/BTN_ListaSitios
 
 @onready var lista_sitios: Control = $ScrollContainer/WindowsContainer/PerfilWindow/VB_MainContainer/Panel/main_container/ListaSitiosContainer/VBoxContainer/PanelContainer/ListaSitios
-@onready var header_fondo: TextureRect = $ScrollContainer/WindowsContainer/PerfilWindow/VB_MainContainer/header_container/header_fondo
 @onready var perfil: Node3D = $ScrollContainer/WindowsContainer/PerfilWindow/VB_MainContainer/Panel/main_container/VBoxContainer/SubViewportContainer/SubViewport/Perfil
 
 @export var perfil_world_environment : Environment
@@ -15,10 +14,18 @@ extends Node
 @onready var background_flip_book: ColorRect = $ScrollContainer/WindowsContainer/PerfilWindow/VB_MainContainer/Panel/main_container/VBoxContainer/BackgroundFlipBook
 @onready var lbl_online_contador = $ScrollContainer/WindowsContainer/PerfilWindow/VB_MainContainer/header_container/contador_contaier/HBoxContainer/online_container/lbl_online_contador
 @onready var lbl_offline_contador = $ScrollContainer/WindowsContainer/PerfilWindow/VB_MainContainer/header_container/contador_contaier/HBoxContainer/offline_container/lbl_offline_contador
-
 #endregion
-
 @onready var ui_paleta: Control = $UiPaleta
+
+#region TEXTURAS
+@onready var header_fondo: TextureRect = $ScrollContainer/WindowsContainer/PerfilWindow/VB_MainContainer/header_container/header_fondo
+@onready var header_sombra: TextureRect = $ScrollContainer/WindowsContainer/PerfilWindow/VB_MainContainer/header_container/header_sombra
+@onready var header_pildora: TextureRect = $ScrollContainer/WindowsContainer/PerfilWindow/VB_MainContainer/header_container/contador_contaier/header_pildora
+@onready var icono_online: TextureRect = $ScrollContainer/WindowsContainer/PerfilWindow/VB_MainContainer/header_container/contador_contaier/HBoxContainer/online_container/icono_online
+@onready var icono_offline: TextureRect = $ScrollContainer/WindowsContainer/PerfilWindow/VB_MainContainer/header_container/contador_contaier/HBoxContainer/offline_container/icono_offline
+@onready var header_logo_vwc: TextureRect = $ScrollContainer/WindowsContainer/PerfilWindow/VB_MainContainer/header_container/header_logo_vwc
+@onready var btn_reset_camara: TextureRect = $ScrollContainer/WindowsContainer/PerfilWindow/VB_MainContainer/Panel/bnt_reset_camera/btn_reset_camara
+#endregion
 
 
 #region script variables
@@ -29,8 +36,19 @@ signal in_particular
 
 var is_hidden = false  # Variable para rastrear el estado del contenedor
 
+func set_textures():
+	var _GlobalTextureResource = GlobalTextureResource.get_curret_resource()
+	header_fondo.texture = _GlobalTextureResource.get_texture("header")
+	header_sombra.texture = _GlobalTextureResource.get_texture("sombra_headers")
+	header_pildora.texture = _GlobalTextureResource.get_texture("header_pildora")
+	icono_online.texture = _GlobalTextureResource.get_texture("icono_online")
+	icono_offline.texture = _GlobalTextureResource.get_texture("icono_offline")
+	header_logo_vwc.texture = _GlobalTextureResource.get_texture("logo_vwc")
+	btn_reset_camara.texture = _GlobalTextureResource.get_texture("btn_reset_camara")
+
 func _ready() -> void:	
-	header_fondo.texture = GlobalTextureResource.get_curret_resource().get_texture("header")
+	set_textures()
+	#header_fondo.texture = _GlobalTextureResource.get_texture("header")
 	get_tree().root.size_changed.connect(reload_app)
 	var estaciones: Array[Estacion] = GlobalData.get_data()
 	SceneManager.add_scene(SceneManager.idScenePerfil,perfil)

@@ -12,7 +12,6 @@ extends Control
 @onready var lbl_header_nombre = $VBoxContainer/header_container/HBoxContainer/header_nombre_container/lbl_header_nombre
 @onready var btn_graficador_lbl = $VBoxContainer/main_container/detalles_container/VBoxContainer/botones_container/HBoxContainer/btn_graficador/Label
 
-@onready var texture_enlace = $VBoxContainer/header_container/HBoxContainer/header_icono_container/texture_enlace
 @onready var lbl_presion = $VBoxContainer/main_container/detalles_container/VBoxContainer/sitio_detalles/VBoxContainer/HBoxContainer/Panel/HBoxContainer/Presion_container/HBoxContainer/Panel2/lbl_presion
 @onready var lbl_presion_valor = $VBoxContainer/main_container/detalles_container/VBoxContainer/sitio_detalles/VBoxContainer/HBoxContainer/Panel/HBoxContainer/Presion_container/HBoxContainer/Panel/lbl_presion_valor
 @onready var lbl_gasto = $"VBoxContainer/main_container/detalles_container/VBoxContainer/sitio_detalles/VBoxContainer/HBoxContainer/Panel/HBoxContainer/Gasto_container/HBoxContainer/Panel2/lbl_gasto"
@@ -27,22 +26,37 @@ extends Control
 
 @onready var v_box_container = $VBoxContainer/main_container/lista_sitios_container/ScrollContainer/VBoxContainer
 @onready var lista_sitios_container = $VBoxContainer/main_container/lista_sitios_container
-@onready var header_btn_lista_sitios = $VBoxContainer/header_container/HBoxContainer/header_btn_container/header_btn_lista_sitios
 
 @onready var modelo_3d_container = $VBoxContainer/main_container/modelo_3d_container
 @onready var datos_sitio = $VBoxContainer/main_container/detalles_container/VBoxContainer/sitio_detalles/VBoxContainer
 
+@onready var lista_sitio_scene = preload("res://Scenes/UI/UI_Particular_Sitio_lista.tscn")
 
-@export var new_icon: Texture2D
-@export var texture_online: Texture2D
-@export var texture_offline: Texture2D
-@export var lista_sitio_fondo_1: Texture2D
-@export var lista_sitio_fondo_2: Texture2D
-@export var flecha_lista_sitio_open: Texture2D
-@export var flecha_lista_sitio_close: Texture2D
-@export var lista_sitio_scene: PackedScene
+#region
+@onready var header_fondo: TextureRect = $VBoxContainer/header_container/header_fondo
+@onready var enlace_fondo: TextureRect = $VBoxContainer/header_container/HBoxContainer/header_icono_container/enlace_fondo
+@onready var texture_enlace: TextureRect = $VBoxContainer/header_container/HBoxContainer/header_icono_container/texture_enlace
+@onready var progress_bar_fondo: TextureRect = $VBoxContainer/main_container/progress_bar_container/progress_bar_fondo
+@onready var progress_bar_cubierta_inicio: TextureRect = $VBoxContainer/main_container/progress_bar_container/progress_bar_cubierta_inicio
+@onready var progress_bar_marcadores: TextureRect = $VBoxContainer/main_container/progress_bar_container/progress_bar_marcadores_container/progress_bar_marcadores
+@onready var detalles_fondo: TextureRect = $VBoxContainer/main_container/detalles_container/VBoxContainer/sitio_detalles/detalles_fondo
+@onready var punto_1: TextureRect = $VBoxContainer/main_container/detalles_container/VBoxContainer/sitio_detalles/VBoxContainer/HBoxContainer/Panel/HBoxContainer/Presion_container/HBoxContainer/punto_1
+@onready var punto_2: TextureRect = $VBoxContainer/main_container/detalles_container/VBoxContainer/sitio_detalles/VBoxContainer/HBoxContainer/Panel/HBoxContainer/Gasto_container/HBoxContainer/punto_2
+@onready var btn_icono_izq: TextureRect = $VBoxContainer/main_container/detalles_container/VBoxContainer/botones_container/HBoxContainer/btn_graficador/btn_icono_izq
+@onready var btn_icono_mid: TextureRect = $VBoxContainer/main_container/detalles_container/VBoxContainer/botones_container/HBoxContainer/btn_lista/btn_icono_mid
+@onready var btn_icono_der: TextureRect = $VBoxContainer/main_container/detalles_container/VBoxContainer/botones_container/HBoxContainer/btn_home/btn_icono_der
+@onready var btn_lista_icono: TextureRect = $VBoxContainer/header_container/HBoxContainer/header_btn_container/header_btn_lista_sitios/btn_lista_icono
+@onready var header_sombra: TextureRect = $VBoxContainer/header_container/header_sombra
+@onready var original_icon: Texture
+@onready var new_icon: Texture
+@onready var flecha_lista_sitio_open: Texture
+@onready var flecha_lista_sitio_close: Texture
+@onready var texture_online: Texture
+@onready var texture_offline: Texture
+@onready var lista_sitio_fondo_1: Texture
+@onready var lista_sitio_fondo_2: Texture
+#endregion
 
-var original_icon: Texture2D
 var is_new_icon_active: bool = false
 var is_lista_icon_active: bool = true
 var is_hidden: bool = false
@@ -58,13 +72,38 @@ var unidades = {
 	3: "l/s"
 }
 
+func set_textures():
+	var _GlobalTextureResource = GlobalTextureResource.get_curret_resource()
+	original_icon = _GlobalTextureResource.get_texture("boton_hide_lista")
+	new_icon = _GlobalTextureResource.get_texture("boton_show_lista")
+	header_fondo.texture = _GlobalTextureResource.get_texture("header")
+	btn_lista_icono.texture = _GlobalTextureResource.get_texture("header_icono_lista")
+	enlace_fondo.texture = _GlobalTextureResource.get_texture("header_contenedor_estado")
+	texture_enlace.texture = _GlobalTextureResource.get_texture("header_estado_online")
+	progress_bar_fondo.texture = _GlobalTextureResource.get_texture("progressbar_base")
+	progress_bar_cubierta_inicio.texture = _GlobalTextureResource.get_texture("progressbar_cubierta")
+	progress_bar_marcadores.texture = _GlobalTextureResource.get_texture("progressbar_max_min")
+	detalles_fondo.texture = _GlobalTextureResource.get_texture("detalles_fondo")
+	punto_1.texture = _GlobalTextureResource.get_texture("punto_listas")
+	punto_2.texture = _GlobalTextureResource.get_texture("punto_listas")
+	btn_icono_izq.texture = _GlobalTextureResource.get_texture("boton_cambio_scene_izq")
+	btn_icono_der.texture = _GlobalTextureResource.get_texture("boton_cambio_scene_der")
+	btn_icono_mid.texture = _GlobalTextureResource.get_texture("boton_hide_lista")
+	flecha_lista_sitio_open = _GlobalTextureResource.get_texture("header_lista_icono")
+	flecha_lista_sitio_close = _GlobalTextureResource.get_texture("header_icono_lista")
+	texture_online = _GlobalTextureResource.get_texture("header_estado_online")
+	texture_offline = _GlobalTextureResource.get_texture("header_estado_offline")
+	lista_sitio_fondo_1 = _GlobalTextureResource.get_texture("header_lista_a")
+	lista_sitio_fondo_2 = _GlobalTextureResource.get_texture("header_lista_b")
+	header_sombra.texture = _GlobalTextureResource.get_texture("sombra_headers")
+
 # Función _ready para inicializar los nodos y conectar señales
 func _ready():
+	set_textures()
 	SceneManager.add_subviewport_reference(SceneManager.TIPO_NIVEL.PARTICULAR,sub_viewport_container)
 	UIManager.modelo3D_container = modelo_3d_container
 	UIManager.datos_sitio =  datos_sitio
 	UIManager.btn_graficador = btn_graficador_lbl
-	original_icon = btn_lista.icon  # Guarda el ícono original
 	btn_lista.connect("pressed", _on_btn_lista_pressed)
 	NavigationManager.connect("Go_TO", _compare_and_print_selected_site)
 	GlobalData.connect("datos_actualizados", _on_datos_actualizados)
@@ -79,10 +118,10 @@ func _on_datos_actualizados(estaciones: Array[Estacion]):
 # Función que maneja el botón de la lista de sitios
 func _on_btn_lista_pressed():
 	if is_new_icon_active:
-		btn_lista.icon = original_icon
+		btn_icono_mid.texture = original_icon
 		_show_lista_sitios()
 	else:
-		btn_lista.icon = new_icon
+		btn_icono_mid.texture = new_icon
 		_hide_lista_sitios()
 	is_new_icon_active = not is_new_icon_active  # Alterna el estado
 
@@ -204,10 +243,10 @@ func instanciar_lista_sitios():
 # Función que maneja el botón de la lista de sitios en el encabezado
 func _on_header_btn_lista_sitios_pressed():
 	if is_lista_icon_active:
-		header_btn_lista_sitios.icon = flecha_lista_sitio_open
+		btn_lista_icono.texture = flecha_lista_sitio_open
 		_show_lista()
 	else:
-		header_btn_lista_sitios.icon = flecha_lista_sitio_close
+		btn_lista_icono.texture = flecha_lista_sitio_close
 		_hide_lista()
 	is_lista_icon_active = not is_lista_icon_active  # Alterna el estado
 

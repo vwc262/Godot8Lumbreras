@@ -1,8 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://bs0nvpdg63k4x"]
+[gd_scene load_steps=10 format=3 uid="uid://bs0nvpdg63k4x"]
 
 [ext_resource type="Script" path="res://Scripts/UI/DatosEtiquetaSitio_3D.gd" id="1_gdc11"]
 [ext_resource type="Shader" uid="uid://d4cf3gpi4jv62" path="res://Recursos/Shaders/shader_letrero_3d.tres" id="2_6dxd3"]
 [ext_resource type="Texture2D" uid="uid://dytbmc5n1pj40" path="res://Recursos/UI/img/cutzamala_v_final/Etiqueta_Nivel_Base.png" id="3_nfh5v"]
+[ext_resource type="FontFile" uid="uid://joct5wuvsfmy" path="res://fonts/Montserrat-SemiBold.ttf" id="4_f0idh"]
 [ext_resource type="Shader" path="res://Scenes/UI/Progressbar3D.gdshader" id="4_rv2d4"]
 [ext_resource type="Texture2D" uid="uid://ckyvnml6hiw7b" path="res://Recursos/UI/3D/progressbar.png" id="5_os3l8"]
 
@@ -45,6 +46,7 @@ double_sided = false
 render_priority = 1
 outline_render_priority = 0
 text = "Nombre Sitio"
+font = ExtResource("4_f0idh")
 font_size = 85
 outline_size = 20
 horizontal_alignment = 0
@@ -58,6 +60,7 @@ render_priority = 1
 outline_render_priority = 0
 modulate = Color(0.819608, 0.647059, 0.168627, 1)
 text = "Fecha Sitio"
+font = ExtResource("4_f0idh")
 font_size = 85
 outline_size = 20
 horizontal_alignment = 0
@@ -70,6 +73,7 @@ double_sided = false
 render_priority = 1
 outline_render_priority = 0
 text = "Nivel"
+font = ExtResource("4_f0idh")
 font_size = 100
 outline_size = 20
 horizontal_alignment = 0

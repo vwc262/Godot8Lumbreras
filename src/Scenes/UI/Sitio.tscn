@@ -83,18 +83,20 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="nombre_sitio" type="Label" parent="VBoxContainer/datos_sitio_container/HBoxContainer/nombre_fecha_contaier/HBoxContainer"]
+z_index = 2
 layout_mode = 2
 size_flags_horizontal = 2
 mouse_filter = 1
-theme_override_colors/font_color = Color(0.623529, 0.133333, 0.254902, 1)
+theme_override_colors/font_color = Color(0.37177, 0.0604004, 0.138756, 1)
 theme_override_font_sizes/font_size = 50
 text = "Nombre Sitio"
 
 [node name="fecha_sitio" type="Label" parent="VBoxContainer/datos_sitio_container/HBoxContainer/nombre_fecha_contaier/HBoxContainer"]
+z_index = 2
 layout_mode = 2
 size_flags_horizontal = 6
 mouse_filter = 1
-theme_override_colors/font_color = Color(0.623529, 0.133333, 0.254902, 0.607843)
+theme_override_colors/font_color = Color(0.239268, 0.0260539, 0.0785591, 1)
 theme_override_font_sizes/font_size = 30
 text = "00:00hrs, 00/00/0000"
 horizontal_alignment = 1

@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="Texture_Resources" load_steps=33 format=3 uid="uid://bgbdiqmo4fbhu"]
+[gd_resource type="Resource" script_class="Texture_Resources" load_steps=34 format=3 uid="uid://bgbdiqmo4fbhu"]
 
 [ext_resource type="Script" path="res://Resources/Ref_TextureResource.gd" id="2_d5nwc"]
 [ext_resource type="Texture2D" uid="uid://c0f8tqgtjo2wr" path="res://Recursos/UI/img/cutzamala_v_final/boton_cambio_scene_der.png" id="2_lhpto"]
@@ -20,7 +20,6 @@
 [ext_resource type="Texture2D" uid="uid://cwt517ugwoqdf" path="res://Recursos/UI/img/cutzamala_v_final/header_pildora.png" id="19_2q4a5"]
 [ext_resource type="Texture2D" uid="uid://ds6y1ccwuv1w6" path="res://Recursos/UI/img/cutzamala_v_final/icono_offline.png" id="20_gx6gd"]
 [ext_resource type="Texture2D" uid="uid://dueopnpxhjgox" path="res://Recursos/UI/img/cutzamala_v_final/icono_online.png" id="21_bkqmu"]
-[ext_resource type="Texture2D" uid="uid://cavcek3wsj87y" path="res://Recursos/UI/img/cutzamala_v_final/lista_sitio_a.png" id="22_uyf6k"]
 [ext_resource type="Texture2D" uid="uid://d4ly3aj627pin" path="res://Recursos/UI/img/cutzamala_v_final/lista_valores_contenedor.png" id="23_50njf"]
 [ext_resource type="Texture2D" uid="uid://3dc53qsahnpt" path="res://Recursos/UI/img/cutzamala_v_final/popup_fondo.png" id="25_0qfo3"]
 [ext_resource type="Texture2D" uid="uid://b4qyyji32m7br" path="res://Recursos/UI/img/cutzamala_v_final/progressbar_base.png" id="26_eqqxd"]
@@ -36,6 +35,12 @@ metadata/__load_path__ = "res://Recursos/UI/img/cutzamala_v_final/fondo_senales.
 
 [sub_resource type="Resource" id="Resource_1kyal"]
 metadata/__load_path__ = "res://Recursos/UI/img/cutzamala_v_final/fondo_senales.png"
+
+[sub_resource type="Resource" id="Resource_3uqcu"]
+metadata/__load_path__ = "res://Recursos/UI/img/cutzamala_v_final/lista_sitio_a.png"
+
+[sub_resource type="Resource" id="Resource_8ogfw"]
+metadata/__load_path__ = "res://Recursos/UI/img/cutzamala_v_final/lista_sitio_a.png"
 
 [resource]
 script = ExtResource("2_d5nwc")
@@ -61,8 +66,8 @@ textures_resources_references = {
 "icono_offline": ExtResource("20_gx6gd"),
 "icono_online": ExtResource("21_bkqmu"),
 "lista_fondo": SubResource("Resource_1kyal"),
-"lista_sitio_a": ExtResource("22_uyf6k"),
-"lista_sitio_b": ExtResource("22_uyf6k"),
+"lista_sitio_a": SubResource("Resource_3uqcu"),
+"lista_sitio_b": SubResource("Resource_8ogfw"),
 "lista_valor_contenedor": ExtResource("23_50njf"),
 "logo_vwc": ExtResource("18_vpxx4"),
 "popup_fondo": ExtResource("25_0qfo3"),

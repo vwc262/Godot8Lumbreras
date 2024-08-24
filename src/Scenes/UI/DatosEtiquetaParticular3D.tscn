@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://b678w3xrbqqlv"]
+[gd_scene load_steps=8 format=3 uid="uid://b678w3xrbqqlv"]
 
 [ext_resource type="Script" path="res://Scripts/UI/DatosEtiquetaSitioParticular_3D.gd" id="1_2u832"]
 [ext_resource type="Shader" uid="uid://d4cf3gpi4jv62" path="res://Recursos/Shaders/shader_letrero_3d.tres" id="2_1ica8"]
 [ext_resource type="Texture2D" uid="uid://dytbmc5n1pj40" path="res://Recursos/UI/img/cutzamala_v_final/Etiqueta_Nivel_Base.png" id="4_lvfch"]
+[ext_resource type="FontFile" uid="uid://joct5wuvsfmy" path="res://fonts/Montserrat-SemiBold.ttf" id="4_wx6t2"]
 [ext_resource type="Texture2D" uid="uid://bulep5chy6y4u" path="res://Recursos/UI/img/cutzamala_v_final/ArtboEtiqueta_Nivel_Destello.png" id="6_0ilwr"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_3an0v"]
@@ -38,6 +39,7 @@ outline_render_priority = 0
 text = "Gasto 1
 999.99 l/s
 "
+font = ExtResource("4_wx6t2")
 font_size = 100
 outline_size = 20
 horizontal_alignment = 0

@@ -1,10 +1,11 @@
-[gd_scene load_steps=14 format=3 uid="uid://ggu8wjqomq4"]
+[gd_scene load_steps=15 format=3 uid="uid://ggu8wjqomq4"]
 
 [ext_resource type="Script" path="res://Scripts/UI/UI_Graficador.gd" id="1_i2lpi"]
 [ext_resource type="Texture2D" uid="uid://iy3aj6iuo7iq" path="res://Recursos/UI/img/Encabezado_A_submenu/EncabezadoA_base.png" id="2_y2kcr"]
 [ext_resource type="PackedScene" uid="uid://bosmqfxs2ibvy" path="res://Scenes/Plotter/ChartControl.tscn" id="3_nnaxr"]
 [ext_resource type="Texture2D" uid="uid://c8d8g2yovmdy4" path="res://Recursos/UI/img/CutzamalaMovil_Perfil_V3/Lista_detalles_Submenu_BotonIzq_a.png" id="4_a4soq"]
 [ext_resource type="Texture2D" uid="uid://cmiax8itprl5x" path="res://Recursos/UI/img/cutzamala_v_final/boton_show_lista.png" id="5_cp7w2"]
+[ext_resource type="FontFile" uid="uid://joct5wuvsfmy" path="res://fonts/Montserrat-SemiBold.ttf" id="5_kd5aw"]
 [ext_resource type="Texture2D" uid="uid://bdck1ukjrrdlu" path="res://Recursos/UI/img/Encabezado_B_Submenu/EncabezadoB_Detalles.png" id="6_7qb2l"]
 [ext_resource type="Texture2D" uid="uid://b6bsk0t7jo2ks" path="res://Recursos/UI/img/CutzamalaMovil_Perfil_V3/Lista_detalles_Submenu_BotonDer_a.png" id="6_ndcft"]
 [ext_resource type="Texture2D" uid="uid://c554rmtw6fjo5" path="res://Recursos/UI/img/Encabezado_A_submenu/Lista_detalles_Submenu_Contenedor.png" id="7_xbxuo"]
@@ -130,6 +131,7 @@ offset_right = 9.5
 offset_bottom = 27.5
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_fonts/font = ExtResource("5_kd5aw")
 theme_override_font_sizes/font_size = 40
 text = "Perfil
 "
@@ -185,6 +187,7 @@ offset_right = 115.5
 offset_bottom = 27.5
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_fonts/font = ExtResource("5_kd5aw")
 theme_override_font_sizes/font_size = 40
 text = "Particular
 "
@@ -237,6 +240,7 @@ grow_vertical = 2
 [node name="lbl_fecha" type="Label" parent="Panel/VBoxContainer/footer_container/VBoxContainer/datos_graficador_container/VBoxContainer/fecha_container/HBoxContainer"]
 clip_contents = true
 layout_mode = 2
+theme_override_fonts/font = ExtResource("5_kd5aw")
 theme_override_font_sizes/font_size = 40
 text = "Fecha:"
 
@@ -287,6 +291,7 @@ fit_to_longest_item = false
 [node name="lbl_separador1" type="Label" parent="Panel/VBoxContainer/footer_container/VBoxContainer/datos_graficador_container/VBoxContainer/fecha_container/HBoxContainer/HBoxContainer"]
 clip_contents = true
 layout_mode = 2
+theme_override_fonts/font = ExtResource("5_kd5aw")
 theme_override_font_sizes/font_size = 40
 text = "/"
 
@@ -329,6 +334,7 @@ alignment = 1
 [node name="lbl_separador2" type="Label" parent="Panel/VBoxContainer/footer_container/VBoxContainer/datos_graficador_container/VBoxContainer/fecha_container/HBoxContainer/HBoxContainer"]
 clip_contents = true
 layout_mode = 2
+theme_override_fonts/font = ExtResource("5_kd5aw")
 theme_override_font_sizes/font_size = 40
 text = "/"
 
@@ -395,6 +401,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_fonts/font = ExtResource("5_kd5aw")
 theme_override_font_sizes/font_size = 30
 text = "15:30, hrs"
 horizontal_alignment = 1

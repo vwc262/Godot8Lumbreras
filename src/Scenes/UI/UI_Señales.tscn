@@ -1,8 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://hro847n58cow"]
+[gd_scene load_steps=9 format=3 uid="uid://hro847n58cow"]
 
 [ext_resource type="Script" path="res://Scripts/UI/UI_Signals.gd" id="1_bisnc"]
 [ext_resource type="Texture2D" uid="uid://dwek43ydxgfdf" path="res://Recursos/UI/img/cutzamala_v_final/fondo_senales.png" id="2_k82vq"]
 [ext_resource type="Texture2D" uid="uid://d4ly3aj627pin" path="res://Recursos/UI/img/cutzamala_v_final/lista_valores_contenedor.png" id="4_p2cjr"]
+[ext_resource type="FontFile" uid="uid://joct5wuvsfmy" path="res://fonts/Montserrat-SemiBold.ttf" id="4_pt1vm"]
 [ext_resource type="Texture2D" uid="uid://dhndxshyuu0v7" path="res://Recursos/UI/img/cutzamala_v_final/boton_cambio_scene_izq.png" id="5_fogpq"]
 [ext_resource type="Texture2D" uid="uid://ccdb74j068s41" path="res://Recursos/UI/img/Encabezado_A_submenu/Lista_detalles_Submenu_Vineta.png" id="6_aiytj"]
 [ext_resource type="Texture2D" uid="uid://c0f8tqgtjo2wr" path="res://Recursos/UI/img/cutzamala_v_final/boton_cambio_scene_der.png" id="6_wtw2y"]
@@ -84,6 +85,7 @@ stretch_mode = 5
 
 [node name="lbl_nivel_nombre" type="Label" parent="main_container/HBoxContainer/VBoxContainer/nivel_container/nivel_nombre_container/HBoxContainer"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("4_pt1vm")
 theme_override_font_sizes/font_size = 35
 text = "Nivel"
 
@@ -149,6 +151,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_fonts/font = ExtResource("4_pt1vm")
 theme_override_font_sizes/font_size = 25
 text = "0"
 horizontal_alignment = 1
@@ -185,6 +188,7 @@ custom_minimum_size = Vector2(620, 0)
 layout_mode = 2
 size_flags_horizontal = 2
 mouse_filter = 1
+theme_override_fonts/font = ExtResource("4_pt1vm")
 theme_override_font_sizes/font_size = 35
 text = "Presion
 "
@@ -204,6 +208,7 @@ expand_mode = 1
 [node name="presion_valor" type="Label" parent="main_container/HBoxContainer/VBoxContainer/presion_container/presion_container/HBoxContainer/presion_valor_container"]
 layout_mode = 2
 mouse_filter = 1
+theme_override_fonts/font = ExtResource("4_pt1vm")
 theme_override_font_sizes/font_size = 25
 text = "0"
 horizontal_alignment = 1
@@ -240,6 +245,7 @@ custom_minimum_size = Vector2(620, 0)
 layout_mode = 2
 size_flags_horizontal = 2
 mouse_filter = 1
+theme_override_fonts/font = ExtResource("4_pt1vm")
 theme_override_font_sizes/font_size = 35
 text = "Gasto 1
 "
@@ -259,6 +265,7 @@ expand_mode = 1
 [node name="gasto_valor" type="Label" parent="main_container/HBoxContainer/VBoxContainer/gasto_container/gasto_container/HBoxContainer2/gasto_valor_container"]
 layout_mode = 2
 mouse_filter = 1
+theme_override_fonts/font = ExtResource("4_pt1vm")
 theme_override_font_sizes/font_size = 25
 text = "0"
 horizontal_alignment = 1
@@ -279,6 +286,7 @@ custom_minimum_size = Vector2(620, 0)
 layout_mode = 2
 size_flags_horizontal = 2
 mouse_filter = 1
+theme_override_fonts/font = ExtResource("4_pt1vm")
 theme_override_font_sizes/font_size = 35
 text = "Totalizado"
 
@@ -297,6 +305,7 @@ expand_mode = 1
 [node name="lbl_totalizado_valor" type="Label" parent="main_container/HBoxContainer/VBoxContainer/totalizado_container/totalizado_valor_container"]
 layout_mode = 2
 mouse_filter = 1
+theme_override_fonts/font = ExtResource("4_pt1vm")
 theme_override_font_sizes/font_size = 25
 text = "000000000000 l/s"
 horizontal_alignment = 1
@@ -342,6 +351,7 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 1
 theme_override_colors/font_color = Color(0.623529, 0.133333, 0.254902, 1)
+theme_override_fonts/font = ExtResource("4_pt1vm")
 theme_override_font_sizes/font_size = 40
 text = "Graficador"
 horizontal_alignment = 1
@@ -381,6 +391,7 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 1
 theme_override_colors/font_color = Color(0.623529, 0.133333, 0.254902, 1)
+theme_override_fonts/font = ExtResource("4_pt1vm")
 theme_override_font_sizes/font_size = 40
 text = "Particular"
 horizontal_alignment = 1

@@ -2,19 +2,19 @@
 
 [ext_resource type="Script" path="res://Scripts/UI/DatosEtiquetaSitioParticular_3D.gd" id="1_2u832"]
 [ext_resource type="Shader" uid="uid://d4cf3gpi4jv62" path="res://Recursos/Shaders/shader_letrero_3d.tres" id="2_1ica8"]
-[ext_resource type="Texture2D" uid="uid://bvspxavqd61h4" path="res://Recursos/UI/3D/Etiqueta_Sensor_Base.png" id="3_pgqt3"]
-[ext_resource type="Texture2D" uid="uid://dx2hy5mjy3lrl" path="res://Recursos/UI/3D/Destello.png" id="4_smpy2"]
+[ext_resource type="Texture2D" uid="uid://dytbmc5n1pj40" path="res://Recursos/UI/img/cutzamala_v_final/Etiqueta_Nivel_Base.png" id="4_lvfch"]
+[ext_resource type="Texture2D" uid="uid://bulep5chy6y4u" path="res://Recursos/UI/img/cutzamala_v_final/ArtboEtiqueta_Nivel_Destello.png" id="6_0ilwr"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_3an0v"]
 resource_local_to_scene = true
 render_priority = 0
 shader = ExtResource("2_1ica8")
-shader_parameter/texture_albedo = ExtResource("3_pgqt3")
+shader_parameter/texture_albedo = ExtResource("4_lvfch")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_v8kgh"]
 render_priority = 0
 shader = ExtResource("2_1ica8")
-shader_parameter/texture_albedo = ExtResource("4_smpy2")
+shader_parameter/texture_albedo = ExtResource("6_0ilwr")
 
 [node name="DatosEtiqueta3D" type="Node3D"]
 script = ExtResource("1_2u832")
@@ -27,7 +27,7 @@ ignore_occlusion_culling = true
 billboard = 1
 double_sided = false
 render_priority = 1
-texture = ExtResource("3_pgqt3")
+texture = ExtResource("4_lvfch")
 
 [node name="Nivel" type="Label3D" parent="Sprite3D"]
 transform = Transform3D(0.065, 0, 0, 0, 0.065, 0, 0, 0, 0.065, -2, 0.793179, 0.012)
@@ -46,4 +46,4 @@ vertical_alignment = 0
 [node name="Sprite3D" type="Sprite3D" parent="Sprite3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0626892, -2.33157, 0)
 material_override = SubResource("ShaderMaterial_v8kgh")
-texture = ExtResource("4_smpy2")
+texture = ExtResource("6_0ilwr")

@@ -12,4 +12,3 @@ func update_texture(key:String,texture:Texture):
 
 func get_texture(key:String) -> Texture:		
 	return textures_resources_references[key]
-"res://Recursos/UI/img/CutzamalaMovil_Perfil_V3/EncabezadoA_base.png"

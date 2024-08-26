@@ -9,8 +9,8 @@ extends Node3D
 @export var base_color: Color = Color(27, 115, 202, 255);
 @export var color_rango: Color = Color(112, 112, 112, 255);
 
-const online_texture = preload("res://Recursos/UI/3D/Panel_Nivel_a.png");
-const offline_texture = preload("res://Recursos/UI/3D/Panel_Nivel_b.png");
+const online_texture = preload("res://Recursos/UI/img/cutzamala_v_final/Panel_Nivel_a.png");
+const offline_texture = preload("res://Recursos/UI/img/cutzamala_v_final/Panel_Nivel_b.png");
 
 var estacion: Estacion = null;
 var nivel: Señal = null;
@@ -46,8 +46,8 @@ func refresh_data():
 		labelFecha.text = "%s" % [GlobalUtils.formatear_fecha(estacion.tiempo)]
 		labelNivel.text = nivel.nombre + ": " + str(nivel.valor) + " m." if nivel.is_dentro_rango() else "N.D."
 		
-		progressbar_material.set_shader_parameter("color", base_color if nivel.dentro_rango else color_rango)
-		var offset_parameter = 1.0 if nivel.dentro_rango else remap(nivel.valor, 0.0, semaforo.critico, 0.01, 1.0)
+		progressbar_material.set_shader_parameter("color", nivel.get_color_barra_vida() if nivel.is_dentro_rango() else color_rango)
+		var offset_parameter = 1.0 if !nivel.is_dentro_rango() else remap(nivel.valor, 0.0, semaforo.critico, 0.01, 1.0)
 		#progressbar_material.set_shader_parameter("offset", offset_parameter)
 		tweenBlur = TweenManager.init_tween(OnTweenFinished)
 		tweenBlur.tween_property(progressbar_material, "shader_parameter/offset", offset_parameter, 0.2)

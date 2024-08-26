@@ -120,7 +120,7 @@ func set_progress_bar(_signal: Señal, unidad):
 
 	#Usar Tween para animar la barra de progreso
 	var tween = TweenManager.init_tween(_on_tween_finished.bind(display_value))
-	tween.tween_property(progress_bar, "value",display_value if _signal.is_dentro_rango() else progress_bar.max_value , 1)
+	tween.tween_property(progress_bar, "value",display_value if _signal.is_dentro_rango() else progress_bar.max_value , .2)
 
 	
 func _on_tween_finished(_valor_a_poner): 

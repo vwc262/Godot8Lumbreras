@@ -31,3 +31,13 @@ func _init(jsonData):
 
 func is_dentro_rango() -> bool:
 	return dentro_rango == 1
+
+func get_color_barra_vida() -> Color:
+	var color_to_return = Color(.7,.7,.7)
+	if valor > semaforo.normal and valor <= semaforo.preventivo:
+		color_to_return = Color(.7, .7, 0) # Amarillo
+	elif valor > semaforo.preventivo:
+		color_to_return = Color(.7, 0, 0) # Rojo
+	else:
+		color_to_return = Color(0, .7, 0) # Verde	
+	return color_to_return

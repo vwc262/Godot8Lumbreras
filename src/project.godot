@@ -11,13 +11,12 @@ config_version=5
 [application]
 
 config/name="Cutzamala"
-run/main_scene="res://Scenes/Perfil/Main/Main.tscn"
+run/main_scene="res://SplashScreen/splash_screen_manager.tscn"
 config/use_custom_user_dir=true
 config/custom_user_dir_name="Cutzamala"
 config/features=PackedStringArray("4.3", "Mobile")
-boot_splash/bg_color=Color(1, 1, 1, 1)
+boot_splash/show_image=false
 config/icon="res://Icon/App_icono (1).png"
-boot_splash/minimum_display_time=2000
 
 [autoload]
 

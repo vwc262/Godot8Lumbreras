@@ -1,0 +1,42 @@
+[gd_scene load_steps=5 format=3 uid="uid://ciget8hdjtw03"]
+
+[ext_resource type="PackedScene" uid="uid://kaxe6m8gn8bv" path="res://SplashScreen/splash_screen_1.tscn" id="1_6ep5t"]
+[ext_resource type="Script" path="res://SplashScreen/splash_screen_manager.gd" id="1_hxb8l"]
+[ext_resource type="PackedScene" uid="uid://x5m0onfran4m" path="res://Scenes/Perfil/Main/Main.tscn" id="2_flsxe"]
+[ext_resource type="PackedScene" uid="uid://jxmcusklp576" path="res://SplashScreen/splash_screen_2.tscn" id="2_gu1i4"]
+
+[node name="SplashScreenManager" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_hxb8l")
+_move_to = ExtResource("2_flsxe")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="SplashScreenContainer" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="SplashScreen1" parent="SplashScreenContainer" instance=ExtResource("1_6ep5t")]
+layout_mode = 2
+_time = 0.5
+_fade_time = 0.5
+
+[node name="SplashScreen2" parent="SplashScreenContainer" instance=ExtResource("2_gu1i4")]
+layout_mode = 2
+_time = 0.5
+_fade_time = 0.5

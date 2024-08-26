@@ -114,6 +114,7 @@ func _input(event):
 		handle_touch(event)
 	elif event is InputEventScreenDrag:
 		handle_drag(event)
+
 #endregion
 
 #region CustomFunctions
@@ -133,6 +134,7 @@ func handle_touch(event: InputEventScreenTouch):
 		touch_points[event.index] = event.position
 	else:
 		touch_points.erase(event.index)
+		liberar_banderas()
 
 	if touch_points.size() == 2:
 		var touch_point_positions = touch_points.values()

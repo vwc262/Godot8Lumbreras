@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=3 uid="uid://jxmcusklp576"]
+
+[ext_resource type="Script" path="res://SplashScreen/splash_screen.gd" id="1_eq2yo"]
+[ext_resource type="Texture2D" uid="uid://bypho6neb42cl" path="res://SplashScreen/CONAGUA-2013.png" id="2_rje5r"]
+
+[node name="SplashScreen2" type="VBoxContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_eq2yo")
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="logo" type="TextureRect" parent="CenterContainer"]
+custom_minimum_size = Vector2(800, 300)
+layout_mode = 2
+texture = ExtResource("2_rje5r")
+expand_mode = 1
+stretch_mode = 5

@@ -12,9 +12,9 @@
 [ext_resource type="Texture2D" uid="uid://cjl41d8o5kkn7" path="res://Recursos/UI/img/cutzamala_v_final/header.png" id="8_e5bye"]
 [ext_resource type="PackedScene" uid="uid://cp14ueov0c5ee" path="res://Scenes/UI/Loading_Scene.tscn" id="8_txe4o"]
 [ext_resource type="Texture2D" uid="uid://cwt517ugwoqdf" path="res://Recursos/UI/img/cutzamala_v_final/header_pildora.png" id="9_5l4s1"]
-[ext_resource type="Texture2D" uid="uid://dueopnpxhjgox" path="res://Recursos/UI/img/cutzamala_v_final/icono_online.png" id="10_mnx2t"]
+[ext_resource type="Texture2D" uid="uid://cyk6m2gucosr0" path="res://Recursos/UI/img/cutzamala_v_final/icono_online.png" id="10_mnx2t"]
 [ext_resource type="PackedScene" uid="uid://mr5ipvv85b1" path="res://Scenes/UI/UI_Particular.tscn" id="11_e8765"]
-[ext_resource type="Texture2D" uid="uid://ds6y1ccwuv1w6" path="res://Recursos/UI/img/cutzamala_v_final/icono_offline.png" id="11_xf521"]
+[ext_resource type="Texture2D" uid="uid://dh1mjlldc0wx0" path="res://Recursos/UI/img/cutzamala_v_final/icono_offline.png" id="11_xf521"]
 [ext_resource type="Script" path="res://Scripts/UI/PopUp/PopupWindow.gd" id="13_4y2mv"]
 [ext_resource type="Texture2D" uid="uid://cmiax8itprl5x" path="res://Recursos/UI/img/cutzamala_v_final/boton_show_lista.png" id="14_80mpx"]
 [ext_resource type="Texture2D" uid="uid://dl0hbpjs1hb82" path="res://Recursos/UI/img/señales/Lista_detalles_Nivel_barra.png" id="14_v1tbx"]
@@ -136,9 +136,9 @@ anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
 offset_left = -95.0
-offset_top = -40.0
+offset_top = -30.0
 offset_right = 115.0
-offset_bottom = 20.0
+offset_bottom = 30.0
 grow_horizontal = 2
 grow_vertical = 0
 theme_override_styles/panel = SubResource("StyleBoxEmpty_42kcc")

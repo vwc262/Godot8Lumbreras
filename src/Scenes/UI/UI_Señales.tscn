@@ -1,14 +1,16 @@
-[gd_scene load_steps=9 format=3 uid="uid://hro847n58cow"]
+[gd_scene load_steps=10 format=3 uid="uid://hro847n58cow"]
 
 [ext_resource type="Script" path="res://Scripts/UI/UI_Signals.gd" id="1_bisnc"]
 [ext_resource type="Texture2D" uid="uid://dwek43ydxgfdf" path="res://Recursos/UI/img/cutzamala_v_final/fondo_senales.png" id="2_k82vq"]
 [ext_resource type="Texture2D" uid="uid://d4ly3aj627pin" path="res://Recursos/UI/img/cutzamala_v_final/lista_valores_contenedor.png" id="4_p2cjr"]
 [ext_resource type="FontFile" uid="uid://joct5wuvsfmy" path="res://fonts/Montserrat-SemiBold.ttf" id="4_pt1vm"]
 [ext_resource type="Texture2D" uid="uid://dhndxshyuu0v7" path="res://Recursos/UI/img/cutzamala_v_final/boton_cambio_scene_izq.png" id="5_fogpq"]
+[ext_resource type="Texture2D" uid="uid://cmrdghkthv5df" path="res://Recursos/UI/img/cutzamala_v_final/Lista_detalles_Submenu_Contenedor02.png" id="5_lymuw"]
 [ext_resource type="Texture2D" uid="uid://ccdb74j068s41" path="res://Recursos/UI/img/Encabezado_A_submenu/Lista_detalles_Submenu_Vineta.png" id="6_aiytj"]
 [ext_resource type="Texture2D" uid="uid://c0f8tqgtjo2wr" path="res://Recursos/UI/img/cutzamala_v_final/boton_cambio_scene_der.png" id="6_wtw2y"]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_dfaim"]
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_fx6b6"]
+texture = ExtResource("5_lymuw")
 
 [node name="UiSeñales" type="Control"]
 custom_minimum_size = Vector2(0, 360)
@@ -110,21 +112,21 @@ size_flags_vertical = 3
 [node name="lbl_nivel_valor_min" type="Label" parent="main_container/HBoxContainer/VBoxContainer/nivel_container/nivel_progressbar_container/VBoxContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 2
-theme_override_font_sizes/font_size = 20
+theme_override_font_sizes/font_size = 25
 text = "min: 1m"
 
 [node name="lbl_nivel_valor_max" type="Label" parent="main_container/HBoxContainer/VBoxContainer/nivel_container/nivel_progressbar_container/VBoxContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 10
-theme_override_font_sizes/font_size = 20
+theme_override_font_sizes/font_size = 25
 text = "max: 3m"
 horizontal_alignment = 2
 
 [node name="ProgressBar" type="ProgressBar" parent="main_container/HBoxContainer/VBoxContainer/nivel_container/nivel_progressbar_container/VBoxContainer"]
-custom_minimum_size = Vector2(0, 20)
+custom_minimum_size = Vector2(0, 30)
 layout_mode = 2
 theme_override_font_sizes/font_size = 15
-theme_override_styles/background = SubResource("StyleBoxEmpty_dfaim")
+theme_override_styles/background = SubResource("StyleBoxTexture_fx6b6")
 value = 0.18
 show_percentage = false
 

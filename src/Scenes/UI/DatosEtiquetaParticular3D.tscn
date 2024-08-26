@@ -31,7 +31,7 @@ render_priority = 1
 texture = ExtResource("4_lvfch")
 
 [node name="Nivel" type="Label3D" parent="Sprite3D"]
-transform = Transform3D(0.065, 0, 0, 0, 0.065, 0, 0, 0, 0.065, -2, 0.793179, 0.012)
+transform = Transform3D(0.065, 0, 0, 0, 0.065, 0, 0, 0, 0.065, 0.0427116, -0.0256926, 0.012)
 pixel_size = 0.1
 double_sided = false
 render_priority = 1
@@ -42,8 +42,6 @@ text = "Gasto 1
 font = ExtResource("4_wx6t2")
 font_size = 100
 outline_size = 20
-horizontal_alignment = 0
-vertical_alignment = 0
 
 [node name="Sprite3D" type="Sprite3D" parent="Sprite3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0626892, -2.33157, 0)

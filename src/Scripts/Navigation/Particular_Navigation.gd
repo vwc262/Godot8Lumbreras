@@ -168,7 +168,7 @@ func handle_drag(event: InputEventScreenDrag):
 
 	AdjustPanSpeedByZoom()
 	
-	if touch_points.size() == 1:
+	if touch_points.size() <= 1:
 		liberar_banderas()
 		if can_pan:
 			var pan_vector = (forward + (-event.relative.x * right ) + (-event.relative.y * forward)) * pan_speed

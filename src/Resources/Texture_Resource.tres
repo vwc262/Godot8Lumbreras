@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="Texture_Resources" load_steps=34 format=3 uid="uid://bgbdiqmo4fbhu"]
+[gd_resource type="Resource" script_class="Texture_Resources" load_steps=32 format=3 uid="uid://bgbdiqmo4fbhu"]
 
 [ext_resource type="Script" path="res://Resources/Ref_TextureResource.gd" id="2_d5nwc"]
 [ext_resource type="Texture2D" uid="uid://c0f8tqgtjo2wr" path="res://Recursos/UI/img/cutzamala_v_final/boton_cambio_scene_der.png" id="2_lhpto"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://blsw0l1yy88j7" path="res://Recursos/UI/img/cutzamala_v_final/boton_hide_lista.png" id="6_x5euq"]
 [ext_resource type="Texture2D" uid="uid://cmiax8itprl5x" path="res://Recursos/UI/img/cutzamala_v_final/boton_show_lista.png" id="7_7fn2q"]
 [ext_resource type="Texture2D" uid="uid://dmvusy8xhk7oa" path="res://Recursos/UI/img/cutzamala_v_final/detalles_fondo.png" id="9_ji0po"]
+[ext_resource type="Texture2D" uid="uid://dwek43ydxgfdf" path="res://Recursos/UI/img/cutzamala_v_final/fondo_senales.png" id="10_jiy1x"]
 [ext_resource type="Texture2D" uid="uid://cjl41d8o5kkn7" path="res://Recursos/UI/img/cutzamala_v_final/header.png" id="11_dy0kk"]
 [ext_resource type="Texture2D" uid="uid://b7q5echuvbyco" path="res://Recursos/UI/img/cutzamala_v_final/header_contenedor_estado.png" id="12_27k8g"]
 [ext_resource type="Texture2D" uid="uid://n0o8wds0fiqa" path="res://Recursos/UI/img/cutzamala_v_final/header_estado_offline.png" id="13_g7xqs"]
@@ -20,6 +21,7 @@
 [ext_resource type="Texture2D" uid="uid://cwt517ugwoqdf" path="res://Recursos/UI/img/cutzamala_v_final/header_pildora.png" id="19_2q4a5"]
 [ext_resource type="Texture2D" uid="uid://ds6y1ccwuv1w6" path="res://Recursos/UI/img/cutzamala_v_final/icono_offline.png" id="20_gx6gd"]
 [ext_resource type="Texture2D" uid="uid://dueopnpxhjgox" path="res://Recursos/UI/img/cutzamala_v_final/icono_online.png" id="21_bkqmu"]
+[ext_resource type="Texture2D" uid="uid://cavcek3wsj87y" path="res://Recursos/UI/img/cutzamala_v_final/lista_sitio_a.png" id="22_uyf6k"]
 [ext_resource type="Texture2D" uid="uid://d4ly3aj627pin" path="res://Recursos/UI/img/cutzamala_v_final/lista_valores_contenedor.png" id="23_50njf"]
 [ext_resource type="Texture2D" uid="uid://3dc53qsahnpt" path="res://Recursos/UI/img/cutzamala_v_final/popup_fondo.png" id="25_0qfo3"]
 [ext_resource type="Texture2D" uid="uid://b4qyyji32m7br" path="res://Recursos/UI/img/cutzamala_v_final/progressbar_base.png" id="26_eqqxd"]
@@ -29,18 +31,6 @@
 [ext_resource type="Texture2D" uid="uid://cci03rah376hd" path="res://Recursos/UI/Botones_Vistas/Boton_CamaraReset.png" id="29_vippd"]
 [ext_resource type="Texture2D" uid="uid://tw2ddfg0gnil" path="res://Recursos/UI/img/cutzamala_v_final/sitio_seleccionado.png" id="30_iny4q"]
 [ext_resource type="Texture2D" uid="uid://b2wq23nnrkl8s" path="res://Recursos/UI/img/cutzamala_v_final/sombra_headers.png" id="31_nso6m"]
-
-[sub_resource type="Resource" id="Resource_b6vgw"]
-metadata/__load_path__ = "res://Recursos/UI/img/cutzamala_v_final/fondo_senales.png"
-
-[sub_resource type="Resource" id="Resource_1kyal"]
-metadata/__load_path__ = "res://Recursos/UI/img/cutzamala_v_final/fondo_senales.png"
-
-[sub_resource type="Resource" id="Resource_3uqcu"]
-metadata/__load_path__ = "res://Recursos/UI/img/cutzamala_v_final/lista_sitio_a.png"
-
-[sub_resource type="Resource" id="Resource_8ogfw"]
-metadata/__load_path__ = "res://Recursos/UI/img/cutzamala_v_final/lista_sitio_a.png"
 
 [resource]
 script = ExtResource("2_d5nwc")
@@ -53,7 +43,7 @@ textures_resources_references = {
 "boton_show_lista": ExtResource("7_7fn2q"),
 "btn_reset_camara": ExtResource("29_vippd"),
 "detalles_fondo": ExtResource("9_ji0po"),
-"fondo_senales": SubResource("Resource_b6vgw"),
+"fondo_senales": ExtResource("10_jiy1x"),
 "header": ExtResource("11_dy0kk"),
 "header_contenedor_estado": ExtResource("12_27k8g"),
 "header_estado_offline": ExtResource("13_g7xqs"),
@@ -65,9 +55,9 @@ textures_resources_references = {
 "header_pildora": ExtResource("19_2q4a5"),
 "icono_offline": ExtResource("20_gx6gd"),
 "icono_online": ExtResource("21_bkqmu"),
-"lista_fondo": SubResource("Resource_1kyal"),
-"lista_sitio_a": SubResource("Resource_3uqcu"),
-"lista_sitio_b": SubResource("Resource_8ogfw"),
+"lista_fondo": ExtResource("10_jiy1x"),
+"lista_sitio_a": ExtResource("22_uyf6k"),
+"lista_sitio_b": ExtResource("22_uyf6k"),
 "lista_valor_contenedor": ExtResource("23_50njf"),
 "logo_vwc": ExtResource("18_vpxx4"),
 "popup_fondo": ExtResource("25_0qfo3"),

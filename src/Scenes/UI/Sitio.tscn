@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://Scripts/UI/Sitio.gd" id="1_065dv"]
 [ext_resource type="Texture2D" uid="uid://cavcek3wsj87y" path="res://Recursos/UI/img/cutzamala_v_final/lista_sitio_a.png" id="3_2lm8p"]
-[ext_resource type="Texture2D" uid="uid://cuaote86s755p" path="res://Recursos/UI/img/cutzamala_v_final/boton_flecha_open.png" id="4_acln0"]
+[ext_resource type="Texture2D" uid="uid://b2s4ufaegoyof" path="res://Recursos/UI/img/cutzamala_v_final/boton_flecha_close.png" id="4_ujahq"]
 [ext_resource type="FontFile" uid="uid://joct5wuvsfmy" path="res://fonts/Montserrat-SemiBold.ttf" id="5_5n1kd"]
 [ext_resource type="Texture2D" uid="uid://ds6y1ccwuv1w6" path="res://Recursos/UI/img/cutzamala_v_final/icono_offline.png" id="5_rlimt"]
 [ext_resource type="Texture2D" uid="uid://tw2ddfg0gnil" path="res://Recursos/UI/img/cutzamala_v_final/sitio_seleccionado.png" id="6_0bvoi"]
@@ -65,7 +65,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("4_acln0")
+texture = ExtResource("4_ujahq")
 expand_mode = 1
 
 [node name="nombre_fecha_contaier" type="Panel" parent="VBoxContainer/datos_sitio_container/HBoxContainer"]

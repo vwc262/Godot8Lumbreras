@@ -118,7 +118,14 @@ func _input(event):
 
 #region CustomFunctions
 
-
+func liberar_banderas():
+	start_distance = 0
+	previous_y_diff  = 0
+	previous_distance = 0
+	last_distance = 0
+	start_angle = 0
+	gesture_type = GESTURE_TYPE.NONE
+	
 #Se hacen los presets iniciales del touch event
 func handle_touch(event: InputEventScreenTouch):
 
@@ -134,7 +141,8 @@ func handle_touch(event: InputEventScreenTouch):
 		start_zoom = position.y
 
 		var current: Vector2 = touch_point_positions[1] - touch_point_positions[0]		
-		previous_y_diff = current.y
+		var tilt_current: Vector2 = (touch_point_positions[1] - touch_point_positions[0]) * .5
+		previous_y_diff = tilt_current.y
 		start_angle = current.normalized().angle()				
 		
 		#region pinch
@@ -145,12 +153,7 @@ func handle_touch(event: InputEventScreenTouch):
 		#endregion
 
 	elif touch_points.size() < 2:
-		start_distance = 0				
-		previous_y_diff  = 0
-		previous_distance = 0
-		last_distance = 0
-		start_angle = 0
-		gesture_type = GESTURE_TYPE.NONE
+		liberar_banderas()
 
 func handle_drag(event: InputEventScreenDrag):
 	#var cameraForward:Vector3 = camera_3_dp.get_global_transform().basis.z
@@ -166,7 +169,7 @@ func handle_drag(event: InputEventScreenDrag):
 	AdjustPanSpeedByZoom()
 	
 	if touch_points.size() == 1:
-		gesture_type = GESTURE_TYPE.NONE
+		liberar_banderas()
 		if can_pan:
 			var pan_vector = (forward + (-event.relative.x * right ) + (-event.relative.y * forward)) * pan_speed
 			pan_vector.y = 0					
@@ -178,6 +181,7 @@ func handle_drag(event: InputEventScreenDrag):
 		var touch_point_positions = touch_points.values()
 		var current_finger_positions: Vector2 = touch_point_positions[1] - touch_point_positions[0]
 		var current_dist = touch_point_positions[1].distance_to(touch_point_positions[0])
+		var finger_tilt_pos : Vector2 = (touch_point_positions[1] - touch_point_positions[0]) * .5
 		new_angle = current_finger_positions.normalized().angle()
 		var rot_amount = (new_angle - start_angle) * 100			
 		start_angle = new_angle
@@ -185,10 +189,9 @@ func handle_drag(event: InputEventScreenDrag):
 		var distance_amount = current_dist - start_distance				
 		start_distance = current_dist
 		
-		var y_amount = current_finger_positions.y - previous_y_diff				
-		previous_y_diff = current_finger_positions.y
-		
-		
+		var y_amount = finger_tilt_pos.y - previous_y_diff				
+		previous_y_diff = finger_tilt_pos.y
+				
 		gesture_type = gesture_type if gesture_type != GESTURE_TYPE.NONE else identificar_gesto(rot_amount,distance_amount,y_amount)
 		
 		match gesture_type:

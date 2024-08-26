@@ -5,6 +5,6 @@
 
 [node name="Sprite3D" type="Sprite3D"]
 transform = Transform3D(-4.37114e-08, 1, -4.37114e-08, 0, -4.37114e-08, -1, -1, -4.37114e-08, 1.91069e-15, 0, 0, 0)
-modulate = Color(0.763902, 0.474626, 0.987046, 1)
+modulate = Color(0.825144, 0.659694, 0, 1)
 texture = ExtResource("1_n5tqf")
 script = ExtResource("2_oqx1p")

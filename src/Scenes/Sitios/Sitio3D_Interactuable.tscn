@@ -122,7 +122,7 @@ material_override = ExtResource("5_hma7b")
 
 [node name="Sprite3D" parent="Mini_3D_04" instance=ExtResource("6_nlsnm")]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0.490399, 0)
-modulate = Color(0.83, 0.7885, 0, 1)
+modulate = Color(0.823529, 0.658824, 0, 1)
 speed = 1.5
 
 [connection signal="input_event" from="Mini_3D_04/Area3D" to="." method="_on_area_3d_input_event"]

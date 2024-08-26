@@ -15,7 +15,9 @@ run/main_scene="res://Scenes/Perfil/Main/Main.tscn"
 config/use_custom_user_dir=true
 config/custom_user_dir_name="Cutzamala"
 config/features=PackedStringArray("4.3", "Mobile")
-config/icon="res://Icon/App_icono.png"
+boot_splash/bg_color=Color(1, 1, 1, 1)
+config/icon="res://Icon/App_icono (1).png"
+boot_splash/minimum_display_time=2000
 
 [autoload]
 

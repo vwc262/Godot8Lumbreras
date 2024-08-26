@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b168f73aix5hl"
-path="res://.godot/imported/App_icono.png-708a8209dd9537dff8db56db07ad5905.ctex"
+uid="uid://bwil655lxtqbq"
+path="res://.godot/imported/CONAGUA-2013.png-06eb665a202d334887282458f7141093.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Icon/App_icono.png"
-dest_files=["res://.godot/imported/App_icono.png-708a8209dd9537dff8db56db07ad5905.ctex"]
+source_file="res://Recursos/UI/img/Splashscreen/CONAGUA-2013.png"
+dest_files=["res://.godot/imported/CONAGUA-2013.png-06eb665a202d334887282458f7141093.ctex"]
 
 [params]
 

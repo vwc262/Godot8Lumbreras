@@ -112,8 +112,10 @@ func deseleccionar():
 
 func _on_btn_expandir_sitios_pressed():
 	btn_expandir_sitios.disabled = true
+
 	if is_hidden:
 		_show_lista_señales()
+		#follow_focus()
 	else:
 		_hide_lista_señales()
 
@@ -134,7 +136,20 @@ func _on_finish_tween():
 	btn_expandir_sitios.disabled = false
 	if is_hidden:
 		panel_container.visible = false
-	UIManager.scroll_container.ensure_control_visible(sitio)
+	UIManager.scroll_container.ensure_control_visible(panel_container)
+
+func follow_focus():
+	# Obtener la posición que se necesita para que el sitio esté visible
+	var sitio_position_y = sitio.get_global_position().y - UIManager.scroll_container.get_global_position().y
+	var sitio_height = sitio.size.y
+	var scroll_visible_height = UIManager.scroll_container.size.y
+	# Calcular la posición final del scroll
+	#var final_scroll_position = clamp(sitio_position_y - (scroll_visible_height - sitio_height)/2, 0, UIManager.scroll_container.get_v_scroll_bar().max_value) 
+	var final_scroll_position = clamp(sitio_position_y, 0, UIManager.scroll_container.get_v_scroll_bar().max_value)
+	var tween: Tween = TweenManager.init_tween(_on_finish_tween)
+	TweenManager.tween_animacion(tween,UIManager.scroll_container.get_v_scroll_bar(), "value", final_scroll_position, 0.2)
+
+func _on_finish_tween_focus(): pass
 
 func set_fondo(texture: Texture):
 	# Actualizar la textura del fondo

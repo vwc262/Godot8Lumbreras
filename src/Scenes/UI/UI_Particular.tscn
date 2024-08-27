@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://mr5ipvv85b1"]
+[gd_scene load_steps=22 format=3 uid="uid://mr5ipvv85b1"]
 
 [ext_resource type="Script" path="res://Scenes/UI/UI_Particular.gd" id="1_wmuh6"]
 [ext_resource type="Texture2D" uid="uid://cjl41d8o5kkn7" path="res://Recursos/UI/img/cutzamala_v_final/header.png" id="2_jw64o"]
@@ -13,6 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://dhndxshyuu0v7" path="res://Recursos/UI/img/cutzamala_v_final/boton_cambio_scene_izq.png" id="11_rg0ro"]
 [ext_resource type="Texture2D" uid="uid://c554rmtw6fjo5" path="res://Recursos/UI/img/Encabezado_A_submenu/Lista_detalles_Submenu_Contenedor.png" id="12_64k7e"]
 [ext_resource type="Texture2D" uid="uid://cmiax8itprl5x" path="res://Recursos/UI/img/cutzamala_v_final/boton_show_lista.png" id="12_rw807"]
+[ext_resource type="FontFile" uid="uid://joct5wuvsfmy" path="res://fonts/Montserrat-SemiBold.ttf" id="12_toj0e"]
 [ext_resource type="Texture2D" uid="uid://c0f8tqgtjo2wr" path="res://Recursos/UI/img/cutzamala_v_final/boton_cambio_scene_der.png" id="13_nr06j"]
 [ext_resource type="Texture2D" uid="uid://dmvusy8xhk7oa" path="res://Recursos/UI/img/cutzamala_v_final/detalles_fondo.png" id="14_q7x1n"]
 [ext_resource type="Texture2D" uid="uid://cvdoytup7q17b" path="res://Recursos/UI/img/cutzamala_v_final/punto_listas.png" id="15_tf5ss"]
@@ -176,7 +177,7 @@ stretch = true
 
 [node name="SubViewport" type="SubViewport" parent="VBoxContainer/main_container/modelo_3d_container/SubViewportContainer"]
 handle_input_locally = false
-size = Vector2i(2, 2)
+size = Vector2i(1080, 1795)
 render_target_update_mode = 0
 
 [node name="Template_Particular" parent="VBoxContainer/main_container/modelo_3d_container/SubViewportContainer/SubViewport" instance=ExtResource("10_l4wa0")]
@@ -390,6 +391,7 @@ offset_bottom = 27.5
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0.623529, 0.133333, 0.254902, 1)
+theme_override_fonts/font = ExtResource("12_toj0e")
 theme_override_font_sizes/font_size = 40
 text = "Graficador"
 horizontal_alignment = 1
@@ -444,6 +446,7 @@ offset_bottom = 27.5
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0.623529, 0.133333, 0.254902, 1)
+theme_override_fonts/font = ExtResource("12_toj0e")
 theme_override_font_sizes/font_size = 40
 text = "Perfil"
 horizontal_alignment = 1

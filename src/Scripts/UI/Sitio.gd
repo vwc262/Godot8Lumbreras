@@ -31,6 +31,9 @@ var is_hidden = true
 var is_double_click_disabled = false
 
 var is_signals_instantiated = false
+var my_index = 0
+
+
 
 func set_textures():
 	var _GlobalTextureResource = GlobalTextureResource.get_curret_resource()
@@ -43,10 +46,11 @@ func set_textures():
 
 func _ready():
 	set_textures()
-	NavigationManager.connect("OnTweenFinished_MovimientoRealizado", _on_camera_zoom)
+	NavigationManager.connect("OnTweenFinished_MovimientoRealizado", _on_camera_zoom)	
 	
 # Función para recibir y establecer los datos de la estación
-func set_datos(estacion: Estacion):
+func set_datos(estacion: Estacion,index:int):
+	my_index = index
 	estacion_ref = estacion
 	id_estacion = estacion_ref.id_estacion
 	UIManager.add_sitio(self)
@@ -136,18 +140,27 @@ func _on_finish_tween():
 	btn_expandir_sitios.disabled = false
 	if is_hidden:
 		panel_container.visible = false
-	UIManager.scroll_container.ensure_control_visible(panel_container)
+	else:
+		follow_focus()
+	
+func get_offset(index_to_go:int)-> float:
+	var current_index = 0
+	var offset = 0
+	for hijo in UIManager.vb_scroll.get_children():
+		if current_index < index_to_go:
+			offset += 110 if hijo.is_hidden else 470					
+			current_index += 1	
+		else: 
+			break	
+	return offset
 
-func follow_focus():
+func follow_focus():	
+	const step = 0 
+	var to_move = get_offset(my_index)
 	# Obtener la posición que se necesita para que el sitio esté visible
-	var sitio_position_y = sitio.get_global_position().y - UIManager.scroll_container.get_global_position().y
-	var sitio_height = sitio.size.y
-	var scroll_visible_height = UIManager.scroll_container.size.y
 	# Calcular la posición final del scroll
-	#var final_scroll_position = clamp(sitio_position_y - (scroll_visible_height - sitio_height)/2, 0, UIManager.scroll_container.get_v_scroll_bar().max_value) 
-	var final_scroll_position = clamp(sitio_position_y, 0, UIManager.scroll_container.get_v_scroll_bar().max_value)
-	var tween: Tween = TweenManager.init_tween(_on_finish_tween)
-	TweenManager.tween_animacion(tween,UIManager.scroll_container.get_v_scroll_bar(), "value", final_scroll_position, 0.2)
+	var tween: Tween = TweenManager.init_tween(_on_finish_tween_focus)	
+	TweenManager.tween_animacion(tween,UIManager.scroll_container.get_v_scroll_bar(), "value", to_move , 0.2)
 
 func _on_finish_tween_focus(): pass
 

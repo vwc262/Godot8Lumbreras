@@ -66,7 +66,7 @@ func actualizar_datos():
 	lbl_fecha_sitio.text = GlobalUtils.formatear_fecha(estacion_ref.tiempo)
 
 # Función para actualizar el estado del enlace
-func set_enlace():	
+func set_enlace():
 	if estacion_ref.is_estacion_en_linea():
 		texture_estado_enlace.texture = estado_online
 	else:
@@ -111,41 +111,34 @@ func seleccionar():
 func deseleccionar():
 	sitio_fondo_seleccionado.visible = false
 
-# Función que maneja el botón de expandir/esconder
 func _on_btn_expandir_sitios_pressed():
 	btn_expandir_sitios.disabled = true
 	if is_hidden:
-		# Mostrar el contenedor
 		_show_lista_señales()
 	else:
-		# Esconder el contenedor
 		_hide_lista_señales()
-
-# Función para mostrar la lista de señales
+	
+	# Emitir la señal para desplazar el scroll al elemento actual
+	UIManager.emit_signal("scroll_to_element", self)
+	
 func _show_lista_señales():
-	# Inicializar el Tween y configurar la animación para mostrar
 	var tween = TweenManager.init_tween(_on_finish_tween)
-	TweenManager.tween_animacion(tween, panel_container, "custom_minimum_size:y", 360, 0.2)  # 160 tamaño original
+	TweenManager.tween_animacion(tween, panel_container, "custom_minimum_size:y", 360, 0.2)
 	panel_container.visible = true
 	is_hidden = false
-	# Cambiar la textura al estado visible
 	btn_expandir_fondo.texture = texture_visible
 
-# Función para esconder la lista de señales
 func _hide_lista_señales():
-	# Inicializar el Tween y configurar la animación para esconder
 	var tween = TweenManager.init_tween(_on_finish_tween)
 	TweenManager.tween_animacion(tween, panel_container, "custom_minimum_size:y", 0, 0.2)
 	is_hidden = true
-	# Cambiar la textura al estado oculto
 	btn_expandir_fondo.texture = texture_hidden
 
-# Función llamada al terminar la animación del Tween
 func _on_finish_tween():
 	btn_expandir_sitios.disabled = false
-	# Confirmación de que el tween ha terminado
 	if is_hidden:
 		panel_container.visible = false
+
 
 func set_fondo(texture: Texture):
 	# Actualizar la textura del fondo

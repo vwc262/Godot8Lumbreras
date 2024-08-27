@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bypho6neb42cl"
-path="res://.godot/imported/CONAGUA-2013.png-b8e2735faa61032d7d9b005677e39d2d.ctex"
+uid="uid://b70ax1bxp2wln"
+path="res://.godot/imported/Conagua_logo_vertical.png-d8446e1a9b7e21d08216c813bca7a21a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://SplashScreen/CONAGUA-2013.png"
-dest_files=["res://.godot/imported/CONAGUA-2013.png-b8e2735faa61032d7d9b005677e39d2d.ctex"]
+source_file="res://SplashScreen/Conagua_logo_vertical.png"
+dest_files=["res://.godot/imported/Conagua_logo_vertical.png-d8446e1a9b7e21d08216c813bca7a21a.ctex"]
 
 [params]
 

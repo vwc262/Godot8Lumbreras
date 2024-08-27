@@ -55,7 +55,6 @@ layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 0
 focus_mode = 0
-mouse_filter = 1
 flat = true
 
 [node name="btn_expandir_fondo" type="TextureRect" parent="VBoxContainer/datos_sitio_container/HBoxContainer/BTN_expandir_sitios"]
@@ -137,8 +136,8 @@ texture = ExtResource("6_0bvoi")
 expand_mode = 1
 
 [node name="PanelContainer" type="PanelContainer" parent="VBoxContainer"]
-visible = false
 self_modulate = Color(1, 1, 1, 0)
+clip_contents = true
 layout_mode = 2
 size_flags_vertical = 2
 mouse_filter = 1

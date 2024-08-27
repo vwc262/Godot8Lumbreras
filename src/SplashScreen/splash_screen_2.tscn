@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://jxmcusklp576"]
 
 [ext_resource type="Script" path="res://SplashScreen/splash_screen.gd" id="1_eq2yo"]
-[ext_resource type="Texture2D" uid="uid://bypho6neb42cl" path="res://SplashScreen/CONAGUA-2013.png" id="2_rje5r"]
+[ext_resource type="Texture2D" uid="uid://c25fpfc3sociv" path="res://SplashScreen/logo_vwc_negro.png" id="2_mcr1r"]
 
 [node name="SplashScreen2" type="VBoxContainer"]
 anchors_preset = 15
@@ -15,9 +15,9 @@ script = ExtResource("1_eq2yo")
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="logo" type="TextureRect" parent="CenterContainer"]
-custom_minimum_size = Vector2(800, 300)
+[node name="logo_VWC" type="TextureRect" parent="CenterContainer"]
+custom_minimum_size = Vector2(300, 350)
 layout_mode = 2
-texture = ExtResource("2_rje5r")
+texture = ExtResource("2_mcr1r")
 expand_mode = 1
 stretch_mode = 5

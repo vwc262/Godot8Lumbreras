@@ -37,13 +37,13 @@ func _on_datos_actualizados(estaciones: Array[Estacion]):
 func actualizar_e_instanciar_sitios(estaciones: Array[Estacion]):
 	# Asegurarse de que hay suficientes instancias
 	while sitio_instancias.size() < estaciones.size():
-		var sitio_instance = sitio_scene.instantiate()
+		var sitio_instance = sitio_scene.instantiate()		
 		v_box_container.add_child(sitio_instance)
 		sitio_instancias.append(sitio_instance)
 
 	# Actualizar las instancias existentes con nuevos datos
 	for i in range(estaciones.size()):
-		sitio_instancias[i].set_datos(estaciones[i])
+		sitio_instancias[i].set_datos(estaciones[i],i)
 		# Alternar entre las dos texturas
 		if i % 2 == 0:
 			sitio_instancias[i].set_fondo(textura1)

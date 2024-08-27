@@ -20,7 +20,6 @@ extends Node
 @onready var texture_visible: Texture  # Textura cuando está visible
 @onready var estado_online: Texture
 @onready var estado_offline: Texture
-
 #endregion
 
 var estacion_ref: Estacion
@@ -117,10 +116,7 @@ func _on_btn_expandir_sitios_pressed():
 		_show_lista_señales()
 	else:
 		_hide_lista_señales()
-	
-	# Emitir la señal para desplazar el scroll al elemento actual
-	UIManager.emit_signal("scroll_to_element", self)
-	
+
 func _show_lista_señales():
 	var tween = TweenManager.init_tween(_on_finish_tween)
 	TweenManager.tween_animacion(tween, panel_container, "custom_minimum_size:y", 360, 0.2)
@@ -138,7 +134,7 @@ func _on_finish_tween():
 	btn_expandir_sitios.disabled = false
 	if is_hidden:
 		panel_container.visible = false
-
+	UIManager.scroll_container.ensure_control_visible(sitio)
 
 func set_fondo(texture: Texture):
 	# Actualizar la textura del fondo

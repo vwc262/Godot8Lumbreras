@@ -15,7 +15,8 @@ var modelo3D_container
 var datos_graficador
 var datos_sitio
 var btn_graficador
-var scroll_lista_sitio
+var scroll_container: ScrollContainer
+var vb_scroll : VBoxContainer
 
 signal scroll_to_element(elemento: Control)
 

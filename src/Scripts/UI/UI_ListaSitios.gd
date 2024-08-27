@@ -1,7 +1,7 @@
 extends Node
 
 @export var sitio_scene: PackedScene
-@onready var v_box_container = $ScrollContainer/VBoxContainer
+@onready var v_box_container: VBoxContainer = $ScrollContainer/VBoxContainer
 
 #region TEXTURAS
 @onready var textura1: Texture
@@ -11,6 +11,7 @@ extends Node
 
 # Lista para almacenar las instancias de los sitios
 var sitio_instancias = []
+var scroll_container: ScrollContainer
 
 func set_textures():
 	var _GlobalTextureResource = GlobalTextureResource.get_curret_resource()
@@ -20,13 +21,15 @@ func set_textures():
 
 
 func _ready():
-	set_textures()
-	# Conectarse a la señal datos_actualizados de DatosGlobales
-	GlobalData.connect("datos_actualizados", _on_datos_actualizados)
-	
+	scroll_container = $ScrollContainer
 	# Obtener las estaciones al iniciar
 	var estaciones: Array[Estacion] = GlobalData.get_data()
+	# Conectarse a la señal datos_actualizados de DatosGlobales
+	GlobalData.connect("datos_actualizados", _on_datos_actualizados)
+	set_textures()
 	actualizar_e_instanciar_sitios(estaciones)
+	UIManager.scroll_container = scroll_container
+	UIManager.vb_scroll = v_box_container
 
 func _on_datos_actualizados(estaciones: Array[Estacion]):
 	actualizar_e_instanciar_sitios(estaciones)

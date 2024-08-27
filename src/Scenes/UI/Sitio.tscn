@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://cavcek3wsj87y" path="res://Recursos/UI/img/cutzamala_v_final/lista_sitio_a.png" id="3_2lm8p"]
 [ext_resource type="Texture2D" uid="uid://b2s4ufaegoyof" path="res://Recursos/UI/img/cutzamala_v_final/boton_flecha_close.png" id="4_ujahq"]
 [ext_resource type="FontFile" uid="uid://joct5wuvsfmy" path="res://fonts/Montserrat-SemiBold.ttf" id="5_5n1kd"]
-[ext_resource type="Texture2D" uid="uid://dh1mjlldc0wx0" path="res://Recursos/UI/img/cutzamala_v_final/icono_offline.png" id="5_rlimt"]
+[ext_resource type="Texture2D" uid="uid://iskuui3ak2he" path="res://Recursos/UI/img/cutzamala_v_final/icono_offline.png" id="5_rlimt"]
 [ext_resource type="Texture2D" uid="uid://tw2ddfg0gnil" path="res://Recursos/UI/img/cutzamala_v_final/sitio_seleccionado.png" id="6_0bvoi"]
 [ext_resource type="PackedScene" uid="uid://hro847n58cow" path="res://Scenes/UI/UI_Señales.tscn" id="7_7pxni"]
 

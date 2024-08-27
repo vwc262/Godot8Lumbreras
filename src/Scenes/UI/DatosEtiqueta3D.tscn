@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://ckyvnml6hiw7b" path="res://Recursos/UI/3D/progressbar.png" id="5_os3l8"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_3an0v"]
+resource_local_to_scene = true
 render_priority = 0
 shader = ExtResource("2_6dxd3")
 shader_parameter/texture_albedo = ExtResource("3_nfh5v")

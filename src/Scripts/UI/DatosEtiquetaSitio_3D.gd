@@ -51,6 +51,6 @@ func refresh_data():
 		#progressbar_material.set_shader_parameter("offset", offset_parameter)
 		tweenBlur = TweenManager.init_tween(OnTweenFinished)
 		tweenBlur.tween_property(progressbar_material, "shader_parameter/offset", offset_parameter, 0.2)
-		
-		canvas_container.texture = online_texture if estacion.enlace != 0 else offline_texture
-		canvas_material.set("shader_parameter/texture_albedo", online_texture if estacion.enlace != 0 else offline_texture)
+		print(estacion.nombre , " en linea " , estacion.is_estacion_en_linea())
+		canvas_container.texture = online_texture if estacion.is_estacion_en_linea()  else online_texture
+		canvas_material.set("shader_parameter/texture_albedo", online_texture if estacion.is_estacion_en_linea() else offline_texture)

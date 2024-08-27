@@ -16,6 +16,8 @@ class_name  ParticularCameraManager
 @export var originalRotations : Array[Basis]
 var touch_points: Dictionary = {}
 
+var resetViewCont : int
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	var i = 0
@@ -27,8 +29,11 @@ func _ready():
 	
 	SwitchToVirtualCamera(4)	
 
-
-
+func _process(_delta: float) -> void: 
+	if resetViewCont < 0:
+		virtualCameras[virtualCameraIndex].transform.basis = InterpolateBasis(virtualCameras[virtualCameraIndex].transform.basis, originalRotations[virtualCameraIndex], 0.01)
+	else:
+		resetViewCont -= 1
 	
 func _input(event):
 	
@@ -68,6 +73,16 @@ func handle_drag(event: InputEventScreenDrag):
 	virtualCameras[virtualCameraIndex].rotate_y(rotSpeed * event.relative.x)
 	virtualCameras[virtualCameraIndex].rotate(cameraRight, rotSpeed * event.relative.y)
 	
+	if virtualCameras[virtualCameraIndex].rotation.x > deg_to_rad(45):
+		virtualCameras[virtualCameraIndex].rotation.x = deg_to_rad(45)
+	if virtualCameras[virtualCameraIndex].rotation.x < deg_to_rad(-45):
+		virtualCameras[virtualCameraIndex].rotation.x = deg_to_rad(-45)
 	
+	resetViewCont = 200
 	
-	
+func InterpolateBasis(basis_1 : Basis, basis_2 : Basis, lambda : float) -> Basis:
+	var res = basis_1
+	res.x = basis_1.x + (basis_2.x - basis_1.x)*lambda
+	res.y = basis_1.y + (basis_2.y - basis_1.y)*lambda
+	res.z = basis_1.z + (basis_2.z - basis_1.z)*lambda
+	return res

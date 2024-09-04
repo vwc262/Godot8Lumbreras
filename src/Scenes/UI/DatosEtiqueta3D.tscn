@@ -41,7 +41,7 @@ render_priority = 1
 texture = ExtResource("3_nfh5v")
 
 [node name="NombreSitio" type="Label3D" parent="Sprite3D"]
-transform = Transform3D(0.035, 0, 0, 0, 0.035, 0, 0, 0, 0.035, -1.96375, 1.25795, 0.0238953)
+transform = Transform3D(0.035, 0, 0, 0, 0.035, 0, 0, 0, 0.035, -1.96375, 1.08423, 0.0238953)
 pixel_size = 0.1
 double_sided = false
 render_priority = 1
@@ -54,7 +54,7 @@ horizontal_alignment = 0
 vertical_alignment = 0
 
 [node name="FechaSitio" type="Label3D" parent="Sprite3D"]
-transform = Transform3D(0.035, 0, 0, 0, 0.035, 0, 0, 0, 0.035, -2, 0.177589, 0.012)
+transform = Transform3D(0.035, 0, 0, 0, 0.035, 0, 0, 0, 0.035, -2, -0.571179, 0.012)
 pixel_size = 0.1
 double_sided = false
 render_priority = 1
@@ -68,7 +68,7 @@ horizontal_alignment = 0
 vertical_alignment = 0
 
 [node name="Nivel" type="Label3D" parent="Sprite3D"]
-transform = Transform3D(0.035, 0, 0, 0, 0.035, 0, 0, 0, 0.035, -2, 0.754771, 0.012)
+transform = Transform3D(0.035, 0, 0, 0, 0.035, 0, 0, 0, 0.035, -2, 0.331376, 0.012)
 pixel_size = 0.1
 double_sided = false
 render_priority = 1
@@ -88,6 +88,7 @@ shape = SubResource("BoxShape3D_pmbfv")
 
 [node name="Progressbar3D" type="Sprite3D" parent="Sprite3D"]
 transform = Transform3D(1.65, 0, 0, 0, 0.85, 0, 0, 0, 1, 0, -0.585556, 0.01)
+visible = false
 material_override = SubResource("ShaderMaterial_0vdun")
 cast_shadow = 0
 texture = ExtResource("5_os3l8")

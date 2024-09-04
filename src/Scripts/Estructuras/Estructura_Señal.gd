@@ -34,10 +34,19 @@ func is_dentro_rango() -> bool:
 
 func get_color_barra_vida() -> Color:
 	var color_to_return = Color(.7,.7,.7)
-	if valor > semaforo.normal and valor <= semaforo.preventivo:
-		color_to_return = Color(.7, .7, 0) # Amarillo
-	elif valor > semaforo.preventivo:
-		color_to_return = Color(.7, 0, 0) # Rojo
-	else:
-		color_to_return = Color(0, .7, 0) # Verde	
+	if tipo_signal == 1 :
+		if valor > semaforo.normal and valor <= semaforo.preventivo:
+			color_to_return = Color(.7, .7, 0) # Amarillo
+		elif valor > semaforo.preventivo:
+			color_to_return = Color(.7, 0, 0) # Rojo
+		else:
+			color_to_return = Color(0, .7, 0) # Verde	
 	return color_to_return
+	
+func get_unities() -> String:
+	match tipo_signal:
+		1: return "m"					
+		2: return "kg/cm²"
+		3: return "m³/s"
+		4: return "m³"
+		_: return ""					

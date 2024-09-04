@@ -34,9 +34,11 @@ func _on_datos_actualizados(_estaciones: Array[Estacion]):
 		estacion = GlobalData.get_estacion(IdEstacion)  # Actualiza los datos del sitio con los nuevos datos
 		for _signal: Señal in estacion.signals.values():
 			if _signal.tipo_signal == 1:
-				nivel = _signal;
+				#nivel = _signal;
 				if semaforo == null:
-					semaforo = nivel.semaforo
+					semaforo = _signal.semaforo				
+			if _signal.tipo_signal == 3:
+				nivel = _signal	
 				break;
 	refresh_data();
 
@@ -44,7 +46,7 @@ func refresh_data():
 	if estacion != null and nivel != null:
 		labelNombre.text = "%s" % [estacion.nombre]
 		labelFecha.text = "%s" % [GlobalUtils.formatear_fecha(estacion.tiempo)]
-		labelNivel.text = nivel.nombre + ": " + str(nivel.valor) + " m." if nivel.is_dentro_rango() else "N.D."
+		labelNivel.text = nivel.nombre + ": " + str(nivel.valor) + " " + nivel.get_unities() if nivel.is_dentro_rango() else "N.D."
 		
 		progressbar_material.set_shader_parameter("color", nivel.get_color_barra_vida() if nivel.is_dentro_rango() else color_rango)
 		var offset_parameter = 1.0 if !nivel.is_dentro_rango() else remap(nivel.valor, 0.0, semaforo.critico, 0.01, 1.0)

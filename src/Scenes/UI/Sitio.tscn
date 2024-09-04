@@ -137,7 +137,6 @@ expand_mode = 1
 
 [node name="PanelContainer" type="PanelContainer" parent="VBoxContainer"]
 self_modulate = Color(1, 1, 1, 0)
-clip_contents = true
 layout_mode = 2
 size_flags_vertical = 2
 mouse_filter = 1
@@ -151,6 +150,7 @@ mouse_filter = 1
 layout_mode = 1
 anchors_preset = 10
 anchor_right = 1.0
+offset_bottom = 360.0
 grow_horizontal = 2
 size_flags_vertical = 0
 theme_override_constants/separation = 0

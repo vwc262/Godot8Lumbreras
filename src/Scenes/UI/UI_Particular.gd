@@ -73,7 +73,7 @@ var use_fondo_1 = true  # Variable para alternar entre los fondos
 var unidades = {
 	1: "m",
 	2: "kg/cm²",
-	3: "l/s"
+	3: "m³/s"
 }
 
 func set_textures():
@@ -174,7 +174,7 @@ func set_datos_particular(sitio: Estacion):
 	texture_enlace.texture = texture_online if sitio.is_estacion_en_linea() else texture_offline
 
 	for _signal in sitio.signals.values():
-		var unidad = unidades.get(_signal.tipo_signal, "")
+		var unidad = _signal.get_unities()
 		if _signal is Señal:
 			if _signal.tipo_signal == 1:
 				set_progress_bar(_signal, unidad)

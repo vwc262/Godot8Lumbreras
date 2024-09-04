@@ -140,8 +140,9 @@ camera_3d_resource = SubResource("Resource_3ffli")
 [node name="Canvas_UI_camarasParticular" type="Control" parent="." node_paths=PackedStringArray("verticalBackground", "horizontalBackground", "buttons", "indicationSpriteHome", "indicationSprites")]
 layout_mode = 3
 anchors_preset = 0
+offset_top = -179.05
 offset_right = 40.0
-offset_bottom = 40.0
+offset_bottom = -139.05
 scale = Vector2(1.35996, 1.35996)
 script = ExtResource("4_mgldc")
 verticalBackground = NodePath("Vertical_Background")

@@ -125,7 +125,7 @@ func _on_btn_expandir_sitios_pressed():
 
 func _show_lista_señales():
 	var tween = TweenManager.init_tween(_on_finish_tween)
-	TweenManager.tween_animacion(tween, panel_container, "custom_minimum_size:y", 360, 0.2)
+	TweenManager.tween_animacion(tween, panel_container, "custom_minimum_size:y", 180, 0.2)
 	panel_container.visible = true
 	is_hidden = false
 	btn_expandir_fondo.texture = texture_visible
@@ -148,7 +148,7 @@ func get_offset(index_to_go:int)-> float:
 	var offset = 0
 	for hijo in UIManager.vb_scroll.get_children():
 		if current_index < index_to_go:
-			offset += 110 if hijo.is_hidden else 470
+			offset += 110 if hijo.is_hidden else 290
 			current_index += 1	
 		else: 
 			break

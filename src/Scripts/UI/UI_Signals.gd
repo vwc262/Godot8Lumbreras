@@ -41,7 +41,7 @@ var set_maximos=false
 var unidades = {
 	1: "m",
 	2: "kg/cm²",
-	3: "l/s",
+	3: "m³/s",
 	4: "m³"
 }
 
@@ -80,7 +80,7 @@ func set_datos(estacion: Estacion):
 func actualizar_datos():
 	var fuera_de_rango = "N.D."
 	for _signal in signal_ref:
-		var unidad = unidades.get(_signal.tipo_signal, "")
+		var unidad = _signal.get_unities()
 		
 		if _signal.tipo_signal == 1:
 			lbl_nivel_nombre.text = _signal.nombre

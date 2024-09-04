@@ -188,6 +188,7 @@ idEstacion = 5
 layout_mode = 1
 
 [node name="progress_bar_container" type="Panel" parent="VBoxContainer/main_container"]
+visible = false
 self_modulate = Color(1, 1, 1, 0)
 layout_mode = 1
 anchors_preset = 10
@@ -485,8 +486,9 @@ grow_vertical = 2
 theme_override_constants/separation = 0
 
 [node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/main_container/detalles_container/VBoxContainer/sitio_detalles/VBoxContainer"]
-custom_minimum_size = Vector2(0, 85)
+custom_minimum_size = Vector2(481.625, 85)
 layout_mode = 2
+size_flags_horizontal = 4
 size_flags_vertical = 0
 theme_override_constants/separation = 0
 
@@ -506,6 +508,7 @@ grow_vertical = 2
 theme_override_constants/separation = 0
 
 [node name="Presion_container" type="Panel" parent="VBoxContainer/main_container/detalles_container/VBoxContainer/sitio_detalles/VBoxContainer/HBoxContainer/Panel/HBoxContainer"]
+visible = false
 self_modulate = Color(1, 1, 1, 0)
 clip_contents = true
 layout_mode = 2

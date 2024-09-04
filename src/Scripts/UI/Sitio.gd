@@ -148,10 +148,10 @@ func get_offset(index_to_go:int)-> float:
 	var offset = 0
 	for hijo in UIManager.vb_scroll.get_children():
 		if current_index < index_to_go:
-			offset += 110 if hijo.is_hidden else 470					
+			offset += 110 if hijo.is_hidden else 470
 			current_index += 1	
 		else: 
-			break	
+			break
 	return offset
 
 func follow_focus():	

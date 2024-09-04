@@ -135,7 +135,6 @@ func set_contador_sitios(estaciones):
 	var offline_count = 0
 	var online_count = 0
 	
-	
 	for sitio:Estacion in sitios_info:
 		if sitio.is_estacion_en_linea():
 			online_count += 1

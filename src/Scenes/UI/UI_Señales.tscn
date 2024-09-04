@@ -17,7 +17,7 @@ custom_minimum_size = Vector2(0, 180)
 layout_mode = 3
 anchors_preset = 10
 anchor_right = 1.0
-offset_bottom = 360.0
+offset_bottom = 180.0
 grow_horizontal = 2
 size_flags_horizontal = 3
 size_flags_vertical = 2
@@ -27,11 +27,9 @@ script = ExtResource("1_bisnc")
 [node name="main_container" type="Panel" parent="."]
 self_modulate = Color(1, 1, 1, 0)
 layout_mode = 1
-anchors_preset = -1
+anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = 1.0
-offset_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 1
@@ -325,7 +323,7 @@ size_flags_horizontal = 4
 size_flags_vertical = 10
 
 [node name="btn_graficador" type="Button" parent="main_container/HBoxContainer/VBoxContainer/botones_container"]
-custom_minimum_size = Vector2(450, 80)
+custom_minimum_size = Vector2(430, 90)
 layout_mode = 2
 size_flags_horizontal = 2
 size_flags_vertical = 8
@@ -365,7 +363,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="btn_particular" type="Button" parent="main_container/HBoxContainer/VBoxContainer/botones_container"]
-custom_minimum_size = Vector2(450, 80)
+custom_minimum_size = Vector2(430, 90)
 layout_mode = 2
 size_flags_horizontal = 10
 size_flags_vertical = 8

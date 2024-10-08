@@ -18,6 +18,8 @@ var btn_graficador
 var scroll_container: ScrollContainer
 var vb_scroll : VBoxContainer
 
+var fondo_sitio_temporal: TextureRect = null
+
 signal scroll_to_element(elemento: Control)
 
 

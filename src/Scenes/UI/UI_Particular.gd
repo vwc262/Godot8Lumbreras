@@ -32,6 +32,7 @@ extends Control
 
 @onready var lista_sitio_scene = preload("res://Scenes/UI/UI_Particular_Sitio_lista.tscn")
 #@export var lista_sitio_scene : PackedScene 
+@onready var fondo_sitio_: TextureRect = $VBoxContainer/main_container/modelo_3d_container/fondo_sitio_
 
 #region
 @onready var header_fondo: TextureRect = $VBoxContainer/header_container/header_fondo
@@ -59,6 +60,13 @@ extends Control
 @onready var lista_sitio_fondo_1: Texture
 @onready var lista_sitio_fondo_2: Texture
 
+var fondos_sitios_temporales: Dictionary = {
+	1: "res://Recursos/UI/img/cutzamala_v_final/sitios_temporales/pb1.PNG",
+	2: "res://Recursos/UI/img/cutzamala_v_final/sitios_temporales/pb2.PNG",
+	3: "res://Recursos/UI/img/cutzamala_v_final/sitios_temporales/pb3.PNG",
+	4: "res://Recursos/UI/img/cutzamala_v_final/sitios_temporales/pb4.PNG",
+	6: "res://Recursos/UI/img/cutzamala_v_final/sitios_temporales/PB6.PNG",
+}
 #endregion
 
 var is_new_icon_active: bool = false
@@ -75,6 +83,11 @@ var unidades = {
 	2: "kg/cm²",
 	3: "m³/s"
 }
+
+func set_fondos_temporales(id_sitio):
+	if fondos_sitios_temporales.has(id_sitio):
+		fondo_sitio_.texture = load(fondos_sitios_temporales[id_sitio]) 
+	fondo_sitio_.visible = true if id_sitio != 5 else false
 
 func set_textures():
 	var _GlobalTextureResource = GlobalTextureResource.get_curret_resource()
@@ -106,6 +119,7 @@ func set_textures():
 # Función _ready para inicializar los nodos y conectar señales
 func _ready():
 	set_textures()
+	UIManager.fondo_sitio_temporal = fondo_sitio_
 	SceneManager.add_subviewport_reference(SceneManager.TIPO_NIVEL.PARTICULAR,sub_viewport_container)
 	UIManager.modelo3D_container = modelo_3d_container
 	UIManager.datos_sitio =  datos_sitio

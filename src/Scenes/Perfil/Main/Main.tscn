@@ -35,7 +35,7 @@ script = ExtResource("2_yku0o")
 [node name="Endpoint" type="HTTPRequest" parent="."]
 script = ExtResource("1_xo6k0")
 url_api = "https://www.virtualwavecontrol.com.mx/Core24/crud/ReadSignalsEstacion?idProyecto=7"
-url_api_update = "https://virtualwavecontrol.com.mx/api24/VWC/Unreal/SistemaCutzamala2024/GetUpdateLite"
+url_api_update = "https://virtualwavecontrol.com.mx/api24/VWC/app2024/getUpdatelite?idProyecto=7"
 
 [node name="UiPaleta" parent="." instance=ExtResource("5_d0yyb")]
 

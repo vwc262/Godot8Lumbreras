@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cih25q8xesexw"
-path="res://.godot/imported/pb1.PNG-a2515d713a0e2ebcb9e89862aaff7ef8.ctex"
+uid="uid://wbwtchfpoc5u"
+path="res://.godot/imported/pb1.png-4c4a688dad7ff0eaddfb43d4b9c90d20.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Recursos/UI/img/cutzamala_v_final/sitios_temporales/pb1.PNG"
-dest_files=["res://.godot/imported/pb1.PNG-a2515d713a0e2ebcb9e89862aaff7ef8.ctex"]
+source_file="res://Recursos/UI/img/cutzamala_v_final/sitios_temporales/pb1.png"
+dest_files=["res://.godot/imported/pb1.png-4c4a688dad7ff0eaddfb43d4b9c90d20.ctex"]
 
 [params]
 

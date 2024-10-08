@@ -67,7 +67,6 @@ var fondos_sitios_temporales: Dictionary = {
 	4: "res://Recursos/UI/img/cutzamala_v_final/sitios_temporales/pb4.PNG",
 	6: "res://Recursos/UI/img/cutzamala_v_final/sitios_temporales/PB6.PNG",
 }
-
 #endregion
 
 var is_new_icon_active: bool = false
